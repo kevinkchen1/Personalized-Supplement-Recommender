@@ -1,0 +1,125 @@
+medication_id,medication_name
+M01,"Acetaminophen (Tylenol, others)"
+M02,Alcohol
+M03,Alkylating agents and antitumor antibiotics
+M04,"Allopurinol (Lopurin, Zyloprim)"
+M05,Alprazolam (Xanax)
+M06,Altretamine
+M07,Aluminum
+M08,Aminosalicylic acid (Paser)
+M09,Amphetamines
+M10,Antibiotics
+M11,"Anticoagulant and antiplatelet drugs, herbs and supplements"
+M12,Anticoagulant and antiplatelet medicines
+M13,"Anticoagulant and antiplatelet medicines, herbs and supplements"
+M14,"Anticoagulant and antiplatelet medicines, herbs, and supplements"
+M15,"Anticoagulant or antiplatelet medicines, herbs and supplements"
+M16,Anticoagulants
+M17,"Anticoagulants and anti-platelet drugs, herbs and supplements"
+M18,"Anticoagulants and anti-platelet medicines, herbs and supplements"
+M19,"Anticoagulants and antiplatelet drugs, herbs and supplements"
+M20,"Anticoagulants and antiplatelet medicines, herbs and supplements"
+M21,Anticonvulsants
+M22,"Anticonvulsants and seizure threshold-lowering medicines, herbs and supplements"
+M23,Antidepressants
+M24,Antidepressants and other drugs and supplements that increase levels of serotonin
+M25,Antipsychotics
+M26,Antiseizure medicines
+M27,Atorvastatin (Lipitor)
+M28,Barbiturates
+M29,Bile acid sequestrants (cholestyramine)
+M30,Blood pressure drugs
+M31,"Blood pressure drugs, herbs and supplements"
+M32,Blood pressure medicines
+M33,"Blood pressure medicines, herbs and supplements"
+M34,"Bupropion (Wellbutrin SR, Forfivo XL)"
+M35,CNS depressants
+M36,Caffeine
+M37,"Calcipotriene (Dovonex, Sorilux)"
+M38,"Carbamazepine (Tegretol, Carbatrol, others)"
+M39,Central nervous system (CNS) depressants
+M40,Certain chemotherapy medicines that treat cancer
+M41,Certain medicines that suppress the immune system
+M42,Certain statins
+M43,Chemotherapy
+M44,"Cholestyramine (Prevalite, Locholest)"
+M45,Chromium
+M46,"Colchicine (Colcrys, Mitigare, Gloperba)"
+M47,Contraceptive drugs
+M48,Contraceptive medicines
+M49,"Cyclosporine (Neoral, Sandimmune)"
+M50,Cytochrome P450 1A2 (CYP1A2) and cytochrome P450 2C19 (CPY2C19) substrates
+M51,"Cytochrome P450 1A2, cytochrome P450 2B6, cytochrome P450 2C19, cytochrome P450 2C9 and cytochrome P450 3A4 substrates"
+M52,Cytochrome P450 2C9 (CYP2C9) substrates
+M53,Cytochrome P450 3A4 inhibitors
+M54,"Cytochrome P450 3A4 substrates,"
+M55,"Cytochrome P450 3A4 substrates, also called CYP3A4 substrates"
+M56,Dextromethorphan
+M57,"Diabetes drugs, herbs and supplements"
+M58,Diabetes medications
+M59,Diabetes medicines
+M60,Digoxin (Lanoxin)
+M61,"Diltiazem (Cardizem, Tiazac, others)"
+M62,Estrogen
+M63,Estrogens
+M64,Fexofenadine (Allegra Allergy)
+M65,Fluvoxamine (Luvox)
+M66,Gastric acid inhibitors
+M67,Gemfibrozil (Lopid)
+M68,Grapefruit
+M69,Hepatotoxic medicines
+M70,"Hepatotoxic medicines, herbs and supplements"
+M71,Ibuprofen
+M72,Immunosuppressants
+M73,Iron
+M74,Isoproterenol (Isuprel)
+M75,Ketamine (Ketalar)
+M76,Levodopa
+M77,Lithium
+M78,Lopinavir-ritonavir (Kaletra)
+M79,Medicines to prevent seizures
+M80,"Medicines, herbs and supplements that cause liver damage, called hepatotoxic"
+M81,"Metformin (Glumetza, Fortamet, others)"
+M82,Methotrexate (Trexall)
+M83,Narcotics
+M84,Niacin
+M85,Nitrates
+M86,Non-nucleoside reverse transcriptase inhibitors
+M87,Omeprazole (Prilosec)
+M88,"Orlistat (Alli, Xenical)"
+M89,"Orlistat (Xenical, Alli)"
+M90,Other medicines taken by mouth
+M91,"Penicillamine (Cuprimine, Depen)"
+M92,Phenothiazines
+M93,"Phenytoin (Dilantin, Phenytek)"
+M94,Photosensitizing medicines
+M95,Protease inhibitors
+M96,Pyrimethamine (Daraprim)
+M97,Raloxifene (Evista)
+M98,Retinoids
+M99,Seizure threshold lowering drugs
+M100,Selective serotonin reuptake inhibitors
+M101,"Sevoflurane (Sojourn, Ultane)"
+M102,"Sildenafil (Revatio, Viagra)"
+M103,Simeprevir
+M104,Sirolimus (Rapamune)
+M105,Some statins
+M106,St. John's wort
+M107,Statins
+M108,Statins and niacin
+M109,Steroids
+M110,Stimulant laxatives
+M111,Testosterone
+M112,Thiazide diuretics
+M113,Triazolam (Halcion)
+M114,Triptans
+M115,Valproic acid
+M116,Verapamil (Verelan)
+M117,Vitamin C (ascorbic acid) supplements
+M118,Vitamin E
+M119,Vitamin K
+M120,Voriconazole
+M121,Warfarin (Jantoven)
+M122,Water pills (potassium-sparing diuretics)
+M123,"Water pills, also called diuretics"
+M124,Zinc
