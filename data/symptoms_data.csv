@@ -1,49 +1,42 @@
-symptom_id,symptom
-SMP001,a severe
-SMP002,abdominal cramps
-SMP003,abdominal pain
-SMP004,acne
-SMP005,adverse reactions
-SMP006,an allergic reaction
-SMP007,called hyperuricemia
-SMP008,cancer
-SMP009,cannabis can cause: headaches
-SMP010,confusion
-SMP011,constipation
-SMP012,copper deficiency
-SMP013,daytime drowsiness
-SMP014,diarrhea
-SMP015,disfiguring skin lesions heartburn
-SMP016,disorientation
-SMP017,dizziness
-SMP018,don't drive
-SMP019,extreme temperatures
-SMP020,flaxseed can cause: bloating
-SMP021,frequent vomiting
-SMP022,ginkgo can cause: headache
-SMP023,hypotension
-SMP024,if you're having surgery
-SMP025,including: stomach pain
-SMP026,including: upset stomach
-SMP027,irritability
-SMP028,kidney stones
-SMP029,liver conditions
-SMP030,loose stools
-SMP031,mild anxiety
-SMP032,mild side effects
-SMP033,mild tremor
-SMP034,nausea
-SMP035,of this
-SMP036,oily skin
-SMP037,reduced alertness
-SMP038,serious
-SMP039,short-lasting feelings of depression
-SMP040,short-term kidney failure
-SMP041,side effects
-SMP042,sometimes fatal
-SMP043,stomach cramps
-SMP044,such as: confusion
-SMP045,the supplement
-SMP046,trouble sleeping
-SMP047,unwanted
-SMP048,vomiting
+symptom_id,symptom_name
+SMP01,Burns
+SMP02,Acne
+SMP03,Constipation
+SMP11,Abdominal cramps
+SMP12,Abdominal pain
+SMP13,Acne
+SMP14,Adverse reactions
+SMP15,An allergic reaction
+SMP16,Hyperuricemia
+SMP17,Cancer
+SMP18,Headaches
+SMP19,Confusion
+SMP20,Constipation
+SMP21,Copper deficiency
+SMP22,Daytime drowsiness
+SMP23,Diarrhea
+SMP24,Disfiguring skin lesions heartburn
+SMP25,Lesions
+SMP26,Heartburn
+SMP27,Disorientation
+SMP28,Dizziness
+SMP29,Bloating
+SMP30,Frequent vomiting
+SMP31,Ginkgo can cause: headache
+SMP32,Hypotension
+SMP33,If you're having surgery
+SMP34,Including: stomach pain
+SMP35,Including: upset stomach
+SMP36,Irritability
+SMP37,Kidney stones
+SMP38,Liver conditions
+SMP39,Loose stools
+SMP40,Anxiety
+SMP41,Tremor
+SMP42,Nausea
+SMP43,Oily skin
+SMP44,Depression
+SMP45,Kidney failure
+SMP46,Stomach cramps
+SMP47,Trouble sleeping
+SMP48,Vomiting
