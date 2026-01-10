@@ -1,161 +1,153 @@
-supplement_name,medication_name
-Aloe,"Anticoagulants and antiplatelet medicines, herbs and supplements"
-Aloe,Digoxin
-Aloe,Diabetes medicines
-Aloe,Other medicines taken by mouth
-Aloe,Sevoflurane
-Aloe,Stimulant laxatives
-Aloe,Warfarin
-Aloe,Water pills
-Coenzyme Q10,Anticoagulants
-Creatine,Caffeine
-DHEA,Antipsychotics
-DHEA,Carbamazepine
-DHEA,Estrogen
-DHEA,Lithium
-DHEA,Selective serotonin reuptake inhibitors
-DHEA,Testosterone
-DHEA,Triazolam
-DHEA,Valproic acid
-Evening primrose,"Anticoagulants and antiplatelet medicines, herbs and supplements"
-Evening primrose,Cytochrome P450 3A4 substrates
-Evening primrose,Lopinavir-ritonavir
-Evening primrose,Phenothiazines
-Fish oil,"Anticoagulants and antiplatelet medicines, herbs and supplements"
-Fish oil,"Blood pressure medicines, herbs and supplements"
-Fish oil,Contraceptive medicines
-Fish oil,Orlistat
-Fish oil,Vitamin E
-Flaxseed and flaxseed oil,"Anticoagulants and antiplatelet medicines, herbs and supplements"
-Flaxseed and flaxseed oil,Blood pressure medicines
-Flaxseed and flaxseed oil,Diabetes medicines
-Flaxseed and flaxseed oil,Estrogen
-Folate (folic acid),Anticonvulsants
-Folate (folic acid),Barbiturates
-Folate (folic acid),Methotrexate
-Folate (folic acid),Pyrimethamine
-Ginkgo,Alprazolam
-Ginkgo,"Anticoagulants and antiplatelet medicines, herbs and supplements"
-Ginkgo,"Anticonvulsants and seizure threshold-lowering medicines, herbs and supplements"
-Ginkgo,Antidepressants
-Ginkgo,Some statins
-Ginkgo,Diabetes medicines
-Ginkgo,Ibuprofen
-Glucosamine,Acetaminophen
-Glucosamine,Warfarin
-L-arginine,"Anticoagulants and antiplatelet medicines, herbs and supplements"
-L-arginine,"Blood pressure medicines, herbs and supplements"
-L-arginine,"Diabetes medicines, herbs and supplements"
-L-arginine,Isoproterenol
-L-arginine,Nitrates
-L-arginine,Water pills
-L-arginine,Sildenafil
-Marijuana,Alcohol
-Marijuana,"Anticoagulants and antiplatelet medicines, herbs and supplements"
-Marijuana,CNS depressants
-Marijuana,Protease inhibitors
-Marijuana,Medicines to prevent seizures
-Melatonin,"Anticoagulants and antiplatelet medicines, herbs and supplements"
-Melatonin,Anticonvulsants
-Melatonin,"Blood pressure medicines, herbs and supplements"
-Melatonin,Central nervous system depressants
-Melatonin,"Diabetes medicines, herbs and supplements"
-Melatonin,Contraceptive medicines
-Melatonin,Cytochrome P450 1A2 and cytochrome P450 2C19 substrates
-Melatonin,Fluvoxamine
-Melatonin,Immunosuppressants
-Melatonin,Seizure threshold lowering drugs
-Milk thistle,Cytochrome P450 2C9 substrates
-Milk thistle,"Diabetes medicines, herbs and supplements"
-Milk thistle,Raloxifene
-Milk thistle,Simeprevir
-Milk thistle,Sirolimus
-Niacin,Alcohol
-Niacin,Allopurinol
-Niacin,"Anticoagulant and antiplatelet medicines, herbs and supplements"
-Niacin,"Blood pressure medicines, herbs and supplements"
-Niacin,Chromium
-Niacin,Diabetes medicines
-Niacin,"Hepatotoxic medicines, herbs and supplements"
-Niacin,Statins
-Niacin,Zinc
-Red yeast rice,Alcohol
-Red yeast rice,Cyclosporine
-Red yeast rice,Cytochrome P450 3A4 inhibitors
-Red yeast rice,Grapefruit
-Red yeast rice,Gemfibrozil
-Red yeast rice,"Hepatotoxic medicines, herbs and supplements"
-Red yeast rice,Niacin
-Red yeast rice,St. John's wort
-Red yeast rice,Statins
-SAMe,Antidepressants and other drugs and supplements that increase levels of serotonin
-SAMe,Antipsychotics
-SAMe,Amphetamines
-SAMe,Dextromethorphan
-SAMe,Levodopa
-SAMe,Narcotics
-SAMe,St. John's wort
-St. John's wort,Alprazolam
-St. John's wort,Antidepressants
-St. John's wort,Barbiturates
-St. John's wort,Bupropion
-St. John's wort,Certain chemotherapy medicines that treat cancer
-St. John's wort,Certain medicines that suppress the immune system
-St. John's wort,Certain statins
-St. John's wort,Contraceptive medicines
-St. John's wort,"Cytochrome P450 1A2, cytochrome P450 2B6, cytochrome P450 2C19, cytochrome P450 2C9 and cytochrome P450 3A4 substrates"
-St. John's wort,Dextromethorphan
-St. John's wort,Digoxin
-St. John's wort,Fexofenadine
-St. John's wort,Ketamine
-St. John's wort,Narcotics
-St. John's wort,Non-nucleoside reverse transcriptase inhibitors
-St. John's wort,Omeprazole
-St. John's wort,Phenytoin
-St. John's wort,Photosensitizing medicines
-St. John's wort,Protease inhibitors
-St. John's wort,Triptans
-St. John's wort,Voriconazole
-St. John's wort,Warfarin
-Vitamin A,"Hepatotoxic medicines, herbs and supplements"
-Vitamin A,Orlistat
-Vitamin A,Retinoids
-Vitamin A,Warfarin
-Vitamin B-6,Altretamine
-Vitamin B-6,Barbiturates
-Vitamin B-6,Anticonvulsants
-Vitamin B-6,Levodopa
-Vitamin B-12,Aminosalicylic acid
-Vitamin B-12,Antiseizure medicines
-Vitamin B-12,Colchicine
-Vitamin B-12,Metformin
-Vitamin B-12,Gastric acid inhibitors
-Vitamin B-12,Vitamin C supplements
-Vitamin B-12,Bile acid sequestrants
-Vitamin C,Aluminum
-Vitamin C,Chemotherapy
-Vitamin C,Estrogen
-Vitamin C,Protease inhibitors
-Vitamin C,Statins and niacin
-Vitamin C,Iron
-Vitamin C,Warfarin
-Vitamin D,Aluminum
-Vitamin D,Anticonvulsants
-Vitamin D,Atorvastatin
-Vitamin D,Calcipotriene
-Vitamin D,Cholestyramine
-Vitamin D,"Cytochrome P450 3A4 substrates, also called CYP3A4 substrates"
-Vitamin D,Digoxin
-Vitamin D,Diltiazem
-Vitamin D,Orlistat
-Vitamin D,Thiazide diuretics
-Vitamin D,Steroids
-Vitamin D,Stimulant laxatives
-Vitamin D,Verapamil
-Vitamin E,Alkylating agents and antitumor antibiotics
-Vitamin E,"Anticoagulants and antiplatelet medicines, herbs and supplements"
-Vitamin E,"Cytochrome P450 3A4 substrates, also called CYP3A4 substrates"
-Vitamin E,Statins and niacin
-Vitamin E,Vitamin K
-Zinc,Antibiotics
-Zinc,Penicillamine
+supplement_id,medication_id
+S02,M11
+S02,M60
+S02,M90
+S02,M101
+S02,M110
+S02,M121
+S02,M122
+S03,M16
+S04,M36
+S05,M25
+S05,M38
+S05,M62
+S05,M77
+S05,M100
+S05,M111
+S05,M113
+S05,M115
+S06,M11
+S06,M54
+S06,M78
+S06,M92
+S07,M11
+S07,M30
+S07,M47
+S07,M88
+S07,M118
+S08,M11
+S08,M62
+S09,M21
+S09,M28
+S09,M82
+S09,M96
+S10,M05
+S10,M11
+S10,M22
+S10,M23
+S10,M105
+S10,M71
+S11,M01
+S11,M121
+S13,M11
+S13,M30
+S13,M57
+S13,M74
+S13,M85
+S13,M122
+S13,M102
+S14,M02
+S14,M11
+S14,M35
+S14,M95
+S14,M79
+S15,M11
+S15,M21
+S15,M30
+S15,M39
+S15,M57
+S15,M47
+S15,M50
+S15,M65
+S15,M72
+S15,M99
+S16,M52
+S16,M57
+S16,M97
+S16,M103
+S16,M104
+S17,M02
+S17,M04
+S17,M30
+S17,M45
+S17,M70
+S17,M107
+S17,M124
+S18,M02
+S18,M49
+S18,M53
+S18,M68
+S18,M67
+S18,M70
+S18,M84
+S18,M106
+S18,M107
+S19,M24
+S19,M25
+S19,M09
+S19,M56
+S19,M76
+S19,M83
+S19,M106
+S20,M05
+S20,M23
+S20,M28
+S20,M34
+S20,M40
+S20,M41
+S20,M42
+S20,M47
+S20,M51
+S20,M56
+S20,M60
+S20,M64
+S20,M75
+S20,M83
+S20,M86
+S20,M87
+S20,M93
+S20,M94
+S20,M95
+S20,M114
+S20,M120
+S20,M121
+S22,M70
+S22,M88
+S22,M98
+S22,M121
+S23,M06
+S23,M28
+S23,M21
+S23,M76
+S24,M08
+S24,M26
+S24,M46
+S24,M81
+S24,M66
+S24,M117
+S24,M29
+S25,M07
+S25,M43
+S25,M62
+S25,M95
+S25,M108
+S25,M73
+S25,M121
+S26,M07
+S26,M21
+S26,M27
+S26,M37
+S26,M44
+S26,M60
+S26,M61
+S26,M88
+S26,M112
+S26,M109
+S26,M110
+S26,M116
+S27,M03
+S27,M11
+S27,M108
+S27,M119
+S28,M10
+S28,M91
