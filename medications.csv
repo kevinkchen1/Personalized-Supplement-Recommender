@@ -1,0 +1,110 @@
+medication_id,medication_name
+M01,Acetaminophen
+M02,Alcohol
+M03,Alkylating agents and antitumor antibiotics
+M04,Allopurinol
+M05,Alprazolam
+M06,Altretamine
+M07,Aluminum
+M08,Aminosalicylic acid
+M09,Amphetamines
+M10,Antibiotics
+M14,"Anticoagulant and antiplatelet medicines, herbs, and supplements"
+M16,Anticoagulants
+M19,"Anticoagulants and antiplatelet drugs, herbs and supplements"
+M11,"Anticoagulants and antiplatelet medicines, herbs and supplements"
+M21,Anticonvulsants
+M22,"Anticonvulsants and seizure threshold-lowering medicines, herbs and supplements"
+M23,Antidepressants
+M24,Antidepressants and other drugs and supplements that increase levels of serotonin
+M25,Antipsychotics
+M26,Antiseizure medicines
+M27,Atorvastatin
+M28,Barbiturates
+M29,Bile acid sequestrants
+M30,"Blood pressure medicines, herbs and supplements"
+M34,Bupropion
+M35,CNS depressants
+M36,Caffeine
+M37,Calcipotriene
+M38,Carbamazepine
+M39,Central nervous system depressants
+M40,Certain chemotherapy medicines that treat cancer
+M41,Certain medicines that suppress the immune system
+M42,Certain statins
+M43,Chemotherapy
+M44,Cholestyramine
+M45,Chromium
+M46,Colchicine
+M47,Contraceptive medicines
+M49,Cyclosporine
+M50,Cytochrome P450 1A2 and cytochrome P450 2C19 substrates
+M51,"Cytochrome P450 1A2, cytochrome P450 2B6, cytochrome P450 2C19, cytochrome P450 2C9 and cytochrome P450 3A4 substrates"
+M52,Cytochrome P450 2C9 substrates
+M53,Cytochrome P450 3A4 inhibitors
+M54,Cytochrome P450 3A4 substrates
+M56,Dextromethorphan
+M57,"Diabetes medicines, herbs and supplements"
+M60,Digoxin
+M61,Diltiazem
+M62,Estrogen
+M64,Fexofenadine
+M65,Fluvoxamine
+M66,Gastric acid inhibitors
+M67,Gemfibrozil
+M68,Grapefruit
+M69,Hepatotoxic medicines
+M70,"Hepatotoxic medicines, herbs and supplements"
+M71,Ibuprofen
+M72,Immunosuppressants
+M73,Iron
+M74,Isoproterenol
+M75,Ketamine
+M76,Levodopa
+M77,Lithium
+M78,Lopinavir-ritonavir
+M79,Medicines to prevent seizures
+M80,"Medicines, herbs and supplements that cause liver damage, called hepatotoxic"
+M81,Metformin
+M82,Methotrexate
+M83,Narcotics
+M84,Niacin
+M85,Nitrates
+M86,Non-nucleoside reverse transcriptase inhibitors
+M87,Omeprazole
+M88,Orlistat
+M90,Other medicines taken by mouth
+M91,Penicillamine
+M92,Phenothiazines
+M93,Phenytoin
+M94,Photosensitizing medicines
+M95,Protease inhibitors
+M96,Pyrimethamine
+M97,Raloxifene
+M98,Retinoids
+M99,Seizure threshold lowering drugs
+M100,Selective serotonin reuptake inhibitors
+M101,Sevoflurane
+M102,Sildenafil
+M103,Simeprevir
+M104,Sirolimus
+M105,Some statins
+M106,St. John's wort
+M107,Statins
+M108,Statins and niacin
+M109,Steroids
+M110,Stimulant laxatives
+M111,Testosterone
+M112,Thiazide diuretics
+M113,Triazolam
+M114,Triptans
+M115,Valproic acid
+M116,Verapamil
+M117,Vitamin C supplements
+M118,Vitamin E
+M119,Vitamin K
+M120,Voriconazole
+M121,Warfarin
+M122,Water pills
+M123,"Water pills, also called diuretics"
+M124,Zinc
