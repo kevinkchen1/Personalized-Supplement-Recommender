@@ -22,7 +22,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Import the loader class
-from load_drugbank_data import DrugBankDataLoader
+from load_drugbank_data_test import DrugBankDataLoader
 
 def clear_phase_7_in_batches(loader, batch_size=10000):
     """
