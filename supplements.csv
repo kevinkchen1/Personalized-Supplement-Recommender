@@ -1,29 +1,29 @@
-supplement_id,supplement_name,safety_rating
-S01,Acidophilus,Generally safe
-S02,Aloe,Generally safe
-S03,Coenzyme Q10,Generally safe
-S04,Creatine,Generally safe
-S05,DHEA,Not recommended
-S06,Evening primrose,Use with caution
-S07,Fish oil,Generally safe
-S08,Flaxseed and flaxseed oil,Generally safe
-S09,Folate (folic acid),Generally safe
-S10,Ginkgo,Use with caution
-S11,Glucosamine,Generally safe
-S12,Honey,Generally safe
-S13,L-arginine,Generally safe
-S14,Marijuana,Use with caution
-S15,Melatonin,Generally safe
-S16,Milk thistle,Generally safe
-S17,Niacin,Generally safe
-S18,Red yeast rice,Use with caution
-S19,SAMe,Generally safe
-S20,St. John's wort,Use with caution
-S21,Tea tree oil,Generally safe
-S22,Vitamin A,Use with caution
-S23,Vitamin B-6,Generally safe
-S24,Vitamin B-12,Generally safe
-S25,Vitamin C,Generally safe
-S26,Vitamin D,Generally safe
-S27,Vitamin E,Use with caution
-S28,Zinc,Generally safe
+supplement_id,supplement_name,safety_rating,active_ingredient
+S01,Acidophilus,Generally safe,Lactobacillus acidophilus
+S02,Aloe,Generally safe,Acemannan
+S03,Coenzyme Q10,Generally safe,Ubiquinone
+S04,Creatine,Generally safe,Creatine monohydrate
+S05,DHEA,Not recommended,Dehydroepiandrosterone
+S06,Evening primrose,Use with caution,Gamma-linolenic acid
+S07,Fish oil,Generally safe,Omega-3 fatty acids
+S08,Flaxseed and flaxseed oil,Generally safe,Alpha-linolenic acid
+S09,Folate (folic acid),Generally safe,Folic acid
+S10,Ginkgo,Use with caution,Ginkgo flavone glycosides
+S11,Glucosamine,Generally safe,Glucosamine sulfate
+S12,Honey,Generally safe,Glucose
+S13,L-arginine,Generally safe,L-arginine
+S14,Marijuana,Use with caution,Tetrahydrocannabinol
+S15,Melatonin,Generally safe,Melatonin
+S16,Milk thistle,Generally safe,Silymarin
+S17,Niacin,Generally safe,Niacin
+S18,Red yeast rice,Use with caution,Monacolin K
+S19,SAMe,Generally safe,S-adenosylmethionine
+S20,St. John's wort,Use with caution,Hypericin
+S21,Tea tree oil,Generally safe,Terpinen-4-ol
+S22,Vitamin A,Use with caution,Retinol
+S23,Vitamin B-6,Generally safe,Pyridoxine
+S24,Vitamin B-12,Generally safe,Cobalamin
+S25,Vitamin C,Generally safe,Ascorbic acid
+S26,Vitamin D,Generally safe,Cholecalciferol
+S27,Vitamin E,Use with caution,Tocopherols
+S28,Zinc,Generally safe,Zinc gluconate
