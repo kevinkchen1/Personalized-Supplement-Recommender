@@ -1,0 +1,308 @@
+supplement_name,symptom_name,context,description
+Acidophilus,Constipation,side_effect,Constipation.
+Acidophilus,Gas,side_effect,Gas.
+Acidophilus,Bloating,side_effect,Bloating.
+Acidophilus,Increased Thirst,side_effect,Increased thirst.
+Acidophilus,Acidophilus That Has Live Bacteria,side_effect,"If you have a weakened immune system or other health conditions, talk to your healthcare professional before taking a product such as acidophilus that has live bacteria."
+Aloe,Short-Term Kidney Failure,side_effect,Taking aloe latex or whole-leaf extract by mouth may be unsafe. It's likely unsafe in high doses. Taking 1 gram a day of aloe latex for a few days can cause short-term kidney failure. It can be fatal.
+Aloe,Cancer,side_effect,Aloe latex also might cause cancer. Other side effects include stomach cramps and loose stools. Children younger than age 12 should not take aloe latex and whole-leaf extract by mouth.
+Aloe,More Bleeding,interaction,"Anticoagulants and antiplatelet medicines, herbs and supplements.These types of medicines, herbs and supplements slow blood clotting. Taking aloe by mouth also might slow blood clotting. Taking aloe by mouth with these types of medicines might lead to more bleeding."
+Aloe,Low Blood Sugar,interaction,"Diabetes medicines.Taking aloe gel by mouth while taking diabetes medicines might raise the risk of low blood sugar, called hypoglycemia."
+Aloe,Hypoglycemia,interaction,"Diabetes medicines.Taking aloe gel by mouth while taking diabetes medicines might raise the risk of low blood sugar, called hypoglycemia."
+Aloe,Too Much Bleeding During Surgery,interaction,"Sevoflurane (Sojourn, Ultane).This medicine used to cause a sleeplike state during surgery, called anesthesia, may slow blood clotting. Taking aloe by mouth also may slow blood clotting. Taken together, they might cause too much bleeding during surgery."
+Aloe,Anesthesia,interaction,"Sevoflurane (Sojourn, Ultane).This medicine used to cause a sleeplike state during surgery, called anesthesia, may slow blood clotting. Taking aloe by mouth also may slow blood clotting. Taken together, they might cause too much bleeding during surgery."
+Aloe,Loss Of Fluids,interaction,"Stimulant laxatives.Taking aloe latex with medicines that help move stool through the body might make the bowels work too hard. This can lead to loss of fluids, called dehydration."
+Aloe,Dehydration,interaction,"Stimulant laxatives.Taking aloe latex with medicines that help move stool through the body might make the bowels work too hard. This can lead to loss of fluids, called dehydration."
+Aloe,Loose Stools,interaction,"Warfarin (Jantoven).Taking aloe latex by mouth can cause loose stools. This can add to the effects of warfarin, a blood-thinning medicine. This can raise the risk of bleeding."
+Aloe,Bleeding,interaction,"Warfarin (Jantoven).Taking aloe latex by mouth can cause loose stools. This can add to the effects of warfarin, a blood-thinning medicine. This can raise the risk of bleeding."
+Aloe,Diuretics,interaction,"Water pills, also called diuretics.Taking aloe latex by mouth with diuretics might lower the body's potassium levels too much, leading to a condition called hypokalemia."
+Aloe,Hypokalemia,interaction,"Water pills, also called diuretics.Taking aloe latex by mouth with diuretics might lower the body's potassium levels too much, leading to a condition called hypokalemia."
+Coenzyme Q10,Upper Stomach Pain,side_effect,Upper stomach pain.
+Coenzyme Q10,Loss Of Appetite,side_effect,Loss of appetite.
+Coenzyme Q10,Nausea,side_effect,Nausea.
+Coenzyme Q10,Diarrhea,side_effect,Diarrhea.
+Coenzyme Q10,Dizziness,side_effect,Dizziness.
+Coenzyme Q10,Problems Sleeping,side_effect,Problems sleeping.
+Coenzyme Q10,Tiredness,side_effect,Tiredness.
+Coenzyme Q10,Headaches,side_effect,Headaches.
+Coenzyme Q10,Rash,side_effect,Rash.
+Coenzyme Q10,Irritability,side_effect,Irritability.
+Coenzyme Q10,Coq10,interaction,"Anticoagulants.Coenzyme Q10, also called CoQ10, might make the blood-thinning medicine warfarin (Jantoven) not work as well. This could raise the risk of a blood clot."
+Creatine,"Weight Gain, Generally As Lean Body Mass",side_effect,"Weight gain, generally as lean body mass"
+DHEA,Hormone-Sensitive Cancers,side_effect,"DHEA is a hormone. Use of this supplement might increase levels of androgen and have a steroid effect. DHEA also might increase the risk of hormone-sensitive cancers, including prostate, breast and ovarian cancers. If you have any form of cancer or are at risk of cancer, don't use DHEA."
+DHEA,Cancer,side_effect,"DHEA is a hormone. Use of this supplement might increase levels of androgen and have a steroid effect. DHEA also might increase the risk of hormone-sensitive cancers, including prostate, breast and ovarian cancers. If you have any form of cancer or are at risk of cancer, don't use DHEA."
+DHEA,Prostate,side_effect,"DHEA is a hormone. Use of this supplement might increase levels of androgen and have a steroid effect. DHEA also might increase the risk of hormone-sensitive cancers, including prostate, breast and ovarian cancers. If you have any form of cancer or are at risk of cancer, don't use DHEA."
+DHEA,Oily Skin,side_effect,"DHEA also might cause oily skin, acne and unwanted, male-pattern hair growth in women (hirsutism)."
+DHEA,Clozapine (Clozaril,interaction,"Antipsychotics.Use of DHEA with antipsychotics such as clozapine (Clozaril, Versacloz, others) might reduce the drug's effectiveness."
+DHEA,Symptoms Of Excess Estrogen,interaction,"Estrogen.Don't use DHEA with estrogen. Combining DHEA and estrogen might cause symptoms of excess estrogen, such as nausea, headache and insomnia."
+DHEA,Nausea,interaction,"Estrogen.Don't use DHEA with estrogen. Combining DHEA and estrogen might cause symptoms of excess estrogen, such as nausea, headache and insomnia."
+DHEA,Manic Symptoms,interaction,Selective serotonin reuptake inhibitors.Use of DHEA with this type of antidepressant might cause manic symptoms.
+Evening primrose,Upset Stomach,side_effect,Upset stomach.
+Evening primrose,Loose Stools,side_effect,Loose stools.
+Evening primrose,Headache,side_effect,Headache.
+Evening primrose,Seizures,side_effect,"Also, don't take evening primrose if you have epilepsy or schizophrenia. The supplement might raise your risk of seizures."
+Evening primrose,Pregnancy Complications,side_effect,Evening primrose oil might raise the risk of pregnancy complications. Some types of evening primrose may act like estrogen. So people with hormone-sensitive cancers also shouldn't take it. It also may raise blood pressure.
+Evening primrose,Bleeding,interaction,"Anticoagulants and anti-platelet medicines, herbs and supplements.These types of medicines, herbs and supplements keep blood from clotting. Taking evening primrose while also taking these medicines may raise the risk of bleeding."
+Evening primrose,Cyp3A4 Substrates,interaction,"Cytochrome P450 3A4 substrates,also called CYP3A4 substrates. Use evening primrose with care if you take a medicine affected by these enzymes. One such medicine is the cholesterol-lowering lovastatin (Altoprev)."
+Evening primrose,Seizures In Some People,interaction,Phenothiazines.These medicines treat serious mental health conditions. Taking evening primrose oil with phenothiazines may raise the risk of seizures in some people.
+Fish oil,Mild Side Effects,side_effect,"However, fish oil supplements can cause mild side effects, including:"
+Fish oil,A Fishy Aftertaste,side_effect,A fishy aftertaste
+Fish oil,Bad Breath,side_effect,Bad breath
+Fish oil,"Heartburn, Nausea Or Diarrhea",side_effect,"Heartburn, nausea or diarrhea"
+Fish oil,Rash,side_effect,Rash
+Fish oil,Bleeding,interaction,"Anticoagulant and antiplatelet drugs, herbs and supplements.These types of drugs, herbs and supplements reduce blood clotting. It's possible that taking fish oil supplements with them might increase the risk of bleeding."
+Flaxseed and flaxseed oil,Bloating,side_effect,Bloating.
+Flaxseed and flaxseed oil,Gas,side_effect,Gas.
+Flaxseed and flaxseed oil,Diarrhea,side_effect,Diarrhea.
+Flaxseed and flaxseed oil,Bleeding,interaction,"Anticoagulant and antiplatelet medicines.These medicines lower the blood's ability to clot. Flaxseed also might lessen blood clotting. Because of that, it's possible that taking flaxseed or flaxseed oil along with anticoagulant or antiplatelet medicines might raise the risk of bleeding."
+Folate (folic acid),A Bitter Taste In The Mouth,side_effect,A bitter taste in the mouth.
+Folate (folic acid),Nausea,side_effect,Nausea.
+Folate (folic acid),Loose Stools,side_effect,Loose stools.
+Folate (folic acid),Confusion,side_effect,Confusion.
+Folate (folic acid),Irritability,side_effect,Irritability.
+Folate (folic acid),Trouble Sleeping,side_effect,Trouble sleeping.
+Folate (folic acid),Stomach Cramps,side_effect,Stomach cramps.
+Folate (folic acid),Skin Rash,side_effect,Skin rash.
+Folate (folic acid),Itching,side_effect,Itching.
+Folate (folic acid),"Skin Color Changes, Such As Purple Or Brown Depending On Your Skin Color",side_effect,"Skin color changes, such as purple or brown depending on your skin color."
+Folate (folic acid),Difficulty Breathing,side_effect,Difficulty breathing.
+Ginkgo,Headache,side_effect,Headache.
+Ginkgo,Low Salt Levels,side_effect,Low salt levels.
+Ginkgo,Bleeding,side_effect,Bleeding.
+Ginkgo,Dizziness,side_effect,Dizziness.
+Ginkgo,"The Feeling Of The Heart Pounding Or Racing, Called Palpitations",side_effect,"The feeling of the heart pounding or racing, called palpitations."
+Ginkgo,Upset Stomach,side_effect,Upset stomach.
+Ginkgo,"Trouble Passing Stool, Called Constipation",side_effect,"Trouble passing stool, called constipation."
+Ginkgo,Skin Allergies,side_effect,Skin allergies.
+Ginkgo,Seizures,side_effect,"For people who have epilepsy or any type of seizure, large amounts of ginkgo may raise the risk of seizures."
+Ginkgo,Bleeding,side_effect,"If you are older, have a bleeding condition, or are pregnant, don't take ginkgo. The supplement might raise the risk of bleeding. If you're having surgery, stop taking ginkgo two weeks before the surgery."
+Ginkgo,Getting Liver And Thyroid Cancers,side_effect,Some research has shown that giving rodents ginkgo raises their risk of getting liver and thyroid cancers.
+Ginkgo,Bleeding,interaction,"Anticoagulants and antiplatelet drugs, herbs and supplements.These types of medicines, herbs and supplements lessen blood clotting. Taking ginkgo with them might raise the risk of bleeding."
+Ginkgo,Seizures,interaction,"Anticonvulsants and seizure threshold-lowering medicines, herbs and supplements.Large amounts of ginkgo can cause seizures. Taking ginkgo could keep an anticonvulsant medicine from working as well."
+Ginkgo,Fluoxetine,interaction,"Antidepressants.Taking ginkgo with certain antidepressants, such as fluoxetine (Prozac), might keep them from working as well."
+Glucosamine,Nausea,side_effect,Nausea
+Glucosamine,Heartburn,side_effect,Heartburn
+Glucosamine,Diarrhea,side_effect,Diarrhea
+Glucosamine,Constipation,side_effect,Constipation
+Glucosamine,Drowsiness,side_effect,Drowsiness
+Glucosamine,Skin Reactions,side_effect,Skin reactions
+Glucosamine,Headache,side_effect,Headache
+Glucosamine,Bleeding,interaction,Warfarin (Jantoven).Taking glucosamine alone or in combination with the supplement chondroitin might increase the effects of the anticoagulant warfarin. This can increase your risk of bleeding.
+Honey,Serious,side_effect,"Some people are sensitive or allergic to specific components in honey, particularly bee pollen. Although rare, bee pollen allergies can cause serious, and sometimes fatal, adverse reactions. Signs and symptoms of a reaction include:"
+Honey,Wheezing And Other Asthmatic Symptoms,side_effect,Wheezing and other asthmatic symptoms
+Honey,Dizziness,side_effect,Dizziness
+Honey,Nausea,side_effect,Nausea
+Honey,Vomiting,side_effect,Vomiting
+Honey,Weakness,side_effect,Weakness
+Honey,Excessive Perspiration,side_effect,Excessive perspiration
+Honey,Fainting,side_effect,Fainting
+Honey,Irregular Heart Rhythms,side_effect,Irregular heart rhythms (arrhythmias)
+Honey,Stinging After Topical Application,side_effect,Stinging after topical application
+L-arginine,"Nausea, Abdominal Pain And Diarrhea",side_effect,"Nausea, abdominal pain and diarrhea"
+L-arginine,Bloating,side_effect,Bloating
+L-arginine,Gout,side_effect,Gout
+L-arginine,Headache,side_effect,Headache
+L-arginine,Allergic Response,side_effect,Allergic response
+L-arginine,Airway Inflammation Or Worsening Of Asthma Symptoms,side_effect,Airway inflammation or worsening of asthma symptoms
+L-arginine,Death,side_effect,L-arginine isn't recommended for people who have had a recent heart attack due to concerns that the supplement might increase the risk of death.
+L-arginine,Bleeding,interaction,"Anticoagulants and anti-platelet drugs, herbs and supplements.These types of drugs, herbs and supplements reduce blood clotting. Taking L-arginine with them might increase the risk of bleeding."
+L-arginine,Blood Pressure Becoming Too Low,interaction,"Blood pressure drugs, herbs and supplements.L-arginine might lower blood pressure in people who have high blood pressure. Combining use of L-arginine with a blood pressure drug, herb or supplement might increase the risk of blood pressure becoming too low."
+L-arginine,Your Blood Pressure To Become Too Low,interaction,Isoproterenol (Isuprel).Use of this heart medication with L-arginine might cause your blood pressure to become too low.
+L-arginine,Your Blood Pressure To Become Too Low,interaction,Nitrates.Use of this chest pain medication with L-arginine might cause your blood pressure to become too low.
+L-arginine,Your Blood Pressure To Become Too Low,interaction,"Sildenafil (Revatio, Viagra).Use of this erectile dysfunction medication with L-arginine might cause your blood pressure to become too low."
+Marijuana,Weed Or Marijuana,side_effect,"Medical cannabis, also called weed or marijuana, is generally considered safe. Most of the side effects of cannabis are due to the THC content. But different types of cannabis have different amounts of THC. This can make it very hard to know the right amount to take. The side effects seem to be worse the higher the dose of THC a person uses."
+Marijuana,Headaches,side_effect,Headaches.
+Marijuana,Dry Mouth,side_effect,Dry mouth.
+Marijuana,Red And Dry Eyes,side_effect,Red and dry eyes.
+Marijuana,Dizziness And Higher Risk Of Falling,side_effect,Dizziness and higher risk of falling.
+Marijuana,"Drowsiness, Including Problems Focusing",side_effect,"Drowsiness, including problems focusing."
+Marijuana,Fatigue,side_effect,Fatigue.
+Marijuana,Coughing,side_effect,Coughing.
+Marijuana,Wheezing,side_effect,Wheezing.
+Marijuana,Nausea And Vomiting,side_effect,Nausea and vomiting.
+Marijuana,Feeling Anxious,side_effect,Feeling anxious.
+Marijuana,"Seeing, Hearing Or Smelling Things That Aren'T There, Known As Hallucinations, And Psychosis",side_effect,"Seeing, hearing or smelling things that aren't there, known as hallucinations, and psychosis."
+Marijuana,Problems With Memory,side_effect,Problems with memory.
+Marijuana,Heart That Beats Too Fast,side_effect,Heart that beats too fast.
+Marijuana,Heart That Beats Out Of Time,side_effect,Heart that beats out of time.
+Marijuana,Nausea,side_effect,"Using doses of CBD higher than 300 milligrams a day can cause nausea, vomiting, diarrhea and liver conditions."
+Marijuana,Depression Or Make Depression Symptoms Worse,side_effect,"If you have a mental health condition, use cannabis with caution. If you have bipolar disorder, cannabis may make you irritable or restless with racing thoughts, also called mania. Using cannabis often might raise the risk of depression or make depression symptoms worse. Research in people who have schizophrenia suggests that cannabis use may raise the risk of losing touch with reality, also called psychosis."
+Marijuana,Mania,side_effect,"If you have a mental health condition, use cannabis with caution. If you have bipolar disorder, cannabis may make you irritable or restless with racing thoughts, also called mania. Using cannabis often might raise the risk of depression or make depression symptoms worse. Research in people who have schizophrenia suggests that cannabis use may raise the risk of losing touch with reality, also called psychosis."
+Marijuana,Psychosis,side_effect,"If you have a mental health condition, use cannabis with caution. If you have bipolar disorder, cannabis may make you irritable or restless with racing thoughts, also called mania. Using cannabis often might raise the risk of depression or make depression symptoms worse. Research in people who have schizophrenia suggests that cannabis use may raise the risk of losing touch with reality, also called psychosis."
+Marijuana,Serious,side_effect,"Cannabis slows down messages to the brain and spinal cord, also called the central nervous system. This system is sometimes called the CNS. Using cannabis can change how you think and feel. Some people may have heart changes, such as high blood pressure. Using cannabis often for years may worsen lung conditions and may cause serious, frequent vomiting, also called cannabinoid hyperemesis syndrome."
+Marijuana,High Blood Pressure,side_effect,"Cannabis slows down messages to the brain and spinal cord, also called the central nervous system. This system is sometimes called the CNS. Using cannabis can change how you think and feel. Some people may have heart changes, such as high blood pressure. Using cannabis often for years may worsen lung conditions and may cause serious, frequent vomiting, also called cannabinoid hyperemesis syndrome."
+Marijuana,Cannabinoid Hyperemesis Syndrome,side_effect,"Cannabis slows down messages to the brain and spinal cord, also called the central nervous system. This system is sometimes called the CNS. Using cannabis can change how you think and feel. Some people may have heart changes, such as high blood pressure. Using cannabis often for years may worsen lung conditions and may cause serious, frequent vomiting, also called cannabinoid hyperemesis syndrome."
+Marijuana,You To Need More Anesthetic,side_effect,"Avoid using cannabis for two weeks before getting medicine that puts you in a sleeplike state before surgery. This medicine is called an anesthetic. Using cannabis may cause you to need more anesthetic. Using cannabis also may raise your risk of anesthesia complications, such as a very fast heart rate."
+Marijuana,Bleeding,interaction,"Anticoagulant or antiplatelet medicines, herbs and supplements.These types of medicines, herbs and supplements may make you bleed more if you have a cut or injury. Using these with cannabis might raise the risk of bleeding, especially for those taking warfarin (Jantoven)."
+Marijuana,Liver Conditions,interaction,"Medicines to prevent seizures.Avoid using cannabis  when taking medicines to treat seizures. The medicines may not work as well or cause other side effects, such as liver conditions."
+Melatonin,Headache,side_effect,Headache
+Melatonin,Dizziness,side_effect,Dizziness
+Melatonin,Nausea,side_effect,Nausea
+Melatonin,Drowsiness,side_effect,Drowsiness
+Melatonin,Daytime Drowsiness,side_effect,"Because melatonin can cause daytime drowsiness, don't drive or use machinery within five hours of taking the supplement."
+Melatonin,Bleeding,interaction,"Anticoagulants and anti-platelet drugs, herbs and supplements.These types of drugs, herbs and supplements reduce blood clotting. Combining use of melatonin with them might increase the risk of bleeding."
+Melatonin,Diazepam (Valium,interaction,"Cytochrome P450 1A2 (CYP1A2) and cytochrome P450 2C19 (CPY2C19) substrates.Use melatonin cautiously if you take drugs such as diazepam (Valium, Valtoco, others) and others that are affected by these enzymes."
+Melatonin,Seizures,interaction,Seizure threshold lowering drugs.Taking melatonin with these drugs might increase the risk of seizures.
+Milk thistle,"Gastrointestinal Issues, Such As Diarrhea, Constipation, Nausea, Vomiting And Abdominal Bloating",side_effect,"Gastrointestinal issues, such as diarrhea, constipation, nausea, vomiting and abdominal bloating"
+Milk thistle,Itchiness,side_effect,Itchiness
+Milk thistle,Headache,side_effect,Headache
+Milk thistle,Ragweed,side_effect,"Milk thistle can cause an allergic reaction, including a severe, potentially life-threatening allergic reaction (anaphylaxis). An allergic reaction is more common in people who are allergic to other plants in the Asteraceae family, such as ragweed, daisies, marigolds and chrysanthemums."
+Milk thistle,Diazepam,interaction,"Cytochrome P450 2C9 (CYP2C9) substrates.Taking milk thistle might affect this enzyme and drugs it processes, such as diazepam (Valium), warfarin (Jantoven) and others. This means milk thistle might affect the levels of these drugs in your body."
+Niacin,Skin Flushing And Dizziness,side_effect,Skin flushing and dizziness.
+Niacin,Itching,side_effect,Itching.
+Niacin,Upset Stomach And Vomiting,side_effect,Upset stomach and vomiting.
+Niacin,Belly Pain,side_effect,Belly pain.
+Niacin,Loose Stools,side_effect,Loose stools.
+Niacin,Gout,side_effect,Gout.
+Niacin,Liver Damage,side_effect,Liver damage.
+Niacin,Diabetes,side_effect,Diabetes.
+Niacin,Hypotension,side_effect,"If you have a liver condition, a peptic ulcer, or very low blood pressure, called hypotension, don't take large amounts of niacin. The supplement has been linked with liver damage. Liver damage can cause hypotension and might make a peptic ulcer active."
+Niacin,Gout,side_effect,"Taking niacin also might make allergies, gallbladder conditions, and symptoms of some thyroid conditions worse. If you have diabetes, niacin can affect how you manage your blood sugar. Use niacin with care if you have gout. Niacin can cause too much uric acid in the blood, called hyperuricemia. This raises the risk of gout."
+Niacin,Hyperuricemia,side_effect,"Taking niacin also might make allergies, gallbladder conditions, and symptoms of some thyroid conditions worse. If you have diabetes, niacin can affect how you manage your blood sugar. Use niacin with care if you have gout. Niacin can cause too much uric acid in the blood, called hyperuricemia. This raises the risk of gout."
+Niacin,Deficiency,side_effect,"If you're pregnant, don't take prescription niacin for high cholesterol. But if you need niacin to prevent or treat lack of niacin, called deficiency, niacin is likely safe to take during pregnancy and breastfeeding. Use it only as your healthcare professional tells you."
+Niacin,Liver Damage,interaction,"Alcohol.Taking niacin with alcohol might raise the risk of liver damage. And it might make niacin side effects, such as flushing and itching, worse."
+Niacin,Flushing And Itching,interaction,"Alcohol.Taking niacin with alcohol might raise the risk of liver damage. And it might make niacin side effects, such as flushing and itching, worse."
+Niacin,Bleeding,interaction,"Anticoagulant and antiplatelet medicines, herbs and supplements.These types of medicines, herbs and supplements limit blood clotting. Taking niacin with them might raise the risk of bleeding."
+Niacin,Low Blood Pressure,interaction,"Blood pressure medicines, herbs and supplements.Niacin might add to the effect of medicines, herbs and supplements that manage blood pressure. This could raise the risk of low blood pressure, also called hypotension."
+Niacin,Hypotension,interaction,"Blood pressure medicines, herbs and supplements.Niacin might add to the effect of medicines, herbs and supplements that manage blood pressure. This could raise the risk of low blood pressure, also called hypotension."
+Niacin,Liver Damage,interaction,"Medicines, herbs and supplements that cause liver damage, called hepatotoxic.Niacin can cause liver damage. So don't take it with medicines, herbs or supplements that also can cause liver damage."
+Niacin,Liver Damage,interaction,"Medicines, herbs and supplements that cause liver damage, called hepatotoxic.Niacin can cause liver damage. So don't take it with medicines, herbs or supplements that also can cause liver damage."
+Niacin,Hepatotoxic,interaction,"Medicines, herbs and supplements that cause liver damage, called hepatotoxic.Niacin can cause liver damage. So don't take it with medicines, herbs or supplements that also can cause liver damage."
+Niacin,Side Effects,interaction,Statins.Research shows that taking niacin with these cholesterol medicines does little more than statins alone. Taking niacin with statins might raise the risk of side effects.
+Niacin,Flushing And Itching,interaction,"Zinc.Taking zinc with niacin might worsen niacin side effects, such as flushing and itching."
+Red yeast rice,Mild Side Effects,side_effect,"Red yeast rice can cause mild side effects, including:"
+Red yeast rice,Stomach Pain,side_effect,Stomach pain.
+Red yeast rice,Heartburn,side_effect,Heartburn.
+Red yeast rice,Gas,side_effect,Gas.
+Red yeast rice,Headache,side_effect,Headache.
+Red yeast rice,Feeling Dizzy,side_effect,Feeling dizzy.
+Red yeast rice,Upset Stomach,side_effect,Upset stomach.
+Red yeast rice,Liver Damage,interaction,Alcohol.Don't drink alcohol if you are taking red yeast rice. The combination might increase the risk of liver damage.
+Red yeast rice,Muscle Issues,interaction,"Cyclosporine (Neoral, Sandimmune).This medicine suppresses the immune system. Taking it with red yeast rice might raise the risk of muscle issues."
+Red yeast rice,Harmful Side Effects From Red Yeast Rice,interaction,Cytochrome P450 3A4 inhibitors.Taking red yeast rice with medicines that slow down or stop the CYP3A4 enzyme might raise the risk of harmful side effects from red yeast rice. These medicines include erythromycin.
+Red yeast rice,Muscle Issues,interaction,Gemfibrozil (Lopid).Taking this cholesterol medicine with red yeast rice might raise the risk of muscle issues.
+Red yeast rice,Liver Damage In Some People,interaction,"Hepatotoxic medicines, herbs and supplements.Red yeast rice may have monacolin K in it, which can cause liver damage in some people. Taking red yeast rice with these types of medicines, herbs, and supplements could raise the risk of liver damage."
+Red yeast rice,Liver Damage,interaction,"Hepatotoxic medicines, herbs and supplements.Red yeast rice may have monacolin K in it, which can cause liver damage in some people. Taking red yeast rice with these types of medicines, herbs, and supplements could raise the risk of liver damage."
+Red yeast rice,Muscle Issues,interaction,Niacin.Taking red yeast rice with high-dose niacin might raise the risk of muscle issues.
+Red yeast rice,Harmful Side Effects,interaction,Statins.Taking red yeast rice with statins might raise the risk of harmful side effects.
+SAMe,"Digestive Problems, Such As Nausea, Diarrhea Or Constipation",side_effect,"Digestive problems, such as nausea, diarrhea or constipation"
+SAMe,Mild Insomnia,side_effect,Mild insomnia
+SAMe,Dizziness,side_effect,Dizziness
+SAMe,Irritability,side_effect,Irritability
+SAMe,Anxiety,side_effect,Anxiety
+SAMe,Sweating,side_effect,Sweating
+SAMe,Serotonin Syndrome,interaction,Antipsychotics.Be cautious when taking these drugs with SAMe. The combination could increase the risk of serotonin syndrome.
+SAMe,Serotonin Syndrome,interaction,Amphetamines.Be cautious when taking these drugs with SAMe. The combination could increase the risk of serotonin syndrome.
+SAMe,Serotonin Syndrome,interaction,Dextromethorphan.Taking SAMe with this cough suppressant could increase the risk of serotonin syndrome.
+SAMe,Serotonin Syndrome,interaction,"Narcotics.Taking SAMe with meperidine (Demerol) or tramadol (Ultram, ConZip) could increase the risk of serotonin syndrome."
+St. John's wort,Anxiety,side_effect,Anxiety.
+St. John's wort,Dizziness,side_effect,Dizziness.
+St. John's wort,"Diarrhea, Constipation, And Upset Stomach",side_effect,"Diarrhea, constipation, and upset stomach."
+St. John's wort,Dry Mouth,side_effect,Dry mouth.
+St. John's wort,Tiredness And Trouble Sleeping,side_effect,Tiredness and trouble sleeping.
+St. John's wort,Headache,side_effect,Headache.
+St. John's wort,"Higher Sensitivity To Sunlight, Also Called Photosensitivity",side_effect,"Higher sensitivity to sunlight, also called photosensitivity."
+St. John's wort,Mild To Severe Side Effects,interaction,"Antidepressants.If you take St. John's wort with antidepressants, it might raise the risk of a buildup of high serotonin levels in the body. Too much serotonin can cause mild to severe side effects. Get supervision from a healthcare professional if you take St. John's wort and an antidepressant."
+St. John's wort,Atorvastatin,interaction,"Certain statins.If you take St. John's wort with statins such as atorvastatin, lovastatin, and others, it might lessen how well the statin works."
+St. John's wort,Breakthrough Bleeding,interaction,"Contraceptive medicines.Use of St. John's wort with medicines used to prevent pregnancy, called contraceptive or birth control medicines, might cause breakthrough bleeding, bleeding that's not regular or pregnancy that's not planned. You might need a second or different form of birth control."
+St. John's wort,Contraceptive Or Birth Control Medicines,interaction,"Contraceptive medicines.Use of St. John's wort with medicines used to prevent pregnancy, called contraceptive or birth control medicines, might cause breakthrough bleeding, bleeding that's not regular or pregnancy that's not planned. You might need a second or different form of birth control."
+St. John's wort,Cyp1A2,interaction,"Cytochrome P450 1A2, cytochrome P450 2B6, cytochrome P450 2C19, cytochrome P450 2C9 and cytochrome P450 3A4 substrates.Don't take St. John's wort if you're taking a medicine affected by these enzymes. These enzymes also are called CYP1A2, CYP2B6, CYP2C19, CYP2C9 and CYP3A4."
+St. John's wort,Photosensitizing Medicine,interaction,"Photosensitizing medicines.If you take St. John's wort with medicine that increases sensitivity to sunlight, called photosensitizing medicine, it might raise the risk of a reaction."
+St. John's wort,Mild To Severe Side Effects,interaction,Triptans.Don't take St. John's wort with these medicines that treat migraines. The supplement might raise the risk of buildup of high serotonin levels in the body. Too much serotonin can cause mild to severe side effects.
+Tea tree oil,Skin Irritation,side_effect,Skin irritation.
+Tea tree oil,"Allergic Skin Rash, Also Called Dermatitis",side_effect,"Allergic skin rash, also called dermatitis."
+Tea tree oil,Itching,side_effect,Itching.
+Tea tree oil,Stinging,side_effect,Stinging.
+Tea tree oil,Burning,side_effect,Burning.
+Tea tree oil,Dryness,side_effect,Dryness.
+Tea tree oil,Confusion,side_effect,Confusion.
+Tea tree oil,"Problems With Muscle Control And Movement, Called Ataxia",side_effect,"Problems with muscle control and movement, called ataxia."
+Tea tree oil,Problems Breathing,side_effect,Problems breathing.
+Tea tree oil,Higher White Blood Cell Count,side_effect,Higher white blood cell count.
+Tea tree oil,"A Deep State Of Sleep Where A Person Doesn'T Respond, Called Coma",side_effect,"A deep state of sleep where a person doesn't respond, called coma."
+Vitamin A,Nausea,side_effect,Nausea.
+Vitamin A,Vomiting,side_effect,Vomiting.
+Vitamin A,Fatigue,side_effect,Fatigue.
+Vitamin A,Dizziness,side_effect,Dizziness.
+Vitamin A,Blurry Vision,side_effect,Blurry vision.
+Vitamin A,Balance Issues,side_effect,Balance issues.
+Vitamin A,Liver Damage,side_effect,Liver damage.
+Vitamin A,Headache,side_effect,Headache.
+Vitamin A,Nausea,side_effect,Nausea.
+Vitamin A,Hair Loss,side_effect,Hair loss.
+Vitamin A,Dry Skin,side_effect,Dry skin.
+Vitamin A,Pain In The Joints And Bones,side_effect,Pain in the joints and bones.
+Vitamin A,"Rarely, Death",side_effect,"Rarely, death."
+Vitamin A,Liver Damage,interaction,"Hepatotoxic medicines.Taking high doses of vitamin A supplements can cause liver damage. Combining high doses of vitamin A supplements with other medicines that can damage the liver, called hepatoxic medicines, could raise the risk of liver conditions."
+Vitamin A,Liver Conditions,interaction,"Hepatotoxic medicines.Taking high doses of vitamin A supplements can cause liver damage. Combining high doses of vitamin A supplements with other medicines that can damage the liver, called hepatoxic medicines, could raise the risk of liver conditions."
+Vitamin A,Hepatoxic Medicines,interaction,"Hepatotoxic medicines.Taking high doses of vitamin A supplements can cause liver damage. Combining high doses of vitamin A supplements with other medicines that can damage the liver, called hepatoxic medicines, could raise the risk of liver conditions."
+Vitamin A,Bleeding,interaction,Warfarin (Jantoven).Use of vitamin A supplements while taking this medicine used to prevent blood clots might raise your risk of bleeding.
+Vitamin B-6,A Lack Of Muscle Control Or Coordination Of Voluntary Movements,side_effect,A lack of muscle control or coordination of voluntary movements (ataxia)
+Vitamin B-6,"Painful, Disfiguring Skin Lesions",side_effect,"Painful, disfiguring skin lesions"
+Vitamin B-6,Heartburn And Nausea,side_effect,Heartburn and nausea
+Vitamin B-6,Sensitivity To Sunlight,side_effect,Sensitivity to sunlight (photosensitivity)
+Vitamin B-6,Numbness,side_effect,Numbness
+Vitamin B-6,Reduced Ability To Sense Pain Or Extreme Temperatures,side_effect,Reduced ability to sense pain or extreme temperatures
+Vitamin B-12,Headache,side_effect,Headache.
+Vitamin B-12,Nausea,side_effect,Nausea.
+Vitamin B-12,Diarrhea,side_effect,Diarrhea.
+Vitamin B-12,Weakness,side_effect,Weakness.
+Vitamin B-12,Tingling Sensation In Hands And Feet,side_effect,Tingling sensation in hands and feet.
+Vitamin B-12,Low Vitamin B-12 Levels,interaction,Bile acid sequestrants (cholestyramine).Taking bile acid sequestrants may interfere with B-12 absorption.  A healthcare professional might suggest taking vitamin B-12 supplements to avoid the risk of low vitamin B-12 levels.
+Vitamin C,Side Effects,side_effect,"When taken at suggested doses by mouth, vitamin C supplements are mostly safe.  Taking too much vitamin C can cause side effects, including:"
+Vitamin C,"Upset Stomach, Vomiting And Loose Stools",side_effect,"Upset stomach, vomiting and loose stools."
+Vitamin C,Heartburn,side_effect,Heartburn.
+Vitamin C,Stomach Cramps Or Bloating,side_effect,Stomach cramps or bloating.
+Vitamin C,"Tiredness And Sleepiness Or Not Being Able To Sleep, Called Insomnia",side_effect,"Tiredness and sleepiness or not being able to sleep, called insomnia."
+Vitamin C,Headache,side_effect,Headache
+Vitamin C,Kidney Stones,side_effect,"In some people, oral vitamin C supplements may cause kidney stones. This mainly happens in people who take high doses of the supplements.  Long-term use of oral vitamin C supplements over 2,000 milligrams a day raises the risk of serious side effects."
+Vitamin C,Serious Side Effects,side_effect,"In some people, oral vitamin C supplements may cause kidney stones. This mainly happens in people who take high doses of the supplements.  Long-term use of oral vitamin C supplements over 2,000 milligrams a day raises the risk of serious side effects."
+Vitamin C,G6Pdh Deficiency,side_effect,"High doses of vitamin C can cause hemolytic anemia in people who have a condition called G6PDH deficiency, which is passed through families."
+Vitamin C,Blood Sugar Screening Tests Or Stool Tests For Hidden Blood,side_effect,"Before having medical tests, tell your healthcare professional that you take vitamin C supplements. High levels of vitamin C might affect the results of certain tests, such as blood sugar screening tests or stool tests for hidden blood, also called occult blood."
+Vitamin C,Occult Blood,side_effect,"Before having medical tests, tell your healthcare professional that you take vitamin C supplements. High levels of vitamin C might affect the results of certain tests, such as blood sugar screening tests or stool tests for hidden blood, also called occult blood."
+Vitamin C,Phosphate Binders,interaction,"Aluminum.Taking vitamin C can make you take in more aluminum from medicines that have aluminum, such as phosphate binders. This can be harmful for people with kidney conditions."
+Vitamin C,Hemochromatosis,interaction,"Iron.Vitamin C makes the body absorb more iron. Getting more iron can be harmful for people who have a condition that causes too much iron in the body, called hemochromatosis."
+Vitamin D,Upset Stomach And Vomiting,side_effect,Upset stomach and vomiting.
+Vitamin D,Weight Loss And Not Wanting To Eat,side_effect,Weight loss and not wanting to eat.
+Vitamin D,Muscle Weakness,side_effect,Muscle weakness.
+Vitamin D,Not Being Able To Think Clearly Or Quickly,side_effect,Not being able to think clearly or quickly.
+Vitamin D,Heart Rhythm Issues,side_effect,Heart rhythm issues.
+Vitamin D,Kidney Stones And Kidney Damage,side_effect,Kidney stones and kidney damage.
+Vitamin D,Hypercalcemia,interaction,"Calcipotriene (Dovonex, Sorilux).Don't take vitamin D with this psoriasis medicine. Mixing the two might raise the risk of having too much calcium in the blood, called hypercalcemia."
+Vitamin D,Cyp3A4 Substrates,interaction,"Cytochrome P450 3A4 substrates, also called CYP3A4 substrates.Use vitamin D with care if you take a medicine affected by these enzymes. One such medicine is the cholesterol-lowering medicine lovastatin (Altoprev)."
+Vitamin D,Hypercalcemia,interaction,"Digoxin (Lanoxin).Don't take high doses of vitamin D with this heart medicine. High doses of vitamin D can cause too much calcium in the blood, called hypercalcemia. Hypercalcemia raises the risk of fatal heart conditions with digoxin."
+Vitamin D,Hypercalcemia,interaction,"Diltiazem (Cardizem, Tiazac, others).Don't take high doses of vitamin D with this blood pressure medicine. High doses of vitamin D can cause too much calcium in the blood, called hypercalcemia. Hypercalcemia may keep the medicine from working as it should."
+Vitamin D,Hypercalcemia,interaction,"Thiazide diuretics.Taking these blood pressure medicines with vitamin D raises the risk of too much calcium in the blood, called hypercalcemia."
+Vitamin D,Hypercalcemia,interaction,"Verapamil (Verelan).Taking high doses of vitamin D with this blood pressure medicine can cause too much calcium in the blood, called hypercalcemia. High doses of vitamin D also might keep verapamil from working as well."
+Vitamin E,Upset Stomach,side_effect,Upset stomach.
+Vitamin E,Loose Stools,side_effect,Loose stools.
+Vitamin E,Belly Cramps,side_effect,Belly cramps.
+Vitamin E,Tiredness,side_effect,Tiredness.
+Vitamin E,Weakness,side_effect,Weakness.
+Vitamin E,Headache,side_effect,Headache.
+Vitamin E,Blurred Vision,side_effect,Blurred vision.
+Vitamin E,Rash,side_effect,Rash.
+Vitamin E,Side Effects,side_effect,"Taking higher doses of vitamin E might raise the risk of side effects. Also, people with heart disease and some other conditions who take high doses of vitamin E have a higher risk of death."
+Vitamin E,Death,side_effect,"Taking higher doses of vitamin E might raise the risk of side effects. Also, people with heart disease and some other conditions who take high doses of vitamin E have a higher risk of death."
+Vitamin E,Prostate Cancer,side_effect,"Vitamin E can affect many conditions. For instance, some research suggests that taking vitamin E by mouth may raise the risk of prostate cancer. Other research suggests that vitamin E use may raise the risk of death in people with a history of heart attack or stroke."
+Vitamin E,Too Little Vitamin K,side_effect,Too little vitamin K.
+Vitamin E,"An Eye Condition In Which The Retina Is Damaged, Called Retinitis Pigmentosa",side_effect,"An eye condition in which the retina is damaged, called retinitis pigmentosa."
+Vitamin E,Bleeding Conditions,side_effect,Bleeding conditions.
+Vitamin E,Diabetes,side_effect,Diabetes.
+Vitamin E,A History Of Heart Attack Or Stroke,side_effect,A history of heart attack or stroke.
+Vitamin E,Head And Neck Cancer,side_effect,Head and neck cancer.
+Vitamin E,Liver Disease,side_effect,Liver disease.
+Vitamin E,Bleeding,side_effect,"Vitamin E may raise the risk of bleeding. If you're having surgery, stop taking vitamin E two weeks before the surgery. Also, talk with your healthcare professional about vitamin E use if you're about to have or you just had a procedure to open blocked arteries and restore blood flow to the heart, called angioplasty."
+Vitamin E,Angioplasty,side_effect,"Vitamin E may raise the risk of bleeding. If you're having surgery, stop taking vitamin E two weeks before the surgery. Also, talk with your healthcare professional about vitamin E use if you're about to have or you just had a procedure to open blocked arteries and restore blood flow to the heart, called angioplasty."
+Vitamin E,Bleeding,interaction,"Anticoagulant and antiplatelet medicines, herbs, and supplements.Use of vitamin E with these medicines, herbs, and supplements that lessen blood clotting may raise the risk of bleeding."
+Vitamin E,Omeprazole (Prilosec,interaction,"Cytochrome P450 3A4 substrates, also called CYP3A4 substrates.Use caution when taking vitamin E and other medicines affected by these enzymes, such as omeprazole (Prilosec, Zegerid OTC)."
+Vitamin E,Cyp3A4 Substrates,interaction,"Cytochrome P450 3A4 substrates, also called CYP3A4 substrates.Use caution when taking vitamin E and other medicines affected by these enzymes, such as omeprazole (Prilosec, Zegerid OTC)."
+Vitamin E,Statins And Niacin Could Keep Niacin From Working As It Should,interaction,"Statins and niacin.Taking vitamin E with cholesterol-lowering medicines called statins and niacin could keep niacin from working as it should. Niacin helps raise high-density lipoprotein, also called HDL, the ""good cholesterol."""
+Zinc,Diarrhea,side_effect,Diarrhea.
+Zinc,Dizziness,side_effect,Dizziness.
+Zinc,Headache,side_effect,Headache.
+Zinc,Nausea,side_effect,Nausea.
+Zinc,Upset Stomach,side_effect,Upset stomach.
+Zinc,Vomiting,side_effect,Vomiting.
+Zinc,Copper Deficiency,side_effect,Taking zinc supplements by mouth long-term and in high doses can lead to copper deficiency. People with low copper levels might have brain and nervous system issues. Those issues may include numbness and weakness in the arms and legs.
+Zinc,Intranasal Zinc,side_effect,"Don't use zinc that's placed in the nose, called intranasal zinc. This form of zinc has been linked to loss of the sense of smell."
