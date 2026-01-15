@@ -1,9 +1,19 @@
 supplement_name,symptom_name,context,description
+Acidophilus,Bacterial vaginosis,treats,".Taking acidophilus might help to treat this type of vaginal swelling and irritation, called inflammation. Some studies have found that acidophilus may improve the condition when it's taken as a suppository that's placed in the vagina. It's not clear if it works as well when a person takes it as a pill by mouth or eats yogurt with acidophilus."
+Acidophilus,Cold and influenza,treats,.Acidophilus might play a role in lessening how many cold and flu viruses children may get. It also may help shorten how long they have these viruses.
+Acidophilus,Some types of diarrhea,treats,".A person might have a reduced chance of having diarrhea related to taking antibiotics, called antibiotic-associated diarrhea, when taking acidophilus along with other specific forms of lactobacillus. It also might lessen diarrhea, bloating and cramps. The probiotic mixture might reduce how often people have diarrhea related to taking antibiotics as well.The probiotic mixture might lessen how much people taking antibiotics have diarrhea related to Clostridioides difficile, called C. difficile, infection. But more research needs to be done. This type of infection can cause symptoms ranging from diarrhea to life-threatening swelling and irritation, called inflammation, of the colon."
+Acidophilus,Eczema,treats,".Mothers who take acidophilus by mouth during pregnancy and when breastfeeding and give acidophilus to their babies and young infants might lower their babies' and children's chances of having eczema, called atopic dermatitis. It also may lessen how often the children have eczema or how severe their eczema symptoms are if they have them."
 Acidophilus,Constipation,side_effect,Constipation.
 Acidophilus,Gas,side_effect,Gas.
 Acidophilus,Bloating,side_effect,Bloating.
 Acidophilus,Increased Thirst,side_effect,Increased thirst.
 Acidophilus,Acidophilus That Has Live Bacteria,side_effect,"If you have a weakened immune system or other health conditions, talk to your healthcare professional before taking a product such as acidophilus that has live bacteria."
+Aloe,Burns and wounds,treats,.Putting aloe gel on first- and second-degree burns and wounds may speed healing. There's not enough proof to know if aloe gel helps sunburns heal.
+Aloe,Acne,treats,".Research suggests that using aloe gel with the prescription acne medicine tretinoin (Retin-A, Atralin, others) might work better than the acne medicine alone. You put the gel and the medicine on your skin."
+Aloe,Psoriasis,treats,.Aloe extract cream might ease symptoms of mild to moderate psoriasis. You might need to use the cream several times a day for a month or more to see your skin get better.
+Aloe,Herpes simplex virus,treats,.Putting a cream that has aloe extract on the skin might help sores heal sooner.
+Aloe,Oral lichen planus,treats,.This ongoing condition may cause irritated swollen tissues inside the mouth. Research suggests that putting aloe gel on the sores for eight weeks might help ease the symptoms.
+Aloe,Constipation,treats,".It's not clear whether taking aloe latex by mouth treats trouble passing stool, called constipation. Aloe latex acts as a laxative. But aloe latex also may cause stomach cramps and loose stools."
 Aloe,Short-Term Kidney Failure,side_effect,Taking aloe latex or whole-leaf extract by mouth may be unsafe. It's likely unsafe in high doses. Taking 1 gram a day of aloe latex for a few days can cause short-term kidney failure. It can be fatal.
 Aloe,Cancer,side_effect,Aloe latex also might cause cancer. Other side effects include stomach cramps and loose stools. Children younger than age 12 should not take aloe latex and whole-leaf extract by mouth.
 Aloe,More Bleeding,interaction,"Anticoagulants and antiplatelet medicines, herbs and supplements.These types of medicines, herbs and supplements slow blood clotting. Taking aloe by mouth also might slow blood clotting. Taking aloe by mouth with these types of medicines might lead to more bleeding."
@@ -17,6 +27,13 @@ Aloe,Loose Stools,interaction,"Warfarin (Jantoven).Taking aloe latex by mouth ca
 Aloe,Bleeding,interaction,"Warfarin (Jantoven).Taking aloe latex by mouth can cause loose stools. This can add to the effects of warfarin, a blood-thinning medicine. This can raise the risk of bleeding."
 Aloe,Diuretics,interaction,"Water pills, also called diuretics.Taking aloe latex by mouth with diuretics might lower the body's potassium levels too much, leading to a condition called hypokalemia."
 Aloe,Hypokalemia,interaction,"Water pills, also called diuretics.Taking aloe latex by mouth with diuretics might lower the body's potassium levels too much, leading to a condition called hypokalemia."
+Coenzyme Q10,Heart conditions,treats,".CoQ10 may improve congestive heart failure symptoms. Although findings are mixed, CoQ10 might help lower blood pressure. Some research also suggests that when taken with other nutrients, CoQ10 might help people recover from bypass and heart valve surgeries."
+Coenzyme Q10,Diabetes,treats,.Some research suggests that CoQ10 may help lower cholesterol in people with diabetes. The effect could lower their heart disease risk.
+Coenzyme Q10,Parkinson's disease,treats,.Taking even high doses of CoQ10 doesn't seem to help with Parkinson's disease symptoms.
+Coenzyme Q10,Statin-induced myopathy,treats,.Some research suggests that CoQ10 might help ease the muscle weakness and pain that can happen when taking statins. There isn't enough evidence to know for sure.
+Coenzyme Q10,Migraines,treats,.Some research suggests CoQ10 might lower how often migraines happen or how long they last. People who get migraines usually have to take the supplement for three months before they may see a benefit.
+Coenzyme Q10,Physical performance,treats,".Because CoQ10 helps the body make energy, it's thought this supplement might improve how well the body performs during exercise. But research in this area has not been conclusive."
+Coenzyme Q10,"Metabolic dysfunction-associated steatotic liver disease, also called MASLD",treats,.A small research study found that people taking CoQ10 had reduced amounts of fat in their livers compared with people who didn't take CoQ10. More studies are needed.
 Coenzyme Q10,Upper Stomach Pain,side_effect,Upper stomach pain.
 Coenzyme Q10,Loss Of Appetite,side_effect,Loss of appetite.
 Coenzyme Q10,Nausea,side_effect,Nausea.
@@ -28,7 +45,18 @@ Coenzyme Q10,Headaches,side_effect,Headaches.
 Coenzyme Q10,Rash,side_effect,Rash.
 Coenzyme Q10,Irritability,side_effect,Irritability.
 Coenzyme Q10,Coq10,interaction,"Anticoagulants.Coenzyme Q10, also called CoQ10, might make the blood-thinning medicine warfarin (Jantoven) not work as well. This could raise the risk of a blood clot."
+Creatine,"Strength, muscle size and performance",treats,".Oral creatine use might allow an athlete to do more work during reps or sprints, leading to greater gains in strength, muscle mass and performance. Creatine is often used by athletes involved in high-intensity intermittent activities that require a rapid recovery during training and competition."
+Creatine,Injury prevention,treats,".Oral creatine might reduce the frequency of dehydration, muscle cramping, and injuries to the muscles, bones, ligaments, tendons and nerves."
+Creatine,Rare creatine-metabolizing syndromes,treats,".In children with the certain creatine deficiency syndromes, oral creatine supplements might improve some symptoms."
+Creatine,Cognition and brain health,treats,". Creatine supplementation might improve performance during cognitive tasks, especially in older adults."
+Creatine,Sarcopenia and bone health,treats,.Creatine supplementation might help counteract age-related declines in skeletal muscle and bone mineral density.
+Creatine,Heart failure,treats,.There isn't enough evidence to recommend use of oral creatine as a heart failure treatment.
+Creatine,Skin aging,treats,.Early research suggests that a cream containing creatine and other ingredients applied to the face every day for six weeks might reduce skin sag and wrinkles in men. Another study suggests that a cream containing creatine and folic acid improves sun damage and reduces wrinkles.
 Creatine,"Weight Gain, Generally As Lean Body Mass",side_effect,"Weight gain, generally as lean body mass"
+DHEA,Aging,treats,".In theory, taking DHEA supplements to maintain DHEA levels could slow the aging process, possibly improving well-being, cognitive function and body composition. But so far research hasn't proved this to be true. More studies are needed to better understand whether DHEA supplementation can counteract some of the effects of aging. A small study suggested that taking DHEA supplements might improve skin hydration and firmness, and decrease aging spots in elderly adults."
+DHEA,Depression,treats,".DHEA might be more effective at treating depression than placebo, especially in people with low DHEA levels."
+DHEA,Osteoporosis,treats,.Study findings on the effects of DHEA supplementation in the treatment of osteoporosis are mixed. More research is needed to determine whether taking DHEA supplements improves bone density in older adults with low DHEA.
+DHEA,Vaginal atrophy,treats,.Limited research suggests that DHEA might improve vaginal dryness in postmenopausal women.
 DHEA,Hormone-Sensitive Cancers,side_effect,"DHEA is a hormone. Use of this supplement might increase levels of androgen and have a steroid effect. DHEA also might increase the risk of hormone-sensitive cancers, including prostate, breast and ovarian cancers. If you have any form of cancer or are at risk of cancer, don't use DHEA."
 DHEA,Cancer,side_effect,"DHEA is a hormone. Use of this supplement might increase levels of androgen and have a steroid effect. DHEA also might increase the risk of hormone-sensitive cancers, including prostate, breast and ovarian cancers. If you have any form of cancer or are at risk of cancer, don't use DHEA."
 DHEA,Prostate,side_effect,"DHEA is a hormone. Use of this supplement might increase levels of androgen and have a steroid effect. DHEA also might increase the risk of hormone-sensitive cancers, including prostate, breast and ovarian cancers. If you have any form of cancer or are at risk of cancer, don't use DHEA."
@@ -37,6 +65,10 @@ DHEA,Clozapine (Clozaril,interaction,"Antipsychotics.Use of DHEA with antipsycho
 DHEA,Symptoms Of Excess Estrogen,interaction,"Estrogen.Don't use DHEA with estrogen. Combining DHEA and estrogen might cause symptoms of excess estrogen, such as nausea, headache and insomnia."
 DHEA,Nausea,interaction,"Estrogen.Don't use DHEA with estrogen. Combining DHEA and estrogen might cause symptoms of excess estrogen, such as nausea, headache and insomnia."
 DHEA,Manic Symptoms,interaction,Selective serotonin reuptake inhibitors.Use of DHEA with this type of antidepressant might cause manic symptoms.
+Evening primrose,"Atopic dermatitis,",treats,also called eczema.
+Evening primrose,Breast pain,treats,.
+Evening primrose,"Diabetic neuropathy,",treats,a type of nerve damage that can be caused by diabetes.
+Evening primrose,"Premenstrual syndrome,",treats,also called PMS.
 Evening primrose,Upset Stomach,side_effect,Upset stomach.
 Evening primrose,Loose Stools,side_effect,Loose stools.
 Evening primrose,Headache,side_effect,Headache.
@@ -45,16 +77,33 @@ Evening primrose,Pregnancy Complications,side_effect,Evening primrose oil might 
 Evening primrose,Bleeding,interaction,"Anticoagulants and anti-platelet medicines, herbs and supplements.These types of medicines, herbs and supplements keep blood from clotting. Taking evening primrose while also taking these medicines may raise the risk of bleeding."
 Evening primrose,Cyp3A4 Substrates,interaction,"Cytochrome P450 3A4 substrates,also called CYP3A4 substrates. Use evening primrose with care if you take a medicine affected by these enzymes. One such medicine is the cholesterol-lowering lovastatin (Altoprev)."
 Evening primrose,Seizures In Some People,interaction,Phenothiazines.These medicines treat serious mental health conditions. Taking evening primrose oil with phenothiazines may raise the risk of seizures in some people.
+Fish oil,Heart disease,treats,".While research shows that people who eat dietary sources of fish oil at least twice a week have a lower risk of dying of heart disease, taking fish oil supplements seems to have little to no benefits to heart health."
+Fish oil,High blood pressure,treats,.Multiple studies report modest reductions in blood pressure in people who take fish oil supplements. There's some evidence that the beneficial effects of fish oil might be greater for people with moderate to severe high blood pressure than for those with mild blood pressure elevation.
+Fish oil,High triglycerides and cholesterol,treats,".There's strong evidence that omega-3 fatty acids can significantly reduce blood triglyceride levels. There also appears to be a slight improvement in high-density lipoprotein (HDL, or ""good"") cholesterol, although an increase in levels of low-density lipoprotein (LDL, or ""bad"") cholesterol also was observed."
+Fish oil,Rheumatoid arthritis,treats,".Studies suggest fish oil supplements might help reduce pain, improve morning stiffness and relieve joint tenderness in people with rheumatoid arthritis. While relief is often modest, it might be enough to reduce the need for anti-inflammatory medications."
 Fish oil,Mild Side Effects,side_effect,"However, fish oil supplements can cause mild side effects, including:"
 Fish oil,A Fishy Aftertaste,side_effect,A fishy aftertaste
 Fish oil,Bad Breath,side_effect,Bad breath
 Fish oil,"Heartburn, Nausea Or Diarrhea",side_effect,"Heartburn, nausea or diarrhea"
 Fish oil,Rash,side_effect,Rash
 Fish oil,Bleeding,interaction,"Anticoagulant and antiplatelet drugs, herbs and supplements.These types of drugs, herbs and supplements reduce blood clotting. It's possible that taking fish oil supplements with them might increase the risk of bleeding."
+Flaxseed and flaxseed oil,Heart disease,treats,".Some studies suggest that alpha-linolenic acid, which is found in flaxseed and flaxseed oil, might benefit people with heart disease. Some research also suggests that flaxseed and flaxseed oil might help lower high blood pressure, which may help lower the risk of heart disease."
+Flaxseed and flaxseed oil,Cholesterol levels,treats,".Several studies have found that taking flaxseed daily can lower total cholesterol and low-density lipoprotein cholesterol, also called LDL cholesterol. LDL is considered the ""bad"" cholesterol."
+Flaxseed and flaxseed oil,Diabetes,treats,".Flaxseed might lower blood sugar in people with type 2 diabetes, but studies are mixed. Flaxseed oil has not been found to help lower blood sugar."
+Flaxseed and flaxseed oil,Cancer,treats,.The research is mixed on whether flaxseed or flaxseed oil has an effect on cancer.
+Flaxseed and flaxseed oil,Menopausal symptoms,treats,".Research results are mixed when it comes to the use of flaxseed to treat symptoms of menopause, including hot flashes."
+Flaxseed and flaxseed oil,Constipation,treats,.Some studies have shown flaxseed to be helpful in easing constipation.
 Flaxseed and flaxseed oil,Bloating,side_effect,Bloating.
 Flaxseed and flaxseed oil,Gas,side_effect,Gas.
 Flaxseed and flaxseed oil,Diarrhea,side_effect,Diarrhea.
 Flaxseed and flaxseed oil,Bleeding,interaction,"Anticoagulant and antiplatelet medicines.These medicines lower the blood's ability to clot. Flaxseed also might lessen blood clotting. Because of that, it's possible that taking flaxseed or flaxseed oil along with anticoagulant or antiplatelet medicines might raise the risk of bleeding."
+Folate (folic acid),Birth defects,treats,".Folic acid supplements can prevent birth defects that affect the brain and spinal cord. Taking a daily prenatal vitamin can help make sure you get enough folic acid. If you plan to get pregnant, take the supplement at least one month before trying to get pregnant and until at least 12 weeks into pregnancy."
+Folate (folic acid),Folate deficiency,treats,".Take a folic acid supplement if you have trouble absorbing or getting enough folate in your diet. Many countries add folic acid to foods, such as cereals and pasta. So most people rarely need to take folic acid supplements."
+Folate (folic acid),Heart and blood vessel disease and stroke,treats,".Folic acid works with vitamins B-6 and B-12 to control high levels of homocysteine in the blood. Too-high homocysteine levels might raise your risk of heart and blood vessel conditions, also called cardiovascular disease. Taking folic acid supplements also may lower your stroke risk."
+Folate (folic acid),Cancer,treats,.Some research suggests that folate might lower the risk of various cancers.
+Folate (folic acid),Depression,treats,.Some evidence suggests that folic acid might be a helpful supplement in treating depression.
+Folate (folic acid),Dementia,treats,.There isn't enough evidence to support taking folic acid to prevent dementia.
+Folate (folic acid),Autism spectrum disorder,treats,.Some research suggests that taking folic acid when pregnant may help lower the risk of autism spectrum disorder in the child.
 Folate (folic acid),A Bitter Taste In The Mouth,side_effect,A bitter taste in the mouth.
 Folate (folic acid),Nausea,side_effect,Nausea.
 Folate (folic acid),Loose Stools,side_effect,Loose stools.
@@ -66,6 +115,8 @@ Folate (folic acid),Skin Rash,side_effect,Skin rash.
 Folate (folic acid),Itching,side_effect,Itching.
 Folate (folic acid),"Skin Color Changes, Such As Purple Or Brown Depending On Your Skin Color",side_effect,"Skin color changes, such as purple or brown depending on your skin color."
 Folate (folic acid),Difficulty Breathing,side_effect,Difficulty breathing.
+Ginkgo,Dementia,treats,.Some research shows that ginkgo may ease symptoms of dementia. But it doesn't prevent or slow the progress of dementia.
+Ginkgo,Claudication,treats,.Some small studies show that ginkgo may help people walk longer without pain. But large studies haven't shown that ginkgo helps.
 Ginkgo,Headache,side_effect,Headache.
 Ginkgo,Low Salt Levels,side_effect,Low salt levels.
 Ginkgo,Bleeding,side_effect,Bleeding.
@@ -80,6 +131,8 @@ Ginkgo,Getting Liver And Thyroid Cancers,side_effect,Some research has shown tha
 Ginkgo,Bleeding,interaction,"Anticoagulants and antiplatelet drugs, herbs and supplements.These types of medicines, herbs and supplements lessen blood clotting. Taking ginkgo with them might raise the risk of bleeding."
 Ginkgo,Seizures,interaction,"Anticonvulsants and seizure threshold-lowering medicines, herbs and supplements.Large amounts of ginkgo can cause seizures. Taking ginkgo could keep an anticonvulsant medicine from working as well."
 Ginkgo,Fluoxetine,interaction,"Antidepressants.Taking ginkgo with certain antidepressants, such as fluoxetine (Prozac), might keep them from working as well."
+Glucosamine,Osteoarthritis,treats,".Oral use of glucosamine sulfate might provide some pain relief for people with osteoarthritis of the knee. Some research shows that it may also help slow knee joint degeneration associated with osteoarthritis. More studies are needed to determine the benefits of glucosamine sulfate supplements for osteoarthritis of the hip, spine or hand."
+Glucosamine,Rheumatoid arthritis,treats,".Early research suggests that oral use of glucosamine hydrochloride might reduce pain related to rheumatoid arthritis. However, researchers didn't see an improvement in inflammation or the number of painful or swollen joints."
 Glucosamine,Nausea,side_effect,Nausea
 Glucosamine,Heartburn,side_effect,Heartburn
 Glucosamine,Diarrhea,side_effect,Diarrhea
@@ -88,6 +141,11 @@ Glucosamine,Drowsiness,side_effect,Drowsiness
 Glucosamine,Skin Reactions,side_effect,Skin reactions
 Glucosamine,Headache,side_effect,Headache
 Glucosamine,Bleeding,interaction,Warfarin (Jantoven).Taking glucosamine alone or in combination with the supplement chondroitin might increase the effects of the anticoagulant warfarin. This can increase your risk of bleeding.
+Honey,Cardiovascular disease,treats,.Antioxidants in honey might be associated with reduced risk of heart disease.
+Honey,Cough,treats,".Studies suggest that eucalyptus honey, citrus honey and labiatae honey can act as a reliable cough suppressant for some people with upper respiratory infections and acute nighttime cough."
+Honey,Gastrointestinal disease,treats,.Evidence suggests honey might help relieve gastrointestinal tract conditions such as diarrhea associated with gastroenteritis. Honey might also be effective as part of oral rehydration therapy.
+Honey,Neurological disease,treats,".Studies suggest that honey might offer antidepressant, anticonvulsant and anti-anxiety benefits. In some studies, honey has been shown to help prevent memory disorders."
+Honey,Wound care,treats,".Topical use of medical-grade honey has been shown to promote wound healing, particularly in burns."
 Honey,Serious,side_effect,"Some people are sensitive or allergic to specific components in honey, particularly bee pollen. Although rare, bee pollen allergies can cause serious, and sometimes fatal, adverse reactions. Signs and symptoms of a reaction include:"
 Honey,Wheezing And Other Asthmatic Symptoms,side_effect,Wheezing and other asthmatic symptoms
 Honey,Dizziness,side_effect,Dizziness
@@ -98,6 +156,12 @@ Honey,Excessive Perspiration,side_effect,Excessive perspiration
 Honey,Fainting,side_effect,Fainting
 Honey,Irregular Heart Rhythms,side_effect,Irregular heart rhythms (arrhythmias)
 Honey,Stinging After Topical Application,side_effect,Stinging after topical application
+L-arginine,Angina,treats,.Studies suggest that L-arginine might decrease symptoms and improve quality of life in people with a mild to severe form of this type of chest pain.
+L-arginine,High blood pressure (hypertension),treats,".Some research has shown that oral L-arginine can lower blood pressure in healthy people, people with mild blood pressure elevation and diabetes, and in people with a type of high blood pressure that affects the arteries in the lungs and the right side of the heart (pulmonary hypertension). Infusions of L-arginine also appear to lower blood pressure in people with hypertension."
+L-arginine,High blood pressure during pregnancy,treats,.Some studies show that L-arginine infusions may lower blood pressure in pregnant women who develop high blood pressure.
+L-arginine,Preeclampsia,treats,.L-arginine infusions may lower blood pressure in women with this pregnancy complication. Some research shows that taking oral L-arginine might help prevent preeclampsia in pregnant women.
+L-arginine,Erectile dysfunction,treats,.Taking oral L-arginine might improve sexual function in men with erectile dysfunction due to a physical cause.
+L-arginine,Peripheral arterial disease (PAD),treats,".When taken orally or by infusion for a short period of time, L-arginine may improve symptoms and blood flow in people with this circulatory condition."
 L-arginine,"Nausea, Abdominal Pain And Diarrhea",side_effect,"Nausea, abdominal pain and diarrhea"
 L-arginine,Bloating,side_effect,Bloating
 L-arginine,Gout,side_effect,Gout
@@ -110,6 +174,12 @@ L-arginine,Blood Pressure Becoming Too Low,interaction,"Blood pressure drugs, he
 L-arginine,Your Blood Pressure To Become Too Low,interaction,Isoproterenol (Isuprel).Use of this heart medication with L-arginine might cause your blood pressure to become too low.
 L-arginine,Your Blood Pressure To Become Too Low,interaction,Nitrates.Use of this chest pain medication with L-arginine might cause your blood pressure to become too low.
 L-arginine,Your Blood Pressure To Become Too Low,interaction,"Sildenafil (Revatio, Viagra).Use of this erectile dysfunction medication with L-arginine might cause your blood pressure to become too low."
+Marijuana,Glaucoma,treats,".Some studies show that cannabis lowers blood flow to the nerve that helps people see. This could raise the risk of vision changes in people with an eye disease that damages the nerve to the eyes, called glaucoma. But cannabis might lower the higher eye pressures this eye condition causes, which could be helpful. The effect doesn't seem to last more than a few hours. It likely doesn't work as well as other glaucoma treatments."
+Marijuana,Nausea and vomiting related to cancer treatment,treats,".Research has shown that THC helps lessen nausea and vomiting in people receiving chemotherapy. If standard medicines for nausea don't work, using THC products may help some people."
+Marijuana,Pain,treats,.Cannabis might lower the intensity of shooting or burning pain often due to nerve damage. This type of pain is known as neuropathic pain. People with conditions such as HIV and diabetes may have this type of pain.
+Marijuana,Seizures,treats,".It's not clear whether cannabis can treat seizures. Some people with conditions that cause childhood seizures, such as Lennox-Gastaut syndrome or Dravet syndrome, may take a prescription form of cannabidiol, also called CBD, by mouth to treat seizures."
+Marijuana,Spasticity,treats,".Cannabis may help treat muscle movements a person can't control in people with multiple sclerosis. These movements are called spasms. Most studies looked at a pill form of a chemical in cannabis, not cannabis that is smoked."
+Marijuana,Cancer treatment,treats,.Some people use cannabis to treat their cancers. Some studies on animals show promise. There are no large studies that show that cannabis helps treat cancer. More research is needed.
 Marijuana,Weed Or Marijuana,side_effect,"Medical cannabis, also called weed or marijuana, is generally considered safe. Most of the side effects of cannabis are due to the THC content. But different types of cannabis have different amounts of THC. This can make it very hard to know the right amount to take. The side effects seem to be worse the higher the dose of THC a person uses."
 Marijuana,Headaches,side_effect,Headaches.
 Marijuana,Dry Mouth,side_effect,Dry mouth.
@@ -135,6 +205,12 @@ Marijuana,Cannabinoid Hyperemesis Syndrome,side_effect,"Cannabis slows down mess
 Marijuana,You To Need More Anesthetic,side_effect,"Avoid using cannabis for two weeks before getting medicine that puts you in a sleeplike state before surgery. This medicine is called an anesthetic. Using cannabis may cause you to need more anesthetic. Using cannabis also may raise your risk of anesthesia complications, such as a very fast heart rate."
 Marijuana,Bleeding,interaction,"Anticoagulant or antiplatelet medicines, herbs and supplements.These types of medicines, herbs and supplements may make you bleed more if you have a cut or injury. Using these with cannabis might raise the risk of bleeding, especially for those taking warfarin (Jantoven)."
 Marijuana,Liver Conditions,interaction,"Medicines to prevent seizures.Avoid using cannabis  when taking medicines to treat seizures. The medicines may not work as well or cause other side effects, such as liver conditions."
+Melatonin,Circadian rhythm sleep disorders in the blind,treats,.Melatonin can help improve these disorders in adults and children.
+Melatonin,Delayed sleep phase (delayed sleep-wake phase sleep disorder),treats,".In this disorder, your sleep pattern is delayed two hours or more from a conventional sleep pattern, causing you to go to sleep later and wake up later. Research shows that melatonin reduces the length of time needed to fall asleep and advances the start of sleep in adults and children with this condition. Talk to your child's doctor before giving melatonin to a child."
+Melatonin,Insomnia,treats,".Research suggests that melatonin might slightly reduce the time it takes to fall asleep, but its effects on sleep quality and total sleep time aren't clear. Melatonin might be more beneficial for older adults who could be melatonin deficient."
+Melatonin,Jet lag,treats,".Evidence shows that melatonin can improve jet lag symptoms, such as alertness and daytime sleepiness."
+Melatonin,Shift work disorder,treats,.It's not clear whether melatonin can improve daytime sleep quality and duration in people whose jobs require them to work outside the traditional morning to evening schedule.
+Melatonin,Sleep disorders in children,treats,".Small studies have suggested melatonin might help treat sleep disturbances in children with a number of disabilities. However, good bedtime habits are usually recommended as an initial treatment. Talk to your child's doctor before giving melatonin to a child."
 Melatonin,Headache,side_effect,Headache
 Melatonin,Dizziness,side_effect,Dizziness
 Melatonin,Nausea,side_effect,Nausea
@@ -143,11 +219,16 @@ Melatonin,Daytime Drowsiness,side_effect,"Because melatonin can cause daytime dr
 Melatonin,Bleeding,interaction,"Anticoagulants and anti-platelet drugs, herbs and supplements.These types of drugs, herbs and supplements reduce blood clotting. Combining use of melatonin with them might increase the risk of bleeding."
 Melatonin,Diazepam (Valium,interaction,"Cytochrome P450 1A2 (CYP1A2) and cytochrome P450 2C19 (CPY2C19) substrates.Use melatonin cautiously if you take drugs such as diazepam (Valium, Valtoco, others) and others that are affected by these enzymes."
 Melatonin,Seizures,interaction,Seizure threshold lowering drugs.Taking melatonin with these drugs might increase the risk of seizures.
+Milk thistle,Diabetes,treats,".Milk thistle might lower blood sugar in people who have type 2 diabetes, but more studies are needed to confirm its benefits."
+Milk thistle,Indigestion (dyspepsia),treats,".Milk thistle, in combination with other supplements, might improve the symptoms of indigestion."
+Milk thistle,Liver disease,treats,".Research on the effects of milk thistle on liver disease, such as cirrhosis and hepatitis C, has shown mixed results."
 Milk thistle,"Gastrointestinal Issues, Such As Diarrhea, Constipation, Nausea, Vomiting And Abdominal Bloating",side_effect,"Gastrointestinal issues, such as diarrhea, constipation, nausea, vomiting and abdominal bloating"
 Milk thistle,Itchiness,side_effect,Itchiness
 Milk thistle,Headache,side_effect,Headache
 Milk thistle,Ragweed,side_effect,"Milk thistle can cause an allergic reaction, including a severe, potentially life-threatening allergic reaction (anaphylaxis). An allergic reaction is more common in people who are allergic to other plants in the Asteraceae family, such as ragweed, daisies, marigolds and chrysanthemums."
 Milk thistle,Diazepam,interaction,"Cytochrome P450 2C9 (CYP2C9) substrates.Taking milk thistle might affect this enzyme and drugs it processes, such as diazepam (Valium), warfarin (Jantoven) and others. This means milk thistle might affect the levels of these drugs in your body."
+Niacin,High cholesterol,treats,".Prescription niacin raises high-density lipoprotein (HDL) cholesterol. This is the ""good"" cholesterol that helps remove low-density lipoprotein (LDL), the ""bad"" cholesterol, from the blood. Even though niacin may raise HDL cholesterol, research suggests that niacin therapy isn't linked to lower rates of death, heart attack, or stroke."
+Niacin,"Niacin deficiency, also called pellagra",treats,.Niacin and a nutrient called niacinamide treat or prevent a lack of niacin. This condition isn't common in the United States.
 Niacin,Skin Flushing And Dizziness,side_effect,Skin flushing and dizziness.
 Niacin,Itching,side_effect,Itching.
 Niacin,Upset Stomach And Vomiting,side_effect,Upset stomach and vomiting.
@@ -170,6 +251,7 @@ Niacin,Liver Damage,interaction,"Medicines, herbs and supplements that cause liv
 Niacin,Hepatotoxic,interaction,"Medicines, herbs and supplements that cause liver damage, called hepatotoxic.Niacin can cause liver damage. So don't take it with medicines, herbs or supplements that also can cause liver damage."
 Niacin,Side Effects,interaction,Statins.Research shows that taking niacin with these cholesterol medicines does little more than statins alone. Taking niacin with statins might raise the risk of side effects.
 Niacin,Flushing And Itching,interaction,"Zinc.Taking zinc with niacin might worsen niacin side effects, such as flushing and itching."
+Red yeast rice,High cholesterol,treats,".Research shows that red yeast rice that has a large amount of the compound monacolin K in it can lower total cholesterol. The supplement also may lower low-density lipoprotein cholesterol, also called LDL cholesterol. This is the ""bad"" cholesterol found in the blood that can raise your risk of heart disease."
 Red yeast rice,Mild Side Effects,side_effect,"Red yeast rice can cause mild side effects, including:"
 Red yeast rice,Stomach Pain,side_effect,Stomach pain.
 Red yeast rice,Heartburn,side_effect,Heartburn.
@@ -185,6 +267,9 @@ Red yeast rice,Liver Damage In Some People,interaction,"Hepatotoxic medicines, h
 Red yeast rice,Liver Damage,interaction,"Hepatotoxic medicines, herbs and supplements.Red yeast rice may have monacolin K in it, which can cause liver damage in some people. Taking red yeast rice with these types of medicines, herbs, and supplements could raise the risk of liver damage."
 Red yeast rice,Muscle Issues,interaction,Niacin.Taking red yeast rice with high-dose niacin might raise the risk of muscle issues.
 Red yeast rice,Harmful Side Effects,interaction,Statins.Taking red yeast rice with statins might raise the risk of harmful side effects.
+SAMe,Depression,treats,".While research has shown that SAMe has a positive effect in treating depression, most studies weren't well designed and included a small number of people."
+SAMe,Liver disease,treats,.More studies are needed to determine whether SAMe is beneficial for people who have liver disease.
+SAMe,Osteoarthritis,treats,".Many studies comparing the use of SAMe with nonsteroidal anti-inflammatory drugs showed that each provided similar pain relief and improvement in joint function, but SAMe produced fewer side effects. A smaller number of studies haven't shown the same results."
 SAMe,"Digestive Problems, Such As Nausea, Diarrhea Or Constipation",side_effect,"Digestive problems, such as nausea, diarrhea or constipation"
 SAMe,Mild Insomnia,side_effect,Mild insomnia
 SAMe,Dizziness,side_effect,Dizziness
@@ -195,6 +280,9 @@ SAMe,Serotonin Syndrome,interaction,Antipsychotics.Be cautious when taking these
 SAMe,Serotonin Syndrome,interaction,Amphetamines.Be cautious when taking these drugs with SAMe. The combination could increase the risk of serotonin syndrome.
 SAMe,Serotonin Syndrome,interaction,Dextromethorphan.Taking SAMe with this cough suppressant could increase the risk of serotonin syndrome.
 SAMe,Serotonin Syndrome,interaction,"Narcotics.Taking SAMe with meperidine (Demerol) or tramadol (Ultram, ConZip) could increase the risk of serotonin syndrome."
+St. John's wort,Depression,treats,".Many studies have found St. John's wort to be helpful in treating mild to moderate depression. In fact, some research has shown the supplement to work as well as many prescription antidepressants. It's unclear whether the supplement helps treat severe depression.St. John's wort interacts with many medicines. So it might not be a suitable choice, especially if you take any prescription medicines."
+St. John's wort,Menopause symptoms,treats,.Some research suggests that taking St. John's wort alone or with black cohosh or other herbs might lessen menopause symptoms such as hot flashes.
+St. John's wort,Somatic symptom disorder,treats,".Some studies have found that St. John's wort might help treat this condition. Somatic symptom disorder causes severe anxiety about physical symptoms such as pain, weakness, and shortness of breath."
 St. John's wort,Anxiety,side_effect,Anxiety.
 St. John's wort,Dizziness,side_effect,Dizziness.
 St. John's wort,"Diarrhea, Constipation, And Upset Stomach",side_effect,"Diarrhea, constipation, and upset stomach."
@@ -209,6 +297,13 @@ St. John's wort,Contraceptive Or Birth Control Medicines,interaction,"Contracept
 St. John's wort,Cyp1A2,interaction,"Cytochrome P450 1A2, cytochrome P450 2B6, cytochrome P450 2C19, cytochrome P450 2C9 and cytochrome P450 3A4 substrates.Don't take St. John's wort if you're taking a medicine affected by these enzymes. These enzymes also are called CYP1A2, CYP2B6, CYP2C19, CYP2C9 and CYP3A4."
 St. John's wort,Photosensitizing Medicine,interaction,"Photosensitizing medicines.If you take St. John's wort with medicine that increases sensitivity to sunlight, called photosensitizing medicine, it might raise the risk of a reaction."
 St. John's wort,Mild To Severe Side Effects,interaction,Triptans.Don't take St. John's wort with these medicines that treat migraines. The supplement might raise the risk of buildup of high serotonin levels in the body. Too much serotonin can cause mild to severe side effects.
+Tea tree oil,Acne,treats,".Research suggests that putting a gel that has 5% tea tree oil in it might help relieve acne. Tea tree oil may irritate the skin less than other acne treatments such as benzoyl peroxide. However, tea tree oil may not work as fast as benzoyl peroxide can."
+Tea tree oil,Dandruff,treats,.Research has not shown that tea tree oil will definitely treat dandruff. A shampoo that has 5% tea tree oil in it that was used for four weeks helped treat dandruff in one study.
+Tea tree oil,Athlete's foot,treats,".A tea tree oil cream, applied twice a day for one month, may relieve some symptoms of athlete's foot. The cream doesn't seem to work as well as antifungal medicines."
+Tea tree oil,Lice,treats,.Tea tree oil alone or combined with lavender oil has shown some promise in treating lice. Standard medicines have been better studied and are thought to work better.
+Tea tree oil,Nail fungus,treats,.Research hasn't shown tea tree oil is effective in treating toenail fungus. One small study found that pure tea tree oil helped a small amount of people who used it to treat toenail fungus. But other studies on using lower amounts of tea tree oil haven't found it helps treat toenail fungus. Tea tree oil may work well when used with other antifungal medicines.
+Tea tree oil,Mite infections,treats,".Smaller research studies suggest that topical tea tree oil may treat a mite infection that occurs on the lower eyelids, called ocular demodicosis. Using tea tree oil wipes for the eyelids may be less irritating than scrubs for the eyes. More studies are needed."
+Tea tree oil,Dental plaque,treats,.Brushing the teeth and then using a mouthwash with a small amount of tea tree oil afterward may lessen dental plaque. Some people may report burning as a side effect.
 Tea tree oil,Skin Irritation,side_effect,Skin irritation.
 Tea tree oil,"Allergic Skin Rash, Also Called Dermatitis",side_effect,"Allergic skin rash, also called dermatitis."
 Tea tree oil,Itching,side_effect,Itching.
@@ -220,6 +315,12 @@ Tea tree oil,"Problems With Muscle Control And Movement, Called Ataxia",side_eff
 Tea tree oil,Problems Breathing,side_effect,Problems breathing.
 Tea tree oil,Higher White Blood Cell Count,side_effect,Higher white blood cell count.
 Tea tree oil,"A Deep State Of Sleep Where A Person Doesn'T Respond, Called Coma",side_effect,"A deep state of sleep where a person doesn't respond, called coma."
+Vitamin A,Acne,treats,.Large doses of oral vitamin A supplements don't seem to affect acne.
+Vitamin A,Age-related macular degeneration,treats,.A large clinical trial showed that people at high risk of advanced age-related macular degeneration lowered their risk of developing the condition by taking a specific combination of vitamins that included beta-carotene. It's not clear what role beta-carotene played.
+Vitamin A,Cancer,treats,".Some research studies suggest that people who eat a diet high in vitamin A may lower their risk of cancers of the pancreas, ovaries and food pipe, also called the esophagus. The connection between use of vitamin A supplements and lowered risk of cancers of the liver, colon, rectum and prostate and other types of cancer isn't clear."
+Vitamin A,Heart disease,treats,".Vitamin A is an antioxidant, but research hasn't shown that taking vitamin A supplements helps prevent heart disease."
+Vitamin A,Measles,treats,.Children with low vitamin A levels who get measles are more likely to be very sick than are children with recommended levels. Vitamin A supplements do not prevent measles. Getting a measles vaccine is the most effective and safest way to prevent measles. Don’t give vitamin A to children as a treatment or supplement unless a healthcare professional recommends it. Only take the recommended amount. Taking too much vitamin A can cause major harm.
+Vitamin A,Vitamin A deficiency,treats,".People who have low levels of vitamin A, called vitamin A deficiency, seem to benefit most from vitamin A supplements. This kind of deficiency is rare in the United States. Vitamin A deficiency causes anemia and dry eyes."
 Vitamin A,Nausea,side_effect,Nausea.
 Vitamin A,Vomiting,side_effect,Vomiting.
 Vitamin A,Fatigue,side_effect,Fatigue.
@@ -237,18 +338,28 @@ Vitamin A,Liver Damage,interaction,"Hepatotoxic medicines.Taking high doses of v
 Vitamin A,Liver Conditions,interaction,"Hepatotoxic medicines.Taking high doses of vitamin A supplements can cause liver damage. Combining high doses of vitamin A supplements with other medicines that can damage the liver, called hepatoxic medicines, could raise the risk of liver conditions."
 Vitamin A,Hepatoxic Medicines,interaction,"Hepatotoxic medicines.Taking high doses of vitamin A supplements can cause liver damage. Combining high doses of vitamin A supplements with other medicines that can damage the liver, called hepatoxic medicines, could raise the risk of liver conditions."
 Vitamin A,Bleeding,interaction,Warfarin (Jantoven).Use of vitamin A supplements while taking this medicine used to prevent blood clots might raise your risk of bleeding.
+Vitamin B-6,Heart and blood vessel disease and stroke,treats,".Researchers had previously believed that vitamin B-6, when combined with folic acid (vitamin B-9) and vitamin B-12, might prevent diseases of the heart and blood vessels by reducing the levels of an amino acid in the blood (homocysteine). However, studies show that the combination of these vitamins doesn't seem to reduce the risk or severity of cardiovascular disease and stroke."
+Vitamin B-6,Morning sickness,treats,".Vitamin B-6 might reduce the severity of morning sickness during pregnancy. If you have persistent nausea and vomiting, your pregnancy care provider might prescribe vitamin B-6 supplements."
+Vitamin B-6,Premenstrual syndrome (PMS),treats,".There is some evidence that vitamin B-6 might reduce symptoms of PMS; however, these studies are considered to be low quality."
+Vitamin B-6,Sideroblastic anemia,treats,.Vitamin B-6 is effective at treating this genetic type of anemia.
 Vitamin B-6,A Lack Of Muscle Control Or Coordination Of Voluntary Movements,side_effect,A lack of muscle control or coordination of voluntary movements (ataxia)
 Vitamin B-6,"Painful, Disfiguring Skin Lesions",side_effect,"Painful, disfiguring skin lesions"
 Vitamin B-6,Heartburn And Nausea,side_effect,Heartburn and nausea
 Vitamin B-6,Sensitivity To Sunlight,side_effect,Sensitivity to sunlight (photosensitivity)
 Vitamin B-6,Numbness,side_effect,Numbness
 Vitamin B-6,Reduced Ability To Sense Pain Or Extreme Temperatures,side_effect,Reduced ability to sense pain or extreme temperatures
+Vitamin B-12,Heart and blood vessel disease,treats,".People with heart and blood vessel disease, also called cardiovascular disease, may have high levels of a compound called homocysteine. Vitamin B-12 and other B vitamins may help lower homocysteine levels. But researchers haven't found that lowering homocysteine levels lowers the risk of heart and blood vessel disease."
+Vitamin B-12,Athletic performance and increasing energy,treats,.There's no proof that taking vitamin B-12 supplements or injections boosts energy or improves athletic performance.
 Vitamin B-12,Headache,side_effect,Headache.
 Vitamin B-12,Nausea,side_effect,Nausea.
 Vitamin B-12,Diarrhea,side_effect,Diarrhea.
 Vitamin B-12,Weakness,side_effect,Weakness.
 Vitamin B-12,Tingling Sensation In Hands And Feet,side_effect,Tingling sensation in hands and feet.
 Vitamin B-12,Low Vitamin B-12 Levels,interaction,Bile acid sequestrants (cholestyramine).Taking bile acid sequestrants may interfere with B-12 absorption.  A healthcare professional might suggest taking vitamin B-12 supplements to avoid the risk of low vitamin B-12 levels.
+Vitamin C,Cancer,treats,".Eating a diet rich in fruits and vegetables might lower the risk of many types of cancer, such as breast, colon and lung cancers. But it's not clear whether this effect is related to the vitamin C content in the food. Taking vitamin C supplements doesn't seem to affect cancer risk."
+Vitamin C,Cardiovascular disease,treats,.Much research has focused on whether vitamin C supplements protect against heart disease. Taking supplements doesn't seem to affect heart disease risk.
+Vitamin C,Common cold,treats,.Taking oral vitamin C supplements won't prevent the common cold. Studies show that taking vitamin C supplements has little effect on how long colds last or how bad they are.
+Vitamin C,Eye diseases,treats,".Taking oral vitamin C supplements with other vitamins and minerals seems to keep age-related macular degeneration, also called AMD, from getting worse. AMD is a leading cause of vision loss among older adults. Some studies also suggest that people who have higher levels of vitamin C in their diets have a lower risk of getting cataracts."
 Vitamin C,Side Effects,side_effect,"When taken at suggested doses by mouth, vitamin C supplements are mostly safe.  Taking too much vitamin C can cause side effects, including:"
 Vitamin C,"Upset Stomach, Vomiting And Loose Stools",side_effect,"Upset stomach, vomiting and loose stools."
 Vitamin C,Heartburn,side_effect,Heartburn.
@@ -262,6 +373,14 @@ Vitamin C,Blood Sugar Screening Tests Or Stool Tests For Hidden Blood,side_effec
 Vitamin C,Occult Blood,side_effect,"Before having medical tests, tell your healthcare professional that you take vitamin C supplements. High levels of vitamin C might affect the results of certain tests, such as blood sugar screening tests or stool tests for hidden blood, also called occult blood."
 Vitamin C,Phosphate Binders,interaction,"Aluminum.Taking vitamin C can make you take in more aluminum from medicines that have aluminum, such as phosphate binders. This can be harmful for people with kidney conditions."
 Vitamin C,Hemochromatosis,interaction,"Iron.Vitamin C makes the body absorb more iron. Getting more iron can be harmful for people who have a condition that causes too much iron in the body, called hemochromatosis."
+Vitamin D,Cancer,treats,.Findings on whether vitamin D can help prevent cancer are mixed. More studies are needed to find out whether vitamin D supplements may lower the risk of certain cancers or the risk of dying from cancer.
+Vitamin D,Cognitive health,treats,".Research shows that people with low levels of vitamin D in the blood are less able to think and learn, called cognitive decline. But more studies are needed to find out whether vitamin D supplements may help."
+Vitamin D,"Bone conditions passed through families, called inherited conditions",treats,.Vitamin D supplements can be used to help treat inherited conditions that happen when the body can't take in or use vitamin D. One such condition is familial hypophosphatemia.
+Vitamin D,Multiple sclerosis,treats,.Research suggests that long-term use of vitamin D supplements may lower the risk of multiple sclerosis. More study is needed.
+Vitamin D,Osteomalacia,treats,.Vitamin D supplements treat adults with extreme vitamin D deficiency that results in this softening of the bones.
+Vitamin D,Osteoporosis,treats,.Studies suggest that people who get enough vitamin D and calcium in their diets can slow bone mineral loss. This helps prevent the bone-thinning condition osteoporosis and lower the number of bone fractures osteoporosis causes.
+Vitamin D,Psoriasis,treats,.Vitamin D treats plaque-type psoriasis in some people. Vitamin D or a cream that has a form of vitamin D called calcipotriene can be used on the skin.
+Vitamin D,Rickets,treats,.Not having enough vitamin D in the body can cause this rare condition that weakens bones in children. Taking a vitamin D supplement can prevent and treat the condition.
 Vitamin D,Upset Stomach And Vomiting,side_effect,Upset stomach and vomiting.
 Vitamin D,Weight Loss And Not Wanting To Eat,side_effect,Weight loss and not wanting to eat.
 Vitamin D,Muscle Weakness,side_effect,Muscle weakness.
@@ -274,6 +393,10 @@ Vitamin D,Hypercalcemia,interaction,"Digoxin (Lanoxin).Don't take high doses of 
 Vitamin D,Hypercalcemia,interaction,"Diltiazem (Cardizem, Tiazac, others).Don't take high doses of vitamin D with this blood pressure medicine. High doses of vitamin D can cause too much calcium in the blood, called hypercalcemia. Hypercalcemia may keep the medicine from working as it should."
 Vitamin D,Hypercalcemia,interaction,"Thiazide diuretics.Taking these blood pressure medicines with vitamin D raises the risk of too much calcium in the blood, called hypercalcemia."
 Vitamin D,Hypercalcemia,interaction,"Verapamil (Verelan).Taking high doses of vitamin D with this blood pressure medicine can cause too much calcium in the blood, called hypercalcemia. High doses of vitamin D also might keep verapamil from working as well."
+Vitamin E,Alzheimer's disease,treats,.Some research shows that high-dose vitamin E might slow mild to moderate Alzheimer's disease. Other studies don't show this. Vitamin E supplements appear to have no effect on whether people with mild cognitive impairment go on to get Alzheimer's disease.
+Vitamin E,Liver disease,treats,.Studies show that vitamin E might improve symptoms of metabolic dysfunction-associated steatotic liver disease.
+Vitamin E,Preeclampsia,treats,.Increasing intake of vitamin E has not been shown to prevent this pregnancy condition that affects blood pressure.
+Vitamin E,Prostate cancer,treats,.Research shows that vitamin E and selenium supplements don't prevent prostate cancer. There also is concern that vitamin E supplements might raise the risk of prostate cancer.
 Vitamin E,Upset Stomach,side_effect,Upset stomach.
 Vitamin E,Loose Stools,side_effect,Loose stools.
 Vitamin E,Belly Cramps,side_effect,Belly cramps.
@@ -298,6 +421,11 @@ Vitamin E,Bleeding,interaction,"Anticoagulant and antiplatelet medicines, herbs,
 Vitamin E,Omeprazole (Prilosec,interaction,"Cytochrome P450 3A4 substrates, also called CYP3A4 substrates.Use caution when taking vitamin E and other medicines affected by these enzymes, such as omeprazole (Prilosec, Zegerid OTC)."
 Vitamin E,Cyp3A4 Substrates,interaction,"Cytochrome P450 3A4 substrates, also called CYP3A4 substrates.Use caution when taking vitamin E and other medicines affected by these enzymes, such as omeprazole (Prilosec, Zegerid OTC)."
 Vitamin E,Statins And Niacin Could Keep Niacin From Working As It Should,interaction,"Statins and niacin.Taking vitamin E with cholesterol-lowering medicines called statins and niacin could keep niacin from working as it should. Niacin helps raise high-density lipoprotein, also called HDL, the ""good cholesterol."""
+Zinc,Zinc deficiency,treats,".People who have low levels of zinc seem to benefit most from zinc supplements. Zinc deficiency isn't common in the United States. But some medicines, such as thiazide diuretics taken to treat high blood pressure, can raise the amount of zinc lost in urine. That could lead to zinc deficiency."
+Zinc,Colds,treats,".Research suggests that if zinc syrup or lozenges are taken within 24 hours after cold symptoms start, zinc can help shorten the length of a cold. But the use of zinc that's placed into the nose, called intranasal zinc, has been linked to loss of the sense of smell. Sometimes, the loss of smell may last for a long time. And it's possible that the sense of smell may not come back at all."
+Zinc,Wound healing,treats,.People who have wounds such as skin ulcers and who also have low levels of zinc might benefit from taking a zinc supplement by mouth.
+Zinc,Diarrhea,treats,".Zinc supplements can ease symptoms of diarrhea in children who have low levels of zinc. That may happen in children who have malnutrition. There isn't enough research to recommend use of zinc supplements for children with diarrhea who eat a healthy, varied diet."
+Zinc,Age-related macular degeneration,treats,.Research suggests that zinc supplements taken by mouth might slow the progression of this eye disease.
 Zinc,Diarrhea,side_effect,Diarrhea.
 Zinc,Dizziness,side_effect,Dizziness.
 Zinc,Headache,side_effect,Headache.
