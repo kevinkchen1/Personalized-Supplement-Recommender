@@ -1,0 +1,192 @@
+symptom_id,symptom_name
+SYM001,A Bitter Taste In The Mouth
+SYM002,"A Deep State Of Sleep Where A Person Doesn'T Respond, Called Coma"
+SYM003,A Fishy Aftertaste
+SYM004,A History Of Heart Attack Or Stroke
+SYM005,A Lack Of Muscle Control Or Coordination Of Voluntary Movements
+SYM006,Acidophilus That Has Live Bacteria
+SYM007,Airway Inflammation Or Worsening Of Asthma Symptoms
+SYM008,Allergic Response
+SYM009,"Allergic Skin Rash, Also Called Dermatitis"
+SYM010,"An Eye Condition In Which The Retina Is Damaged, Called Retinitis Pigmentosa"
+SYM011,Anesthesia
+SYM012,Angioplasty
+SYM013,Anxiety
+SYM014,Atorvastatin
+SYM015,Bad Breath
+SYM016,Balance Issues
+SYM017,Belly Cramps
+SYM018,Belly Pain
+SYM019,Bleeding
+SYM020,Bleeding Conditions
+SYM021,Bloating
+SYM022,Blood Pressure Becoming Too Low
+SYM023,Blood Sugar Screening Tests Or Stool Tests For Hidden Blood
+SYM024,Blurred Vision
+SYM025,Blurry Vision
+SYM026,Breakthrough Bleeding
+SYM027,Burning
+SYM028,Cancer
+SYM029,Cannabinoid Hyperemesis Syndrome
+SYM030,Clozapine (Clozaril
+SYM031,Confusion
+SYM032,Constipation
+SYM033,Contraceptive Or Birth Control Medicines
+SYM034,Copper Deficiency
+SYM035,Coq10
+SYM036,Coughing
+SYM037,Cyp1A2
+SYM038,Cyp3A4 Substrates
+SYM039,Daytime Drowsiness
+SYM040,Death
+SYM041,Deficiency
+SYM042,Dehydration
+SYM043,Depression Or Make Depression Symptoms Worse
+SYM044,Diabetes
+SYM045,Diarrhea
+SYM046,"Diarrhea, Constipation, And Upset Stomach"
+SYM047,Diazepam
+SYM048,Diazepam (Valium
+SYM049,Difficulty Breathing
+SYM050,"Digestive Problems, Such As Nausea, Diarrhea Or Constipation"
+SYM051,Diuretics
+SYM052,Dizziness
+SYM053,Dizziness And Higher Risk Of Falling
+SYM054,Drowsiness
+SYM055,"Drowsiness, Including Problems Focusing"
+SYM056,Dry Mouth
+SYM057,Dry Skin
+SYM058,Dryness
+SYM059,Excessive Perspiration
+SYM060,Fainting
+SYM061,Fatigue
+SYM062,Feeling Anxious
+SYM063,Feeling Dizzy
+SYM064,Fluoxetine
+SYM065,Flushing And Itching
+SYM066,G6Pdh Deficiency
+SYM067,Gas
+SYM068,"Gastrointestinal Issues, Such As Diarrhea, Constipation, Nausea, Vomiting And Abdominal Bloating"
+SYM069,Getting Liver And Thyroid Cancers
+SYM070,Gout
+SYM071,Hair Loss
+SYM072,Harmful Side Effects
+SYM073,Harmful Side Effects From Red Yeast Rice
+SYM074,Head And Neck Cancer
+SYM075,Headache
+SYM076,Headaches
+SYM077,Heart Rhythm Issues
+SYM078,Heart That Beats Out Of Time
+SYM079,Heart That Beats Too Fast
+SYM080,Heartburn
+SYM081,Heartburn And Nausea
+SYM082,"Heartburn, Nausea Or Diarrhea"
+SYM083,Hemochromatosis
+SYM084,Hepatotoxic
+SYM085,Hepatoxic Medicines
+SYM086,High Blood Pressure
+SYM087,"Higher Sensitivity To Sunlight, Also Called Photosensitivity"
+SYM088,Higher White Blood Cell Count
+SYM089,Hormone-Sensitive Cancers
+SYM090,Hypercalcemia
+SYM091,Hyperuricemia
+SYM092,Hypoglycemia
+SYM093,Hypokalemia
+SYM094,Hypotension
+SYM095,Increased Thirst
+SYM096,Intranasal Zinc
+SYM097,Irregular Heart Rhythms
+SYM098,Irritability
+SYM099,Itchiness
+SYM100,Itching
+SYM101,Kidney Stones
+SYM102,Kidney Stones And Kidney Damage
+SYM103,Liver Conditions
+SYM104,Liver Damage
+SYM105,Liver Damage In Some People
+SYM106,Liver Disease
+SYM107,Loose Stools
+SYM108,Loss Of Appetite
+SYM109,Loss Of Fluids
+SYM110,Low Blood Pressure
+SYM111,Low Blood Sugar
+SYM112,Low Salt Levels
+SYM113,Low Vitamin B-12 Levels
+SYM114,Mania
+SYM115,Manic Symptoms
+SYM116,Mild Insomnia
+SYM117,Mild Side Effects
+SYM118,Mild To Severe Side Effects
+SYM119,More Bleeding
+SYM120,Muscle Issues
+SYM121,Muscle Weakness
+SYM122,Nausea
+SYM123,Nausea And Vomiting
+SYM124,"Nausea, Abdominal Pain And Diarrhea"
+SYM125,Not Being Able To Think Clearly Or Quickly
+SYM126,Numbness
+SYM127,Occult Blood
+SYM128,Oily Skin
+SYM129,Omeprazole (Prilosec
+SYM130,Pain In The Joints And Bones
+SYM131,"Painful, Disfiguring Skin Lesions"
+SYM132,Phosphate Binders
+SYM133,Photosensitizing Medicine
+SYM134,Pregnancy Complications
+SYM135,Problems Breathing
+SYM136,Problems Sleeping
+SYM137,Problems With Memory
+SYM138,"Problems With Muscle Control And Movement, Called Ataxia"
+SYM139,Prostate
+SYM140,Prostate Cancer
+SYM141,Psychosis
+SYM142,Ragweed
+SYM143,"Rarely, Death"
+SYM144,Rash
+SYM145,Red And Dry Eyes
+SYM146,Reduced Ability To Sense Pain Or Extreme Temperatures
+SYM147,"Seeing, Hearing Or Smelling Things That Aren'T There, Known As Hallucinations, And Psychosis"
+SYM148,Seizures
+SYM149,Seizures In Some People
+SYM150,Sensitivity To Sunlight
+SYM151,Serious
+SYM152,Serious Side Effects
+SYM153,Serotonin Syndrome
+SYM154,Short-Term Kidney Failure
+SYM155,Side Effects
+SYM156,Skin Allergies
+SYM157,"Skin Color Changes, Such As Purple Or Brown Depending On Your Skin Color"
+SYM158,Skin Flushing And Dizziness
+SYM159,Skin Irritation
+SYM160,Skin Rash
+SYM161,Skin Reactions
+SYM162,Statins And Niacin Could Keep Niacin From Working As It Should
+SYM163,Stinging
+SYM164,Stinging After Topical Application
+SYM165,Stomach Cramps
+SYM166,Stomach Cramps Or Bloating
+SYM167,Stomach Pain
+SYM168,Sweating
+SYM169,Symptoms Of Excess Estrogen
+SYM170,"The Feeling Of The Heart Pounding Or Racing, Called Palpitations"
+SYM171,Tingling Sensation In Hands And Feet
+SYM172,Tiredness
+SYM173,"Tiredness And Sleepiness Or Not Being Able To Sleep, Called Insomnia"
+SYM174,Tiredness And Trouble Sleeping
+SYM175,Too Little Vitamin K
+SYM176,Too Much Bleeding During Surgery
+SYM177,"Trouble Passing Stool, Called Constipation"
+SYM178,Trouble Sleeping
+SYM179,Upper Stomach Pain
+SYM180,Upset Stomach
+SYM181,Upset Stomach And Vomiting
+SYM182,"Upset Stomach, Vomiting And Loose Stools"
+SYM183,Vomiting
+SYM184,Weakness
+SYM185,Weed Or Marijuana
+SYM186,"Weight Gain, Generally As Lean Body Mass"
+SYM187,Weight Loss And Not Wanting To Eat
+SYM188,Wheezing
+SYM189,Wheezing And Other Asthmatic Symptoms
+SYM190,You To Need More Anesthetic
+SYM191,Your Blood Pressure To Become Too Low
