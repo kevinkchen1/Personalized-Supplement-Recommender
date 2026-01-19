@@ -1,0 +1,2961 @@
+parent_drugbank_id,salt_drugbank_id,salt_name
+DB00007,DBSALT000105,Leuprolide acetate
+DB00007,DBSALT003182,Leuprolide mesylate
+DB00010,DBSALT001439,Sermorelin acetate
+DB00014,DBSALT000093,Goserelin acetate
+DB00030,DBSALT001733,Insulin human zinc suspension
+DB00030,DBSALT001734,NPH insulin
+DB00035,DBSALT001154,Desmopressin acetate
+DB00035,DBSALT000044,Desmopressin acetate anhydrous
+DB00040,DBSALT001413,Glucagon hydrochloride
+DB00050,DBSALT000021,Cetrorelix acetate
+DB00067,DBSALT002464,Argipressin
+DB00071,DBSALT001735,Insulin suspension isophane purified pork
+DB00071,DBSALT001736,Insulin suspension protamine zinc purified pork
+DB00071,DBSALT001737,Insulin zinc suspension prompt purified pork
+DB00071,DBSALT001738,Insulin zinc suspension purified pork
+DB00078,DBSALT001767,Indium In-111 ibritumomab tiuxetan
+DB00078,DBSALT001768,Yttrium y-90 ibritumomab tiuxetan
+DB00104,DBSALT000130,Octreotide acetate
+DB00104,DBSALT003592,Octreotide hydrochloride
+DB00104,DBSALT002951,Octreotide pamoate
+DB00114,DBSALT001801,Pyridoxal phosphate hydrate
+DB00117,DBSALT003344,Copper histidine
+DB00117,DBSALT002949,Histidine monohydrochloride monohydrate
+DB00118,DBSALT000873,Ademetionine butanedisulfonate
+DB00118,DBSALT000875,Ademetionine disulfate ditosylate
+DB00118,DBSALT000876,Ademetionine disulfate monotosylate
+DB00118,DBSALT000874,Ademetionine disulfate tosylate
+DB00118,DBSALT000872,Ademetionine tosylate
+DB00119,DBSALT002377,Calcium pyruvate
+DB00119,DBSALT003201,Methylselenopyruvate
+DB00119,DBSALT001546,Sodium pyruvate
+DB00120,DBSALT001774,Phenylalanine hydrochloride
+DB00120,DBSALT002207,Phenylalanine sodium
+DB00122,DBSALT001542,Choline bitartrate
+DB00122,DBSALT003461,Choline chloride
+DB00123,DBSALT001763,Lysine acetate
+DB00123,DBSALT003341,Lysine dihydrate
+DB00123,DBSALT001756,Lysine hydrochloride
+DB00123,DBSALT003003,Lysine monohydrate
+DB00125,DBSALT003350,Arginine butyrate
+DB00125,DBSALT000869,Arginine hydrochloride
+DB00127,DBSALT000870,Spermine dihydrate
+DB00129,DBSALT002898,Ornithine aspartate
+DB00129,DBSALT001925,Ornithine dihydrochloride
+DB00129,DBSALT002530,Ornithine hydrochloride
+DB00129,DBSALT002529,Ornithine oxoglurate
+DB00130,DBSALT002231,Glutamine sodium
+DB00134,DBSALT002219,Methionine hydrochloride
+DB00139,DBSALT003566,Sodium succinate
+DB00140,DBSALT002842,Riboflavin sodium
+DB00142,DBSALT002484,Glutamic acid hydrochloride
+DB00146,DBSALT002443,Calcifediol hydrate
+DB00147,DBSALT001795,Pyridoxal hydrochloride
+DB00148,DBSALT003560,Creatine monohydrate
+DB00149,DBSALT001773,L-Leucine hydrochloride
+DB00151,DBSALT001754,Cysteine hydrochloride
+DB00152,DBSALT002650,Thiamine chloride
+DB00152,DBSALT000205,Thiamine hydrochloride
+DB00152,DBSALT001495,Thiamine mononitrate
+DB00154,DBSALT002649,Sodium dihomo-gamma-linolenate
+DB00155,DBSALT003047,Citrulline malate
+DB00158,DBSALT001918,Folate sodium
+DB00159,DBSALT002305,Icosapent sodium
+DB00162,DBSALT001720,Vitamin A acetate
+DB00162,DBSALT000855,Vitamin A palmitate
+DB00165,DBSALT000151,Pyridoxine hydrochloride
+DB00171,DBSALT002406,Adenosine triphosphate disodium
+DB00171,DBSALT002407,Adenosine triphosphate disodium trihydrate
+DB00173,DBSALT002225,Adenine hydrochloride
+DB00173,DBSALT002226,Adenine sulfate
+DB00175,DBSALT000146,Pravastatin sodium
+DB00176,DBSALT000879,Fluvoxamine maleate
+DB00180,DBSALT001845,Flunisolide hemihydrate
+DB00181,DBSALT002256,Baclofen hydrochloride
+DB00182,DBSALT001323,Amphetamine adipate
+DB00182,DBSALT001345,Amphetamine aspartate
+DB00182,DBSALT001501,Amphetamine aspartate monohydrate
+DB00182,DBSALT001205,Amphetamine sulfate
+DB00184,DBSALT002418,Nicotine bitartrate
+DB00184,DBSALT002417,Nicotine bitartrate dihydrate
+DB00185,DBSALT000805,Cevimeline hydrochloride
+DB00185,DBSALT003577,Cevimeline hydrochloride anhydrous
+DB00187,DBSALT000586,Esmolol hydrochloride
+DB00190,DBSALT001834,Carbidopa hydrate
+DB00191,DBSALT000138,Phentermine hydrochloride
+DB00192,DBSALT000880,Indecainide hydrochloride
+DB00193,DBSALT000181,Tramadol hydrochloride
+DB00195,DBSALT000328,Betaxolol hydrochloride
+DB00198,DBSALT000881,Oseltamivir phosphate
+DB00199,DBSALT001358,Erythromycin estolate
+DB00199,DBSALT001220,Erythromycin ethylsuccinate
+DB00199,DBSALT001340,Erythromycin gluceptate
+DB00199,DBSALT001219,Erythromycin lactobionate
+DB00199,DBSALT001624,Erythromycin phosphate
+DB00199,DBSALT001221,Erythromycin stearate
+DB00199,DBSALT002260,Erythromycin sulfate
+DB00199,DBSALT001625,Erythromycin thiocyanate
+DB00200,DBSALT001895,Hydroxocobalamin acetate
+DB00201,DBSALT000866,Caffeine citrate
+DB00202,DBSALT000206,Succinylcholine chloride
+DB00202,DBSALT003046,Succinylcholine chloride dihydrate
+DB00203,DBSALT000347,Sildenafil citrate
+DB00205,DBSALT000385,Pyrimethamine hydrochloride
+DB00207,DBSALT000882,Azithromycin dihydrate
+DB00207,DBSALT003207,Azithromycin hemiethanolate monohydrate
+DB00207,DBSALT001208,Azithromycin monohydrate
+DB00208,DBSALT000179,Ticlopidine hydrochloride
+DB00209,DBSALT000883,Trospium chloride
+DB00211,DBSALT000250,Midodrine hydrochloride
+DB00213,DBSALT000853,Pantoprazole magnesium
+DB00213,DBSALT002977,Pantoprazole magnesium dihydrate
+DB00213,DBSALT001960,Pantoprazole magnesium hemipentahydrate
+DB00213,DBSALT000386,Pantoprazole sodium
+DB00215,DBSALT000027,Citalopram hydrobromide
+DB00216,DBSALT000884,Eletriptan hydrobromide
+DB00216,DBSALT002562,Eletriptan hydrobromide monohydrate
+DB00217,DBSALT000194,Bethanidine sulfate
+DB00218,DBSALT000387,Moxifloxacin hydrochloride
+DB00218,DBSALT002560,Moxifloxacin hydrochloride monohydrate
+DB00219,DBSALT000207,Oxyphenonium bromide
+DB00220,DBSALT000885,Nelfinavir mesylate
+DB00221,DBSALT000349,Isoetharine hydrochloride
+DB00221,DBSALT000886,Isoetharine mesylate
+DB00223,DBSALT000887,Diflorasone diacetate
+DB00224,DBSALT001802,Indinavir monohydrate
+DB00224,DBSALT000338,Indinavir sulfate
+DB00224,DBSALT002995,Indinavir sulfate ethanolate
+DB00225,DBSALT000888,Gadodiamide hydrate
+DB00226,DBSALT000889,Guanadrel sulfate
+DB00229,DBSALT000796,Cefotiam hydrochloride
+DB00231,DBSALT002272,Temazepam hydrochloride
+DB00231,DBSALT002271,Temazepam sulfate
+DB00233,DBSALT001939,Aminosalicylate calcium
+DB00233,DBSALT000354,Aminosalicylate sodium anhydrous
+DB00233,DBSALT001940,Calcium aminosalicylate trihydrate
+DB00233,DBSALT002415,Potassium aminosalicylate
+DB00233,DBSALT001938,Sodium aminosalicylate dihydrate
+DB00234,DBSALT000890,Reboxetine mesilate
+DB00235,DBSALT000891,Milrinone lactate
+DB00237,DBSALT000312,Butabarbital sodium
+DB00238,DBSALT002723,Nevirapine hemihydrate
+DB00239,DBSALT000892,Oxiconazole nitrate
+DB00240,DBSALT000893,Alclometasone dipropionate
+DB00241,DBSALT002235,Butalbital sodium
+DB00243,DBSALT000388,Ranolazine hydrochloride
+DB00245,DBSALT000894,Benzatropine mesylate
+DB00246,DBSALT000810,Ziprasidone hydrochloride
+DB00246,DBSALT000811,Ziprasidone mesylate trihydrate
+DB00247,DBSALT000895,Methysergide maleate
+DB00252,DBSALT000139,Phenytoin sodium
+DB00254,DBSALT001217,Doxycycline calcium
+DB00254,DBSALT000896,Doxycycline hyclate
+DB00254,DBSALT000897,Doxycycline hydrochloride
+DB00254,DBSALT001956,Doxycycline monohydrate
+DB00255,DBSALT001389,Diethylstilbestrol diphosphate
+DB00255,DBSALT001169,Diethylstilbestrol diphosphate sodium
+DB00258,DBSALT001536,Calcium acetate monohydrate
+DB00261,DBSALT000379,Anagrelide hydrochloride
+DB00261,DBSALT003200,Anagrelide hydrochloride monohydrate
+DB00263,DBSALT001376,Sulfisoxazole diolamine
+DB00264,DBSALT001329,Metoprolol fumarate
+DB00264,DBSALT000863,Metoprolol succinate
+DB00264,DBSALT000862,Metoprolol tartrate
+DB00267,DBSALT000801,Cefmenoxime hydrochloride
+DB00268,DBSALT000390,Ropinirole Hydrochloride
+DB00271,DBSALT000844,Diatrizoate meglumine
+DB00271,DBSALT000267,Diatrizoate sodium
+DB00271,DBSALT003160,Diatrizoic acid dihydrate
+DB00272,DBSALT000898,Betazole hydrochloride
+DB00273,DBSALT002319,Topiramate calcium
+DB00273,DBSALT002320,Topiramate potassium
+DB00273,DBSALT002318,Topiramate sodium
+DB00274,DBSALT000391,Cefmetazole sodium
+DB00275,DBSALT001815,Olmesartan medoxomil
+DB00276,DBSALT002301,Amsacrine gluconate
+DB00276,DBSALT002302,Amsacrine hydrochloride
+DB00276,DBSALT002300,Amsacrine mesylate
+DB00277,DBSALT001603,Theophylline sodium glycinate
+DB00278,DBSALT001826,Argatroban monohydrate
+DB00279,DBSALT000321,Liothyronine sodium
+DB00280,DBSALT000899,Disopyramide phosphate
+DB00281,DBSALT000900,Lidocaine hydrochloride
+DB00281,DBSALT001508,Lidocaine hydrochloride anhydrous
+DB00282,DBSALT000836,Pamidronate Disodium
+DB00283,DBSALT000901,Clemastine fumarate
+DB00285,DBSALT003481,Venlafaxine besylate monohydrate
+DB00285,DBSALT000186,Venlafaxine hydrochloride
+DB00289,DBSALT001207,Atomoxetine hydrochloride
+DB00290,DBSALT003075,Bleomycin hydrochloride
+DB00290,DBSALT000196,Bleomycin sulfate
+DB00293,DBSALT003210,Raltitrexed disodium
+DB00295,DBSALT002224,Morphine acetate
+DB00295,DBSALT001753,Morphine hydrochloride
+DB00295,DBSALT003118,Morphine hydrochloride trihydrate
+DB00295,DBSALT002222,Morphine mesylate
+DB00295,DBSALT002221,Morphine nitrate
+DB00295,DBSALT002220,Morphine phosphate
+DB00295,DBSALT000122,Morphine sulfate
+DB00295,DBSALT001986,Morphine sulfate pentahydrate
+DB00295,DBSALT002223,Morphine tartrate
+DB00296,DBSALT000902,Ropivacaine hydrochloride
+DB00296,DBSALT002892,Ropivacaine hydrochloride anhydrous
+DB00297,DBSALT001512,Bupivacaine hydrochloride
+DB00297,DBSALT000202,Bupivacaine hydrochloride anhydrous
+DB00298,DBSALT001438,Dapiprazole hydrochloride
+DB00299,DBSALT001449,Penciclovir sodium
+DB00300,DBSALT000172,Tenofovir disoproxil fumarate
+DB00300,DBSALT002960,Tenofovir disoproxil maleate
+DB00300,DBSALT002961,Tenofovir disoproxil phosphate
+DB00300,DBSALT002962,Tenofovir disoproxil succinate
+DB00301,DBSALT000345,Flucloxacillin sodium
+DB00303,DBSALT001460,Ertapenem sodium
+DB00308,DBSALT001069,Ibutilide fumarate
+DB00309,DBSALT000440,Vindesine sulfate
+DB00312,DBSALT000442,Pentobarbital Sodium
+DB00313,DBSALT000185,Divalproex sodium
+DB00313,DBSALT003326,Magnesium Valproate
+DB00313,DBSALT001257,Valproate sodium
+DB00314,DBSALT000443,Capreomycin sulfate
+DB00318,DBSALT003186,Codeine hydrobromide dihydrate
+DB00318,DBSALT001068,Codeine hydrochloride
+DB00318,DBSALT001844,Codeine monohydrate
+DB00318,DBSALT000030,Codeine phosphate
+DB00318,DBSALT001592,Codeine phosphate hemihydrate
+DB00318,DBSALT001843,Codeine sulfate
+DB00318,DBSALT000031,Codeine sulfate anhydrous
+DB00319,DBSALT001067,Piperacillin sodium
+DB00320,DBSALT000997,Dihydroergotamine mesylate
+DB00320,DBSALT001066,Dihydroergotamine tartrate
+DB00321,DBSALT000009,Amitriptyline hydrochloride
+DB00321,DBSALT001193,Amitriptyline pamoate
+DB00324,DBSALT001065,Fluorometholone acetate
+DB00325,DBSALT000839,Sodium nitroprusside
+DB00327,DBSALT000444,Hydromorphone hydrochloride
+DB00327,DBSALT002251,Hydromorphone sulfate
+DB00328,DBSALT001435,Indomethacin sodium
+DB00330,DBSALT000446,Ethambutol hydrochloride
+DB00331,DBSALT000114,Metformin hydrochloride
+DB00332,DBSALT002739,Ipratropium bromide anhydrous
+DB00332,DBSALT000208,Ipratropium bromide monohydrate
+DB00332,DBSALT002732,Ipratropium chloride
+DB00333,DBSALT000346,Methadone hydrochloride
+DB00334,DBSALT002315,Olanzapine hydrochloride
+DB00334,DBSALT001064,Olanzapine pamoate
+DB00334,DBSALT002314,Olanzapine tartrate
+DB00338,DBSALT000131,Omeprazole magnesium
+DB00338,DBSALT000857,Omeprazole sodium
+DB00340,DBSALT000602,Metixene hydrochloride
+DB00341,DBSALT001214,Cetirizine hydrochloride
+DB00343,DBSALT000865,Diltiazem hydrochloride
+DB00343,DBSALT001394,Diltiazem malate
+DB00343,DBSALT002322,Diltiazem maleate
+DB00344,DBSALT001192,Protriptyline hydrochloride
+DB00345,DBSALT000352,Aminohippurate sodium
+DB00346,DBSALT001063,Alfuzosin hydrochloride
+DB00350,DBSALT002918,Minoxidil sulfate
+DB00352,DBSALT003575,Thioguanine hemihydrate
+DB00353,DBSALT001025,Methylergometrine maleate
+DB00353,DBSALT001062,Methylergometrine tartrate
+DB00354,DBSALT000197,Buclizine hydrochloride
+DB00355,DBSALT001061,Aztreonam lysine
+DB00358,DBSALT000311,Mefloquine hydrochloride
+DB00359,DBSALT001400,Sulfadiazine sodium
+DB00360,DBSALT001133,Sapropterin dihydrochloride
+DB00361,DBSALT000447,Vinorelbine tartrate
+DB00363,DBSALT002286,Clozapine hydrochloride
+DB00365,DBSALT000913,Grepafloxacin hydrochloride
+DB00366,DBSALT001402,Doxylamine succinate
+DB00368,DBSALT001247,Norepinephrine bitartrate
+DB00369,DBSALT001827,Cidofovir dihydrate
+DB00370,DBSALT003101,Mirtazapine hemihydrate
+DB00370,DBSALT002298,Mirtazapine hydrochloride
+DB00372,DBSALT001328,Thiethylperazine malate
+DB00372,DBSALT001059,Thiethylperazine maleate
+DB00373,DBSALT000990,Timolol hemihydrate
+DB00373,DBSALT000989,Timolol maleate
+DB00374,DBSALT001333,Treprostinil diolamine
+DB00374,DBSALT002321,Treprostinil sodium
+DB00375,DBSALT001058,Colestipol hydrochloride
+DB00376,DBSALT000448,Trihexyphenidyl hydrochloride
+DB00377,DBSALT001057,Palonosetron hydrochloride
+DB00379,DBSALT000449,Mexiletine hydrochloride
+DB00380,DBSALT001028,Dexrazoxane hydrochloride
+DB00381,DBSALT003478,Amlodipine benzoate
+DB00381,DBSALT001054,Amlodipine besylate
+DB00381,DBSALT002979,Amlodipine camsylate
+DB00381,DBSALT001056,Amlodipine maleate
+DB00381,DBSALT001964,Amlodipine mesylate
+DB00381,DBSALT002978,Amlodipine mesylate monohydrate
+DB00382,DBSALT001053,Tacrine Hydrochloride
+DB00383,DBSALT000812,Oxyphencyclimine hydrochloride
+DB00387,DBSALT001008,Procyclidine hydrochloride
+DB00388,DBSALT001320,Phenylephrine bitartrate
+DB00388,DBSALT000858,Phenylephrine hydrochloride
+DB00388,DBSALT001555,Phenylephrine tannate
+DB00392,DBSALT000813,Ethopropazine hydrochloride
+DB00394,DBSALT001373,Beclomethasone dipropionate monohydrate
+DB00397,DBSALT000996,Phenylpropanolamine hydrochloride
+DB00398,DBSALT000165,Sorafenib tosylate
+DB00399,DBSALT003377,"Zoledronate D,L-Lysine Monohydrate"
+DB00399,DBSALT001757,Zoledronate disodium
+DB00399,DBSALT001758,Zoledronate trisodium
+DB00399,DBSALT001962,Zoledronic acid hemipentahydrate
+DB00399,DBSALT001759,Zoledronic acid monohydrate
+DB00403,DBSALT001364,Ceruletide diethylamine
+DB00405,DBSALT001411,Dexbrompheniramine maleate
+DB00406,DBSALT000604,Gentian violet
+DB00408,DBSALT001429,Loxapine hydrochloride
+DB00408,DBSALT001194,Loxapine succinate
+DB00409,DBSALT002343,Remoxipride hydrochloride
+DB00410,DBSALT001049,Mupirocin calcium
+DB00411,DBSALT002764,Carbamoylcholine chloride
+DB00412,DBSALT000153,Rosiglitazone Maleate
+DB00413,DBSALT001198,Pramipexole dihydrochloride monohydrate
+DB00413,DBSALT000143,Pramipexole hydrochloride
+DB00415,DBSALT000533,Ampicillin sodium
+DB00415,DBSALT001206,Ampicillin trihydrate
+DB00417,DBSALT001952,Phenoxymethylpenicillin benzathine
+DB00417,DBSALT000299,Phenoxymethylpenicillin potassium
+DB00418,DBSALT000255,Secobarbital sodium
+DB00419,DBSALT000621,Miglustat hydrochloride
+DB00420,DBSALT000147,Promazine hydrochloride
+DB00422,DBSALT000117,Methylphenidate hydrochloride
+DB00424,DBSALT001048,Hyoscyamine hydrobromide
+DB00424,DBSALT001011,Hyoscyamine sulfate
+DB00424,DBSALT002456,Hyoscyamine sulfate dihydrate
+DB00425,DBSALT001047,Zolpidem tartrate
+DB00427,DBSALT000623,Triprolidine hydrochloride
+DB00427,DBSALT002442,Triprolidine hydrochloride monohydrate
+DB00430,DBSALT000624,Cefpiramide sodium
+DB00433,DBSALT000999,Prochlorperazine edisylate
+DB00433,DBSALT000998,Prochlorperazine maleate
+DB00433,DBSALT003068,Prochlorperazine mesilate
+DB00434,DBSALT000625,Cyproheptadine hydrochloride
+DB00437,DBSALT000350,Allopurinol sodium
+DB00438,DBSALT001024,Ceftazidime pentahydrate
+DB00438,DBSALT001474,Ceftazidime sodium
+DB00439,DBSALT000330,Cerivastatin sodium
+DB00440,DBSALT001480,Trimethoprim hydrochloride
+DB00440,DBSALT001471,Trimethoprim sulfate
+DB00441,DBSALT000092,Gemcitabine hydrochloride
+DB00442,DBSALT001748,Entecavir monohydrate
+DB00442,DBSALT001749,Entecavir triphosphate
+DB00443,DBSALT001422,Betamethasone acetate
+DB00443,DBSALT001122,Betamethasone benzoate
+DB00443,DBSALT000851,Betamethasone dipropionate
+DB00443,DBSALT000850,Betamethasone sodium phosphate
+DB00443,DBSALT000849,Betamethasone valerate
+DB00445,DBSALT001168,Epirubicin hydrochloride
+DB00447,DBSALT001796,Loracarbef monohydrate
+DB00449,DBSALT000626,Dipivefrin hydrochloride
+DB00451,DBSALT000244,Levothyroxine sodium
+DB00451,DBSALT003388,Levothyroxine sodium pentahydrate
+DB00452,DBSALT000995,Framycetin sulfate
+DB00454,DBSALT000628,Meperidine hydrochloride
+DB00456,DBSALT000262,Cefalotin sodium
+DB00457,DBSALT000329,Prazosin hydrochloride
+DB00458,DBSALT000099,Imipramine hydrochloride
+DB00458,DBSALT000100,Imipramine pamoate
+DB00465,DBSALT001045,Ketorolac tromethamine
+DB00468,DBSALT002255,Quinine citrate
+DB00468,DBSALT001044,Quinine hydrochloride
+DB00468,DBSALT002254,Quinine phosphate
+DB00468,DBSALT000531,Quinine sulfate
+DB00471,DBSALT001043,Montelukast sodium
+DB00472,DBSALT000087,Fluoxetine hydrochloride
+DB00473,DBSALT000630,Hexylcaine hydrochloride
+DB00474,DBSALT000631,Methohexital sodium
+DB00475,DBSALT000632,Chlordiazepoxide hydrochloride
+DB00476,DBSALT000378,Duloxetine hydrochloride
+DB00477,DBSALT000026,Chlorpromazine hydrochloride
+DB00478,DBSALT000833,Rimantadine hydrochloride
+DB00479,DBSALT000351,Amikacin sulfate
+DB00480,DBSALT003154,Lenalidomide hydrochloride monohydrate
+DB00481,DBSALT000272,Raloxifene Hydrochloride
+DB00484,DBSALT000195,Brimonidine tartrate
+DB00485,DBSALT001622,Dicloxacillin sodium
+DB00485,DBSALT000495,Dicloxacillin sodium anhydrous
+DB00487,DBSALT002346,Pefloxacin mesylate
+DB00487,DBSALT000852,Pefloxacin mesylate dihydrate
+DB00489,DBSALT000318,Sotalol hydrochloride
+DB00490,DBSALT000313,Buspirone hydrochloride
+DB00492,DBSALT000193,Fosinopril sodium
+DB00493,DBSALT000547,Cefotaxime sodium
+DB00496,DBSALT001041,Darifenacin hydrobromide
+DB00497,DBSALT000277,Oxycodone hydrochloride
+DB00497,DBSALT001326,Oxycodone terephthalate
+DB00500,DBSALT000496,Tolmetin sodium
+DB00501,DBSALT000287,Cimetidine hydrochloride
+DB00502,DBSALT001195,Haloperidol decanoate
+DB00502,DBSALT001232,Haloperidol lactate
+DB00504,DBSALT001040,Levallorphan tartrate
+DB00505,DBSALT001377,Tridihexethyl chloride
+DB00508,DBSALT001039,Triflupromazine hydrochloride
+DB00509,DBSALT001146,Dextrothyroxine sodium
+DB00512,DBSALT000300,Vancomycin hydrochloride
+DB00514,DBSALT001897,Dextromethorphan hydriodide
+DB00514,DBSALT000376,Dextromethorphan hydrobromide
+DB00514,DBSALT001898,Dextromethorphan hydrobromide monohydrate
+DB00514,DBSALT002917,Dextromethorphan hydrochloride
+DB00519,DBSALT002307,Trandolapril hydrochloride
+DB00520,DBSALT000020,Caspofungin acetate
+DB00521,DBSALT000319,Carteolol hydrochloride
+DB00527,DBSALT000639,Cinchocaine hydrochloride
+DB00528,DBSALT002974,Lercanidipine hydrochloride
+DB00529,DBSALT000200,Foscarnet sodium
+DB00530,DBSALT000064,Erlotinib hydrochloride
+DB00531,DBSALT001814,Cyclophosphamide monohydrate
+DB00535,DBSALT001745,Cefdinir monohydrate
+DB00536,DBSALT000737,Guanidine hydrochloride
+DB00537,DBSALT000293,Ciprofloxacin hydrochloride
+DB00537,DBSALT002984,Ciprofloxacin lactate
+DB00539,DBSALT001447,Toremifene citrate
+DB00540,DBSALT000641,Nortriptyline hydrochloride
+DB00541,DBSALT000314,Vincristine sulfate
+DB00542,DBSALT000554,Benazepril hydrochloride
+DB00544,DBSALT003208,Fluorouracil sodium
+DB00545,DBSALT000190,Pyridostigmine bromide
+DB00545,DBSALT002338,Pyridostigmine chloride
+DB00546,DBSALT002297,Adinazolam mesylate
+DB00557,DBSALT000343,Hydroxyzine hydrochloride
+DB00557,DBSALT000984,Hydroxyzine pamoate
+DB00559,DBSALT001842,Bosentan monohydrate
+DB00561,DBSALT000643,Doxapram hydrochloride
+DB00563,DBSALT000115,Methotrexate sodium
+DB00565,DBSALT002671,Cisatracurium besylate
+DB00567,DBSALT001473,Cefalexin hydrochloride
+DB00567,DBSALT001841,Cefalexin monohydrate
+DB00567,DBSALT000261,Cefalexin sodium
+DB00568,DBSALT002261,Cinnarizine hydrochloride
+DB00569,DBSALT002741,Fondaparinux sodium
+DB00570,DBSALT000644,Vinblastine sulfate
+DB00571,DBSALT000549,Propranolol hydrochloride
+DB00572,DBSALT002584,Atropine hydrochloride
+DB00572,DBSALT003103,Atropine sulfate
+DB00572,DBSALT000281,Atropine sulfate anhydrous
+DB00573,DBSALT001038,Fenoprofen calcium
+DB00573,DBSALT001848,Fenoprofen sodium
+DB00574,DBSALT000802,Fenfluramine hydrochloride
+DB00575,DBSALT000538,Clonidine hydrochloride
+DB00577,DBSALT000289,Valaciclovir hydrochloride
+DB00577,DBSALT003100,Valaciclovir hydrochloride monohydrate
+DB00578,DBSALT001334,Carbenicillin disodium
+DB00579,DBSALT002359,Mazindol hydrochloride
+DB00583,DBSALT001037,Levocarnitine chloride
+DB00583,DBSALT003063,Levocarnitine fumarate
+DB00583,DBSALT003062,Levocarnitine tartrate
+DB00584,DBSALT001036,Enalapril maleate
+DB00584,DBSALT001143,Enalapril sodium
+DB00586,DBSALT003116,Diclofenac deanol
+DB00586,DBSALT001945,Diclofenac diethylamine
+DB00586,DBSALT001398,Diclofenac epolamine
+DB00586,DBSALT000864,Diclofenac potassium
+DB00586,DBSALT000466,Diclofenac sodium
+DB00589,DBSALT001034,Lysuride maleate
+DB00590,DBSALT001948,Doxazosin mesylate
+DB00592,DBSALT001654,Piperazine adipate
+DB00592,DBSALT000775,Piperazine citrate
+DB00592,DBSALT000773,Piperazine hexahydrate
+DB00592,DBSALT000774,Piperazine hydrate
+DB00592,DBSALT001623,Piperazine hydrochloride
+DB00592,DBSALT001632,Piperazine monohydrochloride
+DB00592,DBSALT001633,Piperazine phosphate
+DB00592,DBSALT001655,Piperazine sulfate
+DB00594,DBSALT001807,Amiloride hydrochloride
+DB00594,DBSALT000270,Amiloride hydrochloride dihydrate
+DB00595,DBSALT001478,Oxytetracycline calcium
+DB00595,DBSALT001618,Oxytetracycline dihydrate
+DB00595,DBSALT000645,Oxytetracycline hydrochloride
+DB00595,DBSALT001855,Oxytetracycline monocalcium
+DB00596,DBSALT001867,Ulobetasol propionate
+DB00598,DBSALT000320,Labetalol hydrochloride
+DB00599,DBSALT001409,Thiopental sodium
+DB00604,DBSALT001018,Cisapride monohydrate
+DB00605,DBSALT002293,Sulindac sodium
+DB00607,DBSALT000497,Nafcillin sodium
+DB00608,DBSALT001317,Chloroquine hydrochloride
+DB00608,DBSALT000025,Chloroquine phosphate
+DB00608,DBSALT002244,Chloroquine sulfate
+DB00610,DBSALT001017,Metaraminol bitartrate
+DB00611,DBSALT000276,Butorphanol tartrate
+DB00612,DBSALT001015,Bisoprolol fumarate
+DB00613,DBSALT002457,Amodiaquine dihydrochloride dihydrate
+DB00613,DBSALT000647,Amodiaquine hydrochloride
+DB00618,DBSALT003076,Demeclocycline calcium
+DB00618,DBSALT000040,Demeclocycline hydrochloride
+DB00619,DBSALT000098,Imatinib mesylate
+DB00620,DBSALT000860,Triamcinolone acetonide
+DB00620,DBSALT000859,Triamcinolone diacetate
+DB00620,DBSALT000861,Triamcinolone hexacetonide
+DB00622,DBSALT000499,Nicardipine Hydrochloride
+DB00623,DBSALT000776,Fluphenazine decanoate
+DB00623,DBSALT000777,Fluphenazine enanthate
+DB00623,DBSALT000288,Fluphenazine hydrochloride
+DB00626,DBSALT001613,Bacitracin methylene disalicylate
+DB00626,DBSALT001356,Bacitracin zinc
+DB00628,DBSALT000953,Clorazepate dipotassium
+DB00629,DBSALT000649,Guanabenz Acetate
+DB00630,DBSALT001780,Alendronate calcium
+DB00630,DBSALT003348,Alendronate disodium
+DB00630,DBSALT000315,Alendronate sodium
+DB00630,DBSALT001779,Alendronate sodium anhydrous
+DB00633,DBSALT001013,Dexmedetomidine hydrochloride
+DB00634,DBSALT000986,Sulfacetamide sodium
+DB00639,DBSALT001012,Butoconazole nitrate
+DB00642,DBSALT000846,Pemetrexed disodium
+DB00642,DBSALT001782,Pemetrexed disodium hemipentahydrate
+DB00642,DBSALT001641,Pemetrexed disodium heptahydrate
+DB00642,DBSALT003140,Pemetrexed ditromethamine
+DB00642,DBSALT002627,Pemetrexed monohydrate
+DB00644,DBSALT001155,Gonadorelin acetate
+DB00644,DBSALT000983,Gonadorelin diacetate tetrahydrate
+DB00644,DBSALT000982,Gonadorelin hydrochloride
+DB00645,DBSALT000651,Dyclonine hydrochloride
+DB00646,DBSALT001007,Nystatin dihydrate
+DB00647,DBSALT000500,Dextropropoxyphene hydrochloride
+DB00647,DBSALT001000,Dextropropoxyphene napsylate
+DB00650,DBSALT000342,Leucovorin calcium
+DB00650,DBSALT001441,Leucovorin calcium pentahydrate
+DB00650,DBSALT000789,Leucovorin sodium
+DB00652,DBSALT001009,Pentazocine hydrochloride
+DB00652,DBSALT001010,Pentazocine lactate
+DB00653,DBSALT003124,Magnesium sulfate dihydrate
+DB00653,DBSALT001240,Magnesium sulfate heptahydrate
+DB00653,DBSALT003054,Magnesium sulfate monohydrate
+DB00656,DBSALT000344,Trazodone hydrochloride
+DB00657,DBSALT000652,Mecamylamine hydrochloride
+DB00658,DBSALT001006,Sevelamer carbonate
+DB00658,DBSALT001005,Sevelamer hydrochloride
+DB00659,DBSALT000002,Acamprosate calcium
+DB00661,DBSALT000534,Verapamil hydrochloride
+DB00662,DBSALT000501,Trimethobenzamide hydrochloride
+DB00663,DBSALT001651,Flumethasone acetate
+DB00663,DBSALT001004,Flumethasone pivalate
+DB00666,DBSALT000324,Nafarelin acetate
+DB00668,DBSALT001650,Epinephrine acetate
+DB00668,DBSALT000788,Epinephrine bitartrate
+DB00668,DBSALT001484,Epinephrine hydrochloride
+DB00669,DBSALT003211,Sumatriptan hemisulfate
+DB00669,DBSALT001003,Sumatriptan succinate
+DB00670,DBSALT001002,Pirenzepine hydrochloride
+DB00671,DBSALT001818,Cefixime trihydrate
+DB00674,DBSALT000316,Galantamine hydrobromide
+DB00675,DBSALT000168,Tamoxifen citrate
+DB00678,DBSALT000112,Losartan potassium
+DB00679,DBSALT000503,Thioridazine hydrochloride
+DB00680,DBSALT000994,Moricizine hydrochloride
+DB00681,DBSALT000993,Amphotericin B Cholesteryl Sulfate Complex
+DB00681,DBSALT002275,Corifungin
+DB00682,DBSALT001410,Warfarin potassium
+DB00682,DBSALT000278,Warfarin sodium
+DB00683,DBSALT000118,Midazolam hydrochloride
+DB00683,DBSALT002303,Midazolam maleate
+DB00684,DBSALT002273,Tobramycin hydrochloride
+DB00684,DBSALT000317,Tobramycin sulfate
+DB00685,DBSALT002327,Trovafloxacin hydrochloride
+DB00685,DBSALT000992,Trovafloxacin mesylate
+DB00686,DBSALT001142,Calcium pentosan polysulfate
+DB00686,DBSALT000991,Pentosan polysulfate sodium
+DB00687,DBSALT000659,Fludrocortisone acetate
+DB00688,DBSALT001477,Mycophenolate mofetil hydrochloride
+DB00689,DBSALT001839,Cefaloglycin dihydrate
+DB00689,DBSALT001840,Cefaloglycin monohydrate
+DB00690,DBSALT000543,Flurazepam hydrochloride
+DB00691,DBSALT000504,Moexipril Hydrochloride
+DB00692,DBSALT000980,Phentolamine mesylate
+DB00693,DBSALT001432,Fluorescein sodium
+DB00694,DBSALT001476,Daunorubicin citrate
+DB00694,DBSALT000665,Daunorubicin hydrochloride
+DB00695,DBSALT003113,Furosemide sodium
+DB00696,DBSALT000979,Ergotamine tartrate
+DB00697,DBSALT000550,Tizanidine hydrochloride
+DB00698,DBSALT001891,Nitrofurantoin monohydrate
+DB00698,DBSALT001418,Nitrofurantoin sodium
+DB00704,DBSALT000670,Naltrexone hydrochloride
+DB00705,DBSALT000038,Delavirdine mesylate
+DB00706,DBSALT000978,Tamsulosin hydrochloride
+DB00708,DBSALT000275,Sufentanil citrate
+DB00710,DBSALT000246,Ibandronate sodium
+DB00711,DBSALT000975,Diethylcarbamazine citrate
+DB00712,DBSALT000544,Flurbiprofen sodium
+DB00713,DBSALT000248,Oxacillin sodium
+DB00713,DBSALT000974,Oxacillin sodium monohydrate
+DB00714,DBSALT000818,Apomorphine hydrochloride
+DB00715,DBSALT000132,Paroxetine hydrochloride
+DB00715,DBSALT001742,Paroxetine hydrochloride hemihydrate
+DB00715,DBSALT000133,Paroxetine mesylate
+DB00716,DBSALT001179,Nedocromil sodium
+DB00717,DBSALT000129,Norethisterone acetate
+DB00719,DBSALT000973,Azatadine maleate
+DB00720,DBSALT000972,Clodronate disodium
+DB00721,DBSALT000551,Procaine hydrochloride
+DB00721,DBSALT002216,Procaine nitrate
+DB00721,DBSALT002215,Procaine phosphate
+DB00722,DBSALT002494,Lisinopril dihydrate
+DB00723,DBSALT000971,Methoxamine hydrochloride
+DB00726,DBSALT000969,Trimipramine maleate
+DB00726,DBSALT002959,Trimipramine mesylate
+DB00728,DBSALT000575,Rocuronium bromide
+DB00733,DBSALT000242,Pralidoxime chloride
+DB00733,DBSALT002986,Pralidoxime methyl sulfate
+DB00734,DBSALT003205,Risperidone tartrate
+DB00735,DBSALT000677,Naftifine Hydrochloride
+DB00736,DBSALT001222,Esomeprazole magnesium
+DB00736,DBSALT001223,Esomeprazole magnesium dihydrate
+DB00736,DBSALT001836,Esomeprazole magnesium trihydrate
+DB00736,DBSALT000968,Esomeprazole sodium
+DB00736,DBSALT001224,Esomeprazole strontium
+DB00736,DBSALT001837,Esomeprazole strontium hydrate
+DB00737,DBSALT000678,Meclizine hydrochloride
+DB00738,DBSALT002233,Pentamidine gluconate
+DB00738,DBSALT000967,Pentamidine isethionate
+DB00738,DBSALT002232,Pentamidine mesylate
+DB00739,DBSALT000966,Hetacillin potassium
+DB00740,DBSALT000679,Riluzole Hydrochloride
+DB00743,DBSALT001794,Gadobenate dimeglumine
+DB00746,DBSALT000965,Deferoxamine hydrochloride
+DB00746,DBSALT000964,Deferoxamine mesylate
+DB00748,DBSALT000963,Carbinoxamine maleate
+DB00750,DBSALT000962,Prilocaine hydrochloride
+DB00751,DBSALT000961,Epinastine hydrochloride
+DB00752,DBSALT000960,Tranylcypromine sulfate
+DB00757,DBSALT000959,Dolasetron mesylate
+DB00758,DBSALT002628,Clopidogrel besilate
+DB00758,DBSALT000029,Clopidogrel bisulfate
+DB00758,DBSALT002594,Clopidogrel hydrochloride
+DB00758,DBSALT003517,Clopidogrel resinate
+DB00759,DBSALT000361,Tetracycline hydrochloride
+DB00759,DBSALT001631,Tetracycline phosphate
+DB00760,DBSALT002981,Meropenem sodium
+DB00760,DBSALT002823,Meropenem trihydrate
+DB00762,DBSALT000103,Irinotecan hydrochloride
+DB00762,DBSALT001805,Irinotecan hydrochloride hydrate
+DB00762,DBSALT002617,Irinotecan sucrosofate
+DB00766,DBSALT001302,Clavulanate potassium
+DB00767,DBSALT001425,Benzquinamide hydrochloride
+DB00768,DBSALT000685,Olopatadine hydrochloride
+DB00769,DBSALT000686,Hydrocortamate hydrochloride
+DB00771,DBSALT000958,Clidinium Bromide
+DB00773,DBSALT000070,Etoposide phosphate
+DB00775,DBSALT001454,Tirofiban hydrochloride
+DB00777,DBSALT001417,Propiomazine hydrochloride
+DB00780,DBSALT000954,Phenelzine sulfate
+DB00782,DBSALT000225,Propantheline bromide
+DB00783,DBSALT001383,Estradiol hemihydrate
+DB00787,DBSALT000004,Acyclovir sodium
+DB00788,DBSALT000949,Naproxen sodium
+DB00789,DBSALT002762,Gadopentetate dimeglumine
+DB00790,DBSALT001144,Perindopril arginine
+DB00790,DBSALT001145,Perindopril erbumine
+DB00790,DBSALT003031,Perindopril tosylate
+DB00792,DBSALT001316,Tripelennamine citrate
+DB00792,DBSALT000689,Tripelennamine hydrochloride
+DB00797,DBSALT000948,Tolazoline hydrochloride
+DB00798,DBSALT000690,Gentamicin sulfate
+DB00800,DBSALT000945,Fenoldopam mesylate
+DB00802,DBSALT001202,Alfentanil hydrochloride
+DB00803,DBSALT000691,Colistin sulfate
+DB00804,DBSALT000698,Dicyclomine hydrochloride
+DB00805,DBSALT000305,Minaprine dihydrochloride
+DB00807,DBSALT000459,Proparacaine hydrochloride
+DB00810,DBSALT000804,Biperiden hydrochloride
+DB00810,DBSALT001327,Biperiden lactate
+DB00813,DBSALT000301,Fentanyl citrate
+DB00813,DBSALT001226,Fentanyl hydrochloride
+DB00816,DBSALT000295,Orciprenaline Sulfate
+DB00819,DBSALT000539,Acetazolamide sodium
+DB00828,DBSALT000780,Fosfomycin calcium monohydrate
+DB00828,DBSALT000454,Fosfomycin sodium
+DB00828,DBSALT000781,Fosfomycin tromethamine
+DB00829,DBSALT002258,Diazepam hydrochloride
+DB00830,DBSALT000705,Phenmetrazine hydrochloride
+DB00831,DBSALT000569,Trifluoperazine hydrochloride
+DB00833,DBSALT001804,Cefaclor monohydrate
+DB00835,DBSALT000940,Brompheniramine maleate
+DB00836,DBSALT000709,Loperamide hydrochloride
+DB00838,DBSALT001365,Clocortolone pivalate
+DB00841,DBSALT000711,Dobutamine hydrochloride
+DB00841,DBSALT002324,Dobutamine tartrate
+DB00843,DBSALT000938,Donepezil hydrochloride
+DB00843,DBSALT003199,Donepezil hydrochloride monohydrate
+DB00844,DBSALT000125,Nalbuphine hydrochloride
+DB00847,DBSALT000032,Cysteamine bitartrate
+DB00847,DBSALT000033,Cysteamine hydrochloride
+DB00848,DBSALT000822,Levamisole hydrochloride
+DB00848,DBSALT001628,Levamisole phosphate
+DB00848,DBSALT001626,Levamisole resinate
+DB00852,DBSALT000149,Pseudoephedrine hydrochloride
+DB00852,DBSALT000150,Pseudoephedrine sulfate
+DB00854,DBSALT000935,Levorphanol tartrate
+DB00855,DBSALT000934,Aminolevulinic acid hydrochloride
+DB00857,DBSALT000470,Terbinafine hydrochloride
+DB00862,DBSALT001741,Vardenafil hydrochloride
+DB00863,DBSALT001128,Ranitidine bismuth citrate
+DB00863,DBSALT000487,Ranitidine hydrochloride
+DB00864,DBSALT000167,Tacrolimus hydrate
+DB00865,DBSALT000832,Benzphetamine hydrochloride
+DB00866,DBSALT000932,Alprenolol hydrochloride
+DB00867,DBSALT000489,Ritodrine hydrochloride
+DB00869,DBSALT000931,Dorzolamide hydrochloride
+DB00871,DBSALT000297,Terbutaline sulfate
+DB00872,DBSALT000793,Conivaptan hydrochloride
+DB00875,DBSALT000928,Flupentixol decanoate
+DB00875,DBSALT000929,Flupentixol dihydrochloride
+DB00876,DBSALT000927,Eprosartan mesylate
+DB00876,DBSALT002994,Eprosartan mesylate dihydrate
+DB00878,DBSALT001123,Chlorhexidine acetate
+DB00878,DBSALT000023,Chlorhexidine gluconate
+DB00878,DBSALT001610,Chlorhexidine hydrochloride
+DB00880,DBSALT000926,Chlorothiazide sodium
+DB00881,DBSALT000465,Quinapril Hydrochloride
+DB00882,DBSALT000490,Clomifene citrate
+DB00884,DBSALT000494,Risedronate sodium
+DB00884,DBSALT001515,Risedronate sodium hemi-pentahydrate
+DB00884,DBSALT001516,Risedronate sodium monohydrate
+DB00885,DBSALT000925,Pemirolast potassium
+DB00888,DBSALT000904,Mechlorethamine hydrochloride
+DB00889,DBSALT000485,Granisetron hydrochloride
+DB00892,DBSALT000226,Oxybuprocaine hydrochloride
+DB00899,DBSALT001450,Remifentanil hydrochloride
+DB00901,DBSALT002788,Bitolterol mesylate
+DB00902,DBSALT000486,Methdilazine Hydrochloride
+DB00903,DBSALT001225,Ethacrynate sodium
+DB00904,DBSALT000921,Ondansetron hydrochloride
+DB00904,DBSALT001248,Ondansetron hydrochloride dihydrate
+DB00906,DBSALT001255,Tiagabine hydrochloride
+DB00907,DBSALT001521,Cocaine hydrochloride
+DB00908,DBSALT001251,Quinidine gluconate
+DB00908,DBSALT002206,Quinidine hydrochloride
+DB00908,DBSALT001344,Quinidine polygalacturonate
+DB00908,DBSALT000363,Quinidine sulfate
+DB00913,DBSALT001408,Anileridine hydrochloride
+DB00913,DBSALT001390,Anileridine phosphate
+DB00914,DBSALT000273,Phenformin hydrochloride
+DB00915,DBSALT000203,Amantadine hydrochloride
+DB00915,DBSALT000830,Amantadine sulfate
+DB00916,DBSALT000362,Metronidazole hydrochloride
+DB00918,DBSALT001204,Almotriptan malate
+DB00919,DBSALT001630,Spectinomycin dihydrochloride pentahydrate
+DB00919,DBSALT000380,Spectinomycin hydrochloride
+DB00919,DBSALT001637,Spectinomycin hydrochloride pentahydrate
+DB00919,DBSALT002282,Spectinomycin sulfate
+DB00919,DBSALT001629,Spectinomycin sulfate tetrahydrate
+DB00920,DBSALT001856,Ketotifen fumarate
+DB00921,DBSALT000019,Buprenorphine hydrochloride
+DB00924,DBSALT000479,Cyclobenzaprine hydrochloride
+DB00925,DBSALT000480,Phenoxybenzamine hydrochloride
+DB00930,DBSALT000790,Colesevelam hydrochloride
+DB00931,DBSALT001479,Metacycline hydrochloride
+DB00932,DBSALT001882,Tipranavir disodium
+DB00933,DBSALT001396,Mesoridazine besylate
+DB00933,DBSALT001073,Mesoridazine mesilate
+DB00934,DBSALT000482,Maprotiline hydrochloride
+DB00935,DBSALT000821,Oxymetazoline hydrochloride
+DB00936,DBSALT001950,Choline magnesium trisalicylate
+DB00936,DBSALT003018,Diethylamine salicylate
+DB00936,DBSALT002536,Potassium salicylate
+DB00936,DBSALT001552,Sodium salicylate
+DB00937,DBSALT000484,Diethylpropion hydrochloride
+DB00938,DBSALT001372,Salmeterol xinafoate
+DB00939,DBSALT001241,Meclofenamate sodium
+DB00940,DBSALT000228,Methantheline bromide
+DB00941,DBSALT000566,Hexafluronium bromide
+DB00942,DBSALT000820,Cycrimine hydrochloride
+DB00944,DBSALT000567,Demecarium bromide
+DB00945,DBSALT003034,Lysine acetylsalicylate
+DB00948,DBSALT002350,Mezlocillin sodium
+DB00948,DBSALT001339,Mezlocillin sodium monohydrate
+DB00950,DBSALT001227,Fexofenadine hydrochloride
+DB00952,DBSALT001246,Naratriptan hydrochloride
+DB00953,DBSALT001798,Rizatriptan benzoate
+DB00955,DBSALT001164,Netilmicin sulfate
+DB00956,DBSALT001233,Hydrocodone bitartrate
+DB00956,DBSALT002210,Hydrocodone hydrochloride
+DB00956,DBSALT001602,Hydrocodone polistirex
+DB00959,DBSALT001157,Methylprednisolone acetate
+DB00961,DBSALT000478,Mepivacaine hydrochloride
+DB00963,DBSALT000356,Bromfenac sodium
+DB00964,DBSALT000819,Apraclonidine hydrochloride
+DB00966,DBSALT003204,Telmisartan sodium
+DB00968,DBSALT001139,Methyldopa hydrochloride
+DB00968,DBSALT000988,Methyldopa sesquihydrate
+DB00969,DBSALT000247,Alosetron hydrochloride
+DB00972,DBSALT000013,Azelastine hydrochloride
+DB00978,DBSALT000795,Lomefloxacin hydrochloride
+DB00979,DBSALT000476,Cyclopentolate hydrochloride
+DB00981,DBSALT001541,Physostigmine salicylate
+DB00981,DBSALT000243,Physostigmine Sulfate
+DB00983,DBSALT001371,Formoterol fumarate
+DB00986,DBSALT001183,Glycopyrronium bromide
+DB00986,DBSALT002800,Glycopyrronium tosylate
+DB00987,DBSALT002381,Cytarabine hydrochloride
+DB00988,DBSALT000508,Dopamine hydrochloride
+DB00989,DBSALT001252,Rivastigmine tartrate
+DB00991,DBSALT001452,Oxaprozin potassium
+DB00992,DBSALT001462,Methyl aminolevulinate hydrochloride
+DB00993,DBSALT000012,Azathioprine sodium
+DB00994,DBSALT001620,Neomycin palmitate
+DB00994,DBSALT000472,Neomycin sulfate
+DB00997,DBSALT002287,Doxorubicin citrate
+DB00997,DBSALT000060,Doxorubicin hydrochloride
+DB00998,DBSALT001958,Frovatriptan succinate
+DB00998,DBSALT001957,Frovatriptan succinate anhydrous
+DB01001,DBSALT000257,Albuterol sulfate
+DB01002,DBSALT000834,Levobupivacaine hydrochloride
+DB01003,DBSALT000985,Cromoglicate sodium
+DB01004,DBSALT000309,Ganciclovir sodium
+DB01007,DBSALT002308,Tioconazole hydrochloride
+DB01009,DBSALT003001,Ketoprofen lysine
+DB01009,DBSALT002292,Ketoprofen sodium
+DB01010,DBSALT002779,Edrophonium bromide
+DB01010,DBSALT000475,Edrophonium chloride
+DB01012,DBSALT001463,Cinacalcet hydrochloride
+DB01014,DBSALT000835,Balsalazide disodium
+DB01017,DBSALT000721,Minocycline hydrochloride
+DB01018,DBSALT000509,Guanfacine hydrochloride
+DB01019,DBSALT000234,Bethanechol chloride
+DB01024,DBSALT001740,Mycophenolate sodium
+DB01029,DBSALT002632,Irbesartan hydrochloride
+DB01030,DBSALT000322,Topotecan hydrochloride
+DB01033,DBSALT001026,Mercaptopurine monohydrate
+DB01035,DBSALT000724,Procainamide hydrochloride
+DB01036,DBSALT000467,Tolterodine tartrate
+DB01037,DBSALT000260,Selegiline hydrochloride
+DB01038,DBSALT001419,Carphenazine maleate
+DB01042,DBSALT001019,Melphalan hydrochloride
+DB01043,DBSALT000456,Memantine hydrochloride
+DB01044,DBSALT002718,Gatifloxacin hemihydrate
+DB01044,DBSALT001829,Gatifloxacin sesquihydrate
+DB01045,DBSALT001014,Rifampicin sodium
+DB01048,DBSALT003041,Abacavir hydrochloride
+DB01048,DBSALT003040,Abacavir hydrochloride monohydrate
+DB01048,DBSALT000871,Abacavir sulfate
+DB01050,DBSALT002285,Ibuprofen aluminum
+DB01050,DBSALT003107,Ibuprofen arginine
+DB01050,DBSALT001397,Ibuprofen lysine
+DB01050,DBSALT002284,Ibuprofen potassium
+DB01050,DBSALT001483,Ibuprofen sodium
+DB01051,DBSALT001020,Novobiocin sodium
+DB01053,DBSALT002391,Benethamine penicillin
+DB01053,DBSALT002769,Benzathine benzylpenicillin
+DB01053,DBSALT002768,Benzylpenicillin benzathine hydrate
+DB01053,DBSALT002767,Benzylpenicillin calcium
+DB01053,DBSALT002390,Benzylpenicillin potassium
+DB01053,DBSALT000726,Benzylpenicillin sodium
+DB01056,DBSALT001138,Tocainide hydrochloride
+DB01057,DBSALT001098,Echothiophate iodide
+DB01060,DBSALT000868,Amoxicillin sodium
+DB01060,DBSALT000867,Amoxicillin Trihydrate
+DB01061,DBSALT000431,Azlocillin sodium
+DB01062,DBSALT000430,Oxybutynin chloride
+DB01063,DBSALT001415,Acetophenazine maleate
+DB01064,DBSALT000429,Isoprenaline hydrochloride
+DB01064,DBSALT001403,Isoproterenol sulfate
+DB01066,DBSALT001811,Cefditoren pivoxil
+DB01069,DBSALT000427,Promethazine hydrochloride
+DB01069,DBSALT003061,Promethazine teoclate
+DB01072,DBSALT000426,Atazanavir sulfate
+DB01073,DBSALT000425,Fludarabine phosphate
+DB01074,DBSALT003337,Perhexiline maleate
+DB01075,DBSALT001461,Diphenhydramine citrate
+DB01075,DBSALT000056,Diphenhydramine hydrochloride
+DB01075,DBSALT002478,Diphenhydramine methylbromide
+DB01075,DBSALT000057,Diphenhydramine salicylate
+DB01076,DBSALT000011,Atorvastatin calcium
+DB01076,DBSALT001499,Atorvastatin calcium trihydrate
+DB01077,DBSALT000842,Etidronate disodium
+DB01079,DBSALT001797,Tegaserod maleate
+DB01081,DBSALT000809,Diphenoxylate hydrochloride
+DB01082,DBSALT000422,Streptomycin Sulfate
+DB01084,DBSALT002462,Emedastine difumarate
+DB01085,DBSALT000307,Pilocarpine hydrochloride
+DB01085,DBSALT001181,Pilocarpine nitrate
+DB01085,DBSALT003476,Pilocarpine pamoate
+DB01086,DBSALT001560,Benzocaine hydrochloride
+DB01087,DBSALT001188,Primaquine phosphate
+DB01088,DBSALT002985,Iloprost tromethamine
+DB01089,DBSALT002253,Deserpidine hydrochloride
+DB01090,DBSALT000236,Pentolinium tartrate
+DB01091,DBSALT000245,Butenafine hydrochloride
+DB01095,DBSALT000088,Fluvastatin sodium
+DB01098,DBSALT000154,Rosuvastatin calcium
+DB01098,DBSALT001337,Rosuvastatin zinc
+DB01102,DBSALT001445,Arbutamine hydrochloride
+DB01103,DBSALT002200,Quinacrine dihydrochloride
+DB01103,DBSALT002386,Quinacrine hydrochloride
+DB01104,DBSALT000808,Sertraline hydrochloride
+DB01105,DBSALT001451,Sibutramine hydrochloride
+DB01106,DBSALT001442,Levocabastine hydrochloride
+DB01109,DBSALT001434,Heparin calcium
+DB01109,DBSALT000417,Heparin sodium
+DB01110,DBSALT001242,Miconazole nitrate
+DB01111,DBSALT000415,Colistimethate sodium
+DB01112,DBSALT001355,Cefuroxime axetil
+DB01112,DBSALT001160,Cefuroxime sodium
+DB01113,DBSALT000784,Papaverine codecarboxylate
+DB01113,DBSALT000412,Papaverine hydrochloride
+DB01113,DBSALT002205,Papaverine sulfate
+DB01114,DBSALT002229,Chlorpheniramine gluconate
+DB01114,DBSALT001894,Chlorpheniramine hydrochloride
+DB01114,DBSALT000987,Chlorpheniramine maleate
+DB01114,DBSALT001556,Chlorpheniramine tannate
+DB01116,DBSALT001381,Trimethaphan camsylate
+DB01118,DBSALT000355,Amiodarone hydrochloride
+DB01119,DBSALT003365,Diazoxide choline
+DB01122,DBSALT001309,Ambenonium chloride
+DB01123,DBSALT001573,Proflavine hemisulfate
+DB01124,DBSALT001412,Tolbutamide sodium
+DB01127,DBSALT002838,Econazole nitrate
+DB01129,DBSALT000552,Rabeprazole sodium
+DB01131,DBSALT001187,Proguanil hydrochloride
+DB01132,DBSALT000555,Pioglitazone hydrochloride
+DB01133,DBSALT000411,Tiludronate Disodium
+DB01135,DBSALT002766,Doxacurium chloride
+DB01136,DBSALT001201,Carvedilol phosphate
+DB01137,DBSALT001001,Levofloxacin hemihydrate
+DB01139,DBSALT001645,Cefapirin benzathine
+DB01139,DBSALT000264,Cefapirin sodium
+DB01140,DBSALT001743,Cefadroxil hemihydrate
+DB01140,DBSALT001744,Cefadroxil monohydrate
+DB01140,DBSALT002304,Cefadroxil sodium
+DB01141,DBSALT001165,Micafungin sodium
+DB01142,DBSALT000059,Doxepin hydrochloride
+DB01143,DBSALT001833,Amifostine trihydrate
+DB01145,DBSALT000408,Sulfoxone sodium
+DB01146,DBSALT000807,Diphenylpyraline hydrochloride
+DB01147,DBSALT001648,Cloxacillin benzathine
+DB01147,DBSALT000249,Cloxacillin sodium
+DB01147,DBSALT002444,Cloxacillin sodium hydrate
+DB01148,DBSALT000407,Flavoxate hydrochloride
+DB01149,DBSALT000406,Nefazodone hydrochloride
+DB01150,DBSALT001051,Cefprozil monohydrate
+DB01151,DBSALT000042,Desipramine hydrochloride
+DB01153,DBSALT001382,Sertaconazole nitrate
+DB01154,DBSALT001404,Thiamylal sodium
+DB01155,DBSALT002832,Gemifloxacin mesylate
+DB01156,DBSALT001210,Bupropion hydrobromide
+DB01156,DBSALT000199,Bupropion hydrochloride
+DB01157,DBSALT002433,Trimetrexate glucuronate
+DB01158,DBSALT001050,Bretylium tosylate
+DB01161,DBSALT000823,Chloroprocaine hydrochloride
+DB01162,DBSALT000326,Terazosin hydrochloride
+DB01162,DBSALT002382,Terazosin hydrochloride hydrate
+DB01164,DBSALT000772,Calcium chloride dihydrate
+DB01164,DBSALT003069,Calcium chloride hexahydrate
+DB01165,DBSALT002388,Ofloxacin hydrochloride
+DB01168,DBSALT000731,Procarbazine hydrochloride
+DB01170,DBSALT001071,Guanethidine monosulfate
+DB01170,DBSALT001861,Guanethidine sulfate
+DB01172,DBSALT000401,Kanamycin sulfate
+DB01173,DBSALT000400,Orphenadrine citrate
+DB01173,DBSALT001021,Orphenadrine hydrochloride
+DB01174,DBSALT001491,Phenobarbital sodium
+DB01175,DBSALT002455,Escitalopram oxalate
+DB01176,DBSALT000399,Cyclizine hydrochloride
+DB01176,DBSALT001182,Cyclizine lactate
+DB01177,DBSALT000341,Idarubicin hydrochloride
+DB01182,DBSALT000148,Propafenone hydrochloride
+DB01183,DBSALT000126,Naloxone hydrochloride
+DB01183,DBSALT001497,Naloxone hydrochloride dihydrate
+DB01184,DBSALT002902,Domperidone maleate
+DB01186,DBSALT002445,Pergolide mesylate
+DB01188,DBSALT001147,Ciclopirox olamine
+DB01190,DBSALT001163,Clindamycin hydrochloride
+DB01190,DBSALT001215,Clindamycin palmitate hydrochloride
+DB01190,DBSALT000778,Clindamycin phosphate
+DB01192,DBSALT001249,Oxymorphone hydrochloride
+DB01193,DBSALT000192,Acebutolol hydrochloride
+DB01195,DBSALT000086,Flecainide acetate
+DB01196,DBSALT000845,Estramustine sodium phosphate
+DB01196,DBSALT003535,Estramustine sodium phosphate anhydrous
+DB01199,DBSALT000238,Tubocurarine chloride pentahydrate
+DB01200,DBSALT001209,Bromocriptine mesylate
+DB01201,DBSALT002329,Rifapentine hydrochloride
+DB01204,DBSALT000121,Mitoxantrone hydrochloride
+DB01210,DBSALT000251,Levobunolol hydrochloride
+DB01211,DBSALT002306,Clarithromycin citrate
+DB01212,DBSALT001213,Ceftriaxone sodium
+DB01213,DBSALT003114,Fomepizole sulfate
+DB01214,DBSALT000806,Metipranolol hydrochloride
+DB01218,DBSALT001186,Halofantrine hydrochloride
+DB01219,DBSALT000397,Dantrolene sodium
+DB01221,DBSALT000396,Ketamine hydrochloride
+DB01223,DBSALT001739,Aminophylline dihydrate
+DB01224,DBSALT002790,Quetiapine fumarate
+DB01225,DBSALT002813,Enoxaparin sodium
+DB01226,DBSALT001359,Mivacurium chloride
+DB01227,DBSALT001444,Levacetylmethadol hydrochloride
+DB01228,DBSALT002712,Encainide hydrochloride
+DB01231,DBSALT000395,Diphenidol hydrochloride
+DB01232,DBSALT002836,Saquinavir mesylate
+DB01233,DBSALT000393,Metoclopramide hydrochloride
+DB01233,DBSALT002458,Metoclopramide hydrochloride anhydrous
+DB01234,DBSALT001216,Dexamethasone phosphate
+DB01234,DBSALT000843,Dexamethasone sodium phosphate
+DB01237,DBSALT000791,Bromodiphenhydramine hydrochloride
+DB01239,DBSALT002973,Chlorprothixene hydrochloride
+DB01240,DBSALT001218,Epoprostenol sodium
+DB01242,DBSALT000028,Clomipramine hydrochloride
+DB01244,DBSALT001436,Bepridil hydrochloride
+DB01244,DBSALT003532,Bepridil hydrochloride anhydrous
+DB01245,DBSALT001347,Decamethonium bromide
+DB01246,DBSALT000183,Alimemazine tartrate
+DB01248,DBSALT001786,Docetaxel trihydrate
+DB01250,DBSALT000191,Olsalazine sodium
+DB01252,DBSALT001868,Mitiglinide calcium dihydrate
+DB01253,DBSALT001151,Ergonovine maleate
+DB01254,DBSALT001849,Dasatinib monohydrate
+DB01254,DBSALT003471,Dasatinib monolauryl sulfate
+DB01255,DBSALT002824,Lisdexamfetamine dimesylate
+DB01259,DBSALT001785,Lapatinib ditosylate
+DB01261,DBSALT003499,Sitagliptin fumarate
+DB01261,DBSALT003498,Sitagliptin hydrochloride monohydrate
+DB01261,DBSALT003497,Sitagliptin malate
+DB01261,DBSALT002821,Sitagliptin phosphate
+DB01261,DBSALT003501,Sitagliptin tartrate hemihydrate
+DB01264,DBSALT003480,Darunavir dihydrate
+DB01264,DBSALT001338,Darunavir ethanolate
+DB01264,DBSALT003213,Darunavir propylene glycolate
+DB01267,DBSALT001464,Paliperidone palmitate
+DB01268,DBSALT000166,Sunitinib malate
+DB01273,DBSALT000548,Varenicline tartrate
+DB01274,DBSALT001387,Arformoterol tartrate
+DB01275,DBSALT000792,Hydralazine hydrochloride
+DB01278,DBSALT000144,Pramlintide acetate
+DB01284,DBSALT001959,Tetracosactide acetate
+DB01288,DBSALT001185,Fenoterol hydrobromide
+DB01291,DBSALT000799,Pirbuterol acetate
+DB01291,DBSALT000798,Pirbuterol hydrochloride
+DB01295,DBSALT002868,Bevantolol hydrochloride
+DB01296,DBSALT002844,Glucosamine hydrochloride
+DB01296,DBSALT001596,Glucosamine sulfate
+DB01296,DBSALT003059,Glucosamine sulfate potassium chloride
+DB01296,DBSALT003060,Glucosamine sulfate sodium chloride
+DB01297,DBSALT002280,Practolol hydrochloride
+DB01319,DBSALT001228,Fosamprenavir calcium
+DB01319,DBSALT002341,Fosamprenavir sodium
+DB01320,DBSALT000296,Fosphenytoin sodium
+DB01326,DBSALT003546,Cefamandole sodium
+DB01327,DBSALT000310,Cefazolin sodium
+DB01328,DBSALT001472,Cefonicid sodium
+DB01329,DBSALT001470,Cefoperazone sodium
+DB01330,DBSALT001161,Cefotetan disodium
+DB01331,DBSALT001211,Cefoxitin sodium
+DB01332,DBSALT001162,Ceftizoxime sodium
+DB01333,DBSALT002983,Cefradine monohydrate
+DB01336,DBSALT002349,Metocurine chloride
+DB01337,DBSALT000368,Pancuronium bromide
+DB01338,DBSALT000367,Pipecuronium bromide
+DB01339,DBSALT001200,Vecuronium bromide
+DB01340,DBSALT001097,Cilazapril monohydrate
+DB01344,DBSALT002567,Tolevamer calcium
+DB01344,DBSALT002496,Tolevamer potassium sodium
+DB01344,DBSALT000840,Tolevamer sodium
+DB01347,DBSALT001863,Saprisartan potassium
+DB01348,DBSALT001443,Spirapril hydrochloride
+DB01351,DBSALT001490,Amobarbital sodium
+DB01352,DBSALT002230,Aprobarbital sodium
+DB01355,DBSALT000914,Hexobarbital sodium
+DB01359,DBSALT000137,Penbutolol sulfate
+DB01364,DBSALT001513,Ephedrine hydrochloride
+DB01364,DBSALT001503,Ephedrine sulfate
+DB01364,DBSALT002746,Ephedrine tannate
+DB01365,DBSALT001074,Mephentermine sulfate
+DB01366,DBSALT003145,Procaterol hydrochloride
+DB01366,DBSALT001184,Procaterol hydrochloride hemihydrate
+DB01367,DBSALT001384,Rasagiline mesylate
+DB01367,DBSALT002987,Rasagiline tartrate
+DB01369,DBSALT002316,Quinupristin mesylate
+DB01388,DBSALT002896,Mibefradil Dihydrochloride
+DB01392,DBSALT001153,Yohimbine hydrochloride
+DB01397,DBSALT001864,Magnesium salicylate tetrahydrate
+DB01400,DBSALT001191,Neostigmine bromide
+DB01400,DBSALT000128,Neostigmine methylsulfate
+DB01403,DBSALT002963,Methotrimeprazine hydrochloride
+DB01403,DBSALT002992,Methotrimeprazine maleate
+DB01405,DBSALT000794,Temafloxacin hydrochloride
+DB01407,DBSALT001621,Clenbuterol hydrochloride
+DB01408,DBSALT000797,Bambuterol hydrochloride
+DB01409,DBSALT000348,Tiotropium bromide
+DB01409,DBSALT001524,Tiotropium bromide monohydrate
+DB01411,DBSALT003009,Pranlukast hydrate
+DB01413,DBSALT000920,Cefepime hydrochloride
+DB01414,DBSALT002849,Cefacetrile sodium
+DB01415,DBSALT001212,Ceftibuten dihydrate
+DB01416,DBSALT001354,Cefpodoxime proxetil
+DB01416,DBSALT001810,Cefpodoxime sodium
+DB01421,DBSALT000265,Paromomycin sulfate
+DB01423,DBSALT002347,Stepronin sodium
+DB01425,DBSALT000918,Alizapride hydrochloride
+DB01427,DBSALT001311,Amrinone lactate
+DB01429,DBSALT000917,Aprindine hydrochloride
+DB01430,DBSALT000916,Almitrine mesylate
+DB01433,DBSALT002241,Methadyl acetate hydrochloride
+DB01438,DBSALT000915,Phenazopyridine hydrochloride
+DB01440,DBSALT002966,Calcium oxybate
+DB01440,DBSALT003053,Magnesium oxybate
+DB01440,DBSALT002967,Potassium oxybate
+DB01452,DBSALT000095,Diamorphine hydrochloride
+DB01454,DBSALT002574,Midomafetamine hydrochloride
+DB01463,DBSALT000814,Fencamfamine hydrochloride
+DB01465,DBSALT002323,"2,5-dimethoxyamphetamine hydrochloride"
+DB01466,DBSALT002363,Ethylmorphine hydrochloride
+DB01478,DBSALT002580,Desmethylprodine hydrochloride
+DB01482,DBSALT002869,Fenethylline hydrochloride
+DB01497,DBSALT000825,Etorphine Hydrochloride
+DB01501,DBSALT000047,Difenoxin hydrochloride
+DB01520,DBSALT002317,Tenocyclidine hydrochloride
+DB01528,DBSALT002288,"2,5-dimethoxy-4-methylamphetamine hydrochloride"
+DB01535,DBSALT001611,Carfentanil citrate
+DB01546,DBSALT000188,Alpha-ethyltryptamine acetate
+DB01548,DBSALT001649,Diprenorphine hydrochloride
+DB01551,DBSALT000048,Dihydrocodeine bitartrate
+DB01551,DBSALT000050,Dihydrocodeine hydrochloride
+DB01551,DBSALT000051,Dihydrocodeine hydroiodide
+DB01551,DBSALT000053,Dihydrocodeine phosphate
+DB01551,DBSALT003135,Dihydrocodeine thiocyanate
+DB01556,DBSALT000815,Chlorphentermine hydrochloride
+DB01576,DBSALT001324,Dextroamphetamine adipate
+DB01576,DBSALT001346,Dextroamphetamine saccharate
+DB01576,DBSALT000046,Dextroamphetamine sulfate
+DB01577,DBSALT000734,Metamfetamine hydrochloride
+DB01577,DBSALT002267,Metamfetamine tartrate
+DB01579,DBSALT001250,Phendimetrazine tartrate
+DB01580,DBSALT001070,Oxprenolol hydrochloride
+DB01581,DBSALT002208,Sulfamerazine sodium
+DB01582,DBSALT002199,Sulfamethazine sodium
+DB01591,DBSALT001640,Solifenacin hydrochloride
+DB01591,DBSALT001639,Solifenacin succinate
+DB01597,DBSALT001295,Cilastatin sodium
+DB01598,DBSALT002429,Imipenem monohydrate
+DB01602,DBSALT000831,Bacampicillin hydrochloride
+DB01603,DBSALT001467,Methicillin sodium
+DB01603,DBSALT003548,Methicillin sodium anhydrous
+DB01605,DBSALT001943,Pivmecillinam hydrochloride
+DB01606,DBSALT001475,Tazobactam sodium
+DB01607,DBSALT001159,Ticarcillin disodium
+DB01610,DBSALT001459,Valganciclovir hydrochloride
+DB01611,DBSALT000096,Hydroxychloroquine sulfate
+DB01614,DBSALT001612,Acepromazine maleate
+DB01616,DBSALT000008,Alverine citrate
+DB01618,DBSALT001243,Molindone hydrochloride
+DB01619,DBSALT002846,Phenindamine tartrate
+DB01620,DBSALT001440,Pheniramine maleate
+DB01621,DBSALT001196,Pipotiazine palmitate
+DB01623,DBSALT001423,Thiothixene hydrochloride
+DB01624,DBSALT000545,Zuclopenthixol acetate
+DB01624,DBSALT000787,Zuclopenthixol decanoate
+DB01624,DBSALT000546,Zuclopenthixol dihydrochloride
+DB01625,DBSALT002274,Isopropamide chloride
+DB01625,DBSALT001023,Isopropamide iodide
+DB01626,DBSALT000304,Pargyline hydrochloride
+DB01627,DBSALT000109,Lincomycin hydrochloride
+DB01627,DBSALT001614,Lincomycin hydrochloride monohydrate
+DB01628,DBSALT002328,Etoricoxib hydrochloride
+DB01698,DBSALT003159,Rutoside trihydrate
+DB01718,DBSALT001769,Cetrimonium bromide
+DB01718,DBSALT001772,Cetrimonium carboxydecyl PEG-8 dimethicone
+DB01718,DBSALT001770,Cetrimonium chloride
+DB01718,DBSALT001771,Cetrimonium hydroxide
+DB01764,DBSALT002330,Dalfopristin mesylate
+DB01783,DBSALT000034,Calcium pantothenate
+DB01783,DBSALT003045,Sodium pantothenate
+DB01839,DBSALT003502,Propylene glycol diacetate
+DB01901,DBSALT002733,Sucrosofate potassium
+DB01914,DBSALT001507,D-glucose monohydrate
+DB01942,DBSALT001558,Calcium formate
+DB01987,DBSALT002497,Cocarboxylase chloride
+DB01987,DBSALT003002,Cocarboxylase tetrahydrate
+DB02034,DBSALT001877,Tridolgosir hydrochloride
+DB02234,DBSALT003452,S-Ethyl isothiouronium bromide
+DB02234,DBSALT003453,S-ethylisothiouronium diethyl phosphate
+DB02240,DBSALT002387,Quinacrine mustard dihydrochloride
+DB02300,DBSALT001386,Calcipotriol hydrate
+DB02329,DBSALT001875,Carbenoxolone disodium
+DB02362,DBSALT002730,Aminobenzoate potassium
+DB02362,DBSALT002731,Aminobenzoate sodium
+DB02530,DBSALT002209,Gamma-Aminobutyric Acid Hydrochloride
+DB02557,DBSALT001879,Phosphoramidon disodium
+DB02579,DBSALT002397,Sodium acrylate
+DB02579,DBSALT002398,Zinc diacrylate
+DB02638,DBSALT002332,Terlipressin acetate
+DB02656,DBSALT002566,LY-294002 hydrochloride
+DB02701,DBSALT002262,Nicotinamide hydrochloride
+DB02703,DBSALT000340,Fucidate sodium
+DB02703,DBSALT002972,Fusidic acid hemihydrate
+DB02751,DBSALT002268,Glycocyamine hydrochloride
+DB02751,DBSALT002269,Glycocyamine phosphate
+DB02779,DBSALT003328,laurtrimonium bromide
+DB02843,DBSALT003153,alpha-Glucose-1-phosphate disodium tetrahydrate
+DB02948,DBSALT002936,Fosmidomycin sodium
+DB03052,DBSALT002937,Dazoxiben hydrochloride
+DB03088,DBSALT002689,Magnesium pidolate
+DB03088,DBSALT003084,Sodium pidolate
+DB03088,DBSALT001565,Zinc pidolate
+DB03128,DBSALT002814,Acetylcholine chloride
+DB03147,DBSALT000903,Flavin adenine dinucleotide disodium
+DB03201,DBSALT001755,D-Cysteine hydrochloride monohydrate
+DB03206,DBSALT003346,Duvoglustat hydrochloride
+DB03209,DBSALT001274,Oteracil potassium
+DB03229,DBSALT003028,Calcium 4-methyl-2-oxovalerate
+DB03247,DBSALT001766,Riboflavin 5'-phosphate sodium anhydrous
+DB03247,DBSALT003355,Riboflavin sodium phosphate
+DB03247,DBSALT000877,Riboflavin-5'-phosphate sodium salt dihydrate
+DB03403,DBSALT002393,Cytidine 5'-Monophosphate Disodium Salt
+DB03424,DBSALT002908,Ubenimex hydrochloride
+DB03496,DBSALT000800,Alvocidib hydrochloride
+DB03523,DBSALT002498,Brequinar sodium
+DB03568,DBSALT002877,Sodium butyrate
+DB03568,DBSALT003202,α-keto-γ-methylselenobutyrate
+DB03575,DBSALT000824,Phencyclidine hydrochloride
+DB03585,DBSALT001825,Oxyphenbutazone monohydrate
+DB03604,DBSALT002405,Tiratricol sodium
+DB03615,DBSALT002372,Ribostamycin sulfate
+DB03619,DBSALT003570,Sodium deoxycholate
+DB03695,DBSALT002395,Piritrexim isethionate
+DB03701,DBSALT001866,Vanoxerine hydrochloride
+DB03756,DBSALT002309,Doconexent sodium
+DB03766,DBSALT002690,Sodium propionate
+DB03785,DBSALT003536,Lovastatin sodium
+DB03793,DBSALT003370,Calcium benzoate
+DB03793,DBSALT001289,Sodium benzoate
+DB03796,DBSALT003198,16-chloropalmitic acid
+DB03808,DBSALT003112,Hexamidine diisethionate
+DB03884,DBSALT003024,Calcium phenylpyruvate
+DB03945,DBSALT001985,Phosphorylcholine chloride
+DB03994,DBSALT002265,Ethanolamine acetate
+DB03994,DBSALT002264,Ethanolamine hydrochloride
+DB03995,DBSALT003309,Betadex sulfobutyl ether sodium
+DB04017,DBSALT002700,Clorgiline hydrochloride
+DB04074,DBSALT003027,Calcium alpha-Ketoisovalerate
+DB04115,DBSALT002313,Berberine chloride
+DB04115,DBSALT002312,Berberine sulfate anhydrous
+DB04160,DBSALT001492,Sodium pyrophosphate
+DB04160,DBSALT003136,Sodium pyrophosphate decahydrate
+DB04209,DBSALT002402,Dequalinium acetate
+DB04209,DBSALT002400,Dequalinium bromide
+DB04209,DBSALT001926,Dequalinium chloride
+DB04209,DBSALT002401,Dequalinium iodide
+DB04209,DBSALT002403,Dequalinium undecenoate
+DB04221,DBSALT002532,Didecyldimethylammonium chloride
+DB04224,DBSALT003147,Calcium oleate
+DB04224,DBSALT001653,Oleate sodium
+DB04267,DBSALT002939,Sodium dipicolinate
+DB04272,DBSALT001502,Citric acid monohydrate
+DB04339,DBSALT003064,Carbocisteine lysine
+DB04348,DBSALT002887,Sodium taurocholate
+DB04365,DBSALT002647,Arecoline hydrobromide
+DB04398,DBSALT001765,Sodium lactate
+DB04398,DBSALT003591,Zinc lactate
+DB04465,DBSALT003589,Lactose monohydrate
+DB04500,DBSALT002366,Acedoben sodium
+DB04545,DBSALT002499,Afegostat tartrate
+DB04570,DBSALT001335,Latamoxef disodium
+DB04574,DBSALT002492,Estrone sodium sulfate
+DB04574,DBSALT001878,Estropipate
+DB04574,DBSALT002493,Potassium estrone sulfate
+DB04620,DBSALT002211,Cycloleucine hydrochloride
+DB04626,DBSALT001615,Apramycin sulfate
+DB04711,DBSALT001312,Iodipamide meglumine
+DB04711,DBSALT001407,Iodipamide sodium
+DB04729,DBSALT002339,Gentamicin c1a sulfate
+DB04786,DBSALT000540,Suramin sodium
+DB04813,DBSALT002855,Bithionolate sodium
+DB04817,DBSALT002439,Metamizole magnesium
+DB04817,DBSALT000332,Metamizole sodium
+DB04817,DBSALT002438,Metamizole sodium monohydrate
+DB04818,DBSALT002894,Iproniazid phosphate
+DB04819,DBSALT002793,Methapyrilene fumarate
+DB04819,DBSALT000334,Methapyrilene hydrochloride
+DB04821,DBSALT002854,Nomifensine maleate
+DB04822,DBSALT002252,Oxeladin citrate
+DB04825,DBSALT002856,Prenylamine lactate
+DB04828,DBSALT002461,Zomepirac sodium
+DB04828,DBSALT000335,Zomepirac sodium anhydrous
+DB04830,DBSALT000336,Buformin hydrochloride
+DB04832,DBSALT002851,Zimelidine hydrochloride
+DB04834,DBSALT000337,Rapacuronium bromide
+DB04836,DBSALT000803,Amineptine hydrochloride
+DB04837,DBSALT001414,Chlophedianol hydrochloride
+DB04837,DBSALT001029,Clofedanol hydrochloride
+DB04840,DBSALT000370,Debrisoquine sulfate
+DB04841,DBSALT000382,Flunarizine dihydrochloride
+DB04843,DBSALT000451,Mepenzolate bromide
+DB04846,DBSALT002890,Celiprolol hydrochloride
+DB04849,DBSALT002394,Cediranib maleate
+DB04851,DBSALT002850,Biricodar dicitrate
+DB04854,DBSALT003209,Febuxostat hemihydrate
+DB04855,DBSALT000061,Dronedarone hydrochloride
+DB04860,DBSALT001812,Isatoribine monohydrate
+DB04861,DBSALT001027,Nebivolol hydrochloride
+DB04865,DBSALT001930,Omacetaxine mepesuccinate hydrochloride
+DB04866,DBSALT000462,Halofuginone hydrobromide
+DB04866,DBSALT002197,Halofuginone lactate
+DB04868,DBSALT001325,Nilotinib hydrochloride monohydrate
+DB04871,DBSALT000111,Lorcaserin hydrochloride
+DB04871,DBSALT001583,Lorcaserin hydrochloride hemihydrate
+DB04881,DBSALT000816,Elacridar hydrochloride
+DB04884,DBSALT002982,Dapoxetine hydrochloride
+DB04888,DBSALT002852,Bifeprunox mesylate
+DB04889,DBSALT000817,Bicifadine hydrochloride
+DB04890,DBSALT000017,Bepotastine besilate
+DB04894,DBSALT000535,Vapreotide acetate
+DB04896,DBSALT000119,Milnacipran hydrochloride
+DB04905,DBSALT002853,Tesmilifene hydrochloride
+DB04908,DBSALT001321,Flibanserin hydrochloride
+DB04911,DBSALT001350,Oritavancin diphosphate
+DB04924,DBSALT002665,Itopride hydrochloride
+DB04931,DBSALT003139,Afamelanotide acetate
+DB04932,DBSALT001719,Defibrotide sodium
+DB04933,DBSALT001799,Eritoran tetrasodium
+DB04948,DBSALT000829,Lofexidine hydrochloride
+DB04967,DBSALT000826,Lucanthone hydrochloride
+DB04972,DBSALT000827,Canfosfamide hydrochloride
+DB04983,DBSALT000847,Denufosol tetrasodium
+DB05018,DBSALT000828,Migalastat hydrochloride
+DB05022,DBSALT003301,Amonafide L-malate
+DB05025,DBSALT001870,Arimoclomol citrate
+DB05025,DBSALT001869,Arimoclomol maleate
+DB05039,DBSALT003032,Indacaterol acetate
+DB05039,DBSALT000101,Indacaterol maleate
+DB05063,DBSALT003175,Mitoquinone mesylate
+DB05088,DBSALT003343,Choline tetrathiomolybdate
+DB05137,DBSALT003531,Lobeline hydrochloride
+DB05143,DBSALT001872,OXI-4503 dipotassium
+DB05220,DBSALT002940,Alisertib sodium
+DB05223,DBSALT002933,Pracinostat hydrochloride
+DB05229,DBSALT003074,Beraprost sodium
+DB05239,DBSALT001290,Cobimetinib fumarate
+DB05255,DBSALT002379,Ronacaleret hydrochloride
+DB05259,DBSALT002719,Glatiramer acetate
+DB05260,DBSALT001854,Gallium nitrate nonahydrate
+DB05265,DBSALT000062,Ecabet sodium
+DB05271,DBSALT000155,Rotigotine hydrochloride
+DB05273,DBSALT002635,Samarium (153Sm) lexidronam pentasodium
+DB05296,DBSALT002633,Motexafin lutetium hydrate
+DB05316,DBSALT001266,Pimavanserin tartrate
+DB05351,DBSALT003494,Dexlansoprazole sesquihydrate
+DB05381,DBSALT002193,Histamine dihydrochloride
+DB05381,DBSALT002194,Histamine phosphate
+DB05383,DBSALT002490,Pimagedine hydrochloride
+DB05395,DBSALT002941,Amibegron hydrochloride
+DB05422,DBSALT002834,OPC-14523 hydrochloride
+DB05422,DBSALT002835,OPC-14523 mesylate
+DB05424,DBSALT002500,Canertinib dihydrochloride
+DB05460,DBSALT003311,Ezatiostat hydrochloride
+DB05487,DBSALT003581,Custirsen sodium
+DB05513,DBSALT003279,Atiprimod dimaleate
+DB05519,DBSALT002596,Budiodarone tartrate
+DB05528,DBSALT000120,Mipomersen sodium
+DB05542,DBSALT002600,Naronapride dihydrochloride
+DB05553,DBSALT002608,Regrelor disodium
+DB05565,DBSALT003237,PBT-1033 hydrochloride
+DB05575,DBSALT001987,Motesanib diphosphate
+DB05575,DBSALT003300,Motesanib phosphate
+DB05585,DBSALT002603,Verubulin hydrochloride
+DB05586,DBSALT002602,Facinicline hydrochloride
+DB05590,DBSALT001988,Bedoradrine sulfate
+DB05592,DBSALT003361,Blarcamesine hydrochloride
+DB05611,DBSALT003142,Apilimod mesylate
+DB05625,DBSALT003323,PTX-9908
+DB05626,DBSALT001989,Retaspimycin hydrochloride
+DB05638,DBSALT002604,Asvasiran sodium
+DB05645,DBSALT002605,Larazotide acetate
+DB05697,DBSALT003174,Trabedersen sodium
+DB05710,DBSALT002857,Gantacurium chloride
+DB05738,DBSALT002545,Vapitadine dihydrochloride
+DB05779,DBSALT002546,Oglufanide disodium
+DB05804,DBSALT003472,Prasterone sodium sulfate anhydrous
+DB05808,DBSALT003380,Muparfostat sodium
+DB05812,DBSALT001173,Abiraterone acetate
+DB05928,DBSALT002512,Dovitinib lactate hydrate
+DB05932,DBSALT002606,Denibulin hydrochloride
+DB05938,DBSALT002609,Edonerpic maleate
+DB05964,DBSALT002709,Amitifadine hydrochloride
+DB05974,DBSALT002610,Transcrocetinate sodium
+DB06005,DBSALT002611,Adomiparin sodium
+DB06013,DBSALT002639,Aldoxorubicin hydrochloride
+DB06016,DBSALT001260,Cariprazine hydrochloride
+DB06040,DBSALT001990,Filanesib Hydrochloride
+DB06077,DBSALT001873,Lumateperone tosylate
+DB06090,DBSALT001880,Bradanicline hydrochloride
+DB06090,DBSALT001881,Bradanicline tosylate
+DB06094,DBSALT002489,Apatorsen sodium
+DB06134,DBSALT002371,SNS-314 mesylate
+DB06140,DBSALT002612,SUVN-502 dimesylate
+DB06140,DBSALT002613,SUVN-502 dimesylate monohydrate
+DB06147,DBSALT000848,Sulfathiazole sodium
+DB06148,DBSALT000957,Mianserin hydrochloride
+DB06150,DBSALT000956,Sulfadimethoxine sodium
+DB06152,DBSALT001140,Nylidrin hydrochloride
+DB06153,DBSALT003065,Pizotifen malate
+DB06155,DBSALT001850,Rimonabant hydrochloride
+DB06156,DBSALT001991,Tesofensine Citrate
+DB06156,DBSALT001992,Tesofensine tartrate
+DB06157,DBSALT001993,Istaroxime hydrochloride
+DB06160,DBSALT001994,Garenoxacin mesylate
+DB06174,DBSALT001995,Noscapine hydrochloride
+DB06178,DBSALT002861,Talotrexin ammonium
+DB06182,DBSALT001996,Talabostat mesylate
+DB06185,DBSALT001997,Forodesine hydrochloride
+DB06187,DBSALT002862,Valtorcitabine dihydrochloride
+DB06188,DBSALT001998,Ispinesib Mesylate
+DB06190,DBSALT001800,Solabegron hydrochloride
+DB06191,DBSALT000558,Zosuquidar trihydrochloride
+DB06193,DBSALT000141,Pixantrone dimaleate
+DB06196,DBSALT000097,Icatibant acetate
+DB06197,DBSALT002828,Bimosiamose disodium
+DB06199,DBSALT001999,Atrasentan hydrochloride
+DB06202,DBSALT001954,Lasofoxifene hydrochloride
+DB06202,DBSALT001953,Lasofoxifene tartrate
+DB06203,DBSALT000007,Alogliptin benzoate
+DB06204,DBSALT000169,Tapentadol hydrochloride
+DB06206,DBSALT000556,Sugammadex sodium
+DB06209,DBSALT003141,Prasugrel besylate
+DB06209,DBSALT000145,Prasugrel hydrochloride
+DB06210,DBSALT003495,Eltrombopag choline
+DB06210,DBSALT000063,Eltrombopag olamine
+DB06211,DBSALT001609,Doripenem hydrate
+DB06213,DBSALT001790,Regadenoson monohydrate
+DB06216,DBSALT000010,Asenapine maleate
+DB06217,DBSALT002376,Vernakalant hydrochloride
+DB06219,DBSALT001105,Dalbavancin hydrochloride
+DB06224,DBSALT002000,Alicaforsen sodium
+DB06230,DBSALT001446,Nalmefene hydrochloride
+DB06230,DBSALT002636,Nalmefene hydrochloride dihydrate
+DB06231,DBSALT002435,Caldaret monohydrate
+DB06235,DBSALT002001,Vadimezan sodium
+DB06243,DBSALT001150,Eflornithine hydrochloride
+DB06249,DBSALT002002,Arzoxifene Hydrochloride
+DB06251,DBSALT002003,Dersalazine Sodium
+DB06255,DBSALT000559,Disodium incadronate
+DB06261,DBSALT001174,Hexaminolevulinate hydrochloride
+DB06263,DBSALT001934,Amrubicin hydrochloride
+DB06264,DBSALT002004,Tolperisone hydrochloride
+DB06268,DBSALT001120,Sitaxentan sodium
+DB06274,DBSALT001865,Alvimopan dihydrate
+DB06282,DBSALT001370,Levocetirizine dihydrochloride
+DB06283,DBSALT001456,Ziconotide acetate
+DB06285,DBSALT001437,Teriparatide acetate
+DB06290,DBSALT001485,Simeprevir sodium
+DB06292,DBSALT001101,Dapagliflozin propanediol monohydrate
+DB06294,DBSALT002845,Semuloparin sodium
+DB06325,DBSALT002614,Pegpleranib sodium
+DB06328,DBSALT002005,Methoxyamine hydrochloride
+DB06333,DBSALT002006,Trodusquemine hydrochloride
+DB06335,DBSALT000158,Saxagliptin hydrochloride
+DB06335,DBSALT003477,Saxagliptin hydrochloride dihydrate
+DB06335,DBSALT002375,Saxagliptin monohydrate
+DB06346,DBSALT002007,Fiboflapon Sodium
+DB06347,DBSALT003269,Cenisertib benzoate
+DB06350,DBSALT002710,Elinogrel potassium
+DB06354,DBSALT002827,Tezampanel hydrate
+DB06358,DBSALT002008,Iclaprim Mesylate
+DB06393,DBSALT002009,Xaliproden Hydrochloride
+DB06401,DBSALT001296,Bazedoxifene acetate
+DB06402,DBSALT000170,Telavancin hydrochloride
+DB06406,DBSALT002010,Idraparinux sodium
+DB06408,DBSALT002011,Taribavirin hydrochloride
+DB06429,DBSALT002012,Talnetant hydrochloride
+DB06433,DBSALT001853,Tezacitabine monohydrate
+DB06441,DBSALT001292,Cangrelor tetrasodium
+DB06442,DBSALT002013,Avasimibe Sodium
+DB06451,DBSALT002014,Aprinocarsen sodium
+DB06454,DBSALT002015,Sarizotan hydrochloride
+DB06458,DBSALT002016,Remacemide Hydrochloride
+DB06461,DBSALT002826,Squalamine lactate
+DB06468,DBSALT002017,Cariporide Mesylate
+DB06470,DBSALT002018,Clomethiazole hydrochloride
+DB06477,DBSALT002019,Sumanirole Maleate
+DB06480,DBSALT002348,Prucalopride hydrochloride
+DB06480,DBSALT002626,Prucalopride succinate
+DB06486,DBSALT002020,Enzastaurin Hydrochloride
+DB06497,DBSALT002796,Aplaviroc hydrochloride
+DB06506,DBSALT002021,Repinotan hydrochloride
+DB06518,DBSALT002801,R-1487 hydrochloride
+DB06519,DBSALT002022,Edaglitazone sodium
+DB06525,DBSALT002858,Ganstigmine hydrochloride
+DB06527,DBSALT002023,Tramiprosate sodium
+DB06530,DBSALT003597,Resiquimod sulfate
+DB06532,DBSALT002024,Pafuramidine maleate
+DB06556,DBSALT002025,Edifoligide sodium
+DB06580,DBSALT002026,Celgosivir hydrochloride
+DB06587,DBSALT002825,Mitemcinal fumarate
+DB06589,DBSALT000135,Pazopanib hydrochloride
+DB06590,DBSALT001808,Ceftaroline fosamil acetate
+DB06590,DBSALT001809,Ceftaroline fosamil acetate monohydrate
+DB06598,DBSALT002027,Brostallicin hydrochloride
+DB06603,DBSALT001984,Panobinostat hydrate
+DB06603,DBSALT001103,Panobinostat lactate
+DB06608,DBSALT002809,Tafenoquine succinate
+DB06614,DBSALT001847,Peramivir hydrate
+DB06616,DBSALT002837,Bosutinib monohydrate
+DB06618,DBSALT002802,Cutamesine dihydrochloride
+DB06620,DBSALT002863,Aplindore fumarate
+DB06623,DBSALT002360,Flupirtine gluconate
+DB06623,DBSALT000912,Flupirtine maleate
+DB06634,DBSALT002028,Casopitant mesylate
+DB06635,DBSALT002029,Otamixaban Hydrochloride
+DB06636,DBSALT001102,Isavuconazonium sulfate
+DB06642,DBSALT002030,Bevasiranib sodium
+DB06645,DBSALT002031,Anamorelin Hydrochloride
+DB06652,DBSALT002033,Vicriviroc Hydrochloride
+DB06652,DBSALT002032,Vicriviroc Maleate
+DB06654,DBSALT002034,Safinamide mesylate
+DB06660,DBSALT003490,Saredutant succinate
+DB06662,DBSALT002035,Abetimus sodium
+DB06663,DBSALT003007,Pasireotide acetate
+DB06663,DBSALT000134,Pasireotide diaspartate
+DB06663,DBSALT001332,Pasireotide pamoate
+DB06677,DBSALT002036,Clazosentan Sodium
+DB06678,DBSALT002352,Esmirtazapine hydrochloride
+DB06678,DBSALT001294,Esmirtazapine maleate
+DB06684,DBSALT000187,Vilazodone hydrochloride
+DB06685,DBSALT001816,Laquinimod sodium
+DB06691,DBSALT001405,Mepyramine maleate
+DB06691,DBSALT002726,Mepyramine tannate
+DB06694,DBSALT001557,Xylometazoline hydrochloride
+DB06695,DBSALT000035,Dabigatran etexilate mesilate
+DB06696,DBSALT001108,Arbekacin sulfate
+DB06698,DBSALT001190,Betahistine hydrochloride
+DB06698,DBSALT002281,Betahistine maleate
+DB06698,DBSALT002969,Betahistine mesylate
+DB06699,DBSALT000037,Degarelix acetate hydrate
+DB06700,DBSALT001322,Desvenlafaxine fumarate
+DB06700,DBSALT001893,Desvenlafaxine fumarate monohydrate
+DB06700,DBSALT002988,Desvenlafaxine hydrochloride
+DB06700,DBSALT000045,Desvenlafaxine succinate
+DB06701,DBSALT001458,Dexmethylphenidate hydrochloride
+DB06702,DBSALT000085,Fesoterodine fumarate
+DB06704,DBSALT002469,Iobenguane I 123
+DB06704,DBSALT002472,Iobenguane I 131
+DB06704,DBSALT002326,Iobenguane sulfate
+DB06704,DBSALT002470,Iobenguane sulfate I 123
+DB06704,DBSALT002471,Iobenguane sulfate I 131
+DB06705,DBSALT001858,Gadofosveset trisodium monohydrate
+DB06706,DBSALT001313,Isometheptene mucate
+DB06709,DBSALT001175,Methacholine chloride
+DB06711,DBSALT000127,Naphazoline hydrochloride
+DB06711,DBSALT002621,Naphazoline nitrate
+DB06716,DBSALT000090,Fospropofol disodium
+DB06717,DBSALT000089,Fosaprepitant dimeglumine
+DB06719,DBSALT001170,Buserelin acetate
+DB06723,DBSALT002587,Algeldrate
+DB06723,DBSALT002586,Almagate
+DB06726,DBSALT002370,Bufuralol hydrochloride
+DB06727,DBSALT003272,Sparteine sulfate
+DB06728,DBSALT002334,Aniline acetate
+DB06728,DBSALT001862,Aniline hydrobromide
+DB06728,DBSALT002333,Aniline hydrochloride
+DB06731,DBSALT000562,Seproxetine hydrochloride
+DB06735,DBSALT002295,Enclomiphene citrate
+DB06738,DBSALT000189,Ketobemidone hydrochloride
+DB06738,DBSALT002789,Ketobemidone oxalate
+DB06741,DBSALT002362,Gv 150526a
+DB06742,DBSALT000563,Ambroxol hydrochloride
+DB06751,DBSALT000911,Drotaverine hydrochloride
+DB06753,DBSALT001424,Triclofos sodium
+DB06754,DBSALT001136,Danaparoid sodium
+DB06756,DBSALT002227,Betaine citrate
+DB06756,DBSALT001448,Betaine hydrochloride
+DB06757,DBSALT001361,Manganese chloride
+DB06757,DBSALT001362,Manganese chloride tetrahydrate
+DB06757,DBSALT001360,Manganese sulfate
+DB06759,DBSALT001455,Fomivirsen sodium
+DB06762,DBSALT001806,Pinacidil monohydrate
+DB06763,DBSALT001433,Saralasin acetate
+DB06764,DBSALT001254,Tetrahydrozoline hydrochloride
+DB06769,DBSALT001167,Bendamustine hydrochloride
+DB06769,DBSALT003087,Bendamustine hydrochloride monohydrate
+DB06771,DBSALT000018,Besifloxacin hydrochloride
+DB06778,DBSALT002501,Cupric sulfate pentahydrate
+DB06779,DBSALT002488,Dalteparin sodium
+DB06785,DBSALT001230,Ganirelix acetate
+DB06787,DBSALT001391,Hexocyclium methylsulfate
+DB06788,DBSALT001172,Histrelin acetate
+DB06791,DBSALT001238,Lanreotide acetate
+DB06792,DBSALT001176,Lanthanum carbonate hydrate
+DB06793,DBSALT001392,Levopropoxyphene napsylate anhydrous
+DB06794,DBSALT001178,Lodoxamide tromethamine
+DB06795,DBSALT001076,Mafenide Acetate
+DB06796,DBSALT001330,Mangafodipir trisodium
+DB06799,DBSALT002250,Methenamine citrate
+DB06799,DBSALT002249,Methenamine diphosphate
+DB06799,DBSALT001270,Methenamine hippurate
+DB06799,DBSALT002248,Methenamine hydrochloride
+DB06799,DBSALT001271,Methenamine mandelate
+DB06799,DBSALT002247,Methenamine phosphate
+DB06799,DBSALT002246,Methenamine sulfate
+DB06800,DBSALT000116,Methylnaltrexone bromide
+DB06809,DBSALT002325,Plerixafor octahydrochloride
+DB06814,DBSALT001481,Protokylol hydrochloride
+DB06815,DBSALT002738,Pyrithione sodium
+DB06815,DBSALT002737,Pyrithione zinc
+DB06816,DBSALT001378,Pyrvinium pamoate
+DB06817,DBSALT000924,Raltegravir potassium
+DB06819,DBSALT002404,Sodium phenylbutyrate
+DB06820,DBSALT001375,Sulconazole nitrate
+DB06824,DBSALT001269,Trientine hydrochloride
+DB06824,DBSALT003345,Trientine tetrahydrochloride
+DB06825,DBSALT001171,Triptorelin acetate
+DB06825,DBSALT001256,Triptorelin pamoate
+DB06826,DBSALT001760,Unoprostone isopropyl
+DB06827,DBSALT000952,Viomycin sulfate
+DB07338,DBSALT002807,Acifluorfen sodium
+DB07556,DBSALT002934,CGS-27023 hydrochloride
+DB07565,DBSALT001357,Chloramphenicol sodium succinate
+DB07931,DBSALT001081,Hexestrol diphosphate sodium
+DB08162,DBSALT002399,Fasudil hydrochloride
+DB08387,DBSALT003230,Mardepodect succinate
+DB08439,DBSALT002342,Parecoxib sodium
+DB08639,DBSALT002396,Dapivirine hydrochloride
+DB08799,DBSALT003072,Antazoline hydrochloride
+DB08799,DBSALT001374,Antazoline phosphate
+DB08799,DBSALT000910,Antazoline sulfate
+DB08800,DBSALT000909,Chloropyramine hydrochloride
+DB08801,DBSALT000908,Dimetindene maleate
+DB08802,DBSALT000907,Isothipendyl hydrochloride
+DB08806,DBSALT000906,Roxatidine acetate hydrochloride
+DB08808,DBSALT000905,Bupranolol hydrochloride
+DB08809,DBSALT003241,Sodium dichloroacetate
+DB08810,DBSALT002860,Cinitapride tartrate
+DB08813,DBSALT001135,Nadroparin calcium
+DB08815,DBSALT000113,Lurasidone hydrochloride
+DB08818,DBSALT001489,Hyaluronate sodium
+DB08818,DBSALT001258,Potassium hyaluronate
+DB08818,DBSALT001259,Sodium hyaluronate
+DB08822,DBSALT003212,Azilsartan medoxomil potassium
+DB08827,DBSALT000110,Lomitapide mesylate
+DB08834,DBSALT003104,Tauroursodeoxycholic acid dihydrate
+DB08836,DBSALT000171,Temocapril hydrochloride
+DB08837,DBSALT000173,Tetraethylammonium bromide
+DB08837,DBSALT000174,Tetraethylammonium chloride
+DB08837,DBSALT000176,Tetraethylammonium hydroxide
+DB08837,DBSALT000177,Tetraethylammonium iodide
+DB08837,DBSALT000178,Tetraethylammonium phosphate
+DB08838,DBSALT000006,Agmatine sulfate
+DB08839,DBSALT002615,Serotonin hydrochloride
+DB08841,DBSALT002213,Tyramine hydrochloride
+DB08848,DBSALT000094,Guvacine hydrochloride
+DB08860,DBSALT000140,Pitavastatin calcium
+DB08860,DBSALT002595,Pitavastatin magnesium
+DB08860,DBSALT003488,Pitavastatin sodium
+DB08864,DBSALT000152,Rilpivirine hydrochloride
+DB08867,DBSALT000184,Ulipristal acetate
+DB08868,DBSALT000580,Fingolimod hydrochloride
+DB08868,DBSALT003487,Fingolimod lauryl sulfate
+DB08869,DBSALT001835,Tesamorelin acetate
+DB08871,DBSALT002427,Eribulin mesylate
+DB08875,DBSALT001762,Cabozantinib malate
+DB08877,DBSALT000156,Ruxolitinib phosphate
+DB08877,DBSALT003441,Ruxolitinib sulfate
+DB08883,DBSALT001824,Perampanel hydrate
+DB08884,DBSALT000091,Gadoxetate disodium
+DB08890,DBSALT000108,Linaclotide acetate
+DB08894,DBSALT000136,Peginesatide acetate
+DB08895,DBSALT000180,Tofacitinib citrate
+DB08896,DBSALT001750,Regorafenib monohydrate
+DB08897,DBSALT000003,Aclidinium bromide
+DB08901,DBSALT000142,Ponatinib hydrochloride
+DB08903,DBSALT000016,Bedaquiline fumarate
+DB08907,DBSALT001783,Canagliflozin hydrate
+DB08911,DBSALT001947,Trametinib dimethyl sulfoxide
+DB08912,DBSALT000036,Dabrafenib mesylate
+DB08916,DBSALT000005,Afatinib dimaleate
+DB08918,DBSALT000107,Levomilnacipran hydrochloride
+DB08926,DBSALT000923,Acediasulfone sodium
+DB08930,DBSALT000943,Dolutegravir sodium
+DB08936,DBSALT001022,Chlorcyclizine hydrochloride
+DB08941,DBSALT001553,Isoxsuprine hydrochloride
+DB08943,DBSALT003000,Isoconazole nitrate
+DB08944,DBSALT002446,Isoaminile citrate
+DB08944,DBSALT002447,Isoaminile cyclamate
+DB08945,DBSALT002658,Iotroxate meglumine
+DB08948,DBSALT001393,Iodamide meglumine
+DB08950,DBSALT001077,Indoramin hydrochloride
+DB08954,DBSALT001078,Ifenprodil tartrate
+DB08956,DBSALT001079,Hydroxydione sodium
+DB08957,DBSALT001080,Hexoprenaline sulfate
+DB08960,DBSALT001082,Hexamethonium Bromide
+DB08966,DBSALT002919,Fursultiamine hydrochloride
+DB08967,DBSALT002448,Fonazine mesylate
+DB08968,DBSALT002831,Fominoben hydrochloride
+DB08978,DBSALT001788,Fentonium bromide
+DB08979,DBSALT002867,Fenspiride hydrochloride
+DB08982,DBSALT002351,Etozolin hydrochloride
+DB08985,DBSALT002970,Etilefrine hydrochloride
+DB08986,DBSALT002449,Etifoxine hydrochloride
+DB08987,DBSALT001431,Etidocaine hydrochloride
+DB08988,DBSALT001084,Ethoheptazine citrate
+DB08988,DBSALT002450,Ethoheptazine hydrochloride
+DB08990,DBSALT001085,Eprazinone Hydrochloride
+DB08991,DBSALT002294,Epirizole hydrochloride
+DB08992,DBSALT001099,Eperisone hydrochloride
+DB08993,DBSALT001086,Enviomycin sulfate
+DB08996,DBSALT001096,Dimetacrine bitartrate
+DB08996,DBSALT001095,Dimetacrine tartrate
+DB08997,DBSALT002920,Dexetimide hydrochloride
+DB08998,DBSALT001823,Demexiptiline hydrochloride
+DB08999,DBSALT002451,Cyclopentamine hydrochloride
+DB09002,DBSALT001087,Cloperastine hydrochloride
+DB09003,DBSALT002792,Clocapramine hydrochloride
+DB09004,DBSALT002452,Clobutinol hydrochloride
+DB09007,DBSALT002453,Chlorphenoxamine hydrochloride
+DB09008,DBSALT003537,Cefaloridine hydrate
+DB09009,DBSALT001089,Articaine hydrochloride
+DB09013,DBSALT001100,Befunolol hydrochloride
+DB09014,DBSALT001090,Captodiamine hydrochloride
+DB09015,DBSALT001874,Potassium canrenoate
+DB09016,DBSALT001091,Butriptyline hydrochloride
+DB09019,DBSALT001092,Bromhexine hydrochloride
+DB09021,DBSALT001093,Benzoctamine hydrochloride
+DB09022,DBSALT001094,Benfluorex hydrochloride
+DB09026,DBSALT001203,Aliskiren hemifumarate
+DB09030,DBSALT001104,Vorapaxar sulfate
+DB09039,DBSALT001106,Eliglustat tartrate
+DB09047,DBSALT001107,finafloxacin hydrochloride
+DB09049,DBSALT001245,Naloxegol oxalate
+DB09050,DBSALT001488,Ceftolozane sulfate
+DB09056,DBSALT002882,Amorolfine hydrochloride
+DB09059,DBSALT002637,Atosiban acetate
+DB09060,DBSALT001486,Avibactam sodium
+DB09062,DBSALT001118,Cefminox sodium
+DB09062,DBSALT001119,Cefminox sodium hydrate
+DB09068,DBSALT003590,Vortioxetine hemihydrobromide
+DB09068,DBSALT001117,Vortioxetine hydrobromide
+DB09069,DBSALT001114,Trimetazidine dihydrochloride
+DB09073,DBSALT001110,Palbociclib isethionate
+DB09075,DBSALT001717,Edoxaban tosylate
+DB09075,DBSALT001718,Edoxaban tosylate monohydrate
+DB09076,DBSALT001113,Umeclidinium bromide
+DB09078,DBSALT001109,Lenvatinib mesylate
+DB09079,DBSALT001111,Nintedanib esylate
+DB09080,DBSALT001112,Olodaterol hydrochloride
+DB09082,DBSALT001121,Vilanterol trifenatate
+DB09083,DBSALT001237,Ivabradine hydrochloride
+DB09083,DBSALT002999,Ivabradine oxalate
+DB09084,DBSALT001124,Benzydamine hydrochloride
+DB09085,DBSALT001125,Tetracaine hydrochloride
+DB09087,DBSALT001126,Potassium alum dodecahydrate
+DB09088,DBSALT001127,Amylocaine hydrochloride
+DB09089,DBSALT003562,Trimebutine 3-thiocarbamoylbenzenesulfonate
+DB09089,DBSALT001129,Trimebutine maleate
+DB09090,DBSALT001130,Pinaverium bromide
+DB09091,DBSALT001131,Tixocortol pivalate
+DB09092,DBSALT001141,Xanthinol nicotinate
+DB09093,DBSALT001619,Chlortetracycline bisulfate
+DB09093,DBSALT001647,Chlortetracycline calcium complex
+DB09093,DBSALT001148,Chlortetracycline hydrochloride
+DB09095,DBSALT001149,Difluocortolone valerate
+DB09097,DBSALT001152,Quinagolide hydrochloride
+DB09099,DBSALT001156,Somatostatin acetate
+DB09102,DBSALT001166,Daclatasvir dihydrochloride
+DB09110,DBSALT002380,Mesna
+DB09112,DBSALT002656,Potassium nitrite
+DB09112,DBSALT002657,Sodium nitrite
+DB09116,DBSALT001860,Citrated calcium carbimide
+DB09125,DBSALT002942,Potassium citrate monohydrate
+DB09128,DBSALT003360,Brexpiprazole dihydrochloride
+DB09129,DBSALT001828,Chromic chloride hexahydrate
+DB09131,DBSALT001851,Cupric chloride dihydrate
+DB09132,DBSALT001229,Gadoterate meglumine
+DB09133,DBSALT001235,Iothalamate meglumine
+DB09133,DBSALT001421,Iothalamate sodium
+DB09133,DBSALT001236,Iothalamate sodium I-125
+DB09133,DBSALT001932,Sodium Iothalamate
+DB09136,DBSALT002720,Isosulfan blue
+DB09138,DBSALT001857,Technetium Tc-99m medronate disodium
+DB09143,DBSALT001253,Sonidegib phosphate
+DB09154,DBSALT002410,Sodium citrate dihydrate
+DB09158,DBSALT002750,Trypan blue
+DB09167,DBSALT001822,Dosulepin hydrochloride
+DB09181,DBSALT001793,Trefentanil hydrochloride
+DB09183,DBSALT001487,Dasabuvir sodium
+DB09183,DBSALT002711,Dasabuvir sodium monohydrate
+DB09184,DBSALT001261,Edivoxetine hydrochloride
+DB09185,DBSALT001262,Viloxazine hydrochloride
+DB09194,DBSALT002572,Etoperidone hydrochloride
+DB09196,DBSALT002369,Lubazodone hydrochloride
+DB09197,DBSALT001263,Mepiprazole dihydrochloride
+DB09198,DBSALT002555,lobeglitazone sulfate
+DB09200,DBSALT003583,Rivoglitazone Hydrochloride
+DB09203,DBSALT003093,Synephrine tartrate
+DB09205,DBSALT003475,Moxisylyte hydrochloride
+DB09206,DBSALT001792,Trimazosin hydrochloride
+DB09212,DBSALT001264,Loxoprofen sodium
+DB09214,DBSALT002989,Dexketoprofen trometamol
+DB09218,DBSALT002699,Clonixin lysine
+DB09224,DBSALT003110,Melperone hydrochloride
+DB09226,DBSALT002782,Brilaroxazine hydrochloride
+DB09227,DBSALT003073,Barnidipine hydrochloride
+DB09231,DBSALT001267,Benidipine hydrochloride
+DB09235,DBSALT001268,Efonidipine hydrochloride
+DB09237,DBSALT002952,Levamlodipine maleate
+DB09238,DBSALT002895,Manidipine dihydrochloride
+DB09239,DBSALT001859,Niguldipine hydrochloride
+DB09241,DBSALT001852,Methylene blue trihydrate
+DB09242,DBSALT002876,Moxonidine hydrochloride
+DB09244,DBSALT002870,Pirlindole hydrochloride
+DB09244,DBSALT002871,Pirlindole lactate
+DB09250,DBSALT001273,Pheniprazine hydrochloride
+DB09255,DBSALT002684,Dextran 40
+DB09255,DBSALT002683,Dextran 70
+DB09255,DBSALT002685,Dextran 75
+DB09255,DBSALT003356,Dextran sulfate
+DB09255,DBSALT003357,Dextran sulfate sodium
+DB09255,DBSALT003464,Dextran sulfate sodium (MW 5000)
+DB09255,DBSALT003466,Dextran sulfate sodium (MW 520000)
+DB09255,DBSALT003465,Dextran sulfate sodium (MW 54000)
+DB09255,DBSALT003467,Dextran sulfate sodium (MW 9500)
+DB09258,DBSALT001275,Bemiparin sodium
+DB09263,DBSALT001352,Patiromer sorbitex calcium
+DB09268,DBSALT001830,Sodium picosulfate monohydrate
+DB09268,DBSALT001831,Sodium picosulphate anhydrous
+DB09269,DBSALT001277,Sodium phenylacetate
+DB09270,DBSALT001598,"Coenzyme q10, (2z)-"
+DB09271,DBSALT001931,Cimetropium bromide
+DB09274,DBSALT001279,Artesunate sodium
+DB09275,DBSALT001280,Bismuth subcitrate potassium monohydrate
+DB09279,DBSALT003078,Fimasartan potassium anhydrous
+DB09279,DBSALT001281,Fimasartan potassium trihydrate
+DB09281,DBSALT001821,Magnesium trisilicate hydrate
+DB09284,DBSALT001282,Imolamine hydrochloride
+DB09286,DBSALT001283,Pipamperone hydrochloride
+DB09287,DBSALT001656,Polyoxyethylene 23 lauryl ether
+DB09288,DBSALT001284,Propacetamol hydrochloride
+DB09289,DBSALT001784,Tianeptine sodium
+DB09290,DBSALT001285,Ramosetron hydrochloride
+DB09291,DBSALT002389,Rolapitant hydrochloride
+DB09291,DBSALT001286,Rolapitant hydrochloride monohydrate
+DB09293,DBSALT002460,Sodium iodide I-131
+DB09296,DBSALT002724,Ombitasvir heminonahydrate
+DB09297,DBSALT002725,Paritaprevir dihydrate
+DB09298,DBSALT001287,Silibinin dihemisuccinate disodium
+DB09299,DBSALT002533,Tenofovir alafenamide fumarate
+DB09300,DBSALT002585,Butylscopolamine bromide
+DB09301,DBSALT002539,Chondroitin sulfate (bovine)
+DB09301,DBSALT002538,Chondroitin sulfate (chicken)
+DB09301,DBSALT002540,Chondroitin sulfate (porcine)
+DB09301,DBSALT002541,Chondroitin sulfate (shark)
+DB09301,DBSALT001591,Chondroitin sulfate sodium (bovine)
+DB09301,DBSALT002542,Chondroitin sulfate sodium (chicken)
+DB09301,DBSALT002543,Chondroitin sulfate sodium (porcine)
+DB09301,DBSALT002544,Chondroitin sulfate sodium (shark)
+DB09304,DBSALT001293,Setiptiline maleate
+DB09305,DBSALT001787,Aptazapine maleate
+DB09306,DBSALT001789,Metralindole hydrochloride
+DB09309,DBSALT001604,Kitasamycin tartrate
+DB09313,DBSALT001301,Ioxaglate meglumine
+DB09313,DBSALT001300,Ioxaglate sodium
+DB09314,DBSALT002467,Technetium Tc-99m sodium pertechnetate
+DB09319,DBSALT001303,Carbenicillin indanyl sodium
+DB09322,DBSALT001306,Zinc sulfate heptahydrate
+DB09322,DBSALT001305,Zinc sulfate hexahydrate
+DB09322,DBSALT001304,Zinc sulfate monohydrate
+DB09324,DBSALT002843,Sulbactam benzathine
+DB09324,DBSALT001310,Sulbactam sodium
+DB09330,DBSALT001606,Osimertinib mesylate
+DB09333,DBSALT001319,Ipodate calcium
+DB09333,DBSALT001318,Ipodate sodium
+DB09335,DBSALT001331,Alatrofloxacin mesylate
+DB09338,DBSALT001336,Mersalyl sodium
+DB09340,DBSALT001341,Tyropanoate sodium
+DB09342,DBSALT001348,Propoxycaine hydrochloride
+DB09343,DBSALT001349,Tipiracil hydrochloride
+DB09345,DBSALT001353,Pramoxine hydrochloride
+DB09346,DBSALT001368,Calcium metrizoate
+DB09346,DBSALT001369,Meglumine metrizoate
+DB09346,DBSALT001366,Metrizoate magnesium
+DB09346,DBSALT001367,Metrizoate sodium
+DB09347,DBSALT001380,Acetrizoate sodium
+DB09351,DBSALT001395,Levobetaxolol hydrochloride
+DB09352,DBSALT001968,Hydroxyamfetamine hydrobromide
+DB09355,DBSALT002651,Sulfabenzamide sodium
+DB09374,DBSALT001946,Indocyanine green
+DB09376,DBSALT002416,Lapyrium chloride
+DB09388,DBSALT003176,Rose bengal sodium I-131
+DB09395,DBSALT001896,Sodium acetate trihydrate
+DB09398,DBSALT002663,Sodium fluoride F-18
+DB09407,DBSALT002502,Magnesium chloride hexahydrate
+DB09407,DBSALT002503,Magnesium chloride hydrate
+DB09415,DBSALT002335,Methylglucamine hydrochloride
+DB09420,DBSALT002459,Sodium iodide I-123
+DB09421,DBSALT003553,Protirelin acetate
+DB09421,DBSALT003551,Protirelin tartrate
+DB09421,DBSALT003552,Protirelin tartrate monohydrate
+DB09425,DBSALT002473,Indium In-111 pentetate disodium
+DB09449,DBSALT001970,"Sodium phosphate, monobasic, dihydrate"
+DB09449,DBSALT001971,"Sodium phosphate, monobasic, monohydrate"
+DB09456,DBSALT001721,Insulin suspension isophane beef
+DB09456,DBSALT001722,Insulin suspension isophane purified beef
+DB09456,DBSALT001728,Insulin suspension protamine zinc purified beef
+DB09456,DBSALT001723,Insulin zinc suspension beef
+DB09456,DBSALT001724,Insulin zinc suspension extended beef
+DB09456,DBSALT001725,Insulin zinc suspension extended purified beef
+DB09456,DBSALT001726,Insulin zinc suspension prompt beef
+DB09456,DBSALT001727,Insulin zinc suspension purified beef
+DB09472,DBSALT001892,Sodium sulfate decahydrate
+DB09477,DBSALT002434,Enalaprilat dihydrate
+DB09479,DBSALT002752,Rubidium chloride Rb-82
+DB09480,DBSALT002537,Iofetamine hydrochloride I-123
+DB09481,DBSALT003123,Magnesium carbonate basic
+DB09499,DBSALT002504,Sodium thiosulfate
+DB09499,DBSALT002505,Sodium thiosulfate pentahydrate
+DB09532,DBSALT003151,Secretin human pentahydrochloride
+DB09552,DBSALT002554,Thonzonium bromide
+DB09561,DBSALT002686,Sodium glycerophosphate hydrate
+DB09570,DBSALT001605,Ixazomib citrate
+DB10276,DBSALT002547,Human Rotavirus A type G1P(8) strain RIX4414 live antigen
+DB10276,DBSALT002548,Human Rotavirus A type G1P7(5) strain WI79 live antigen
+DB10276,DBSALT002549,Human Rotavirus A type G2P7(5) strain SC2 live antigen
+DB10276,DBSALT002550,Human Rotavirus A type G3P7(5) strain WI78 live antigen
+DB10276,DBSALT002551,Human Rotavirus A type G4P7(5) strain BRB live antigen
+DB10276,DBSALT002552,Human Rotavirus A type G6P1A(8) strain WI79 live antigen
+DB10989,DBSALT001981,Hepatitis A virus strain CR 326F antigen (formaldehyde inactivated)
+DB10989,DBSALT001980,Hepatitis A virus strain HM175 antigen (formaldehyde inactivated)
+DB11056,DBSALT002506,Stannous chloride dihydrate
+DB11059,DBSALT001493,Carboxymethylcellulose sodium
+DB11068,DBSALT002579,Sodium selenate
+DB11073,DBSALT002695,Cetylpyridinium bromide
+DB11073,DBSALT001496,Cetylpyridinium chloride
+DB11074,DBSALT001523,Dimethicone 100
+DB11075,DBSALT001595,Hypromellose 2208 (100 mPa.S)
+DB11075,DBSALT001551,Hypromellose 2208 (15000 mPa.S)
+DB11075,DBSALT001539,Hypromellose 2906 (4000 mPa.S)
+DB11075,DBSALT001540,Hypromellose 2906 (50 mPa.S)
+DB11075,DBSALT001564,Hypromellose 2910 (15 mPa.S)
+DB11075,DBSALT001563,Hypromellose 2910 (15000 mPa.S)
+DB11075,DBSALT001522,Hypromellose 2910 (3 mPa.S)
+DB11075,DBSALT001498,Hypromellose 2910 (4000 mPa.S)
+DB11075,DBSALT003055,Hypromellose 2910 (50 mPa.S)
+DB11081,DBSALT001526,Aluminium chloride hexahydrate
+DB11089,DBSALT001505,Docusate calcium
+DB11089,DBSALT002872,Docusate potassium
+DB11089,DBSALT001500,Docusate sodium
+DB11093,DBSALT003070,Calcium citrate malate
+DB11093,DBSALT001949,Calcium citrate tetrahydrate
+DB11105,DBSALT001577,Benzalkonium bromide
+DB11105,DBSALT001509,Benzalkonium chloride
+DB11117,DBSALT001529,Zinc undecylenate
+DB11120,DBSALT001917,Turpentine oil
+DB11123,DBSALT001517,Sodium hypochlorite
+DB11124,DBSALT001518,Racepinephrine hydrochloride
+DB11125,DBSALT001519,Benzethonium chloride
+DB11126,DBSALT001520,Calcium gluconate monohydrate
+DB11127,DBSALT001761,Sodium selenite
+DB11127,DBSALT003017,Sodium selenite pentahydrate
+DB11140,DBSALT001525,Chromium Cr-51 chloride
+DB11140,DBSALT002477,Chromium Cr-51 edetate
+DB11145,DBSALT002680,8-Hydroxyquinoline citrate
+DB11145,DBSALT002677,8-Hydroxyquinoline hydrochloride
+DB11145,DBSALT002679,8-Hydroxyquinoline salicylate
+DB11145,DBSALT002678,8-Hydroxyquinoline sulfate
+DB11145,DBSALT001527,Oxyquinoline sulfate
+DB11148,DBSALT002681,Butamben picrate
+DB11152,DBSALT001528,Trichloroacetic acid
+DB11154,DBSALT001549,Zinc citrate trihydrate
+DB11156,DBSALT002662,Pyrantel citrate
+DB11156,DBSALT001530,Pyrantel pamoate
+DB11156,DBSALT001617,Pyrantel tartrate
+DB11160,DBSALT001531,Phenyltoloxamine citrate
+DB11160,DBSALT002682,Phenyltoloxamine hydrochloride
+DB11164,DBSALT001533,Bicisate dihydrochloride
+DB11181,DBSALT001537,Homatropine hydrobromide
+DB11182,DBSALT002436,Rose bengal potassium
+DB11182,DBSALT001538,Rose bengal sodium
+DB11185,DBSALT002279,Benzophenone-5
+DB11186,DBSALT001543,Pentoxyverine citrate
+DB11186,DBSALT002765,Pentoxyverine tannate
+DB11192,DBSALT001545,Magnesium L-threonate
+DB11202,DBSALT001550,N-alkyl ethylbenzyl dimethyl ammonium chloride (C12-C14)
+DB11210,DBSALT001597,Ferrous bisglycinate hydrochloride
+DB11228,DBSALT001903,Methylcellulose (100 MPa.s)
+DB11228,DBSALT001902,Methylcellulose (15 MPa.s)
+DB11228,DBSALT001901,Methylcellulose (1500 MPa.s)
+DB11228,DBSALT001900,Methylcellulose (25 MPa.s)
+DB11228,DBSALT001899,Methylcellulose (400 MPa.s)
+DB11228,DBSALT001559,Methylcellulose (4000 MPa.s)
+DB11235,DBSALT001562,Thonzylamine hydrochloride
+DB11239,DBSALT002664,Aluminum sulfate hydrate
+DB11239,DBSALT002778,Aluminum sulfate tetradecahydrate
+DB11248,DBSALT002891,Zinc gluconate trihydrate
+DB11256,DBSALT001276,Levomefolate calcium
+DB11256,DBSALT001567,Levomefolate glucosamine
+DB11256,DBSALT001534,Levomefolate magnesium
+DB11273,DBSALT001569,Dihydroergocornine mesylate
+DB11274,DBSALT002361,Dihydro-alpha-ergocryptine mesylate
+DB11275,DBSALT001571,Epicriptine mesilate
+DB11278,DBSALT001572,DL-Methylephedrine hydrochloride
+DB11279,DBSALT002749,Brilliant green
+DB11296,DBSALT002421,Prezatide monoacetate
+DB11306,DBSALT001580,Sodium bentonite
+DB11315,DBSALT001587,Methscopolamine nitrate
+DB11318,DBSALT002728,"1,2-docosahexanoyl-sn-glycero-3-phosphoserine calcium"
+DB11327,DBSALT002654,Bispyrithione magsulfex
+DB11331,DBSALT001590,"1-palmitoyl-2-oleoyl-sn-glycero-3-(phospho-rac-(1-glycerol)), sodium salt"
+DB11348,DBSALT002430,"Calcium phosphate, dibasic"
+DB11348,DBSALT002431,"Calcium phosphate, tribasic"
+DB11352,DBSALT001594,Magnesium ascorbyl phosphate
+DB11359,DBSALT001966,Guaiacol carbonate
+DB11359,DBSALT001965,Guaiacol hydrochloride
+DB11363,DBSALT001607,Alectinib hydrochloride
+DB11365,DBSALT002507,Sennosides A and B
+DB11374,DBSALT001817,Amprolium hydrochloride
+DB11386,DBSALT003105,Chlorobutanol hemihydrate
+DB11393,DBSALT002864,Danofloxacin mesylate
+DB11427,DBSALT001715,Maropitant citrate
+DB11428,DBSALT002859,Medetomidine hydrochloride
+DB11430,DBSALT001710,Monensin sodium
+DB11441,DBSALT003223,Oclacitinib maleate
+DB11442,DBSALT002276,Oleandomycin hydrochloride
+DB11442,DBSALT002277,Oleandomycin phosphate
+DB11461,DBSALT001658,Sodium sulfachlorpyridazine monohydrate
+DB11461,DBSALT002234,Sulfachlorpyridazine sodium
+DB11464,DBSALT002218,Sulfaquinoxaline sodium
+DB11468,DBSALT001660,Tiamulin hydrogen fumarate
+DB11471,DBSALT001661,Tilmicosin phosphate
+DB11475,DBSALT001662,Tylosin phosphate
+DB11475,DBSALT001663,Tylosin tartrate
+DB11477,DBSALT001664,Xylazine hydrochloride
+DB11479,DBSALT001665,Zilpaterol hydrochloride
+DB11481,DBSALT001642,Atipamezole hydrochloride
+DB11485,DBSALT001643,Ceftiofur hydrochloride
+DB11485,DBSALT001644,Ceftiofur sodium
+DB11490,DBSALT001652,Nalorphine hydrochloride
+DB11491,DBSALT001657,Sarafloxacin hydrochloride
+DB11496,DBSALT002839,Sodium 2-mercaptobenzothiazole
+DB11499,DBSALT002943,Amphomycin calcium
+DB11501,DBSALT001667,Bunamidine hydrochloride
+DB11502,DBSALT001668,Butacaine sulfate
+DB11504,DBSALT001670,Caramiphen edisylate
+DB11504,DBSALT002875,Caramiphen hydrochloride
+DB11505,DBSALT001671,Cefovecin sodium
+DB11507,DBSALT001672,Cloprostenol sodium
+DB11510,DBSALT001674,Deslorelin acetate
+DB11511,DBSALT001675,Difloxacin hydrochloride
+DB11512,DBSALT001676,Dihydrostreptomycin sulfate
+DB11513,DBSALT001677,Diperodon hydrochloride
+DB11516,DBSALT001680,Dithiazanine iodide
+DB11517,DBSALT001681,Etymemazine hydrochloride
+DB11518,DBSALT001682,Flunixin meglumine
+DB11519,DBSALT001683,Fluprostenol sodium
+DB11521,DBSALT001684,Imidocarb dipropionate
+DB11525,DBSALT001688,Maduramicin ammonium
+DB11526,DBSALT001689,Masitinib mesylate
+DB11528,DBSALT001691,Melarsomine dihydrochloride
+DB11530,DBSALT001693,Metoserpate hydrochloride
+DB11537,DBSALT001696,Pirlimycin hydrochloride
+DB11540,DBSALT001697,Propiopromazine hydrochloride
+DB11541,DBSALT001698,Ractopamine hydrochloride
+DB11542,DBSALT001699,Robenidine hydrochloride
+DB11543,DBSALT001700,Romifidine hydrochloride
+DB11544,DBSALT001701,Salinomycin sodium
+DB11545,DBSALT001702,Semduramicin sodium
+DB11547,DBSALT001703,Sulfabromomethazine sodium
+DB11549,DBSALT001704,Tiletamine hydrochloride
+DB11552,DBSALT002874,Tricaine methanesulfonate
+DB11554,DBSALT001708,Tylvalosin tartrate
+DB11555,DBSALT001709,Zolazepam hydrochloride
+DB11556,DBSALT001711,Detomidine hydrochloride
+DB11561,DBSALT003071,Aminacrine hydrochloride
+DB11575,DBSALT001751,Grazoprevir monohydrate
+DB11577,DBSALT001752,Indigotindisulfonate sodium
+DB11583,DBSALT001775,Cetalkonium bromide
+DB11583,DBSALT001776,Cetalkonium chloride
+DB11584,DBSALT001777,Pipradrol hydrochloride
+DB11587,DBSALT001778,Etafedrine hydrochloride
+DB11594,DBSALT001884,Domiphen bromide
+DB11596,DBSALT001886,Levoleucovorin calcium
+DB11596,DBSALT001887,Levoleucovorin calcium pentahydrate
+DB11596,DBSALT001890,Levoleucovorin disodium
+DB11602,DBSALT001904,Hydroxyethyl cellulose (100 MPa.s at 2%)
+DB11602,DBSALT001905,Hydroxyethyl cellulose (140 MPa.s at 5%)
+DB11602,DBSALT001906,Hydroxyethyl cellulose (1500 MPa.s at 1%)
+DB11602,DBSALT001907,Hydroxyethyl cellulose (1800 MPa.s at 2%)
+DB11602,DBSALT001908,Hydroxyethyl cellulose (2000 MPa.s at 1%)
+DB11602,DBSALT001909,Hydroxyethyl cellulose (280 MPa.s at 2%)
+DB11602,DBSALT001910,Hydroxyethyl cellulose (280 MPa.s at 5%)
+DB11602,DBSALT001911,Hydroxyethyl cellulose (3000 MPa.s at 1%)
+DB11602,DBSALT001912,Hydroxyethyl cellulose (40 MPa.s at 2%)
+DB11602,DBSALT001913,Hydroxyethyl cellulose (4000 MPa.s at 1%)
+DB11602,DBSALT001914,Hydroxyethyl cellulose (5000 MPa.s at 1%)
+DB11602,DBSALT001915,Hydroxyethyl cellulose (5500 MPa.s at 2%)
+DB11602,DBSALT001916,Hydroxyethyl cellulose (6500 MPa.s at 2%)
+DB11609,DBSALT001919,Normethadone hydrochloride
+DB11610,DBSALT001920,Oxilofrine hydrochloride
+DB11611,DBSALT001921,Lifitegrast sodium
+DB11614,DBSALT001922,Rupatadine fumarate
+DB11614,DBSALT001923,Rupatadine trihydrochloride
+DB11616,DBSALT001933,Pirarubicin hydrochloride
+DB11617,DBSALT001935,Aclarubicin hydrochloride
+DB11618,DBSALT001936,Zorubicin hydrochloride
+DB11620,DBSALT001937,Neridronate sodium
+DB11622,DBSALT001944,Dehydrocholate sodium
+DB11627,DBSALT001979,Hepatitis B virus subtype ADW HBSAG surface protein antigen
+DB11627,DBSALT001978,Hepatitis B virus subtype ADW2 HBSAG surface protein antigen
+DB11628,DBSALT002625,Depreotide trifluoroacetate
+DB11640,DBSALT002818,Amifampridine phosphate
+DB11641,DBSALT002672,Vinflunine ditartrate
+DB11642,DBSALT002888,Pitolisant hydrochloride
+DB11644,DBSALT002673,Tafamidis meglumine
+DB11648,DBSALT002037,Afuresertib Hydrochloride
+DB11653,DBSALT002878,Bremelanotide acetate
+DB11659,DBSALT002039,Indium Acetate
+DB11659,DBSALT002038,Indium Chloride
+DB11659,DBSALT002042,Indium Citrate
+DB11659,DBSALT002040,Indium Nitrate
+DB11659,DBSALT002041,Indium Sulfate
+DB11666,DBSALT002043,Buparlisib hydrochloride
+DB11673,DBSALT002046,Pyridoxamine hydrochloride
+DB11673,DBSALT002045,Pyridoxamine phosphate
+DB11675,DBSALT002047,Mosapride Citrate
+DB11689,DBSALT002048,Selumetinib sulfate
+DB11691,DBSALT002556,Naldemedine tosylate
+DB11695,DBSALT002049,Carnosine Hydrochloride
+DB11695,DBSALT002050,Carnosine Nitrate
+DB11699,DBSALT002051,Tropisetron Hydrochloride
+DB11699,DBSALT002052,Tropisetron Mesylate
+DB11700,DBSALT003489,Setmelanotide acetate
+DB11703,DBSALT003504,Acalabrutinib maleate monohydrate
+DB11706,DBSALT002054,Raxatrigine Hydrochloride
+DB11706,DBSALT002053,Raxatrigine Mesylate
+DB11710,DBSALT002055,Trigonellamide Chloride
+DB11711,DBSALT002508,Navarixin monohydrate
+DB11723,DBSALT002056,Dutogliptin Tartrate
+DB11724,DBSALT002057,Bombesin dihydrochloride
+DB11726,DBSALT002058,Encenicline hydrochloride
+DB11730,DBSALT002059,Ribociclib hydrochloride
+DB11730,DBSALT002583,Ribociclib succinate
+DB11732,DBSALT002893,Lasmiditan succinate
+DB11737,DBSALT002060,Icotinib hydrochloride
+DB11738,DBSALT002061,Rilmenidine Phosphate
+DB11741,DBSALT003588,Famitinib malate
+DB11744,DBSALT002062,Epetraborole Hydrochloride
+DB11745,DBSALT002063,Otenabant hydrochloride
+DB11751,DBSALT002064,Cabotegravir sodium
+DB11753,DBSALT002065,Rifamycin sodium
+DB11758,DBSALT002066,Cenicriviroc mesylate
+DB11759,DBSALT002067,Pevonedistat Hydrochloride
+DB11760,DBSALT002816,Talazoparib tosylate
+DB11761,DBSALT002068,Tenapanor hydrochloride
+DB11763,DBSALT003445,Momelotinib dihydrochloride
+DB11763,DBSALT003485,Momelotinib dihydrochloride monohydrate
+DB11774,DBSALT002069,Pazufloxacin Mesilate
+DB11775,DBSALT002070,Pf 03758309 Hydrochloride
+DB11779,DBSALT002071,Danoprevir sodium
+DB11783,DBSALT002072,Imidapril hydrochloride
+DB11785,DBSALT002073,Anisodamine Hydrochloride
+DB11787,DBSALT002074,Ralimetinib Mesylate
+DB11789,DBSALT002661,Sodium hyodeoxycholate
+DB11790,DBSALT002075,Radafaxine Hydrochloride
+DB11791,DBSALT002950,Capmatinib hydrochloride
+DB11793,DBSALT002076,Niraparib hydrochloride
+DB11793,DBSALT002589,Niraparib tosylate
+DB11793,DBSALT002590,Niraparib tosylate monohydrate
+DB11796,DBSALT002794,Fostemsavir tromethamine
+DB11799,DBSALT002077,Bictegravir sodium
+DB11800,DBSALT002078,Tivozanib hydrochloride
+DB11807,DBSALT002079,Dexmecamylamine Hydrochloride
+DB11808,DBSALT002080,Faldaprevir sodium
+DB11809,DBSALT002081,Artefenomel Mesylate
+DB11812,DBSALT002082,Talaporfin Sodium
+DB11815,DBSALT002593,Tilarginine acetate
+DB11815,DBSALT002084,Tilarginine citrate
+DB11815,DBSALT002083,Tilarginine hydrochloride
+DB11819,DBSALT002085,Asp 4058 Hydrochloride
+DB11823,DBSALT002086,Esketamine hydrochloride
+DB11824,DBSALT002509,Tofogliflozin hydrate
+DB11827,DBSALT002616,Ertugliflozin pidolate
+DB11828,DBSALT002087,Neratinib maleate
+DB11829,DBSALT002089,Ruboxistaurin hydrochloride
+DB11829,DBSALT002088,Ruboxistaurin mesylate
+DB11830,DBSALT003299,Mocetinostat Dihydrobromide
+DB11832,DBSALT003320,Crenolanib besylate
+DB11836,DBSALT002091,Sapanisertib Diphosphate
+DB11836,DBSALT002090,Sapanisertib Hydrochloride
+DB11837,DBSALT002092,Osilodrostat phosphate
+DB11842,DBSALT002093,Angiotensin II acetate
+DB11846,DBSALT002094,Creatinine Sulfate
+DB11854,DBSALT002095,Astodrimer Sodium
+DB11885,DBSALT003304,Anlotinib hydrochloride
+DB11886,DBSALT002099,Infigratinib acetate
+DB11886,DBSALT002098,Infigratinib hydrochloride
+DB11886,DBSALT002097,Infigratinib mesylate
+DB11886,DBSALT002096,Infigratinib phosphate
+DB11890,DBSALT002100,Cilengitide hydrochloride
+DB11891,DBSALT003313,Fimepinostat mesylate
+DB11895,DBSALT002101,Lenomorelin acetate
+DB11904,DBSALT002102,Flumatinib Mesylate
+DB11909,DBSALT002103,Varespladib Sodium
+DB11912,DBSALT002104,Lanopepden Mesylate
+DB11915,DBSALT002588,Valbenazine tosylate
+DB11918,DBSALT002105,Guadecitabine Sodium
+DB11924,DBSALT002106,Safingol Hydrochloride
+DB11929,DBSALT002107,Vaniprevir potassium
+DB11935,DBSALT002108,Flomoxef Sodium
+DB11938,DBSALT003191,Difelikefalin acetate
+DB11941,DBSALT002109,Tasisulam Sodium
+DB11943,DBSALT002486,Delafloxacin meglumine
+DB11947,DBSALT002110,Pridopidine Hydrochloride
+DB11949,DBSALT002111,Vestipitant mesylate
+DB11957,DBSALT002112,Idalopirdine Hydrochloride
+DB11960,DBSALT003315,Carboxyamidotriazole orotate
+DB11963,DBSALT002510,Dacomitinib monohydrate
+DB11969,DBSALT002113,Uprosertib Hydrochloride
+DB11975,DBSALT002114,TAK-448 acetate
+DB11977,DBSALT002115,Golvatinib Tartrate
+DB11978,DBSALT002116,Glasdegib hydrochloride
+DB11978,DBSALT003035,Glasdegib maleate
+DB11979,DBSALT002117,Elagolix sodium
+DB11981,DBSALT003412,Elamipretide hydrochloride
+DB11995,DBSALT002118,Avatrombopag maleate
+DB12001,DBSALT002119,Abemaciclib mesylate
+DB12004,DBSALT002120,Briciclib Sodium
+DB12008,DBSALT003274,Prexasertib dihydrochloride
+DB12008,DBSALT003273,Prexasertib mesylate monohydrate
+DB12010,DBSALT002691,Fostamatinib disodium
+DB12013,DBSALT002121,Axelopran Sulfate
+DB12017,DBSALT002122,Ozagrel Hydrochloride
+DB12017,DBSALT002123,Ozagrel Sodium
+DB12020,DBSALT002799,Tecovirimat monohydrate
+DB12022,DBSALT002124,Evatanepag Sodium
+DB12035,DBSALT002125,Sarecycline hydrochloride
+DB12036,DBSALT002126,Naquotinib Mesylate
+DB12046,DBSALT002127,Atopaxar Hydrochloride
+DB12054,DBSALT002128,Bq 123 Sodium
+DB12061,DBSALT002129,Pardoprunox Hydrochloride
+DB12062,DBSALT002905,Volasertib trihydrochloride
+DB12068,DBSALT002130,T 900607 Sodium
+DB12071,DBSALT002131,Vabicaserin Hydrochloride
+DB12086,DBSALT002531,Oxitropium bromide
+DB12088,DBSALT003321,D-Phe-Cys-Tyr-D-Trp-Lys-Cys-Thr-NH2 (disulfide bridge: 2-6) acetate
+DB12091,DBSALT002132,Gadolinium Chloride
+DB12093,DBSALT002133,Tetrahydropalmatine Hydrochloride
+DB12094,DBSALT002135,Semapimod mesylate
+DB12094,DBSALT002134,Semapimod tetrahydrochloride
+DB12095,DBSALT002591,Telotristat etiprate
+DB12105,DBSALT002136,Imagabalin Hydrochloride
+DB12110,DBSALT002642,m-Chlorophenylpiperazine dihydrochloride
+DB12110,DBSALT002641,m-Chlorophenylpiperazine hydrochloride
+DB12111,DBSALT002137,MK-212 hydrochloride
+DB12123,DBSALT002138,Cinepazide Maleate
+DB12127,DBSALT002139,Sultamicillin hydrochloride
+DB12127,DBSALT003010,Sultamicillin tosilate
+DB12128,DBSALT002140,Ulimorelin Hydrochloride
+DB12134,DBSALT002141,Gepotidacin hydrochloride
+DB12134,DBSALT002142,Gepotidacin mesylate
+DB12140,DBSALT002378,Dilmapimod tosylate
+DB12141,DBSALT002819,Gilteritinib fumarate
+DB12143,DBSALT002143,Agn 203818 Hydrochloride
+DB12146,DBSALT002144,Rigosertib Sodium
+DB12151,DBSALT002145,Brincidofovir sodium
+DB12153,DBSALT002146,Citicoline sodium
+DB12154,DBSALT003278,Itacitinib adipate
+DB12163,DBSALT002147,Sarpogrelate Hydrochloride
+DB12184,DBSALT002148,Gepirone Hydrochloride
+DB12185,DBSALT002149,Exatecan Mesylate
+DB12190,DBSALT002150,Faropenem Sodium
+DB12191,DBSALT002151,Obatoclax mesylate
+DB12192,DBSALT002153,Emeramide Potassium
+DB12192,DBSALT002152,Emeramide Sodium
+DB12196,DBSALT002154,CP-866087 Mesylate
+DB12207,DBSALT002155,Verdinexor Hydrochloride
+DB12212,DBSALT002156,Landiolol hydrochloride
+DB12220,DBSALT002157,Org 25935 Hydrochloride
+DB12225,DBSALT002158,Beclabuvir hydrochloride
+DB12228,DBSALT002159,Telcagepant potassium
+DB12229,DBSALT002160,Cerlapirdine Hydrochloride
+DB12230,DBSALT002161,Bunazosin hydrochloride
+DB12234,DBSALT002163,BMS-214662 hydrochloride
+DB12234,DBSALT002162,BMS-214662 mesylate
+DB12235,DBSALT003173,Estetrol monohydrate
+DB12248,DBSALT002164,Tulobuterol Hydrochloride
+DB12251,DBSALT002165,Moxaverine Hydrochloride
+DB12264,DBSALT002166,Atevirdine Mesylate
+DB12273,DBSALT002167,Ecopipam Hydrochloride
+DB12277,DBSALT002168,Polihexanide hydrochloride
+DB12278,DBSALT002169,Propiverine hydrochloride
+DB12282,DBSALT002170,Defactinib hydrochloride
+DB12283,DBSALT002171,Balapiravir Hydrochloride
+DB12289,DBSALT002172,Darexaban Maleate
+DB12293,DBSALT002173,Nefopam hydrochloride
+DB12305,DBSALT002174,Dasotraline Hydrochloride
+DB12313,DBSALT002175,Dopexamine Hydrochloride
+DB12314,DBSALT002176,Chlorproguanil hydrochloride
+DB12321,DBSALT002177,Ifetroban Sodium
+DB12329,DBSALT002787,Eravacycline dihydrochloride
+DB12332,DBSALT001982,Rucaparib camsylate
+DB12332,DBSALT001983,Rucaparib phosphate
+DB12333,DBSALT003177,Amcipatricin diascorbate
+DB12339,DBSALT002178,Radezolid hydrochloride
+DB12340,DBSALT003295,Navitoclax dihydrochloride
+DB12343,DBSALT002179,Temocillin Sodium
+DB12353,DBSALT002180,Ulodesine Hydrochloride
+DB12357,DBSALT002181,BMS-863233 hydrochloride
+DB12359,DBSALT002182,Biib021 Mesylate
+DB12369,DBSALT002183,Sotrastaurin acetate
+DB12371,DBSALT002866,Siponimod fumarate
+DB12375,DBSALT002184,Oglemilast Sodium
+DB12377,DBSALT002185,Relebactam sodium
+DB12389,DBSALT002186,Zamicastat hydrochloride
+DB12390,DBSALT003342,Seladelpar lysine
+DB12392,DBSALT003510,Resminostat mesylate
+DB12394,DBSALT002187,Eleclazine Hydrochloride
+DB12402,DBSALT002188,Pumosetrag Hydrochloride
+DB12403,DBSALT002189,Samarium Chloride
+DB12404,DBSALT002953,Remimazolam besylate
+DB12404,DBSALT002954,Remimazolam tosylate
+DB12405,DBSALT003387,Triciribine phosphate
+DB12418,DBSALT002238,Saccharin calcium
+DB12418,DBSALT002239,Saccharin potassium
+DB12418,DBSALT002240,Saccharin sodium
+DB12442,DBSALT002385,Alvespimycin hydrochloride
+DB12455,DBSALT002607,Omadacycline tosylate
+DB12457,DBSALT002938,Rimegepant sulfate
+DB12458,DBSALT002901,Muscimol hydrobromide
+DB12459,DBSALT002367,Belotecan hydrochloride
+DB12471,DBSALT003185,Ibrexafungerp citrate
+DB12471,DBSALT003184,Ibrexafungerp phosphate
+DB12483,DBSALT002581,Copanlisib dihydrochloride
+DB12483,DBSALT003474,Copanlisib dihydrochloride hydrate
+DB12485,DBSALT003580,Pimonidazole hydrochloride
+DB12500,DBSALT002884,Fedratinib hydrochloride
+DB12526,DBSALT002638,Batefenterol succinate
+DB12543,DBSALT003183,Samidorphan L-malate
+DB12554,DBSALT002971,Mebeverine hydrochloride
+DB12577,DBSALT003314,Fosbretabulin tromethamine
+DB12597,DBSALT003206,Asciminib hydrochloride
+DB12598,DBSALT002384,Nafamostat mesylate
+DB12604,DBSALT003550,Sisomicin sulfate
+DB12605,DBSALT003600,Etripamil hydrochloride
+DB12612,DBSALT002947,Ozanimod hydrochloride
+DB12615,DBSALT002742,Plazomicin sulfate
+DB12624,DBSALT003019,Octenidine dihydrochloride
+DB12638,DBSALT003292,Zelavespib dihydrochloride
+DB12645,DBSALT003496,Givinostat hydrochloride monohydrate
+DB12664,DBSALT002409,Indantadol hydrochloride
+DB12668,DBSALT003263,Metenkefalin acetate
+DB12692,DBSALT003428,Gusperimus hydrochloride
+DB12712,DBSALT002921,Pilsicainide hydrochloride
+DB12742,DBSALT002365,Amuvatinib hydrochloride
+DB12755,DBSALT002437,Zoptarelin doxorubicin acetate
+DB12766,DBSALT003429,Cicletanine hydrochloride
+DB12769,DBSALT002383,Lometrexol sodium
+DB12777,DBSALT003463,Veldoreotide acetate
+DB12778,DBSALT002408,Rivipansel sodium
+DB12783,DBSALT002687,Benserazide hydrochloride
+DB12784,DBSALT003440,Ilginatinib maleate
+DB12825,DBSALT002883,Lefamulin acetate
+DB12831,DBSALT002364,Gabexate mesylate
+DB12846,DBSALT002957,Reproterol hydrochloride
+DB12865,DBSALT002195,Etelcalcetide hydrochloride
+DB12874,DBSALT003051,Quizartinib dihydrochloride
+DB12879,DBSALT002340,Omigapil maleate
+DB12882,DBSALT003312,Ombrabulin hydrochloride
+DB12883,DBSALT002368,Eltoprazine hydrochloride
+DB12887,DBSALT002932,Tazemetostat hydrobromide
+DB12901,DBSALT002927,Fiacitabine hydrochloride
+DB12923,DBSALT002564,Gallopamil Hydrochloride
+DB12930,DBSALT003006,Opipramol hydrochloride
+DB12931,DBSALT003363,Fenobam hydrochloride
+DB12931,DBSALT002928,Fenobam monohydrate
+DB12942,DBSALT002935,Lactitol monohydrate
+DB12945,DBSALT002931,Dihydralazine sulfate
+DB12958,DBSALT002975,Prothipendyl hydrochloride
+DB12958,DBSALT002976,Prothipendyl hydrochloride monohydrate
+DB12967,DBSALT002907,Mitoguazone dihydrochloride
+DB12975,DBSALT003083,Pyronaridine tetraphosphate
+DB12978,DBSALT002881,Pexidartinib hydrochloride
+DB12997,DBSALT002930,Brilacidin tetrahydrochloride
+DB13001,DBSALT002331,Tinoridine hydrochloride
+DB13005,DBSALT002929,Rebastinib tosylate
+DB13025,DBSALT002373,Tiapride hydrochloride
+DB13061,DBSALT002432,MLN8054 sodium
+DB13064,DBSALT003102,Tramazoline hydrochloride
+DB13069,DBSALT002899,Nimustine hydrochloride
+DB13074,DBSALT002428,Macimorelin acetate
+DB13076,DBSALT002630,Yttrium-90 chloride
+DB13076,DBSALT002476,Yttrium-90 citrate
+DB13080,DBSALT002798,Roluperidone hydrochloride
+DB13084,DBSALT003013,Pyritinol hydrochloride
+DB13089,DBSALT002291,Enoxolone aluminum
+DB13089,DBSALT002290,Enoxolone sodium
+DB13089,DBSALT002289,Potassium glycyrrhetinate
+DB13091,DBSALT003134,Tiropramide hydrochloride
+DB13092,DBSALT002414,Meclocycline sulfosalicylate
+DB13098,DBSALT003264,CT-2584 mesylate
+DB13103,DBSALT003284,Camsirubicin hydrochloride
+DB13105,DBSALT003469,TP-317
+DB13115,DBSALT003454,Saroglitazar magnesium
+DB13139,DBSALT001453,Levosalbutamol hydrochloride
+DB13139,DBSALT002993,Levosalbutamol sulfate
+DB13139,DBSALT001385,Levosalbutamol tartrate
+DB13142,DBSALT001951,Calcium glubionate
+DB13155,DBSALT001955,Esculin sodium
+DB13158,DBSALT001967,Clobetasone butyrate
+DB13161,DBSALT002592,Nusinersen sodium
+DB13165,DBSALT002191,Ripasudil hydrochloride dihydrate
+DB13166,DBSALT002196,Zofenopril calcium
+DB13180,DBSALT002440,Sodium gluconate
+DB13181,DBSALT002441,Methylbenactyzium bromide
+DB13190,DBSALT002482,Ethacridine lactate
+DB13190,DBSALT002483,Ethacridine lactate monohydrate
+DB13191,DBSALT002491,Phosphocreatine sodium
+DB13203,DBSALT002675,Bamifylline hydrochloride
+DB13206,DBSALT002804,Bamethan sulfate
+DB13211,DBSALT002676,Guanoxan sulfate
+DB13216,DBSALT003005,Oxolamine citrate
+DB13216,DBSALT003004,Oxolamine phosphate
+DB13229,DBSALT002515,Enibomal sodium
+DB13233,DBSALT002575,Alaproclate hydrochloride
+DB13235,DBSALT002697,Sodium perborate
+DB13235,DBSALT002781,Sodium perborate monohydrate
+DB13238,DBSALT003132,Tuaminoheptane sulfate
+DB13247,DBSALT003372,Pramiracetam sulfate
+DB13254,DBSALT002516,Prifinium bromide
+DB13257,DBSALT002666,Ferrous sulfate
+DB13257,DBSALT002463,Ferrous sulfate dihydrate
+DB13257,DBSALT002667,Ferrous sulfate monohydrate
+DB13257,DBSALT002668,Ferrous sulfate sesquihydrate
+DB13260,DBSALT002897,Lysozyme chloride
+DB13262,DBSALT003057,Aceclidine hydrochloride
+DB13266,DBSALT002708,Cefatrizine propylene glycolate
+DB13270,DBSALT003094,Dibekacin sulfate
+DB13273,DBSALT002916,Sultopride hydrochloride
+DB13282,DBSALT003165,Benzododecinium bromide
+DB13282,DBSALT003166,Benzododecinium chloride
+DB13296,DBSALT003358,Propamidine isethionate
+DB13309,DBSALT002958,Benproperine phosphate
+DB13312,DBSALT002758,Delapril hydrochloride
+DB13337,DBSALT002659,Pheneticillin potassium
+DB13345,DBSALT002618,Dihydroergocristine mesylate
+DB13373,DBSALT003148,Acriflavinium chloride
+DB13377,DBSALT002926,Vinbarbital sodium
+DB13385,DBSALT002808,Dihydroergocryptine mesylate
+DB13393,DBSALT003540,"Emetan, 6',7',10,11-tetramethoxy-, dihydrochloride, hydrate"
+DB13393,DBSALT003542,Emetine hydrochloride heptahydrate
+DB13393,DBSALT003541,Emetine hydrochloride pentahydrate
+DB13394,DBSALT003544,Adrenalone hydrochloride
+DB13400,DBSALT002925,Linsidomine hydrochloride
+DB13414,DBSALT002997,Phenyramidol hydrochloride
+DB13434,DBSALT002998,Fenticonazole nitrate
+DB13435,DBSALT002924,Endralazine mesylate
+DB13444,DBSALT002569,Meglumine ioxitalamate
+DB13444,DBSALT002568,Sodium ioxitalamate
+DB13445,DBSALT003119,Nepinalone hydrochloride
+DB13470,DBSALT002923,Cefodizime sodium
+DB13481,DBSALT002922,Tenidap sodium
+DB13488,DBSALT002573,Bencyclane fumarate
+DB13497,DBSALT002829,Valethamate bromide
+DB13500,DBSALT002518,Otilonium bromide
+DB13501,DBSALT003088,Bendazac lysine
+DB13508,DBSALT002704,Cloranolol hydrochloride
+DB13515,DBSALT003111,Levomethadone hydrochloride
+DB13518,DBSALT002812,Sodium alginate
+DB13529,DBSALT002519,Calcium dobesilate
+DB13529,DBSALT003025,Calcium dobesilate monohydrate
+DB13539,DBSALT002655,Iodoxamate meglumine
+DB13549,DBSALT002520,4-dimethylaminophenol hydrochloride
+DB13550,DBSALT002786,Bifemelane hydrochloride
+DB13561,DBSALT002797,Clobenzorex hydrochloride
+DB13565,DBSALT002521,Benzoxonium chloride
+DB13569,DBSALT003011,Ferrous chloride tetrahydrate
+DB13573,DBSALT002522,Acefylline piperazine
+DB13574,DBSALT003067,Heptaminol hydrochloride
+DB13585,DBSALT002523,Itramin tosylate
+DB13588,DBSALT002964,Nafronyl oxalate
+DB13619,DBSALT003089,Bornaprine hydrochloride
+DB13624,DBSALT002803,Methoxyphenamine hydrochloride
+DB13630,DBSALT002525,Bibenzonium bromide
+DB13642,DBSALT003109,Pridinol mesilate
+DB13648,DBSALT002830,Alcuronium chloride
+DB13660,DBSALT002660,Propicillin potassium
+DB13667,DBSALT002706,Cefozopran hydrochloride
+DB13669,DBSALT002526,Morpholine salicylate
+DB13670,DBSALT002991,Oxantel pamoate
+DB13674,DBSALT003451,Cridanimod sodium
+DB13681,DBSALT002903,Butalamine hydrochloride
+DB13682,DBSALT002707,Cefpirome sulfate
+DB13683,DBSALT003543,Dimethisoquin Hydrochloride
+DB13692,DBSALT003098,Tretoquinol hydrochloride anhydrous
+DB13693,DBSALT003099,Sulbenicillin sodium
+DB13694,DBSALT003115,Distigmine bromide
+DB13700,DBSALT003155,Protamine hydrochloride
+DB13720,DBSALT002847,Diphemanil methylsulfate
+DB13729,DBSALT002914,Camostat mesilate
+DB13751,DBSALT002692,Ammonium glycyrrhizinate trihydrate
+DB13751,DBSALT002693,Glycyrrhizinate dipotassium
+DB13753,DBSALT003351,Cetiedil citrate
+DB13755,DBSALT002904,Iocarmate meglumine
+DB13759,DBSALT003077,Fenpiverinium bromide
+DB13772,DBSALT002648,Rufloxacin hydrochloride
+DB13774,DBSALT002527,Myristalkonium chloride
+DB13775,DBSALT002705,Tertatolol hydrochloride
+DB13779,DBSALT002915,Guanoclor sulfate
+DB13781,DBSALT002913,Xamoterol fumarate
+DB13787,DBSALT003194,Tilidine fumarate
+DB13787,DBSALT002956,Tilidine hydrochloride
+DB13787,DBSALT003195,Tilidine hydrochloride hemihydrate
+DB13787,DBSALT003193,Tilidine phosphate
+DB13800,DBSALT003022,Calcium levulinate dihydrate
+DB13808,DBSALT003096,Mebhydrolin napadisylate
+DB13823,DBSALT002996,Pipemidic acid trihydrate
+DB13827,DBSALT002561,Indanazoline hydrochloride
+DB13844,DBSALT003008,Pipenzolate bromide
+DB13845,DBSALT002643,Etafenone hydrochloride
+DB13850,DBSALT002528,Timepidium bromide
+DB13858,DBSALT002640,Dimazole dihydrochloride
+DB13862,DBSALT002646,Magnesium phosphate dibasic trihydrate
+DB13862,DBSALT002534,Magnesium phosphate pentahydrate
+DB13863,DBSALT003042,Fosfructose trisodium
+DB13873,DBSALT001885,Choline fenofibrate
+DB13874,DBSALT002582,Enasidenib mesylate
+DB13875,DBSALT002558,Harmaline hydrochloride
+DB13875,DBSALT002559,Harmaline hydrochloride dihydrate
+DB13914,DBSALT002576,Volixibat potassium
+DB13917,DBSALT002577,Deoxyepinephrine hydrochloride
+DB13920,DBSALT002578,Valopicitabine dihydrochloride
+DB13930,DBSALT002597,Ulixertinib hydrochloride
+DB13931,DBSALT002598,Netarsudil dihydrochloride
+DB13931,DBSALT002599,Netarsudil mesylate
+DB13941,DBSALT002601,Piperaquine tetraphosphate
+DB13950,DBSALT002620,WIN 55212-2 mesylate
+DB13967,DBSALT002674,Patent Blue V calcium
+DB13967,DBSALT002622,Patent Blue V sodium
+DB13970,DBSALT002623,Dioctyldimonium chloride
+DB13976,DBSALT002624,Technetium Tc-99m sulesomab
+DB13979,DBSALT002629,Technetium Tc-99m besilesomab
+DB13980,DBSALT002631,Cupric chloride anhydrous Cu-64
+DB13982,DBSALT002634,Lutetium chloride Lu-177
+DB13987,DBSALT002644,Strontium chloride hexahydrate
+DB13988,DBSALT002645,SB-269970 hydrochloride
+DB14007,DBSALT002670,Pentetate calcium trisodium
+DB14007,DBSALT002669,Pentetate zinc trisodium
+DB14018,DBSALT002688,Pamabrom
+DB14025,DBSALT002698,Clinafloxacin hydrochloride
+DB14034,DBSALT002701,Darglitazone sodium
+DB14035,DBSALT002702,Englitazone sodium
+DB14044,DBSALT002703,Calcium hopantenate
+DB14056,DBSALT002784,Nigericin sodium
+DB14061,DBSALT002713,Hycanthone mesylate
+DB14065,DBSALT002715,Lomerizine dihydrochloride
+DB14067,DBSALT002717,Dofequidar fumarate
+DB14068,DBSALT002716,Dexniguldipine hydrochloride
+DB14086,DBSALT002721,Cianidanol hydrate
+DB14087,DBSALT002722,Morrhuate sodium
+DB14089,DBSALT002727,Sodium dimercaptosuccinic acid
+DB14096,DBSALT002729,"1,2-icosapentoyl-sn-glycero-3-phosphoserine calcium"
+DB14104,DBSALT002735,Potassium linolate
+DB14104,DBSALT002734,Sodium linolate
+DB14126,DBSALT002740,Tenofovir hydrate
+DB14141,DBSALT002743,p-Phenylenediamine dihydrochloride
+DB14143,DBSALT002744,Distearyldimonium chloride
+DB14144,DBSALT002745,p-Aminophenol hydrochloride
+DB14150,DBSALT002748,Potassium chlorate
+DB14150,DBSALT002747,Sodium chlorate
+DB14159,DBSALT002751,Oxidronate disodium
+DB14176,DBSALT002753,Benzylparaben sodium
+DB14177,DBSALT002755,Propylparaben calcium
+DB14177,DBSALT002754,Propylparaben sodium
+DB14180,DBSALT002756,Nickel sulfate hexahydrate
+DB14182,DBSALT002757,Potassium dichromate
+DB14191,DBSALT002900,Diphenylguanidine monohydrobromide
+DB14206,DBSALT002759,Cobalt chloride hexahydrate
+DB14210,DBSALT002760,Moexiprilat hydrochloride
+DB14212,DBSALT002761,Methylparaben sodium
+DB14217,DBSALT002763,Quinaprilat hydrate
+DB14228,DBSALT003178,Sodium threonate
+DB14483,DBSALT002770,Calcium ascorbate dihydrate
+DB14487,DBSALT002771,Zinc acetate dihydrate
+DB14488,DBSALT002772,Ferrous gluconate dihydrate
+DB14495,DBSALT002774,Manganese citrate decahydrate
+DB14496,DBSALT002775,Sodium molybdate dihydrate
+DB14502,DBSALT001974,"Sodium phosphate, dibasic dihydrate"
+DB14502,DBSALT001975,"Sodium phosphate, dibasic dodecahydrate"
+DB14502,DBSALT001977,"Sodium phosphate, dibasic, heptahydrate"
+DB14502,DBSALT001973,"Sodium phosphate, dibasic, monohydrate"
+DB14505,DBSALT002514,Sodium borate decahydrate
+DB14506,DBSALT001239,Lithium hydroxide monohydrate
+DB14507,DBSALT002777,Lithium citrate tetrahydrate
+DB14512,DBSALT001244,Mometasone furoate monohydrate
+DB14542,DBSALT001379,Hydrocortisone sodium phosphate
+DB14545,DBSALT001297,Hydrocortisone sodium succinate
+DB14545,DBSALT002780,Hydrocortisone succinate monohydrate
+DB14572,DBSALT003521,Bismuth subcitrate
+DB14582,DBSALT002783,Patisiran sodium
+DB14598,DBSALT002785,Edetate calcium disodium
+DB14600,DBSALT001820,Edetate disodium
+DB14631,DBSALT000785,Prednisolone sodium phosphate
+DB14633,DBSALT001634,Prednisolone sodium succinate
+DB14644,DBSALT001158,Methylprednisolone sodium succinate
+DB14650,DBSALT002791,Menadiol sodium diphosphate
+DB14676,DBSALT002795,Fagrocorat hydrochloride
+DB14683,DBSALT002420,Prezatide copper acetate
+DB14702,DBSALT002805,Sodium metavanadate tetrahydrate
+DB14703,DBSALT002806,Dexamethasone sodium metasulfobenzoate
+DB14708,DBSALT002810,Chloramine-T
+DB14708,DBSALT001646,Chloramine-T trihydrate
+DB14713,DBSALT002811,Inotersen sodium
+DB14714,DBSALT002311,Tenivastatin sodium
+DB14720,DBSALT002815,Brovanexine hydrochloride
+DB14722,DBSALT002817,ADU-S100 sodium
+DB14723,DBSALT002820,Larotrectinib sulfate
+DB14725,DBSALT002822,Cefamandole nafate sodium
+DB14733,DBSALT002833,Ceftobiprole medocaril sodium
+DB14739,DBSALT002840,Sodium p-phenolsulfonate dihydrate
+DB00781,DBSALT002841,Polymyxin B sulfate
+DB14750,DBSALT002345,Cidoxepin hydrochloride
+DB14753,DBSALT002848,Hydroxystilbamidine isethionate
+DB14754,DBSALT002865,Solriamfetol hydrochloride
+DB14763,DBSALT002873,Cycloguanil embonate
+DB14765,DBSALT003305,Rivoceranib mesylate
+DB14766,DBSALT003430,Etrasimod arginine
+DB14829,DBSALT003378,Uproleselan sodium
+DB14844,DBSALT003291,Dordaviprone dihydrochloride
+DB14845,DBSALT003050,Filgotinib maleate
+DB14857,DBSALT003275,Avadomide hydrochloride
+DB14860,DBSALT003572,Ensartinib Hydrochloride
+DB14879,DBSALT002912,Cefiderocol sulfate tosylate
+DB14889,DBSALT003298,Derazantinib dihydrochloride
+DB14901,DBSALT003203,Inclisiran sodium
+DB14904,DBSALT003379,Pimasertib hydrochloride
+DB14909,DBSALT003525,Imetelstat sodium
+DB14924,DBSALT003482,Ritlecitinib tosylate
+DB14933,DBSALT003512,Nicotinamide riboside chloride
+DB14939,DBSALT003444,Motixafortide acetate
+DB14948,DBSALT003396,BMS-986020 sodium
+DB14966,DBSALT003446,Venglustat malate
+DB14989,DBSALT003156,Umbralisib tosylate
+DB14990,DBSALT003406,Bazlitoran sodium
+DB15002,DBSALT003571,Fitusiran sodium
+DB15018,DBSALT003334,Agatolimod sodium
+DB15031,DBSALT003503,Daridorexant hydrochloride
+DB15066,DBSALT002906,Givosiran sodium
+DB15067,DBSALT003052,Volanesorsen sodium
+DB15079,DBSALT003366,Troriluzole hydrochloride
+DB15091,DBSALT002885,Upadacitinib hemihydrate
+DB15091,DBSALT002886,Upadacitinib tartrate
+DB15097,DBSALT003486,Gefapixant citrate
+DB15110,DBSALT003265,Onvansertib fumarate
+DB15130,DBSALT003573,Dexpramipexole dihydrochloride
+DB15133,DBSALT003143,Tepotinib hydrochloride
+DB15147,DBSALT003266,Tinostamustine hydrochloride
+DB15165,DBSALT003484,Avacincaptad pegol sodium
+DB15168,DBSALT003421,Cilofexor tromethamine
+DB15177,DBSALT003367,Bamocaftor potassium
+DB15189,DBSALT003281,Birabresib dihydrate
+DB15191,DBSALT003290,MAX-40279 hemifumarate
+DB15198,DBSALT003435,Dextromethadone hydrochloride
+DB15219,DBSALT003289,Tomivosertib hydrochloride
+DB15226,DBSALT003197,Dasiglucagon hydrochloride
+DB15227,DBSALT003288,Tirabrutinib hydrochloride
+DB15248,DBSALT003033,Bulevirtide acetate
+DB15254,DBSALT003574,Avutometinib potassium
+DB15279,DBSALT003418,CB-103 hydrochloride
+DB15327,DBSALT003049,Abivertinib maleate
+DB15343,DBSALT003283,Tuspetinib monohydrate
+DB15357,DBSALT003557,Xanomeline tartrate
+DB15413,DBSALT003214,Pafolacianine sodium
+DB15442,DBSALT003163,Trilaciclib dihydrochloride
+DB15446,DBSALT002955,Vidofludimus Calcium
+DB15447,DBSALT003364,Setogepram sodium
+DB15465,DBSALT002879,Benzhydrocodone hydrochloride
+DB15466,DBSALT002880,Tallimustine hydrochloride
+DB15492,DBSALT002889,Eticlopride hydrochloride
+DB15536,DBSALT003012,Ferric chloride hexahydrate
+DB15575,DBSALT003133,Padeliporfin potassium
+DB15596,DBSALT002909,Aminopromazine hydrochloride
+DB15597,DBSALT002910,Aminopentamide hydrochloride
+DB15597,DBSALT002911,Aminopentamide sulfate
+DB15636,DBSALT003524,Zilucoplan Sodium
+DB15642,DBSALT002944,Molidustat sodium
+DB15646,DBSALT002945,Fasitibant chloride
+DB15646,DBSALT002946,Fasitibant chloride hydrochloride
+DB15652,DBSALT002948,Ravidasvir hydrochloride
+DB15673,DBSALT003483,Lenacapavir sodium
+DB15688,DBSALT003479,Zavegepant hydrochloride
+DB15720,DBSALT002965,Zinc orotate dihydrate
+DB15760,DBSALT002980,Cobaltous sulfate heptahydrate
+DB15783,DBSALT003014,Pargeverine hydrochloride
+DB15785,DBSALT003016,Myrtecaine citrate
+DB15785,DBSALT003015,Myrtecaine hydrochloride
+DB15790,DBSALT003020,Mecloxamine citrate
+DB15791,DBSALT003021,MK-0668 mesylate
+DB15795,DBSALT003180,Adiphenine hydrochloride
+DB15796,DBSALT003023,GC-376
+DB15831,DBSALT003026,Calcium alpha-Keto-beta-methylvaleric acid
+DB15832,DBSALT003029,Desmeninol calcium
+DB15833,DBSALT003150,alpha-Keto-isoleucine calcium
+DB15880,DBSALT003037,Dermatan sulfate sodium
+DB15881,DBSALT003038,Clonazoline hydrochloride
+DB15882,DBSALT003039,Sulfamethylthiazole sodium
+DB15887,DBSALT003117,Fluorocholine chloride F-18
+DB15888,DBSALT003043,Pipethanate ethobromide
+DB15888,DBSALT003044,Pipethanate hydrochloride
+DB15902,DBSALT003056,Fepradinol hydrochloride
+DB15907,DBSALT003224,Escin sodium
+DB15911,DBSALT003058,Amfenac sodium anhydrous
+DB15919,DBSALT003066,Diquafosol tetrasodium
+DB15932,DBSALT003128,Clemizole hydrochloride
+DB15935,DBSALT003500,Lumasiran sodium
+DB15942,DBSALT003079,Haletazole tartrate
+DB15944,DBSALT003080,Menadione sodium bisulfite anhydrous
+DB15944,DBSALT003081,Menadione sodium bisulfite trihydrate
+DB15945,DBSALT003106,Pirenoxine sodium
+DB15946,DBSALT003179,Piroctone olamine
+DB15947,DBSALT003082,Pitofenone hydrochloride
+DB15954,DBSALT003146,Strychnine nitrate
+DB15954,DBSALT003085,Strychnine sulfate
+DB15960,DBSALT003086,Troclosene sodium
+DB15968,DBSALT003090,Butropium bromide
+DB15969,DBSALT003091,Carbazochrome sodium sulfonate
+DB15971,DBSALT003092,Clorotepine maleate
+DB15978,DBSALT003095,Parathiazine teoclate
+DB15979,DBSALT003097,Homochlorcyclizine dihydrochloride
+DB15980,DBSALT003108,Levocarnitine propionate hydrochloride
+DB15982,DBSALT003120,Berotralstat hydrochloride
+DB15990,DBSALT003121,Glycylglutamine monohydrate
+DB15991,DBSALT003122,Glycyltyrosine dihydrate
+DB16004,DBSALT003125,Butedronate tetrasodium
+DB16008,DBSALT003126,Nifekalant hydrochloride
+DB16009,DBSALT003127,LX-7101 hydrochloride
+DB16010,DBSALT003129,Iseganan hydrochloride
+DB16011,DBSALT003130,Levophencynonate hydrochloride
+DB16012,DBSALT003131,Celivarone fumarate
+DB16020,DBSALT003138,Ketocaine hydrochloride
+DB16022,DBSALT003137,Thenyldiamine hydrochloride
+DB16027,DBSALT003376,ABTL-0812 Sodium
+DB16066,DBSALT003338,Ilacirnon sodium
+DB16070,DBSALT003392,Zetomipzomib maleate
+DB16160,DBSALT003411,Tolinapant L-(+)-lactic acid
+DB16183,DBSALT003149,Hematoporphyrin dihydrochloride
+DB16199,DBSALT003492,Eplontersen sodium
+DB16200,DBSALT003493,Iptacopan hydrochloride monohydrate
+DB16216,DBSALT003556,Lazertinib mesylate monohydrate
+DB16217,DBSALT003336,Leniolisib phosphate
+DB16226,DBSALT003196,Maralixibat chloride
+DB16230,DBSALT003242,NSI-189 phosphate
+DB16236,DBSALT003215,Mitapivat sulfate
+DB16254,DBSALT003308,Nevanimibe hydrochloride
+DB16261,DBSALT003567,Odevixibat Sesquihydrate
+DB16277,DBSALT003585,Paltusotine dihydrochloride
+DB16277,DBSALT003594,Paltusotine hydrochloride
+DB16330,DBSALT003280,Simurosertib hemihydrate
+DB16333,DBSALT003340,Sonlicromanol Hydrochloride
+DB16341,DBSALT003564,Tilsotolimod sodium
+DB16354,DBSALT003181,Avasopasem manganese
+DB16390,DBSALT003192,Mobocertinib succinate
+DB16467,DBSALT003527,Polyinosinic polycytidylic acid sodium salt
+DB16567,DBSALT003545,Furaltadone hydrochloride
+DB16587,DBSALT003152,Sodium molybdate Mo-99
+DB16619,DBSALT003157,Magnesium aspartate hydrochloride trihydrate
+DB16623,DBSALT003158,Amidephrine mesylate
+DB16627,DBSALT003325,Melphalan flufenamide hydrochloride
+DB16628,DBSALT003161,Fosdenopterin hydrobromide
+DB16629,DBSALT003162,Serdexmethylphenidate chloride
+DB16637,DBSALT003164,KW-2450
+DB16650,DBSALT003167,Deucravacitinib hydrochloride
+DB16652,DBSALT003169,Avotaciclib sulfate
+DB16652,DBSALT003168,Avotaciclib trihydrochloride
+DB16656,DBSALT003170,Zotiraciclib citrate
+DB16657,DBSALT003171,Vecabrutinib succinate
+DB16687,DBSALT003172,Reltecimod sodium
+DB16699,DBSALT003187,Vutrisiran sodium
+DB16703,DBSALT003188,Belumosudil mesylate
+DB16703,DBSALT003189,Belumosudil trifluoroacetate
+DB16704,DBSALT003190,Durlobactam sodium
+DB16756,DBSALT003216,Ivarmacitinib sulfate
+DB16828,DBSALT003217,MK-2206 dihydrochloride
+DB16828,DBSALT003293,MK-2206 monohydrochloride
+DB16837,DBSALT003297,Azasetron Besylate
+DB16837,DBSALT003218,Azasetron hydrochloride
+DB16848,DBSALT003219,ORY-1001 dihydrochloride
+DB16849,DBSALT003287,Mivavotinib citrate
+DB16849,DBSALT003220,Mivavotinib hydrochloride
+DB16850,DBSALT003221,Tosufloxacin tosylate monohydrate
+DB16868,DBSALT003222,Acesulfame potassium
+DB16889,DBSALT003225,Olanexidine hydrochloride hydrate
+DB16891,DBSALT003277,ENMD-2076
+DB16892,DBSALT003226,Sinomenine hydrochloride
+DB16895,DBSALT003227,GSK-2879552 dihydrochloride
+DB16897,DBSALT003228,NS8593 hydrochloride
+DB16906,DBSALT003362,Bocidelpar sulfate
+DB16932,DBSALT003229,Icerguastat acetate
+DB16939,DBSALT003371,TAK-418
+DB16943,DBSALT003231,STX-107 dihydrochloride
+DB16944,DBSALT003232,ARM-210 hemifumarate
+DB16945,DBSALT003233,CDD-0102 hydrochloride
+DB16950,DBSALT003234,BN-82451 hydrochloride
+DB16954,DBSALT003235,Ezeprogind disulfate
+DB16958,DBSALT003236,"L-Leucyl-L-Prolyl-L-Prolyl-L-Leucyl-L-Prolyl-L-Tyrosyl-L-Proline, Acetate"
+DB16965,DBSALT003238,PBT-434 Mesylate
+DB16967,DBSALT003239,Enadoline hydrochloride
+DB16995,DBSALT003240,BGP-15
+DB17024,DBSALT003243,Chelerythrine chloride
+DB17025,DBSALT003244,Diphenyleneiodonium chloride
+DB17027,DBSALT003245,GBR-12783 dihydrochloride
+DB17028,DBSALT003247,GBR-12879 dihydrochloride
+DB17028,DBSALT003246,GBR-12879 dimesylate
+DB17031,DBSALT003248,Homidium bromide
+DB17032,DBSALT003249,Indatraline hydrochloride
+DB17033,DBSALT003250,JTC-801
+DB17037,DBSALT003251,NNC-55-0396 dihydrochloride
+DB17043,DBSALT003252,PHA-767491 hydrochloride
+DB17044,DBSALT003253,Phenylmercuric ammonium acetate
+DB17050,DBSALT003254,RS-39604 hydrochloride
+DB17051,DBSALT003255,SB-218078 hydrochloride
+DB17052,DBSALT003256,SB 224289 hydrochloride
+DB17054,DBSALT003257,SKF-96365
+DB17056,DBSALT003258,Spiperone hydrochloride
+DB17060,DBSALT003259,U-0126-EtOH
+DB17062,DBSALT003260,Sepantronium bromide
+DB17064,DBSALT003261,ZM-39923 hydrochloride
+DB17083,DBSALT003262,Linzagolix choline
+DB17097,DBSALT003529,Vorasidenib citrate
+DB17097,DBSALT003528,Vorasidenib citrate anhydrous
+DB17111,DBSALT003385,Dimethylaminomicheliolide fumarate
+DB17114,DBSALT003381,CT-179 dimesylate
+DB17117,DBSALT003267,Seclidemstat mesylate
+DB17118,DBSALT003268,Ivaltinostat phosphate
+DB17121,DBSALT003270,Lixumistat acetate
+DB17129,DBSALT003271,Pelabresib monohydrate
+DB17140,DBSALT003276,JNJ-28312141 hydrochloride
+DB17148,DBSALT003282,TH-9402
+DB17149,DBSALT003285,Berubicin hydrochloride
+DB17150,DBSALT003286,Ukrain
+DB17159,DBSALT003294,Denfivontinib hydrochloride
+DB17161,DBSALT003384,99mTc-HYNIC (Tyr3)-octreotide trifluoroacetate
+DB17170,DBSALT003296,"(R)-6-((3,3-Difluoro-1-Methylpiperidine-4-Yl)Oxy-N-(3-Ethynyl-2-Fluorophenyl)-7-Methoxyquinazolin-4-Amine Fumerate"
+DB17180,DBSALT003302,KX-2361 Besylate
+DB17197,DBSALT003303,AMG-900 bismesylate dihydrate
+DB17234,DBSALT003306,Bomedemstat ditosylate
+DB17236,DBSALT003307,ONO-7579 Mono-4-Toluenesulfonate
+DB17247,DBSALT003310,Bisantrene hydrochloride
+DB17277,DBSALT003316,CBP-501 acetate
+DB17289,DBSALT003317,L-arginine hydrochloride
+DB17294,DBSALT003319,Pixofisiran sodium
+DB17295,DBSALT003318,Lixadesiran sodium
+DB17298,DBSALT003322,Disufenton sodium
+DB17307,DBSALT003324,IKT-001 Mesylate
+DB17342,DBSALT003327,tetradonium bromide
+DB17382,DBSALT003386,AUM-601 hemi-oxalate
+DB17383,DBSALT003383,FN-1501 Sesquihydrate
+DB17385,DBSALT003329,Lipotecan hydrochloride
+DB17395,DBSALT003330,3D-185
+DB17408,DBSALT003331,Borocaptate sodium
+DB17410,DBSALT003332,Vodudeutentan sodium
+DB17456,DBSALT003587,Dalpiciclib isethionate
+DB17516,DBSALT003333,BMX-001
+DB17582,DBSALT003335,Exarafenib hydrochloride
+DB17613,DBSALT003339,Anaritide acetate
+DB17615,DBSALT003368,PXL-770
+DB17624,DBSALT003462,Cyclocreatine phosphate
+DB17631,DBSALT003347,Exaluren sulfate
+DB17635,DBSALT003470,Nedosiran sodium
+DB17662,DBSALT003349,Mavodelpar sodium
+DB17692,DBSALT003352,Vamifeport hydrochloride
+DB17693,DBSALT003353,Amotosalen hydrochloride
+DB17706,DBSALT003354,"Sodium 2,2-Dimethylbutyrate"
+DB17804,DBSALT003359,N-9-Methoxynonyldeoxynojirimycin hydrochloride
+DB17919,DBSALT003369,CPP-115
+DB17933,DBSALT003373,Lexanersen sodium
+DB17938,DBSALT003374,PMX-205 acetate
+DB17965,DBSALT003375,Tilorone Hydrochloride
+DB17988,DBSALT003382,Ivospemin tetrahydrochloride
+DB17999,DBSALT003561,Acoramidis hydrochloride
+DB18003,DBSALT003389,APT-101 hydrochloride
+DB18013,DBSALT003390,Udonitrectag L-lysine
+DB18017,DBSALT003391,Bersiporocin hydrochloride
+DB18019,DBSALT003393,LY3295668 Erbumine
+DB18022,DBSALT003394,AVA-4746 sodium
+DB18024,DBSALT003395,ICG-001 methane sulfonic acid
+DB18036,DBSALT003397,3-(3-(6-Guanidino-1-oxoisoindolin-2yl)propanamido)-3-(pyridine-3yl)propanoic acid dihydrochloride
+DB18038,DBSALT003398,Buloxibutid sodium
+DB18051,DBSALT003399,LDN-193189 monohydrochloride
+DB18057,DBSALT003400,Golidocitinib hemi-ethyl acetate solvate
+DB18064,DBSALT003401,Fidrisertib sesquisuccinate
+DB18066,DBSALT003402,NM-004 disodium
+DB18079,DBSALT003403,Larsucosterol sodium
+DB18081,DBSALT003404,Crozbaciclib fumarate
+DB18082,DBSALT003405,SEL-24 hydrochloride
+DB18083,DBSALT003407,INS-018_055 acetate
+DB18088,DBSALT003408,Roginolisib hemifumarate
+DB18089,DBSALT003409,Visomitin
+DB18090,DBSALT003410,Fostroxacitabine bralpamide hydrochloride
+DB18096,DBSALT003413,Encaleret sulfate
+DB18106,DBSALT003414,Icapamespib dihydrochloride
+DB18107,DBSALT003415,SEL-120
+DB18109,DBSALT003416,TP-3654 hydrochloride
+DB18110,DBSALT003417,Nesuparib monocitrate
+DB18115,DBSALT003419,Golcadomide hydrochloride
+DB18120,DBSALT003420,EP-0042 fumarate
+DB18126,DBSALT003422,Vipoglanstat hydrogensulfate
+DB18151,DBSALT003423,Mocravimod hydrochloride
+DB18152,DBSALT003424,Zilurgisertib fumarate dihydrate
+DB18153,DBSALT003425,ENA-001 hydrogen sulfate
+DB18155,DBSALT003426,ESK981 tosylate
+DB18171,DBSALT003427,KTX-1001 D-tartrate
+DB18203,DBSALT003442,Cudetaxestat sodium
+DB18214,DBSALT003431,Ibutamoren mesylate
+DB18216,DBSALT003432,Cavrotolimod sodium
+DB18236,DBSALT003433,(R)-9b mesylate
+DB18252,DBSALT003434,Pralmorelin hydrochloride
+DB18268,DBSALT003436,TAK-075
+DB18297,DBSALT003437,KF-1601 dihydrochloride
+DB18299,DBSALT003438,SPH-4336
+DB18300,DBSALT003439,Lirafugratinib hydrochloride
+DB18310,DBSALT003508,Recilisib sodium
+DB18314,DBSALT003443,Valemetostat tosylate
+DB18373,DBSALT003595,Vanzacaftor calcium
+DB18390,DBSALT003447,DPM-1001 maleate
+DB18408,DBSALT003448,BR-007 sodium
+DB18409,DBSALT003449,Fobrepodacin sodium
+DB18464,DBSALT003450,Esuberaprost Sodium
+DB18481,DBSALT003455,Rucosopasem manganese
+DB18509,DBSALT003456,Sodium arsenite
+DB18510,DBSALT003457,KUS-121
+DB18510,DBSALT003458,KUS-121 dihydrate
+DB18511,DBSALT003459,AP-001 sodium
+DB18515,DBSALT003559,Revumenib citrate
+DB18515,DBSALT003460,Revumenib sesquifumarate
+DB18536,DBSALT003468,Sodium luminolate
+DB18588,DBSALT003473,Denatonium acetate monohydrate
+DB18711,DBSALT003576,Taletrectinib adipate
+DB18712,DBSALT003491,Berdazimer sodium
+DB18728,DBSALT003563,Olezarsen sodium
+DB18745,DBSALT003505,Safusidenib erbumine
+DB18746,DBSALT003506,Ocifisertib fumarate
+DB18751,DBSALT003520,Donidalorsen sodium
+DB18752,DBSALT003507,Indotecan hydrochloride
+DB18768,DBSALT003509,Yimitasvir phosphate
+DB18794,DBSALT003511,Trazpiroben maleate
+DB18847,DBSALT003523,Deuruxolitinib phosphate
+DB18997,DBSALT003599,Plozasiran sodium
+DB19023,DBSALT003513,"Chiglitazar sodium, (S)-"
+DB19043,DBSALT003584,Imlunestrant tosylate
+DB19054,DBSALT003565,Deudextromethorphan hydrobromide
+DB19109,DBSALT003514,Isuzinaxib hydrochloride
+DB19126,DBSALT003515,R906289 sodium
+DB19138,DBSALT003516,Suplatast tosilate
+DB19172,DBSALT003518,Emoxypine succinate
+DB19177,DBSALT003519,PXS-4728A
+DB19306,DBSALT003522,XK-469
+DB19325,DBSALT003526,Sofpironium bromide
+DB19353,DBSALT003530,Benzgalantamine gluconate
+DB19358,DBSALT003533,Chlorisondamine chloride
+DB19358,DBSALT003534,Chlorisondamine iodide
+DB19367,DBSALT003538,Tiphenamil hydrochloride
+DB19370,DBSALT003539,Methylhexanamine hydrochloride
+DB19380,DBSALT003547,Parethoxycaine Hydrochloride
+DB19381,DBSALT003549,AZACYCLONOL HYDROCHLORIDE
+DB19383,DBSALT003555,Pentapiperium hydrogen sulfate
+DB19383,DBSALT003554,Pentapiperium methylsulfate
+DB19449,DBSALT003558,UM-171 dihydrobromide dihydrate
+DB20881,DBSALT003593,Ganfeborole hydrochloride
+DB21456,DBSALT003586,Vamagloxistat
+DB21754,DBSALT003568,Pheniodol sodium
+DB21755,DBSALT003569,TCS-OX2-29 hydrochloride
+DB22691,DBSALT003578,"Tetrahydro-2H-pyran-4-yl 7-(2-(cyclopropanecarboxamido)-imidazo[1,2-a]pyridin-6-yl)-2,3-dihydro-1H-pyrido[2,3-b][1,4]oxazine-1-carboxylate hydrochloride"
+DB31662,DBSALT003596,Z-Endoxifen Hydrochloride
