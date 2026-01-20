@@ -45,8 +45,18 @@ pip3 install pandas python-dotenv neo4j tqdm
 - Ensure it's running on `bolt://localhost:7687`
 
 ---
+### 6. Delete Data from Neo4j(only if DB has old data and need to reingest new data)
+```bash
+python3 delete_drugbank_data.py
+```
 
-### 5. Load Data into Neo4j
+**Expected time:** 1-2 minutes
+
+When prompted, type `yes` to confirm.
+
+---
+
+### 6. Load Data into Neo4j
 ```bash
 python3 load_drugbank_data_OPTIMIZED.py
 ```
@@ -57,7 +67,7 @@ When prompted, type `yes` to confirm.
 
 ---
 
-### 6. Validate Data (Optional)
+### 7. Validate Data (Optional)
 ```bash
 python3 test_knowledge_graph.py
 ```
