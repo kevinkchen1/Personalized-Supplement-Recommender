@@ -59,12 +59,6 @@ class OptimizedDrugBankLoader:
         self.driver.close()
         logger.info("✓ Closed Neo4j connection")
 
-    def clear_database(self):
-        """Clear database efficiently"""
-        with self.driver.session() as session:
-            session.run("MATCH (n) DETACH DELETE n")
-            logger.info("✓ Cleared existing database")
-
     def create_constraints_and_indexes(self):
         """
         Create constraints AND indexes BEFORE loading data.
@@ -495,18 +489,16 @@ def main():
         logger.info("=" * 70)
 
         user_input = input(
-            "\n⚠️  WARNING: This will DELETE all existing data in Neo4j!\n"
-            "Do you want to continue? (yes/no): "
+            "\n⚠️  WARNING: Make sure you have cleared the database first!\n"
+            "Use delete_all_relationships.py and delete_all_nodes.py if needed.\n"
+            "Do you want to continue loading data? (yes/no): "
         )
 
         if user_input.lower() not in ["yes", "y"]:
             logger.info("Import cancelled by user")
             return
 
-        logger.info("\nClearing database...")
-        loader.clear_database()
-
-        logger.info("Creating constraints and indexes...")
+        logger.info("\nCreating constraints and indexes...")
         loader.create_constraints_and_indexes()
 
         # Load all data with optimized batch processing
