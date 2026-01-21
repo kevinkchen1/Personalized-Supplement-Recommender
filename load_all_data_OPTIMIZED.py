@@ -539,7 +539,7 @@ def main():
         loader.create_constraints()
 
         # Phase 2: Load entity data from CSV files
-        data_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
+        data_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "mayo_clinic_data")
         logger.info("Loading entity data...")
 
         # Load primary entities in dependency order
