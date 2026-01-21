@@ -1,0 +1,235 @@
+medication_id,medication_name,active_ingredient_id,active_ingredient_name,match_type,confidence
+M01,Acetaminophen,DB00316,Acetaminophen,exact,1.0
+M02,Alcohol,DB00898,Ethanol,manual,1.0
+M03,Alkylating agents and antitumor antibiotics,DB00531,Cyclophosphamide,manual,1.0
+M03,Alkylating agents and antitumor antibiotics,DB00515,Cisplatin,manual,1.0
+M03,Alkylating agents and antitumor antibiotics,DB06769,Bendamustine,manual,1.0
+M03,Alkylating agents and antitumor antibiotics,DB00997,Doxorubicin,manual,1.0
+M04,Allopurinol,DB00437,Allopurinol,exact,1.0
+M05,Alprazolam,DB00404,Alprazolam,exact,1.0
+M06,Altretamine,DB00488,Altretamine,exact,1.0
+M07,Aluminum,,,no_match,
+M08,Aminosalicylic acid,DB00233,Aminosalicylic acid,exact,1.0
+M09,Amphetamines,DB01576,Dextroamphetamine,manual,1.0
+M10,Antibiotics,DB00759,Tetracycline,manual,1.0
+M11,Anticoagulants,DB00682,Warfarin,manual,1.0
+M11,Anticoagulants,DB01109,Heparin,manual,1.0
+M11,Anticoagulants,DB00569,Fondaparinux,manual,1.0
+M12,Anticonvulsants,DB00564,Carbamazepine,manual,1.0
+M12,Anticonvulsants,DB00252,Phenytoin,manual,1.0
+M12,Anticonvulsants,DB00313,Valproic acid,manual,1.0
+M12,Anticonvulsants,DB00555,Lamotrigine,manual,1.0
+M13,Antidepressants,DB00472,Fluoxetine,manual,1.0
+M13,Antidepressants,DB01104,Sertraline,manual,1.0
+M13,Antidepressants,DB01175,Escitalopram,manual,1.0
+M13,Antidepressants,DB00285,Venlafaxine,manual,1.0
+M14,Antipsychotics,DB00502,Haloperidol,manual,1.0
+M14,Antipsychotics,DB00477,Chlorpromazine,manual,1.0
+M14,Antipsychotics,DB00623,Fluphenazine,manual,1.0
+M15,Antiseizure medicines,DB00252,Phenytoin,manual,1.0
+M15,Antiseizure medicines,DB00564,Carbamazepine,manual,1.0
+M15,Antiseizure medicines,DB00555,Lamotrigine,manual,1.0
+M15,Antiseizure medicines,DB01202,Levetiracetam,manual,1.0
+M15,Antiseizure medicines,DB00273,Topiramate,manual,1.0
+M15,Antiseizure medicines,DB00996,Gabapentin,manual,1.0
+M16,Atorvastatin,DB01076,Atorvastatin,exact,1.0
+M17,Barbiturates,DB01174,Phenobarbital,manual,1.0
+M17,Barbiturates,DB01351,Amobarbital,manual,1.0
+M17,Barbiturates,DB00312,Pentobarbital,manual,1.0
+M18,Bile acid sequestrants,DB01432,Cholestyramine,manual,1.0
+M18,Bile acid sequestrants,DB00375,Colestipol,manual,1.0
+M18,Bile acid sequestrants,DB00930,Colesevelam,manual,1.0
+M19,"Blood pressure medicines, herbs and supplements",DB14500,Potassium,manual,1.0
+M19,"Blood pressure medicines, herbs and supplements",DB00381,Amlodipine,manual,1.0
+M19,"Blood pressure medicines, herbs and supplements",DB14513,Magnesium,manual,1.0
+M20,Bupropion,DB01156,Bupropion,exact,1.0
+M21,CNS depressants,DB00829,Diazepam,manual,1.0
+M21,CNS depressants,DB00404,Alprazolam,manual,1.0
+M21,CNS depressants,DB01174,Phenobarbital,manual,1.0
+M21,CNS depressants,DB00295,Morphine,manual,1.0
+M21,CNS depressants,DB00497,Oxycodone,manual,1.0
+M21,CNS depressants,DB00425,Zolpidem,manual,1.0
+M22,CYP1A2 and CYP2C19 substrates,DB00201,Caffeine,manual,1.0
+M23,"CYP1A2, CYP2B6, CYP2C19, CYP2C9, and CYP3A4 substrates",DB00201,Caffeine,manual,1.0
+M23,"CYP1A2, CYP2B6, CYP2C19, CYP2C9, and CYP3A4 substrates",DB00277,Theophylline,manual,1.0
+M24,CYP2C9 substrates,DB00682,Warfarin,manual,1.0
+M24,CYP2C9 substrates,DB00252,Phenytoin,manual,1.0
+M24,CYP2C9 substrates,DB00678,Losartan,manual,1.0
+M25,CYP3A4 inhibitors,DB00199,Erythromycin,manual,1.0
+M26,CYP3A4 substrates,DB00682,Warfarin,manual,1.0
+M26,CYP3A4 substrates,DB00641,Simvastatin,manual,1.0
+M26,CYP3A4 substrates,DB01076,Atorvastatin,manual,1.0
+M27,Caffeine,DB00201,Caffeine,exact,1.0
+M28,Calcipotriene,,,no_match,
+M29,Carbamazepine,DB00564,Carbamazepine,exact,1.0
+M30,Chemotherapy,DB00515,Cisplatin,manual,1.0
+M30,Chemotherapy,DB00531,Cyclophosphamide,manual,1.0
+M30,Chemotherapy,DB01229,Paclitaxel,manual,1.0
+M30,Chemotherapy,DB00997,Doxorubicin,manual,1.0
+M31,Cholestyramine,DB01432,Cholestyramine,exact,1.0
+M32,Chromium,DB11136,Chromium,exact,1.0
+M33,Colchicine,DB01394,Colchicine,exact,1.0
+M34,Contraceptive medicines,DB00396,Progesterone,manual,1.0
+M34,Contraceptive medicines,DB00783,Estradiol,manual,1.0
+M34,Contraceptive medicines,DB04573,Estriol,manual,1.0
+M34,Contraceptive medicines,DB09381,Esterified estrogens,manual,1.0
+M34,Contraceptive medicines,DB00655,Estrone,manual,1.0
+M34,Contraceptive medicines,DB00367,Levonorgestrel,manual,1.0
+M34,Contraceptive medicines,DB01395,Drospirenone,manual,1.0
+M34,Contraceptive medicines,DB00957,Norgestimate,manual,1.0
+M34,Contraceptive medicines,DB09389,Norgestrel,manual,1.0
+M35,Cyclosporine,DB00091,Cyclosporine,exact,1.0
+M36,Dextromethorphan,DB00514,Dextromethorphan,exact,1.0
+M37,"Diabetes medicines, herbs and supplements",DB00331,Metformin,manual,1.0
+M37,"Diabetes medicines, herbs and supplements",DB04115,Berberine,manual,1.0
+M38,Digoxin,DB00390,Digoxin,exact,1.0
+M39,Diltiazem,DB00343,Diltiazem,exact,1.0
+M40,Estrogen,DB00783,Estradiol,manual,1.0
+M40,Estrogen,DB04573,Estriol,manual,1.0
+M40,Estrogen,DB09381,Esterified estrogens,manual,1.0
+M40,Estrogen,DB00655,Estrone,manual,1.0
+M41,Fexofenadine,DB00950,Fexofenadine,exact,1.0
+M42,Fluvoxamine,DB00176,Fluvoxamine,exact,1.0
+M43,Gastric acid inhibitors,DB00338,Omeprazole,manual,1.0
+M43,Gastric acid inhibitors,DB00736,Esomeprazole,manual,1.0
+M43,Gastric acid inhibitors,DB00448,Lansoprazole,manual,1.0
+M43,Gastric acid inhibitors,DB00213,Pantoprazole,manual,1.0
+M43,Gastric acid inhibitors,DB01129,Rabeprazole,manual,1.0
+M43,Gastric acid inhibitors,DB14513,Magnesium,manual,1.0
+M43,Gastric acid inhibitors,DB00927,Famotidine,manual,1.0
+M43,Gastric acid inhibitors,DB00863,Ranitidine,manual,1.0
+M44,Gemfibrozil,DB01241,Gemfibrozil,exact,1.0
+M45,Grapefruit,DB04703,Hesperidin,manual,1.0
+M45,Grapefruit,DB14500,Potassium,manual,1.0
+M46,Hepatotoxic medicines,DB00316,Acetaminophen,manual,1.0
+M46,Hepatotoxic medicines,DB00951,Isoniazid,manual,1.0
+M46,Hepatotoxic medicines,DB00563,Methotrexate,manual,1.0
+M46,Hepatotoxic medicines,DB01076,Atorvastatin,manual,1.0
+M46,Hepatotoxic medicines,DB01060,Amoxicillin,manual,1.0
+M46,Hepatotoxic medicines,DB01118,Amiodarone,manual,1.0
+M46,Hepatotoxic medicines,DB00563,Methotrexate,manual,1.0
+M47,Ibuprofen,DB01050,Ibuprofen,exact,1.0
+M48,Immunosuppressants,DB00091,Cyclosporine,manual,1.0
+M48,Immunosuppressants,DB00864,Tacrolimus,manual,1.0
+M48,Immunosuppressants,DB00993,Azathioprine,manual,1.0
+M48,Immunosuppressants,DB00688,Mycophenolate mofetil,manual,1.0
+M48,Immunosuppressants,DB01024,Mycophenolic acid,manual,1.0
+M48,Immunosuppressants,DB00877,Sirolimus,manual,1.0
+M48,Immunosuppressants,DB01590,Everolimus,manual,1.0
+M48,Immunosuppressants,DB00531,Cyclophosphamide,manual,1.0
+M48,Immunosuppressants,DB00635,Prednisone,manual,1.0
+M49,Iron,DB01592,Iron,exact,1.0
+M50,Isoproterenol,,,no_match,
+M51,Ketamine,DB01221,Ketamine,exact,1.0
+M52,Levodopa,DB01235,Levodopa,exact,1.0
+M53,Lithium,,,no_match,
+M54,Lopinavir-ritonavir,,,no_match,
+M55,Metformin,DB00331,Metformin,exact,1.0
+M56,Methotrexate,DB00563,Methotrexate,exact,1.0
+M57,Narcotics,DB11130,Opium,manual,1.0
+M57,Narcotics,DB00813,Fentanyl,manual,1.0
+M57,Narcotics,DB00295,Morphine,manual,1.0
+M57,Narcotics,DB00497,Oxycodone,manual,1.0
+M57,Narcotics,DB00318,Codeine,manual,1.0
+M57,Narcotics,DB01452,Diamorphine,manual,1.0
+M57,Narcotics,DB00333,Methadone,manual,1.0
+M57,Narcotics,DB00907,Cocaine,manual,1.0
+M58,Niacin,DB00627,Niacin,exact,1.0
+M59,Nitrates,DB00727,Nitroglycerin,manual,1.0
+M60,Non-nucleoside reverse transcriptase inhibitors,DB00625,Efavirenz,manual,1.0
+M60,Non-nucleoside reverse transcriptase inhibitors,DB08864,Rilpivirine,manual,1.0
+M60,Non-nucleoside reverse transcriptase inhibitors,DB00238,Nevirapine,manual,1.0
+M60,Non-nucleoside reverse transcriptase inhibitors,DB12301,Doravirine,manual,1.0
+M60,Non-nucleoside reverse transcriptase inhibitors,DB06414,Etravirine,manual,1.0
+M61,Omeprazole,DB00338,Omeprazole,exact,1.0
+M62,Orlistat,DB01083,Orlistat,exact,1.0
+M63,Other medicines taken by mouth,,,drug_class,
+M64,Penicillamine,DB00859,Penicillamine,exact,1.0
+M65,Phenothiazines,DB00477,Chlorpromazine,manual,1.0
+M65,Phenothiazines,DB01069,Promethazine,manual,1.0
+M65,Phenothiazines,DB00623,Fluphenazine,manual,1.0
+M65,Phenothiazines,DB00679,Thioridazine,manual,1.0
+M66,Phenytoin,DB00252,Phenytoin,exact,1.0
+M67,Photosensitizing medicines,DB00855,Aminolevulinic acid,manual,1.0
+M67,Photosensitizing medicines,DB00707,Porfimer sodium,manual,1.0
+M67,Photosensitizing medicines,DB01015,Sulfamethoxazole,manual,1.0
+M67,Photosensitizing medicines,DB01118,Amiodarone,manual,1.0
+M67,Photosensitizing medicines,DB00759,Tetracycline,manual,1.0
+M67,Photosensitizing medicines,DB00999,Hydrochlorothiazide,manual,1.0
+M67,Photosensitizing medicines,DB00755,Tretinoin,manual,1.0
+M67,Photosensitizing medicines,DB00477,Chlorpromazine,manual,1.0
+M68,Protease inhibitors,DB16691,Nirmatrelvir,manual,1.0
+M68,Protease inhibitors,DB01601,Lopinavir,manual,1.0
+M68,Protease inhibitors,DB00503,Ritonavir,manual,1.0
+M68,Protease inhibitors,DB01319,Fosamprenavir,manual,1.0
+M68,Protease inhibitors,DB00224,Indinavir,manual,1.0
+M68,Protease inhibitors,DB00220,Nelfinavir,manual,1.0
+M68,Protease inhibitors,DB01232,Saquinavir,manual,1.0
+M68,Protease inhibitors,DB00701,Amprenavir,manual,1.0
+M69,Pyrimethamine,DB00205,Pyrimethamine,exact,1.0
+M70,Raloxifene,DB00481,Raloxifene,exact,1.0
+M71,Retinoids,DB00936,Salicylic acid,manual,1.0
+M71,Retinoids,DB00126,Ascorbic acid,manual,1.0
+M71,Retinoids,DB00162,Vitamin A,manual,1.0
+M72,Selective serotonin reuptake inhibitors,DB00472,Fluoxetine,manual,1.0
+M72,Selective serotonin reuptake inhibitors,DB01104,Sertraline,manual,1.0
+M72,Selective serotonin reuptake inhibitors,DB00215,Citalopram,manual,1.0
+M72,Selective serotonin reuptake inhibitors,DB01175,Escitalopram,manual,1.0
+M72,Selective serotonin reuptake inhibitors,DB00176,Fluvoxamine,manual,1.0
+M72,Selective serotonin reuptake inhibitors,DB06684,Vilazodone,manual,1.0
+M73,Serotonin-increasing medicines,DB00472,Fluoxetine,manual,1.0
+M73,Serotonin-increasing medicines,DB01104,Sertraline,manual,1.0
+M73,Serotonin-increasing medicines,DB00715,Paroxetine,manual,1.0
+M73,Serotonin-increasing medicines,DB00215,Citalopram,manual,1.0
+M73,Serotonin-increasing medicines,DB01175,Escitalopram,manual,1.0
+M73,Serotonin-increasing medicines,DB00285,Venlafaxine,manual,1.0
+M73,Serotonin-increasing medicines,DB00476,Duloxetine,manual,1.0
+M73,Serotonin-increasing medicines,DB09068,Vortioxetine,manual,1.0
+M73,Serotonin-increasing medicines,DB00193,Tramadol,manual,1.0
+M73,Serotonin-increasing medicines,DB00813,Fentanyl,manual,1.0
+M74,Sevoflurane,DB01236,Sevoflurane,exact,1.0
+M75,Sildenafil,DB00203,Sildenafil,exact,1.0
+M76,Simeprevir,DB06290,Simeprevir,exact,1.0
+M77,Sirolimus,DB00877,Sirolimus,exact,1.0
+M78,St. John's wort,DB01323,St. John's Wort,manual,1.0
+M79,Statins,DB01076,Atorvastatin,manual,1.0
+M79,Statins,DB00641,Simvastatin,manual,1.0
+M79,Statins,DB01098,Rosuvastatin,manual,1.0
+M79,Statins,DB00227,Lovastatin,manual,1.0
+M79,Statins,DB01095,Fluvastatin,manual,1.0
+M79,Statins,DB00175,Pravastatin,manual,1.0
+M79,Statins,DB08860,Pitavastatin,manual,1.0
+M80,Statins and niacin,DB01076,Atorvastatin,manual,1.0
+M80,Statins and niacin,DB00641,Simvastatin,manual,1.0
+M80,Statins and niacin,DB01098,Rosuvastatin,manual,1.0
+M80,Statins and niacin,DB00227,Lovastatin,manual,1.0
+M80,Statins and niacin,DB01095,Fluvastatin,manual,1.0
+M80,Statins and niacin,DB00175,Pravastatin,manual,1.0
+M80,Statins and niacin,DB08860,Pitavastatin,manual,1.0
+M80,Statins and niacin,DB02701,Nicotinamide,manual,1.0
+M81,Steroids,DB00624,Testosterone,manual,1.0
+M81,Steroids,DB09381,Esterified estrogens,manual,1.0
+M81,Steroids,DB00396,Progesterone,manual,1.0
+M81,Steroids,DB00741,Hydrocortisone,manual,1.0
+M82,Stimulant laxatives,DB11365,Sennosides,manual,1.0
+M82,Stimulant laxatives,DB09020,Bisacodyl,manual,1.0
+M82,Stimulant laxatives,DB11113,Castor oil,manual,1.0
+M83,Testosterone,DB00624,Testosterone,exact,1.0
+M84,Thiazide diuretics,DB00880,Chlorothiazide,manual,1.0
+M84,Thiazide diuretics,DB00310,Chlorthalidone,manual,1.0
+M84,Thiazide diuretics,DB00790,Perindopril,manual,1.0
+M84,Thiazide diuretics,DB00264,Metoprolol,manual,1.0
+M85,Triazolam,DB00897,Triazolam,exact,1.0
+M86,Triptans,DB00669,Sumatriptan,manual,1.0
+M86,Triptans,DB00953,Rizatriptan,manual,1.0
+M86,Triptans,DB00315,Zolmitriptan,manual,1.0
+M87,Valproic acid,DB00313,Valproic acid,exact,1.0
+M88,Verapamil,DB00661,Verapamil,exact,1.0
+M89,Vitamin C supplements,,,no_match,
+M90,Vitamin E,DB00163,Vitamin E,exact,1.0
+M91,Vitamin K,DB15664,Vitamin K7,fuzzy,0.947
+M92,Voriconazole,DB00582,Voriconazole,exact,1.0
+M93,Warfarin,DB00682,Warfarin,exact,1.0
+M94,Water pills,DB01397,Magnesium salicylate,manual,1.0
+M94,Water pills,DB00201,Caffeine,manual,1.0
+M95,Zinc,DB01593,Zinc,exact,1.0
