@@ -460,6 +460,9 @@ def main():
     uri = os.getenv("NEO4J_URI", "bolt://localhost:7687")
     user = os.getenv("NEO4J_USER", "neo4j")
     password = os.getenv("NEO4J_PASSWORD")
+    loader = mayo_loader.Neo4jDataLoader(uri, user, password)
+    loader.clear_database()
+    #loader.create_constraints()
 
     if not password:
         raise ValueError(
@@ -535,11 +538,11 @@ def main():
     try:
         # Phase 1: Database preparation
         logger.info("Starting database preparation...")
-        loader.clear_database()
+        #loader.clear_database()
         loader.create_constraints()
 
         # Phase 2: Load entity data from CSV files
-        data_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "mayo_clinic_data")
+        data_dir = os.path.join(os.path.dirname(__file__), "mayo_clinic_data")
         logger.info("Loading entity data...")
 
         # Load primary entities in dependency order
@@ -561,20 +564,20 @@ def main():
         supplements_medications_df = pd.read_csv(
             os.path.join(data_dir, "supplement_medication_interacts_with.csv")
         )
-        loader.load_protein_disease_associations(supplements_medications_df)
+        loader.load_supplement_medication_interacts_with(supplements_medications_df)
 
         supplements_causes_df = pd.read_csv(
             os.path.join(data_dir, "supplement_symptom_can_cause.csv")
         )
-        loader.load_drug_disease_treatments(supplements_causes_df)
+        loader.load_supplement_symptom_can_cause(supplements_causes_df)
 
         supplements_treats_df = pd.read_csv(
             os.path.join(data_dir, "supplement_symptom_treats.csv")
         )
-        loader.load_drug_protein_targets(supplements_treats_df)
+        loader.load_supplement_symptom_treats(supplements_treats_df)
         
         medication_active_ingredient_df = pd.read_csv(
-            os.path.join(data_dir, "medication_active_ingredient.csv")
+            os.path.join(data_dir, "medication_active_ingredient_contains.csv")
         )
         loader.load_medication_active_ingredient_contains(medication_active_ingredient_df)
 

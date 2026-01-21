@@ -175,13 +175,13 @@ class Neo4jDataLoader:
                     CREATE (s:Supplement {
                         supplement_id: $supplement_id,
                         supplement_name: $supplement_name,
-                        safety_level: $safety_level,
-                        active_ingredient: $active_ingredient,
+                        safety_rating: $safety_rating,
+                        active_ingredient: $active_ingredient
                     })
                     """,
                     supplement_id=row["supplement_id"],
                     supplement_name=row["supplement_name"],
-                    safety_level=row["safety_level"],
+                    safety_rating=row["safety_rating"],
                     active_ingredient=row["active_ingredient"],
                 )
             logger.info(f"Loaded {len(df)} supplements")
@@ -216,7 +216,7 @@ class Neo4jDataLoader:
                     """
                     CREATE (sy:Symptom {
                         symptom_id: $symptom_id,
-                        symptom_name: $symptom_name,
+                        symptom_name: $symptom_name
                     })
                     """,
                     symptom_id=row["symptom_id"],
@@ -249,7 +249,7 @@ class Neo4jDataLoader:
                     """
                     CREATE (m:Medication {
                         medication_id: $medication_id,
-                        medication_name: $medication_name,
+                        medication_name: $medication_name
                     })
                     """,
                     medication_id=row["medication_id"],
@@ -352,8 +352,8 @@ class Neo4jDataLoader:
                     MATCH (i:ActiveIngredient {active_ingredient_id: $active_ingredient_id})
                     CREATE (m)-[:CONTAINS]->(i)
                     """,
-                    medication_id=row["_id"],
-                    active_ingredient_id=row["symptom_id"],
+                    medication_id=row["medication_id"],
+                    active_ingredient_id=row["active_ingredient_id"],
                 )
             logger.info(f"Loaded {len(df)} medication-active_ingredient contains relationships")
 
@@ -427,20 +427,20 @@ def main():
         supplements_medications_df = pd.read_csv(
             os.path.join(data_dir, "supplement_medication_interacts_with.csv")
         )
-        loader.load_protein_disease_associations(supplements_medications_df)
+        loader.load_supplement_medication_interacts_with(supplements_medications_df)
 
         supplements_causes_df = pd.read_csv(
             os.path.join(data_dir, "supplement_symptom_can_cause.csv")
         )
-        loader.load_drug_disease_treatments(supplements_causes_df)
+        loader.load_supplement_symptom_can_cause(supplements_causes_df)
 
         supplements_treats_df = pd.read_csv(
             os.path.join(data_dir, "supplement_symptom_treats.csv")
         )
-        loader.load_drug_protein_targets(supplements_treats_df)
+        loader.load_supplement_symptom_treats(supplements_treats_df)
         
         medication_active_ingredient_df = pd.read_csv(
-            os.path.join(data_dir, "medication_active_ingredient.csv")
+            os.path.join(data_dir, "medication_active_ingredient_contains.csv")
         )
         loader.load_medication_active_ingredient_contains(medication_active_ingredient_df)
 
