@@ -51,7 +51,7 @@ logger = logging.getLogger(__name__)
 
 class Neo4jDataLoader:
     """
-    A comprehensive data loader for populating Neo4j with biomedical knowledge
+    A comprehensive data loader for populating Neo4j with drug and supplement 
     graph data.
 
     This class manages the complete process of loading structured biomedical data
