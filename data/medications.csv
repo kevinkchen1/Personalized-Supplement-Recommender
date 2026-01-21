@@ -1,0 +1,96 @@
+medication_id,medication_name
+M01,Acetaminophen
+M02,Alcohol
+M03,Alkylating agents and antitumor antibiotics
+M04,Allopurinol
+M05,Alprazolam
+M06,Altretamine
+M07,Aluminum
+M08,Aminosalicylic acid
+M09,Amphetamines
+M10,Antibiotics
+M11,Anticoagulants
+M12,Anticonvulsants
+M13,Antidepressants
+M14,Antipsychotics
+M15,Antiseizure medicines
+M16,Atorvastatin
+M17,Barbiturates
+M18,Bile acid sequestrants
+M19,"Blood pressure medicines, herbs and supplements"
+M20,Bupropion
+M21,CNS depressants
+M22,CYP1A2 and CYP2C19 substrates
+M23,"CYP1A2, CYP2B6, CYP2C19, CYP2C9, and CYP3A4 substrates"
+M24,CYP2C9 substrates
+M25,CYP3A4 inhibitors
+M26,CYP3A4 substrates
+M27,Caffeine
+M28,Calcipotriene
+M29,Carbamazepine
+M30,Chemotherapy
+M31,Cholestyramine
+M32,Chromium
+M33,Colchicine
+M34,Contraceptive medicines
+M35,Cyclosporine
+M36,Dextromethorphan
+M37,"Diabetes medicines, herbs and supplements"
+M38,Digoxin
+M39,Diltiazem
+M40,Estrogen
+M41,Fexofenadine
+M42,Fluvoxamine
+M43,Gastric acid inhibitors
+M44,Gemfibrozil
+M45,Grapefruit
+M46,Hepatotoxic medicines
+M47,Ibuprofen
+M48,Immunosuppressants
+M49,Iron
+M50,Isoproterenol
+M51,Ketamine
+M52,Levodopa
+M53,Lithium
+M54,Lopinavir-ritonavir
+M55,Metformin
+M56,Methotrexate
+M57,Narcotics
+M58,Niacin
+M59,Nitrates
+M60,Non-nucleoside reverse transcriptase inhibitors
+M61,Omeprazole
+M62,Orlistat
+M63,Other medicines taken by mouth
+M64,Penicillamine
+M65,Phenothiazines
+M66,Phenytoin
+M67,Photosensitizing medicines
+M68,Protease inhibitors
+M69,Pyrimethamine
+M70,Raloxifene
+M71,Retinoids
+M72,Selective serotonin reuptake inhibitors
+M73,Serotonin-increasing medicines
+M74,Sevoflurane
+M75,Sildenafil
+M76,Simeprevir
+M77,Sirolimus
+M78,St. John's wort
+M79,Statins
+M80,Statins and niacin
+M81,Steroids
+M82,Stimulant laxatives
+M83,Testosterone
+M84,Thiazide diuretics
+M85,Triazolam
+M86,Triptans
+M87,Valproic acid
+M88,Verapamil
+M89,Vitamin C supplements
+M90,Vitamin E
+M91,Vitamin K
+M92,Voriconazole
+M93,Warfarin
+M94,Water pills
+M95,Zinc

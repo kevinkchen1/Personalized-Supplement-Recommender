@@ -341,6 +341,20 @@ class Neo4jDataLoader:
                     symptom_id=row["symptom_id"],
                 )
             logger.info(f"Loaded {len(df)} supplement-symptom treats relationships")
+            
+    def load_medication_active_ingredient_contains(self, df: pd.DataFrame):
+        with self.driver.session() as session:
+            for _, row in df.iterrows():
+                session.run(
+                    """
+                    MATCH (m:Medication {medication_id: $medication_id})
+                    MATCH (i:ActiveIngredient {active_ingredient_id: $active_ingredient_id})
+                    CREATE (m)-[:CONTAINS]->(i)
+                    """,
+                    medication_id=row["_id"],
+                    active_ingredient_id=row["symptom_id"],
+                )
+            logger.info(f"Loaded {len(df)} medication-active_ingredient contains relationships")
 
 
 def main():
@@ -394,41 +408,46 @@ def main():
         logger.info("Loading entity data...")
 
         # Load primary entities in dependency order
-        genes_df = pd.read_csv(os.path.join(data_dir, "genes.csv"))
-        loader.load_genes(genes_df)
+        supplements_df = pd.read_csv(os.path.join(data_dir, "supplements.csv"))
+        loader.load_supplements(supplements_df)
 
-        proteins_df = pd.read_csv(os.path.join(data_dir, "proteins.csv"))
-        loader.load_proteins(proteins_df)  # Also creates gene-protein relationships
+        symptoms_df = pd.read_csv(os.path.join(data_dir, "symptoms.csv"))
+        loader.load_symptoms(symptoms_df)  # Also creates gene-protein relationships
 
-        diseases_df = pd.read_csv(os.path.join(data_dir, "diseases.csv"))
-        loader.load_diseases(diseases_df)
+        medications_df = pd.read_csv(os.path.join(data_dir, "medications.csv"))
+        loader.load_medications(medications_df)
 
-        drugs_df = pd.read_csv(os.path.join(data_dir, "drugs.csv"))
-        loader.load_drugs(drugs_df)
+        #drugs_df = pd.read_csv(os.path.join(data_dir, "drugs.csv"))
+        #loader.load_drugs(drugs_df)
 
         # Phase 3: Load relationship data
         logger.info("Loading relationship data...")
 
-        protein_disease_df = pd.read_csv(
-            os.path.join(data_dir, "protein_disease_associations.csv")
+        supplements_medications_df = pd.read_csv(
+            os.path.join(data_dir, "supplement_medication_interacts_with.csv")
         )
-        loader.load_protein_disease_associations(protein_disease_df)
+        loader.load_protein_disease_associations(supplements_medications_df)
 
-        drug_disease_df = pd.read_csv(
-            os.path.join(data_dir, "drug_disease_treatments.csv")
+        supplements_causes_df = pd.read_csv(
+            os.path.join(data_dir, "supplement_symptom_can_cause.csv")
         )
-        loader.load_drug_disease_treatments(drug_disease_df)
+        loader.load_drug_disease_treatments(supplements_causes_df)
 
-        drug_protein_df = pd.read_csv(
-            os.path.join(data_dir, "drug_protein_targets.csv")
+        supplements_treats_df = pd.read_csv(
+            os.path.join(data_dir, "supplement_symptom_treats.csv")
         )
-        loader.load_drug_protein_targets(drug_protein_df)
+        loader.load_drug_protein_targets(supplements_treats_df)
+        
+        medication_active_ingredient_df = pd.read_csv(
+            os.path.join(data_dir, "medication_active_ingredient.csv")
+        )
+        loader.load_medication_active_ingredient_contains(medication_active_ingredient_df)
 
         # Phase 4: Compute derived relationships
-        logger.info("Computing derived relationships...")
-        loader.create_gene_disease_links()
+        #logger.info("Computing derived relationships...")
+        #loader.create_gene_disease_links()
 
-        logger.info("Data loading completed successfully!")
+        #logger.info("Data loading completed successfully!")
 
     except Exception as e:
         logger.error(f"Error loading data: {e}")
