@@ -3,11 +3,18 @@
 Delete All Relationships
 Removes ALL relationships from the Neo4j database.
 Keeps all nodes intact.
+
+Updated for Complete Knowledge Graph (DrugBank + Mayo Clinic + Bridges)
 """
 
 from neo4j import GraphDatabase
 import logging
 import time
+import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # Configure logging
 logging.basicConfig(
@@ -18,10 +25,19 @@ logger = logging.getLogger(__name__)
 
 
 class AllRelationshipsDeleter:
-    def __init__(self, uri="bolt://localhost:7687", user="neo4j", password="supplements"):
-        """Initialize connection to Neo4j"""
+    def __init__(self):
+        """Initialize connection to Neo4j using .env credentials"""
+        uri = os.getenv("NEO4J_URI", "bolt://localhost:7687")
+        user = os.getenv("NEO4J_USER", "neo4j")
+        password = os.getenv("NEO4J_PASSWORD")
+        
+        if not password:
+            raise ValueError(
+                "NEO4J_PASSWORD not set. Please create .env file with NEO4J_PASSWORD=your_password"
+            )
+        
         self.driver = GraphDatabase.driver(uri, auth=(user, password))
-        logger.info(f"Connected to Neo4j at {uri}")
+        logger.info(f"✓ Connected to Neo4j at {uri}")
     
     def close(self):
         """Close the Neo4j driver"""
@@ -32,18 +48,18 @@ class AllRelationshipsDeleter:
         with self.driver.session() as session:
             result = session.run("CALL db.relationshipTypes()")
             all_types = [record["relationshipType"] for record in result]
-            return all_types
+            return sorted(all_types)
     
     def get_relationship_stats(self):
         """Get statistics for all relationships"""
         all_types = self.get_all_relationship_types()
         
-        logger.info("=" * 60)
-        logger.info("ALL RELATIONSHIP STATISTICS:")
+        logger.info("=" * 70)
+        logger.info("RELATIONSHIP STATISTICS:")
         
         if not all_types:
             logger.info("  No relationships found!")
-            logger.info("=" * 60)
+            logger.info("=" * 70)
             return {}, 0
         
         with self.driver.session() as session:
@@ -58,17 +74,21 @@ class AllRelationshipsDeleter:
                 count = result.single()["count"]
                 stats[rel_type] = count
                 total += count
-                logger.info(f"  {rel_type}: {count:,}")
+                
+                # Highlight critical bridge relationships
+                if rel_type in ['EQUIVALENT_TO', 'HAS_SIMILAR_EFFECT_TO', 'CONTAINS']:
+                    logger.info(f"  🔥 {rel_type}: {count:,} (CRITICAL)")
+                else:
+                    logger.info(f"  {rel_type}: {count:,}")
             
-            logger.info(f"\n  TOTAL: {total:,}")
+            logger.info(f"\n  TOTAL: {total:,} relationships")
             
-        logger.info("=" * 60)
+        logger.info("=" * 70)
         return stats, total
     
     def delete_relationship_type(self, rel_type, batch_size=5000):
         """Delete a specific relationship type in batches"""
         logger.info(f"\nDeleting {rel_type} relationships...")
-        logger.info(f"Batch size: {batch_size:,}")
         
         with self.driver.session() as session:
             total_deleted = 0
@@ -78,7 +98,6 @@ class AllRelationshipsDeleter:
                 iteration += 1
                 start_time = time.time()
                 
-                # Use backticks to handle relationship types with special characters
                 result = session.run(f"""
                     MATCH ()-[r:`{rel_type}`]->()
                     WITH r LIMIT {batch_size}
@@ -93,7 +112,8 @@ class AllRelationshipsDeleter:
                 if deleted == 0:
                     break
                 
-                logger.info(f"  Iteration {iteration}: Deleted {deleted:,} relationships ({elapsed:.2f}s) | Total: {total_deleted:,}")
+                if iteration % 10 == 0 or deleted < batch_size:
+                    logger.info(f"  Iteration {iteration}: Deleted {deleted:,} | Total: {total_deleted:,} ({elapsed:.2f}s)")
             
             logger.info(f"✓ {rel_type} deletion complete: {total_deleted:,} relationships deleted")
             return total_deleted
@@ -108,11 +128,8 @@ class AllRelationshipsDeleter:
         
         deletion_summary = {}
         
-        # Sort alphabetically for consistent ordering
-        sorted_types = sorted(all_types)
-        
-        for i, rel_type in enumerate(sorted_types, 1):
-            logger.info(f"\n[Step {i}/{len(sorted_types)}]")
+        for i, rel_type in enumerate(all_types, 1):
+            logger.info(f"\n[{i}/{len(all_types)}]")
             deleted = self.delete_relationship_type(rel_type, batch_size)
             deletion_summary[rel_type] = deleted
         
@@ -120,11 +137,10 @@ class AllRelationshipsDeleter:
     
     def verify_deletion(self):
         """Verify that all relationships have been deleted"""
-        logger.info("\n" + "=" * 60)
+        logger.info("\n" + "=" * 70)
         logger.info("VERIFYING DELETION...")
         
         with self.driver.session() as session:
-            # Get total count
             result = session.run("MATCH ()-[r]->() RETURN count(r) as count")
             total = result.single()["count"]
             
@@ -134,7 +150,6 @@ class AllRelationshipsDeleter:
             else:
                 logger.warning(f"⚠ WARNING: {total:,} relationships remain:")
                 
-                # Show what's left
                 result = session.run("""
                     MATCH ()-[r]->()
                     RETURN type(r) as rel_type, count(r) as count
@@ -149,9 +164,9 @@ class AllRelationshipsDeleter:
             node_count = result.single()["count"]
             logger.info(f"\nNodes remaining (unchanged): {node_count:,}")
             
-        logger.info("=" * 60)
+        logger.info("=" * 70)
     
-    def run(self, batch_size=5000):
+    def run(self, batch_size=10000):
         """Execute the full relationship deletion process"""
         try:
             # Show initial stats
@@ -161,14 +176,9 @@ class AllRelationshipsDeleter:
                 logger.info("\n✓ No relationships found. Nothing to delete.")
                 return
             
-            # Show summary
-            logger.info("\nRelationships to be deleted:")
-            for rel_type, count in sorted(stats.items()):
-                logger.info(f"  {rel_type}: {count:,}")
-            logger.info(f"\n  TOTAL: {total:,}")
-            
             # Confirm with user
-            response = input(f"\n⚠️  Delete ALL {total:,} relationships? (yes/no): ")
+            logger.info("\n" + "=" * 70)
+            response = input(f"⚠️  Delete ALL {total:,} relationships? (yes/no): ")
             if response.lower() != 'yes':
                 logger.info("Deletion cancelled.")
                 return
@@ -186,16 +196,17 @@ class AllRelationshipsDeleter:
             elapsed = time.time() - overall_start
             total_deleted = sum(deletion_summary.values())
             
-            logger.info("\n" + "=" * 60)
+            logger.info("\n" + "=" * 70)
             logger.info("DELETION SUMMARY:")
-            for rel_type, count in sorted(deletion_summary.items()):
+            for rel_type in sorted(deletion_summary.keys()):
+                count = deletion_summary[rel_type]
                 logger.info(f"  {rel_type}: {count:,}")
             
             logger.info(f"\n  TOTAL: {total_deleted:,}")
             logger.info(f"  Time elapsed: {elapsed:.2f} seconds ({elapsed/60:.2f} minutes)")
             if elapsed > 0:
                 logger.info(f"  Deletion rate: {total_deleted/elapsed:.0f} relationships/second")
-            logger.info("=" * 60)
+            logger.info("=" * 70)
             
         except Exception as e:
             logger.error(f"❌ Error during deletion: {e}", exc_info=True)
@@ -205,15 +216,20 @@ class AllRelationshipsDeleter:
 
 def main():
     """Main execution function"""
-    logger.info("=" * 60)
+    logger.info("=" * 70)
     logger.info("DELETE ALL RELATIONSHIPS")
+    logger.info("=" * 70)
     logger.info("This will delete ALL relationships in the database.")
-    logger.info("")
     logger.info("All nodes will remain intact.")
-    logger.info("=" * 60)
+    logger.info("")
+    logger.info("Expected relationship types:")
+    logger.info("  DrugBank: INTERACTS_WITH, CONTAINS_DRUG, BELONGS_TO, etc.")
+    logger.info("  Mayo Clinic: CAN_CAUSE, TREATS, INTERACTS_WITH")
+    logger.info("  🔥 CRITICAL: EQUIVALENT_TO, HAS_SIMILAR_EFFECT_TO, CONTAINS")
+    logger.info("=" * 70)
     
     deleter = AllRelationshipsDeleter()
-    deleter.run(batch_size=5000)
+    deleter.run(batch_size=10000)
 
 
 if __name__ == "__main__":

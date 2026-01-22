@@ -27,6 +27,9 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+# Suppress Neo4j informational messages about existing constraints/indexes
+logging.getLogger("neo4j").setLevel(logging.WARNING)
+
 
 class CompleteKnowledgeGraphLoader:
     """
@@ -53,6 +56,136 @@ class CompleteKnowledgeGraphLoader:
         """Close database connection"""
         self.driver.close()
         logger.info("✓ Closed Neo4j connection")
+
+    def clear_database(self):
+        """
+        Clear all existing data by calling the optimized delete scripts.
+        Shows minimal output - just overall progress.
+        """
+        import sys
+        import io
+        import importlib.util
+        
+        logger.info("\n🗑️  Clearing existing database...")
+        
+        # Check if delete scripts exist in scripts/ folder
+        delete_scripts_path = Path("scripts")
+        if not delete_scripts_path.exists():
+            self._fallback_clear_database()
+            return
+        
+        relationships_script = delete_scripts_path / "delete_all_relationships.py"
+        nodes_script = delete_scripts_path / "delete_all_nodes.py"
+        
+        if not relationships_script.exists() or not nodes_script.exists():
+            self._fallback_clear_database()
+            return
+        
+        try:
+            # Suppress all output from delete scripts
+            old_stdout = sys.stdout
+            old_stderr = sys.stderr
+            sys.stdout = io.StringIO()
+            sys.stderr = io.StringIO()
+            
+            # Temporarily disable logging from delete scripts
+            old_level = logging.getLogger().level
+            logging.getLogger().setLevel(logging.CRITICAL)
+            
+            try:
+                # Step 1: Delete relationships
+                logger.setLevel(logging.INFO)  # Keep our logger active
+                logger.info("  Deleting all relationships and nodes...")
+                logger.setLevel(logging.CRITICAL)
+                
+                spec = importlib.util.spec_from_file_location("delete_rels", relationships_script)
+                delete_rels = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(delete_rels)
+                
+                deleter_rels = delete_rels.AllRelationshipsDeleter()
+                stats, total = deleter_rels.get_relationship_stats()
+                
+                if total > 0:
+                    deleter_rels.delete_all_relationships(batch_size=10000)
+                
+                deleter_rels.close()
+                
+                # Step 2: Delete nodes
+                spec = importlib.util.spec_from_file_location("delete_nodes", nodes_script)
+                delete_nodes = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(delete_nodes)
+                
+                deleter_nodes = delete_nodes.NodeDeleter()
+                stats, unlabeled = deleter_nodes.get_node_stats()
+                total_nodes = sum(stats.values()) + unlabeled
+                
+                if total_nodes > 0:
+                    deleter_nodes.delete_all_nodes(batch_size=10000)
+                
+                deleter_nodes.close()
+                
+            finally:
+                # Restore output and logging
+                sys.stdout = old_stdout
+                sys.stderr = old_stderr
+                logging.getLogger().setLevel(old_level)
+                logger.setLevel(logging.INFO)
+            
+            logger.info("✓ Database cleared successfully")
+            
+        except Exception as e:
+            # Restore output in case of error
+            sys.stdout = old_stdout
+            sys.stderr = old_stderr
+            logging.getLogger().setLevel(old_level)
+            logger.setLevel(logging.INFO)
+            
+            logger.error(f"❌ Error using delete scripts: {e}")
+            logger.info("  Falling back to batch deletion...")
+            self._fallback_clear_database()
+    
+    def _fallback_clear_database(self):
+        """
+        Fallback method: Clear database using direct batch deletion.
+        Used if delete scripts are not available.
+        """
+        with self.driver.session() as session:
+            # Count what we have
+            result = session.run("MATCH (n) RETURN count(n) as node_count")
+            node_count = result.single()["node_count"]
+            
+            result = session.run("MATCH ()-[r]->() RETURN count(r) as rel_count")
+            rel_count = result.single()["rel_count"]
+            
+            if node_count == 0 and rel_count == 0:
+                logger.info("  ✓ Database already empty")
+                return
+            
+            logger.info(f"  Deleting {node_count:,} nodes and {rel_count:,} relationships...")
+            
+            # Delete in batches
+            batch_size = 10000
+            total_deleted = 0
+            
+            # Use tqdm for a single progress bar
+            from tqdm import tqdm
+            with tqdm(total=node_count, desc="  Clearing database", unit="nodes") as pbar:
+                while True:
+                    result = session.run(f"""
+                        MATCH (n)
+                        WITH n LIMIT {batch_size}
+                        DETACH DELETE n
+                        RETURN count(n) as deleted
+                    """)
+                    deleted = result.single()["deleted"]
+                    
+                    if deleted == 0:
+                        break
+                    
+                    total_deleted += deleted
+                    pbar.update(deleted)
+            
+            logger.info(f"✓ Deleted {total_deleted:,} nodes and all relationships")
 
     def create_constraints_and_indexes(self):
         """
@@ -698,15 +831,17 @@ def main():
         logger.info("=" * 70)
 
         user_input = input(
-            "\n⚠️  WARNING: Make sure you have cleared the database first!\n"
-            "Use delete_all_relationships.py and delete_all_nodes.py if needed.\n"
-            "Do you want to continue loading data? (yes/no): "
+            "\n⚠️  WARNING: This will DELETE ALL existing data and reload!\n"
+            "Do you want to continue? (yes/no): "
         )
 
         if user_input.lower() not in ["yes", "y"]:
             logger.info("Import cancelled by user")
             return
 
+        logger.info("\nClearing database...")
+        loader.clear_database()
+        
         logger.info("\nCreating constraints and indexes...")
         loader.create_constraints_and_indexes()
 
@@ -726,10 +861,7 @@ def main():
         logger.info("=" * 70)
         logger.info(f"⏱️  Total time: {minutes} minutes {seconds} seconds")
         logger.info("\nYour supplement safety knowledge graph is ready!")
-        logger.info("Next steps:")
-        logger.info("  1. Test with Cypher queries")
-        logger.info("  2. Build Streamlit interface")
-        logger.info("  3. Connect LangGraph agent")
+
 
     except Exception as e:
         logger.error(f"\n❌ Error loading data: {e}")

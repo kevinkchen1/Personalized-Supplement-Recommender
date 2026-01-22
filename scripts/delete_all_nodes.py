@@ -3,11 +3,18 @@
 Delete All Nodes
 Removes all nodes from the Neo4j database.
 Should only be run AFTER all relationships have been deleted.
+
+Updated for Complete Knowledge Graph (DrugBank + Mayo Clinic)
 """
 
 from neo4j import GraphDatabase
 import logging
 import time
+import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # Configure logging
 logging.basicConfig(
@@ -18,10 +25,19 @@ logger = logging.getLogger(__name__)
 
 
 class NodeDeleter:
-    def __init__(self, uri="bolt://localhost:7687", user="neo4j", password="supplements"):
-        """Initialize connection to Neo4j"""
+    def __init__(self):
+        """Initialize connection to Neo4j using .env credentials"""
+        uri = os.getenv("NEO4J_URI", "bolt://localhost:7687")
+        user = os.getenv("NEO4J_USER", "neo4j")
+        password = os.getenv("NEO4J_PASSWORD")
+        
+        if not password:
+            raise ValueError(
+                "NEO4J_PASSWORD not set. Please create .env file with NEO4J_PASSWORD=your_password"
+            )
+        
         self.driver = GraphDatabase.driver(uri, auth=(user, password))
-        logger.info(f"Connected to Neo4j at {uri}")
+        logger.info(f"✓ Connected to Neo4j at {uri}")
     
     def close(self):
         """Close the Neo4j driver"""
@@ -34,15 +50,13 @@ class NodeDeleter:
             rel_count = result.single()["count"]
             
             if rel_count > 0:
-                logger.error("=" * 60)
+                logger.error("=" * 70)
                 logger.error("⚠️  ERROR: Relationships still exist in the database!")
                 logger.error(f"Found {rel_count:,} relationships")
                 logger.error("")
                 logger.error("You must delete all relationships BEFORE deleting nodes.")
-                logger.error("Run these scripts first:")
-                logger.error("  1. python3 delete_phase1_relationships.py")
-                logger.error("  2. python3 delete_phase2_relationships.py")
-                logger.error("=" * 60)
+                logger.error("Run: python3 delete_all_relationships.py")
+                logger.error("=" * 70)
                 return False
             
             logger.info("✓ No relationships found. Safe to delete nodes.")
@@ -51,25 +65,26 @@ class NodeDeleter:
     def get_node_stats(self):
         """Get statistics for all nodes by label"""
         with self.driver.session() as session:
-            # Get all node labels
             result = session.run("CALL db.labels()")
-            labels = [record["label"] for record in result]
+            labels = sorted([record["label"] for record in result])
             
-            logger.info("=" * 60)
+            logger.info("=" * 70)
             logger.info("NODE STATISTICS:")
             
             if not labels:
                 logger.info("  No labeled nodes found!")
-                # Check for unlabeled nodes
                 result = session.run("MATCH (n) WHERE size(labels(n)) = 0 RETURN count(n) as count")
                 unlabeled = result.single()["count"]
                 if unlabeled > 0:
                     logger.info(f"  Unlabeled nodes: {unlabeled:,}")
-                logger.info("=" * 60)
+                logger.info("=" * 70)
                 return {}, unlabeled
             
             stats = {}
             total = 0
+            
+            # Define critical Mayo Clinic nodes
+            critical_nodes = ['Supplement', 'ActiveIngredient', 'Medication']
             
             for label in labels:
                 result = session.run(f"""
@@ -79,7 +94,12 @@ class NodeDeleter:
                 count = result.single()["count"]
                 stats[label] = count
                 total += count
-                logger.info(f"  {label}: {count:,}")
+                
+                # Highlight critical Mayo Clinic nodes
+                if label in critical_nodes:
+                    logger.info(f"  🔥 {label}: {count:,} (Mayo Clinic)")
+                else:
+                    logger.info(f"  {label}: {count:,}")
             
             # Check for unlabeled nodes
             result = session.run("MATCH (n) WHERE size(labels(n)) = 0 RETURN count(n) as count")
@@ -89,14 +109,13 @@ class NodeDeleter:
                 total += unlabeled
             
             logger.info(f"\n  TOTAL NODES: {total:,}")
-            logger.info("=" * 60)
+            logger.info("=" * 70)
             
             return stats, unlabeled
     
-    def delete_nodes_by_label(self, label, batch_size=5000):
+    def delete_nodes_by_label(self, label, batch_size=10000):
         """Delete nodes with a specific label in batches"""
         logger.info(f"\nDeleting {label} nodes...")
-        logger.info(f"Batch size: {batch_size:,}")
         
         with self.driver.session() as session:
             total_deleted = 0
@@ -120,15 +139,15 @@ class NodeDeleter:
                 if deleted == 0:
                     break
                 
-                logger.info(f"  Iteration {iteration}: Deleted {deleted:,} nodes ({elapsed:.2f}s) | Total: {total_deleted:,}")
+                if iteration % 10 == 0 or deleted < batch_size:
+                    logger.info(f"  Iteration {iteration}: Deleted {deleted:,} | Total: {total_deleted:,} ({elapsed:.2f}s)")
             
             logger.info(f"✓ {label} deletion complete: {total_deleted:,} nodes deleted")
             return total_deleted
     
-    def delete_unlabeled_nodes(self, batch_size=5000):
+    def delete_unlabeled_nodes(self, batch_size=10000):
         """Delete nodes without any labels"""
         logger.info(f"\nDeleting unlabeled nodes...")
-        logger.info(f"Batch size: {batch_size:,}")
         
         with self.driver.session() as session:
             total_deleted = 0
@@ -153,32 +172,32 @@ class NodeDeleter:
                 if deleted == 0:
                     break
                 
-                logger.info(f"  Iteration {iteration}: Deleted {deleted:,} nodes ({elapsed:.2f}s) | Total: {total_deleted:,}")
+                logger.info(f"  Iteration {iteration}: Deleted {deleted:,} | Total: {total_deleted:,}")
             
             logger.info(f"✓ Unlabeled node deletion complete: {total_deleted:,} nodes deleted")
             return total_deleted
     
-    def delete_all_nodes(self, batch_size=5000):
+    def delete_all_nodes(self, batch_size=10000):
         """Delete all nodes from the database"""
-        # Get node labels
         with self.driver.session() as session:
             result = session.run("CALL db.labels()")
-            labels = [record["label"] for record in result]
+            labels = sorted([record["label"] for record in result])
         
         deletion_summary = {}
         
         # Delete labeled nodes
         for i, label in enumerate(labels, 1):
-            logger.info(f"\n[Step {i}/{len(labels)}]")
+            logger.info(f"\n[{i}/{len(labels)}]")
             deleted = self.delete_nodes_by_label(label, batch_size)
             deletion_summary[label] = deleted
         
         # Delete unlabeled nodes
-        result = self.driver.session().run("MATCH (n) WHERE size(labels(n)) = 0 RETURN count(n) as count")
-        unlabeled_count = result.single()["count"]
+        with self.driver.session() as session:
+            result = session.run("MATCH (n) WHERE size(labels(n)) = 0 RETURN count(n) as count")
+            unlabeled_count = result.single()["count"]
         
         if unlabeled_count > 0:
-            logger.info(f"\n[Step {len(labels) + 1}/{len(labels) + 1}]")
+            logger.info(f"\n[{len(labels) + 1}/{len(labels) + 1}]")
             deleted = self.delete_unlabeled_nodes(batch_size)
             deletion_summary["(unlabeled)"] = deleted
         
@@ -186,7 +205,7 @@ class NodeDeleter:
     
     def verify_deletion(self):
         """Verify that all nodes have been deleted"""
-        logger.info("\n" + "=" * 60)
+        logger.info("\n" + "=" * 70)
         logger.info("VERIFYING DELETION...")
         
         with self.driver.session() as session:
@@ -216,9 +235,9 @@ class NodeDeleter:
                         label_str = ":".join(record["labels"]) if record["labels"] else "(unlabeled)"
                         logger.info(f"  {label_str}: {record['count']:,}")
         
-        logger.info("=" * 60)
+        logger.info("=" * 70)
     
-    def run(self, batch_size=5000):
+    def run(self, batch_size=10000):
         """Execute the full node deletion process"""
         try:
             # Check for relationships first
@@ -233,15 +252,9 @@ class NodeDeleter:
                 logger.info("\n✓ No nodes found. Database is already empty.")
                 return
             
-            # Show what will be deleted
-            logger.info("\nNode labels to be deleted:")
-            for label, count in stats.items():
-                logger.info(f"  - {label}: {count:,}")
-            if unlabeled > 0:
-                logger.info(f"  - (unlabeled): {unlabeled:,}")
-            
             # Confirm with user
-            response = input(f"\n⚠️  Delete ALL {total_nodes:,} nodes? This cannot be undone! (yes/no): ")
+            logger.info("\n" + "=" * 70)
+            response = input(f"⚠️  Delete ALL {total_nodes:,} nodes? This cannot be undone! (yes/no): ")
             if response.lower() != 'yes':
                 logger.info("Deletion cancelled.")
                 return
@@ -259,15 +272,16 @@ class NodeDeleter:
             elapsed = time.time() - overall_start
             total_deleted = sum(deletion_summary.values())
             
-            logger.info("\n" + "=" * 60)
+            logger.info("\n" + "=" * 70)
             logger.info("DELETION SUMMARY:")
-            for label, count in deletion_summary.items():
+            for label in sorted(deletion_summary.keys()):
+                count = deletion_summary[label]
                 logger.info(f"  {label}: {count:,}")
             logger.info(f"\n  TOTAL deleted: {total_deleted:,}")
             logger.info(f"  Time elapsed: {elapsed:.2f} seconds ({elapsed/60:.2f} minutes)")
             if elapsed > 0:
                 logger.info(f"  Deletion rate: {total_deleted/elapsed:.0f} nodes/second")
-            logger.info("=" * 60)
+            logger.info("=" * 70)
             
         except Exception as e:
             logger.error(f"❌ Error during deletion: {e}", exc_info=True)
@@ -277,16 +291,21 @@ class NodeDeleter:
 
 def main():
     """Main execution function"""
-    logger.info("=" * 60)
+    logger.info("=" * 70)
     logger.info("DELETE ALL NODES")
+    logger.info("=" * 70)
     logger.info("⚠️  WARNING: This will delete ALL nodes in the database!")
     logger.info("")
     logger.info("PREREQUISITE: All relationships must be deleted first.")
     logger.info("If relationships exist, this script will abort.")
-    logger.info("=" * 60)
+    logger.info("")
+    logger.info("Expected node types:")
+    logger.info("  DrugBank: Drug, Category, BrandName, Synonym, Salt, FoodInteraction")
+    logger.info("  🔥 Mayo Clinic: Supplement, ActiveIngredient, Medication, Symptom")
+    logger.info("=" * 70)
     
     deleter = NodeDeleter()
-    deleter.run(batch_size=5000)
+    deleter.run(batch_size=10000)
 
 
 if __name__ == "__main__":
