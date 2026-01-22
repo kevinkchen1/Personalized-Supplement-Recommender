@@ -599,7 +599,7 @@ class CompleteKnowledgeGraphLoader:
         logger.info(f"✓ Loaded {len(df):,} medication-drug relationships")
 
     def load_supplement_medication_interacts_with(self, df: pd.DataFrame):
-        """Load Supplement -[:INTERACTS_WITH]-> Medication relationships"""
+        """Load Supplement -[:SUPPLEMENT_INTERACTS_WITH]-> Medication relationships"""
         logger.info(f"Loading {len(df):,} supplement-medication interactions...")
         
         interaction_data = df.fillna("").to_dict('records')
@@ -608,7 +608,7 @@ class CompleteKnowledgeGraphLoader:
         UNWIND $batch AS row
         MATCH (s:Supplement {supplement_id: row.supplement_id})
         MATCH (m:Medication {medication_id: row.medication_id})
-        CREATE (s)-[:INTERACTS_WITH {
+        CREATE (s)-[:SUPPLEMENT_INTERACTS_WITH {
             interaction_description: row.interaction_description
         }]->(m)
         """
