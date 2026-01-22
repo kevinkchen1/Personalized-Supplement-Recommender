@@ -9,18 +9,18 @@ This knowledge graph integrates DrugBank and Mayo Clinic data to identify danger
 
 | Node Type | Count | Properties | Source |
 |-----------|-------|------------|--------|
-| **Supplement** | 28 | supplement_id, supplement_name, safety_rating | Mayo Clinic |
-| **ActiveIngredient** | 71 | active_ingredient_id, active_ingredient | Mayo Clinic |
-| **Medication** | 55 | medication_id, medication_name | Mayo Clinic |
-| **Drug** | 33,956 | drug_id, drug_name, description, indication, type | DrugBank |
-| **Category** | 4,651 | category_id, category | DrugBank |
-| **Symptom** | Various | symptom_id, symptom_name | Mayo Clinic |
-| **BrandName** | Thousands | brand_name_id, brand_name | DrugBank |
-| **Salt** | Thousands | salt_id, salt_name | DrugBank |
-| **Synonym** | Thousands | synonym_id, synonym | DrugBank |
-| **FoodInteraction** | Hundreds | food_interaction_id, description | DrugBank |
+| **Supplement** | - | supplement_id, supplement_name, safety_rating | Mayo Clinic |
+| **ActiveIngredient** | - | active_ingredient_id, active_ingredient | Mayo Clinic |
+| **Medication** | - | medication_id, medication_name | Mayo Clinic |
+| **Drug** | - | drug_id, drug_name, description, indication, type | DrugBank |
+| **Category** | - | category_id, category | DrugBank |
+| **Symptom** | - | symptom_id, symptom_name | Mayo Clinic |
+| **BrandName** | - | brand_name_id, brand_name | DrugBank |
+| **Salt** | - | salt_id, salt_name | DrugBank |
+| **Synonym** | - | synonym_id, synonym | DrugBank |
+| **FoodInteraction** | - | food_interaction_id, description | DrugBank |
 
-**Total Nodes:** ~40,000+
+**Total Nodes:** 329,820
 
 ---
 
@@ -30,31 +30,31 @@ This knowledge graph integrates DrugBank and Mayo Clinic data to identify danger
 
 | From | Relationship | To | Count | Properties |
 |------|--------------|-----|-------|------------|
-| Supplement | **CONTAINS** | ActiveIngredient | 71 | is_primary (boolean) |
-| ActiveIngredient | **EQUIVALENT_TO** | Drug | 39 | equivalence_type, notes |
-| Supplement | **HAS_SIMILAR_EFFECT_TO** | Category | 17 | confidence, notes |
+| Supplement | **CONTAINS** | ActiveIngredient | - | is_primary (boolean) |
+| ActiveIngredient | **EQUIVALENT_TO** | Drug | - | equivalence_type, notes |
+| Supplement | **HAS_SIMILAR_EFFECT_TO** | Category | - | confidence, notes |
 
 ### Mayo Clinic Relationships
 
 | From | Relationship | To | Count |
 |------|--------------|-----|-------|
-| Supplement | INTERACTS_WITH | Medication | Hundreds |
-| Supplement | CAN_CAUSE | Symptom | Dozens |
-| Supplement | TREATS | Symptom | Dozens |
-| Medication | CONTAINS_DRUG | Drug | 55 |
+| Supplement | INTERACTS_WITH | Medication | - |
+| Supplement | CAN_CAUSE | Symptom | - |
+| Supplement | TREATS | Symptom | - |
+| Medication | CONTAINS_DRUG | Drug | - |
 
 ### DrugBank Relationships
 
 | From | Relationship | To | Count |
 |------|--------------|-----|-------|
-| Drug | BELONGS_TO | Category | Millions |
-| Drug | INTERACTS_WITH | Drug | Millions |
-| BrandName | CONTAINS_DRUG | Drug | Thousands |
-| Drug | KNOWN_AS | Synonym | Thousands |
-| Drug | HAS_SALT_FORM | Salt | Thousands |
-| Drug | HAS_FOOD_INTERACTION | FoodInteraction | Hundreds |
+| Drug | BELONGS_TO | Category | - |
+| Drug | INTERACTS_WITH | Drug | - |
+| BrandName | CONTAINS_DRUG | Drug | - |
+| Drug | KNOWN_AS | Synonym | - |
+| Drug | HAS_SALT_FORM | Salt | - |
+| Drug | HAS_FOOD_INTERACTION | FoodInteraction | - |
 
-**Total Edges:** ~3+ million
+**Total Edges:** 3,446,998
 
 ---
 
