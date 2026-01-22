@@ -1,0 +1,29 @@
+supplement_id,supplement_name,safety_rating
+S01,Acidophilus,Generally safe
+S02,Aloe,Generally safe
+S03,Coenzyme Q10,Generally safe
+S04,Creatine,Generally safe
+S05,DHEA,Not recommended
+S06,Evening primrose,Use with caution
+S07,Fish oil,Generally safe
+S08,Flaxseed and flaxseed oil,Generally safe
+S09,Folate (folic acid),Generally safe
+S10,Ginkgo,Use with caution
+S11,Glucosamine,Generally safe
+S12,Honey,Generally safe
+S13,L-arginine,Generally safe
+S14,Marijuana,Use with caution
+S15,Melatonin,Generally safe
+S16,Milk thistle,Generally safe
+S17,Niacin,Generally safe
+S18,Red yeast rice,Use with caution
+S19,SAMe,Generally safe
+S20,St. John's wort,Use with caution
+S21,Tea tree oil,Generally safe
+S22,Vitamin A,Use with caution
+S23,Vitamin B-6,Generally safe
+S24,Vitamin B-12,Generally safe
+S25,Vitamin C,Generally safe
+S26,Vitamin D,Generally safe
+S27,Vitamin E,Use with caution
+S28,Zinc,Generally safe

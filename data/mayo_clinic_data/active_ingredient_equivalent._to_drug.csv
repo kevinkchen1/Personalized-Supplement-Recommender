@@ -1,0 +1,40 @@
+active_ingredient_id,drug_id,equivalence_type,notes
+A43,DB00227,identical,Lovastatin - Red yeast rice contains lovastatin
+A36,DB01065,identical,Prescription melatonin
+A41,DB00627,identical,Niacin (Vitamin B3)
+A42,DB00627,related,Niacin - nicotinamide is a form of niacin
+A20,DB00158,identical,Prescription folic acid
+A21,DB00116,related,Active form of folic acid
+A11,DB01708,identical,Prasterone - DHEA
+A32,DB00470,identical,Dronabinol - synthetic THC
+A53,DB00162,identical,Vitamin A
+A54,DB00162,related,Vitamin A ester form
+A55,DB00162,precursor,Converts to Vitamin A
+A56,DB00165,identical,Vitamin B6
+A57,DB00147,related,Active form of B6
+A58,DB00165,related,Form of B6
+A59,DB00115,identical,Vitamin B12
+A60,DB03614,related,Active form of B12
+A61,DB00200,identical,Vitamin B12 form
+A62,DB00126,identical,Vitamin C
+A63,DB08830,related,Oxidized form of Vitamin C
+A64,DB00169,identical,Vitamin D3
+A65,DB00153,identical,Vitamin D2
+A66,DB11251,identical,Vitamin E main form
+A67,DB11251,related,Vitamin E form
+A68,DB11251,related,Vitamin E family
+A69,DB01593,contains,Contains zinc
+A70,DB01593,contains,Contains zinc
+A71,DB01593,contains,Contains zinc
+A07,DB09270,identical,Coenzyme Q10 - ubidecarenone
+A08,DB09270,related,Reduced form of CoQ10
+A25,DB01296,identical,Glucosamine
+A26,DB01296,related,Glucosamine salt form
+A31,DB00125,identical,Amino acid arginine
+A46,DB00118,identical,SAMe
+A14,DB01156,identical,DHA omega-3 fatty acid
+A15,DB00159,identical,EPA omega-3 fatty acid
+A16,DB04870,identical,DPA omega-3 fatty acid
+A17,DB03539,identical,ALA omega-3 fatty acid
+A12,DB03522,identical,GLA omega-6 fatty acid
+A13,DB04467,identical,LA omega-6 fatty acid
