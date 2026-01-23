@@ -27,7 +27,7 @@ lint = [
 
 [tool.pdm.scripts]
 app = "streamlit run src/web/app.py"
-load-data = "python load_all_data_OPTIMIZED.py"
+load-data = "python scripts/load_data.py"
 quickstart = "python scripts/quickstart.py"
 test = "pytest tests/ -v"
 format = {shell = "black . && isort ."}
