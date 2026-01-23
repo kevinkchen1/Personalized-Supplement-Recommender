@@ -38,10 +38,10 @@ This knowledge graph integrates DrugBank and Mayo Clinic data to identify danger
 
 | From | Relationship | To | Count |
 |------|--------------|-----|-------|
-| Supplement | INTERACTS_WITH | Medication | ~50+ |
+| Supplement | SUPPLEMENT_INTERACTS_WITH | Medication | ~50+ |
 | Supplement | CAN_CAUSE | Symptom | 224 |
 | Supplement | TREATS | Symptom | 128 |
-| Medication | CONTAINS_DRUG | Drug | 55 |
+| Medication | MEDICATION_CONTAINS_DRUG | Drug | 55 |
 
 ### DrugBank Relationships
 
