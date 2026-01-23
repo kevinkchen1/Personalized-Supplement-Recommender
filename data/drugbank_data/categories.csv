@@ -1,0 +1,4650 @@
+category_id,category
+C00001,"Amino Acids, Peptides, and Proteins"
+C00002,Anticoagulants
+C00003,Antithrombin Proteins
+C00004,Antithrombins
+C00005,Blood and Blood Forming Organs
+C00006,Cardiovascular Agents
+C00007,Enzyme Inhibitors
+C00008,Fibrin Modulating Agents
+C00009,Hematologic Agents
+C00010,Peptides
+C00011,Protease Inhibitors
+C00012,Proteins
+C00013,Serine Protease Inhibitors
+C00014,Serpins
+C00015,Thrombin Inhibitors
+C00016,Antibodies
+C00017,"Antibodies, Monoclonal"
+C00018,"Antibodies, Monoclonal, Humanized"
+C00019,Antineoplastic Agents
+C00020,"Antineoplastic Agents, Immunological"
+C00021,Antineoplastic and Immunomodulating Agents
+C00022,Blood Proteins
+C00023,Cancer immunotherapy
+C00024,EGFR (Epidermal Growth Factor Receptor) inhibitors
+C00025,Epidermal Growth Factor Receptor Antagonist
+C00026,Globulins
+C00027,HER1 Antagonists
+C00028,Immunoglobulins
+C00029,Immunoproteins
+C00030,Immunotherapy
+C00031,Monoclonal antibodies and antibody drug conjugates
+C00032,Narrow Therapeutic Index Drugs
+C00033,Serum Globulins
+C00034,Cough and Cold Preparations
+C00035,Decreased Respiratory Secretion Viscosity
+C00036,Deoxyribonucleases
+C00037,Endodeoxyribonucleases
+C00038,Endonucleases
+C00039,Enzymes
+C00040,Enzymes and Coenzymes
+C00041,Esterases
+C00042,Expectorants
+C00043,Hydrolases
+C00044,Recombinant Human Deoxyribonuclease 1
+C00045,ADP Ribose Transferases
+C00046,Bacterial Toxins
+C00047,Biological Factors
+C00048,CD25-directed Cytotoxin
+C00049,Cytotoxins
+C00050,Intercellular Signaling Peptides and Proteins
+C00051,Interleukins
+C00052,Recombinant Fusion Proteins
+C00053,Recombinant Proteins
+C00054,"Toxins, Biological"
+C00055,Agents reducing cytokine levels
+C00056,Anti-Inflammatory Agents
+C00057,Antirheumatic Agents
+C00058,Biological Products
+C00059,Biologics for Rheumatoid Arthritis Treatment
+C00060,Dermatologicals
+C00061,Disease-modifying Antirheumatic Agents
+C00062,Immunoglobulin Constant Regions
+C00063,Immunoglobulin Fc Fragments
+C00064,Immunoglobulin Fragments
+C00065,Immunoglobulin Isotypes
+C00066,Immunologic Factors
+C00067,Immunosuppressive Agents
+C00068,Membrane Proteins
+C00069,Tumor necrosis factor alpha (TNF-alpha) inhibitors
+C00070,Tumor Necrosis Factor Blockers
+C00071,Adrenal Cortex Hormones
+C00072,Agents Causing Muscle Toxicity
+C00073,"Antineoplastic Agents, Hormonal"
+C00074,Drugs causing inadvertant photosensitivity
+C00075,Drugs that are Mainly Renally Excreted
+C00076,Endocrine Therapy
+C00077,Fertility Agents
+C00078,"Fertility Agents, Female"
+C00079,Gonadotropin Releasing Hormone Receptor Agonist
+C00080,Gonadotropin Releasing Hormone Receptor Agonists
+C00081,Gonadotropin-releasing hormone agonist
+C00082,Gonadotropins
+C00083,Hormones and Related Agents
+C00084,Hyperglycemia-Associated Agents
+C00085,Hypothalamic Hormones
+C00086,Moderate Risk QTc-Prolonging Agents
+C00087,Nerve Tissue Proteins
+C00088,Neuropeptides
+C00089,Oligopeptides
+C00090,Photosensitizing Agents
+C00091,Pituitary Hormone-Releasing Hormones
+C00092,QTc Prolonging Agents
+C00093,Reproductive Control Agents
+C00094,"Adjuvants, Immunologic"
+C00095,Alcohols
+C00096,Alfa Interferons
+C00097,Anti-Infective Agents
+C00098,Antiviral Agents
+C00099,Cardiotoxic antineoplastic agents
+C00100,"Compounds used in a research, industrial, or household setting"
+C00101,Cytochrome P-450 CYP1A2 Inhibitors
+C00102,Cytochrome P-450 CYP1A2 Inhibitors (strength unknown)
+C00103,Cytochrome P-450 Enzyme Inhibitors
+C00104,Cytokines
+C00105,Drug Carriers
+C00106,Ethylene Glycols
+C00107,Glycols
+C00108,Hepatotoxic Agents
+C00109,Interferon alpha
+C00110,Interferon Type I
+C00111,Interferons
+C00112,Macromolecular Substances
+C00113,Myelosuppressive Agents
+C00114,Pegylated agents
+C00115,Polymers
+C00116,Treatments for Hepatitis C
+C00117,Agents causing angioedema
+C00118,Endopeptidases
+C00119,Fibrinolytic Agents
+C00120,Ophthalmologicals
+C00121,Peptide Hydrolases
+C00122,Plasminogen Activators
+C00123,Sensory Organs
+C00124,Serine Endopeptidases
+C00125,Serine Proteases
+C00126,Tissue Plasminogen Activator
+C00127,"Tissue Plasminogen Activator, antagonists & inhibitors"
+C00128,Anterior Pituitary Lobe Hormones and Analogues
+C00129,Diagnostic Agents
+C00130,Growth Hormone-Releasing Hormone
+C00131,Hormones
+C00132,"Hormones, Hormone Substitutes, and Hormone Antagonists"
+C00133,Peptide Hormones
+C00134,Pituitary and Hypothalamic Hormones and Analogues
+C00135,Somatropin and Somatropin Agonists
+C00136,"Systemic Hormonal Preparations, Excl. Sex Hormones and Insulins"
+C00137,Tests for Pituitary Function
+C00138,Antianemic Preparations
+C00139,Carbohydrates
+C00140,Colony-Stimulating Factors
+C00141,Erythropoiesis-Stimulating Agents
+C00142,Glycoconjugates
+C00143,Glycoproteins
+C00144,Hematinics
+C00145,Hematopoietic Cell Growth Factors
+C00146,Increased Erythroid Cell Production
+C00147,Increased Thrombolysis
+C00148,"Urokinase-Type Plasminogen Activator, antagonists & inhibitors"
+C00149,Gonadotropins and Antigonadotropins
+C00150,Miscellaneous Therapeutic Agents
+C00151,"Erythropoietin, genetics"
+C00152,Bone Density Conservation Agents
+C00153,"Bone Density, drug effects"
+C00154,Calcitonin Preparations
+C00155,Calcium Homeostasis
+C00156,Calcium-Regulating Hormones and Agents
+C00157,Parathyroid and Antiparathyroid Agents
+C00158,Parathyroid Hormones and Analogues
+C00159,Thyroid Products
+C00160,Interferon-alpha
+C00161,Complex Mixtures
+C00162,Granulocyte Colony-Stimulating Factors
+C00163,Increased Myeloid Cell Production
+C00164,Leukocyte Growth Factor
+C00165,Granulocyte-Macrophage Colony-Stimulating Factor
+C00166,Cytochrome P-450 CYP2C9 Inducers
+C00167,Cytochrome P-450 CYP2C9 Inducers (weak)
+C00168,Cytochrome P-450 CYP2D6 Inhibitors
+C00169,Cytochrome P-450 CYP2D6 Inhibitors (weak)
+C00170,Cytochrome P-450 Enzyme Inducers
+C00171,Hepatitis C
+C00172,Amidohydrolases
+C00173,Asparaginase
+C00174,Asparagine-specific Enzyme
+C00175,Thyroxine-binding globulin inhibitors
+C00176,Agents used to treat hypothyroidism
+C00177,Pituitary Hormones
+C00178,"Pituitary Hormones, Anterior"
+C00179,Blood Coagulation Factors
+C00180,Disaccharides
+C00181,Hemophilia A
+C00182,Hemostatics
+C00183,Human Antihemophilic Factors
+C00184,Increased Coagulation Activity
+C00185,Oligosaccharides
+C00186,Polysaccharides
+C00187,Protein Precursors
+C00188,Interleukin Inhibitors
+C00189,Interleukin-1 Receptor Antagonist
+C00190,Anti-Bacterial Agents
+C00191,"Anti-Infective Agents, Local"
+C00192,P-glycoprotein inhibitors
+C00193,P-glycoprotein substrates
+C00194,"Peptides, Cyclic"
+C00195,Pore Forming Cytotoxic Proteins
+C00196,Throat Preparations
+C00197,Antigen Neutralization
+C00198,Human Immunoglobulin G
+C00199,Immunoglobulin G
+C00200,"Immunoglobulins, Intravenous"
+C00201,Passively Acquired Immunity
+C00202,Serum
+C00203,Alimentary Tract and Metabolism
+C00204,Blood Glucose Lowering Agents
+C00205,Cytochrome P-450 CYP1A2 Inducers
+C00206,Cytochrome P-450 CYP1A2 Inducers (strength unknown)
+C00207,Drugs Used in Diabetes
+C00208,Hypoglycemia-Associated Agents
+C00209,Insulin
+C00210,"Insulin, metabolism"
+C00211,"Insulin, Short-Acting"
+C00212,"Insulins and Analogues for Injection, Fast-Acting"
+C00213,Pancreatic Hormones
+C00214,Genito Urinary System and Sex Hormones
+C00215,"Gonadotropins, Pituitary"
+C00216,Sex Hormones and Modulators of the Genital System
+C00217,Interferon gamma
+C00218,Lymphokines
+C00219,Macrophage-Activating Factors
+C00220,Agents that produce hypertension
+C00221,Antidiuretic Agents
+C00222,Arginine Vasopressin
+C00223,Coagulants
+C00224,Factor VIII Activator
+C00225,Increased Coagulation Factor VIII Activity
+C00226,Increased Coagulation Factor VIII Concentration
+C00227,Natriuretic Agents
+C00228,Pituitary
+C00229,"Pituitary Hormones, Posterior"
+C00230,Posterior Pituitary Lobe Hormones
+C00231,Vasopressin Analog
+C00232,Vasopressin and Analogues
+C00233,Vasopressins
+C00234,Factor VII
+C00235,"Factor VIIa, antagonists & inhibitors"
+C00236,Increased Coagulation Factor IX Activity
+C00237,Increased Coagulation Factor X Activity
+C00238,Megakaryocyte Growth Factor
+C00239,Detoxifying Agents for Antineoplastic Treatment
+C00240,Fibroblast Growth Factors
+C00241,Increased Epithelial Proliferation
+C00242,Mucocutaneous Epithelial Cell Growth Factor
+C00243,Antihypoglycemic Agent
+C00244,Decreased GI Motility
+C00245,Decreased GI Smooth Muscle Tone
+C00246,Decreased Glycolysis
+C00247,Gastrointestinal Agents
+C00248,Gastrointestinal Hormones
+C00249,Gastrointestinal Motility Inhibitor
+C00250,"Glucagon, antagonists & inhibitors"
+C00251,Glycogenolytic Agents
+C00252,Glycogenolytic Hormones
+C00253,Increased Gluconeogenesis
+C00254,Increased Glycogenolysis
+C00255,Proglucagon
+C00256,Anti-HIV Agents
+C00257,Cytochrome P-450 CYP2E1 Inhibitors
+C00258,Cytochrome P-450 CYP2E1 Inhibitors (strength unknown)
+C00259,Cytochrome P-450 CYP3A Inhibitors
+C00260,Cytochrome P-450 CYP3A4 Inhibitors
+C00261,Cytochrome P-450 CYP3A4 Inhibitors (strength unknown)
+C00262,Hypotensive Agents
+C00263,Increased Lymphocyte Activation
+C00264,Increased Lymphocyte Cell Production
+C00265,Lymphocyte Growth Factor
+C00266,Acetylcholine Release Inhibitors
+C00267,Agents that produce neuromuscular block (indirect)
+C00268,Amphibian Venoms
+C00269,Anti-Dyskinesia Agents
+C00270,Bacterial Proteins
+C00271,Botulinum Toxins
+C00272,Central Nervous System Agents
+C00273,Central Nervous System Depressants
+C00274,Cholinergic Agents
+C00275,Ganglion Blockers
+C00276,Membrane Transport Modulators
+C00277,Metalloendopeptidases
+C00278,Metalloproteases
+C00279,Muscle Relaxants
+C00280,"Muscle Relaxants, Peripherally Acting Agents"
+C00281,Musculo-Skeletal System
+C00282,Neurotoxins
+C00283,Neurotransmitter Agents
+C00284,Other Miscellaneous Therapeutic Agents
+C00285,Venoms
+C00286,Agents to Treat Airway Disease
+C00287,Anti-Allergic Agents
+C00288,Anti-Asthmatic Agents
+C00289,Anti-IgE
+C00290,Antigens
+C00291,Decreased IgE Activity
+C00292,IgE-directed Antibody Interactions
+C00293,"Respiratory Agents, Miscellaneous"
+C00294,Respiratory System Agents
+C00295,Insulin Analog
+C00296,Antimetabolites
+C00297,Hypolipidemic Agents
+C00298,"Insulin, Long-Acting"
+C00299,Lipid Regulating Agents
+C00300,Collagen-specific Enzyme
+C00301,Collagenases
+C00302,"Microbial Collagenase, antagonists & inhibitors"
+C00303,Misc. Skin and Mucous Membrane Agents
+C00304,Preparations for Treatment of Wounds and Ulcers
+C00305,Antigout Preparations
+C00306,Methemoglobinemia Associated Agents
+C00307,Oxidoreductases
+C00308,Urate Oxidase
+C00309,Uric Acid-specific Enzyme
+C00310,Anti-Gonadotropin-Releasing Hormones
+C00311,Decreased GnRH Secretion
+C00312,Gonadotropin Releasing Hormone Receptor Antagonists
+C00313,Gonadotropin-releasing Hormone Antagonists
+C00314,Hormone Antagonists
+C00315,Miscellaneous GI Drugs
+C00316,Tumor Necrosis Factor Receptor Blocking Activity
+C00317,Cytochrome P-450 CYP2C19 Inhibitors
+C00318,Cytochrome P-450 CYP2C19 inhibitors (strength unknown)
+C00319,Cytochrome P-450 CYP2C19 Inhibitors (weak)
+C00320,Growth Hormone
+C00321,"Growth Hormone, antagonists & inhibitors"
+C00322,"Human Growth Hormone, antagonists & inhibitors"
+C00323,Recombinant Human Growth Hormone
+C00324,Somatotropin Agonists
+C00325,Enzyme Replacement Therapy
+C00326,Gaucher Disease
+C00327,Glucosidases
+C00328,Glycoside Hydrolases
+C00329,Hydrolytic Lysosomal Glucocerebroside-specific Enzyme
+C00330,Antiplatelet agents
+C00331,Glycoprotein IIb/IIIa Receptor-directed Monoclonal Antibodies
+C00332,Immunoglobulin Fab Fragments
+C00333,Peptide Fragments
+C00334,Platelet Aggregation Inhibitors Excl. Heparin
+C00335,Blood Coagulation Factor Inhibitors
+C00336,Enzyme Precursors
+C00337,Recombinant Activated Protein C
+C00338,Antibody-drug Conjugates
+C00339,Calicheamicins
+C00340,CD33-directed Antibody Interactions
+C00341,CD33-directed Cytotoxin
+C00342,Glycosides
+C00343,Immunoconjugates
+C00344,Immunotoxins
+C00345,Noxae
+C00346,Toxic Actions
+C00347,Acetates
+C00348,"Acids, Acyclic"
+C00349,Amines
+C00350,Diagnostic Radiopharmaceuticals
+C00351,Indium (111In) Compounds
+C00352,Indium Radioisotopes
+C00353,Polyamines
+C00354,Tumour Detection
+C00355,Acute-Phase Proteins
+C00356,Alpha-Globulins
+C00357,Antifibrinolytic Agents
+C00358,Human alpha-1 Proteinase Inhibitor
+C00359,Proteinase Inhibitors
+C00360,"Proteinase Inhibitory Proteins, Secretory"
+C00361,Trypsin Inhibitors
+C00362,Delayed-Action Preparations
+C00363,Immunomodulatory Agents
+C00364,Interferon-beta
+C00365,Recombinant Human Interferon beta
+C00366,Aminohydrolases
+C00367,Bovine Intestinal Adenosine Deaminase
+C00368,Nucleoside Deaminases
+C00369,Severe Combined Immunodeficiency
+C00370,Albumins
+C00371,Blood and Related Products
+C00372,Blood Derivatives
+C00373,Blood Substitutes and Perfusion Solutions
+C00374,Blood Substitutes and Plasma Protein Fractions
+C00375,Cardiac Function
+C00376,Diluents
+C00377,Human Serum Albumin
+C00378,Increased Intravascular Volume
+C00379,Increased Oncotic Pressure
+C00380,Osmotic Activity
+C00381,Serum Albumin
+C00382,Decreased Platelet Aggregation
+C00383,Follicle Stimulating Hormone
+C00384,"Arginine Vasopressin, analogs & derivatives"
+C00385,Decreased Diuresis
+C00386,Vasoconstriction
+C00387,Vasoconstrictor Agents
+C00388,HER2 (Human Epidermal Growth Factor Receptor 2) inhibitors
+C00389,HER2 Receptor Antagonists
+C00390,HER2/Neu/cerbB2 Antagonists
+C00391,"Antibodies, Monoclonal, Murine-Derived"
+C00392,CD20 (Clusters of Differentiation 20) inhibitors
+C00393,CD20-directed Antibody Interactions
+C00394,CD20-directed Cytolytic Antibody
+C00395,Interleukin 2 Receptor-directed Antibody Interactions
+C00396,Interleukin-2 Receptor Antagonist
+C00397,Interleukin-2 Receptor Blocking Antibody
+C00398,CD3 Blocker Immunosuppressant
+C00399,CD3 Receptor Antagonists
+C00400,CD3-directed Antibody Interactions
+C00401,Decreased Immunologic Activity
+C00402,Selective Immunosuppressants
+C00403,Antidotes
+C00404,Digoxin Binding Activity
+C00405,"Antigens, CD20"
+C00406,CD20-directed Radiotherapeutic Antibody
+C00407,"Lymphoma, B-Cell"
+C00408,Radiopharmaceutical Activity
+C00409,Therapeutic Radiopharmaceuticals
+C00410,Various Therapeutic Radiopharmaceuticals
+C00411,Yttrium Radioisotopes
+C00412,Antibacterials for Systemic Use
+C00413,Antiinfectives for Systemic Use
+C00414,Cyclic Lipopeptides
+C00415,Lipids
+C00416,Lipopeptide Antibacterial
+C00417,Lipopeptides
+C00418,Iodine (131I) Compounds
+C00419,Radioimmunotherapy
+C00420,Acromegaly
+C00421,Cholinesterase Inhibitors
+C00422,Cytochrome P-450 CYP3A Inducers
+C00423,Cytochrome P-450 CYP3A4 Inducers
+C00424,Cytochrome P-450 CYP3A4 Inducers (strength unknown)
+C00425,Growth Hormone Receptor Antagonist
+C00426,Growth Hormone Receptor Antagonists
+C00427,"Botulinum Toxins, Type A"
+C00428,Neuromuscular Agents
+C00429,Neuromuscular Blocking Agents
+C00430,Peripheral Nervous System Agents
+C00431,Carboxylic Ester Hydrolases
+C00432,"Digestives, Incl. Enzymes"
+C00433,Enzyme Preparations
+C00434,Lipase
+C00435,Pancreatic Extracts
+C00436,Tissue Extracts
+C00437,"Streptokinase, antagonists & inhibitors"
+C00438,CD52-directed Antibody Interactions
+C00439,CD52-directed Cytolytic Antibody
+C00440,Indicators and Reagents
+C00441,Laboratory Chemicals
+C00442,Prostatic Neoplasms
+C00443,Hydrolytic Lysosomal Glycosaminoglycan-specific Enzyme
+C00444,"Iduronidase, antagonists & inhibitors"
+C00445,Agents causing hyperkalemia
+C00446,Agents that reduce seizure threshold
+C00447,BCRP/ABCG2 Inhibitors
+C00448,BSEP/ABCB11 Inhibitors
+C00449,BSEP/ABCB11 Substrates
+C00450,BSEP/ABCB11 Substrates with a Narrow Therapeutic Index
+C00451,Calcineurin Inhibitor Immunosuppressant
+C00452,Calcineurin Inhibitors
+C00453,Cyclosporins
+C00454,Cytochrome P-450 CYP2D6 Inhibitors (moderate)
+C00455,Cytochrome P-450 CYP3A Substrates
+C00456,Cytochrome P-450 CYP3A4 Inhibitors (moderate)
+C00457,Cytochrome P-450 CYP3A4 Substrates
+C00458,Cytochrome P-450 CYP3A4 Substrates with a Narrow Therapeutic Index
+C00459,Cytochrome P-450 CYP3A5 Substrates
+C00460,Cytochrome P-450 CYP3A5 Substrates with a Narrow Therapeutic Index
+C00461,Cytochrome P-450 Substrates
+C00462,Nephrotoxic agents
+C00463,Neurotoxic agents
+C00464,NTCP Inhibitors
+C00465,OAT1/SLC22A6 inhibitors
+C00466,OAT1/SLC22A6 Substrates
+C00467,OATP1B1/SLCO1B1 Inhibitors
+C00468,OATP1B1/SLCO1B1 Substrates
+C00469,OATP1B3 inhibitors
+C00470,P-glycoprotein substrates with a Narrow Therapeutic Index
+C00471,CD2-directed Antibody Interactions
+C00472,CD2-directed LFA-3/Fc Fusion Protein
+C00473,CD58 Antigens
+C00474,Membrane Glycoproteins
+C00475,"Antigens, CD11"
+C00476,CD11a-directed Antibody Interactions
+C00477,CD11a-directed Humanized IgG1 Antibody
+C00478,Antibody-Surface Protein Interactions
+C00479,Blood
+C00480,Body Fluids
+C00481,Fluids and Secretions
+C00482,Immune Sera
+C00483,Increased T Lymphocyte Destruction
+C00484,Lymphocyte Function Alteration
+C00485,Acids
+C00486,"Acids, Noncarboxylic"
+C00487,Angiogenesis Inducing Agents
+C00488,Angiogenesis Modulating Agents
+C00489,Cicatrizants
+C00490,DNA-Binding Proteins
+C00491,Growth Substances
+C00492,Human Platelet-derived Growth Factor
+C00493,Neoplasm Proteins
+C00494,Oncogene Proteins
+C00495,Phosphoric Acids
+C00496,Phosphorus Acids
+C00497,Phosphorus Compounds
+C00498,Platelet-Derived Growth Factor
+C00499,Proto-Oncogene Proteins
+C00500,Proto-Oncogene Proteins c-sis
+C00501,Stomatological Preparations
+C00502,Galactosidases
+C00503,Hydrolytic Lysosomal Neutral Glycosphingolipid-specific Enzyme
+C00504,Protein Isoforms
+C00505,Bradycardia-Causing Agents
+C00506,Potential QTc-Prolonging Agents
+C00507,Somatostatin and Analogues
+C00508,Somatostatin Receptor Agonists
+C00509,Hormone Antagonists and Related Agents
+C00510,Increased Uterine Smooth Muscle Contraction or Tone
+C00511,Oxytocin and Analogues
+C00512,"Oxytocin, analogs & derivatives"
+C00513,Uterotonic agents
+C00514,Integrin Receptor Antagonist
+C00515,Multiple Sclerosis
+C00516,Anti-Retroviral Agents
+C00517,"Antigens, Viral"
+C00518,Antivirals for Systemic Use
+C00519,Cytochrome P-450 CYP2C19 Substrates
+C00520,Cytochrome P-450 CYP2E1 Substrates
+C00521,Direct Acting Antivirals
+C00522,"env Gene Products, Human Immunodeficiency Virus"
+C00523,Fusion Protein Inhibitors
+C00524,"Gene Products, env"
+C00525,HIV Antigens
+C00526,HIV Envelope Protein gp41
+C00527,HIV Fusion Inhibitors
+C00528,Human Immunodeficiency Virus 1 Fusion Inhibitor
+C00529,Human Immunodeficiency Virus Proteins
+C00530,Membrane Fusion Proteins
+C00531,Polyproteins
+C00532,Retroviridae Proteins
+C00533,Viral Envelope Proteins
+C00534,Viral Fusion Protein Inhibitors
+C00535,Viral Fusion Proteins
+C00536,Viral Proteins
+C00537,Viral Structural Proteins
+C00538,Antiviral monoclonal antibodies
+C00539,Immune Sera and Immunoglobulins
+C00540,Respiratory Syncytial Virus Anti-F Protein Monoclonal Antibody
+C00541,Specific Immunoglobulins
+C00542,Angiogenesis Inhibitors
+C00543,Antineovascularisation Agents
+C00544,Experimental Unapproved Treatments for COVID-19
+C00545,Growth Inhibitors
+C00546,Ocular Vascular Disorder Agents
+C00547,Vascular Endothelial Growth Factor Inhibitor
+C00548,Vascular Endothelial Growth Factor Inhibitors
+C00549,Vascular Endothelial Growth Factor-directed Antibody Interactions
+C00550,VEGF/VEGFR (Vascular Endothelial Growth Factor / -Receptor) inhibitors
+C00551,VEGF/VEGFR (Vascular Endothelial Growth Factor) inhibitors
+C00552,Organometallic Compounds
+C00553,Technetium (99Mtc) Compounds
+C00554,Coenzymes
+C00555,Dietary Supplements
+C00556,Food
+C00557,Micronutrients
+C00558,Physiological Phenomena
+C00559,Picolines
+C00560,Pyridines
+C00561,Supplements
+C00562,Vitamin B Complex
+C00563,Vitamins
+C00564,Corrinoids
+C00565,"Diet, Food, and Nutrition"
+C00566,"Heterocyclic Compounds, Fused-Ring"
+C00567,"Vitamin B 12, biosynthesis"
+C00568,Vitamin B12 and Folic Acid
+C00569,Folic Acid and Derivatives
+C00570,Pteridines
+C00571,Pterins
+C00572,Amino Acids
+C00573,"Amino Acids, Cyclic"
+C00574,"Amino Acids, Essential"
+C00575,Proteinogenic Amino Acids
+C00576,Amino Acids and Derivatives
+C00577,"Amino Acids, Sulfur"
+C00578,Cytochrome P-450 CYP2E1 Inhibitors (weak)
+C00579,"Nucleic Acids, Nucleotides, and Nucleosides"
+C00580,Nucleosides
+C00581,Purine Nucleosides
+C00582,Purines
+C00583,Ribonucleosides
+C00584,Sulfur Compounds
+C00585,Keto Acids
+C00586,Pyruvates
+C00587,"Amino Acids, Aromatic"
+C00588,Imidazoles
+C00589,Amino Alcohols
+C00590,Analgesics
+C00591,Ethanolamines
+C00592,Lipotropic Agents
+C00593,Nervous System
+C00594,Nootropic Agents
+C00595,OCT1 inhibitors
+C00596,OCT1 substrates
+C00597,OCT2 Inhibitors
+C00598,OCT2 Substrates
+C00599,Onium Compounds
+C00600,Other Nutritional Agents
+C00601,Quaternary Ammonium Compounds
+C00602,Salicylic Acid and Derivatives
+C00603,Trimethyl Ammonium Compounds
+C00604,"Amino Acids, Basic"
+C00605,"Amino Acids, Diamino"
+C00606,I.V. Solution Additives
+C00607,Lysine
+C00608,Arginine
+C00609,Fatty Acids
+C00610,"Fatty Acids, Volatile"
+C00611,Pituitary Function
+C00612,Antioxidants
+C00613,Gastrointestinal Acidifying Agents
+C00614,Gynecological Antiinfectives and Antiseptics
+C00615,Hydroxy Acids
+C00616,Organic Acids
+C00617,Protective Agents
+C00618,Sugar Acids
+C00619,Urinary Acidifying Agents
+C00620,Vitamin C and analogues
+C00621,Biogenic Amines
+C00622,Biogenic Polyamines
+C00623,"Amino Acids, Acidic"
+C00624,"Amino Acids, Dicarboxylic"
+C00625,Excitatory Amino Acids
+C00626,Bile and Liver Therapy
+C00627,Liver Therapy
+C00628,"Liver Therapy, Lipotropics"
+C00629,"Amino Acids, Neutral"
+C00630,Glutamine
+C00631,Adenine Nucleotides
+C00632,Nucleotides
+C00633,Purine Nucleotides
+C00634,Ribonucleotides
+C00635,Dietary Fats
+C00636,"Dietary Fats, Unsaturated"
+C00637,Fats
+C00638,"Fatty Acids, Essential"
+C00639,"Fatty Acids, Omega-3"
+C00640,"Fatty Acids, Unsaturated"
+C00641,Linolenic Acids
+C00642,Antipsoriatics
+C00643,Antipsoriatics for Topical Use
+C00644,Cholestanes
+C00645,Cholestenes
+C00646,Fused-Ring Compounds
+C00647,Membrane Lipids
+C00648,Secosteroids
+C00649,Steroids
+C00650,Sterols
+C00651,Vitamin D and Analogues
+C00652,Vitamins (Fat Soluble)
+C00653,Alkenes
+C00654,Carotenoids
+C00655,Cyclohexanes
+C00656,Cyclohexenes
+C00657,Cycloparaffins
+C00658,"Hydrocarbons, Acyclic"
+C00659,"Pigments, Biological"
+C00660,Polyenes
+C00661,Terpenes
+C00662,Xanthophylls
+C00663,Anions
+C00664,Cysteine
+C00665,Disulfides
+C00666,Electrolytes
+C00667,Hydrogen Sulfide
+C00668,Ions
+C00669,Sulfides
+C00670,Dicarboxylic Acids
+C00671,OAT3/SLC22A8 Substrates
+C00672,Succinates
+C00673,Flavins
+C00674,Radiation-Sensitizing Agents
+C00675,Amino Sugars
+C00676,Hexosamines
+C00677,Acid Preparations
+C00678,Glutamates
+C00679,"Glutathione, antagonists & inhibitors"
+C00680,Glycerophosphates
+C00681,Glycerophospholipids
+C00682,Phosphatidic Acids
+C00683,Phosphatidylserines
+C00684,Phospholipids
+C00685,Glycine Agents
+C00686,Irrigating Solutions
+C00687,Anti-Parathyroid Agents
+C00688,Amidines
+C00689,Guanidines
+C00690,"Amino Acids, Branched-Chain"
+C00691,Antidepressive Agents
+C00692,"Antidepressive Agents, Second-Generation"
+C00693,Miscellaneous Antidepressants
+C00694,Psychoanaleptics
+C00695,Psychotropic Drugs
+C00696,Serotonergic Drugs Shown to Increase Risk of Serotonin Syndrome
+C00697,Caloric Agents
+C00698,Nutritional Support
+C00699,Sulfhydryl Compounds
+C00700,Pyrimidines
+C00701,Thiazoles
+C00702,Eicosanoids
+C00703,"Threonine, antagonists & inhibitors"
+C00704,Autacoids
+C00705,BCRP/ABCG2 Substrates
+C00706,"Anti-Inflammatory Agents, Non-Steroidal"
+C00707,"Anti-Inflammatory Agents, Non-Steroidal (Non-Selective)"
+C00708,Fish Oils
+C00709,Non COX-2 selective NSAIDS
+C00710,Oils
+C00711,Alanine
+C00712,Anti-Acne Preparations
+C00713,Anti-Acne Preparations for Topical Use
+C00714,Anticarcinogenic Agents
+C00715,Diterpenes
+C00716,Esters
+C00717,Nasal Preparations
+C00718,Retinoids
+C00719,Retinoids for Topical Use in Acne
+C00720,Tests for Fat Absorption
+C00721,Vitamin A
+C00722,Basic Ointments and Protectants
+C00723,Benzopyrans
+C00724,Pyrans
+C00725,Vitamin E
+C00726,"Vitamin E, analogs & derivatives"
+C00727,Analogs/Derivatives
+C00728,Antimycobacterials
+C00729,Drugs for Treatment of Tuberculosis
+C00730,Thiophenes
+C00731,Various Alimentary Tract and Metabolism Products
+C00732,Dipeptides
+C00733,Flavoring Agents
+C00734,Food Additives
+C00735,Food Ingredients
+C00736,OAT3/SLC22A8 Inhibitors
+C00737,Sweetening Agents
+C00738,"Cholecalciferol, antagonists & inhibitors"
+C00739,Cytochrome P-450 CYP2C8 Inhibitors
+C00740,Cytochrome P-450 CYP2C8 Inhibitors (strength unknown)
+C00741,Drugs Affecting Bone Structure and Mineralization
+C00742,Drugs for Treatment of Bone Diseases
+C00743,Cytochrome P-450 CYP2A6 Inhibitors
+C00744,Cytochrome P-450 CYP2A6 Inhibitors (strength unknown)
+C00745,Cytochrome P-450 CYP2B6 Inhibitors
+C00746,Cytochrome P-450 CYP2B6 Inhibitors (strength unknown)
+C00747,Cytochrome P-450 CYP2C9 Inhibitors
+C00748,Cytochrome P-450 CYP2C9 Inhibitors (strength unknown)
+C00749,Cytochrome P-450 CYP2D6 Inhibitors (strength unknown)
+C00750,Cytochrome P-450 CYP3A5 Inhibitors
+C00751,Cytochrome P-450 CYP3A5 Inhibitors (strength unknown)
+C00752,Cytochrome P-450 CYP3A7 Inhibitors
+C00753,Cytochrome P-450 CYP3A7 Inhibitors (strength unknown)
+C00754,Naphthalenes
+C00755,Naphthoquinones
+C00756,Phytol
+C00757,Quinones
+C00758,Vitamin K
+C00759,Adenosine Triphosphate
+C00760,Imino Acids
+C00761,UGT1A1 Inhibitors
+C00762,Anticholesteremic Agents
+C00763,Hydroxymethylglutaryl-CoA Reductase Inhibitors
+C00764,Hypolipidemic Agents Indicated for Hyperlipidemia
+C00765,Lipid Modifying Agents
+C00766,"Lipid Modifying Agents, Plain"
+C00767,OATP1B3 substrates
+C00768,OATP2B1/SLCO2B1 substrates
+C00769,Anti-Anxiety Agents
+C00770,Antidepressive Agents Indicated for Depression
+C00771,Cytochrome P-450 CYP1A2 Inhibitors (strong)
+C00772,Cytochrome P-450 CYP1A2 Substrates
+C00773,Cytochrome P-450 CYP2C19 Inhibitors (strong)
+C00774,Cytochrome P-450 CYP2C9 Inhibitors (moderate)
+C00775,Cytochrome P-450 CYP2D6 Substrates
+C00776,Cytochrome P-450 CYP3A7 Inhibitors (moderate)
+C00777,Hydroxylamines
+C00778,Neurotransmitter Uptake Inhibitors
+C00779,Oximes
+C00780,Selective Serotonin Reuptake Inhibitors
+C00781,Serotonin Agents
+C00782,Serotonin Modulators
+C00783,Tranquilizing Agents
+C00784,Agents Acting on the Renin-Angiotensin System
+C00785,Angiotensin 2 Receptor Blocker
+C00786,Angiotensin II Antagonists and Calcium Channel Blockers
+C00787,Angiotensin II Antagonists and Diuretics
+C00788,Angiotensin II receptor antagonists
+C00789,Angiotensin II receptor blockers (ARBs) and calcium channel blockers
+C00790,Angiotensin II receptor blockers (ARBs) and diuretics
+C00791,"Angiotensin II receptor blockers (ARBs), plain"
+C00792,Angiotensin II Type 1 Receptor Blockers
+C00793,Angiotensin II Type 2 Receptor Blockers
+C00794,Angiotensin Receptor Antagonists
+C00795,Antihypertensive Agents
+C00796,Antihypertensive Agents Indicated for Hypertension
+C00797,Cytochrome P-450 CYP2C9 Substrates
+C00798,ACE Inhibitors and Calcium Channel Blockers
+C00799,ACE Inhibitors and Diuretics
+C00800,Angiotensin-Converting Enzyme Inhibitors
+C00801,"Analgesics, Non-Narcotic"
+C00802,Benzene Derivatives
+C00803,Benzyl Compounds
+C00804,Catechols
+C00805,Cyclooxygenase Inhibitors
+C00806,Lignans
+C00807,Lipoxygenase Inhibitors
+C00808,Phenols
+C00809,Sensory System Agents
+C00810,Adrenals
+C00811,Corticosteroid Hormone Receptor Agonists
+C00812,Corticosteroids
+C00813,Corticosteroids for Systemic Use
+C00814,Drugs for Obstructive Airway Diseases
+C00815,Pregnadienes
+C00816,Pregnanes
+C00817,"Steroids, Fluorinated"
+C00818,Aminobutyrates
+C00819,Butyrates
+C00820,GABA Agents
+C00821,GABA Agonists
+C00822,GABA-B Receptor Agonists
+C00823,Gaba-derivative Skeletal Muscle Relaxants
+C00824,gamma-Aminobutyric Acid-ergic Agonist
+C00825,"Muscle Relaxants, Centrally Acting Agents"
+C00826,Adrenergic Agents
+C00827,Agents producing tachycardia
+C00828,Amphetamines
+C00829,Autonomic Agents
+C00830,Biogenic Monoamines
+C00831,Central Nervous System Stimulants
+C00832,Central Nervous System Stimulation
+C00833,Centrally Acting Sympathomimetics
+C00834,Cytochrome P-450 CYP2A6 Inhibitors (weak)
+C00835,Dopamine Agents
+C00836,Dopamine Uptake Inhibitors
+C00837,Phenethylamines
+C00838,"Psychostimulants, Agents Used for ADHD and Nootropics"
+C00839,Sympathomimetics
+C00840,Gastrins
+C00841,"Pentagastrin, antagonists & inhibitors"
+C00842,Tests for Gastric Secretion
+C00843,Alkaloids
+C00844,Cholinergic Agonists
+C00845,Cholinergic Nicotinic Agonist
+C00846,Cytochrome P-450 CYP1A1 Substrates
+C00847,Cytochrome P-450 CYP2A6 Substrates
+C00848,Cytochrome P-450 CYP2B6 Substrates
+C00849,Cytochrome P-450 CYP2C8 Substrates
+C00850,Cytochrome P-450 CYP2E1 Inducers
+C00851,Cytochrome P-450 CYP2E1 Inducers (strength unknown)
+C00852,Drugs Used in Addictive Disorders
+C00853,Drugs Used in Nicotine Dependence
+C00854,Ganglionic Stimulants
+C00855,Miscellaneous Autonomic Drugs
+C00856,Monoamine Oxidase A Inhibitors  for interaction with Monoamine Oxidase A substrates
+C00857,"Nicotine, antagonists & inhibitors"
+C00858,Nicotinic Agonists
+C00859,Smoking Cessation Agents
+C00860,Solanaceous Alkaloids
+C00861,Cholinergic Receptor Agonist
+C00862,Muscarinic Agonists
+C00863,Parasympathomimetics
+C00864,Anticonvulsants
+C00865,Antiemetics
+C00866,Benzazepines
+C00867,Benzodiazepine hypnotics and sedatives
+C00868,Benzodiazepines and benzodiazepine derivatives
+C00869,Benzodiazepinones
+C00870,GABA Modulators
+C00871,Hypnotics and Sedatives
+C00872,Psycholeptics
+C00873,Adrenergic Antagonists
+C00874,Adrenergic beta-1 Receptor Antagonists
+C00875,Adrenergic beta-Antagonists
+C00876,Antiarrhythmic agents
+C00877,"Beta Blocking Agents, Selective"
+C00878,Beta-Blockers (Beta1 Selective)
+C00879,Propanols
+C00880,Boron Compounds
+C00881,Boronic Acids
+C00882,Cytochrome P-450 CYP1A2 Inhibitors (moderate)
+C00883,Cytochrome P-450 CYP1A2 Substrates with a Narrow Therapeutic Index
+C00884,Cytochrome P-450 CYP2C19 Substrates with a Narrow Therapeutic Index
+C00885,Cytochrome P-450 CYP2C9 Substrates with a Narrow Therapeutic Index
+C00886,Cytochrome P-450 CYP2D6 Substrates with a Narrow Therapeutic Index
+C00887,Proteasome Inhibitors
+C00888,Pyrazines
+C00889,Chlorohydrins
+C00890,Anti-Parkinson Drugs
+C00891,Aromatic Amino Acid Decarboxylase Inhibitors
+C00892,Aromatic L-amino Acid Decarboxylase Inhibitors
+C00893,Catecholamines
+C00894,Hydrazines
+C00895,Anti-Obesity Agents
+C00896,"Antiobesity Preparations, Excl. Diet Products"
+C00897,Appetite Depressants
+C00898,Appetite Suppression
+C00899,Centrally Acting Antiobesity Products
+C00900,Cytochrome P-450 CYP3A4 Substrates (strength unknown)
+C00901,Increased Sympathetic Activity
+C00902,Sympathomimetic Amine Anorectic
+C00903,Anticholinergic Agents
+C00904,Combined Inhibitors of Serotonin/Norepinephrine Reuptake
+C00905,Cyclohexanols
+C00906,Dimethylamines
+C00907,Muscarinic Antagonists
+C00908,Narcotics
+C00909,NMDA Receptor Antagonists
+C00910,Opiate Agonists
+C00911,Opioid Agonist
+C00912,Opioids
+C00913,Serotonin 5-HT2 Receptor Antagonists
+C00914,Serotonin 5-HT2C Receptor Antagonists
+C00915,Serotonin Receptor Antagonists
+C00916,UGT1A1 Substrates
+C00917,Arabinonucleosides
+C00918,Nucleosides and Nucleotides Excl. Reverse Transcriptase Inhibitors
+C00919,Antiglaucoma Preparations and Miotics
+C00920,Beta-adrenergic Agents
+C00921,Phenoxypropanolamines
+C00922,Propanolamines
+C00923,Sympatholytics
+C00924,14-alpha Demethylase Inhibitors
+C00925,Antifungal Agents
+C00926,Antifungals for Dermatological Use
+C00927,Antifungals for Topical Use
+C00928,Antimycotics for Systemic Use
+C00929,Azole Antifungals
+C00930,Cytochrome P-450 CYP2C9 Inhibitors (strong)
+C00931,Cytochrome P-450 CYP3A5 Inhibitors (weak)
+C00932,Imidazole and Triazole Derivatives
+C00933,Steroid Synthesis Inhibitors
+C00934,Triazole and tetrazole derivatives
+C00935,Triazole Derivatives
+C00936,Triazoles
+C00937,Chromans
+C00938,Cytochrome P-450 CYP2B6 Inducers
+C00939,Cytochrome P-450 CYP2B6 Inducers (strength unknown)
+C00940,Cytochrome P-450 CYP2C8 Inhibitors (moderate)
+C00941,Oral Hypoglycemics
+C00942,Thiazolidinediones
+C00943,UGT1A3 substrates
+C00944,UGT1A4 substrates
+C00945,UGT1A6 Inhibitors
+C00946,UGT1A6 substrate
+C00947,UGT1A9 Substrates
+C00948,UGT2B7 substrates
+C00949,Acetamides
+C00950,Amides
+C00951,Neuraminidase Inhibitors
+C00952,Antiinfectives for Treatment of Acne
+C00953,Cytochrome P-450 CYP3A5 Inhibitors (moderate)
+C00954,Cytochrome P-450 CYP3A7 Substrates
+C00955,Erythromycin and similars
+C00956,Erythromycins
+C00957,Lactones
+C00958,Macrolide Antimicrobial
+C00959,Macrolides
+C00960,"Macrolides, Lincosamides and Streptogramins"
+C00961,Protein Synthesis Inhibitors
+C00962,Anorexigenic Agents & Respiratory and CNS Stimulants
+C00963,Caffeine and Caffeine Containing Products
+C00964,Phosphodiesterase Inhibitors
+C00965,Purinergic Agents
+C00966,Purinergic Antagonists
+C00967,Purinones
+C00968,Respiratory and CNS Stimulants
+C00969,Tricarboxylic Acids
+C00970,Xanthine derivatives
+C00971,Ammonium Compounds
+C00972,Choline Derivatives
+C00973,Cholinesterase substrates
+C00974,Neuromuscular Depolarizing Agents
+C00975,Neuromuscular Depolarizing Blockade
+C00976,Nitrogen Compounds
+C00977,Cytochrome P-450 CYP2C9 Inhibitors (weak)
+C00978,Drugs Used in Erectile Dysfunction
+C00979,Genitourinary Agents
+C00980,Phosphodiesterase 5 Inhibitors
+C00981,Piperazines
+C00982,Sulfonamides
+C00983,Sulfones
+C00984,Urological Agents
+C00985,Urologicals
+C00986,Vasodilating Agents
+C00987,"Antiarrhythmics, Class III"
+C00988,Cardiac Therapy
+C00989,Ethylamines
+C00990,Highest Risk QTc-Prolonging Agents
+C00991,OCT2 Substrates with a Narrow Therapeutic Index
+C00992,Potassium Channel Blockers
+C00993,Antibiotics for Pneumocystis Pneumonia
+C00994,Antimalarial diaminopyrimidines
+C00995,Antimalarials
+C00996,Antiparasitic Agents
+C00997,"Antiparasitic Products, Insecticides and Repellents"
+C00998,Antiprotozoals
+C00999,Cytochrome P-450 CYP2C8 Inhibitors (weak)
+C01000,Folic Acid Antagonists
+C01001,MATE 1 Inhibitors
+C01002,MATE 2 Inhibitors
+C01003,MATE inhibitors
+C01004,Adrenergic Uptake Inhibitors
+C01005,"Antiadrenergic Agents, Centrally Acting"
+C01006,Antipsychotic Agents
+C01007,Catecholamine-depleting Sympatholytic
+C01008,Cytochrome P-450 CYP3A5 Inducers
+C01009,Cytochrome P-450 CYP3A5 Inducers (strength unknown)
+C01010,Decreased Sympathetic Activity
+C01011,Indole Alkaloids
+C01012,Indoles
+C01013,Indolizidines
+C01014,Indolizines
+C01015,Organic Anion Transporting Polypeptide 2B1 Inhibitors
+C01016,P-glycoprotein inducers
+C01017,Secologanin Tryptamine Alkaloids
+C01018,Polyketides
+C01019,Cytochrome P-450 CYP2B6 Inhibitors (moderate)
+C01020,Cytochrome P-450 CYP2B6 Inhibitors (strong)
+C01021,Cytochrome P-450 CYP2C19 Inhibitors (moderate)
+C01022,Purinergic P2 Receptor Antagonists
+C01023,Purinergic P2Y Receptor Antagonists
+C01024,Thienopyridines
+C01025,"Acids, Carbocyclic"
+C01026,Aza Compounds
+C01027,Azabicyclo Compounds
+C01028,Diphenylacetic Acids
+C01029,Drugs for Functional Gastrointestinal Disorders
+C01030,Drugs for Urinary Frequency and Incontinence
+C01031,Parasympatholytics
+C01032,Phenylacetates
+C01033,Tropanes
+C01034,Adrenergic Agonists
+C01035,Adrenergic alpha-1 Receptor Agonists
+C01036,Adrenergic alpha-Agonists
+C01037,Adrenergic and Dopaminergic Agents
+C01038,Cardiac Stimulants Excl. Cardiac Glycosides
+C01039,Renin Inhibitors
+C01040,2-Pyridinylmethylsulfinylbenzimidazoles
+C01041,Acid Reducers
+C01042,Anti-Ulcer Agents
+C01043,Benzimidazoles
+C01044,Drugs for Acid Related Disorders
+C01045,Drugs for Peptic Ulcer and Gastro-Oesophageal Reflux Disease (Gord)
+C01046,Gastric Acid Lowering Agents
+C01047,Proton Pump Inhibitors
+C01048,Proton-pump Inhibitors
+C01049,Sulfoxides
+C01050,Diuretics
+C01051,High-Ceiling Diuretics
+C01052,Increased Diuresis at Loop of Henle
+C01053,Non Potassium Sparing Diuretics
+C01054,Ototoxic agents
+C01055,Sodium Potassium Chloride Symporter Inhibitors
+C01056,Benzofurans
+C01057,Cytochrome P-450 CYP1A2 Inhibitors (weak)
+C01058,Cytochrome P-450 CYP3A4 Inhibitors (weak)
+C01059,Monoamine Oxidase A Substrates
+C01060,Nitriles
+C01061,Propylamines
+C01062,Antimigraine Preparations
+C01063,Cytochrome P-450 CYP2A6 Inducers
+C01064,Selective Serotonin 5-HT1 Receptor Agonists
+C01065,Selective Serotonin Agonists
+C01066,Serotonin 1b Receptor Agonists
+C01067,Serotonin 1d Receptor Agonists
+C01068,Serotonin 5-HT1 Receptor Agonists
+C01069,Serotonin Receptor Agonists
+C01070,Serotonin-1b and Serotonin-1d Receptor Agonist
+C01071,Triptans
+C01072,Adrenergic alpha-2 Receptor Agonists
+C01073,"Antiadrenergic Agents, Peripherally Acting"
+C01074,Guanidine Derivatives
+C01075,4-Quinolones
+C01076,Fluoroquinolone Antibacterial
+C01077,Fluoroquinolones
+C01078,Quinolines
+C01079,Quinolone Antimicrobial
+C01080,Quinolones
+C01081,Topoisomerase II Inhibitors
+C01082,Topoisomerase Inhibitors
+C01083,Mydriatics
+C01084,"Synthetic Anticholinergics, Quaternary Ammonium Compounds"
+C01085,Cytochrome P-450 CYP2C19 Inducers
+C01086,Cytochrome P-450 CYP2C19 Inducers (strength unknown)
+C01087,Cytochrome P-450 CYP2C9 Inducers (strength unknown)
+C01088,Cytochrome P-450 CYP3A4 Inhibitors (strong)
+C01089,Cytochrome P-450 CYP3A5 Inhibitors (strong)
+C01090,Cytochrome P-450 CYP3A7 Inhibitors (strong)
+C01091,HIV Protease Inhibitors
+C01092,Isoquinolines
+C01093,UGT1A1 Inducers
+C01094,Viral Protease Inhibitors
+C01095,Adrenergic beta-2 Receptor Agonists
+C01096,Adrenergic beta-Agonists
+C01097,Adrenergics for Systemic Use
+C01098,"Adrenergics, Inhalants"
+C01099,Bronchodilator Agents
+C01100,Selective Beta 2-adrenergic Agonists
+C01101,Insulin Secretagogues
+C01102,Sulfonylureas
+C01103,"Corticosteroids, Dermatological Preparations"
+C01104,"Corticosteroids, Potent (Group III)"
+C01105,Pregnadienetriols
+C01106,Cytochrome P-450 CYP3A7 Inhibitors (weak)
+C01107,Contrast Media
+C01108,Coordination Complexes
+C01109,Diagnostic Uses of Chemicals
+C01110,"Injections, Intravenous"
+C01111,Magnetic Resonance Contrast Activity
+C01112,Magnetic Resonance Imaging Contrast Media
+C01113,Other Diagnostics
+C01114,Paramagnetic Contrast Agent
+C01115,Paramagnetic Contrast Media
+C01116,Anesthetics
+C01117,"Anesthetics, General"
+C01118,"Anesthetics, Inhalation"
+C01119,Ethers
+C01120,Methyl Ethers
+C01121,beta-Lactams
+C01122,Cephalosporins
+C01123,Lactams
+C01124,Second-Generation Cephalosporins
+C01125,Thiazines
+C01126,Gabapentinoids
+C01127,Miscellaneous Anticonvulsants
+C01128,Benzothiadiazines
+C01129,Increased Diuresis
+C01130,Sodium Chloride Symporter Inhibitors
+C01131,Thiazides
+C01132,Aminobenzoates
+C01133,Aminosalicylic Acid and Derivatives
+C01134,Aminosalicylic Acids
+C01135,Benzoates
+C01136,Hydroxybenzoates
+C01137,para-Aminobenzoates
+C01138,Salicylates
+C01139,Morpholines
+C01140,Oxazines
+C01141,Aminopyridines
+C01142,Cardiotonic Agents
+C01143,Phosphodiesterase 3 Inhibitors
+C01144,Alkylating Drugs
+C01145,"Antineoplastic Agents, Alkylating"
+C01146,Barbiturates
+C01147,Nicotinic Antagonists
+C01148,Pyrimidinones
+C01149,Antivirals used in combination for the treatment of HIV infections
+C01150,Cytochrome P-450 CYP2B6 Inducers (strong)
+C01151,Cytochrome P-450 CYP3A4 Inducers (weak)
+C01152,Human Immunodeficiency Virus 1 Non-Nucleoside Analog Reverse Transcriptase Inhibitor
+C01153,Inducers of Drug Clearance
+C01154,Non-Nucleoside Reverse Transcriptase Inhibitors
+C01155,Nonnucleoside Reverse Transcriptase Inhibitors
+C01156,Nucleic Acid Synthesis Inhibitors
+C01157,Reverse Transcriptase Inhibitors
+C01158,Imidazole Derivatives
+C01159,"Corticosteroids, Moderately Potent (Group II)"
+C01160,2-Chloroadenosine
+C01161,Deoxyadenosines
+C01162,Deoxyribonucleosides
+C01163,Purine Analogues
+C01164,Purine Antimetabolite
+C01165,Antianginal Agents
+C01166,Miscellaneous Cardiac Drugs
+C01167,Sodium Channel Blockers
+C01168,Aminosalicylate
+C01169,Intestinal Antiinflammatory Agents
+C01170,Ethers of Tropine or Tropine Derivatives
+C01171,Histamine Antagonists
+C01172,Histamine H1 Antagonists
+C01173,Histamine Receptor Antagonists
+C01174,Adrenergic alpha-1 Receptor Antagonists
+C01175,Adrenergic alpha-Antagonists
+C01176,Antipsychotic Agents (Second Generation [Atypical])
+C01177,Dopamine Antagonists
+C01178,Dopamine D2 Receptor Antagonists
+C01179,Indole Derivatives
+C01180,Serotonin 5-HT1 Receptor Antagonists
+C01181,Serotonin 5-HT1D Receptor Antagonists
+C01182,Serotonin 5-HT2A Receptor Antagonists
+C01183,Ergolines
+C01184,Ergot Alkaloids and Derivatives
+C01185,Lysergic Acid
+C01186,Dopamine Agonists
+C01187,Ergot-derivative Dopamine Receptor Agonists
+C01188,Prolactine Inhibitors
+C01189,Serotonin 5-HT2 Receptor Agonists
+C01190,Deoxyuridine
+C01191,Nucleoside Analog Antiviral
+C01192,Pyrimidine Nucleosides
+C01193,Cytochrome P-450 CYP2C18 Substrates
+C01194,Drugs for Treatment of Lepra
+C01195,Leprostatic Agents
+C01196,Miscellaneous Antimycobacterials
+C01197,Miscellaneous Local Anti-infectives
+C01198,Antifungal Agents (Vaginal)
+C01199,Anti-epileptic Agent
+C01200,COMT Substrates
+C01201,Cytochrome P-450 CYP2A6 Substrates with a Narrow Therapeutic Index
+C01202,Cytochrome P-450 CYP2B6 Substrates with a Narrow Therapeutic Index
+C01203,Cytochrome P-450 CYP2C18 Substrates with a Narrow Therapeutic Index
+C01204,Cytochrome P-450 CYP2C19 Inducers (moderate)
+C01205,Cytochrome P-450 CYP2C8 Inducers
+C01206,Cytochrome P-450 CYP2C8 Inducers (strong)
+C01207,Cytochrome P-450 CYP2C8 Substrates with a Narrow Therapeutic Index
+C01208,Cytochrome P-450 CYP2E1 Substrates with a Narrow Therapeutic Index
+C01209,Cytochrome P-450 CYP3A Inducers (strong)
+C01210,Cytochrome P-450 CYP3A4 Inducers (strong)
+C01211,Cytochrome P-450 CYP3A7 Inducers
+C01212,Cytochrome P-450 CYP3A7 Inducers (weak)
+C01213,Cytochrome P-450 CYP3A7 Substrates with a Narrow Therapeutic Index
+C01214,Decreased Central Nervous System Disorganized Electrical Activity
+C01215,Enzyme Inducing Antiepileptic Drugs
+C01216,Hydantoins
+C01217,Imidazolidines
+C01218,Phenytoin and Prodrugs
+C01219,Thyroxine-binding globulin substrates
+C01220,UGT1A1 Substrates with a Narrow Therapeutic Index
+C01221,UGT1A6 Substrates with a Narrow Therapeutic Index
+C01222,UGT1A9 Inhibitors
+C01223,UGT1A9 Substrates with a Narrow Therapeutic Index
+C01224,Voltage-Gated Sodium Channel Blockers
+C01225,Glucocorticoids
+C01226,Pregnenes
+C01227,Antiinfectives and Antiseptics for Local Oral Treatment
+C01228,Naphthacenes
+C01229,Tetracyclines
+C01230,Benzylidene Compounds
+C01231,Carcinogens
+C01232,"Contraceptive Agents, Female"
+C01233,"Contraceptive Agents, Male"
+C01234,"Contraceptives, Postcoital"
+C01235,Cytochrome P-450 CYP2E1 Inhibitors (strong)
+C01236,Estrogen Contraceptives
+C01237,Estrogens
+C01238,"Estrogens, Non-Steroidal"
+C01239,Hormonal Contraceptives for Systemic Use
+C01240,Stilbenes
+C01241,Stilbestrols
+C01242,"Synthetic Estrogens, Plain"
+C01243,Thyroxine-binding globulin inducers
+C01244,Cytochrome P-450 CYP2A6 Inhibitors (strong)
+C01245,Cytochrome P-450 CYP2C8 Inhibitors (strong)
+C01246,Cytochrome P-450 CYP2E1 Inhibitors (moderate)
+C01247,Cytochrome P-450 CYP3A7 Inducers (strong)
+C01248,OATP1B3 inducers
+C01249,Arylsulfonates
+C01250,Arylsulfonic Acids
+C01251,Calcium Salts
+C01252,Chelating Agents
+C01253,Drugs for Treatment of Hyperkalemia and Hyperphosphatemia
+C01254,Minerals
+C01255,Phosphate Binder
+C01256,Phosphate-removing Agents
+C01257,Sequestering Agents
+C01258,Sulfonic Acids
+C01259,Sulfur Acids
+C01260,Aniline Compounds
+C01261,Benzenesulfonamides
+C01262,Short-Acting Antibacterial Sulfonamides
+C01263,Sulfanilamides
+C01264,Sulfonamide Antibacterial
+C01265,Sulfonamides and trimethoprim
+C01266,"Anti-Infective Agents, Urinary"
+C01267,"Antibiotics, Antitubercular"
+C01268,Isoxazoles
+C01269,Oxazoles
+C01270,Oxazolidinones
+C01271,Decreased Platelet Production
+C01272,Platelet-reducing Agents
+C01273,Thrombocytosis
+C01274,Alkylating Activity
+C01275,Nitroso Compounds
+C01276,Nitrosourea Compounds
+C01277,Nitrosoureas
+C01278,Beta blocking agents and calcium channel blockers
+C01279,Beta Blocking Agents and Thiazides
+C01280,"Beta Blocking Agents, Selective, and Thiazides"
+C01281,Agrochemicals
+C01282,Antipruritics
+C01283,Pesticides
+C01284,Scabicides and Pediculicides
+C01285,4-Hydroxycoumarins
+C01286,Coumarins
+C01287,Uncoupling Agents
+C01288,Vitamin K Antagonists
+C01289,Otologicals
+C01290,Third-Generation Cephalosporins
+C01291,Anti-Parkinson Agents (Dopamine Agonist)
+C01292,Nonergot-derivative Dopamine Receptor Agonists
+C01293,"Natural and Semisynthetic Estrogens, Plain"
+C01294,Calcium Channel Blockers
+C01295,Calcium Channel Blockers (Dihydropyridine)
+C01296,Dihydropyridine Derivatives
+C01297,Dihydropyridines
+C01298,Selective Calcium Channel Blockers With Mainly Vascular Effects
+C01299,Iodinated Contrast Agents
+C01300,Iodobenzoates
+C01301,Radiographic Contrast Agent
+C01302,Roentgenography
+C01303,Sugar Alcohols
+C01304,Triiodobenzoic Acids
+C01305,"Watersoluble, Nephrotropic, High Osmolar X-Ray Contrast Media"
+C01306,X-Ray Contrast Activity
+C01307,"X-Ray Contrast Media, Iodinated"
+C01308,Histamine Agents
+C01309,Histamine Agonists
+C01310,Pyrazoles
+C01311,Hexoses
+C01312,Ketoses
+C01313,Monosaccharides
+C01314,Neuroprotective Agents
+C01315,Cephamycins
+C01316,Tetrazoles
+C01317,Acridines
+C01318,Aminoacridines
+C01319,Intercalating Agents
+C01320,Purinergic P1 Receptor Antagonists
+C01321,Respiratory Smooth Muscle Relaxants
+C01322,Xanthines and Adrenergics
+C01323,Piperidines
+C01324,l-Triiodothyronine
+C01325,Thyronines
+C01326,Triiodothyronine
+C01327,"Antiarrhythmics, Class I"
+C01328,"Antiarrhythmics, Class Ia"
+C01329,Negative Inotrope
+C01330,Agents for Treatment of Hemorrhoids and Anal Fissures for Topical Use
+C01331,Analgesics and Anesthetics
+C01332,Anesthetics for Topical Use
+C01333,"Anesthetics, Local"
+C01334,Anilides
+C01335,"Antiarrhythmics, Class Ib"
+C01336,Antipruritics and Local Anesthetics
+C01337,"Antipruritics, Incl. Antihistamines, Anesthetics, Etc."
+C01338,Local Anesthesia
+C01339,Local Anesthetics (Amide)
+C01340,Neuraxial Anesthetics
+C01341,Vasoprotectives
+C01342,Bisphosphonates
+C01343,Organophosphonates
+C01344,Organophosphorus Compounds
+C01345,Aminoalkyl Ethers
+C01346,Antihistamines for Systemic Use
+C01347,Antihistamines for Topical Use
+C01348,Pyrrolidines
+C01349,Glycoside Hydrolase Inhibitors
+C01350,Trisaccharides
+C01351,BCRP/ABCG2 Inducers
+C01352,Hexanols
+C01353,Norepinephrine Uptake Inhibitors
+C01354,Serotonin and Noradrenaline Reuptake Inhibitors
+C01355,Estradiol Congeners
+C01356,"Estrogens, Conjugated (USP)"
+C01357,Gonadal Hormones
+C01358,Gonadal Steroid Hormones
+C01359,Inflammation Mediators
+C01360,Ophthalmics
+C01361,Prostaglandin analogs reducing intraocular pressure (IOP)
+C01362,Prostaglandins
+C01363,"Prostaglandins F, Synthetic"
+C01364,"Prostaglandins, Synthetic"
+C01365,Miscellaneous Central Nervous System Agents
+C01366,Norepinephrine Reuptake Inhibitor
+C01367,"Antibiotics, Antineoplastic"
+C01368,Cytoprotective Agent
+C01369,Cytotoxic Antibiotics and Related Substances
+C01370,Glycopeptides
+C01371,"Hydrocarbons, Halogenated"
+C01372,Mustard Compounds
+C01373,Nitrogen Mustard Analogues
+C01374,Nitrogen Mustard Compounds
+C01375,"Anesthetics, Intravenous"
+C01376,Folic Acid Analogues
+C01377,"Thymidylate Synthase, antagonists & inhibitors"
+C01378,Combination Contraceptives (with Estrogen and derivatives)
+C01379,"Contraceptive Agents, Hormonal"
+C01380,Intravaginal Contraceptives
+C01381,Norpregnanes
+C01382,Norpregnenes
+C01383,Norsteroids
+C01384,Progesterone Congeners
+C01385,Progestins
+C01386,High-risk opioids
+C01387,Natural Opium Alkaloids
+C01388,Opiate Alkaloids
+C01389,Phenanthrenes
+C01390,Herpesvirus Nucleoside Analog DNA Polymerase Inhibitor
+C01391,Hepatitis B Virus Nucleoside Analog Reverse Transcriptase Inhibitor
+C01392,Human Immunodeficiency Virus Nucleoside Analog Reverse Transcriptase Inhibitor
+C01393,Nucleoside and Nucleotide Reverse Transcriptase Inhibitors
+C01394,Tenofovir and prodrugs
+C01395,Beta-Lactam Antibacterials
+C01396,Beta-Lactamase Resistant Penicillins
+C01397,Penicillins
+C01398,Cyclohexanecarboxylic Acids
+C01399,Decreased Fibrinolysis
+C01400,Carbapenems
+C01401,Penem Antibacterial
+C01402,"Contraceptives, Oral"
+C01403,"Contraceptives, Oral, Hormonal"
+C01404,"Contraceptives, Oral, Synthetic"
+C01405,Progestin Contraceptives
+C01406,"Progestogens and Estrogens, Sequential Preparations"
+C01407,Azirines
+C01408,Cross-Linking Reagents
+C01409,Indolequinones
+C01410,Mitomycins
+C01411,"Barbiturates, Plain"
+C01412,Cytochrome P-450 CYP3A4 Inducers (moderate)
+C01413,Retinoids for cancer treatment
+C01414,Tetrahydronaphthalenes
+C01415,Antimitotic Agents
+C01416,"Antineoplastic Agents, Phytogenic"
+C01417,Mitosis Modulators
+C01418,Tubulin Modulators
+C01419,Vinca Alkaloids
+C01420,Benzophenones
+C01421,Imides
+C01422,Isoindoles
+C01423,Ketones
+C01424,Low-Ceiling Diuretics and Potassium-Sparing Agents
+C01425,"Low-Ceiling Diuretics, Excl. Thiazides"
+C01426,Phthalimides
+C01427,Thiazide-like Diuretic
+C01428,Benzothiazoles
+C01429,Carbonic Anhydrase Inhibitors
+C01430,"Adjuvants, Anesthesia"
+C01431,Cytochrome P-450 CYP2A6 Inducers (strong)
+C01432,Antimanic Agents
+C01433,Fatty Acid Derivatives
+C01434,Histone Deacetylase Inhibitors
+C01435,Mood Stabilizer
+C01436,OAT3/SLC22A8 Substrates with a Narrow Therapeutic Index
+C01437,Pentanoic Acids
+C01438,UGT1A3 Substrates with a Narrow Therapeutic Index
+C01439,UGT2B7 Substrates with a Narrow Therapeutic Index
+C01440,Valerates
+C01441,Aminoglycoside Antibacterials
+C01442,Drugs that are Mainly Renally Excreted with a Narrow Therapeutic Index
+C01443,Acetaminophen and Prodrugs
+C01444,Antipyretics
+C01445,Miscellaneous Analgesics and Antipyretics
+C01446,Epidermal growth factor receptor (EGFR) tyrosine kinase inhibitors
+C01447,Kinase Inhibitor
+C01448,Protein Kinase Inhibitors
+C01449,Quinazolines
+C01450,Tyrosine Kinase Inhibitors
+C01451,Antitussive Agents
+C01452,Morphinans
+C01453,Morphine Derivatives
+C01454,Opium Alkaloids and Derivatives
+C01455,Extended-spectrum Penicillins
+C01456,Penicillin G
+C01457,Penicillins With Extended Spectrum
+C01458,Ergotamine Derivative
+C01459,Ergotamines
+C01460,Sympatholytic (Adrenergic Blocking) Agents
+C01461,"Antidepressive Agents, Tricyclic"
+C01462,Non-Selective Monoamine Reuptake Inhibitors
+C01463,Tertiary amine tricyclic antidepressants
+C01464,Tricyclics and Other Norepinephrine-reuptake Inhibitors
+C01465,Pyrimidine Analogues
+C01466,COMT Inhibitors
+C01467,Nitro Compounds
+C01468,Nitrophenols
+C01469,Pregnadienediols
+C01470,"Arteriolar Smooth Muscle, Agents Acting On"
+C01471,Cyanides
+C01472,Direct Vasodilators
+C01473,Ferric Compounds
+C01474,Ferricyanides
+C01475,Iron Compounds
+C01476,Nitrates and Nitrites
+C01477,Nitric Oxide Donors
+C01478,Nitroferricyanide Derivatives
+C01479,Vasodilation
+C01480,Mineral Supplements
+C01481,Semi-synthetic Opioids
+C01482,Acetic Acid Derivatives and Related Substances
+C01483,Antiinflammatory and Antirheumatic Products
+C01484,"Antiinflammatory and Antirheumatic Products, Non-Steroids"
+C01485,"Antiinflammatory Preparations, Non-Steroids for Topical Use"
+C01486,Other Nonsteroidal Anti-inflammatory Agents
+C01487,Tocolytic Agents
+C01488,Topical Products for Joint and Muscular Pain
+C01489,UGT2B7 Inhibitors
+C01490,Diamines
+C01491,Ethylenediamines
+C01492,Biguanides
+C01493,MATE 1 Substrates
+C01494,MATE 2 Substrates
+C01495,MATE substrates
+C01496,Antimuscarinics Antispasmodics
+C01497,Atropine Derivatives
+C01498,Belladonna Alkaloids
+C01499,Diphenylpropylamine Derivatives
+C01500,Drugs Used in Opioid Dependence
+C01501,"Diazepines, Oxazepines, Thiazepines and Oxepines"
+C01502,Histamine H2 Antagonists
+C01503,QTc shortening agents
+C01504,Agents Against Leishmaniasis and Trypanosomiasis
+C01505,Antiseptics and Disinfectants
+C01506,Furans
+C01507,Medicated Dressings
+C01508,Medicated Dressings With Antiinfectives
+C01509,Nitrofuran Derivatives
+C01510,Nitrofurans
+C01511,"Agents for Dermatitis, Excluding Corticosteroids"
+C01512,mTOR Inhibitors
+C01513,"Peptidylprolyl Isomerase, antagonists & inhibitors"
+C01514,Tertiary Amines
+C01515,Xanthenes
+C01516,Decongestants and Antiallergics
+C01517,"Histamine H1 Antagonists, Non-Sedating"
+C01518,Piperazine Derivatives
+C01519,Benzhydryl Compounds
+C01520,Benzothiazepine Derivatives
+C01521,Calcium Channel Blockers (Nondihydropyridine)
+C01522,Miscellaneous Calcium-channel Blocking Agents
+C01523,Selective Calcium Channel Blockers With Direct Cardiac Effects
+C01524,Benzocycloheptenes
+C01525,Dibenzocycloheptenes
+C01526,Aminohippuric Acids
+C01527,Benzamides and benzamide derivatives
+C01528,Hippurates
+C01529,Tests for Renal Function and Ureteral Injuries
+C01530,Drugs Used in Benign Prostatic Hypertrophy
+C01531,Peripheral alpha-1 blockers
+C01532,Prostatic Hyperplasia
+C01533,Selective Alfa-1-adrenergic Blocking Agents
+C01534,Oxazolidine Derivatives
+C01535,4-Hydroxyphenyl-Pyruvate Dioxygenase Inhibitor
+C01536,"4-Hydroxyphenylpyruvate Dioxygenase, antagonists & inhibitors"
+C01537,Hydroxyphenylpyruvate Dioxygenase Inhibitors
+C01538,GABA-A Receptor Agonists
+C01539,UGT1A4 Inhibitors
+C01540,Arteriolar Vasodilation
+C01541,Arteriolar Vasodilator
+C01542,Potassium Channel Opener
+C01543,Pyrimidine Derivatives
+C01544,Appetite Stimulants
+C01545,Megestrol
+C01546,Pregnadien Derivatives
+C01547,Thiopurine Analogs
+C01548,Ergonovine
+C01549,Monobactam Antibacterial
+C01550,Monobactams
+C01551,Benzoxazoles and derivatives
+C01552,Centrally-mediated Muscle Relaxation
+C01553,"Oxazol, Thiazine, and Triazine Derivatives"
+C01554,Aromatase Inhibitors
+C01555,Estrogen Antagonists
+C01556,Piperidones
+C01557,Aminoquinolines
+C01558,Antimalarial methanolquinolines
+C01559,Coccidiostats
+C01560,Intermediate-Acting Antibacterial Sulfonamides
+C01561,Nitric Oxide Synthase
+C01562,Phenylalanine Hydroxylase Activator
+C01563,Phenylalanine Hydroxylase Activators
+C01564,Echinocandin Antifungal
+C01565,Echinocandins
+C01566,Dibenzazepines
+C01567,GABA Antagonists
+C01568,Serotonin 5-HT1A Receptor Antagonists
+C01569,Aluminium Compounds
+C01570,Aluminum Complex
+C01571,Gastric Cytoprotectants
+C01572,Metal cations
+C01573,Metal divalent cations
+C01574,Protectants
+C01575,Thioglycosides
+C01576,Ethanolamine Derivatives
+C01577,Inhibit Ovum Fertilization
+C01578,Progestin-containing Intrauterine Device
+C01579,Adrenergic beta-1 Receptor Agonists
+C01580,Adrenergic beta-3 Receptor Agonists
+C01581,Alpha-and Beta-adrenergic Agonists
+C01582,Epinephrine and similars
+C01583,"Norepinephrine, antagonists & inhibitors"
+C01584,Cytomegalovirus Nucleoside Analog DNA Polymerase Inhibitor
+C01585,Cytosine
+C01586,Nucleosides and Nucleotides
+C01587,Adrenergic alpha-2 Receptor Antagonists
+C01588,"Antidepressive Agents, Tetracyclic"
+C01589,Serotonin 5-HT3 Receptor Antagonists
+C01590,Carbamates
+C01591,Phenothiazine Derivatives
+C01592,Phenothiazines
+C01593,"Beta Blocking Agents, Non-Selective"
+C01594,"Beta Blocking Agents, Non-Selective, and Thiazides"
+C01595,"EENT Drugs, Miscellaneous"
+C01596,Thiadiazoles
+C01597,Prostacyclin Analogues
+C01598,Prostacycline Vasodilator
+C01599,Prostaglandins I
+C01600,Anion Exchange Resins
+C01601,Bile Acid Sequestrants
+C01602,Bile-acid Binding Activity
+C01603,Non-statin Hypolipidemic Agents Indicated for Hyperlipidemia
+C01604,Antiemetic Serotonin 5-HT3 Receptor Antagonists
+C01605,Antiemetics and Antinauseants
+C01606,Quinuclidines
+C01607,Serotonin 3 Receptor Antagonists
+C01608,Phenyl Ethers
+C01609,Diketopiperazines
+C01610,Calcium Channel Blockers and Diuretics
+C01611,Anti-Dementia Drugs
+C01612,"Synthetic Anticholinergics, Esters With Tertiary Amino Group"
+C01613,Decreased Renal K+ Excretion
+C01614,Epithelial Sodium Channel Blockers
+C01615,Potassium-Sparing Diuretics
+C01616,Anthracycline Topoisomerase Inhibitor
+C01617,Anthracyclines
+C01618,Anthracyclines and Related Substances
+C01619,Mydriatics and Cycloplegics
+C01620,Nasal Decongestants
+C01621,Nasal Decongestants for Systemic Use
+C01622,Sympathomimetic (Adrenergic) Agents
+C01623,Sympathomimetics Excl. Antiglaucoma Preparations
+C01624,Sympathomimetics Used as Decongestants
+C01625,"Sympathomimetics, Plain"
+C01626,Antithyroid agents
+C01627,Sulfur-Containing Imidazole Derivatives
+C01628,Cardanolides
+C01629,Cardenolides
+C01630,Cardiac Glycosides
+C01631,Digitalis Glycosides
+C01632,Digoxin and derivatives
+C01633,"Digoxin, antagonists & inhibitors"
+C01634,"Digoxin, immunology"
+C01635,Nicotinic Acids
+C01636,"Antidiarrheals, Intestinal Antiinflammatory/antiinfective Agents"
+C01637,Corticosteroids Acting Locally
+C01638,"Steroids, Chlorinated"
+C01639,Carbamic Acid Esters
+C01640,Corpus Luteum Hormones
+C01641,Pregnenediones
+C01642,Progesterone and Derivatives
+C01643,"Progesterone, antagonists & inhibitors"
+C01644,Phenylurea Compounds
+C01645,Antifungals for Systemic Use
+C01646,Decreased Mitosis
+C01647,Microtubule Inhibition
+C01648,Tubulin Inhibiting Agent
+C01649,Decreased Blood Pressure
+C01650,Hypnotics (Nonbenzodiazepine)
+C01651,Miscellaneous Anxiolytics Sedatives and Hypnotics
+C01652,Zopiclone and prodrugs
+C01653,Tests for Bile Duct Patency
+C01654,Triazolobenzodiazepines
+C01655,Substituted Alkylamines
+C01656,Miscellaneous Antifungals
+C01657,Glycosaminoglycans
+C01658,Heparin (Low Molecular Weight)
+C01659,Heparin and similars
+C01660,Antipsychotic Agents (First Generation [Typical])
+C01661,Dibenzoxazepines
+C01662,Miscellaneous Antipsychotics
+C01663,Bromobenzoates
+C01664,Antibiotics for Topical Use
+C01665,Epoxy Compounds
+C01666,"Ethers, Cyclic"
+C01667,RNA Synthetase Inhibitor Antibacterial
+C01668,RNA Synthetase Inhibitors
+C01669,Choline Esters
+C01670,Miotics
+C01671,Parasympathomemetic (Cholinergic) Agents
+C01672,Peroxisome Proliferator Receptor gamma Agonist
+C01673,Peroxisome Proliferator-activated Receptor Activity
+C01674,Restless Legs Syndrome
+C01675,Aminopenicillins
+C01676,Benzylisoquinolines
+C01677,Neuromuscular-Blocking Agents (Nondepolarizing)
+C01678,Tetrahydroisoquinolines
+C01679,Beta-Lactamase Sensitive Penicillins
+C01680,Natural Penicillins
+C01681,Adjuvants
+C01682,Enzyme Stabilizer
+C01683,Glucosylceramide Synthase Inhibitor
+C01684,Glucosylceramide Synthase Inhibitors
+C01685,Imines
+C01686,Imino Pyranoses
+C01687,Imino Sugars
+C01688,Phenothiazines With Aliphatic Side-Chain
+C01689,Mineralocorticoid (Aldosterone) Receptor Antagonists
+C01690,Mineralocorticoid Receptor Antagonists
+C01691,Methylphenidate and isomer
+C01692,Phenylcarbamates
+C01693,"Belladonna Alkaloids, Tertiary Amines"
+C01694,"Belladonna and Derivatives, Plain"
+C01695,Central Nervous System Depression
+C01696,gamma-Aminobutyric Acid A Receptor Positive Modulator
+C01697,"Sleep Aids, Pharmaceutical"
+C01698,Herpes Simplex Virus Nucleoside Analog DNA Polymerase Inhibitor
+C01699,Abortifacient Agents
+C01700,"Abortifacient Agents, Nonsteroidal"
+C01701,Pharmaceutical Preparations
+C01702,Propylene Glycols
+C01703,Chlorine Containing Products
+C01704,"Ectoparasiticides, Incl. Scabicides"
+C01705,"Ectoparasiticides, Incl. Scabicides, Insecticides and Repellents"
+C01706,"Hydrocarbons, Chlorinated"
+C01707,Insecticides
+C01708,Nucleoside Metabolic Inhibitor
+C01709,Phenothiazines With Piperazine Structure
+C01710,Schizophrenia
+C01711,Miscellaneous Derivatives
+C01712,Endothelium-Dependent Relaxing Factors
+C01713,Free Radical Scavengers
+C01714,Free Radicals
+C01715,Gases
+C01716,Gasotransmitters
+C01717,Nitrogen Oxides
+C01718,Oxides
+C01719,Oxygen Compounds
+C01720,Reactive Nitrogen Species
+C01721,Preparations Inhibiting Uric Acid Production
+C01722,Uricosuric Agents
+C01723,Xanthine Oxidase Inhibitors
+C01724,beta Lactam Antibiotics
+C01725,Renal Agents
+C01726,Trimethoprim and Derivatives
+C01727,Cytidine Deaminase Substrates
+C01728,Deoxycytidine
+C01729,"Ribonucleotide Reductases, antagonists & inhibitors"
+C01730,Hepatitis B virus
+C01731,Nucleoside Reverse Transcriptase Inhibitors
+C01732,"Corticosteroids for Systemic Use, Plain"
+C01733,Cytochrome P-450 CYP2C8 Inducers (strength unknown)
+C01734,Cytochrome P-450 CYP3A5 Inducers (weak)
+C01735,Ophthalmological and Otological Preparations
+C01736,Glucosides
+C01737,Podophyllotoxin Derivatives
+C01738,Amphenicols
+C01739,Nitrobenzenes
+C01740,Inhibition Gastric Acid Secretion
+C01741,Sympathomimetics in Glaucoma Therapy
+C01742,Butyrophenone Derivatives
+C01743,Butyrophenones
+C01744,Isonipecotic Acids
+C01745,Phenylpiperidine opioids
+C01746,Loratadine and derivatives
+C01747,First-Generation Cephalosporins
+C01748,Alpha-Adrenoreceptor Antagonists and Diuretics
+C01749,Antipsoriatics for Systemic Use
+C01750,Keratolytic Agents
+C01751,Retinoids for Treatment of Psoriasis
+C01752,Photoabsorption
+C01753,Photoenhancer
+C01754,Photosensitizing Activity
+C01755,Porphyrins
+C01756,Butanones
+C01757,COX-2 Inhibitors
+C01758,Selective Cyclooxygenase 2 Inhibitors (NSAIDs)
+C01759,Scopolamine Derivatives
+C01760,Barbiturates and Derivatives
+C01761,Alkanesulfonates
+C01762,Alkanesulfonic Acids
+C01763,Antivaricose Therapy
+C01764,Fatty Alcohols
+C01765,Pharmaceutical Solutions
+C01766,Sclerosing Agents for Local Injection
+C01767,Sclerosing Solutions
+C01768,Solutions
+C01769,Surface-Active Agents
+C01770,Convulsants
+C01771,GABA-A Receptor Antagonists
+C01772,Plant Extracts
+C01773,Plant Preparations
+C01774,Sesquiterpenes
+C01775,Stimulants
+C01776,Cinchona Alkaloids
+C01777,Herbs (Hypotensive Properties)
+C01778,Oxicams
+C01779,Cannabinoid Receptor Agonists
+C01780,Cannabinoids and similars
+C01781,Hallucinogens
+C01782,Miscellaneous Antiemetics
+C01783,Leukotriene Antagonists
+C01784,Leukotriene Modifiers
+C01785,Cytochrome P-450 CYP2D6 Inhibitors (strong)
+C01786,Cytosine Nucleotides
+C01787,Pyrimidine Nucleotides
+C01788,Adamantanes
+C01789,Bridged-Ring Compounds
+C01790,Cyclic Amines
+C01791,Influenza A M2 Protein Inhibitor
+C01792,M2 Protein Inhibitors
+C01793,Phthalic Acids
+C01794,Thalidomide Analog
+C01795,Estrogen Agonist-antagonists
+C01796,Estrogen Agonist/Antagonist
+C01797,Estrogen Receptor Modulators
+C01798,Selective Estrogen Receptor Modulators
+C01799,Cyclooxygenase-2 (COX-2) Inhibitors
+C01800,Quinoxalines
+C01801,Triazines
+C01802,Cardiac Rhythm Alteration
+C01803,Azaspirodecanedione Derivatives
+C01804,Spiro Compounds
+C01805,Phosphinic Acids
+C01806,Dideoxynucleosides
+C01807,Indans
+C01808,Indenes
+C01809,Androgen Receptor Antagonists
+C01810,Androgen Receptor Inhibitors
+C01811,Antiandrogens
+C01812,"Antiandrogens, non-steroidal"
+C01813,Chemically-Induced Disorders
+C01814,Antivirals for treatment of HCV infections
+C01815,Cytochrome P-450 CYP2B6 Inducers (weak)
+C01816,UDP Glucuronosyltransferases Inducers
+C01817,Opioid Antagonists
+C01818,Glycopeptide Antibacterials
+C01819,Intestinal Antiinfectives
+C01820,Aminocaproates
+C01821,Caproates
+C01822,Excitatory Amino Acid Agents
+C01823,Excitatory Amino Acid Antagonists
+C01824,Sigma-1 Agonist
+C01825,Sigma-1 Receptor Agonists
+C01826,UGT2B17 substrates
+C01827,Uncompetitive N-methyl-D-aspartate Receptor Antagonist
+C01828,Uncompetitive NMDA Receptor Antagonists
+C01829,Chlorine Compounds
+C01830,Platinum Compounds
+C01831,Aluminum Silicates
+C01832,Silicates
+C01833,Silicon Compounds
+C01834,Anthelmintics
+C01835,Anticestodal Agents
+C01836,Antihelminthic
+C01837,Antinematodal Agents
+C01838,Antiplatyhelmintic Agents
+C01839,Benzimidazole Derivatives
+C01840,Cytochrome P-450 CYP1A2 Inducers (strong)
+C01841,Pancreatic Function Tests
+C01842,Tests for Pancreatic Function
+C01843,Quinazolinones
+C01844,Thiocarbamates
+C01845,Cell-mediated Immunity
+C01846,Increased Histamine Release
+C01847,Standardized Chemical Allergen
+C01848,Chelating Activity
+C01849,Phosphonic Acid Derivatives
+C01850,Pyrophosphate Analog DNA Polymerase Inhibitor
+C01851,Mutagens
+C01852,Myeloablative Agonists
+C01853,Phosphoramide Mustards
+C01854,Phosphoramides
+C01855,Alkylmercury Compounds
+C01856,Organomercury Compounds
+C01857,Acetylcholine Releasing Agent
+C01858,Increased Acetylcholine Activity
+C01859,Gadolinium-based Contrast Agent
+C01860,Anti-Estrogens
+C01861,Fluoropyrimidines
+C01862,Fluorouracil and prodrugs
+C01863,Pyridinium Compounds
+C01864,Decreased Protein Synthesis
+C01865,Decreased Sebaceous Gland Activity
+C01866,Thiouracil
+C01867,Thiouracils
+C01868,Thyroid Hormone Synthesis Inhibitor
+C01869,Thyroid Hormone Synthesis Inhibitors
+C01870,Urease Inhibitor
+C01871,Urease Inhibitors
+C01872,Adenosine Deaminase Inhibitors
+C01873,Coformycin
+C01874,Formycins
+C01875,Coloring Agents
+C01876,Furocoumarins
+C01877,Photoactivated Radical Generator
+C01878,Photosensitizing Agents for Phototherapy
+C01879,Psoralens for Systemic Use
+C01880,Psoralens for Topical Use
+C01881,"Hydrocarbons, Fluorinated"
+C01882,Microspheres
+C01883,Ultrasound Contrast Activity
+C01884,Ultrasound Contrast Media
+C01885,Diphenylmethane Derivatives
+C01886,Neuraminic Acids
+C01887,Sialic Acids
+C01888,Antihypertensives for Pulmonary Arterial Hypertension
+C01889,Cytochrome P-450 CYP2C9 Inducers (moderate)
+C01890,Endothelin Receptor Antagonists
+C01891,Glycylcyclines
+C01892,Increased Medullary Respiratory Drive
+C01893,Pyrrolidinones
+C01894,Carboxamide Derivatives
+C01895,Cytochrome P-450 CYP3A5 Inducers (strong)
+C01896,UGT1A6 inducer
+C01897,Neuromuscular Nondepolarizing Blockade
+C01898,Lead Chelating Activity
+C01899,Lead Chelator
+C01900,Antivertigo Preparations
+C01901,Factor Xa Inhibitors
+C01902,Indirect factor Xa inhibitors
+C01903,Miscellaneous Anticoagulants
+C01904,Arylpropionic acid NSAIDS
+C01905,Phenylpropionates
+C01906,Propionates
+C01907,Central alpha-2 Adrenergic Agonist
+C01908,Central Alpha-agonists
+C01909,Imidazoline Receptor Agonists
+C01910,Imidazolines
+C01911,Sulfathiazoles
+C01912,Acyclovir and prodrug
+C01913,Herpes Zoster Virus Nucleoside Analog DNA Polymerase Inhibitor
+C01914,Prodrugs
+C01915,"Anorexigenic Agents & Respiratory and Cerebral Stimulants, Miscellaneous"
+C01916,Acidifying Activity
+C01917,Ammonia Detoxicants
+C01918,Drugs for Constipation
+C01919,Laxatives
+C01920,Osmotic Laxatives
+C01921,Stimulation Large Intestine Fluid/Electrolyte Secretion
+C01922,Carnitine Analog
+C01923,"Antimigraine Agents, Miscellaneous"
+C01924,Decreased Prostaglandin Production
+C01925,UDP Glucuronosyltransferases Inhibitors
+C01926,UGT2B17 Inhibitors
+C01927,Androstadienes
+C01928,Androstanes
+C01929,Androstenes
+C01930,Piperazine and Derivatives
+C01931,Succinimide Derivatives
+C01932,Succinimides
+C01933,Acid Sensing Ion Channel Blockers
+C01934,Elements
+C01935,Lanthanoid Series Elements
+C01936,Metals
+C01937,"Metals, Rare Earth"
+C01938,Alpha and Beta Blocking Agents
+C01939,Alpha and Beta Blocking Agents and Thiazides
+C01940,Salicylamides
+C01941,Thiobarbiturates
+C01942,"alpha-Galactosidase, antagonists & inhibitors"
+C01943,Depigmenting Agents
+C01944,Melanin Synthesis Inhibitors
+C01945,Monoamine Oxidase Inhibitors
+C01946,Oxazolidinone Antibacterial
+C01947,Avermectines
+C01948,Pediculicides
+C01949,Hydroxyprogesterones
+C01950,Pregnen (4) Derivatives
+C01951,Chlorobenzoates
+C01952,Propulsives
+C01953,"Receptors, AMPA"
+C01954,Amebicides
+C01955,Filaricides
+C01956,Fatty Acid Synthesis Inhibitors
+C01957,Isonicotinic Acids
+C01958,Thiocarbamide Derivatives
+C01959,Mixed Agonist / Antagonist Opioids
+C01960,Morphinan Derivatives
+C01961,Opiate Partial Agonists
+C01962,Opioid Agonist/Antagonist
+C01963,Antitrichomonal Agents
+C01964,Nitroimidazole Derivatives
+C01965,Cytochrome P-450 CYP2C8 Inducers (weak)
+C01966,"Lactams, Macrocyclic"
+C01967,Rifamycin Antimycobacterial
+C01968,Rifamycins
+C01969,"Neprilysin, antagonists & inhibitors"
+C01970,Bcr-Abl Tyrosine Kinase Inhibitors
+C01971,Corticosteroids for Local Oral Treatment
+C01972,Cytochrome P-450 CYP3A7 Inducers (strength unknown)
+C01973,"Protein-Lysine 6-Oxidase, antagonists & inhibitors"
+C01974,Anabolic Agents
+C01975,Anabolic Agents for Systemic Use
+C01976,Anabolic Steroids
+C01977,Androgens
+C01978,Androstan Derivatives
+C01979,Androstanols
+C01980,3-Oxoandrosten (4) Derivatives
+C01981,Androgens and Estrogens
+C01982,Androstenols
+C01983,OAT3/SLC22A8 Inducers
+C01984,Testosterone and derivatives
+C01985,Testosterone Congeners
+C01986,Cytochrome P-450 CYP3A5 Inducers (moderate)
+C01987,Cytochrome P-450 CYP3A7 Inducers (moderate)
+C01988,Bacitracins
+C01989,Decreased Cell Wall Synthesis & Repair
+C01990,Miscellaneous Antilipemic Agents
+C01991,Nicotinic Acid and Derivatives
+C01992,Peripheral Vasodilators
+C01993,Prednisolone and Prodrugs
+C01994,Clofibric Acid
+C01995,Fibric Acids
+C01996,Isobutyrates
+C01997,Biopolymers
+C01998,Dietary Carbohydrates
+C01999,Fructans
+C02000,Glucans
+C02001,Starch
+C02002,"Adenosine, antagonists & inhibitors"
+C02003,"Antiarrhythmics, Class V"
+C02004,Purinergic Agonists
+C02005,Purinergic P1 Receptor Agonists
+C02006,Cytochrome P-450 CYP2B6 Inhibitors (weak)
+C02007,"Gonadotropin-Releasing Hormone, agonists"
+C02008,"Gonadotropin-Releasing Hormone, antagonists & inhibitors"
+C02009,Tests for Fertility Disturbances
+C02010,Ionophores
+C02011,Polyene Antifungal
+C02012,Adrenal Cytotoxic Agents
+C02013,Folate Analog
+C02014,Formyltetrahydrofolates
+C02015,Tetrahydrofolates
+C02016,Benzomorphan Derivatives
+C02017,Benzomorphans
+C02018,Partial Opioid Agonist/Antagonist
+C02019,Electrolyte Solutions
+C02020,"Laxatives, magnesium containing"
+C02021,Magnesium Compounds
+C02022,Magnesium Salts
+C02023,Replacement Preparations
+C02024,Sulfates
+C02025,Sulfuric Acids
+C02026,Ophthalmic Solutions
+C02027,17-Ketosteroids
+C02028,Estranes
+C02029,Estrenes
+C02030,Ketosteroids
+C02031,"Antidepressive Agents, Triazolopyridine"
+C02032,Pyridones
+C02033,Serotonin antagonist and reuptake inhibitors (SARIs)
+C02034,"Antiadrenergic Agents, Ganglion-Blocking"
+C02035,Autonomic Ganglionic Blocker
+C02036,Decreased Autonomic Ganglionic Activity
+C02037,Norbornanes
+C02038,Secondary and Tertiary Amines
+C02039,Phosphate Chelating Activity
+C02040,Polystyrene Sulfonates
+C02041,Alcohol Deterrents
+C02042,Drugs Used in Alcohol Dependence
+C02043,Phenylalkylamine Derivatives
+C02044,Verapamil and analogues
+C02045,Emesis Suppression
+C02046,Long-Acting Antibacterial Sulfonamides
+C02047,Dental Agents
+C02048,Local Hemostatics
+C02049,Tryptamines
+C02050,Aprepitant and Prodrugs
+C02051,Neurokinin 1 Antagonists
+C02052,Neurokinin-1 Receptor Antagonists
+C02053,Substance P/Neurokinin-1 Receptor Antagonist
+C02054,Amaryllidaceae Alkaloids
+C02055,Acaricides
+C02056,Organofluorophosphonates
+C02057,Biphenyl Compounds
+C02058,Phenothiazines With Piperidine Structure
+C02059,"Antiarrhythmics, Class Ic"
+C02060,Biomimetic Materials
+C02061,Lipid-based Polyene Antifungal
+C02062,Liposomes
+C02063,"Membranes, Artificial"
+C02064,Rodenticides
+C02065,Vitamin K Inhibitors
+C02066,Nebramycin
+C02067,Heparinoids
+C02068,11-Hydroxycorticosteroids
+C02069,17-Hydroxycorticosteroids
+C02070,Hydroxycorticosteroids
+C02071,Mineralocorticoids
+C02072,Antimetabolite Immunosuppressant
+C02073,"IMP Dehydrogenase, antagonists & inhibitors"
+C02074,Mycophenolic Acid and Prodrugs
+C02075,Imidazoline Derivatives
+C02076,Non-selective Alfa-adrenergic Blocking Agents
+C02077,Colouring Agents
+C02078,Diagnostic Dye
+C02079,Fluoresceins
+C02080,Fluorescent Dyes
+C02081,Luminescent Agents
+C02082,Ocular Disorders
+C02083,High-Ceiling Diuretics and Potassium-Sparing Agents
+C02084,Nitrofuran Antibacterial
+C02085,Amprenavir and Prodrugs
+C02086,Dialysis Solutions
+C02087,Opiate Antagonists
+C02088,Hematoporphyrin Derivative
+C02089,Hematoporphyrins
+C02090,Sensitizers Used in Photodynamic/radiation Therapy
+C02091,Fentanyl and fentanyl analogues
+C02092,Opioid Anesthetics
+C02093,"Opioids, Anilidopiperidine"
+C02094,Aporphines
+C02095,Emetics
+C02096,"Antiallergic Agents, Excl. Corticosteroids"
+C02097,Decreased Histamine Release
+C02098,Mast Cell Stabilizers
+C02099,Estren Derivatives
+C02100,Esters of Aminobenzoic Acid
+C02101,Local Anesthetics (Ester)
+C02102,Immune Response Modifiers
+C02103,Increased Cytokine Activity
+C02104,Increased Cytokine Production
+C02105,Interferon Inducers
+C02106,Toll-Like Receptor Agonists
+C02107,"Belladonna Alkaloids, Semisynthetic, Quaternary Ammonium Compounds"
+C02108,Explosive Agents
+C02109,Nitrate Vasodilator
+C02110,Organic Nitrates
+C02111,Vasodilators Used in Cardiac Diseases
+C02112,Glinide
+C02113,Miscellaneous Skeletal Muscle Relaxants
+C02114,Cholinesterase Reactivators
+C02115,Enzyme Reactivators
+C02116,Allyl Compounds
+C02117,Allylamine Antifungal
+C02118,Benzamidines
+C02119,Miscellaneous Antiprotozoals
+C02120,Trypanocidal Agents
+C02121,"Corticosteroids, Weak (Group I)"
+C02122,Hydrocortisone and derivatives
+C02123,"Diuretics, Osmotic"
+C02124,i.v. Solutions
+C02125,Kidney Function
+C02126,Solutions Producing Osmotic Diuresis
+C02127,Decreased Leukotriene Production
+C02128,Sympathomimetic-like Agent
+C02129,Wakefulness-Promoting Agents
+C02130,Heavy Metal Antagonists
+C02131,Hydroxamic Acids
+C02132,Iron Chelating Activity
+C02133,Iron Chelating Agents
+C02134,Siderophores
+C02135,Indoleacetic Acids
+C02136,Histamine H1 Inhibitors
+C02137,"Monoamine Oxidase Inhibitors, Non-Selective"
+C02138,Cell Stimulants and Proliferants
+C02139,Chlorobenzenes
+C02140,Chlorophenols
+C02141,Phenol and Derivatives
+C02142,P2Y12 Platelet Inhibitor
+C02143,"Tetracycline, antagonists & inhibitors"
+C02144,Thienamycins
+C02145,Chlorides
+C02146,Hemodialysis Solution
+C02147,Potassium Compounds
+C02148,Potassium Salt
+C02149,Topoisomerase 1 (TOP1) inhibitors
+C02150,Topoisomerase I Inhibitors
+C02151,Catecholamine Synthesis Inhibitor
+C02152,Methyltyrosines
+C02153,Tyrosine Hydroxylase Inhibitors
+C02154,beta-Lactamase Inhibitors
+C02155,Antihistamine Drugs
+C02156,Dibenzoxepins
+C02157,"Fatty Acids, Monounsaturated"
+C02158,Genitourinary Arterial Vasodilation
+C02159,Miscellaneous Vasodilatating Agents
+C02160,Prostaglandin E1 Agonist
+C02161,Prostaglandin Receptor Agonists
+C02162,Prostaglandins E
+C02163,Venous Vasodilation
+C02164,Benzilates
+C02165,Decreased Parasympathetic Acetylcholine Activity
+C02166,Digestive/GI System Activity Alteration
+C02167,GI Motility Alteration
+C02168,Organophosphates
+C02169,Organothiophosphates
+C02170,Organothiophosphorus Compounds
+C02171,Podophyllotoxin
+C02172,Naphthyridines
+C02173,Antiandrogens and Estrogens
+C02174,"Estradiol, agonists"
+C02175,"Estrogens, agonists"
+C02176,Fenamates
+C02177,ortho-Aminobenzoates
+C02178,Cevanes
+C02179,Veratrum Alkaloids
+C02180,"Metalloendopeptidases, antagonists & inhibitors"
+C02181,Antiinflammatory Products for Vaginal Administration
+C02182,Naphthaleneacetic Acids
+C02183,Alkanes
+C02184,Butanes
+C02185,Ethylenediamine Derivatives
+C02186,Substituted Ethylene Diamines
+C02187,Phenobarbital and similars
+C02188,Gentamicins
+C02189,Teratogens
+C02190,Dopamine D1 Receptor Agonists
+C02191,Antimicrobial Cationic Peptides
+C02192,Antimicrobial Peptides
+C02193,Polymyxins
+C02194,Blood Viscosity Reducer
+C02195,Hematologic Activity Alteration
+C02196,Hemorrheologic Agents
+C02197,Purine Derivatives
+C02198,Radiation-Protective Agents
+C02199,Hydroxybenzoate Ethers
+C02200,Isomerism
+C02201,Butylpyrazolidines
+C02202,Pyrazolones
+C02203,Dodecanol
+C02204,Non-selective Beta-adrenergic Agonists
+C02205,Miscellaneous General Anesthetics
+C02206,Antiglaucoma Agents
+C02207,5-alpha Reductase Inhibitors
+C02208,Carbolines
+C02209,Acetyl Aldehyde Dehydrogenase Inhibitors
+C02210,Aldehyde Dehydrogenase Inhibitor
+C02211,Sulfur Containing Products
+C02212,Adenosine A2 Receptor Antagonists
+C02213,Basic Lotions and Liniments
+C02214,Herbs and Natural Products
+C02215,Other Analgesics
+C02216,Other Cold and Cough Preparations
+C02217,Polyene Antimicrobial
+C02218,"Abortifacient Agents, Steroidal"
+C02219,Luteolytic Agents
+C02220,Menstruation-Inducing Agents
+C02221,Progestational Hormone Receptor Antagonists
+C02222,Progesterone Receptor Modulators
+C02223,Progestin Antagonist
+C02224,Propylamine Derivatives
+C02225,Antidiarrheals
+C02226,Antipropulsives
+C02227,Artificial Tears
+C02228,Demulcent
+C02229,Demulcent Activity
+C02230,Selective Beta 1-adrenergic Agonists
+C02231,Phenazines
+C02232,Cystine Depleting Agents
+C02233,Cystine Disulfide Reduction
+C02234,Mercaptoethylamines
+C02235,Imidazothiazole Derivatives
+C02236,"Levamisole, analogs & derivatives"
+C02237,Triazenes
+C02238,Norepinephrine Releasing Agents
+C02239,Enkephalins
+C02240,Levulinic Acids
+C02241,Opioid Peptides
+C02242,Optical Imaging Agent
+C02243,Porphyrin Precursor
+C02244,Allylamines
+C02245,Penicillamine and Similar Agents
+C02246,Specific Antirheumatic Agents
+C02247,"Sympathomimetics, Labour Repressants"
+C02248,Decreased Tracheobronchial Stretch Receptor Activity
+C02249,Non-narcotic Antitussive
+C02250,"Intraocular Pressure, drug effects"
+C02251,Antidiuretic Hormone Receptor Antagonists
+C02252,Thioxanthene Derivatives
+C02253,Thioxanthenes
+C02254,Mammalian target of rapamycin (mTOR) kinase inhibitors
+C02255,mTOR Inhibitor Immunosuppressant
+C02256,Sirolimus and Prodrugs
+C02257,Biguanides and Amidines
+C02258,Decreased Cell Wall Integrity
+C02259,Disinfectants
+C02260,Household Products
+C02261,Miscellaneous Anti-infectives
+C02262,Mouthwashes
+C02263,Mouthwashes and Gargles
+C02264,Clomiphene
+C02265,"Ovulation Stimulants, Synthetic"
+C02266,Azepines
+C02267,Thiepins
+C02268,Vasopeptidase Inhibitors
+C02269,meta-Aminobenzoates
+C02270,Irritants
+C02271,Poisons
+C02272,Indazoles
+C02273,Bibenzyls
+C02274,Dihydrostilbenoids
+C02275,Dextrans
+C02276,Iron Preparations
+C02277,Parenteral Iron Replacement
+C02278,Homosteroids
+C02279,Drug Hypersensitivity
+C02280,Cytochrome P-450 CYP2E1 Inducers (moderate)
+C02281,Nerve Depressants
+C02282,Solvents
+C02283,Aryloxyacetic Acid Derivatives
+C02284,Glycolates
+C02285,Phenoxyacetates
+C02286,Carbazoles
+C02287,GABA Uptake Inhibitors
+C02288,Nipecotic Acid and Derivatives
+C02289,"Cocaine, antagonists & inhibitors"
+C02290,Esters of Benzoic Acid
+C02291,Nitroimidazole Antimicrobial
+C02292,Nitroimidazoles
+C02293,Meglitinides
+C02294,Stereoisomerism
+C02295,Adamantane Derivatives
+C02296,"Dinoprostone, antagonists & inhibitors"
+C02297,Migraine Disorders
+C02298,Dioxanes
+C02299,Other Antihistamines
+C02300,Oripavine Derivatives
+C02301,Hydrazones
+C02302,Pyridazines
+C02303,Prostaglandin E1 Analog
+C02304,"Prostaglandins E, Synthetic"
+C02305,Allylamine
+C02306,Anthracenes
+C02307,Long-acting beta-adrenoceptor agonists
+C02308,Bis-Trimethylammonium Compounds
+C02309,Estrogen Receptor Antagonists
+C02310,Hydrazides
+C02311,gamma-Aminobutyric Acid A Receptor Agonist
+C02312,"Hydrocarbons, Brominated"
+C02313,Iodized Oil
+C02314,Non-Watersoluble X-Ray Contrast Media
+C02315,Plant Oils
+C02316,Dihydroxyphenylalanine
+C02317,Actinomycin
+C02318,Actinomycines
+C02319,Selenium Compounds
+C02320,Azetines
+C02321,Decreased Cholesterol Absorption
+C02322,Dietary Cholesterol Absorption Inhibitor
+C02323,Calcium Chelating Activity
+C02324,Calcium Chelating Agents
+C02325,Decreased Coagulation Factor Activity
+C02326,Ketolide Antibacterial
+C02327,Ketolides
+C02328,BSEP/ABCB11 inducers
+C02329,"Estrogenic Steroids, Alkylated"
+C02330,Norpregnatrienes
+C02331,Melatonin Receptor Agonists
+C02332,Anti-Acne Preparations for Systemic Use
+C02333,Retinoids for Treatment of Acne
+C02334,Nandrolone and esters
+C02335,Antihidrotics
+C02336,"Dopamine, metabolism"
+C02337,Photochemotherapy
+C02338,Thionucleosides
+C02339,Gold Compounds
+C02340,Gold Preparations
+C02341,Organogold Compounds
+C02342,Gabapentin and Prodrugs
+C02343,Chromones
+C02344,Cromolyn Sodium
+C02345,Mast-cell Stabilizers
+C02346,Ganciclovir and prodrug
+C02347,Antisickling Agents
+C02348,Butylene Glycols
+C02349,Mesylates
+C02350,Phenylammonium Compounds
+C02351,Calcimimetic Agents
+C02352,Calcium-sensing Receptor Agonist
+C02353,Increased Calcium-sensing Receptor Sensitivity
+C02354,"Colitis, Ulcerative"
+C02355,Inflammatory Bowel Diseases
+C02356,Bethanechol Compounds
+C02357,Increased Prothrombin Activity
+C02358,Reversed Anticoagulation Activity
+C02359,Warfarin Reversal Agent
+C02360,Antiadrenal Preparations
+C02361,Anticorticosteroids
+C02362,Cytochrome P-450 CYP2A6 Inhibitors (moderate)
+C02363,Ethyl Ethers
+C02364,MATE 1 Substrates with a Narrow Therapeutic Index
+C02365,MATE 2 Substrates with a Narrow Therapeutic Index
+C02366,"Adjuvants, Pharmaceutic"
+C02367,Pharmaceutic Aids
+C02368,Preparations Increasing Uric Acid Excretion
+C02369,Preparations With No Effect on Uric Acid Metabolism
+C02370,Cresols
+C02371,Genitourinary Smooth Muscle Relaxants
+C02372,Monoamine Oxidase B Inhibitors
+C02373,Fibric Acid Derivatives
+C02374,Peroxisome Proliferator Receptor alpha Agonist
+C02375,Peroxisome Proliferator-activated Receptor alpha Agonists
+C02376,N-methyl-D-aspartate Receptor Antagonist
+C02377,Cytochrome P-450 CYP1A2 Inducers (moderate)
+C02378,Cytochrome P-450 CYP2A6 Inducers (moderate)
+C02379,Cytochrome P-450 CYP2B6 Inducers (moderate)
+C02380,Cytochrome P-450 CYP2C19 Inducers (strong)
+C02381,Rifamycin Antibacterial
+C02382,UGT1A9 Inducers
+C02383,Chloride Channel Agonists
+C02384,Dihydroergotoxine
+C02385,COX-1 Inhibitors
+C02386,Aminocoumarins
+C02387,Antitrematodals
+C02388,Quinoline Derivatives and Related Substances
+C02389,"Melatonin, agonists"
+C02390,Arabinonucleotides
+C02391,"DNA (Cytosine-5-)-Methyltransferases, antagonists & inhibitors"
+C02392,Non-Selective Calcium Channel Blockers
+C02393,First Generation Antihistamines
+C02394,Heptanoic Acids
+C02395,Lanatosides
+C02396,Serotonin 4 Receptor Agonists
+C02397,Serotonin-4 Receptor Agonist
+C02398,Streptomycins
+C02399,Intestinal Lipase Inhibitor
+C02400,Lipase Inhibitors
+C02401,Peripherally Acting Antiobesity Products
+C02402,Benzylamine Antifungal
+C02403,Benzylamines
+C02404,Strophanthins
+C02405,Strophanthus Glycosides
+C02406,Cryoprotective Agents
+C02407,Flavanones
+C02408,Flavonoids
+C02409,Hydroxyquinolines
+C02410,Nitroquinolines
+C02411,Schistosomicides
+C02412,Dihydroorotate dehydrogenase (DHODH) inhibitors
+C02413,Fluorobenzenes
+C02414,Nucleoside Analog Antifungal
+C02415,Diphenylbutylpiperidine Derivatives
+C02416,"Norepinephrine, Serotonin, and Dopamine Reuptake Inhibitor Anorectic"
+C02417,Piperidinedione Derivatives
+C02418,Oxidative Phosphorylation Coupling Factors
+C02419,Heparin Group
+C02420,Heparins or Heparinoids for Topical Use
+C02421,"Vaginal Creams, Foams, and Jellies"
+C02422,Polymyxin-class Antibacterial
+C02423,Papaverine and Derivatives
+C02424,Sulfonium Derivatives
+C02425,Hypoglycemia-Treating Agents
+C02426,Thiazide Derivatives
+C02427,Benzylammonium Compounds
+C02428,Tests for Diabetes
+C02429,Azasteroids
+C02430,"Phospholipases A, antagonists & inhibitors"
+C02431,Adrenergic beta2-Antagonists
+C02432,Free Radical Scavenging Activity
+C02433,Penicillinase-resistant Penicillins
+C02434,Flavones
+C02435,Aminoketone Antidepressants
+C02436,Dopamine And Norepinephrine Reuptake Inhibitors
+C02437,Increased Dopamine Activity
+C02438,Increased Norepinephrine Activity
+C02439,"Acids, Aldehydic"
+C02440,Uronic Acids
+C02441,Bretylium Compounds
+C02442,Angiography
+C02443,Prostaglandins F
+C02444,Acidifying Agents
+C02445,Calcium Compounds
+C02446,Methylhydrazines
+C02447,Arsenicals
+C02448,Guanidine Derivatives and Diuretics
+C02449,Monoamine Oxidase A Inhibitors
+C02450,"Ethers, Chemically Close to Antihistamines"
+C02451,Cytochrome P-450 CYP2E1 Inducers (weak)
+C02452,UGT2B7 inducers
+C02453,Propiophenones
+C02454,Peripheral Opioid Receptor Antagonists
+C02455,Prokinetic Agents
+C02456,Androstenediols
+C02457,Ergot-derived Dopamine Receptor Agonist
+C02458,"Hydrocarbons, Iodinated"
+C02459,Iodobenzenes
+C02460,Decreased DNA Replication
+C02461,Decreased RNA Replication
+C02462,Hydroxypyridones
+C02463,Lincomycins
+C02464,Lincosamide Antibacterial
+C02465,Lincosamides
+C02466,Neuromuscular Blockade
+C02467,Sleep Initiation and Maintenance Disorders
+C02468,Curare Alkaloids
+C02469,Anthraquinones
+C02470,Benzodiazepine Antagonist
+C02471,"Thromboxane-A Synthase, antagonists & inhibitors"
+C02472,Bunolol
+C02473,Other Macrolides
+C02474,Dantrolene and Derivatives
+C02475,Decreased Striated Muscle Contraction
+C02476,Decreased Striated Muscle Tone
+C02477,Direct-acting Skeletal Muscle Relaxants
+C02478,"Anesthetics, Dissociative"
+C02479,Excitatory Amino Acid Agonists
+C02480,"N-Methylaspartate, agonists"
+C02481,"N-Methylaspartate, antagonists & inhibitors"
+C02482,Dibenzothiazepines
+C02483,Thiazepines
+C02484,Cyclodecanes
+C02485,Microtubule Inhibitors
+C02486,Taxane Derivatives
+C02487,Taxoids
+C02488,Dopa and Dopa Derivatives
+C02489,"Levodopa, antagonists & inhibitors"
+C02490,Aripiprazole and prodrugs
+C02491,UGT1A3 Inhibitors
+C02492,"Watersoluble, Nephrotropic, Low Osmolar X-Ray Contrast Media"
+C02493,Pleuromutilin Antibacterial
+C02494,Complement C5 inhibitors
+C02495,Complement Inactivating Agents
+C02496,Human epidermal growth factor receptor 2 (HER2) tyrosine kinase inhibitors
+C02497,DPP-IV Inhibitors
+C02498,Incretins
+C02499,Sulfatases
+C02500,Glycogen Storage Disease Type II
+C02501,Hydrolytic Lysosomal Glycogen-specific Enzyme
+C02502,Partial Cholinergic Nicotinic Agonist
+C02503,Partial Cholinergic Nicotinic Agonists
+C02504,Hydrazinophthalazine Derivatives
+C02505,Hydrazinophthalazine Derivatives and Diuretics
+C02506,Phthalazines
+C02507,Bodily Secretions
+C02508,GLP-1 Agonists
+C02509,Glucagon-Like Peptide 1
+C02510,Glucagon-like peptide-1 (GLP-1) analogues
+C02511,Incretin Mimetics
+C02512,Human Insulin-like Growth Factor Analogs
+C02513,Insulin-like growth factor
+C02514,Recombinant Human Insulin-like Growth Factor-1
+C02515,Somatomedins
+C02516,Amylin Agonists
+C02517,Amylin Analog
+C02518,Amyloid
+C02519,Amyloidogenic Proteins
+C02520,Arylsulfatases
+C02521,Chondroitinases and Chondroitin Lyases
+C02522,Chondroitinsulfatases
+C02523,CD80-directed Antibody Interactions
+C02524,CD86-directed Antibody Interactions
+C02525,Decreased Cytokine Activity
+C02526,Immune Checkpoint Inhibitors
+C02527,Selective T Cell Costimulation Modulator
+C02528,Drug Delivery Systems
+C02529,Adrenocortical Insufficiency
+C02530,Adrenocorticotropic Hormone
+C02531,Melanocortins
+C02532,Pro-Opiomelanocortin
+C02533,Metaproterenol
+C02534,Antacids and Adsorbents
+C02535,Bismuth containing drugs
+C02536,"Elements, Radioactive"
+C02537,Helicobacter Infections
+C02538,Isotopes
+C02539,"Metals, Heavy"
+C02540,Radioisotopes
+C02541,Acetanilides
+C02542,Angiosperms
+C02543,Clusiaceae
+C02544,Embryophyta
+C02545,Eukaryota
+C02546,Rosanae
+C02547,Streptophyta
+C02548,Tracheophyta
+C02549,Viridiplantae
+C02550,Cation Exchange Resins
+C02551,Ion Exchange Resins
+C02552,Plastics
+C02553,Potassium Binder
+C02554,Potassium Ion Exchange Activity
+C02555,Potassium-removing Agents
+C02556,Styrene
+C02557,Styrenes
+C02558,Increased Large Intestinal Motility
+C02559,Inhibition Large Intestine Fluid/Electrolyte Absorption
+C02560,Lithium Compounds
+C02561,Ethinyl Estradiol
+C02562,Cycadopsida
+C02563,"Drugs, Chinese Herbal"
+C02564,Ephedra
+C02565,Gnetophyta
+C02566,Streptogramin Antibacterial
+C02567,Streptogramins
+C02568,Aluminum and magnesium containing antacids
+C02569,Antacids
+C02570,"Metals, Light"
+C02571,"Metals, Alkaline Earth"
+C02572,Calculi Dissolution Agent
+C02573,Inhibition Small Intestine Fluid/Electrolyte Absorption
+C02574,Magnesium Ion Exchange Activity
+C02575,"Polyvalent cation containing laxatives, antacids, oral supplements"
+C02576,Blood Circulation
+C02577,Ginkgolides
+C02578,Bicarbonates
+C02579,"Carbon Compounds, Inorganic"
+C02580,Carbonates
+C02581,Carbonic Acid
+C02582,Salt Solutions
+C02583,Sodium Compounds
+C02584,Urinary Alkalinisers
+C02585,Araliaceae
+C02586,Ginseng & Ginseng Extracts
+C02587,Antigonadotropins and Similar Agents
+C02588,Fourth-Generation Cephalosporins
+C02589,Cefpodoxime
+C02590,Ajmaline and derivatives
+C02591,Cosmetics
+C02592,Sunscreen Agents
+C02593,Polystyrenes
+C02594,Decreased Central Nervous System Organized Electrical Activity
+C02595,Hydroxybutyrates
+C02596,"N,N-Dimethyltryptamine"
+C02597,Illicit Drugs
+C02598,Street Drugs
+C02599,"Heroin, agonists"
+C02600,Insect Repellents
+C02601,Aldehydes
+C02602,Carbon Radioisotopes
+C02603,Designer Drugs
+C02604,Intestinal Adsorbents
+C02605,Amphetamine Anorectic
+C02606,Iodoproteins
+C02607,Bile Acid Preparations
+C02608,Bile acids and derivatives
+C02609,Bile Acids and Salts
+C02610,Bile Therapy
+C02611,Cholagogues and Choleretics
+C02612,Cholanes
+C02613,Cholelitholytic Agents
+C02614,Cholic Acids
+C02615,Antianemia Drugs
+C02616,Trace Elements
+C02617,Transition Elements
+C02618,Zinc Compounds
+C02619,Cyclopropanes
+C02620,Dipeptidase Inhibitors
+C02621,Renal Dehydropeptidase Inhibitor
+C02622,Prostaglandin Antagonists
+C02623,Organic Anion Transporting Polypeptide 1B1 Inhibitors
+C02624,Nitrites
+C02625,Nitrates
+C02626,Histamine H1 Inverse Agonists
+C02627,MAO Inhibitors and Diuretics
+C02628,Pentosephosphates
+C02629,Sugar Phosphates
+C02630,Enemas
+C02631,Methylglycosides
+C02632,Deoxyribonucleotides
+C02633,Thymine Nucleotides
+C02634,Isoflavones
+C02635,Phytoestrogens
+C02636,Thioesters of coenzyme A
+C02637,Phosphodiesterase 4 Inhibitors
+C02638,Benzoquinones
+C02639,Streptogramin Group A
+C02640,Mercuribenzoates
+C02641,Phenylmercury Compounds
+C02642,"Chymotrypsin, antagonists & inhibitors"
+C02643,"Nitric Oxide Synthase, antagonists & inhibitors"
+C02644,Sulfhydryl Reagents
+C02645,Capillary Stabilizing Agents
+C02646,Flavonols
+C02647,Cetrimonium Compounds
+C02648,Medicated Shampoos
+C02649,Citrates
+C02650,Bicyclic Monoterpenes
+C02651,Bornanes
+C02652,Monoterpenes
+C02653,Mycotoxins
+C02654,Ketone Bodies
+C02655,Trioses
+C02656,Triose Sugar Alcohols
+C02657,"Nucleotides, Cyclic"
+C02658,Oligonucleotides
+C02659,Polynucleotides
+C02660,Quinolinic Acids
+C02661,"beta-Glucosidase, antagonists & inhibitors"
+C02662,"Glucosylceramidase, antagonists & inhibitors"
+C02663,Pharmaceutical Vehicles
+C02664,"Myo-Inositol-1-Phosphate Synthase, antagonists & inhibitors"
+C02665,Formamides
+C02666,Formates
+C02667,Bacteriochlorophylls
+C02668,"Photoreceptors, Microbial"
+C02669,Nucleoside Diphosphate Sugars
+C02670,Uracil Nucleotides
+C02671,Uridine Diphosphate
+C02672,Uridine Diphosphate Sugars
+C02673,Galactosides
+C02674,Thiogalactosides
+C02675,Guanine Nucleotides
+C02676,Guanosine Triphosphate
+C02677,Thionucleotides
+C02678,Cinnamates
+C02679,Glucose
+C02680,"Putrescine, analogs & derivatives"
+C02681,Xanthurenates
+C02682,"Protein Kinase C, antagonists & inhibitors"
+C02683,Ligands
+C02684,Maleates
+C02685,"Glycogen Synthase Kinase 3, antagonists & inhibitors"
+C02686,Acrylates
+C02687,"Coenzyme A, biosynthesis"
+C02688,"Aldehyde Reductase, antagonists & inhibitors"
+C02689,Palmitic Acids
+C02690,Luminescent Measurements
+C02691,"Transaminases, antagonists & inhibitors"
+C02692,"Prostaglandin D2, antagonists & inhibitors"
+C02693,Prostaglandins D
+C02694,Cellulose
+C02695,"Epilepsy, drug therapy"
+C02696,N-substituted Glycines
+C02697,"Cyclin-Dependent Kinases, antagonists & inhibitors"
+C02698,Cytokinins
+C02699,Detergents
+C02700,Glycodeoxycholic Acid
+C02701,Chlorophyll
+C02702,Butanols
+C02703,Vanadates
+C02704,Phenanthridines
+C02705,Thallium
+C02706,"Oils, Volatile"
+C02707,"Preservatives, Pharmaceutical"
+C02708,"Purine-Nucleoside Phosphorylase, antagonists & inhibitors"
+C02709,Thiourea
+C02710,Matrix Metalloproteinase Inhibitors
+C02711,"Porphobilinogen Synthase, antagonists & inhibitors"
+C02712,Phospholipid Ethers
+C02713,"Platelet Activating Factor, antagonists & inhibitors"
+C02714,"Protein O-Methyltransferase, antagonists & inhibitors"
+C02715,"Steryl-Sulfatase, antagonists & inhibitors"
+C02716,"17-Hydroxysteroid Dehydrogenases, antagonists & inhibitors"
+C02717,Pentacyclic Triterpenes
+C02718,Triterpenes
+C02719,"Pancreatic Elastase, antagonists & inhibitors"
+C02720,Organoselenium Compounds
+C02721,"Receptors, AMPA, antagonists & inhibitors"
+C02722,Cariostatic Agents
+C02723,Fluorine Compounds
+C02724,Toothpastes
+C02725,4-Aminobenzoic Acid
+C02726,Emollients and Protectives
+C02727,Protectives Against UV-Radiation
+C02728,Protectives Against UV-Radiation for Topical Use
+C02729,Phosphate salts
+C02730,Aldose Reductase Inhibitors
+C02731,"Antigens, Neoplasm"
+C02732,Biomarkers
+C02733,"Biomarkers, Tumor"
+C02734,Epitopes
+C02735,Polyphosphates
+C02736,Cysteine Proteinase Inhibitors
+C02737,"Hexokinase, antagonists & inhibitors"
+C02738,"Aspartate Aminotransferases, antagonists & inhibitors"
+C02739,Haptens
+C02740,"Glycoside Hydrolases, antagonists & inhibitors"
+C02741,Pentoses
+C02742,Deoxyguanosine
+C02743,Cyclic AMP
+C02744,Histone deacetylase (HDAC) inhibitors
+C02745,"N-Glycosyl Hydrolases, antagonists & inhibitors"
+C02746,Adipates
+C02747,Equipment and Supplies
+C02748,Surgical Equipment
+C02749,Surgical Fixation Devices
+C02750,Tissue Adhesives
+C02751,"Carnitine O-Palmitoyltransferase, antagonists & inhibitors"
+C02752,Porifera
+C02753,Luminescent Proteins
+C02754,Affinity Labels
+C02755,Photoaffinity Labels
+C02756,Vasopressin Receptor Agonist
+C02757,"Phosphatidylinositol 3-Kinases, antagonists & inhibitors"
+C02758,Glucosephosphates
+C02759,Hexosephosphates
+C02760,OATP1B1/SLCO1B1 Inducers
+C02761,Carbodiimides
+C02762,Cholestadienes
+C02763,Cholestadienols
+C02764,Other Miscellaneous Antibacterial Agents
+C02765,Steroid Antibacterials
+C02766,Polyphenols
+C02767,Pyrimidine Analog
+C02768,"Alcohol Dehydrogenase, antagonists & inhibitors"
+C02769,"Muramidase, antagonists & inhibitors"
+C02770,Umbelliferones
+C02771,Dietary Sugars
+C02772,Nutritive Sweeteners
+C02773,Metalloporphyrins
+C02774,"Cathepsin B, antagonists & inhibitors"
+C02775,Cathepsin Inhibitors
+C02776,"Phosphoprotein Phosphatases, antagonists & inhibitors"
+C02777,Thioinosine
+C02778,5-Androstanon (3) Derivatives
+C02779,"Interleukin-8, antagonists & inhibitors"
+C02780,"Fats, Unsaturated"
+C02781,Oleic Acids
+C02782,Deoxy Sugars
+C02783,Maleimides
+C02784,Herbicides
+C02785,Oxadiazoles
+C02786,Tellurium
+C02787,"Glutathione Transferase, antagonists & inhibitors"
+C02788,Lactates
+C02789,Poly(ADP-ribose) Polymerase Inhibitors
+C02790,"Triose-Phosphate Isomerase, antagonists & inhibitors"
+C02791,"5'-Nucleotidase, antagonists & inhibitors"
+C02792,Stearic Acids
+C02793,PQQ Cofactor
+C02794,"Glycogen Phosphorylase, antagonists & inhibitors"
+C02795,Fluorine Radioisotopes
+C02796,Fixatives
+C02797,Plants
+C02798,Buffers
+C02799,"Maltose, metabolism"
+C02800,"Phosphorylase b, antagonists & inhibitors"
+C02801,"Inositol 1,4,5-Trisphosphate"
+C02802,Inositol Phosphates
+C02803,Heme
+C02804,Heme products
+C02805,"Aminopeptidases, antagonists & inhibitors"
+C02806,Gallium
+C02807,Trypanosoma
+C02808,RNA Caps
+C02809,"Phencyclidine, antagonists & inhibitors"
+C02810,Glyoxal
+C02811,Diaminopimelic Acid
+C02812,Pimelic Acids
+C02813,Nucleic Acids
+C02814,"RNA, Messenger"
+C02815,"Lactoylglutathione Lyase, antagonists & inhibitors"
+C02816,Cytolytic Agent
+C02817,Decreased Cell Membrane Integrity
+C02818,"Chitinases, antagonists & inhibitors"
+C02819,"Lanosterol, metabolism"
+C02820,Ethane
+C02821,Excipients
+C02822,Solutions Affecting the Electrolyte Balance
+C02823,Deoxyuracil Nucleotides
+C02824,Mitogens
+C02825,Ammonium Ion Binding Activity
+C02826,Food Preservatives
+C02827,Nitrogen Binding Agent
+C02828,Urea Cycle Disorder Agents
+C02829,1-Carboxyglutamic Acid
+C02830,Alkynes
+C02831,Peroxides
+C02832,Prostaglandin Endoperoxides
+C02833,Reactive Oxygen Species
+C02834,"Fungicides, Industrial"
+C02835,"Pyroglutamyl-Peptidase I, antagonists & inhibitors"
+C02836,Oxalates
+C02837,Reducing Agents
+C02838,Carbamide products
+C02839,"Leukocyte Elastase, antagonists & inhibitors"
+C02840,"Heme Oxygenase (Decyclizing), antagonists & inhibitors"
+C02841,Glyoxylates
+C02842,Phosphorylcholine
+C02843,"Neuraminidase, antagonists & inhibitors"
+C02844,Sclerosing Activity
+C02845,Vascular Sclerosing Activity
+C02846,Cyclodextrins
+C02847,Dextrins
+C02848,CDC2 Protein Kinase
+C02849,Provitamins
+C02850,"Cyclic AMP-Dependent Protein Kinases, antagonists & inhibitors"
+C02851,Berberine Alkaloids
+C02852,Methylamines
+C02853,General Nutrients
+C02854,Malonates
+C02855,"Oxidoreductases Acting on CH-NH Group Donors, antagonists & inhibitors"
+C02856,Quinoline Derivatives
+C02857,Quinolinium Compounds
+C02858,Chromogenic Compounds
+C02859,Thiocholine
+C02860,"Procollagen-Proline Dioxygenase, antagonists & inhibitors"
+C02861,"Thrombin, antagonists & inhibitors"
+C02862,Disinfectants (For Agents Used on Object)
+C02863,"Acid Etching, Dental"
+C02864,"Calcium-Calmodulin-Dependent Protein Kinases, antagonists & inhibitors"
+C02865,"Phosphogluconate Dehydrogenase, antagonists & inhibitors"
+C02866,Glutarates
+C02867,"Cytidine Deaminase, antagonists & inhibitors"
+C02868,Chitinases
+C02869,Iodine Compounds
+C02870,Mercurial Products
+C02871,Porphyrinogens
+C02872,"Receptors, Estrogen, agonists"
+C02873,Naphthalenesulfonates
+C02874,Phosphoamino Acids
+C02875,Odorants
+C02876,Dinitrophenols
+C02877,Niflumic Acid and Prodrugs
+C02878,Arachidonic Acids
+C02879,Irrigation
+C02880,Inosine Nucleotides
+C02881,Aziridines
+C02882,Ethylene Imines
+C02883,Triethylenephosphoramide
+C02884,"Adenosine Kinase, antagonists & inhibitors"
+C02885,Cyclopentanes
+C02886,"Actins, antagonists & inhibitors"
+C02887,"Calcium-Transporting ATPases, antagonists & inhibitors"
+C02888,Oxathiins
+C02889,Lecithins
+C02890,Phosphatidylcholines
+C02891,"Edema, drug therapy"
+C02892,Antifoaming Agents
+C02893,Antispermatogenic Agents
+C02894,Polyethylene Glycols
+C02895,Spermatocidal Agents
+C02896,4-Butyrolactone
+C02897,Oxysterols
+C02898,"Watersoluble, Hepatotropic X-Ray Contrast Media"
+C02899,Glycolipids
+C02900,"Electron Transport Complex III, antagonists & inhibitors"
+C02901,"CDC2 Protein Kinase, antagonists & inhibitors"
+C02902,Acidic Glycosphingolipids
+C02903,Glycosphingolipids
+C02904,Sphingolipids
+C02905,Sulfoglycosphingolipids
+C02906,"Receptors, Progesterone, agonists"
+C02907,Preparations Containing Sulfur
+C02908,Hydroxyquinoline Derivatives
+C02909,Contact Laxatives
+C02910,Aminopyrine
+C02911,Phenolphthaleins
+C02912,"Calmodulin, antagonists & inhibitors"
+C02913,CCR5 Co-receptor Antagonist
+C02914,CCR5 Receptor Antagonists
+C02915,Mandelic Acids
+C02916,Quinolizines
+C02917,Vesicular Monoamine Transporter 2 Inhibitor
+C02918,Vesicular Monoamine Transporter 2 Inhibitors
+C02919,"Hypoxia-Inducible Factor-Proline Dioxygenases, antagonists & inhibitors"
+C02920,Vascular endothelial growth factor receptor (VEGFR) tyrosine kinase inhibitors
+C02921,"Platelet Glycoprotein GPIIb-IIIa Complex, antagonists & inhibitors"
+C02922,Harringtonines
+C02923,Calcitonin Gene-Related Peptide Receptor Antagonists
+C02924,"Calcitonin Gene-Related Peptide, analogs & derivatives"
+C02925,"Receptors, Calcitonin Gene-Related Peptide, antagonists & inhibitors"
+C02926,Serotonin 2c Receptor Agonists
+C02927,Serotonin 5-HT2C Receptor Agonists
+C02928,"Drug Resistance, Multiple"
+C02929,Calophyllum
+C02930,Dioxoles
+C02931,Pituitary Hormone Release Inhibiting Hormones
+C02932,Vascular Endothelial Growth Factor A
+C02933,Pulmonary Surfactants
+C02934,"Natriuretic Peptide, Brain"
+C02935,Natriuretic Peptides
+C02936,Thymus Hormones
+C02937,Nucleic Acid-Based Vaccines
+C02938,Vaccines
+C02939,"Vaccines, Synthetic"
+C02940,Antineoplastic cell and gene therapy
+C02941,Genetic Therapy
+C02942,Phosphotransferases
+C02943,Phosphotransferases (Alcohol Group Acceptor)
+C02944,Transferases
+C02945,Lipoglycopeptide Antibacterial
+C02946,Immunization
+C02947,Serotonin 5-HT4 Receptor Agonists
+C02948,Myelin Proteins
+C02949,Cyclopentane Monoterpenes
+C02950,"Pyrethrines, Incl. Synthetic Compounds"
+C02951,Pyrethrins
+C02952,Melanocortin 1 Receptor (MC1-R) Agonists
+C02953,Melanocortin Receptor Agonists
+C02954,Melanocyte-Stimulating Hormones
+C02955,Protectives Against UV-Radiation for Systemic Use
+C02956,"Aptamers, Nucleotide"
+C02957,"Antigens, Bacterial"
+C02958,Endotoxins
+C02959,Lipopolysaccharides
+C02960,"Lipopolysaccharides, antagonists & inhibitors"
+C02961,"Polysaccharides, Bacterial"
+C02962,"Toll-Like Receptor 4, antagonists & inhibitors"
+C02963,Tannins
+C02964,Globins
+C02965,Hemeproteins
+C02966,Hemoglobins
+C02967,Iodine Radioisotopes
+C02968,Immunoglobulin Variable Region
+C02969,Egg Proteins
+C02970,Rana pipiens
+C02971,Antifibrotic Agents
+C02972,CA-125 Antigen
+C02973,Xanthones
+C02974,HIV
+C02975,Seminal Plasma Proteins
+C02976,Seminal Proteins
+C02977,Salivary Proteins and Peptides
+C02978,"Antigens, Surface"
+C02979,Adenosine A receptor agonists
+C02980,Adenosine A2 Receptor Agonists
+C02981,Cell Death Inducer
+C02982,Increased Cellular Death
+C02983,Cytochrome P-450 CYP1A2 Inducers (weak)
+C02984,Alpha-Galactosidase A (alpha-Gal A) Pharmacological Chaperones
+C02985,Bradykinin Receptor Antagonists
+C02986,"Receptors, Opioid, delta"
+C02987,Lamiaceae
+C02988,Lamiales
+C02989,Scutellaria
+C02990,"11-beta-Hydroxysteroid Dehydrogenase Type 1, antagonists & inhibitors"
+C02991,Cannabinoid Receptor Antagonists
+C02992,"Receptor, Cannabinoid, CB1, antagonists & inhibitors"
+C02993,Parathyroid Hormone-Related Protein
+C02994,Neuroactive Steroid Gamma-Aminobutyric Acid A Receptor Positive Modulator
+C02995,"Adenosine Triphosphatases, antagonists & inhibitors"
+C02996,Integrin alpha4
+C02997,Adipokines
+C02998,Crotalid Venoms
+C02999,Snake Venoms
+C03000,Venombin A
+C03001,Viper Venoms
+C03002,"Common Cold, drug therapy"
+C03003,"HSP90 Heat-Shock Proteins, antagonists & inhibitors"
+C03004,"Protein-Serine-Threonine Kinases, antagonists & inhibitors"
+C03005,Amyloid Precursor Protein Secretases
+C03006,Gamma Secretase Inhibitors and Modulators
+C03007,Peroxisome Proliferator-activated Receptor Agonist
+C03008,"PPAR alpha, agonists"
+C03009,"PPAR delta, agonists"
+C03010,"PPAR delta, antagonists & inhibitors"
+C03011,"Tryptophan Hydroxylase, antagonists & inhibitors"
+C03012,Marine Toxins
+C03013,"MAP Kinase Kinase 1, antagonists & inhibitors"
+C03014,Mitogen-activated protein kinase (MEK) inhibitors
+C03015,"Fibrinolysin, antagonists & inhibitors"
+C03016,Bone Resorption Inhibition
+C03017,Calcium Resorption Inhibitor
+C03018,"Pepsin A, antagonists & inhibitors"
+C03019,Pain Palliation (Bone Seeking Agents)
+C03020,Radioactive Therapeutic Agent
+C03021,Various Pain Palliation Radiopharmaceuticals
+C03022,Human Immunoglobulin
+C03023,"Immunization, Passive"
+C03024,Virus Neutralization
+C03025,Arthropod Proteins
+C03026,Metalloproteins
+C03027,Mollusca
+C03028,Drugs Used in Hereditary Angioedema
+C03029,Kallikrein Inhibitors
+C03030,"Kallikreins, antagonists & inhibitors"
+C03031,Plasma Kallikrein Inhibitor
+C03032,"Farnesyl-Diphosphate Farnesyltransferase, antagonists & inhibitors"
+C03033,"Enzymes, Immobilized"
+C03034,Gene Transfer Techniques
+C03035,"Genes, p53"
+C03036,Increased Megakaryocyte Maturation
+C03037,Increased Platelet Production
+C03038,"Receptors, Thrombopoietin, agonists"
+C03039,Thrombopoietin Receptor Agonist
+C03040,Thrombopoietin Receptor Agonists
+C03041,Anthrax Protective Antigen-directed Antibody
+C03042,Anthrax Protective Antigen-directed Antibody Interactions
+C03043,Antibacterial monoclonal antibodies
+C03044,Glycosyltransferases
+C03045,Pentosyltransferases
+C03046,Nerve Growth Factors
+C03047,Endothelin A Receptor Antagonists
+C03048,Endothelin B Receptor Antagonists
+C03049,Gastric Function
+C03050,Halogens
+C03051,Iodine Products
+C03052,"Resins, Synthetic"
+C03053,Cartilage
+C03054,Corticotropin-Releasing Hormone
+C03055,"Receptors, N-Methyl-D-Aspartate, antagonists & inhibitors"
+C03056,"Receptors, Glucocorticoid, antagonists & inhibitors"
+C03057,"Animal Proteins, Dietary"
+C03058,Carrier Proteins
+C03059,Dietary Proteins
+C03060,Iron-Binding Proteins
+C03061,Lactoglobulins
+C03062,Milk Proteins
+C03063,Transferrins
+C03064,Whey Proteins
+C03065,Glucagon-Like Peptides
+C03066,Sapogenins
+C03067,Saponins
+C03068,Arthropod Venoms
+C03069,Antisense Oligonucleotides
+C03070,"PPAR gamma, agonists"
+C03071,CXC Chemokine Receptor 4 Antagonist
+C03072,"Receptors, CXCR4, antagonists & inhibitors"
+C03073,"Fructose-Bisphosphatase, antagonists & inhibitors"
+C03074,HCV NS3/4A Protease Inhibitors
+C03075,NS3/4A Protease Inhibitors
+C03076,"ErbB Receptors, antagonists & inhibitors"
+C03077,Antisense Elements (Genetics)
+C03078,Apolipoprotein B-100 Synthesis Inhibitor
+C03079,"DNA, Antisense"
+C03080,Molecular Probes
+C03081,Nucleic Acid Probes
+C03082,"Oligodeoxyribonucleotides, Antisense"
+C03083,Epoxide Hydrolase Inhibitors
+C03084,"Receptors, Interleukin-1, antagonists & inhibitors"
+C03085,"Poly(ADP-ribose) Polymerases, antagonists & inhibitors"
+C03086,"Protein Kinase C-delta, antagonists & inhibitors"
+C03087,Vascular Endothelial Growth Factor Receptor 2 Antagonist
+C03088,VEGFR2 Inhibitors
+C03089,Fibroblast Growth Factor 1
+C03090,Antimony Compounds
+C03091,Gluconates
+C03092,Adeno-associated Viral Vector Therapies
+C03093,Cortisol Synthesis Inhibitors
+C03094,Biologics for psoriasis treatment
+C03095,Interleukin-12 Antagonist
+C03096,Interleukin-23 Antagonist
+C03097,Mollusk Venoms
+C03098,Phospholipase A2 Inhibitors
+C03099,Acanthaceae
+C03100,Andrographis
+C03101,"Colitis, Ulcerative, drug therapy"
+C03102,Phosphoric Monoester Hydrolases
+C03103,HER2-targeted Antibodies
+C03104,Maytansine
+C03105,Trastuzumab
+C03106,Platelet Membrane Glycoproteins
+C03107,"Receptors, Peptide"
+C03108,"Receptors, Thrombin"
+C03109,"Receptors, Retinoic Acid, agonists"
+C03110,Emulsions
+C03111,"Receptors, sigma, antagonists & inhibitors"
+C03112,Cell Adhesion Molecules
+C03113,Dehydroepiandrosterone
+C03114,Cytochrome P450 17A1 Inhibitors
+C03115,Poly (ADP-ribose) polymerase (PARP) inhibitors
+C03116,"Receptors, Vasopressin, agonists"
+C03117,Kinins
+C03118,"Receptors, Neurokinin-3, antagonists & inhibitors"
+C03119,Tachykinins
+C03120,CD22 (Clusters of Differentiation 22) inhibitors
+C03121,CD22-directed Antibody Interactions
+C03122,CD22-directed Immunoconjugate
+C03123,Decreased DNA Integrity
+C03124,"Receptor, Nerve Growth Factor, antagonists & inhibitors"
+C03125,Extracellular Matrix Proteins
+C03126,Scleroproteins
+C03127,"Vascular Endothelial Growth Factor Receptor-2, antagonists & inhibitors"
+C03128,Chemokines
+C03129,"Chemokines, CXC"
+C03130,Chemotactic Factors
+C03131,"Antibodies, Viral"
+C03132,Deltaretrovirus Antibodies
+C03133,"Receptors, CCR5"
+C03134,Genetic Phenomena
+C03135,Genetic Structures
+C03136,Nanoparticles
+C03137,Nanostructures
+C03138,Farnesoid X Receptor Agonist
+C03139,Farnesoid X Receptor Agonists
+C03140,Deuterium
+C03141,Dopamine D2/D3 receptor modulators
+C03142,"Receptors, Lipoprotein"
+C03143,"Kv1.5 Potassium Channel, antagonists & inhibitors"
+C03144,"Receptor, ErbB-2, antagonists & inhibitors"
+C03145,Platelet-derived Growth Factor Receptor alpha Antagonist
+C03146,UGT2B15 Inhibitors
+C03147,"RNA, Antisense"
+C03148,"RNA, Small Untranslated"
+C03149,"RNA, Untranslated"
+C03150,Acetals
+C03151,Dopamine D2 Receptor Agonists
+C03152,"Receptor Protein-Tyrosine Kinases, antagonists & inhibitors"
+C03153,"Antithrombotic Agents, Misc."
+C03154,von Willebrand Factor (vWF)-directed Antibodies
+C03155,"von Willebrand Factor, antagonists & inhibitors"
+C03156,Aryl Hydrocarbon Receptor Agonist
+C03157,"Receptors, Nicotinic"
+C03158,"Dipeptidyl-Peptidases and Tripeptidyl-Peptidases, antagonists & inhibitors"
+C03159,Chemokine CXCL10
+C03160,"Receptors, Opioid, delta, agonists"
+C03161,Diarylheptanoids
+C03162,Heptanes
+C03163,"Keratosis, Actinic, drug therapy"
+C03164,Leucomycins
+C03165,Lipoglycopeptides
+C03166,Antidote for Acetaminophen Overdose
+C03167,Increased Glutathione Concentration
+C03168,Reduction Activity
+C03169,2-Amino-1-Phenylethanol Derivatives
+C03170,"Biogenic Monoamines, antagonists & inhibitors"
+C03171,"Sodium-Potassium-Exchanging ATPase, antagonists & inhibitors"
+C03172,Interleukin-1 Blockers
+C03173,"Interleukin-1beta, antagonists & inhibitors"
+C03174,Interleukin-1β Blockers
+C03175,Bile Salt Export Pump Inhibitors
+C03176,Depsipeptides
+C03177,Organic Anion Transporter 1 Inhibitors
+C03178,Organic Anion Transporting Polypeptide 1B3 Inhibitors
+C03179,"Toll-Like Receptor 9, agonists"
+C03180,CTLA-4-directed Antibody Interactions
+C03181,CTLA-4-directed Blocking Antibody
+C03182,Increased T Lymphocyte Activation
+C03183,Bradykinin B2 Receptor Antagonists
+C03184,Benzodioxoles
+C03185,Carbon-Oxygen Lyases
+C03186,"Hyaluronoglucosaminidase, antagonists & inhibitors"
+C03187,Lyases
+C03188,Polysaccharide-Lyases
+C03189,gamma-Cyclodextrins
+C03190,Vasopressin V2 Receptor Antagonist
+C03191,Vasopressin V2 Receptor Antagonists
+C03192,Pharmacologic Cardiac Stress Test Agent
+C03193,Ferrous Compounds
+C03194,Parenteral Nutrition Solutions
+C03195,Cancer Vaccines
+C03196,Histocompatibility Antigens
+C03197,Intracellular Signaling Peptides and Proteins
+C03198,Isoantigens
+C03199,Minor Histocompatibility Antigens
+C03200,Protein Kinases
+C03201,Protein-Tyrosine Kinases
+C03202,Receptor Protein-Tyrosine Kinases
+C03203,"Receptor, Epidermal Growth Factor"
+C03204,"Receptors, Growth Factor"
+C03205,Direct factor Xa inhibitors
+C03206,Cytomegalovirus pUL97 Kinase Inhibitor
+C03207,HIV Reverse Transcriptase
+C03208,"Antigens, CD4"
+C03209,Decarboxylase Inhibitor
+C03210,Decarboxylase Inhibitors
+C03211,Ornithine Decarboxylase Inhibitors
+C03212,"Receptors, Leukotriene B4, antagonists & inhibitors"
+C03213,Erectile Dysfunction
+C03214,Increased Blood Pressure
+C03215,Interleukin-6 Receptor Antagonist
+C03216,"Receptors, Opioid, mu, antagonists & inhibitors"
+C03217,Matrix Metalloproteinases
+C03218,Blood Pressure
+C03219,Cholesterol Ester Transfer Proteins
+C03220,"Calcium Channels, N-Type"
+C03221,Conotoxins
+C03222,N-Calcium Channel Receptor Antagonists
+C03223,Bone Anabolic Agents
+C03224,Parathyroid Agents
+C03225,HCV Protease Inhibitors
+C03226,Sodium-glucose Cotransporter 2 (SGLT2) Inhibitors
+C03227,"Sodium-Glucose Transport Proteins, antagonists & inhibitors"
+C03228,Sodium-Glucose Transporter 2 Inhibitors
+C03229,"Factor IXa, antagonists & inhibitors"
+C03230,SLAMF7-directed Antibody Interactions
+C03231,SLAMF7-directed Immunostimulatory Antibody
+C03232,Heat-Shock Proteins
+C03233,Molecular Chaperones
+C03234,"Celiac Disease, drug therapy"
+C03235,Insulin-like Growth Factor-1 Receptor Inhibitor
+C03236,Insulin-like Growth Factor-1 Receptor Inhibitors
+C03237,"Epoxide Hydrolases, antagonists & inhibitors"
+C03238,"Asthma, drug therapy"
+C03239,"Butyrylcholinesterase, drug effects"
+C03240,Cholinesterases
+C03241,"Multiple Myeloma, drug therapy"
+C03242,Breast Neoplasms
+C03243,Interleukin-1 Receptor Accessory Protein
+C03244,"Receptors, Interleukin-1 Type I"
+C03245,Selective Estrogen Receptor Degraders
+C03246,"Calcitonin Gene-Related Peptide, antagonists & inhibitors"
+C03247,"Hypertension, Pulmonary"
+C03248,C1 inhibitors
+C03249,Complement C1 Inactivator Proteins
+C03250,Complement Inactivator Proteins
+C03251,Complement System Proteins
+C03252,Decreased Vascular Permeability
+C03253,Alveolar Surface Tension Reduction
+C03254,Surfactant Activity
+C03255,"RNA, Ribosomal, 23S"
+C03256,Angiogenic Proteins
+C03257,Angiostatic Proteins
+C03258,Collagen
+C03259,Collagen Type XVIII
+C03260,Non-Fibrillar Collagens
+C03261,"Ribonucleoside Diphosphate Reductase, antagonists & inhibitors"
+C03262,Arteriosclerosis
+C03263,Farnesyltransferase Inhibitor
+C03264,Farnesyltransferase Inhibitors
+C03265,"Receptors, Neurotensin, antagonists & inhibitors"
+C03266,Adenosine A1 Receptor Antagonists
+C03267,"Receptors, Death Domain"
+C03268,Tumor Necrosis Factor Decoy Receptors
+C03269,"Mitogen-Activated Protein Kinase 14, antagonists & inhibitors"
+C03270,"Thrombopoietin, antagonists & inhibitors"
+C03271,"Receptors, Endothelin"
+C03272,Histocompatibility Antigens Class I
+C03273,Herpes Zoster
+C03274,Varicellovirus
+C03275,"Receptors, Vascular Endothelial Growth Factor, antagonists & inhibitors"
+C03276,Receptor Tyrosine Kinase Inhibitors
+C03277,"Receptors, TNF-Related Apoptosis-Inducing Ligand"
+C03278,Interleukin Antagonists
+C03279,Interleukin-5 Antagonist
+C03280,CD3-directed Antibody
+C03281,Bispecific Monoclonal Antibodies
+C03282,"Receptors, sigma, agonists"
+C03283,"Cholesterol Ester Transfer Proteins, antagonists & inhibitors"
+C03284,Isavuconazole and Prodrugs
+C03285,RANK Ligand Blocking Activity
+C03286,RANK Ligand Inhibitor
+C03287,Acid Anhydride Hydrolases
+C03288,Adenosine Triphosphatases
+C03289,Chaperonins
+C03290,"Diabetes Mellitus, Type 1"
+C03291,Group I Chaperonins
+C03292,"Receptors, Neurokinin-2, antagonists & inhibitors"
+C03293,Somatostatin Agonists
+C03294,"Receptor, Endothelin A"
+C03295,"Vasospasm, Intracranial"
+C03296,Selective T Cell Costimulation Blocker
+C03297,T Lymphocyte Costimulation Activity Blockade
+C03298,Autologous Cellular Immunotherapy
+C03299,Intercellular Adhesion Molecule-1
+C03300,Artemisinin and derivatives
+C03301,Artemisinins
+C03302,Radioactive Diagnostic Agent
+C03303,Radiopharmaceuticals
+C03304,Magnetic Resonance Angiography
+C03305,Fluorenes
+C03306,Bronchoconstrictor Agents
+C03307,Methacholine Compounds
+C03308,Iodides
+C03309,Alkalies
+C03310,Hydroxides
+C03311,Quinolizidine Alkaloids
+C03312,Quinolizidines
+C03313,Benzoflavones
+C03314,"Proton-Translocating ATPases, antagonists & inhibitors"
+C03315,Cyclohexylamines
+C03316,Panax
+C03317,Cysteine Endopeptidases
+C03318,Cysteine Proteases
+C03319,Chondroitin
+C03320,Methylating Activity
+C03321,Methylating Agent
+C03322,Sucrose-specific Enzyme
+C03323,Angiotensins
+C03324,alpha-Hydroxy Acid
+C03325,Benzyl Alcohols
+C03326,Capsaicin and Similar Agents
+C03327,Polyunsaturated Alkamides
+C03328,TRPV1 Channel Agonists
+C03329,Carbamoyl Phosphate Synthetase 1 Activator
+C03330,Carbamoyl Phosphate Synthetase 1 Activators
+C03331,Calcium Binder
+C03332,Drugs for Treatment of Hypercalcemia
+C03333,Desoxycorticosterone
+C03334,Metal Chelating Activity
+C03335,Metal Chelator
+C03336,Decorporation Agent
+C03337,Ion Exchange Activity
+C03338,Gallium Radioisotopes
+C03339,Inflammation and Infection Detection
+C03340,"Corticosteroids, Very Potent (Group IV)"
+C03341,"Kidney Failure, Chronic"
+C03342,Anticestodals
+C03343,Molluscacides
+C03344,Salicylanilide and Derivatives
+C03345,Salicylic Acid Derivatives
+C03346,Hematopoietic Stem Cell Mobilizer
+C03347,Increased Hematopoietic Stem Cell Mobilization
+C03348,Iodophors
+C03349,Polyvinyls
+C03350,Vinyl Compounds
+C03351,HIV Integrase Inhibitors
+C03352,Human Immunodeficiency Virus Integrase Strand Transfer Inhibitor
+C03353,Integrase Inhibitors
+C03354,Reducing and Complexing Thiol
+C03355,Copper Chelator
+C03356,"Estrogen Receptor beta, agonists"
+C03357,Air Pollutants
+C03358,"Air Pollutants, Occupational"
+C03359,Bisphenols
+C03360,Environmental Pollutants
+C03361,"Histamine N-Methyltransferase, antagonists & inhibitors"
+C03362,"Heme Oxygenase-1, antagonists & inhibitors"
+C03363,Electron Transport Complex III
+C03364,Methacrylates
+C03365,"Uridine Phosphorylase, antagonists & inhibitors"
+C03366,"NF-kappa B, antagonists & inhibitors"
+C03367,"HIV Reverse Transcriptase, antagonists & inhibitors"
+C03368,"Estrogens, Catechol"
+C03369,"Cyclin-Dependent Kinase 9, antagonists & inhibitors"
+C03370,Caspase Inhibitors
+C03371,Hydroxypropiophenone
+C03372,Diterpene Alkaloids
+C03373,"Diterpenes, Kaurane"
+C03374,Gibberellins
+C03375,Plant Growth Regulators
+C03376,Acquired Immunodeficiency Syndrome
+C03377,Resorcinols
+C03378,Harmala Alkaloids
+C03379,"p38 Mitogen-Activated Protein Kinases, antagonists & inhibitors"
+C03380,Insulin Antagonists
+C03381,Oxidation-Reduction Activity
+C03382,Oxidation-Reduction Agent
+C03383,"DNA-Directed RNA Polymerases, antagonists & inhibitors"
+C03384,Myristic Acids
+C03385,"RNA Replicase, antagonists & inhibitors"
+C03386,"RNA-Dependent RNA Polymerase, antagonists & inhibitors"
+C03387,"Diabetes Mellitus, Type 2, drug therapy"
+C03388,3-Oxoacyl-(Acyl-Carrier-Protein) Synthase
+C03389,"Phenylethanolamine N-Methyltransferase, antagonists & inhibitors"
+C03390,"AMP-Activated Protein Kinases, antagonists & inhibitors"
+C03391,Organotin Compounds
+C03392,Electron Transport Chain Complex Proteins
+C03393,Aromatase
+C03394,"Quinone Reductases, antagonists & inhibitors"
+C03395,Dichloroacetamide Derivatives
+C03396,Chloroacetates
+C03397,Biocompatible Materials
+C03398,Lubricants
+C03399,Surgical Aids
+C03400,Viscoelastic Substances
+C03401,Viscosupplements
+C03402,Increased Prostaglandin Activity
+C03403,Chloride Channel Activation Potentiators
+C03404,Cystic Fibrosis Transmembrane Conductance Regulator Potentiators
+C03405,Central Nervous System
+C03406,Iodine (123I) Compounds
+C03407,Microsomal Triglyceride Transfer Protein Inhibitor
+C03408,Microsomal Triglyceride Transfer Protein Inhibitors
+C03409,Hedgehog Pathway Inhibitor
+C03410,Hedgehog pathway inhibitors
+C03411,Smoothened Receptor Antagonists
+C03412,Taurodeoxycholic Acid
+C03413,Tetraethylammonium Compounds
+C03414,Preparations for Biliary Tract Therapy
+C03415,Ketoglutaric Acids
+C03416,Leukotrienes
+C03417,SRS-A
+C03418,"Enkephalin, Leucine"
+C03419,"Cholecystokinin, agonists"
+C03420,"Cholecystokinin, antagonists & inhibitors"
+C03421,Anaplastic lymphoma kinase (ALK) inhibitors
+C03422,Organic Cation Transporter 1 Inhibitors
+C03423,ROS1 tyrosine kinase inhibitors
+C03424,Progesterone Agonist/Antagonist
+C03425,Selective Progesterone Receptor Modulators
+C03426,Sphingosine 1 Phosphate Receptor Modulators
+C03427,Sphingosine 1-phosphate Receptor Modulator
+C03428,Sphingosine-1-phosphate (S1P) receptor modulators
+C03429,Growth Hormone Releasing Factor Analog
+C03430,Increased GHRH Activity
+C03431,Lipodystrophy
+C03432,CD30-directed Antibody Interactions
+C03433,CD30-directed Immunoconjugate
+C03434,Macrolide Antibacterial
+C03435,Janus Kinase Inhibitor
+C03436,"Janus Kinases, antagonists & inhibitors"
+C03437,B Lymphocyte Stimulator-directed Antibody Interactions
+C03438,B Lymphocyte Stimulator-specific Inhibitor
+C03439,Decreased B Lymphocyte Activation
+C03440,Dihydroorotate Dehydrogenase Inhibitors
+C03441,Pyrimidine Synthesis Inhibitor
+C03442,B-Raf serine-threonine kinase (BRAF) inhibitors
+C03443,AMPA Receptor Antagonists
+C03444,Noncompetitive AMPA Glutamate Receptor Antagonist
+C03445,Enzyme Activators
+C03446,Guanylate Cyclase Activators
+C03447,Guanylate Cyclase-C Agonist
+C03448,Guanylyl Cyclase C Agonists
+C03449,Selective Beta 3-adrenergic Agonists
+C03450,Janus Kinase Inhibitors
+C03451,Carboxypeptidases
+C03452,Exopeptidases
+C03453,"gamma-Glutamyl Hydrolase, antagonists & inhibitors"
+C03454,GLP-2 Analog
+C03455,Glucagon-Like Peptide 2
+C03456,Glucagon-like Peptide-2 (GLP-2) Agonists
+C03457,Diarylquinoline Antimycobacterial
+C03458,Fumarates
+C03459,"MAP Kinase Kinase 2, antagonists & inhibitors"
+C03460,Cytochrome P-450 CYP2C9 Inducers (strong)
+C03461,"Proto-Oncogene Proteins B-raf, antagonists & inhibitors"
+C03462,Radioactive alpha-Particle Emitting Therapeutic Agent
+C03463,Cyclohexane Monoterpenes
+C03464,Guanylate Cyclase
+C03465,Guanylate Cyclase Stimulators
+C03466,Soluble Guanylate Cyclase Stimulator
+C03467,Hepatitis C Virus Nucleotide Analog NS5B Polymerase Inhibitor
+C03468,RNA Replicase Inhibitors
+C03469,Antacids With Antiflatulents
+C03470,Ointments
+C03471,Hexamethonium Compounds
+C03472,Dibenzo-Bicyclo-Octadiene Derivatives
+C03473,Hepatitis C Virus NS5A Inhibitor
+C03474,"Interleukin-17, antagonists & inhibitors"
+C03475,Interleukin-17A Antagonist
+C03476,Protease-activated Receptor-1 Antagonist
+C03477,Protease-activated Receptor-1 Antagonists
+C03478,"Receptor, PAR-1, antagonists & inhibitors"
+C03479,"Receptors, Thrombin, antagonists & inhibitors"
+C03480,Antileishmanial
+C03481,Orexin Receptor Antagonists
+C03482,PD-1/PD-L1 (Programmed cell death protein 1/death ligand 1) inhibitors
+C03483,PD-1/PDL-1 (Programmed cell death protein 1/death ligand 1) inhibitors
+C03484,Programmed Death Receptor-1 Blocking Antibody
+C03485,Programmed Death Receptor-1-directed Antibody Interactions
+C03486,Interleukin-6 Antagonist
+C03487,Oxaborole Antifungal
+C03488,Leptin Analog
+C03489,"Obesity, drug therapy"
+C03490,Netupitant and prodrug
+C03491,Bispecific CD19-directed CD3-directed T Cell Engager
+C03492,CD19-directed Antibody Interactions
+C03493,Bruton's tyrosine kinase (BTK) inhibitors
+C03494,"Class Ia Phosphatidylinositol 3-Kinase, antagonists & inhibitors"
+C03495,Phosphatidylinositol-3-kinase (Pi3K) inhibitors
+C03496,Peroxisome Proliferators
+C03497,"Estrogens, Antiestrogens, and Estrogen Agonist-Antagonists"
+C03498,"Receptors, Melatonin, agonists"
+C03499,Cyclin-dependent kinase (CDK) inhibitors
+C03500,MATE 2-K Inhibitors
+C03501,"Pulmonary Disease, Chronic Obstructive, drug therapy"
+C03502,Glycolipid Disialoganglioside-directed Antibody
+C03503,Glycolipid Disialoganglioside-directed Antibody Interactions
+C03504,Hyperpolarization-activated Cyclic Nucleotide-gated Channel Antagonists
+C03505,Hyperpolarization-activated Cyclic Nucleotide-gated Channel Blocker
+C03506,Allylbenzene Derivatives
+C03507,Caffeic Acids
+C03508,Caustics
+C03509,"Somatostatin, agonists"
+C03510,HIV Integrase
+C03511,HCV Replication Complex Inhibitors
+C03512,Emollients Demulcents and Protectants
+C03513,"Hypophosphatasia, drug therapy"
+C03514,Tissue-nonspecific Alkaline Phosphatase
+C03515,Blood Substitutes
+C03516,Plasma Substitutes
+C03517,Mesna
+C03518,Lung Surfactants
+C03519,Acetaldehyde
+C03520,Eslicarbazepine and prodrugs
+C03521,Alkalinizing Activity
+C03522,Citric Acid Derivatives
+C03523,Metabolic Alkalinizer
+C03524,Chorionic Gonadotropin
+C03525,Placental Hormones
+C03526,Pregnancy Proteins
+C03527,Copper-containing Intrauterine Device
+C03528,Decreased Embryonic Implantation
+C03529,Decreased Sperm Motility
+C03530,Hepatic and Reticulo Endothelial System
+C03531,Organotechnetium Compounds
+C03532,Skeleton
+C03533,Chalcogens
+C03534,Medical Gases
+C03535,Antiheparin Agents
+C03536,Heparin Antagonists
+C03537,Heparin Reversal Agent
+C03538,Nuclear Proteins
+C03539,Nucleoproteins
+C03540,Cholecystokinin Analog
+C03541,Gallbladder Function
+C03542,"Iron Trivalent, Oral Preparations"
+C03543,Positron Emitting Activity
+C03544,Sodium
+C03545,Noble Gases
+C03546,Azo Compounds
+C03547,Diphosphates
+C03548,Technetium Compounds
+C03549,Dibenzothiepins
+C03550,Hepatitis C Virus Non-Nucleoside NS5B Palm Polymerase Inhibitor
+C03551,Histamine H3 Antagonists
+C03552,"Migraine Disorders, drug therapy"
+C03553,Fibrinogen
+C03554,"Angioedemas, Hereditary, drug therapy"
+C03555,Azetidines
+C03556,Potassium Ion Binding Activity
+C03557,Humanized Monoclonal Antibody Fragment
+C03558,Glucagon-Like Peptide Receptors
+C03559,"Receptors, G-Protein-Coupled"
+C03560,"Receptors, Gastrointestinal Hormone"
+C03561,Strontium
+C03562,Ubiquinone
+C03563,mu-Opioid Receptor Agonist
+C03564,"Receptors, Opioid, delta, antagonists & inhibitors"
+C03565,Malates
+C03566,Thiomalates
+C03567,Adsorption
+C03568,Carbon
+C03569,Charcoal Preparations
+C03570,Sydnones
+C03571,Neprilysin Inhibitor
+C03572,Thyroid Diagnostic Radiopharmaceuticals
+C03573,Flavonolignans
+C03574,"Hypercholesterolemia, drug therapy"
+C03575,PCSK9 Inhibitor
+C03576,Proprotein Convertase Subtilisin Kexin Type 9 (PCSK9) Inhibitors
+C03577,Bulk-Forming Laxatives
+C03578,Inhalation Diagnostic Agent
+C03579,Xenon Isotopes
+C03580,Basic Powders and Demulcents
+C03581,Astringents
+C03582,Caries Prophylactic Agents
+C03583,Fluorides
+C03584,CD38 (Clusters of Differentiation 38) inhibitors
+C03585,CD38-directed Antibody Interactions
+C03586,CD38-directed Cytolytic Antibody
+C03587,Mercurial Diuretics
+C03588,Diabetes Mellitus
+C03589,Thymidine Phosphorylase Inhibitor
+C03590,Cariogenic Agents
+C03591,Intrinsic Factor
+C03592,Mucoproteins
+C03593,Pesticide Synergists
+C03594,Protein Hydrolysates
+C03595,Wound Healing
+C03596,Iodopyridones
+C03597,Liver Function
+C03598,Renal System
+C03599,Amino Acid Hypertonic Solution
+C03600,Solutions for Parenteral Nutrition
+C03601,Dental Materials
+C03602,"Technetium (99Mtc), Particles and Colloids"
+C03603,Perchlorates
+C03604,Iodine Isotopes
+C03605,Tests for Thyreoidea Function
+C03606,Thyrotropin-Releasing Hormone
+C03607,Lipid Emulsion
+C03608,Increased IgG Production
+C03609,Non-Standardized Chemical Allergen
+C03610,Bleaching Agents
+C03611,Hygroscopic Agents
+C03612,Oxidants
+C03613,Strontium Radioisotopes
+C03614,Deoxyglucose
+C03615,Colloids
+C03616,Magnetic Iron Oxide Nanoparticles
+C03617,Metal Nanoparticles
+C03618,Organosilicon Compounds
+C03619,Superparamagnetic Contrast Media
+C03620,Suspensions
+C03621,Helicobacter pylori Diagnostic
+C03622,Antiperspirants
+C03623,Dimethylpolysiloxanes
+C03624,Emollients
+C03625,Silicones
+C03626,Siloxanes
+C03627,Lentigo
+C03628,Skin Lightening Agent
+C03629,Melanin Synthesis Inhibitor
+C03630,Secretin
+C03631,Secretin-class Hormone
+C03632,Astringents and Deodorants
+C03633,"Water Pollutants, Chemical"
+C03634,Betula
+C03635,Gaultheria
+C03636,Long-acting Insulins
+C03637,Inactivated Clostridium Tetani Vaccine
+C03638,Inactivated Corynebacterium Diphtheriae Vaccine
+C03639,Diphtheria Vaccines
+C03640,Meningococcal Vaccines
+C03641,Actively Acquired Immunity
+C03642,Inactivated Rabies Virus Vaccine
+C03643,Rabies Vaccines
+C03644,Haemophilus Vaccines
+C03645,Inactivated Haemophilus Influenzae B Vaccine
+C03646,Live Attenuated Rotavirus Vaccine
+C03647,Live Rotavirus Vaccine
+C03648,Rota Virus Diarrhea Vaccines
+C03649,Viral Vaccines
+C03650,Inactivated Pneumococcal Vaccine
+C03651,Inactivated Human Papillomavirus Vaccine
+C03652,Human papillomavirus 16
+C03653,Nucleocapsid Proteins
+C03654,Live Attenuated Measles Virus Vaccine
+C03655,Live Mumps Virus Vaccine
+C03656,Live Attenuated Rubella Virus Vaccine
+C03657,Live vaccines
+C03658,Measles vaccines
+C03659,Rubella Vaccines
+C03660,Herpesvirus Vaccines
+C03661,Live Attenuated Herpes Zoster Virus Vaccine
+C03662,Live Attenuated Varicella Zoster Virus Vaccine
+C03663,Varicella Zoster Vaccines
+C03664,Increased Immunologically Active Molecule Activity
+C03665,Increased Macrophage Proliferation
+C03666,Live Attenuated Bacillus Calmette-Guerin Immunotherapy
+C03667,Live Attenuated Bacillus Calmette-Guerin Vaccine
+C03668,Non-Standardized Food Allergenic Extract
+C03669,Non-Standardized Plant Allergenic Extract
+C03670,Non-Standardized House Dust Allergenic Extract
+C03671,Particulate Matter
+C03672,Non-Standardized Pollen Allergenic Extract
+C03673,Grass Pollen Allergen Extracts
+C03674,Allergenic Extracts
+C03675,Standardized Pollen Allergenic Extract
+C03676,Standardized Animal Skin Allergenic Extract
+C03677,Allergens
+C03678,Standardized Insect Allergenic Extract
+C03679,Non-Standardized Animal Skin Allergenic Extract
+C03680,Non-Standardized Plant Fiber Allergenic Extract
+C03681,Non-Standardized Insect Allergenic Extract
+C03682,Insect Proteins
+C03683,Non-Standardized Insect Venom Allergenic Extract
+C03684,Non-Standardized Feather Allergenic Extract
+C03685,Non-Standardized Fungal Allergenic Extract
+C03686,Fungal Proteins
+C03687,Plant Exudates
+C03688,Plant Gums
+C03689,Standardized Animal Hair Allergenic Extract
+C03690,Beverages
+C03691,Caseins
+C03692,Dairy Products
+C03693,Milk components
+C03694,Phosphoproteins
+C03695,Bacterial Vaccines
+C03696,Tetanus Vaccines
+C03697,Toxoids
+C03698,Diphtheria
+C03699,Inactivated Influenza A Virus Vaccine
+C03700,Influenza Vaccines
+C03701,Myrtaceae
+C03702,Dietary Fiber
+C03703,Inactivated Japanese Encephalitis Virus Vaccine
+C03704,Allogeneic Cultured Cell Scaffold
+C03705,Inactivated Bordetella Pertussis Vaccine
+C03706,Bordetella bronchiseptica
+C03707,Bordetella pertussis
+C03708,Virulence Factors
+C03709,Inactivated Influenza B Virus Vaccine
+C03710,Inactivated Poliovirus Vaccine
+C03711,Inactivated Meningococcal Vaccine
+C03712,Inactivated Salmonella Typhi Vaccine
+C03713,Typhoid vaccines
+C03714,Live Attenuated Yellow Fever Virus Vaccine
+C03715,Yellow Fever Vaccines
+C03716,Non-Standardized Bacterial Allergenic Extract
+C03717,Non-Standardized Animal Hair Allergenic Extract
+C03718,Bee and Wasp Venom
+C03719,Standardized Insect Venom Allergenic Extract
+C03720,Inactivated Hepatitis A Virus Vaccine
+C03721,Viral Hepatitis Vaccines
+C03722,"Vaccines, Inactivated"
+C03723,Autologous Cultured Cell
+C03724,Anthrax Vaccines
+C03725,Live Attenuated Bacillus Anthracis Vaccine
+C03726,"Vaccines, Attenuated"
+C03727,Antidiarrheal microorganisms
+C03728,Non-Standardized Animal Dander Allergenic Extract
+C03729,Live Attenuated Salmonella Typhi Vaccine
+C03730,Allogeneic Cord Blood Hematopoietic Progenitor Cell Therapy
+C03731,Softener and Emollient Laxatives
+C03732,"Softeners, Emollients"
+C03733,Ointment Bases
+C03734,Carboxymethylcellulose Sodium
+C03735,Amylases
+C03736,"Amylases, antagonists & inhibitors"
+C03737,Skin Barrier Activity
+C03738,Silver Compounds
+C03739,Keratoplastic Agents
+C03740,Tars
+C03741,Root Canal Filling Materials
+C03742,Tin Compounds
+C03743,Benzalkonium Compounds
+C03744,Waxes
+C03745,"Resins, Plant"
+C03746,Tooth Bleaching Agents
+C03747,Chromium Isotopes
+C03748,Barium Compounds
+C03749,Barium Sulfate Containing X-Ray Contrast Media
+C03750,"X-Ray Contrast Media, Non-Iodinated"
+C03751,Trichloroacetic Acid
+C03752,Water Pollutants
+C03753,Tetrahydropyrimidine Derivatives
+C03754,Antracen Derivatives
+C03755,Recombinant Antithrombin
+C03756,"Papain, antagonists & inhibitors"
+C03757,Mentha
+C03758,Metalloids
+C03759,Ericales
+C03760,Styracaceae
+C03761,Chitin
+C03762,Chitosan
+C03763,"Fatty Acids, Omega-6"
+C03764,Insecticides and Repellents
+C03765,Perfume
+C03766,Skin Test Antigen
+C03767,Thioredoxins
+C03768,"Thioredoxins, antagonists & inhibitors"
+C03769,Increased Coagulation Factor Activity
+C03770,"Prothrombin, agonists"
+C03771,Phytochemicals
+C03772,Boric Acids
+C03773,Factor IX
+C03774,Aluminum Oxides
+C03775,"Metals, Alkali"
+C03776,Apatites
+C03777,Calcium Phosphates
+C03778,Ceramics
+C03779,Hydroxyapatites
+C03780,Propolis
+C03781,Oenothera
+C03782,Onagraceae
+C03783,Prostacyclin Receptor Agonist
+C03784,Prostacyclin Receptor Agonists
+C03785,"Receptors, Prostaglandin, agonists"
+C03786,Trihalomethanes
+C03787,Polyether Polyketides
+C03788,"Chitin, antagonists & inhibitors"
+C03789,Proton Ionophores
+C03790,Sodium Ionophores
+C03791,Carbanilides
+C03792,"Janus Kinase 1, antagonists & inhibitors"
+C03793,Superoxide Dismutase
+C03794,Organophosphorous Compounds
+C03795,Zearalenone
+C03796,"Receptors, Adrenergic, beta"
+C03797,Veterinary Drugs
+C03798,Dirofilaria
+C03799,Cyclohexanones
+C03800,Urate Transporter 1 Inhibitor
+C03801,Urate Transporter 1 Inhibitors
+C03802,Acridine Derivatives
+C03803,"Cholesterol Ester Storage Disease, drug therapy"
+C03804,Hydrolytic Lysosomal Cholesteryl Ester-specific Enzyme
+C03805,Hydrolytic Lysosomal Triacylglycerol-specific Enzyme
+C03806,"Wolman Disease, drug therapy"
+C03807,Interleukin-17
+C03808,Hemorrhage
+C03809,BCL-2 Inhibitor
+C03810,Ethylmercury Compounds
+C03811,Endogenous Antigen Neutralization
+C03812,Antithrombin III
+C03813,"Antithrombin III, agonists"
+C03814,Bees
+C03815,Tuberculin
+C03816,Tuberculosis
+C03817,Tuberculosis Skin Test
+C03818,"Saliva, Artificial"
+C03819,Human Rabies Immune Globulins
+C03820,Human Tetanus Immune Globulins
+C03821,Burseraceae
+C03822,Commiphora
+C03823,"Anti-inflammatory Agents, Miscellaneous"
+C03824,Lymphocyte Function-Associated Antigen-1
+C03825,Lymphocyte Function-Associated Antigen-1 Antagonist
+C03826,Lymphocyte Function-Associated Antigen-1 Antagonists
+C03827,Human Varicella Zoster Immune Globulins
+C03828,"Bacterial and viral vaccines, combined"
+C03829,Hepatitis Antigens
+C03830,Hepatitis B Antigens
+C03831,Hepatitis B Surface Antigens
+C03832,"Hepatitis B Surface Antigens, drug effects"
+C03833,Hepatitis B Vaccines
+C03834,Inactivated Hepatitis B Virus Vaccine
+C03835,Bone Morphogenetic Proteins
+C03836,TGF-beta Superfamily Proteins
+C03837,Artemisia
+C03838,Histamine-3 (H3) Receptor Antagonists/Inverse Agonists
+C03839,Histamine-3 Receptor Antagonist/Inverse Agonist
+C03840,"Receptors, Histamine H3"
+C03841,Cholera Toxin
+C03842,Enterotoxins
+C03843,Transthyretin Stabilizers
+C03844,RNA-Directed DNA Polymerase
+C03845,"Receptor, Melanocortin, Type 3, agonists"
+C03846,"Receptor, Melanocortin, Type 4, agonists"
+C03847,"B-Cell Activating Factor, antagonists & inhibitors"
+C03848,Glycerides
+C03849,Medium-chain Triglycerides
+C03850,Nuclear Export Inhibitors
+C03851,Triglycerides
+C03852,Hypoxia-inducible Factor Prolyl Hydroxylase Inhibitor
+C03853,Mitogen-Activated Protein Kinase Kinase 1 Inhibitors
+C03854,Mitogen-Activated Protein Kinase Kinase 2 Inhibitors
+C03855,"fms-Like Tyrosine Kinase 3, antagonists & inhibitors"
+C03856,"Janus Kinase 2, antagonists & inhibitors"
+C03857,Melanocortin 4 Receptor Agonist
+C03858,Melanocortin 4 Receptor Agonists
+C03859,"Chemokine CXCL12, antagonists & inhibitors"
+C03860,"Receptors, Interleukin-8A, antagonists & inhibitors"
+C03861,"Receptors, Interleukin-8B, antagonists & inhibitors"
+C03862,Programmed Death Ligand-1 Antagonists
+C03863,Programmed Death Ligand-1 Blocker
+C03864,Programmed Death Ligand-1-directed Antibody Interactions
+C03865,"Bombesin, antagonists & inhibitors"
+C03866,Alzheimer Disease
+C03867,Serotonin (5-HT) 1F Receptor Agonists
+C03868,Tests for Liver Functional Capacity
+C03869,Crown Compounds
+C03870,Potassium-competitive Acid Blockers
+C03871,"Proto-Oncogene Proteins c-akt, antagonists & inhibitors"
+C03872,"Leucine-tRNA Ligase, antagonists & inhibitors"
+C03873,Enzyme Activation
+C03874,Polyether Toxins
+C03875,"Receptors, CCR2, antagonists & inhibitors"
+C03876,Sodium-Hydrogen Exchanger 3 Inhibitor
+C03877,Sodium/Hydrogen Exchanger 3 (NHE3) Inhibitors
+C03878,"Glucokinase, antagonists & inhibitors"
+C03879,"p21-Activated Kinases, antagonists & inhibitors"
+C03880,Interleukin 17 Receptor A Antagonists
+C03881,Interleukin-17 Receptor A Antagonist
+C03882,"Receptors, Interleukin-17"
+C03883,"Neuropeptide Y, drug effects"
+C03884,Mesenchymal Epithelial Transition Inhibitors
+C03885,Human Immunodeficiency Virus Type 1 (HIV-1) gp120-directed Attachment Inhibitors
+C03886,"JNK Mitogen-Activated Protein Kinases, antagonists & inhibitors"
+C03887,Nitrofuran Antiprotozoals
+C03888,Non-Competitive N-Methyl D-Aspartate (NMDA) Receptor Antagonists
+C03889,Dinitrobenzenes
+C03890,"Receptor, Platelet-Derived Growth Factor alpha, antagonists & inhibitors"
+C03891,"Receptor, Platelet-Derived Growth Factor beta, antagonists & inhibitors"
+C03892,Interleukin-23 Subunit p19
+C03893,"Cytochrome P-450 CYP11B2, antagonists & inhibitors"
+C03894,Cytochrome P450 11B1 Inhibitors
+C03895,"Angiotensin II, antagonists & inhibitors"
+C03896,"Leukemia, Lymphocytic, Chronic, B-Cell, drug therapy"
+C03897,"Prostatic Neoplasms, drug therapy"
+C03898,"Receptors, LHRH, antagonists & inhibitors"
+C03899,Neuroactive Steroid Gamma-Aminobutyric Acid (GABA) A Receptor Positive Modulators
+C03900,Sclerostin Inhibitors
+C03901,"ATP Binding Cassette Transporter, Subfamily B, Member 1"
+C03902,"Amyloid Precursor Protein Secretases, antagonists & inhibitors"
+C03903,Condiments
+C03904,"TRPV Cation Channels, antagonists & inhibitors"
+C03905,"Fibroblast Growth Factor 2, antagonists & inhibitors"
+C03906,Fibroblast growth factor receptor (FGFR) tyrosine kinase inhibitors
+C03907,"Receptor, Fibroblast Growth Factor, Type 1, antagonists & inhibitors"
+C03908,"Receptors, Fibroblast Growth Factor, antagonists & inhibitors"
+C03909,"PPAR gamma, antagonists & inhibitors"
+C03910,"Cyclic Nucleotide Phosphodiesterases, Type 5"
+C03911,"Receptor, Cannabinoid, CB2, agonists"
+C03912,"Tuberculosis, Pulmonary, drug therapy"
+C03913,Interleukin-13 Antagonist
+C03914,C-type Natriuretic Peptide Analog
+C03915,Adenosine Triphosphate-Citrate Lyase Inhibitor
+C03916,Adenosine Triphosphate-Citrate Lyase Inhibitors
+C03917,Kappa Opioid Receptor Agonist
+C03918,Semicarbazides
+C03919,Semicarbazones
+C03920,Transforming Growth Factor beta
+C03921,"Alzheimer Disease, drug therapy"
+C03922,"Receptor, EphB4, antagonists & inhibitors"
+C03923,Tumor Suppressor Proteins
+C03924,Type I Interferon Receptor Antagonist
+C03925,Smoke
+C03926,"Glycine Plasma Membrane Transport Proteins, antagonists & inhibitors"
+C03927,Thymopoietins
+C03928,Gamma Secretase Inhibitor
+C03929,"Class I Phosphatidylinositol 3-Kinases, antagonists & inhibitors"
+C03930,"Receptors, Lysosphingolipid, antagonists & inhibitors"
+C03931,Orthopoxvirus VP37 Envelope Wrapping Protein Inhibitor
+C03932,Interleukin 5 Receptor alpha-directed Antibody Interactions
+C03933,Interleukin-5 Receptor alpha-directed Cytolytic Antibody
+C03934,"Receptors, Prostaglandin E, EP2 Subtype"
+C03935,Catechin
+C03936,"Receptors, Glucocorticoid, agonists"
+C03937,"Receptors, Glucagon, antagonists & inhibitors"
+C03938,Cytomegalovirus DNA Terminase Complex Inhibitor
+C03939,DNA Terminase Complex Inhibitors
+C03940,"Proto-Oncogene Proteins c-bcl-2, antagonists & inhibitors"
+C03941,"Antibodies, Neutralizing"
+C03942,Tryptophan Hydroxylase Inhibitor
+C03943,Purinergic P2X Receptor Agonists
+C03944,"Receptor, Muscarinic M3, antagonists & inhibitors"
+C03945,Antimutagenic Agents
+C03946,Activin Signaling Inhibitor
+C03947,"Bradykinin, agonists"
+C03948,Triazaacenaphthylene Bacterial Type II Topoisomerase Inhibitor
+C03949,Cyclosporin Derivatives
+C03950,Cytidine Diphosphate
+C03951,Interleukin 4 Receptor alpha Antagonists
+C03952,Interleukin-4 Receptor alpha Antagonist
+C03953,"Interleukin-4 Receptor alpha Subunit, antagonists & inhibitors"
+C03954,"Interleukin-4, antagonists & inhibitors"
+C03955,"Proto-Oncogene Proteins c-met, antagonists & inhibitors"
+C03956,P-Selectin
+C03957,Lutetium
+C03958,Ceramides
+C03959,Cerebrosides
+C03960,Neutral Glycosphingolipids
+C03961,CD79b-directed Antibody–Drug Conjugates
+C03962,Cytochrome P450 2A6 Inhibitors
+C03963,"Receptor, IGF Type 1"
+C03964,"Methionine-tRNA Ligase, antagonists & inhibitors"
+C03965,Dipeptidyl Peptidase 4
+C03966,p38 Mitogen-Activated Protein Kinases
+C03967,Amyloid Beta-directed Antibodies
+C03968,Activin Receptors
+C03969,Erythroid Maturation Agents
+C03970,Protein-Serine-Threonine Kinases
+C03971,"Receptors, Transforming Growth Factor beta"
+C03972,"Focal Adhesion Kinase 1, antagonists & inhibitors"
+C03973,"Receptors, Oxytocin, antagonists & inhibitors"
+C03974,Azocines
+C03975,Oxazocines
+C03976,"Toll-Like Receptor 8, agonists"
+C03977,"Receptor, Cholecystokinin A, agonists"
+C03978,"Proto-Oncogene Proteins c-mdm2, antagonists & inhibitors"
+C03979,Salvia
+C03980,B-Cell Activating Factor
+C03981,Gangliosides
+C03982,"Receptors, Cholecystokinin, antagonists & inhibitors"
+C03983,Cyanoacrylates
+C03984,Lysosomal beta Glucuronidase
+C03985,Recombinant Human Lysosomal alpha-Mannosidase
+C03986,"Leukemia, Myelogenous, Chronic, BCR-ABL Positive"
+C03987,"Steroid 17-alpha-Hydroxylase, antagonists & inhibitors"
+C03988,Isocyanates
+C03989,Calcium-Calmodulin-Dependent Protein Kinases
+C03990,Interleukin-3
+C03991,Stevia
+C03992,HSP90 Heat-Shock Proteins
+C03993,Drug Synergism
+C03994,Spin Labels
+C03995,Octanols
+C03996,Dental Disinfectants
+C03997,Calcitonin Gene-Related Peptide (CGRP) Antagonists
+C03998,"DNA Topoisomerases, Type II"
+C03999,Triterpenoid Antifungal
+C04000,Triterpenoid Antifungals
+C04001,Lupanes
+C04002,"Ribonucleoprotein, U1 Small Nuclear"
+C04003,Chemokine Receptor Type 4 Interaction
+C04004,Chemokine Receptor Type 4 Interactions
+C04005,"Oxidants, Photochemical"
+C04006,"Receptors, Corticotropin-Releasing Hormone, antagonists & inhibitors"
+C04007,CD19 Directed Cytolytic Antibodies
+C04008,CD19-directed Cytolytic Antibody
+C04009,"Benzodiazepines, antagonists & inhibitors"
+C04010,"Receptors, Tachykinin, antagonists & inhibitors"
+C04011,Dual Endothelin Type A Receptor/Ang II Subtype 1 Receptor Antagonist (DEARA)
+C04012,"Receptor, Adenosine A1"
+C04013,Piper nigrum
+C04014,Combretum
+C04015,Terbium
+C04016,"Receptors, Prostaglandin E, EP2 Subtype, agonists"
+C04017,"Furin, antagonists & inhibitors"
+C04018,"Endothelin-1, antagonists & inhibitors"
+C04019,Endothelins
+C04020,"Growth Hormone-Releasing Hormone, agonists"
+C04021,"Enkephalin, Methionine"
+C04022,N-Glycosyl Hydrolases
+C04023,Plant Lectins
+C04024,Plant Proteins
+C04025,Ribosome Inactivating Proteins
+C04026,"Toll-Like Receptor 7, agonists"
+C04027,CD22-Directed Cytotoxins
+C04028,"Ribosomal Protein S6 Kinases, 70-kDa, antagonists & inhibitors"
+C04029,"Aldehyde Dehydrogenase, antagonists & inhibitors"
+C04030,CD4-directed Antibody Interactions
+C04031,CD4-directed Blocking Antibody
+C04032,HIV 1 Post-attachment Fusion Inhibitors
+C04033,Human Immunodeficiency Virus 1 Post-attachment Fusion Inhibitor
+C04034,"Receptors, Opioid, kappa, agonists"
+C04035,Peptidomimetics
+C04036,"Sodium-Glucose Transporter 1, antagonists & inhibitors"
+C04037,Adenylyl Cyclase Inhibitors
+C04038,Mucopolysaccharidosis III
+C04039,Tuberculosis Vaccines
+C04040,Podophyllum
+C04041,Tissue Factor Pathway Inhibitor Antagonist
+C04042,"Tryptophan Oxygenase, antagonists & inhibitors"
+C04043,Thiosemicarbazones
+C04044,Phosphoric Diester Hydrolases
+C04045,Ammonia-Lyases
+C04046,Carbon-Nitrogen Lyases
+C04047,Phenylalanine Metabolizing Enzyme
+C04048,"Receptors, Guanylate Cyclase-Coupled, agonists"
+C04049,Actinoid Series Elements
+C04050,Alcohol Oxidoreductases
+C04051,"Receptors, Neurotransmitter"
+C04052,von Willebrand Factor
+C04053,Galactitol
+C04054,"Receptors, Opioid, mu"
+C04055,Methyltransferase Inhibitor
+C04056,Methyltransferase Inhibitors
+C04057,"Muscular Dystrophy, Duchenne"
+C04058,Trop-2-Directed Monoclonal Antibodies
+C04059,Acyltransferases
+C04060,Aminoacyltransferases
+C04061,"Factor XIIIa, antagonists & inhibitors"
+C04062,Increased Fibrin Polymerization Activity
+C04063,Transglutaminases
+C04064,"Corticotropin-Releasing Hormone, antagonists & inhibitors"
+C04065,Thyroid Hormone Receptor beta Agonist
+C04066,Thyroid hormone receptor-beta (THR-beta) agonist
+C04067,Stimulation Small Intestine Fluid/Electrolyte Secretion
+C04068,"Receptors, CCR4, antagonists & inhibitors"
+C04069,Non-Nutritive Sweeteners
+C04070,"Sterol O-Acyltransferase, antagonists & inhibitors"
+C04071,"Dopamine beta-Hydroxylase, antagonists & inhibitors"
+C04072,Cyanobacteria Toxins
+C04073,Verbenaceae
+C04074,"Leukemia, Myelogenous, Chronic, BCR-ABL Positive, drug therapy"
+C04075,Nectin-4-directed Antibodies
+C04076,Benz(a)Anthracenes
+C04077,Phenalenes
+C04078,"Vascular Endothelial Growth Factors, antagonists & inhibitors"
+C04079,"Stearoyl-CoA Desaturase, antagonists & inhibitors"
+C04080,"Cyclin-Dependent Kinase 2, antagonists & inhibitors"
+C04081,"Receptors, Thromboxane, antagonists & inhibitors"
+C04082,Asteraceae
+C04083,Growth Hormone Secretagogue Receptor Agonist
+C04084,Growth Hormone Secretagogue Receptor Agonists
+C04085,Yttrium
+C04086,Yttrium (90Y) Compounds
+C04087,Yttrium Isotopes
+C04088,"Synthetic Antispasmodics, Amides With Tertiary Amines"
+C04089,"Receptors, Platelet-Derived Growth Factor, antagonists & inhibitors"
+C04090,"Phospholipase D, antagonists & inhibitors"
+C04091,"Glutamyl Aminopeptidase, antagonists & inhibitors"
+C04092,Aerosol Propellants
+C04093,Aerosols
+C04094,Adenosine A1 Receptor Agonists
+C04095,beta-Glucans
+C04096,Norpregnadienes
+C04097,Serratia
+C04098,Increased Platelet Aggregation
+C04099,Factor X
+C04100,"Factor X, agonists"
+C04101,"Factor X, antagonists & inhibitors"
+C04102,Increased Protein Synthesis
+C04103,Survival Motor Neuron-2-directed RNA Interaction
+C04104,"rho-Associated Kinases, antagonists & inhibitors"
+C04105,Hydrolytic Lysosomal N-terminal Tripeptidyl Peptidase
+C04106,"NADH, NADPH Oxidoreductases, antagonists & inhibitors"
+C04107,Factor VIII
+C04108,Premenstrual Syndrome
+C04109,Hippocastanaceae
+C04110,Sapindaceae
+C04111,Dipsacales
+C04112,Valerianaceae
+C04113,"Fertility Agents, Male"
+C04114,Kallikreins
+C04115,Aspartic Acid Endopeptidases
+C04116,Aspartic Acid Proteases
+C04117,"Iron Bivalent, Oral Preparations"
+C04118,Quinolone Vasodilators
+C04119,Diethylamines
+C04120,Tooth Bleaching
+C04121,Dimethyldithiocarbamate
+C04122,"Anemia, Iron-Deficiency"
+C04123,Muramidase
+C04124,Aminophenols
+C04125,Chloroquinolinols
+C04126,Bufanolides
+C04127,Scilla Glycosides
+C04128,Colchicine Derivatives
+C04129,Cycloheptanes
+C04130,Polycyclic Sesquiterpenes
+C04131,"Sesquiterpenes, Eudesmane"
+C04132,Plasticizers
+C04133,Mercury Compounds
+C04134,Benzeneacetamides
+C04135,Gold Isotopes
+C04136,Benzenesulfonates
+C04137,Cyclooctanes
+C04138,Alginates
+C04139,Glucuronates
+C04140,Hexuronic Acids
+C04141,"Menopause, drug effects"
+C04142,"Psychophysiologic Disorders, drug therapy"
+C04143,Immunoglobulin M
+C04144,Sorption Detoxification
+C04145,Various Diagnostic Radiopharmaceuticals
+C04146,Androgens for Topical Use
+C04147,Peptoids
+C04148,Pyrethrines
+C04149,Corticosteroid Derivatives
+C04150,Muramic Acids
+C04151,Bone Remodeling
+C04152,Toxiferine
+C04153,Heparin Binding Activity
+C04154,beta-Galactosidase
+C04155,Pyrazolone Derivatives
+C04156,Bone Substitutes
+C04157,Manganese Compounds
+C04158,Anisoles
+C04159,Sialogogues
+C04160,Thiones
+C04161,Fructosephosphates
+C04162,Hexosediphosphates
+C04163,Isocitrate dehydrogenase (IDH) inhibitors
+C04164,Isocitrate Dehydrogenase 2 Inhibitor
+C04165,Isocitrate dehydrogenase-2 (IDH2) Inhibitors
+C04166,CD19 Receptor Interactions
+C04167,CD19-directed Chimeric Antigen Receptor
+C04168,Genetically-modified Autologous T Cells
+C04169,"Receptors, Antigen"
+C04170,Erythema
+C04171,Inflammation
+C04172,Antivenins
+C04173,Neisseria meningitidis
+C04174,Venom Neutralization
+C04175,Alphaherpesvirinae
+C04176,DNA Viruses
+C04177,Herpesviridae
+C04178,Simplexvirus
+C04179,Viruses
+C04180,"Antigens, CD"
+C04181,"Antigens, Differentiation"
+C04182,"Antigens, Differentiation, B-Lymphocyte"
+C04183,Immunomodulation
+C04184,"Antihemorrhagic Agents, Miscellaneous"
+C04185,Recombinant Human Nerve Growth Factor
+C04186,Rho Kinase Inhibitor
+C04187,Rho Kinase Inhibitors
+C04188,Cells
+C04189,Connective Tissue Cells
+C04190,Multipotent Stem Cells
+C04191,Stem Cells
+C04192,Stromal Cells
+C04193,Ranunculaceae
+C04194,Ranunculales
+C04195,"Sirtuin 1, antagonists & inhibitors"
+C04196,Radiolabeled Somatostatin Analogs
+C04197,Baloxavir and prodrugs
+C04198,Polymerase Acidic Endonuclease Inhibitors
+C04199,Tocopherols
+C04200,Fibroblast Growth Factor-23 Blocking Antibodies
+C04201,Cholates
+C04202,Acetophenones
+C04203,Salmonella Vaccines
+C04204,"Vaccines, Typhoid"
+C04205,Phytosterols
+C04206,Calcitonin Gene-related Peptide Antagonist
+C04207,Malacidins
+C04208,"ATP Binding Cassette Transporter, Subfamily B, Member 1, antagonists & inhibitors"
+C04209,Interleukin-1
+C04210,Monokines
+C04211,Dental Cavity Preparation
+C04212,Dentin-Bonding Agents
+C04213,Linoleic Acids
+C04214,Bacterial Neurotoxin Neutralization
+C04215,Zingiberaceae
+C04216,Neprilysin Inhibitors
+C04217,EGF Family of Proteins
+C04218,Chromates
+C04219,Chromium Compounds
+C04220,Latex Hypersensitivity
+C04221,Lewis X Antigen
+C04222,Tryptophan Hydroxylase Inhibitors
+C04223,Probiotics
+C04224,Ericaceae
+C04225,Vaccinium
+C04226,Gallstones
+C04227,Apiaceae
+C04228,Lilianae
+C04229,Zingiberales
+C04230,Basidiomycota
+C04231,Fungi
+C04232,Zygophyllaceae
+C04233,Fabaceae
+C04234,Angelica
+C04235,Salvia miltiorrhiza
+C04236,Prunus
+C04237,Rosaceae
+C04238,Rosales
+C04239,Oleaceae
+C04240,Campanulaceae
+C04241,Arecaceae
+C04242,Live Attenuated Influenza A Virus Vaccine
+C04243,Adenovirus Vaccines
+C04244,Live Human Adenovirus Type 4 Vaccine
+C04245,Live Attenuated Cholera Vaccine
+C04246,Copper Absorption Inhibitor
+C04247,Decreased Copper Ion Absorption
+C04248,"Skin Ulcer, drug therapy"
+C04249,"Administration, Topical"
+C04250,Phosphorus Isotopes
+C04251,Isocitrate Dehydrogenase 1 Inhibitor
+C04252,Isocitrate dehydrogenase-1 (IDH1) inhibitors
+C04253,Isocitrate Dehydrogenase-1 Inhibitors
+C04254,alpha-Particle Emitting Activity
+C04255,Decreased RNA Integrity
+C04256,Increased Protein Breakdown
+C04257,Small Interfering RNA
+C04258,Transthyretin-directed RNA Interaction
+C04259,"Contraceptive Devices, Female"
+C04260,Drug Implants
+C04261,Plantaginaceae
+C04262,Nuclear Matrix-Associated Proteins
+C04263,Live Human Adenovirus Type 7 Vaccine
+C04264,Adoxaceae
+C04265,Sambucus
+C04266,Malpighiales
+C04267,Salicaceae
+C04268,Vanadium Compounds
+C04269,Live Vaccinia Virus Vaccine
+C04270,Recombinant Adenosine Deaminases
+C04271,Synthetic Drugs
+C04272,Tropomyosin Receptor Kinases Inhibitors
+C04273,Interferon gamma Antagonists
+C04274,Interferon gamma Blocker
+C04275,Interferon-gamma
+C04276,"Lymphohistiocytosis, Hemophagocytic"
+C04277,CD123 Interaction
+C04278,CD123 Interactions
+C04279,Polygalaceae
+C04280,Approved Treatments for COVID-19
+C04281,SARS-CoV-2 Nucleotide Analog RNA Polymerase Inhibitor
+C04282,Small Molecule Allosteric Inhibitor of the Phosphodiesterase-4D Enzyme
+C04283,Melanoma-Specific Antigens
+C04284,Glucokinase
+C04285,"E-Selectin, antagonists & inhibitors"
+C04286,Polyesters
+C04287,Platelet-derived Growth Factor alpha Receptor Inhibitors
+C04288,Stem Cell Factor (KIT) Receptor Inhibitors
+C04289,"Arthritis, Rheumatoid, drug therapy"
+C04290,Lymphocyte Activation Gene-3 Blocker
+C04291,Interleukin-2
+C04292,Secretoglobins
+C04293,Diacylglycerol O-Acyltransferase
+C04294,"Myelin-Associated Glycoprotein, antagonists & inhibitors"
+C04295,Oligonucleotide Telomerase Inhibitor
+C04296,"Telomerase, antagonists & inhibitors"
+C04297,Neonatal Fc Receptor Blocker
+C04298,Cardiac Myosin Inhibitor
+C04299,"Janus Kinase 3, antagonists & inhibitors"
+C04300,Vitamin K 2
+C04301,Hemoglobin S Polymerization Inhibitors
+C04302,Recombinant Protein Inhibitor of Complement Factor 5
+C04303,Fabry Disease
+C04304,Classical Complement Pathway Inhibitor
+C04305,Antithrombin-directed RNA Interaction
+C04306,Complement 5a Receptor Antagonist
+C04307,Bruton's Tyrosine Kinase Inhibitors
+C04308,Dental Implants
+C04309,"Sarcoma, Experimental, chemically induced"
+C04310,Cytochrome P-450 CYP2C18 Inhibitors
+C04311,Cytochrome P-450 CYP2C18 Inhibitors (strength unknown)
+C04312,Aminolevulinate Synthase 1-directed RNA Interaction
+C04313,Aminolevulinate Synthase 1-Directed Small Interfering RNAs
+C04314,Galactosamine
+C04315,"Porphyrias, Hepatic"
+C04316,Thymic Stromal Lymphopoietin Blocker
+C04317,Human Growth Hormone Analogs
+C04318,Lectins
+C04319,"Receptor, Fibroblast Growth Factor, Type 2, antagonists & inhibitors"
+C04320,Claudin 18.2-directed Cytolytic Antibody
+C04321,beta-Cyclodextrins
+C04322,"Glioma, drug therapy"
+C04323,ADAM Proteins
+C04324,ADAMTS Proteins
+C04325,Glucose-dependent Insulinotropic Polypeptide Receptor Agonist
+C04326,Anion Transport Proteins
+C04327,ATP-Binding Cassette Transporters
+C04328,Chloride Channels
+C04329,"Cystic Fibrosis Transmembrane Conductance Regulator, agonists"
+C04330,Ion Channels
+C04331,Ion Pumps
+C04332,Membrane Transport Proteins
+C04333,Multidrug Resistance-Associated Proteins
+C04334,Organic Anion Transporters
+C04335,"Organic Anion Transporters, ATP-Dependent"
+C04336,Glucagon Receptor Agonists
+C04337,"Egg Proteins, Dietary"
+C04338,Ovalbumin
+C04339,Glyceryl Ethers
+C04340,Interleukin-31 Receptor alpha Antagonist
+C04341,Selectin Blocker
+C04342,"Focal Adhesion Protein-Tyrosine Kinases, antagonists & inhibitors"
+C04343,Phosphoinositide-3 Kinase Inhibitors
+C04344,Bispecific gp100 Peptide-HLA-directed CD3 T Cell Engager
+C04345,"Melanoma, therapy"
+C04346,Perilla
+C04347,Survival of Motor Neuron 2 Splicing Modifier
+C04348,Cyanates
+C04349,"Receptors, Pattern Recognition"
+C04350,Toll-Like Receptors
+C04351,"Receptors, Prostaglandin E, EP1 Subtype, antagonists & inhibitors"
+C04352,Soy Foods
+C04353,Angiopoietin-like 3 Inhibitor
+C04354,Angiopoietin-like 3 Inhibitors
+C04355,"Receptors, Atrial Natriuretic Factor, agonists"
+C04356,Elastin
+C04357,Transient Receptor Potential Channels
+C04358,Cobalt Isotopes
+C04359,Bispecific B-cell maturation antigen (BCMA)-directed CD3 T-cell engager
+C04360,Complement Factor D Inhibitor
+C04361,"Casein Kinase II, antagonists & inhibitors"
+C04362,Factor XI
+C04363,"Factor XIa, antagonists & inhibitors"
+C04364,Neuropilin-1
+C04365,Thioglucosides
+C04366,Cyclin-dependent Kinase 4 Inhibitors
+C04367,Cyclin-dependent Kinase 6 Inhibitors
+C04368,Cystic Fibrosis Transmembrane Conductance Regulator Correctors
+C04369,Inactivated Yersinia Pestis Vaccine
+C04370,Hypoxia-inducible Factor Inhibitor
+C04371,Bispecific HER2-directed Antibody
+C04372,Cascara
+C04373,Monkeypox Vaccines
+C04374,Smallpox Vaccines
+C04375,"Depression, Postpartum"
+C04376,Cellular and Gene Therapy
+C04377,Silk
+C04378,"Antibodies, Bispecific"
+C04379,Carbon-Carbon Lyases
+C04380,RAS GTPase Inhibitors
+C04381,Palladium
+C04382,Atrial Natriuretic Factor
+C04383,Disclosing Agent
+C04384,Interleukin-36 Receptor Antagonist
+C04385,Immunosuppression
+C04386,"Receptors, Interleukin-2"
+C04387,"Interleukin-12, antagonists & inhibitors"
+C04388,Recombinant Humanized IgG4 Monoclonal Antibody Against pHERV-W Envelope Protein
+C04389,COVID-19 Vaccines
+C04390,mRNA Vaccines
+C04391,"Vaccines, DNA"
+C04392,Neurokinin 3 Receptor Antagonist
+C04393,Human Immunodeficiency Virus 1 Capsid Inhibitor
+C04394,Rearranged during Transfection (RET) Inhibitors
+C04395,CD19-Directed Genetically Modified Autologous T-cell Immunotherapies
+C04396,Immunologic Techniques
+C04397,Investigative Techniques
+C04398,"Receptors, Antigen, T-Cell"
+C04399,"Receptors, Artificial"
+C04400,"Receptors, Cytoplasmic and Nuclear"
+C04401,Recombinant influenza vaccines
+C04402,Calcium-Binding Proteins
+C04403,Cytoskeletal Proteins
+C04404,Intracellular Calcium-Sensing Proteins
+C04405,Microfilament Proteins
+C04406,"Chemokines, CC"
+C04407,Trefoil Factors
+C04408,Algestone
+C04409,Pinus
+C04410,Mycobacterium
+C04411,"Vaccines, Acellular"
+C04412,"Vaccines, Subunit"
+C04413,Copper Radioisotopes
+C04414,Treatments for Ebola Virus Disease
+C04415,Cryptoxanthins
+C04416,HAO1-directed Small Interfering Ribonucleic Acid (siRNA)
+C04417,"Cataract, drug therapy"
+C04418,"Dynamins, antagonists & inhibitors"
+C04419,Thiosulfates
+C04420,Neural Inhibition
+C04421,Gallium Isotopes
+C04422,D-Amino Acid Oxidase Inhibitor
+C04423,"Antigens, Differentiation, T-Lymphocyte"
+C04424,Costimulatory and Inhibitory T-Cell Receptors
+C04425,Immune Checkpoint Proteins
+C04426,Lymphocyte Activation
+C04427,"Receptors, Vascular Endothelial Growth Factor"
+C04428,Cognition
+C04429,"Electron Transport Complex I, antagonists & inhibitors"
+C04430,Nonsteroidal Mineralocorticoid-Receptor Antagonist
+C04431,Complement Factor B Inhibitor
+C04432,"Genes, Tumor Suppressor"
+C04433,"Protein Kinase C-epsilon, antagonists & inhibitors"
+C04434,CD19-Directed Monoclonal Antibodies
+C04435,Ileal bile acid transport inhibitor
+C04436,Ileal Bile Acid Transporter Inhibitor
+C04437,"Anemia, Hemolytic, Congenital, drug therapy"
+C04438,Pyruvate Kinase Activator
+C04439,Liver Diseases
+C04440,Sophora
+C04441,Ureohydrolases
+C04442,Paeonia
+C04443,Dioxins and Dioxin-like Compounds
+C04444,HIV Antibodies
+C04445,Bispecific CD20-directed CD3 T Cell Engager
+C04446,Zaire Ebolavirus Glycoprotein-directed Antibody
+C04447,Colony Stimulating Factor-1 Receptor Blocker
+C04448,Base Pair Mismatch
+C04449,Poly C
+C04450,Poly I
+C04451,Polyribonucleotides
+C04452,"RNA, Double-Stranded"
+C04453,Sulfur Oxides
+C04454,Poly I-C
+C04455,Interleukin-15
+C04456,"Receptors, Interleukin-15"
+C04457,"Receptors, Neuropeptide"
+C04458,"Receptors, Pituitary Adenylate Cyclase-Activating Polypeptide"
+C04459,"Deoxyribonuclease I, antagonists & inhibitors"
+C04460,Bacteria
+C04461,Dental Alloys
+C04462,Lactoferrin
+C04463,Cetacea
+C04464,Gentianaceae
+C04465,Gentianales
+C04466,Triticum
+C04467,Brain
+C04468,Fibrin
+C04469,Amylin Receptor Agonists
+C04470,Catechol Oxidase
+C04471,Mixed Function Oxygenases
+C04472,Monophenol Monooxygenase
+C04473,"Monophenol Monooxygenase, antagonists & inhibitors"
+C04474,"Monophenol Monooxygenase, drug effects"
+C04475,Oxygenases
+C04476,Cyclic Pyranopterin Monophosphate
+C04477,Lauric Acids
+C04478,Asparagales
+C04479,Orchidaceae
+C04480,Tyrosine Kinase 2 Inhibitor
+C04481,Beta-Globulins
+C04482,Fibroblasts
+C04483,Keratinocytes
+C04484,Diphtheria Toxin
+C04485,"PPAR alpha, antagonists & inhibitors"
+C04486,"Substance P, antagonists & inhibitors"
+C04487,"Glucose Transporter Type 1, antagonists & inhibitors"
+C04488,Methylglucosides
+C04489,Cytochalasins
+C04490,Radioligand Therapeutic Agent
+C04491,Theranostic Nanomedicine
+C04492,Monocyclic Sesquiterpenes
+C04493,Goiter
+C04494,"Receptor, Macrophage Colony-Stimulating Factor, antagonists & inhibitors"
+C04495,"RNA Polymerase I, antagonists & inhibitors"
+C04496,Pheromones
+C04497,Depsides
+C04498,Arabinose
+C04499,Autologous Hematopoietic Stem Cell-Based Gene Therapy
+C04500,Live Attenuated Influenza B Virus Vaccine
+C04501,Oxaloacetates
+C04502,Cholestenones
+C04503,Ecdysteroids
+C04504,Insect Hormones
+C04505,Invertebrate Hormones
+C04506,"Receptor, Muscarinic M1, agonists"
+C04507,Myelin Basic Protein
+C04508,"Cathepsins, antagonists & inhibitors"
+C04509,Antisense Oligonucleotide Specific to the Antisense Transcript of UBE3A
+C04510,Cholesterol 24S-Hydroxylase Inhibitor
+C04511,"Non-Replicating Recombinant, Self-Complementary Adeno-Associated Virus Serotype 9 Containing the Human CLN3 Gene"
+C04512,Aldehyde Oxidoreductases
+C04513,"Glyceraldehyde-3-Phosphate Dehydrogenases, antagonists & inhibitors"
+C04514,Oxidoreductases Acting on Aldehyde or Oxo Group Donors
+C04515,Recombinant Humanized Anti-Tau Antibody
+C04516,Proto-Oncogene Proteins c-bcl-2
+C04517,"cdc25 Phosphatases, antagonists & inhibitors"
+C04518,Phorbol Esters
+C04519,Phorbols
+C04520,Superoxides
+C04521,Spiperone
+C04522,Alkadienes
+C04523,"Receptor, Metabotropic Glutamate 5, antagonists & inhibitors"
+C04524,"Cells, Allogeneic"
+C04525,"Cells, Cultured, Allogeneic"
+C04526,Hematopoietic Stem Cells
+C04527,"Pyruvate Dehydrogenase Complex, antagonists & inhibitors"
+C04528,"Receptors, Colony-Stimulating Factor, antagonists & inhibitors"
+C04529,Ruthenium
+C04530,Menin Inhibitor
+C04531,"Ribosome Inactivating Proteins, Type 2"
+C04532,Anhydrides
+C04533,Cell Cycle Proteins
+C04534,Dual-Specificity Phosphatases
+C04535,Multifunctional Enzymes
+C04536,Phosphoprotein Phosphatases
+C04537,Protein Tyrosine Phosphatases
+C04538,DNA Nucleotidyltransferases
+C04539,DNA-Directed DNA Polymerase
+C04540,Nucleotidyltransferases
+C04541,Poly-ADP-Ribose Binding Proteins
+C04542,Ribonucleoproteins
+C04543,RNA-Binding Proteins
+C04544,Stroke
+C04545,Porphyrias
+C04546,Melanoma
+C04547,Sphingolipid Activator Proteins
+C04548,Hyperpolarized Contrast Agent
+C04549,Boranes
+C04550,Boron Neutron Capture Therapy
+C04551,"Receptors, TNF-Related Apoptosis-Inducing Ligand, agonists"
+C04552,Norleucine
+C04553,Germanium
+C04554,Natriuresis
+C04555,beta-N-Acetylhexosaminidases
+C04556,Hexosaminidases
+C04557,ABO Blood-Group System
+C04558,"Anemia, Sickle Cell, drug therapy"
+C04559,Respiratory syncytial virus (RSV) vaccines
+C04560,Respiratory Syncytial Viruses
+C04561,Flocculation
+C04562,Semifluorinated Alkane
+C04563,"Proinsulin, immunology"
+C04564,S-Nitrosothiols
+C04565,"Receptor, Anaphylatoxin C5a, antagonists & inhibitors"
+C04566,Ectoparasiticide
+C04567,"Amyloidosis, prevention & control"
+C04568,Adenosine A3 Receptor Antagonists
+C04569,Telomerase
+C04570,"Enzyme Induction, drug effects"
+C04571,"Receptors, Calcium-Sensing, antagonists & inhibitors"
+C04572,Streptococcus agalactiae
+C04573,"Iodide Peroxidase, antagonists & inhibitors"
+C04574,Macrophage Activation
+C04575,"Xanthine Oxidase, antagonists & inhibitors"
+C04576,Corticotropin-releasing Factor Type 1 Receptor Antagonist
+C04577,Apolipoproteins
+C04578,Apolipoproteins A
+C04579,Apoproteins
+C04580,Lipoproteins
+C04581,Cytochrome c Group
+C04582,Cytochromes
+C04583,Abuse-Deterrent Formulations
+C04584,Aversive Agents
+C04585,"Vasoactive Intestinal Peptide, antagonists & inhibitors"
+C04586,Whey
+C04587,Proteolipids
+C04588,Pulmonary Surfactant-Associated Proteins
+C04589,Chikungunya Fever
+C04590,Nitric Oxide Releasing Agent
+C04591,Extended-spectrum beta-lactamase inhibitors
+C04592,Graphite
+C04593,APOC-III-directed RNA Interaction
+C04594,Tripterygium
+C04595,Interleukin-15 Receptor Agonist
+C04596,"DNA Topoisomerases, Type I"
+C04597,Acetonitriles
+C04598,Proliferation Inducing Ligand (APRIL) blockers
+C04599,Purinergic P2X Receptor Antagonists
+C04600,Bacteriocins
+C04601,Adhesives
+C04602,"Osteoporosis, Postmenopausal, drug therapy"
+C04603,Cesium Isotopes
+C04604,Water
+C04605,Zingiber officinale
+C04606,Agaricales
+C04607,Aldehyde Reductase
+C04608,Hydrastis
+C04609,Calcium Ionophores
+C04610,Azadirachta
+C04611,Myosins
+C04612,Lipoprotein lipase activators
+C04613,Dapsone
+C04614,Streptogramin Group B
+C04615,Picolinic Acids
+C04616,"Amine Oxidase (Copper-Containing), antagonists & inhibitors"
+C04617,Chloral Hydrate
+C04618,"Hypersensitivity, drug therapy"
+C04619,Enbucrilate
+C04620,"Receptors, Metabotropic Glutamate, agonists"
+C04621,Oligomycins
+C04622,"Orotidine-5'-Phosphate Decarboxylase, antagonists & inhibitors"
+C04623,"Potassium Channels, agonists"
+C04624,"Motilin, agonists"
+C04625,"Urease, antagonists & inhibitors"
+C04626,"DNA Helicases, antagonists & inhibitors"
+C04627,Chlorofluorocarbons
+C04628,Cyclazocine
+C04629,Pyrenes
+C04630,Microbodies
+C04631,"Receptor, Cholecystokinin B, antagonists & inhibitors"
+C04632,"Thymic Factor, Circulating"
+C04633,Papaverine
+C04634,"Growth, drug effects"
+C04635,Juvenile Hormones
+C04636,"Nitric Oxide Synthase Type II, antagonists & inhibitors"
+C04637,Cytarabine and Derivatives
+C04638,Cyclic Nucleotide-Gated Cation Channels
+C04639,Valerian
+C04640,"Sphingomyelin Phosphodiesterase, antagonists & inhibitors"
+C04641,"Blood Platelets, drug effects"
+C04642,"Plasminogen Activators, antagonists & inhibitors"
+C04643,"gamma-Glutamyltransferase, antagonists & inhibitors"
+C04644,Acridones
+C04645,Cyclooxygenase 1
+C04646,"Kainic Acid, antagonists & inhibitors"
+C04647,"Natriuresis, drug effects"
+C04648,Nigella
+C04649,Prostatic Secretory Proteins

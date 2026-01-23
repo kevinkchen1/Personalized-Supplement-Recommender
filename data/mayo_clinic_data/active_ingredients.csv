@@ -1,0 +1,72 @@
+active_ingredient_id,active_ingredient
+A01,Lactobacillus acidophilus
+A02,Lactobacillus rhamnosus
+A03,Bifidobacterium species
+A04,Acemannan
+A05,Aloin
+A06,Aloe-emodin
+A07,Ubiquinone
+A08,Ubiquinol
+A09,Creatine monohydrate
+A10,Creatine phosphate
+A11,Dehydroepiandrosterone
+A12,Gamma-linolenic acid
+A13,Linoleic acid
+A14,Docosahexaenoic acid (DHA)
+A15,Eicosapentaenoic acid (EPA)
+A16,Docosapentaenoic acid (DPA)
+A17,Alpha-linolenic acid
+A18,Lignans
+A19,Dietary fiber
+A20,Folic acid
+A21,5-Methyltetrahydrofolate
+A22,Ginkgo flavone glycosides
+A23,Ginkgolides
+A24,Bilobalide
+A25,Glucosamine sulfate
+A26,Glucosamine hydrochloride
+A27,Glucose
+A28,Fructose
+A29,Polyphenols
+A30,Glucose oxidase
+A31,L-arginine
+A32,Tetrahydrocannabinol (THC)
+A33,Cannabidiol (CBD)
+A34,Cannabigerol (CBG)
+A35,Terpenes
+A36,Melatonin
+A37,Silymarin
+A38,Silybin
+A39,Silychristin
+A40,Silydianin
+A41,Nicotinic acid
+A42,Nicotinamide
+A43,Monacolin K
+A44,Other monacolins
+A45,Plant sterols
+A46,S-adenosyl-L-methionine
+A47,Hyperforin
+A48,Hypericin
+A49,Flavonoids
+A50,Terpinen-4-ol
+A51,Alpha-terpineol
+A52,1
+A53,Retinol
+A54,Retinyl palmitate
+A55,Beta-carotene
+A56,Pyridoxine
+A57,Pyridoxal
+A58,Pyridoxamine
+A59,Cyanocobalamin
+A60,Methylcobalamin
+A61,Hydroxocobalamin
+A62,Ascorbic acid
+A63,Dehydroascorbic acid
+A64,Cholecalciferol
+A65,Ergocalciferol
+A66,Alpha-tocopherol
+A67,Gamma-tocopherol
+A68,Tocotrienols
+A69,Zinc gluconate
+A70,Zinc citrate
+A71,Zinc sulfate

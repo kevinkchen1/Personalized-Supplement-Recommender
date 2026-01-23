@@ -1,0 +1,2961 @@
+salt_id,salt_name
+SAL0001,Leuprolide acetate
+SAL0002,Leuprolide mesylate
+SAL0003,Sermorelin acetate
+SAL0004,Goserelin acetate
+SAL0005,Insulin human zinc suspension
+SAL0006,NPH insulin
+SAL0007,Desmopressin acetate
+SAL0008,Desmopressin acetate anhydrous
+SAL0009,Glucagon hydrochloride
+SAL0010,Cetrorelix acetate
+SAL0011,Argipressin
+SAL0012,Insulin suspension isophane purified pork
+SAL0013,Insulin suspension protamine zinc purified pork
+SAL0014,Insulin zinc suspension prompt purified pork
+SAL0015,Insulin zinc suspension purified pork
+SAL0016,Indium In-111 ibritumomab tiuxetan
+SAL0017,Yttrium y-90 ibritumomab tiuxetan
+SAL0018,Octreotide acetate
+SAL0019,Octreotide hydrochloride
+SAL0020,Octreotide pamoate
+SAL0021,Pyridoxal phosphate hydrate
+SAL0022,Copper histidine
+SAL0023,Histidine monohydrochloride monohydrate
+SAL0024,Ademetionine butanedisulfonate
+SAL0025,Ademetionine disulfate ditosylate
+SAL0026,Ademetionine disulfate monotosylate
+SAL0027,Ademetionine disulfate tosylate
+SAL0028,Ademetionine tosylate
+SAL0029,Calcium pyruvate
+SAL0030,Methylselenopyruvate
+SAL0031,Sodium pyruvate
+SAL0032,Phenylalanine hydrochloride
+SAL0033,Phenylalanine sodium
+SAL0034,Choline bitartrate
+SAL0035,Choline chloride
+SAL0036,Lysine acetate
+SAL0037,Lysine dihydrate
+SAL0038,Lysine hydrochloride
+SAL0039,Lysine monohydrate
+SAL0040,Arginine butyrate
+SAL0041,Arginine hydrochloride
+SAL0042,Spermine dihydrate
+SAL0043,Ornithine aspartate
+SAL0044,Ornithine dihydrochloride
+SAL0045,Ornithine hydrochloride
+SAL0046,Ornithine oxoglurate
+SAL0047,Glutamine sodium
+SAL0048,Methionine hydrochloride
+SAL0049,Sodium succinate
+SAL0050,Riboflavin sodium
+SAL0051,Glutamic acid hydrochloride
+SAL0052,Calcifediol hydrate
+SAL0053,Pyridoxal hydrochloride
+SAL0054,Creatine monohydrate
+SAL0055,L-Leucine hydrochloride
+SAL0056,Cysteine hydrochloride
+SAL0057,Thiamine chloride
+SAL0058,Thiamine hydrochloride
+SAL0059,Thiamine mononitrate
+SAL0060,Sodium dihomo-gamma-linolenate
+SAL0061,Citrulline malate
+SAL0062,Folate sodium
+SAL0063,Icosapent sodium
+SAL0064,Vitamin A acetate
+SAL0065,Vitamin A palmitate
+SAL0066,Pyridoxine hydrochloride
+SAL0067,Adenosine triphosphate disodium
+SAL0068,Adenosine triphosphate disodium trihydrate
+SAL0069,Adenine hydrochloride
+SAL0070,Adenine sulfate
+SAL0071,Pravastatin sodium
+SAL0072,Fluvoxamine maleate
+SAL0073,Flunisolide hemihydrate
+SAL0074,Baclofen hydrochloride
+SAL0075,Amphetamine adipate
+SAL0076,Amphetamine aspartate
+SAL0077,Amphetamine aspartate monohydrate
+SAL0078,Amphetamine sulfate
+SAL0079,Nicotine bitartrate
+SAL0080,Nicotine bitartrate dihydrate
+SAL0081,Cevimeline hydrochloride
+SAL0082,Cevimeline hydrochloride anhydrous
+SAL0083,Esmolol hydrochloride
+SAL0084,Carbidopa hydrate
+SAL0085,Phentermine hydrochloride
+SAL0086,Indecainide hydrochloride
+SAL0087,Tramadol hydrochloride
+SAL0088,Betaxolol hydrochloride
+SAL0089,Oseltamivir phosphate
+SAL0090,Erythromycin estolate
+SAL0091,Erythromycin ethylsuccinate
+SAL0092,Erythromycin gluceptate
+SAL0093,Erythromycin lactobionate
+SAL0094,Erythromycin phosphate
+SAL0095,Erythromycin stearate
+SAL0096,Erythromycin sulfate
+SAL0097,Erythromycin thiocyanate
+SAL0098,Hydroxocobalamin acetate
+SAL0099,Caffeine citrate
+SAL0100,Succinylcholine chloride
+SAL0101,Succinylcholine chloride dihydrate
+SAL0102,Sildenafil citrate
+SAL0103,Pyrimethamine hydrochloride
+SAL0104,Azithromycin dihydrate
+SAL0105,Azithromycin hemiethanolate monohydrate
+SAL0106,Azithromycin monohydrate
+SAL0107,Ticlopidine hydrochloride
+SAL0108,Trospium chloride
+SAL0109,Midodrine hydrochloride
+SAL0110,Pantoprazole magnesium
+SAL0111,Pantoprazole magnesium dihydrate
+SAL0112,Pantoprazole magnesium hemipentahydrate
+SAL0113,Pantoprazole sodium
+SAL0114,Citalopram hydrobromide
+SAL0115,Eletriptan hydrobromide
+SAL0116,Eletriptan hydrobromide monohydrate
+SAL0117,Bethanidine sulfate
+SAL0118,Moxifloxacin hydrochloride
+SAL0119,Moxifloxacin hydrochloride monohydrate
+SAL0120,Oxyphenonium bromide
+SAL0121,Nelfinavir mesylate
+SAL0122,Isoetharine hydrochloride
+SAL0123,Isoetharine mesylate
+SAL0124,Diflorasone diacetate
+SAL0125,Indinavir monohydrate
+SAL0126,Indinavir sulfate
+SAL0127,Indinavir sulfate ethanolate
+SAL0128,Gadodiamide hydrate
+SAL0129,Guanadrel sulfate
+SAL0130,Cefotiam hydrochloride
+SAL0131,Temazepam hydrochloride
+SAL0132,Temazepam sulfate
+SAL0133,Aminosalicylate calcium
+SAL0134,Aminosalicylate sodium anhydrous
+SAL0135,Calcium aminosalicylate trihydrate
+SAL0136,Potassium aminosalicylate
+SAL0137,Sodium aminosalicylate dihydrate
+SAL0138,Reboxetine mesilate
+SAL0139,Milrinone lactate
+SAL0140,Butabarbital sodium
+SAL0141,Nevirapine hemihydrate
+SAL0142,Oxiconazole nitrate
+SAL0143,Alclometasone dipropionate
+SAL0144,Butalbital sodium
+SAL0145,Ranolazine hydrochloride
+SAL0146,Benzatropine mesylate
+SAL0147,Ziprasidone hydrochloride
+SAL0148,Ziprasidone mesylate trihydrate
+SAL0149,Methysergide maleate
+SAL0150,Phenytoin sodium
+SAL0151,Doxycycline calcium
+SAL0152,Doxycycline hyclate
+SAL0153,Doxycycline hydrochloride
+SAL0154,Doxycycline monohydrate
+SAL0155,Diethylstilbestrol diphosphate
+SAL0156,Diethylstilbestrol diphosphate sodium
+SAL0157,Calcium acetate monohydrate
+SAL0158,Anagrelide hydrochloride
+SAL0159,Anagrelide hydrochloride monohydrate
+SAL0160,Sulfisoxazole diolamine
+SAL0161,Metoprolol fumarate
+SAL0162,Metoprolol succinate
+SAL0163,Metoprolol tartrate
+SAL0164,Cefmenoxime hydrochloride
+SAL0165,Ropinirole Hydrochloride
+SAL0166,Diatrizoate meglumine
+SAL0167,Diatrizoate sodium
+SAL0168,Diatrizoic acid dihydrate
+SAL0169,Betazole hydrochloride
+SAL0170,Topiramate calcium
+SAL0171,Topiramate potassium
+SAL0172,Topiramate sodium
+SAL0173,Cefmetazole sodium
+SAL0174,Olmesartan medoxomil
+SAL0175,Amsacrine gluconate
+SAL0176,Amsacrine hydrochloride
+SAL0177,Amsacrine mesylate
+SAL0178,Theophylline sodium glycinate
+SAL0179,Argatroban monohydrate
+SAL0180,Liothyronine sodium
+SAL0181,Disopyramide phosphate
+SAL0182,Lidocaine hydrochloride
+SAL0183,Lidocaine hydrochloride anhydrous
+SAL0184,Pamidronate Disodium
+SAL0185,Clemastine fumarate
+SAL0186,Venlafaxine besylate monohydrate
+SAL0187,Venlafaxine hydrochloride
+SAL0188,Atomoxetine hydrochloride
+SAL0189,Bleomycin hydrochloride
+SAL0190,Bleomycin sulfate
+SAL0191,Raltitrexed disodium
+SAL0192,Morphine acetate
+SAL0193,Morphine hydrochloride
+SAL0194,Morphine hydrochloride trihydrate
+SAL0195,Morphine mesylate
+SAL0196,Morphine nitrate
+SAL0197,Morphine phosphate
+SAL0198,Morphine sulfate
+SAL0199,Morphine sulfate pentahydrate
+SAL0200,Morphine tartrate
+SAL0201,Ropivacaine hydrochloride
+SAL0202,Ropivacaine hydrochloride anhydrous
+SAL0203,Bupivacaine hydrochloride
+SAL0204,Bupivacaine hydrochloride anhydrous
+SAL0205,Dapiprazole hydrochloride
+SAL0206,Penciclovir sodium
+SAL0207,Tenofovir disoproxil fumarate
+SAL0208,Tenofovir disoproxil maleate
+SAL0209,Tenofovir disoproxil phosphate
+SAL0210,Tenofovir disoproxil succinate
+SAL0211,Flucloxacillin sodium
+SAL0212,Ertapenem sodium
+SAL0213,Ibutilide fumarate
+SAL0214,Vindesine sulfate
+SAL0215,Pentobarbital Sodium
+SAL0216,Divalproex sodium
+SAL0217,Magnesium Valproate
+SAL0218,Valproate sodium
+SAL0219,Capreomycin sulfate
+SAL0220,Codeine hydrobromide dihydrate
+SAL0221,Codeine hydrochloride
+SAL0222,Codeine monohydrate
+SAL0223,Codeine phosphate
+SAL0224,Codeine phosphate hemihydrate
+SAL0225,Codeine sulfate
+SAL0226,Codeine sulfate anhydrous
+SAL0227,Piperacillin sodium
+SAL0228,Dihydroergotamine mesylate
+SAL0229,Dihydroergotamine tartrate
+SAL0230,Amitriptyline hydrochloride
+SAL0231,Amitriptyline pamoate
+SAL0232,Fluorometholone acetate
+SAL0233,Sodium nitroprusside
+SAL0234,Hydromorphone hydrochloride
+SAL0235,Hydromorphone sulfate
+SAL0236,Indomethacin sodium
+SAL0237,Ethambutol hydrochloride
+SAL0238,Metformin hydrochloride
+SAL0239,Ipratropium bromide anhydrous
+SAL0240,Ipratropium bromide monohydrate
+SAL0241,Ipratropium chloride
+SAL0242,Methadone hydrochloride
+SAL0243,Olanzapine hydrochloride
+SAL0244,Olanzapine pamoate
+SAL0245,Olanzapine tartrate
+SAL0246,Omeprazole magnesium
+SAL0247,Omeprazole sodium
+SAL0248,Metixene hydrochloride
+SAL0249,Cetirizine hydrochloride
+SAL0250,Diltiazem hydrochloride
+SAL0251,Diltiazem malate
+SAL0252,Diltiazem maleate
+SAL0253,Protriptyline hydrochloride
+SAL0254,Aminohippurate sodium
+SAL0255,Alfuzosin hydrochloride
+SAL0256,Minoxidil sulfate
+SAL0257,Thioguanine hemihydrate
+SAL0258,Methylergometrine maleate
+SAL0259,Methylergometrine tartrate
+SAL0260,Buclizine hydrochloride
+SAL0261,Aztreonam lysine
+SAL0262,Mefloquine hydrochloride
+SAL0263,Sulfadiazine sodium
+SAL0264,Sapropterin dihydrochloride
+SAL0265,Vinorelbine tartrate
+SAL0266,Clozapine hydrochloride
+SAL0267,Grepafloxacin hydrochloride
+SAL0268,Doxylamine succinate
+SAL0269,Norepinephrine bitartrate
+SAL0270,Cidofovir dihydrate
+SAL0271,Mirtazapine hemihydrate
+SAL0272,Mirtazapine hydrochloride
+SAL0273,Thiethylperazine malate
+SAL0274,Thiethylperazine maleate
+SAL0275,Timolol hemihydrate
+SAL0276,Timolol maleate
+SAL0277,Treprostinil diolamine
+SAL0278,Treprostinil sodium
+SAL0279,Colestipol hydrochloride
+SAL0280,Trihexyphenidyl hydrochloride
+SAL0281,Palonosetron hydrochloride
+SAL0282,Mexiletine hydrochloride
+SAL0283,Dexrazoxane hydrochloride
+SAL0284,Amlodipine benzoate
+SAL0285,Amlodipine besylate
+SAL0286,Amlodipine camsylate
+SAL0287,Amlodipine maleate
+SAL0288,Amlodipine mesylate
+SAL0289,Amlodipine mesylate monohydrate
+SAL0290,Tacrine Hydrochloride
+SAL0291,Oxyphencyclimine hydrochloride
+SAL0292,Procyclidine hydrochloride
+SAL0293,Phenylephrine bitartrate
+SAL0294,Phenylephrine hydrochloride
+SAL0295,Phenylephrine tannate
+SAL0296,Ethopropazine hydrochloride
+SAL0297,Beclomethasone dipropionate monohydrate
+SAL0298,Phenylpropanolamine hydrochloride
+SAL0299,Sorafenib tosylate
+SAL0300,"Zoledronate D,L-Lysine Monohydrate"
+SAL0301,Zoledronate disodium
+SAL0302,Zoledronate trisodium
+SAL0303,Zoledronic acid hemipentahydrate
+SAL0304,Zoledronic acid monohydrate
+SAL0305,Ceruletide diethylamine
+SAL0306,Dexbrompheniramine maleate
+SAL0307,Gentian violet
+SAL0308,Loxapine hydrochloride
+SAL0309,Loxapine succinate
+SAL0310,Remoxipride hydrochloride
+SAL0311,Mupirocin calcium
+SAL0312,Carbamoylcholine chloride
+SAL0313,Rosiglitazone Maleate
+SAL0314,Pramipexole dihydrochloride monohydrate
+SAL0315,Pramipexole hydrochloride
+SAL0316,Ampicillin sodium
+SAL0317,Ampicillin trihydrate
+SAL0318,Phenoxymethylpenicillin benzathine
+SAL0319,Phenoxymethylpenicillin potassium
+SAL0320,Secobarbital sodium
+SAL0321,Miglustat hydrochloride
+SAL0322,Promazine hydrochloride
+SAL0323,Methylphenidate hydrochloride
+SAL0324,Hyoscyamine hydrobromide
+SAL0325,Hyoscyamine sulfate
+SAL0326,Hyoscyamine sulfate dihydrate
+SAL0327,Zolpidem tartrate
+SAL0328,Triprolidine hydrochloride
+SAL0329,Triprolidine hydrochloride monohydrate
+SAL0330,Cefpiramide sodium
+SAL0331,Prochlorperazine edisylate
+SAL0332,Prochlorperazine maleate
+SAL0333,Prochlorperazine mesilate
+SAL0334,Cyproheptadine hydrochloride
+SAL0335,Allopurinol sodium
+SAL0336,Ceftazidime pentahydrate
+SAL0337,Ceftazidime sodium
+SAL0338,Cerivastatin sodium
+SAL0339,Trimethoprim hydrochloride
+SAL0340,Trimethoprim sulfate
+SAL0341,Gemcitabine hydrochloride
+SAL0342,Entecavir monohydrate
+SAL0343,Entecavir triphosphate
+SAL0344,Betamethasone acetate
+SAL0345,Betamethasone benzoate
+SAL0346,Betamethasone dipropionate
+SAL0347,Betamethasone sodium phosphate
+SAL0348,Betamethasone valerate
+SAL0349,Epirubicin hydrochloride
+SAL0350,Loracarbef monohydrate
+SAL0351,Dipivefrin hydrochloride
+SAL0352,Levothyroxine sodium
+SAL0353,Levothyroxine sodium pentahydrate
+SAL0354,Framycetin sulfate
+SAL0355,Meperidine hydrochloride
+SAL0356,Cefalotin sodium
+SAL0357,Prazosin hydrochloride
+SAL0358,Imipramine hydrochloride
+SAL0359,Imipramine pamoate
+SAL0360,Ketorolac tromethamine
+SAL0361,Quinine citrate
+SAL0362,Quinine hydrochloride
+SAL0363,Quinine phosphate
+SAL0364,Quinine sulfate
+SAL0365,Montelukast sodium
+SAL0366,Fluoxetine hydrochloride
+SAL0367,Hexylcaine hydrochloride
+SAL0368,Methohexital sodium
+SAL0369,Chlordiazepoxide hydrochloride
+SAL0370,Duloxetine hydrochloride
+SAL0371,Chlorpromazine hydrochloride
+SAL0372,Rimantadine hydrochloride
+SAL0373,Amikacin sulfate
+SAL0374,Lenalidomide hydrochloride monohydrate
+SAL0375,Raloxifene Hydrochloride
+SAL0376,Brimonidine tartrate
+SAL0377,Dicloxacillin sodium
+SAL0378,Dicloxacillin sodium anhydrous
+SAL0379,Pefloxacin mesylate
+SAL0380,Pefloxacin mesylate dihydrate
+SAL0381,Sotalol hydrochloride
+SAL0382,Buspirone hydrochloride
+SAL0383,Fosinopril sodium
+SAL0384,Cefotaxime sodium
+SAL0385,Darifenacin hydrobromide
+SAL0386,Oxycodone hydrochloride
+SAL0387,Oxycodone terephthalate
+SAL0388,Tolmetin sodium
+SAL0389,Cimetidine hydrochloride
+SAL0390,Haloperidol decanoate
+SAL0391,Haloperidol lactate
+SAL0392,Levallorphan tartrate
+SAL0393,Tridihexethyl chloride
+SAL0394,Triflupromazine hydrochloride
+SAL0395,Dextrothyroxine sodium
+SAL0396,Vancomycin hydrochloride
+SAL0397,Dextromethorphan hydriodide
+SAL0398,Dextromethorphan hydrobromide
+SAL0399,Dextromethorphan hydrobromide monohydrate
+SAL0400,Dextromethorphan hydrochloride
+SAL0401,Trandolapril hydrochloride
+SAL0402,Caspofungin acetate
+SAL0403,Carteolol hydrochloride
+SAL0404,Cinchocaine hydrochloride
+SAL0405,Lercanidipine hydrochloride
+SAL0406,Foscarnet sodium
+SAL0407,Erlotinib hydrochloride
+SAL0408,Cyclophosphamide monohydrate
+SAL0409,Cefdinir monohydrate
+SAL0410,Guanidine hydrochloride
+SAL0411,Ciprofloxacin hydrochloride
+SAL0412,Ciprofloxacin lactate
+SAL0413,Toremifene citrate
+SAL0414,Nortriptyline hydrochloride
+SAL0415,Vincristine sulfate
+SAL0416,Benazepril hydrochloride
+SAL0417,Fluorouracil sodium
+SAL0418,Pyridostigmine bromide
+SAL0419,Pyridostigmine chloride
+SAL0420,Adinazolam mesylate
+SAL0421,Hydroxyzine hydrochloride
+SAL0422,Hydroxyzine pamoate
+SAL0423,Bosentan monohydrate
+SAL0424,Doxapram hydrochloride
+SAL0425,Methotrexate sodium
+SAL0426,Cisatracurium besylate
+SAL0427,Cefalexin hydrochloride
+SAL0428,Cefalexin monohydrate
+SAL0429,Cefalexin sodium
+SAL0430,Cinnarizine hydrochloride
+SAL0431,Fondaparinux sodium
+SAL0432,Vinblastine sulfate
+SAL0433,Propranolol hydrochloride
+SAL0434,Atropine hydrochloride
+SAL0435,Atropine sulfate
+SAL0436,Atropine sulfate anhydrous
+SAL0437,Fenoprofen calcium
+SAL0438,Fenoprofen sodium
+SAL0439,Fenfluramine hydrochloride
+SAL0440,Clonidine hydrochloride
+SAL0441,Valaciclovir hydrochloride
+SAL0442,Valaciclovir hydrochloride monohydrate
+SAL0443,Carbenicillin disodium
+SAL0444,Mazindol hydrochloride
+SAL0445,Levocarnitine chloride
+SAL0446,Levocarnitine fumarate
+SAL0447,Levocarnitine tartrate
+SAL0448,Enalapril maleate
+SAL0449,Enalapril sodium
+SAL0450,Diclofenac deanol
+SAL0451,Diclofenac diethylamine
+SAL0452,Diclofenac epolamine
+SAL0453,Diclofenac potassium
+SAL0454,Diclofenac sodium
+SAL0455,Lysuride maleate
+SAL0456,Doxazosin mesylate
+SAL0457,Piperazine adipate
+SAL0458,Piperazine citrate
+SAL0459,Piperazine hexahydrate
+SAL0460,Piperazine hydrate
+SAL0461,Piperazine hydrochloride
+SAL0462,Piperazine monohydrochloride
+SAL0463,Piperazine phosphate
+SAL0464,Piperazine sulfate
+SAL0465,Amiloride hydrochloride
+SAL0466,Amiloride hydrochloride dihydrate
+SAL0467,Oxytetracycline calcium
+SAL0468,Oxytetracycline dihydrate
+SAL0469,Oxytetracycline hydrochloride
+SAL0470,Oxytetracycline monocalcium
+SAL0471,Ulobetasol propionate
+SAL0472,Labetalol hydrochloride
+SAL0473,Thiopental sodium
+SAL0474,Cisapride monohydrate
+SAL0475,Sulindac sodium
+SAL0476,Nafcillin sodium
+SAL0477,Chloroquine hydrochloride
+SAL0478,Chloroquine phosphate
+SAL0479,Chloroquine sulfate
+SAL0480,Metaraminol bitartrate
+SAL0481,Butorphanol tartrate
+SAL0482,Bisoprolol fumarate
+SAL0483,Amodiaquine dihydrochloride dihydrate
+SAL0484,Amodiaquine hydrochloride
+SAL0485,Demeclocycline calcium
+SAL0486,Demeclocycline hydrochloride
+SAL0487,Imatinib mesylate
+SAL0488,Triamcinolone acetonide
+SAL0489,Triamcinolone diacetate
+SAL0490,Triamcinolone hexacetonide
+SAL0491,Nicardipine Hydrochloride
+SAL0492,Fluphenazine decanoate
+SAL0493,Fluphenazine enanthate
+SAL0494,Fluphenazine hydrochloride
+SAL0495,Bacitracin methylene disalicylate
+SAL0496,Bacitracin zinc
+SAL0497,Clorazepate dipotassium
+SAL0498,Guanabenz Acetate
+SAL0499,Alendronate calcium
+SAL0500,Alendronate disodium
+SAL0501,Alendronate sodium
+SAL0502,Alendronate sodium anhydrous
+SAL0503,Dexmedetomidine hydrochloride
+SAL0504,Sulfacetamide sodium
+SAL0505,Butoconazole nitrate
+SAL0506,Pemetrexed disodium
+SAL0507,Pemetrexed disodium hemipentahydrate
+SAL0508,Pemetrexed disodium heptahydrate
+SAL0509,Pemetrexed ditromethamine
+SAL0510,Pemetrexed monohydrate
+SAL0511,Gonadorelin acetate
+SAL0512,Gonadorelin diacetate tetrahydrate
+SAL0513,Gonadorelin hydrochloride
+SAL0514,Dyclonine hydrochloride
+SAL0515,Nystatin dihydrate
+SAL0516,Dextropropoxyphene hydrochloride
+SAL0517,Dextropropoxyphene napsylate
+SAL0518,Leucovorin calcium
+SAL0519,Leucovorin calcium pentahydrate
+SAL0520,Leucovorin sodium
+SAL0521,Pentazocine hydrochloride
+SAL0522,Pentazocine lactate
+SAL0523,Magnesium sulfate dihydrate
+SAL0524,Magnesium sulfate heptahydrate
+SAL0525,Magnesium sulfate monohydrate
+SAL0526,Trazodone hydrochloride
+SAL0527,Mecamylamine hydrochloride
+SAL0528,Sevelamer carbonate
+SAL0529,Sevelamer hydrochloride
+SAL0530,Acamprosate calcium
+SAL0531,Verapamil hydrochloride
+SAL0532,Trimethobenzamide hydrochloride
+SAL0533,Flumethasone acetate
+SAL0534,Flumethasone pivalate
+SAL0535,Nafarelin acetate
+SAL0536,Epinephrine acetate
+SAL0537,Epinephrine bitartrate
+SAL0538,Epinephrine hydrochloride
+SAL0539,Sumatriptan hemisulfate
+SAL0540,Sumatriptan succinate
+SAL0541,Pirenzepine hydrochloride
+SAL0542,Cefixime trihydrate
+SAL0543,Galantamine hydrobromide
+SAL0544,Tamoxifen citrate
+SAL0545,Losartan potassium
+SAL0546,Thioridazine hydrochloride
+SAL0547,Moricizine hydrochloride
+SAL0548,Amphotericin B Cholesteryl Sulfate Complex
+SAL0549,Corifungin
+SAL0550,Warfarin potassium
+SAL0551,Warfarin sodium
+SAL0552,Midazolam hydrochloride
+SAL0553,Midazolam maleate
+SAL0554,Tobramycin hydrochloride
+SAL0555,Tobramycin sulfate
+SAL0556,Trovafloxacin hydrochloride
+SAL0557,Trovafloxacin mesylate
+SAL0558,Calcium pentosan polysulfate
+SAL0559,Pentosan polysulfate sodium
+SAL0560,Fludrocortisone acetate
+SAL0561,Mycophenolate mofetil hydrochloride
+SAL0562,Cefaloglycin dihydrate
+SAL0563,Cefaloglycin monohydrate
+SAL0564,Flurazepam hydrochloride
+SAL0565,Moexipril Hydrochloride
+SAL0566,Phentolamine mesylate
+SAL0567,Fluorescein sodium
+SAL0568,Daunorubicin citrate
+SAL0569,Daunorubicin hydrochloride
+SAL0570,Furosemide sodium
+SAL0571,Ergotamine tartrate
+SAL0572,Tizanidine hydrochloride
+SAL0573,Nitrofurantoin monohydrate
+SAL0574,Nitrofurantoin sodium
+SAL0575,Naltrexone hydrochloride
+SAL0576,Delavirdine mesylate
+SAL0577,Tamsulosin hydrochloride
+SAL0578,Sufentanil citrate
+SAL0579,Ibandronate sodium
+SAL0580,Diethylcarbamazine citrate
+SAL0581,Flurbiprofen sodium
+SAL0582,Oxacillin sodium
+SAL0583,Oxacillin sodium monohydrate
+SAL0584,Apomorphine hydrochloride
+SAL0585,Paroxetine hydrochloride
+SAL0586,Paroxetine hydrochloride hemihydrate
+SAL0587,Paroxetine mesylate
+SAL0588,Nedocromil sodium
+SAL0589,Norethisterone acetate
+SAL0590,Azatadine maleate
+SAL0591,Clodronate disodium
+SAL0592,Procaine hydrochloride
+SAL0593,Procaine nitrate
+SAL0594,Procaine phosphate
+SAL0595,Lisinopril dihydrate
+SAL0596,Methoxamine hydrochloride
+SAL0597,Trimipramine maleate
+SAL0598,Trimipramine mesylate
+SAL0599,Rocuronium bromide
+SAL0600,Pralidoxime chloride
+SAL0601,Pralidoxime methyl sulfate
+SAL0602,Risperidone tartrate
+SAL0603,Naftifine Hydrochloride
+SAL0604,Esomeprazole magnesium
+SAL0605,Esomeprazole magnesium dihydrate
+SAL0606,Esomeprazole magnesium trihydrate
+SAL0607,Esomeprazole sodium
+SAL0608,Esomeprazole strontium
+SAL0609,Esomeprazole strontium hydrate
+SAL0610,Meclizine hydrochloride
+SAL0611,Pentamidine gluconate
+SAL0612,Pentamidine isethionate
+SAL0613,Pentamidine mesylate
+SAL0614,Hetacillin potassium
+SAL0615,Riluzole Hydrochloride
+SAL0616,Gadobenate dimeglumine
+SAL0617,Deferoxamine hydrochloride
+SAL0618,Deferoxamine mesylate
+SAL0619,Carbinoxamine maleate
+SAL0620,Prilocaine hydrochloride
+SAL0621,Epinastine hydrochloride
+SAL0622,Tranylcypromine sulfate
+SAL0623,Dolasetron mesylate
+SAL0624,Clopidogrel besilate
+SAL0625,Clopidogrel bisulfate
+SAL0626,Clopidogrel hydrochloride
+SAL0627,Clopidogrel resinate
+SAL0628,Tetracycline hydrochloride
+SAL0629,Tetracycline phosphate
+SAL0630,Meropenem sodium
+SAL0631,Meropenem trihydrate
+SAL0632,Irinotecan hydrochloride
+SAL0633,Irinotecan hydrochloride hydrate
+SAL0634,Irinotecan sucrosofate
+SAL0635,Clavulanate potassium
+SAL0636,Benzquinamide hydrochloride
+SAL0637,Olopatadine hydrochloride
+SAL0638,Hydrocortamate hydrochloride
+SAL0639,Clidinium Bromide
+SAL0640,Etoposide phosphate
+SAL0641,Tirofiban hydrochloride
+SAL0642,Propiomazine hydrochloride
+SAL0643,Phenelzine sulfate
+SAL0644,Propantheline bromide
+SAL0645,Estradiol hemihydrate
+SAL0646,Acyclovir sodium
+SAL0647,Naproxen sodium
+SAL0648,Gadopentetate dimeglumine
+SAL0649,Perindopril arginine
+SAL0650,Perindopril erbumine
+SAL0651,Perindopril tosylate
+SAL0652,Tripelennamine citrate
+SAL0653,Tripelennamine hydrochloride
+SAL0654,Tolazoline hydrochloride
+SAL0655,Gentamicin sulfate
+SAL0656,Fenoldopam mesylate
+SAL0657,Alfentanil hydrochloride
+SAL0658,Colistin sulfate
+SAL0659,Dicyclomine hydrochloride
+SAL0660,Minaprine dihydrochloride
+SAL0661,Proparacaine hydrochloride
+SAL0662,Biperiden hydrochloride
+SAL0663,Biperiden lactate
+SAL0664,Fentanyl citrate
+SAL0665,Fentanyl hydrochloride
+SAL0666,Orciprenaline Sulfate
+SAL0667,Acetazolamide sodium
+SAL0668,Fosfomycin calcium monohydrate
+SAL0669,Fosfomycin sodium
+SAL0670,Fosfomycin tromethamine
+SAL0671,Diazepam hydrochloride
+SAL0672,Phenmetrazine hydrochloride
+SAL0673,Trifluoperazine hydrochloride
+SAL0674,Cefaclor monohydrate
+SAL0675,Brompheniramine maleate
+SAL0676,Loperamide hydrochloride
+SAL0677,Clocortolone pivalate
+SAL0678,Dobutamine hydrochloride
+SAL0679,Dobutamine tartrate
+SAL0680,Donepezil hydrochloride
+SAL0681,Donepezil hydrochloride monohydrate
+SAL0682,Nalbuphine hydrochloride
+SAL0683,Cysteamine bitartrate
+SAL0684,Cysteamine hydrochloride
+SAL0685,Levamisole hydrochloride
+SAL0686,Levamisole phosphate
+SAL0687,Levamisole resinate
+SAL0688,Pseudoephedrine hydrochloride
+SAL0689,Pseudoephedrine sulfate
+SAL0690,Levorphanol tartrate
+SAL0691,Aminolevulinic acid hydrochloride
+SAL0692,Terbinafine hydrochloride
+SAL0693,Vardenafil hydrochloride
+SAL0694,Ranitidine bismuth citrate
+SAL0695,Ranitidine hydrochloride
+SAL0696,Tacrolimus hydrate
+SAL0697,Benzphetamine hydrochloride
+SAL0698,Alprenolol hydrochloride
+SAL0699,Ritodrine hydrochloride
+SAL0700,Dorzolamide hydrochloride
+SAL0701,Terbutaline sulfate
+SAL0702,Conivaptan hydrochloride
+SAL0703,Flupentixol decanoate
+SAL0704,Flupentixol dihydrochloride
+SAL0705,Eprosartan mesylate
+SAL0706,Eprosartan mesylate dihydrate
+SAL0707,Chlorhexidine acetate
+SAL0708,Chlorhexidine gluconate
+SAL0709,Chlorhexidine hydrochloride
+SAL0710,Chlorothiazide sodium
+SAL0711,Quinapril Hydrochloride
+SAL0712,Clomifene citrate
+SAL0713,Risedronate sodium
+SAL0714,Risedronate sodium hemi-pentahydrate
+SAL0715,Risedronate sodium monohydrate
+SAL0716,Pemirolast potassium
+SAL0717,Mechlorethamine hydrochloride
+SAL0718,Granisetron hydrochloride
+SAL0719,Oxybuprocaine hydrochloride
+SAL0720,Remifentanil hydrochloride
+SAL0721,Bitolterol mesylate
+SAL0722,Methdilazine Hydrochloride
+SAL0723,Ethacrynate sodium
+SAL0724,Ondansetron hydrochloride
+SAL0725,Ondansetron hydrochloride dihydrate
+SAL0726,Tiagabine hydrochloride
+SAL0727,Cocaine hydrochloride
+SAL0728,Quinidine gluconate
+SAL0729,Quinidine hydrochloride
+SAL0730,Quinidine polygalacturonate
+SAL0731,Quinidine sulfate
+SAL0732,Anileridine hydrochloride
+SAL0733,Anileridine phosphate
+SAL0734,Phenformin hydrochloride
+SAL0735,Amantadine hydrochloride
+SAL0736,Amantadine sulfate
+SAL0737,Metronidazole hydrochloride
+SAL0738,Almotriptan malate
+SAL0739,Spectinomycin dihydrochloride pentahydrate
+SAL0740,Spectinomycin hydrochloride
+SAL0741,Spectinomycin hydrochloride pentahydrate
+SAL0742,Spectinomycin sulfate
+SAL0743,Spectinomycin sulfate tetrahydrate
+SAL0744,Ketotifen fumarate
+SAL0745,Buprenorphine hydrochloride
+SAL0746,Cyclobenzaprine hydrochloride
+SAL0747,Phenoxybenzamine hydrochloride
+SAL0748,Colesevelam hydrochloride
+SAL0749,Metacycline hydrochloride
+SAL0750,Tipranavir disodium
+SAL0751,Mesoridazine besylate
+SAL0752,Mesoridazine mesilate
+SAL0753,Maprotiline hydrochloride
+SAL0754,Oxymetazoline hydrochloride
+SAL0755,Choline magnesium trisalicylate
+SAL0756,Diethylamine salicylate
+SAL0757,Potassium salicylate
+SAL0758,Sodium salicylate
+SAL0759,Diethylpropion hydrochloride
+SAL0760,Salmeterol xinafoate
+SAL0761,Meclofenamate sodium
+SAL0762,Methantheline bromide
+SAL0763,Hexafluronium bromide
+SAL0764,Cycrimine hydrochloride
+SAL0765,Demecarium bromide
+SAL0766,Lysine acetylsalicylate
+SAL0767,Mezlocillin sodium
+SAL0768,Mezlocillin sodium monohydrate
+SAL0769,Fexofenadine hydrochloride
+SAL0770,Naratriptan hydrochloride
+SAL0771,Rizatriptan benzoate
+SAL0772,Netilmicin sulfate
+SAL0773,Hydrocodone bitartrate
+SAL0774,Hydrocodone hydrochloride
+SAL0775,Hydrocodone polistirex
+SAL0776,Methylprednisolone acetate
+SAL0777,Mepivacaine hydrochloride
+SAL0778,Bromfenac sodium
+SAL0779,Apraclonidine hydrochloride
+SAL0780,Telmisartan sodium
+SAL0781,Methyldopa hydrochloride
+SAL0782,Methyldopa sesquihydrate
+SAL0783,Alosetron hydrochloride
+SAL0784,Azelastine hydrochloride
+SAL0785,Lomefloxacin hydrochloride
+SAL0786,Cyclopentolate hydrochloride
+SAL0787,Physostigmine salicylate
+SAL0788,Physostigmine Sulfate
+SAL0789,Formoterol fumarate
+SAL0790,Glycopyrronium bromide
+SAL0791,Glycopyrronium tosylate
+SAL0792,Cytarabine hydrochloride
+SAL0793,Dopamine hydrochloride
+SAL0794,Rivastigmine tartrate
+SAL0795,Oxaprozin potassium
+SAL0796,Methyl aminolevulinate hydrochloride
+SAL0797,Azathioprine sodium
+SAL0798,Neomycin palmitate
+SAL0799,Neomycin sulfate
+SAL0800,Doxorubicin citrate
+SAL0801,Doxorubicin hydrochloride
+SAL0802,Frovatriptan succinate
+SAL0803,Frovatriptan succinate anhydrous
+SAL0804,Albuterol sulfate
+SAL0805,Levobupivacaine hydrochloride
+SAL0806,Cromoglicate sodium
+SAL0807,Ganciclovir sodium
+SAL0808,Tioconazole hydrochloride
+SAL0809,Ketoprofen lysine
+SAL0810,Ketoprofen sodium
+SAL0811,Edrophonium bromide
+SAL0812,Edrophonium chloride
+SAL0813,Cinacalcet hydrochloride
+SAL0814,Balsalazide disodium
+SAL0815,Minocycline hydrochloride
+SAL0816,Guanfacine hydrochloride
+SAL0817,Bethanechol chloride
+SAL0818,Mycophenolate sodium
+SAL0819,Irbesartan hydrochloride
+SAL0820,Topotecan hydrochloride
+SAL0821,Mercaptopurine monohydrate
+SAL0822,Procainamide hydrochloride
+SAL0823,Tolterodine tartrate
+SAL0824,Selegiline hydrochloride
+SAL0825,Carphenazine maleate
+SAL0826,Melphalan hydrochloride
+SAL0827,Memantine hydrochloride
+SAL0828,Gatifloxacin hemihydrate
+SAL0829,Gatifloxacin sesquihydrate
+SAL0830,Rifampicin sodium
+SAL0831,Abacavir hydrochloride
+SAL0832,Abacavir hydrochloride monohydrate
+SAL0833,Abacavir sulfate
+SAL0834,Ibuprofen aluminum
+SAL0835,Ibuprofen arginine
+SAL0836,Ibuprofen lysine
+SAL0837,Ibuprofen potassium
+SAL0838,Ibuprofen sodium
+SAL0839,Novobiocin sodium
+SAL0840,Benethamine penicillin
+SAL0841,Benzathine benzylpenicillin
+SAL0842,Benzylpenicillin benzathine hydrate
+SAL0843,Benzylpenicillin calcium
+SAL0844,Benzylpenicillin potassium
+SAL0845,Benzylpenicillin sodium
+SAL0846,Tocainide hydrochloride
+SAL0847,Echothiophate iodide
+SAL0848,Amoxicillin sodium
+SAL0849,Amoxicillin Trihydrate
+SAL0850,Azlocillin sodium
+SAL0851,Oxybutynin chloride
+SAL0852,Acetophenazine maleate
+SAL0853,Isoprenaline hydrochloride
+SAL0854,Isoproterenol sulfate
+SAL0855,Cefditoren pivoxil
+SAL0856,Promethazine hydrochloride
+SAL0857,Promethazine teoclate
+SAL0858,Atazanavir sulfate
+SAL0859,Fludarabine phosphate
+SAL0860,Perhexiline maleate
+SAL0861,Diphenhydramine citrate
+SAL0862,Diphenhydramine hydrochloride
+SAL0863,Diphenhydramine methylbromide
+SAL0864,Diphenhydramine salicylate
+SAL0865,Atorvastatin calcium
+SAL0866,Atorvastatin calcium trihydrate
+SAL0867,Etidronate disodium
+SAL0868,Tegaserod maleate
+SAL0869,Diphenoxylate hydrochloride
+SAL0870,Streptomycin Sulfate
+SAL0871,Emedastine difumarate
+SAL0872,Pilocarpine hydrochloride
+SAL0873,Pilocarpine nitrate
+SAL0874,Pilocarpine pamoate
+SAL0875,Benzocaine hydrochloride
+SAL0876,Primaquine phosphate
+SAL0877,Iloprost tromethamine
+SAL0878,Deserpidine hydrochloride
+SAL0879,Pentolinium tartrate
+SAL0880,Butenafine hydrochloride
+SAL0881,Fluvastatin sodium
+SAL0882,Rosuvastatin calcium
+SAL0883,Rosuvastatin zinc
+SAL0884,Arbutamine hydrochloride
+SAL0885,Quinacrine dihydrochloride
+SAL0886,Quinacrine hydrochloride
+SAL0887,Sertraline hydrochloride
+SAL0888,Sibutramine hydrochloride
+SAL0889,Levocabastine hydrochloride
+SAL0890,Heparin calcium
+SAL0891,Heparin sodium
+SAL0892,Miconazole nitrate
+SAL0893,Colistimethate sodium
+SAL0894,Cefuroxime axetil
+SAL0895,Cefuroxime sodium
+SAL0896,Papaverine codecarboxylate
+SAL0897,Papaverine hydrochloride
+SAL0898,Papaverine sulfate
+SAL0899,Chlorpheniramine gluconate
+SAL0900,Chlorpheniramine hydrochloride
+SAL0901,Chlorpheniramine maleate
+SAL0902,Chlorpheniramine tannate
+SAL0903,Trimethaphan camsylate
+SAL0904,Amiodarone hydrochloride
+SAL0905,Diazoxide choline
+SAL0906,Ambenonium chloride
+SAL0907,Proflavine hemisulfate
+SAL0908,Tolbutamide sodium
+SAL0909,Econazole nitrate
+SAL0910,Rabeprazole sodium
+SAL0911,Proguanil hydrochloride
+SAL0912,Pioglitazone hydrochloride
+SAL0913,Tiludronate Disodium
+SAL0914,Doxacurium chloride
+SAL0915,Carvedilol phosphate
+SAL0916,Levofloxacin hemihydrate
+SAL0917,Cefapirin benzathine
+SAL0918,Cefapirin sodium
+SAL0919,Cefadroxil hemihydrate
+SAL0920,Cefadroxil monohydrate
+SAL0921,Cefadroxil sodium
+SAL0922,Micafungin sodium
+SAL0923,Doxepin hydrochloride
+SAL0924,Amifostine trihydrate
+SAL0925,Sulfoxone sodium
+SAL0926,Diphenylpyraline hydrochloride
+SAL0927,Cloxacillin benzathine
+SAL0928,Cloxacillin sodium
+SAL0929,Cloxacillin sodium hydrate
+SAL0930,Flavoxate hydrochloride
+SAL0931,Nefazodone hydrochloride
+SAL0932,Cefprozil monohydrate
+SAL0933,Desipramine hydrochloride
+SAL0934,Sertaconazole nitrate
+SAL0935,Thiamylal sodium
+SAL0936,Gemifloxacin mesylate
+SAL0937,Bupropion hydrobromide
+SAL0938,Bupropion hydrochloride
+SAL0939,Trimetrexate glucuronate
+SAL0940,Bretylium tosylate
+SAL0941,Chloroprocaine hydrochloride
+SAL0942,Terazosin hydrochloride
+SAL0943,Terazosin hydrochloride hydrate
+SAL0944,Calcium chloride dihydrate
+SAL0945,Calcium chloride hexahydrate
+SAL0946,Ofloxacin hydrochloride
+SAL0947,Procarbazine hydrochloride
+SAL0948,Guanethidine monosulfate
+SAL0949,Guanethidine sulfate
+SAL0950,Kanamycin sulfate
+SAL0951,Orphenadrine citrate
+SAL0952,Orphenadrine hydrochloride
+SAL0953,Phenobarbital sodium
+SAL0954,Escitalopram oxalate
+SAL0955,Cyclizine hydrochloride
+SAL0956,Cyclizine lactate
+SAL0957,Idarubicin hydrochloride
+SAL0958,Propafenone hydrochloride
+SAL0959,Naloxone hydrochloride
+SAL0960,Naloxone hydrochloride dihydrate
+SAL0961,Domperidone maleate
+SAL0962,Pergolide mesylate
+SAL0963,Ciclopirox olamine
+SAL0964,Clindamycin hydrochloride
+SAL0965,Clindamycin palmitate hydrochloride
+SAL0966,Clindamycin phosphate
+SAL0967,Oxymorphone hydrochloride
+SAL0968,Acebutolol hydrochloride
+SAL0969,Flecainide acetate
+SAL0970,Estramustine sodium phosphate
+SAL0971,Estramustine sodium phosphate anhydrous
+SAL0972,Tubocurarine chloride pentahydrate
+SAL0973,Bromocriptine mesylate
+SAL0974,Rifapentine hydrochloride
+SAL0975,Mitoxantrone hydrochloride
+SAL0976,Levobunolol hydrochloride
+SAL0977,Clarithromycin citrate
+SAL0978,Ceftriaxone sodium
+SAL0979,Fomepizole sulfate
+SAL0980,Metipranolol hydrochloride
+SAL0981,Halofantrine hydrochloride
+SAL0982,Dantrolene sodium
+SAL0983,Ketamine hydrochloride
+SAL0984,Aminophylline dihydrate
+SAL0985,Quetiapine fumarate
+SAL0986,Enoxaparin sodium
+SAL0987,Mivacurium chloride
+SAL0988,Levacetylmethadol hydrochloride
+SAL0989,Encainide hydrochloride
+SAL0990,Diphenidol hydrochloride
+SAL0991,Saquinavir mesylate
+SAL0992,Metoclopramide hydrochloride
+SAL0993,Metoclopramide hydrochloride anhydrous
+SAL0994,Dexamethasone phosphate
+SAL0995,Dexamethasone sodium phosphate
+SAL0996,Bromodiphenhydramine hydrochloride
+SAL0997,Chlorprothixene hydrochloride
+SAL0998,Epoprostenol sodium
+SAL0999,Clomipramine hydrochloride
+SAL1000,Bepridil hydrochloride
+SAL1001,Bepridil hydrochloride anhydrous
+SAL1002,Decamethonium bromide
+SAL1003,Alimemazine tartrate
+SAL1004,Docetaxel trihydrate
+SAL1005,Olsalazine sodium
+SAL1006,Mitiglinide calcium dihydrate
+SAL1007,Ergonovine maleate
+SAL1008,Dasatinib monohydrate
+SAL1009,Dasatinib monolauryl sulfate
+SAL1010,Lisdexamfetamine dimesylate
+SAL1011,Lapatinib ditosylate
+SAL1012,Sitagliptin fumarate
+SAL1013,Sitagliptin hydrochloride monohydrate
+SAL1014,Sitagliptin malate
+SAL1015,Sitagliptin phosphate
+SAL1016,Sitagliptin tartrate hemihydrate
+SAL1017,Darunavir dihydrate
+SAL1018,Darunavir ethanolate
+SAL1019,Darunavir propylene glycolate
+SAL1020,Paliperidone palmitate
+SAL1021,Sunitinib malate
+SAL1022,Varenicline tartrate
+SAL1023,Arformoterol tartrate
+SAL1024,Hydralazine hydrochloride
+SAL1025,Pramlintide acetate
+SAL1026,Tetracosactide acetate
+SAL1027,Fenoterol hydrobromide
+SAL1028,Pirbuterol acetate
+SAL1029,Pirbuterol hydrochloride
+SAL1030,Bevantolol hydrochloride
+SAL1031,Glucosamine hydrochloride
+SAL1032,Glucosamine sulfate
+SAL1033,Glucosamine sulfate potassium chloride
+SAL1034,Glucosamine sulfate sodium chloride
+SAL1035,Practolol hydrochloride
+SAL1036,Fosamprenavir calcium
+SAL1037,Fosamprenavir sodium
+SAL1038,Fosphenytoin sodium
+SAL1039,Cefamandole sodium
+SAL1040,Cefazolin sodium
+SAL1041,Cefonicid sodium
+SAL1042,Cefoperazone sodium
+SAL1043,Cefotetan disodium
+SAL1044,Cefoxitin sodium
+SAL1045,Ceftizoxime sodium
+SAL1046,Cefradine monohydrate
+SAL1047,Metocurine chloride
+SAL1048,Pancuronium bromide
+SAL1049,Pipecuronium bromide
+SAL1050,Vecuronium bromide
+SAL1051,Cilazapril monohydrate
+SAL1052,Tolevamer calcium
+SAL1053,Tolevamer potassium sodium
+SAL1054,Tolevamer sodium
+SAL1055,Saprisartan potassium
+SAL1056,Spirapril hydrochloride
+SAL1057,Amobarbital sodium
+SAL1058,Aprobarbital sodium
+SAL1059,Hexobarbital sodium
+SAL1060,Penbutolol sulfate
+SAL1061,Ephedrine hydrochloride
+SAL1062,Ephedrine sulfate
+SAL1063,Ephedrine tannate
+SAL1064,Mephentermine sulfate
+SAL1065,Procaterol hydrochloride
+SAL1066,Procaterol hydrochloride hemihydrate
+SAL1067,Rasagiline mesylate
+SAL1068,Rasagiline tartrate
+SAL1069,Quinupristin mesylate
+SAL1070,Mibefradil Dihydrochloride
+SAL1071,Yohimbine hydrochloride
+SAL1072,Magnesium salicylate tetrahydrate
+SAL1073,Neostigmine bromide
+SAL1074,Neostigmine methylsulfate
+SAL1075,Methotrimeprazine hydrochloride
+SAL1076,Methotrimeprazine maleate
+SAL1077,Temafloxacin hydrochloride
+SAL1078,Clenbuterol hydrochloride
+SAL1079,Bambuterol hydrochloride
+SAL1080,Tiotropium bromide
+SAL1081,Tiotropium bromide monohydrate
+SAL1082,Pranlukast hydrate
+SAL1083,Cefepime hydrochloride
+SAL1084,Cefacetrile sodium
+SAL1085,Ceftibuten dihydrate
+SAL1086,Cefpodoxime proxetil
+SAL1087,Cefpodoxime sodium
+SAL1088,Paromomycin sulfate
+SAL1089,Stepronin sodium
+SAL1090,Alizapride hydrochloride
+SAL1091,Amrinone lactate
+SAL1092,Aprindine hydrochloride
+SAL1093,Almitrine mesylate
+SAL1094,Methadyl acetate hydrochloride
+SAL1095,Phenazopyridine hydrochloride
+SAL1096,Calcium oxybate
+SAL1097,Magnesium oxybate
+SAL1098,Potassium oxybate
+SAL1099,Diamorphine hydrochloride
+SAL1100,Midomafetamine hydrochloride
+SAL1101,Fencamfamine hydrochloride
+SAL1102,"2,5-dimethoxyamphetamine hydrochloride"
+SAL1103,Ethylmorphine hydrochloride
+SAL1104,Desmethylprodine hydrochloride
+SAL1105,Fenethylline hydrochloride
+SAL1106,Etorphine Hydrochloride
+SAL1107,Difenoxin hydrochloride
+SAL1108,Tenocyclidine hydrochloride
+SAL1109,"2,5-dimethoxy-4-methylamphetamine hydrochloride"
+SAL1110,Carfentanil citrate
+SAL1111,Alpha-ethyltryptamine acetate
+SAL1112,Diprenorphine hydrochloride
+SAL1113,Dihydrocodeine bitartrate
+SAL1114,Dihydrocodeine hydrochloride
+SAL1115,Dihydrocodeine hydroiodide
+SAL1116,Dihydrocodeine phosphate
+SAL1117,Dihydrocodeine thiocyanate
+SAL1118,Chlorphentermine hydrochloride
+SAL1119,Dextroamphetamine adipate
+SAL1120,Dextroamphetamine saccharate
+SAL1121,Dextroamphetamine sulfate
+SAL1122,Metamfetamine hydrochloride
+SAL1123,Metamfetamine tartrate
+SAL1124,Phendimetrazine tartrate
+SAL1125,Oxprenolol hydrochloride
+SAL1126,Sulfamerazine sodium
+SAL1127,Sulfamethazine sodium
+SAL1128,Solifenacin hydrochloride
+SAL1129,Solifenacin succinate
+SAL1130,Cilastatin sodium
+SAL1131,Imipenem monohydrate
+SAL1132,Bacampicillin hydrochloride
+SAL1133,Methicillin sodium
+SAL1134,Methicillin sodium anhydrous
+SAL1135,Pivmecillinam hydrochloride
+SAL1136,Tazobactam sodium
+SAL1137,Ticarcillin disodium
+SAL1138,Valganciclovir hydrochloride
+SAL1139,Hydroxychloroquine sulfate
+SAL1140,Acepromazine maleate
+SAL1141,Alverine citrate
+SAL1142,Molindone hydrochloride
+SAL1143,Phenindamine tartrate
+SAL1144,Pheniramine maleate
+SAL1145,Pipotiazine palmitate
+SAL1146,Thiothixene hydrochloride
+SAL1147,Zuclopenthixol acetate
+SAL1148,Zuclopenthixol decanoate
+SAL1149,Zuclopenthixol dihydrochloride
+SAL1150,Isopropamide chloride
+SAL1151,Isopropamide iodide
+SAL1152,Pargyline hydrochloride
+SAL1153,Lincomycin hydrochloride
+SAL1154,Lincomycin hydrochloride monohydrate
+SAL1155,Etoricoxib hydrochloride
+SAL1156,Rutoside trihydrate
+SAL1157,Cetrimonium bromide
+SAL1158,Cetrimonium carboxydecyl PEG-8 dimethicone
+SAL1159,Cetrimonium chloride
+SAL1160,Cetrimonium hydroxide
+SAL1161,Dalfopristin mesylate
+SAL1162,Calcium pantothenate
+SAL1163,Sodium pantothenate
+SAL1164,Propylene glycol diacetate
+SAL1165,Sucrosofate potassium
+SAL1166,D-glucose monohydrate
+SAL1167,Calcium formate
+SAL1168,Cocarboxylase chloride
+SAL1169,Cocarboxylase tetrahydrate
+SAL1170,Tridolgosir hydrochloride
+SAL1171,S-Ethyl isothiouronium bromide
+SAL1172,S-ethylisothiouronium diethyl phosphate
+SAL1173,Quinacrine mustard dihydrochloride
+SAL1174,Calcipotriol hydrate
+SAL1175,Carbenoxolone disodium
+SAL1176,Aminobenzoate potassium
+SAL1177,Aminobenzoate sodium
+SAL1178,Gamma-Aminobutyric Acid Hydrochloride
+SAL1179,Phosphoramidon disodium
+SAL1180,Sodium acrylate
+SAL1181,Zinc diacrylate
+SAL1182,Terlipressin acetate
+SAL1183,LY-294002 hydrochloride
+SAL1184,Nicotinamide hydrochloride
+SAL1185,Fucidate sodium
+SAL1186,Fusidic acid hemihydrate
+SAL1187,Glycocyamine hydrochloride
+SAL1188,Glycocyamine phosphate
+SAL1189,laurtrimonium bromide
+SAL1190,alpha-Glucose-1-phosphate disodium tetrahydrate
+SAL1191,Fosmidomycin sodium
+SAL1192,Dazoxiben hydrochloride
+SAL1193,Magnesium pidolate
+SAL1194,Sodium pidolate
+SAL1195,Zinc pidolate
+SAL1196,Acetylcholine chloride
+SAL1197,Flavin adenine dinucleotide disodium
+SAL1198,D-Cysteine hydrochloride monohydrate
+SAL1199,Duvoglustat hydrochloride
+SAL1200,Oteracil potassium
+SAL1201,Calcium 4-methyl-2-oxovalerate
+SAL1202,Riboflavin 5'-phosphate sodium anhydrous
+SAL1203,Riboflavin sodium phosphate
+SAL1204,Riboflavin-5'-phosphate sodium salt dihydrate
+SAL1205,Cytidine 5'-Monophosphate Disodium Salt
+SAL1206,Ubenimex hydrochloride
+SAL1207,Alvocidib hydrochloride
+SAL1208,Brequinar sodium
+SAL1209,Sodium butyrate
+SAL1210,α-keto-γ-methylselenobutyrate
+SAL1211,Phencyclidine hydrochloride
+SAL1212,Oxyphenbutazone monohydrate
+SAL1213,Tiratricol sodium
+SAL1214,Ribostamycin sulfate
+SAL1215,Sodium deoxycholate
+SAL1216,Piritrexim isethionate
+SAL1217,Vanoxerine hydrochloride
+SAL1218,Doconexent sodium
+SAL1219,Sodium propionate
+SAL1220,Lovastatin sodium
+SAL1221,Calcium benzoate
+SAL1222,Sodium benzoate
+SAL1223,16-chloropalmitic acid
+SAL1224,Hexamidine diisethionate
+SAL1225,Calcium phenylpyruvate
+SAL1226,Phosphorylcholine chloride
+SAL1227,Ethanolamine acetate
+SAL1228,Ethanolamine hydrochloride
+SAL1229,Betadex sulfobutyl ether sodium
+SAL1230,Clorgiline hydrochloride
+SAL1231,Calcium alpha-Ketoisovalerate
+SAL1232,Berberine chloride
+SAL1233,Berberine sulfate anhydrous
+SAL1234,Sodium pyrophosphate
+SAL1235,Sodium pyrophosphate decahydrate
+SAL1236,Dequalinium acetate
+SAL1237,Dequalinium bromide
+SAL1238,Dequalinium chloride
+SAL1239,Dequalinium iodide
+SAL1240,Dequalinium undecenoate
+SAL1241,Didecyldimethylammonium chloride
+SAL1242,Calcium oleate
+SAL1243,Oleate sodium
+SAL1244,Sodium dipicolinate
+SAL1245,Citric acid monohydrate
+SAL1246,Carbocisteine lysine
+SAL1247,Sodium taurocholate
+SAL1248,Arecoline hydrobromide
+SAL1249,Sodium lactate
+SAL1250,Zinc lactate
+SAL1251,Lactose monohydrate
+SAL1252,Acedoben sodium
+SAL1253,Afegostat tartrate
+SAL1254,Latamoxef disodium
+SAL1255,Estrone sodium sulfate
+SAL1256,Estropipate
+SAL1257,Potassium estrone sulfate
+SAL1258,Cycloleucine hydrochloride
+SAL1259,Apramycin sulfate
+SAL1260,Iodipamide meglumine
+SAL1261,Iodipamide sodium
+SAL1262,Gentamicin c1a sulfate
+SAL1263,Suramin sodium
+SAL1264,Bithionolate sodium
+SAL1265,Metamizole magnesium
+SAL1266,Metamizole sodium
+SAL1267,Metamizole sodium monohydrate
+SAL1268,Iproniazid phosphate
+SAL1269,Methapyrilene fumarate
+SAL1270,Methapyrilene hydrochloride
+SAL1271,Nomifensine maleate
+SAL1272,Oxeladin citrate
+SAL1273,Prenylamine lactate
+SAL1274,Zomepirac sodium
+SAL1275,Zomepirac sodium anhydrous
+SAL1276,Buformin hydrochloride
+SAL1277,Zimelidine hydrochloride
+SAL1278,Rapacuronium bromide
+SAL1279,Amineptine hydrochloride
+SAL1280,Chlophedianol hydrochloride
+SAL1281,Clofedanol hydrochloride
+SAL1282,Debrisoquine sulfate
+SAL1283,Flunarizine dihydrochloride
+SAL1284,Mepenzolate bromide
+SAL1285,Celiprolol hydrochloride
+SAL1286,Cediranib maleate
+SAL1287,Biricodar dicitrate
+SAL1288,Febuxostat hemihydrate
+SAL1289,Dronedarone hydrochloride
+SAL1290,Isatoribine monohydrate
+SAL1291,Nebivolol hydrochloride
+SAL1292,Omacetaxine mepesuccinate hydrochloride
+SAL1293,Halofuginone hydrobromide
+SAL1294,Halofuginone lactate
+SAL1295,Nilotinib hydrochloride monohydrate
+SAL1296,Lorcaserin hydrochloride
+SAL1297,Lorcaserin hydrochloride hemihydrate
+SAL1298,Elacridar hydrochloride
+SAL1299,Dapoxetine hydrochloride
+SAL1300,Bifeprunox mesylate
+SAL1301,Bicifadine hydrochloride
+SAL1302,Bepotastine besilate
+SAL1303,Vapreotide acetate
+SAL1304,Milnacipran hydrochloride
+SAL1305,Tesmilifene hydrochloride
+SAL1306,Flibanserin hydrochloride
+SAL1307,Oritavancin diphosphate
+SAL1308,Itopride hydrochloride
+SAL1309,Afamelanotide acetate
+SAL1310,Defibrotide sodium
+SAL1311,Eritoran tetrasodium
+SAL1312,Lofexidine hydrochloride
+SAL1313,Lucanthone hydrochloride
+SAL1314,Canfosfamide hydrochloride
+SAL1315,Denufosol tetrasodium
+SAL1316,Migalastat hydrochloride
+SAL1317,Amonafide L-malate
+SAL1318,Arimoclomol citrate
+SAL1319,Arimoclomol maleate
+SAL1320,Indacaterol acetate
+SAL1321,Indacaterol maleate
+SAL1322,Mitoquinone mesylate
+SAL1323,Choline tetrathiomolybdate
+SAL1324,Lobeline hydrochloride
+SAL1325,OXI-4503 dipotassium
+SAL1326,Alisertib sodium
+SAL1327,Pracinostat hydrochloride
+SAL1328,Beraprost sodium
+SAL1329,Cobimetinib fumarate
+SAL1330,Ronacaleret hydrochloride
+SAL1331,Glatiramer acetate
+SAL1332,Gallium nitrate nonahydrate
+SAL1333,Ecabet sodium
+SAL1334,Rotigotine hydrochloride
+SAL1335,Samarium (153Sm) lexidronam pentasodium
+SAL1336,Motexafin lutetium hydrate
+SAL1337,Pimavanserin tartrate
+SAL1338,Dexlansoprazole sesquihydrate
+SAL1339,Histamine dihydrochloride
+SAL1340,Histamine phosphate
+SAL1341,Pimagedine hydrochloride
+SAL1342,Amibegron hydrochloride
+SAL1343,OPC-14523 hydrochloride
+SAL1344,OPC-14523 mesylate
+SAL1345,Canertinib dihydrochloride
+SAL1346,Ezatiostat hydrochloride
+SAL1347,Custirsen sodium
+SAL1348,Atiprimod dimaleate
+SAL1349,Budiodarone tartrate
+SAL1350,Mipomersen sodium
+SAL1351,Naronapride dihydrochloride
+SAL1352,Regrelor disodium
+SAL1353,PBT-1033 hydrochloride
+SAL1354,Motesanib diphosphate
+SAL1355,Motesanib phosphate
+SAL1356,Verubulin hydrochloride
+SAL1357,Facinicline hydrochloride
+SAL1358,Bedoradrine sulfate
+SAL1359,Blarcamesine hydrochloride
+SAL1360,Apilimod mesylate
+SAL1361,PTX-9908
+SAL1362,Retaspimycin hydrochloride
+SAL1363,Asvasiran sodium
+SAL1364,Larazotide acetate
+SAL1365,Trabedersen sodium
+SAL1366,Gantacurium chloride
+SAL1367,Vapitadine dihydrochloride
+SAL1368,Oglufanide disodium
+SAL1369,Prasterone sodium sulfate anhydrous
+SAL1370,Muparfostat sodium
+SAL1371,Abiraterone acetate
+SAL1372,Dovitinib lactate hydrate
+SAL1373,Denibulin hydrochloride
+SAL1374,Edonerpic maleate
+SAL1375,Amitifadine hydrochloride
+SAL1376,Transcrocetinate sodium
+SAL1377,Adomiparin sodium
+SAL1378,Aldoxorubicin hydrochloride
+SAL1379,Cariprazine hydrochloride
+SAL1380,Filanesib Hydrochloride
+SAL1381,Lumateperone tosylate
+SAL1382,Bradanicline hydrochloride
+SAL1383,Bradanicline tosylate
+SAL1384,Apatorsen sodium
+SAL1385,SNS-314 mesylate
+SAL1386,SUVN-502 dimesylate
+SAL1387,SUVN-502 dimesylate monohydrate
+SAL1388,Sulfathiazole sodium
+SAL1389,Mianserin hydrochloride
+SAL1390,Sulfadimethoxine sodium
+SAL1391,Nylidrin hydrochloride
+SAL1392,Pizotifen malate
+SAL1393,Rimonabant hydrochloride
+SAL1394,Tesofensine Citrate
+SAL1395,Tesofensine tartrate
+SAL1396,Istaroxime hydrochloride
+SAL1397,Garenoxacin mesylate
+SAL1398,Noscapine hydrochloride
+SAL1399,Talotrexin ammonium
+SAL1400,Talabostat mesylate
+SAL1401,Forodesine hydrochloride
+SAL1402,Valtorcitabine dihydrochloride
+SAL1403,Ispinesib Mesylate
+SAL1404,Solabegron hydrochloride
+SAL1405,Zosuquidar trihydrochloride
+SAL1406,Pixantrone dimaleate
+SAL1407,Icatibant acetate
+SAL1408,Bimosiamose disodium
+SAL1409,Atrasentan hydrochloride
+SAL1410,Lasofoxifene hydrochloride
+SAL1411,Lasofoxifene tartrate
+SAL1412,Alogliptin benzoate
+SAL1413,Tapentadol hydrochloride
+SAL1414,Sugammadex sodium
+SAL1415,Prasugrel besylate
+SAL1416,Prasugrel hydrochloride
+SAL1417,Eltrombopag choline
+SAL1418,Eltrombopag olamine
+SAL1419,Doripenem hydrate
+SAL1420,Regadenoson monohydrate
+SAL1421,Asenapine maleate
+SAL1422,Vernakalant hydrochloride
+SAL1423,Dalbavancin hydrochloride
+SAL1424,Alicaforsen sodium
+SAL1425,Nalmefene hydrochloride
+SAL1426,Nalmefene hydrochloride dihydrate
+SAL1427,Caldaret monohydrate
+SAL1428,Vadimezan sodium
+SAL1429,Eflornithine hydrochloride
+SAL1430,Arzoxifene Hydrochloride
+SAL1431,Dersalazine Sodium
+SAL1432,Disodium incadronate
+SAL1433,Hexaminolevulinate hydrochloride
+SAL1434,Amrubicin hydrochloride
+SAL1435,Tolperisone hydrochloride
+SAL1436,Sitaxentan sodium
+SAL1437,Alvimopan dihydrate
+SAL1438,Levocetirizine dihydrochloride
+SAL1439,Ziconotide acetate
+SAL1440,Teriparatide acetate
+SAL1441,Simeprevir sodium
+SAL1442,Dapagliflozin propanediol monohydrate
+SAL1443,Semuloparin sodium
+SAL1444,Pegpleranib sodium
+SAL1445,Methoxyamine hydrochloride
+SAL1446,Trodusquemine hydrochloride
+SAL1447,Saxagliptin hydrochloride
+SAL1448,Saxagliptin hydrochloride dihydrate
+SAL1449,Saxagliptin monohydrate
+SAL1450,Fiboflapon Sodium
+SAL1451,Cenisertib benzoate
+SAL1452,Elinogrel potassium
+SAL1453,Tezampanel hydrate
+SAL1454,Iclaprim Mesylate
+SAL1455,Xaliproden Hydrochloride
+SAL1456,Bazedoxifene acetate
+SAL1457,Telavancin hydrochloride
+SAL1458,Idraparinux sodium
+SAL1459,Taribavirin hydrochloride
+SAL1460,Talnetant hydrochloride
+SAL1461,Tezacitabine monohydrate
+SAL1462,Cangrelor tetrasodium
+SAL1463,Avasimibe Sodium
+SAL1464,Aprinocarsen sodium
+SAL1465,Sarizotan hydrochloride
+SAL1466,Remacemide Hydrochloride
+SAL1467,Squalamine lactate
+SAL1468,Cariporide Mesylate
+SAL1469,Clomethiazole hydrochloride
+SAL1470,Sumanirole Maleate
+SAL1471,Prucalopride hydrochloride
+SAL1472,Prucalopride succinate
+SAL1473,Enzastaurin Hydrochloride
+SAL1474,Aplaviroc hydrochloride
+SAL1475,Repinotan hydrochloride
+SAL1476,R-1487 hydrochloride
+SAL1477,Edaglitazone sodium
+SAL1478,Ganstigmine hydrochloride
+SAL1479,Tramiprosate sodium
+SAL1480,Resiquimod sulfate
+SAL1481,Pafuramidine maleate
+SAL1482,Edifoligide sodium
+SAL1483,Celgosivir hydrochloride
+SAL1484,Mitemcinal fumarate
+SAL1485,Pazopanib hydrochloride
+SAL1486,Ceftaroline fosamil acetate
+SAL1487,Ceftaroline fosamil acetate monohydrate
+SAL1488,Brostallicin hydrochloride
+SAL1489,Panobinostat hydrate
+SAL1490,Panobinostat lactate
+SAL1491,Tafenoquine succinate
+SAL1492,Peramivir hydrate
+SAL1493,Bosutinib monohydrate
+SAL1494,Cutamesine dihydrochloride
+SAL1495,Aplindore fumarate
+SAL1496,Flupirtine gluconate
+SAL1497,Flupirtine maleate
+SAL1498,Casopitant mesylate
+SAL1499,Otamixaban Hydrochloride
+SAL1500,Isavuconazonium sulfate
+SAL1501,Bevasiranib sodium
+SAL1502,Anamorelin Hydrochloride
+SAL1503,Vicriviroc Hydrochloride
+SAL1504,Vicriviroc Maleate
+SAL1505,Safinamide mesylate
+SAL1506,Saredutant succinate
+SAL1507,Abetimus sodium
+SAL1508,Pasireotide acetate
+SAL1509,Pasireotide diaspartate
+SAL1510,Pasireotide pamoate
+SAL1511,Clazosentan Sodium
+SAL1512,Esmirtazapine hydrochloride
+SAL1513,Esmirtazapine maleate
+SAL1514,Vilazodone hydrochloride
+SAL1515,Laquinimod sodium
+SAL1516,Mepyramine maleate
+SAL1517,Mepyramine tannate
+SAL1518,Xylometazoline hydrochloride
+SAL1519,Dabigatran etexilate mesilate
+SAL1520,Arbekacin sulfate
+SAL1521,Betahistine hydrochloride
+SAL1522,Betahistine maleate
+SAL1523,Betahistine mesylate
+SAL1524,Degarelix acetate hydrate
+SAL1525,Desvenlafaxine fumarate
+SAL1526,Desvenlafaxine fumarate monohydrate
+SAL1527,Desvenlafaxine hydrochloride
+SAL1528,Desvenlafaxine succinate
+SAL1529,Dexmethylphenidate hydrochloride
+SAL1530,Fesoterodine fumarate
+SAL1531,Iobenguane I 123
+SAL1532,Iobenguane I 131
+SAL1533,Iobenguane sulfate
+SAL1534,Iobenguane sulfate I 123
+SAL1535,Iobenguane sulfate I 131
+SAL1536,Gadofosveset trisodium monohydrate
+SAL1537,Isometheptene mucate
+SAL1538,Methacholine chloride
+SAL1539,Naphazoline hydrochloride
+SAL1540,Naphazoline nitrate
+SAL1541,Fospropofol disodium
+SAL1542,Fosaprepitant dimeglumine
+SAL1543,Buserelin acetate
+SAL1544,Algeldrate
+SAL1545,Almagate
+SAL1546,Bufuralol hydrochloride
+SAL1547,Sparteine sulfate
+SAL1548,Aniline acetate
+SAL1549,Aniline hydrobromide
+SAL1550,Aniline hydrochloride
+SAL1551,Seproxetine hydrochloride
+SAL1552,Enclomiphene citrate
+SAL1553,Ketobemidone hydrochloride
+SAL1554,Ketobemidone oxalate
+SAL1555,Gv 150526a
+SAL1556,Ambroxol hydrochloride
+SAL1557,Drotaverine hydrochloride
+SAL1558,Triclofos sodium
+SAL1559,Danaparoid sodium
+SAL1560,Betaine citrate
+SAL1561,Betaine hydrochloride
+SAL1562,Manganese chloride
+SAL1563,Manganese chloride tetrahydrate
+SAL1564,Manganese sulfate
+SAL1565,Fomivirsen sodium
+SAL1566,Pinacidil monohydrate
+SAL1567,Saralasin acetate
+SAL1568,Tetrahydrozoline hydrochloride
+SAL1569,Bendamustine hydrochloride
+SAL1570,Bendamustine hydrochloride monohydrate
+SAL1571,Besifloxacin hydrochloride
+SAL1572,Cupric sulfate pentahydrate
+SAL1573,Dalteparin sodium
+SAL1574,Ganirelix acetate
+SAL1575,Hexocyclium methylsulfate
+SAL1576,Histrelin acetate
+SAL1577,Lanreotide acetate
+SAL1578,Lanthanum carbonate hydrate
+SAL1579,Levopropoxyphene napsylate anhydrous
+SAL1580,Lodoxamide tromethamine
+SAL1581,Mafenide Acetate
+SAL1582,Mangafodipir trisodium
+SAL1583,Methenamine citrate
+SAL1584,Methenamine diphosphate
+SAL1585,Methenamine hippurate
+SAL1586,Methenamine hydrochloride
+SAL1587,Methenamine mandelate
+SAL1588,Methenamine phosphate
+SAL1589,Methenamine sulfate
+SAL1590,Methylnaltrexone bromide
+SAL1591,Plerixafor octahydrochloride
+SAL1592,Protokylol hydrochloride
+SAL1593,Pyrithione sodium
+SAL1594,Pyrithione zinc
+SAL1595,Pyrvinium pamoate
+SAL1596,Raltegravir potassium
+SAL1597,Sodium phenylbutyrate
+SAL1598,Sulconazole nitrate
+SAL1599,Trientine hydrochloride
+SAL1600,Trientine tetrahydrochloride
+SAL1601,Triptorelin acetate
+SAL1602,Triptorelin pamoate
+SAL1603,Unoprostone isopropyl
+SAL1604,Viomycin sulfate
+SAL1605,Acifluorfen sodium
+SAL1606,CGS-27023 hydrochloride
+SAL1607,Chloramphenicol sodium succinate
+SAL1608,Hexestrol diphosphate sodium
+SAL1609,Fasudil hydrochloride
+SAL1610,Mardepodect succinate
+SAL1611,Parecoxib sodium
+SAL1612,Dapivirine hydrochloride
+SAL1613,Antazoline hydrochloride
+SAL1614,Antazoline phosphate
+SAL1615,Antazoline sulfate
+SAL1616,Chloropyramine hydrochloride
+SAL1617,Dimetindene maleate
+SAL1618,Isothipendyl hydrochloride
+SAL1619,Roxatidine acetate hydrochloride
+SAL1620,Bupranolol hydrochloride
+SAL1621,Sodium dichloroacetate
+SAL1622,Cinitapride tartrate
+SAL1623,Nadroparin calcium
+SAL1624,Lurasidone hydrochloride
+SAL1625,Hyaluronate sodium
+SAL1626,Potassium hyaluronate
+SAL1627,Sodium hyaluronate
+SAL1628,Azilsartan medoxomil potassium
+SAL1629,Lomitapide mesylate
+SAL1630,Tauroursodeoxycholic acid dihydrate
+SAL1631,Temocapril hydrochloride
+SAL1632,Tetraethylammonium bromide
+SAL1633,Tetraethylammonium chloride
+SAL1634,Tetraethylammonium hydroxide
+SAL1635,Tetraethylammonium iodide
+SAL1636,Tetraethylammonium phosphate
+SAL1637,Agmatine sulfate
+SAL1638,Serotonin hydrochloride
+SAL1639,Tyramine hydrochloride
+SAL1640,Guvacine hydrochloride
+SAL1641,Pitavastatin calcium
+SAL1642,Pitavastatin magnesium
+SAL1643,Pitavastatin sodium
+SAL1644,Rilpivirine hydrochloride
+SAL1645,Ulipristal acetate
+SAL1646,Fingolimod hydrochloride
+SAL1647,Fingolimod lauryl sulfate
+SAL1648,Tesamorelin acetate
+SAL1649,Eribulin mesylate
+SAL1650,Cabozantinib malate
+SAL1651,Ruxolitinib phosphate
+SAL1652,Ruxolitinib sulfate
+SAL1653,Perampanel hydrate
+SAL1654,Gadoxetate disodium
+SAL1655,Linaclotide acetate
+SAL1656,Peginesatide acetate
+SAL1657,Tofacitinib citrate
+SAL1658,Regorafenib monohydrate
+SAL1659,Aclidinium bromide
+SAL1660,Ponatinib hydrochloride
+SAL1661,Bedaquiline fumarate
+SAL1662,Canagliflozin hydrate
+SAL1663,Trametinib dimethyl sulfoxide
+SAL1664,Dabrafenib mesylate
+SAL1665,Afatinib dimaleate
+SAL1666,Levomilnacipran hydrochloride
+SAL1667,Acediasulfone sodium
+SAL1668,Dolutegravir sodium
+SAL1669,Chlorcyclizine hydrochloride
+SAL1670,Isoxsuprine hydrochloride
+SAL1671,Isoconazole nitrate
+SAL1672,Isoaminile citrate
+SAL1673,Isoaminile cyclamate
+SAL1674,Iotroxate meglumine
+SAL1675,Iodamide meglumine
+SAL1676,Indoramin hydrochloride
+SAL1677,Ifenprodil tartrate
+SAL1678,Hydroxydione sodium
+SAL1679,Hexoprenaline sulfate
+SAL1680,Hexamethonium Bromide
+SAL1681,Fursultiamine hydrochloride
+SAL1682,Fonazine mesylate
+SAL1683,Fominoben hydrochloride
+SAL1684,Fentonium bromide
+SAL1685,Fenspiride hydrochloride
+SAL1686,Etozolin hydrochloride
+SAL1687,Etilefrine hydrochloride
+SAL1688,Etifoxine hydrochloride
+SAL1689,Etidocaine hydrochloride
+SAL1690,Ethoheptazine citrate
+SAL1691,Ethoheptazine hydrochloride
+SAL1692,Eprazinone Hydrochloride
+SAL1693,Epirizole hydrochloride
+SAL1694,Eperisone hydrochloride
+SAL1695,Enviomycin sulfate
+SAL1696,Dimetacrine bitartrate
+SAL1697,Dimetacrine tartrate
+SAL1698,Dexetimide hydrochloride
+SAL1699,Demexiptiline hydrochloride
+SAL1700,Cyclopentamine hydrochloride
+SAL1701,Cloperastine hydrochloride
+SAL1702,Clocapramine hydrochloride
+SAL1703,Clobutinol hydrochloride
+SAL1704,Chlorphenoxamine hydrochloride
+SAL1705,Cefaloridine hydrate
+SAL1706,Articaine hydrochloride
+SAL1707,Befunolol hydrochloride
+SAL1708,Captodiamine hydrochloride
+SAL1709,Potassium canrenoate
+SAL1710,Butriptyline hydrochloride
+SAL1711,Bromhexine hydrochloride
+SAL1712,Benzoctamine hydrochloride
+SAL1713,Benfluorex hydrochloride
+SAL1714,Aliskiren hemifumarate
+SAL1715,Vorapaxar sulfate
+SAL1716,Eliglustat tartrate
+SAL1717,finafloxacin hydrochloride
+SAL1718,Naloxegol oxalate
+SAL1719,Ceftolozane sulfate
+SAL1720,Amorolfine hydrochloride
+SAL1721,Atosiban acetate
+SAL1722,Avibactam sodium
+SAL1723,Cefminox sodium
+SAL1724,Cefminox sodium hydrate
+SAL1725,Vortioxetine hemihydrobromide
+SAL1726,Vortioxetine hydrobromide
+SAL1727,Trimetazidine dihydrochloride
+SAL1728,Palbociclib isethionate
+SAL1729,Edoxaban tosylate
+SAL1730,Edoxaban tosylate monohydrate
+SAL1731,Umeclidinium bromide
+SAL1732,Lenvatinib mesylate
+SAL1733,Nintedanib esylate
+SAL1734,Olodaterol hydrochloride
+SAL1735,Vilanterol trifenatate
+SAL1736,Ivabradine hydrochloride
+SAL1737,Ivabradine oxalate
+SAL1738,Benzydamine hydrochloride
+SAL1739,Tetracaine hydrochloride
+SAL1740,Potassium alum dodecahydrate
+SAL1741,Amylocaine hydrochloride
+SAL1742,Trimebutine 3-thiocarbamoylbenzenesulfonate
+SAL1743,Trimebutine maleate
+SAL1744,Pinaverium bromide
+SAL1745,Tixocortol pivalate
+SAL1746,Xanthinol nicotinate
+SAL1747,Chlortetracycline bisulfate
+SAL1748,Chlortetracycline calcium complex
+SAL1749,Chlortetracycline hydrochloride
+SAL1750,Difluocortolone valerate
+SAL1751,Quinagolide hydrochloride
+SAL1752,Somatostatin acetate
+SAL1753,Daclatasvir dihydrochloride
+SAL1754,Mesna
+SAL1755,Potassium nitrite
+SAL1756,Sodium nitrite
+SAL1757,Citrated calcium carbimide
+SAL1758,Potassium citrate monohydrate
+SAL1759,Brexpiprazole dihydrochloride
+SAL1760,Chromic chloride hexahydrate
+SAL1761,Cupric chloride dihydrate
+SAL1762,Gadoterate meglumine
+SAL1763,Iothalamate meglumine
+SAL1764,Iothalamate sodium
+SAL1765,Iothalamate sodium I-125
+SAL1766,Sodium Iothalamate
+SAL1767,Isosulfan blue
+SAL1768,Technetium Tc-99m medronate disodium
+SAL1769,Sonidegib phosphate
+SAL1770,Sodium citrate dihydrate
+SAL1771,Trypan blue
+SAL1772,Dosulepin hydrochloride
+SAL1773,Trefentanil hydrochloride
+SAL1774,Dasabuvir sodium
+SAL1775,Dasabuvir sodium monohydrate
+SAL1776,Edivoxetine hydrochloride
+SAL1777,Viloxazine hydrochloride
+SAL1778,Etoperidone hydrochloride
+SAL1779,Lubazodone hydrochloride
+SAL1780,Mepiprazole dihydrochloride
+SAL1781,lobeglitazone sulfate
+SAL1782,Rivoglitazone Hydrochloride
+SAL1783,Synephrine tartrate
+SAL1784,Moxisylyte hydrochloride
+SAL1785,Trimazosin hydrochloride
+SAL1786,Loxoprofen sodium
+SAL1787,Dexketoprofen trometamol
+SAL1788,Clonixin lysine
+SAL1789,Melperone hydrochloride
+SAL1790,Brilaroxazine hydrochloride
+SAL1791,Barnidipine hydrochloride
+SAL1792,Benidipine hydrochloride
+SAL1793,Efonidipine hydrochloride
+SAL1794,Levamlodipine maleate
+SAL1795,Manidipine dihydrochloride
+SAL1796,Niguldipine hydrochloride
+SAL1797,Methylene blue trihydrate
+SAL1798,Moxonidine hydrochloride
+SAL1799,Pirlindole hydrochloride
+SAL1800,Pirlindole lactate
+SAL1801,Pheniprazine hydrochloride
+SAL1802,Dextran 40
+SAL1803,Dextran 70
+SAL1804,Dextran 75
+SAL1805,Dextran sulfate
+SAL1806,Dextran sulfate sodium
+SAL1807,Dextran sulfate sodium (MW 5000)
+SAL1808,Dextran sulfate sodium (MW 520000)
+SAL1809,Dextran sulfate sodium (MW 54000)
+SAL1810,Dextran sulfate sodium (MW 9500)
+SAL1811,Bemiparin sodium
+SAL1812,Patiromer sorbitex calcium
+SAL1813,Sodium picosulfate monohydrate
+SAL1814,Sodium picosulphate anhydrous
+SAL1815,Sodium phenylacetate
+SAL1816,"Coenzyme q10, (2z)-"
+SAL1817,Cimetropium bromide
+SAL1818,Artesunate sodium
+SAL1819,Bismuth subcitrate potassium monohydrate
+SAL1820,Fimasartan potassium anhydrous
+SAL1821,Fimasartan potassium trihydrate
+SAL1822,Magnesium trisilicate hydrate
+SAL1823,Imolamine hydrochloride
+SAL1824,Pipamperone hydrochloride
+SAL1825,Polyoxyethylene 23 lauryl ether
+SAL1826,Propacetamol hydrochloride
+SAL1827,Tianeptine sodium
+SAL1828,Ramosetron hydrochloride
+SAL1829,Rolapitant hydrochloride
+SAL1830,Rolapitant hydrochloride monohydrate
+SAL1831,Sodium iodide I-131
+SAL1832,Ombitasvir heminonahydrate
+SAL1833,Paritaprevir dihydrate
+SAL1834,Silibinin dihemisuccinate disodium
+SAL1835,Tenofovir alafenamide fumarate
+SAL1836,Butylscopolamine bromide
+SAL1837,Chondroitin sulfate (bovine)
+SAL1838,Chondroitin sulfate (chicken)
+SAL1839,Chondroitin sulfate (porcine)
+SAL1840,Chondroitin sulfate (shark)
+SAL1841,Chondroitin sulfate sodium (bovine)
+SAL1842,Chondroitin sulfate sodium (chicken)
+SAL1843,Chondroitin sulfate sodium (porcine)
+SAL1844,Chondroitin sulfate sodium (shark)
+SAL1845,Setiptiline maleate
+SAL1846,Aptazapine maleate
+SAL1847,Metralindole hydrochloride
+SAL1848,Kitasamycin tartrate
+SAL1849,Ioxaglate meglumine
+SAL1850,Ioxaglate sodium
+SAL1851,Technetium Tc-99m sodium pertechnetate
+SAL1852,Carbenicillin indanyl sodium
+SAL1853,Zinc sulfate heptahydrate
+SAL1854,Zinc sulfate hexahydrate
+SAL1855,Zinc sulfate monohydrate
+SAL1856,Sulbactam benzathine
+SAL1857,Sulbactam sodium
+SAL1858,Osimertinib mesylate
+SAL1859,Ipodate calcium
+SAL1860,Ipodate sodium
+SAL1861,Alatrofloxacin mesylate
+SAL1862,Mersalyl sodium
+SAL1863,Tyropanoate sodium
+SAL1864,Propoxycaine hydrochloride
+SAL1865,Tipiracil hydrochloride
+SAL1866,Pramoxine hydrochloride
+SAL1867,Calcium metrizoate
+SAL1868,Meglumine metrizoate
+SAL1869,Metrizoate magnesium
+SAL1870,Metrizoate sodium
+SAL1871,Acetrizoate sodium
+SAL1872,Levobetaxolol hydrochloride
+SAL1873,Hydroxyamfetamine hydrobromide
+SAL1874,Sulfabenzamide sodium
+SAL1875,Indocyanine green
+SAL1876,Lapyrium chloride
+SAL1877,Rose bengal sodium I-131
+SAL1878,Sodium acetate trihydrate
+SAL1879,Sodium fluoride F-18
+SAL1880,Magnesium chloride hexahydrate
+SAL1881,Magnesium chloride hydrate
+SAL1882,Methylglucamine hydrochloride
+SAL1883,Sodium iodide I-123
+SAL1884,Protirelin acetate
+SAL1885,Protirelin tartrate
+SAL1886,Protirelin tartrate monohydrate
+SAL1887,Indium In-111 pentetate disodium
+SAL1888,"Sodium phosphate, monobasic, dihydrate"
+SAL1889,"Sodium phosphate, monobasic, monohydrate"
+SAL1890,Insulin suspension isophane beef
+SAL1891,Insulin suspension isophane purified beef
+SAL1892,Insulin suspension protamine zinc purified beef
+SAL1893,Insulin zinc suspension beef
+SAL1894,Insulin zinc suspension extended beef
+SAL1895,Insulin zinc suspension extended purified beef
+SAL1896,Insulin zinc suspension prompt beef
+SAL1897,Insulin zinc suspension purified beef
+SAL1898,Sodium sulfate decahydrate
+SAL1899,Enalaprilat dihydrate
+SAL1900,Rubidium chloride Rb-82
+SAL1901,Iofetamine hydrochloride I-123
+SAL1902,Magnesium carbonate basic
+SAL1903,Sodium thiosulfate
+SAL1904,Sodium thiosulfate pentahydrate
+SAL1905,Secretin human pentahydrochloride
+SAL1906,Thonzonium bromide
+SAL1907,Sodium glycerophosphate hydrate
+SAL1908,Ixazomib citrate
+SAL1909,Human Rotavirus A type G1P(8) strain RIX4414 live antigen
+SAL1910,Human Rotavirus A type G1P7(5) strain WI79 live antigen
+SAL1911,Human Rotavirus A type G2P7(5) strain SC2 live antigen
+SAL1912,Human Rotavirus A type G3P7(5) strain WI78 live antigen
+SAL1913,Human Rotavirus A type G4P7(5) strain BRB live antigen
+SAL1914,Human Rotavirus A type G6P1A(8) strain WI79 live antigen
+SAL1915,Hepatitis A virus strain CR 326F antigen (formaldehyde inactivated)
+SAL1916,Hepatitis A virus strain HM175 antigen (formaldehyde inactivated)
+SAL1917,Stannous chloride dihydrate
+SAL1918,Carboxymethylcellulose sodium
+SAL1919,Sodium selenate
+SAL1920,Cetylpyridinium bromide
+SAL1921,Cetylpyridinium chloride
+SAL1922,Dimethicone 100
+SAL1923,Hypromellose 2208 (100 mPa.S)
+SAL1924,Hypromellose 2208 (15000 mPa.S)
+SAL1925,Hypromellose 2906 (4000 mPa.S)
+SAL1926,Hypromellose 2906 (50 mPa.S)
+SAL1927,Hypromellose 2910 (15 mPa.S)
+SAL1928,Hypromellose 2910 (15000 mPa.S)
+SAL1929,Hypromellose 2910 (3 mPa.S)
+SAL1930,Hypromellose 2910 (4000 mPa.S)
+SAL1931,Hypromellose 2910 (50 mPa.S)
+SAL1932,Aluminium chloride hexahydrate
+SAL1933,Docusate calcium
+SAL1934,Docusate potassium
+SAL1935,Docusate sodium
+SAL1936,Calcium citrate malate
+SAL1937,Calcium citrate tetrahydrate
+SAL1938,Benzalkonium bromide
+SAL1939,Benzalkonium chloride
+SAL1940,Zinc undecylenate
+SAL1941,Turpentine oil
+SAL1942,Sodium hypochlorite
+SAL1943,Racepinephrine hydrochloride
+SAL1944,Benzethonium chloride
+SAL1945,Calcium gluconate monohydrate
+SAL1946,Sodium selenite
+SAL1947,Sodium selenite pentahydrate
+SAL1948,Chromium Cr-51 chloride
+SAL1949,Chromium Cr-51 edetate
+SAL1950,8-Hydroxyquinoline citrate
+SAL1951,8-Hydroxyquinoline hydrochloride
+SAL1952,8-Hydroxyquinoline salicylate
+SAL1953,8-Hydroxyquinoline sulfate
+SAL1954,Oxyquinoline sulfate
+SAL1955,Butamben picrate
+SAL1956,Trichloroacetic acid
+SAL1957,Zinc citrate trihydrate
+SAL1958,Pyrantel citrate
+SAL1959,Pyrantel pamoate
+SAL1960,Pyrantel tartrate
+SAL1961,Phenyltoloxamine citrate
+SAL1962,Phenyltoloxamine hydrochloride
+SAL1963,Bicisate dihydrochloride
+SAL1964,Homatropine hydrobromide
+SAL1965,Rose bengal potassium
+SAL1966,Rose bengal sodium
+SAL1967,Benzophenone-5
+SAL1968,Pentoxyverine citrate
+SAL1969,Pentoxyverine tannate
+SAL1970,Magnesium L-threonate
+SAL1971,N-alkyl ethylbenzyl dimethyl ammonium chloride (C12-C14)
+SAL1972,Ferrous bisglycinate hydrochloride
+SAL1973,Methylcellulose (100 MPa.s)
+SAL1974,Methylcellulose (15 MPa.s)
+SAL1975,Methylcellulose (1500 MPa.s)
+SAL1976,Methylcellulose (25 MPa.s)
+SAL1977,Methylcellulose (400 MPa.s)
+SAL1978,Methylcellulose (4000 MPa.s)
+SAL1979,Thonzylamine hydrochloride
+SAL1980,Aluminum sulfate hydrate
+SAL1981,Aluminum sulfate tetradecahydrate
+SAL1982,Zinc gluconate trihydrate
+SAL1983,Levomefolate calcium
+SAL1984,Levomefolate glucosamine
+SAL1985,Levomefolate magnesium
+SAL1986,Dihydroergocornine mesylate
+SAL1987,Dihydro-alpha-ergocryptine mesylate
+SAL1988,Epicriptine mesilate
+SAL1989,DL-Methylephedrine hydrochloride
+SAL1990,Brilliant green
+SAL1991,Prezatide monoacetate
+SAL1992,Sodium bentonite
+SAL1993,Methscopolamine nitrate
+SAL1994,"1,2-docosahexanoyl-sn-glycero-3-phosphoserine calcium"
+SAL1995,Bispyrithione magsulfex
+SAL1996,"1-palmitoyl-2-oleoyl-sn-glycero-3-(phospho-rac-(1-glycerol)), sodium salt"
+SAL1997,"Calcium phosphate, dibasic"
+SAL1998,"Calcium phosphate, tribasic"
+SAL1999,Magnesium ascorbyl phosphate
+SAL2000,Guaiacol carbonate
+SAL2001,Guaiacol hydrochloride
+SAL2002,Alectinib hydrochloride
+SAL2003,Sennosides A and B
+SAL2004,Amprolium hydrochloride
+SAL2005,Chlorobutanol hemihydrate
+SAL2006,Danofloxacin mesylate
+SAL2007,Maropitant citrate
+SAL2008,Medetomidine hydrochloride
+SAL2009,Monensin sodium
+SAL2010,Oclacitinib maleate
+SAL2011,Oleandomycin hydrochloride
+SAL2012,Oleandomycin phosphate
+SAL2013,Sodium sulfachlorpyridazine monohydrate
+SAL2014,Sulfachlorpyridazine sodium
+SAL2015,Sulfaquinoxaline sodium
+SAL2016,Tiamulin hydrogen fumarate
+SAL2017,Tilmicosin phosphate
+SAL2018,Tylosin phosphate
+SAL2019,Tylosin tartrate
+SAL2020,Xylazine hydrochloride
+SAL2021,Zilpaterol hydrochloride
+SAL2022,Atipamezole hydrochloride
+SAL2023,Ceftiofur hydrochloride
+SAL2024,Ceftiofur sodium
+SAL2025,Nalorphine hydrochloride
+SAL2026,Sarafloxacin hydrochloride
+SAL2027,Sodium 2-mercaptobenzothiazole
+SAL2028,Amphomycin calcium
+SAL2029,Bunamidine hydrochloride
+SAL2030,Butacaine sulfate
+SAL2031,Caramiphen edisylate
+SAL2032,Caramiphen hydrochloride
+SAL2033,Cefovecin sodium
+SAL2034,Cloprostenol sodium
+SAL2035,Deslorelin acetate
+SAL2036,Difloxacin hydrochloride
+SAL2037,Dihydrostreptomycin sulfate
+SAL2038,Diperodon hydrochloride
+SAL2039,Dithiazanine iodide
+SAL2040,Etymemazine hydrochloride
+SAL2041,Flunixin meglumine
+SAL2042,Fluprostenol sodium
+SAL2043,Imidocarb dipropionate
+SAL2044,Maduramicin ammonium
+SAL2045,Masitinib mesylate
+SAL2046,Melarsomine dihydrochloride
+SAL2047,Metoserpate hydrochloride
+SAL2048,Pirlimycin hydrochloride
+SAL2049,Propiopromazine hydrochloride
+SAL2050,Ractopamine hydrochloride
+SAL2051,Robenidine hydrochloride
+SAL2052,Romifidine hydrochloride
+SAL2053,Salinomycin sodium
+SAL2054,Semduramicin sodium
+SAL2055,Sulfabromomethazine sodium
+SAL2056,Tiletamine hydrochloride
+SAL2057,Tricaine methanesulfonate
+SAL2058,Tylvalosin tartrate
+SAL2059,Zolazepam hydrochloride
+SAL2060,Detomidine hydrochloride
+SAL2061,Aminacrine hydrochloride
+SAL2062,Grazoprevir monohydrate
+SAL2063,Indigotindisulfonate sodium
+SAL2064,Cetalkonium bromide
+SAL2065,Cetalkonium chloride
+SAL2066,Pipradrol hydrochloride
+SAL2067,Etafedrine hydrochloride
+SAL2068,Domiphen bromide
+SAL2069,Levoleucovorin calcium
+SAL2070,Levoleucovorin calcium pentahydrate
+SAL2071,Levoleucovorin disodium
+SAL2072,Hydroxyethyl cellulose (100 MPa.s at 2%)
+SAL2073,Hydroxyethyl cellulose (140 MPa.s at 5%)
+SAL2074,Hydroxyethyl cellulose (1500 MPa.s at 1%)
+SAL2075,Hydroxyethyl cellulose (1800 MPa.s at 2%)
+SAL2076,Hydroxyethyl cellulose (2000 MPa.s at 1%)
+SAL2077,Hydroxyethyl cellulose (280 MPa.s at 2%)
+SAL2078,Hydroxyethyl cellulose (280 MPa.s at 5%)
+SAL2079,Hydroxyethyl cellulose (3000 MPa.s at 1%)
+SAL2080,Hydroxyethyl cellulose (40 MPa.s at 2%)
+SAL2081,Hydroxyethyl cellulose (4000 MPa.s at 1%)
+SAL2082,Hydroxyethyl cellulose (5000 MPa.s at 1%)
+SAL2083,Hydroxyethyl cellulose (5500 MPa.s at 2%)
+SAL2084,Hydroxyethyl cellulose (6500 MPa.s at 2%)
+SAL2085,Normethadone hydrochloride
+SAL2086,Oxilofrine hydrochloride
+SAL2087,Lifitegrast sodium
+SAL2088,Rupatadine fumarate
+SAL2089,Rupatadine trihydrochloride
+SAL2090,Pirarubicin hydrochloride
+SAL2091,Aclarubicin hydrochloride
+SAL2092,Zorubicin hydrochloride
+SAL2093,Neridronate sodium
+SAL2094,Dehydrocholate sodium
+SAL2095,Hepatitis B virus subtype ADW HBSAG surface protein antigen
+SAL2096,Hepatitis B virus subtype ADW2 HBSAG surface protein antigen
+SAL2097,Depreotide trifluoroacetate
+SAL2098,Amifampridine phosphate
+SAL2099,Vinflunine ditartrate
+SAL2100,Pitolisant hydrochloride
+SAL2101,Tafamidis meglumine
+SAL2102,Afuresertib Hydrochloride
+SAL2103,Bremelanotide acetate
+SAL2104,Indium Acetate
+SAL2105,Indium Chloride
+SAL2106,Indium Citrate
+SAL2107,Indium Nitrate
+SAL2108,Indium Sulfate
+SAL2109,Buparlisib hydrochloride
+SAL2110,Pyridoxamine hydrochloride
+SAL2111,Pyridoxamine phosphate
+SAL2112,Mosapride Citrate
+SAL2113,Selumetinib sulfate
+SAL2114,Naldemedine tosylate
+SAL2115,Carnosine Hydrochloride
+SAL2116,Carnosine Nitrate
+SAL2117,Tropisetron Hydrochloride
+SAL2118,Tropisetron Mesylate
+SAL2119,Setmelanotide acetate
+SAL2120,Acalabrutinib maleate monohydrate
+SAL2121,Raxatrigine Hydrochloride
+SAL2122,Raxatrigine Mesylate
+SAL2123,Trigonellamide Chloride
+SAL2124,Navarixin monohydrate
+SAL2125,Dutogliptin Tartrate
+SAL2126,Bombesin dihydrochloride
+SAL2127,Encenicline hydrochloride
+SAL2128,Ribociclib hydrochloride
+SAL2129,Ribociclib succinate
+SAL2130,Lasmiditan succinate
+SAL2131,Icotinib hydrochloride
+SAL2132,Rilmenidine Phosphate
+SAL2133,Famitinib malate
+SAL2134,Epetraborole Hydrochloride
+SAL2135,Otenabant hydrochloride
+SAL2136,Cabotegravir sodium
+SAL2137,Rifamycin sodium
+SAL2138,Cenicriviroc mesylate
+SAL2139,Pevonedistat Hydrochloride
+SAL2140,Talazoparib tosylate
+SAL2141,Tenapanor hydrochloride
+SAL2142,Momelotinib dihydrochloride
+SAL2143,Momelotinib dihydrochloride monohydrate
+SAL2144,Pazufloxacin Mesilate
+SAL2145,Pf 03758309 Hydrochloride
+SAL2146,Danoprevir sodium
+SAL2147,Imidapril hydrochloride
+SAL2148,Anisodamine Hydrochloride
+SAL2149,Ralimetinib Mesylate
+SAL2150,Sodium hyodeoxycholate
+SAL2151,Radafaxine Hydrochloride
+SAL2152,Capmatinib hydrochloride
+SAL2153,Niraparib hydrochloride
+SAL2154,Niraparib tosylate
+SAL2155,Niraparib tosylate monohydrate
+SAL2156,Fostemsavir tromethamine
+SAL2157,Bictegravir sodium
+SAL2158,Tivozanib hydrochloride
+SAL2159,Dexmecamylamine Hydrochloride
+SAL2160,Faldaprevir sodium
+SAL2161,Artefenomel Mesylate
+SAL2162,Talaporfin Sodium
+SAL2163,Tilarginine acetate
+SAL2164,Tilarginine citrate
+SAL2165,Tilarginine hydrochloride
+SAL2166,Asp 4058 Hydrochloride
+SAL2167,Esketamine hydrochloride
+SAL2168,Tofogliflozin hydrate
+SAL2169,Ertugliflozin pidolate
+SAL2170,Neratinib maleate
+SAL2171,Ruboxistaurin hydrochloride
+SAL2172,Ruboxistaurin mesylate
+SAL2173,Mocetinostat Dihydrobromide
+SAL2174,Crenolanib besylate
+SAL2175,Sapanisertib Diphosphate
+SAL2176,Sapanisertib Hydrochloride
+SAL2177,Osilodrostat phosphate
+SAL2178,Angiotensin II acetate
+SAL2179,Creatinine Sulfate
+SAL2180,Astodrimer Sodium
+SAL2181,Anlotinib hydrochloride
+SAL2182,Infigratinib acetate
+SAL2183,Infigratinib hydrochloride
+SAL2184,Infigratinib mesylate
+SAL2185,Infigratinib phosphate
+SAL2186,Cilengitide hydrochloride
+SAL2187,Fimepinostat mesylate
+SAL2188,Lenomorelin acetate
+SAL2189,Flumatinib Mesylate
+SAL2190,Varespladib Sodium
+SAL2191,Lanopepden Mesylate
+SAL2192,Valbenazine tosylate
+SAL2193,Guadecitabine Sodium
+SAL2194,Safingol Hydrochloride
+SAL2195,Vaniprevir potassium
+SAL2196,Flomoxef Sodium
+SAL2197,Difelikefalin acetate
+SAL2198,Tasisulam Sodium
+SAL2199,Delafloxacin meglumine
+SAL2200,Pridopidine Hydrochloride
+SAL2201,Vestipitant mesylate
+SAL2202,Idalopirdine Hydrochloride
+SAL2203,Carboxyamidotriazole orotate
+SAL2204,Dacomitinib monohydrate
+SAL2205,Uprosertib Hydrochloride
+SAL2206,TAK-448 acetate
+SAL2207,Golvatinib Tartrate
+SAL2208,Glasdegib hydrochloride
+SAL2209,Glasdegib maleate
+SAL2210,Elagolix sodium
+SAL2211,Elamipretide hydrochloride
+SAL2212,Avatrombopag maleate
+SAL2213,Abemaciclib mesylate
+SAL2214,Briciclib Sodium
+SAL2215,Prexasertib dihydrochloride
+SAL2216,Prexasertib mesylate monohydrate
+SAL2217,Fostamatinib disodium
+SAL2218,Axelopran Sulfate
+SAL2219,Ozagrel Hydrochloride
+SAL2220,Ozagrel Sodium
+SAL2221,Tecovirimat monohydrate
+SAL2222,Evatanepag Sodium
+SAL2223,Sarecycline hydrochloride
+SAL2224,Naquotinib Mesylate
+SAL2225,Atopaxar Hydrochloride
+SAL2226,Bq 123 Sodium
+SAL2227,Pardoprunox Hydrochloride
+SAL2228,Volasertib trihydrochloride
+SAL2229,T 900607 Sodium
+SAL2230,Vabicaserin Hydrochloride
+SAL2231,Oxitropium bromide
+SAL2232,D-Phe-Cys-Tyr-D-Trp-Lys-Cys-Thr-NH2 (disulfide bridge: 2-6) acetate
+SAL2233,Gadolinium Chloride
+SAL2234,Tetrahydropalmatine Hydrochloride
+SAL2235,Semapimod mesylate
+SAL2236,Semapimod tetrahydrochloride
+SAL2237,Telotristat etiprate
+SAL2238,Imagabalin Hydrochloride
+SAL2239,m-Chlorophenylpiperazine dihydrochloride
+SAL2240,m-Chlorophenylpiperazine hydrochloride
+SAL2241,MK-212 hydrochloride
+SAL2242,Cinepazide Maleate
+SAL2243,Sultamicillin hydrochloride
+SAL2244,Sultamicillin tosilate
+SAL2245,Ulimorelin Hydrochloride
+SAL2246,Gepotidacin hydrochloride
+SAL2247,Gepotidacin mesylate
+SAL2248,Dilmapimod tosylate
+SAL2249,Gilteritinib fumarate
+SAL2250,Agn 203818 Hydrochloride
+SAL2251,Rigosertib Sodium
+SAL2252,Brincidofovir sodium
+SAL2253,Citicoline sodium
+SAL2254,Itacitinib adipate
+SAL2255,Sarpogrelate Hydrochloride
+SAL2256,Gepirone Hydrochloride
+SAL2257,Exatecan Mesylate
+SAL2258,Faropenem Sodium
+SAL2259,Obatoclax mesylate
+SAL2260,Emeramide Potassium
+SAL2261,Emeramide Sodium
+SAL2262,CP-866087 Mesylate
+SAL2263,Verdinexor Hydrochloride
+SAL2264,Landiolol hydrochloride
+SAL2265,Org 25935 Hydrochloride
+SAL2266,Beclabuvir hydrochloride
+SAL2267,Telcagepant potassium
+SAL2268,Cerlapirdine Hydrochloride
+SAL2269,Bunazosin hydrochloride
+SAL2270,BMS-214662 hydrochloride
+SAL2271,BMS-214662 mesylate
+SAL2272,Estetrol monohydrate
+SAL2273,Tulobuterol Hydrochloride
+SAL2274,Moxaverine Hydrochloride
+SAL2275,Atevirdine Mesylate
+SAL2276,Ecopipam Hydrochloride
+SAL2277,Polihexanide hydrochloride
+SAL2278,Propiverine hydrochloride
+SAL2279,Defactinib hydrochloride
+SAL2280,Balapiravir Hydrochloride
+SAL2281,Darexaban Maleate
+SAL2282,Nefopam hydrochloride
+SAL2283,Dasotraline Hydrochloride
+SAL2284,Dopexamine Hydrochloride
+SAL2285,Chlorproguanil hydrochloride
+SAL2286,Ifetroban Sodium
+SAL2287,Eravacycline dihydrochloride
+SAL2288,Rucaparib camsylate
+SAL2289,Rucaparib phosphate
+SAL2290,Amcipatricin diascorbate
+SAL2291,Radezolid hydrochloride
+SAL2292,Navitoclax dihydrochloride
+SAL2293,Temocillin Sodium
+SAL2294,Ulodesine Hydrochloride
+SAL2295,BMS-863233 hydrochloride
+SAL2296,Biib021 Mesylate
+SAL2297,Sotrastaurin acetate
+SAL2298,Siponimod fumarate
+SAL2299,Oglemilast Sodium
+SAL2300,Relebactam sodium
+SAL2301,Zamicastat hydrochloride
+SAL2302,Seladelpar lysine
+SAL2303,Resminostat mesylate
+SAL2304,Eleclazine Hydrochloride
+SAL2305,Pumosetrag Hydrochloride
+SAL2306,Samarium Chloride
+SAL2307,Remimazolam besylate
+SAL2308,Remimazolam tosylate
+SAL2309,Triciribine phosphate
+SAL2310,Saccharin calcium
+SAL2311,Saccharin potassium
+SAL2312,Saccharin sodium
+SAL2313,Alvespimycin hydrochloride
+SAL2314,Omadacycline tosylate
+SAL2315,Rimegepant sulfate
+SAL2316,Muscimol hydrobromide
+SAL2317,Belotecan hydrochloride
+SAL2318,Ibrexafungerp citrate
+SAL2319,Ibrexafungerp phosphate
+SAL2320,Copanlisib dihydrochloride
+SAL2321,Copanlisib dihydrochloride hydrate
+SAL2322,Pimonidazole hydrochloride
+SAL2323,Fedratinib hydrochloride
+SAL2324,Batefenterol succinate
+SAL2325,Samidorphan L-malate
+SAL2326,Mebeverine hydrochloride
+SAL2327,Fosbretabulin tromethamine
+SAL2328,Asciminib hydrochloride
+SAL2329,Nafamostat mesylate
+SAL2330,Sisomicin sulfate
+SAL2331,Etripamil hydrochloride
+SAL2332,Ozanimod hydrochloride
+SAL2333,Plazomicin sulfate
+SAL2334,Octenidine dihydrochloride
+SAL2335,Zelavespib dihydrochloride
+SAL2336,Givinostat hydrochloride monohydrate
+SAL2337,Indantadol hydrochloride
+SAL2338,Metenkefalin acetate
+SAL2339,Gusperimus hydrochloride
+SAL2340,Pilsicainide hydrochloride
+SAL2341,Amuvatinib hydrochloride
+SAL2342,Zoptarelin doxorubicin acetate
+SAL2343,Cicletanine hydrochloride
+SAL2344,Lometrexol sodium
+SAL2345,Veldoreotide acetate
+SAL2346,Rivipansel sodium
+SAL2347,Benserazide hydrochloride
+SAL2348,Ilginatinib maleate
+SAL2349,Lefamulin acetate
+SAL2350,Gabexate mesylate
+SAL2351,Reproterol hydrochloride
+SAL2352,Etelcalcetide hydrochloride
+SAL2353,Quizartinib dihydrochloride
+SAL2354,Omigapil maleate
+SAL2355,Ombrabulin hydrochloride
+SAL2356,Eltoprazine hydrochloride
+SAL2357,Tazemetostat hydrobromide
+SAL2358,Fiacitabine hydrochloride
+SAL2359,Gallopamil Hydrochloride
+SAL2360,Opipramol hydrochloride
+SAL2361,Fenobam hydrochloride
+SAL2362,Fenobam monohydrate
+SAL2363,Lactitol monohydrate
+SAL2364,Dihydralazine sulfate
+SAL2365,Prothipendyl hydrochloride
+SAL2366,Prothipendyl hydrochloride monohydrate
+SAL2367,Mitoguazone dihydrochloride
+SAL2368,Pyronaridine tetraphosphate
+SAL2369,Pexidartinib hydrochloride
+SAL2370,Brilacidin tetrahydrochloride
+SAL2371,Tinoridine hydrochloride
+SAL2372,Rebastinib tosylate
+SAL2373,Tiapride hydrochloride
+SAL2374,MLN8054 sodium
+SAL2375,Tramazoline hydrochloride
+SAL2376,Nimustine hydrochloride
+SAL2377,Macimorelin acetate
+SAL2378,Yttrium-90 chloride
+SAL2379,Yttrium-90 citrate
+SAL2380,Roluperidone hydrochloride
+SAL2381,Pyritinol hydrochloride
+SAL2382,Enoxolone aluminum
+SAL2383,Enoxolone sodium
+SAL2384,Potassium glycyrrhetinate
+SAL2385,Tiropramide hydrochloride
+SAL2386,Meclocycline sulfosalicylate
+SAL2387,CT-2584 mesylate
+SAL2388,Camsirubicin hydrochloride
+SAL2389,TP-317
+SAL2390,Saroglitazar magnesium
+SAL2391,Levosalbutamol hydrochloride
+SAL2392,Levosalbutamol sulfate
+SAL2393,Levosalbutamol tartrate
+SAL2394,Calcium glubionate
+SAL2395,Esculin sodium
+SAL2396,Clobetasone butyrate
+SAL2397,Nusinersen sodium
+SAL2398,Ripasudil hydrochloride dihydrate
+SAL2399,Zofenopril calcium
+SAL2400,Sodium gluconate
+SAL2401,Methylbenactyzium bromide
+SAL2402,Ethacridine lactate
+SAL2403,Ethacridine lactate monohydrate
+SAL2404,Phosphocreatine sodium
+SAL2405,Bamifylline hydrochloride
+SAL2406,Bamethan sulfate
+SAL2407,Guanoxan sulfate
+SAL2408,Oxolamine citrate
+SAL2409,Oxolamine phosphate
+SAL2410,Enibomal sodium
+SAL2411,Alaproclate hydrochloride
+SAL2412,Sodium perborate
+SAL2413,Sodium perborate monohydrate
+SAL2414,Tuaminoheptane sulfate
+SAL2415,Pramiracetam sulfate
+SAL2416,Prifinium bromide
+SAL2417,Ferrous sulfate
+SAL2418,Ferrous sulfate dihydrate
+SAL2419,Ferrous sulfate monohydrate
+SAL2420,Ferrous sulfate sesquihydrate
+SAL2421,Lysozyme chloride
+SAL2422,Aceclidine hydrochloride
+SAL2423,Cefatrizine propylene glycolate
+SAL2424,Dibekacin sulfate
+SAL2425,Sultopride hydrochloride
+SAL2426,Benzododecinium bromide
+SAL2427,Benzododecinium chloride
+SAL2428,Propamidine isethionate
+SAL2429,Benproperine phosphate
+SAL2430,Delapril hydrochloride
+SAL2431,Pheneticillin potassium
+SAL2432,Dihydroergocristine mesylate
+SAL2433,Acriflavinium chloride
+SAL2434,Vinbarbital sodium
+SAL2435,Dihydroergocryptine mesylate
+SAL2436,"Emetan, 6',7',10,11-tetramethoxy-, dihydrochloride, hydrate"
+SAL2437,Emetine hydrochloride heptahydrate
+SAL2438,Emetine hydrochloride pentahydrate
+SAL2439,Adrenalone hydrochloride
+SAL2440,Linsidomine hydrochloride
+SAL2441,Phenyramidol hydrochloride
+SAL2442,Fenticonazole nitrate
+SAL2443,Endralazine mesylate
+SAL2444,Meglumine ioxitalamate
+SAL2445,Sodium ioxitalamate
+SAL2446,Nepinalone hydrochloride
+SAL2447,Cefodizime sodium
+SAL2448,Tenidap sodium
+SAL2449,Bencyclane fumarate
+SAL2450,Valethamate bromide
+SAL2451,Otilonium bromide
+SAL2452,Bendazac lysine
+SAL2453,Cloranolol hydrochloride
+SAL2454,Levomethadone hydrochloride
+SAL2455,Sodium alginate
+SAL2456,Calcium dobesilate
+SAL2457,Calcium dobesilate monohydrate
+SAL2458,Iodoxamate meglumine
+SAL2459,4-dimethylaminophenol hydrochloride
+SAL2460,Bifemelane hydrochloride
+SAL2461,Clobenzorex hydrochloride
+SAL2462,Benzoxonium chloride
+SAL2463,Ferrous chloride tetrahydrate
+SAL2464,Acefylline piperazine
+SAL2465,Heptaminol hydrochloride
+SAL2466,Itramin tosylate
+SAL2467,Nafronyl oxalate
+SAL2468,Bornaprine hydrochloride
+SAL2469,Methoxyphenamine hydrochloride
+SAL2470,Bibenzonium bromide
+SAL2471,Pridinol mesilate
+SAL2472,Alcuronium chloride
+SAL2473,Propicillin potassium
+SAL2474,Cefozopran hydrochloride
+SAL2475,Morpholine salicylate
+SAL2476,Oxantel pamoate
+SAL2477,Cridanimod sodium
+SAL2478,Butalamine hydrochloride
+SAL2479,Cefpirome sulfate
+SAL2480,Dimethisoquin Hydrochloride
+SAL2481,Tretoquinol hydrochloride anhydrous
+SAL2482,Sulbenicillin sodium
+SAL2483,Distigmine bromide
+SAL2484,Protamine hydrochloride
+SAL2485,Diphemanil methylsulfate
+SAL2486,Camostat mesilate
+SAL2487,Ammonium glycyrrhizinate trihydrate
+SAL2488,Glycyrrhizinate dipotassium
+SAL2489,Cetiedil citrate
+SAL2490,Iocarmate meglumine
+SAL2491,Fenpiverinium bromide
+SAL2492,Rufloxacin hydrochloride
+SAL2493,Myristalkonium chloride
+SAL2494,Tertatolol hydrochloride
+SAL2495,Guanoclor sulfate
+SAL2496,Xamoterol fumarate
+SAL2497,Tilidine fumarate
+SAL2498,Tilidine hydrochloride
+SAL2499,Tilidine hydrochloride hemihydrate
+SAL2500,Tilidine phosphate
+SAL2501,Calcium levulinate dihydrate
+SAL2502,Mebhydrolin napadisylate
+SAL2503,Pipemidic acid trihydrate
+SAL2504,Indanazoline hydrochloride
+SAL2505,Pipenzolate bromide
+SAL2506,Etafenone hydrochloride
+SAL2507,Timepidium bromide
+SAL2508,Dimazole dihydrochloride
+SAL2509,Magnesium phosphate dibasic trihydrate
+SAL2510,Magnesium phosphate pentahydrate
+SAL2511,Fosfructose trisodium
+SAL2512,Choline fenofibrate
+SAL2513,Enasidenib mesylate
+SAL2514,Harmaline hydrochloride
+SAL2515,Harmaline hydrochloride dihydrate
+SAL2516,Volixibat potassium
+SAL2517,Deoxyepinephrine hydrochloride
+SAL2518,Valopicitabine dihydrochloride
+SAL2519,Ulixertinib hydrochloride
+SAL2520,Netarsudil dihydrochloride
+SAL2521,Netarsudil mesylate
+SAL2522,Piperaquine tetraphosphate
+SAL2523,WIN 55212-2 mesylate
+SAL2524,Patent Blue V calcium
+SAL2525,Patent Blue V sodium
+SAL2526,Dioctyldimonium chloride
+SAL2527,Technetium Tc-99m sulesomab
+SAL2528,Technetium Tc-99m besilesomab
+SAL2529,Cupric chloride anhydrous Cu-64
+SAL2530,Lutetium chloride Lu-177
+SAL2531,Strontium chloride hexahydrate
+SAL2532,SB-269970 hydrochloride
+SAL2533,Pentetate calcium trisodium
+SAL2534,Pentetate zinc trisodium
+SAL2535,Pamabrom
+SAL2536,Clinafloxacin hydrochloride
+SAL2537,Darglitazone sodium
+SAL2538,Englitazone sodium
+SAL2539,Calcium hopantenate
+SAL2540,Nigericin sodium
+SAL2541,Hycanthone mesylate
+SAL2542,Lomerizine dihydrochloride
+SAL2543,Dofequidar fumarate
+SAL2544,Dexniguldipine hydrochloride
+SAL2545,Cianidanol hydrate
+SAL2546,Morrhuate sodium
+SAL2547,Sodium dimercaptosuccinic acid
+SAL2548,"1,2-icosapentoyl-sn-glycero-3-phosphoserine calcium"
+SAL2549,Potassium linolate
+SAL2550,Sodium linolate
+SAL2551,Tenofovir hydrate
+SAL2552,p-Phenylenediamine dihydrochloride
+SAL2553,Distearyldimonium chloride
+SAL2554,p-Aminophenol hydrochloride
+SAL2555,Potassium chlorate
+SAL2556,Sodium chlorate
+SAL2557,Oxidronate disodium
+SAL2558,Benzylparaben sodium
+SAL2559,Propylparaben calcium
+SAL2560,Propylparaben sodium
+SAL2561,Nickel sulfate hexahydrate
+SAL2562,Potassium dichromate
+SAL2563,Diphenylguanidine monohydrobromide
+SAL2564,Cobalt chloride hexahydrate
+SAL2565,Moexiprilat hydrochloride
+SAL2566,Methylparaben sodium
+SAL2567,Quinaprilat hydrate
+SAL2568,Sodium threonate
+SAL2569,Calcium ascorbate dihydrate
+SAL2570,Zinc acetate dihydrate
+SAL2571,Ferrous gluconate dihydrate
+SAL2572,Manganese citrate decahydrate
+SAL2573,Sodium molybdate dihydrate
+SAL2574,"Sodium phosphate, dibasic dihydrate"
+SAL2575,"Sodium phosphate, dibasic dodecahydrate"
+SAL2576,"Sodium phosphate, dibasic, heptahydrate"
+SAL2577,"Sodium phosphate, dibasic, monohydrate"
+SAL2578,Sodium borate decahydrate
+SAL2579,Lithium hydroxide monohydrate
+SAL2580,Lithium citrate tetrahydrate
+SAL2581,Mometasone furoate monohydrate
+SAL2582,Hydrocortisone sodium phosphate
+SAL2583,Hydrocortisone sodium succinate
+SAL2584,Hydrocortisone succinate monohydrate
+SAL2585,Bismuth subcitrate
+SAL2586,Patisiran sodium
+SAL2587,Edetate calcium disodium
+SAL2588,Edetate disodium
+SAL2589,Prednisolone sodium phosphate
+SAL2590,Prednisolone sodium succinate
+SAL2591,Methylprednisolone sodium succinate
+SAL2592,Menadiol sodium diphosphate
+SAL2593,Fagrocorat hydrochloride
+SAL2594,Prezatide copper acetate
+SAL2595,Sodium metavanadate tetrahydrate
+SAL2596,Dexamethasone sodium metasulfobenzoate
+SAL2597,Chloramine-T
+SAL2598,Chloramine-T trihydrate
+SAL2599,Inotersen sodium
+SAL2600,Tenivastatin sodium
+SAL2601,Brovanexine hydrochloride
+SAL2602,ADU-S100 sodium
+SAL2603,Larotrectinib sulfate
+SAL2604,Cefamandole nafate sodium
+SAL2605,Ceftobiprole medocaril sodium
+SAL2606,Sodium p-phenolsulfonate dihydrate
+SAL2607,Polymyxin B sulfate
+SAL2608,Cidoxepin hydrochloride
+SAL2609,Hydroxystilbamidine isethionate
+SAL2610,Solriamfetol hydrochloride
+SAL2611,Cycloguanil embonate
+SAL2612,Rivoceranib mesylate
+SAL2613,Etrasimod arginine
+SAL2614,Uproleselan sodium
+SAL2615,Dordaviprone dihydrochloride
+SAL2616,Filgotinib maleate
+SAL2617,Avadomide hydrochloride
+SAL2618,Ensartinib Hydrochloride
+SAL2619,Cefiderocol sulfate tosylate
+SAL2620,Derazantinib dihydrochloride
+SAL2621,Inclisiran sodium
+SAL2622,Pimasertib hydrochloride
+SAL2623,Imetelstat sodium
+SAL2624,Ritlecitinib tosylate
+SAL2625,Nicotinamide riboside chloride
+SAL2626,Motixafortide acetate
+SAL2627,BMS-986020 sodium
+SAL2628,Venglustat malate
+SAL2629,Umbralisib tosylate
+SAL2630,Bazlitoran sodium
+SAL2631,Fitusiran sodium
+SAL2632,Agatolimod sodium
+SAL2633,Daridorexant hydrochloride
+SAL2634,Givosiran sodium
+SAL2635,Volanesorsen sodium
+SAL2636,Troriluzole hydrochloride
+SAL2637,Upadacitinib hemihydrate
+SAL2638,Upadacitinib tartrate
+SAL2639,Gefapixant citrate
+SAL2640,Onvansertib fumarate
+SAL2641,Dexpramipexole dihydrochloride
+SAL2642,Tepotinib hydrochloride
+SAL2643,Tinostamustine hydrochloride
+SAL2644,Avacincaptad pegol sodium
+SAL2645,Cilofexor tromethamine
+SAL2646,Bamocaftor potassium
+SAL2647,Birabresib dihydrate
+SAL2648,MAX-40279 hemifumarate
+SAL2649,Dextromethadone hydrochloride
+SAL2650,Tomivosertib hydrochloride
+SAL2651,Dasiglucagon hydrochloride
+SAL2652,Tirabrutinib hydrochloride
+SAL2653,Bulevirtide acetate
+SAL2654,Avutometinib potassium
+SAL2655,CB-103 hydrochloride
+SAL2656,Abivertinib maleate
+SAL2657,Tuspetinib monohydrate
+SAL2658,Xanomeline tartrate
+SAL2659,Pafolacianine sodium
+SAL2660,Trilaciclib dihydrochloride
+SAL2661,Vidofludimus Calcium
+SAL2662,Setogepram sodium
+SAL2663,Benzhydrocodone hydrochloride
+SAL2664,Tallimustine hydrochloride
+SAL2665,Eticlopride hydrochloride
+SAL2666,Ferric chloride hexahydrate
+SAL2667,Padeliporfin potassium
+SAL2668,Aminopromazine hydrochloride
+SAL2669,Aminopentamide hydrochloride
+SAL2670,Aminopentamide sulfate
+SAL2671,Zilucoplan Sodium
+SAL2672,Molidustat sodium
+SAL2673,Fasitibant chloride
+SAL2674,Fasitibant chloride hydrochloride
+SAL2675,Ravidasvir hydrochloride
+SAL2676,Lenacapavir sodium
+SAL2677,Zavegepant hydrochloride
+SAL2678,Zinc orotate dihydrate
+SAL2679,Cobaltous sulfate heptahydrate
+SAL2680,Pargeverine hydrochloride
+SAL2681,Myrtecaine citrate
+SAL2682,Myrtecaine hydrochloride
+SAL2683,Mecloxamine citrate
+SAL2684,MK-0668 mesylate
+SAL2685,Adiphenine hydrochloride
+SAL2686,GC-376
+SAL2687,Calcium alpha-Keto-beta-methylvaleric acid
+SAL2688,Desmeninol calcium
+SAL2689,alpha-Keto-isoleucine calcium
+SAL2690,Dermatan sulfate sodium
+SAL2691,Clonazoline hydrochloride
+SAL2692,Sulfamethylthiazole sodium
+SAL2693,Fluorocholine chloride F-18
+SAL2694,Pipethanate ethobromide
+SAL2695,Pipethanate hydrochloride
+SAL2696,Fepradinol hydrochloride
+SAL2697,Escin sodium
+SAL2698,Amfenac sodium anhydrous
+SAL2699,Diquafosol tetrasodium
+SAL2700,Clemizole hydrochloride
+SAL2701,Lumasiran sodium
+SAL2702,Haletazole tartrate
+SAL2703,Menadione sodium bisulfite anhydrous
+SAL2704,Menadione sodium bisulfite trihydrate
+SAL2705,Pirenoxine sodium
+SAL2706,Piroctone olamine
+SAL2707,Pitofenone hydrochloride
+SAL2708,Strychnine nitrate
+SAL2709,Strychnine sulfate
+SAL2710,Troclosene sodium
+SAL2711,Butropium bromide
+SAL2712,Carbazochrome sodium sulfonate
+SAL2713,Clorotepine maleate
+SAL2714,Parathiazine teoclate
+SAL2715,Homochlorcyclizine dihydrochloride
+SAL2716,Levocarnitine propionate hydrochloride
+SAL2717,Berotralstat hydrochloride
+SAL2718,Glycylglutamine monohydrate
+SAL2719,Glycyltyrosine dihydrate
+SAL2720,Butedronate tetrasodium
+SAL2721,Nifekalant hydrochloride
+SAL2722,LX-7101 hydrochloride
+SAL2723,Iseganan hydrochloride
+SAL2724,Levophencynonate hydrochloride
+SAL2725,Celivarone fumarate
+SAL2726,Ketocaine hydrochloride
+SAL2727,Thenyldiamine hydrochloride
+SAL2728,ABTL-0812 Sodium
+SAL2729,Ilacirnon sodium
+SAL2730,Zetomipzomib maleate
+SAL2731,Tolinapant L-(+)-lactic acid
+SAL2732,Hematoporphyrin dihydrochloride
+SAL2733,Eplontersen sodium
+SAL2734,Iptacopan hydrochloride monohydrate
+SAL2735,Lazertinib mesylate monohydrate
+SAL2736,Leniolisib phosphate
+SAL2737,Maralixibat chloride
+SAL2738,NSI-189 phosphate
+SAL2739,Mitapivat sulfate
+SAL2740,Nevanimibe hydrochloride
+SAL2741,Odevixibat Sesquihydrate
+SAL2742,Paltusotine dihydrochloride
+SAL2743,Paltusotine hydrochloride
+SAL2744,Simurosertib hemihydrate
+SAL2745,Sonlicromanol Hydrochloride
+SAL2746,Tilsotolimod sodium
+SAL2747,Avasopasem manganese
+SAL2748,Mobocertinib succinate
+SAL2749,Polyinosinic polycytidylic acid sodium salt
+SAL2750,Furaltadone hydrochloride
+SAL2751,Sodium molybdate Mo-99
+SAL2752,Magnesium aspartate hydrochloride trihydrate
+SAL2753,Amidephrine mesylate
+SAL2754,Melphalan flufenamide hydrochloride
+SAL2755,Fosdenopterin hydrobromide
+SAL2756,Serdexmethylphenidate chloride
+SAL2757,KW-2450
+SAL2758,Deucravacitinib hydrochloride
+SAL2759,Avotaciclib sulfate
+SAL2760,Avotaciclib trihydrochloride
+SAL2761,Zotiraciclib citrate
+SAL2762,Vecabrutinib succinate
+SAL2763,Reltecimod sodium
+SAL2764,Vutrisiran sodium
+SAL2765,Belumosudil mesylate
+SAL2766,Belumosudil trifluoroacetate
+SAL2767,Durlobactam sodium
+SAL2768,Ivarmacitinib sulfate
+SAL2769,MK-2206 dihydrochloride
+SAL2770,MK-2206 monohydrochloride
+SAL2771,Azasetron Besylate
+SAL2772,Azasetron hydrochloride
+SAL2773,ORY-1001 dihydrochloride
+SAL2774,Mivavotinib citrate
+SAL2775,Mivavotinib hydrochloride
+SAL2776,Tosufloxacin tosylate monohydrate
+SAL2777,Acesulfame potassium
+SAL2778,Olanexidine hydrochloride hydrate
+SAL2779,ENMD-2076
+SAL2780,Sinomenine hydrochloride
+SAL2781,GSK-2879552 dihydrochloride
+SAL2782,NS8593 hydrochloride
+SAL2783,Bocidelpar sulfate
+SAL2784,Icerguastat acetate
+SAL2785,TAK-418
+SAL2786,STX-107 dihydrochloride
+SAL2787,ARM-210 hemifumarate
+SAL2788,CDD-0102 hydrochloride
+SAL2789,BN-82451 hydrochloride
+SAL2790,Ezeprogind disulfate
+SAL2791,"L-Leucyl-L-Prolyl-L-Prolyl-L-Leucyl-L-Prolyl-L-Tyrosyl-L-Proline, Acetate"
+SAL2792,PBT-434 Mesylate
+SAL2793,Enadoline hydrochloride
+SAL2794,BGP-15
+SAL2795,Chelerythrine chloride
+SAL2796,Diphenyleneiodonium chloride
+SAL2797,GBR-12783 dihydrochloride
+SAL2798,GBR-12879 dihydrochloride
+SAL2799,GBR-12879 dimesylate
+SAL2800,Homidium bromide
+SAL2801,Indatraline hydrochloride
+SAL2802,JTC-801
+SAL2803,NNC-55-0396 dihydrochloride
+SAL2804,PHA-767491 hydrochloride
+SAL2805,Phenylmercuric ammonium acetate
+SAL2806,RS-39604 hydrochloride
+SAL2807,SB-218078 hydrochloride
+SAL2808,SB 224289 hydrochloride
+SAL2809,SKF-96365
+SAL2810,Spiperone hydrochloride
+SAL2811,U-0126-EtOH
+SAL2812,Sepantronium bromide
+SAL2813,ZM-39923 hydrochloride
+SAL2814,Linzagolix choline
+SAL2815,Vorasidenib citrate
+SAL2816,Vorasidenib citrate anhydrous
+SAL2817,Dimethylaminomicheliolide fumarate
+SAL2818,CT-179 dimesylate
+SAL2819,Seclidemstat mesylate
+SAL2820,Ivaltinostat phosphate
+SAL2821,Lixumistat acetate
+SAL2822,Pelabresib monohydrate
+SAL2823,JNJ-28312141 hydrochloride
+SAL2824,TH-9402
+SAL2825,Berubicin hydrochloride
+SAL2826,Ukrain
+SAL2827,Denfivontinib hydrochloride
+SAL2828,99mTc-HYNIC (Tyr3)-octreotide trifluoroacetate
+SAL2829,"(R)-6-((3,3-Difluoro-1-Methylpiperidine-4-Yl)Oxy-N-(3-Ethynyl-2-Fluorophenyl)-7-Methoxyquinazolin-4-Amine Fumerate"
+SAL2830,KX-2361 Besylate
+SAL2831,AMG-900 bismesylate dihydrate
+SAL2832,Bomedemstat ditosylate
+SAL2833,ONO-7579 Mono-4-Toluenesulfonate
+SAL2834,Bisantrene hydrochloride
+SAL2835,CBP-501 acetate
+SAL2836,L-arginine hydrochloride
+SAL2837,Pixofisiran sodium
+SAL2838,Lixadesiran sodium
+SAL2839,Disufenton sodium
+SAL2840,IKT-001 Mesylate
+SAL2841,tetradonium bromide
+SAL2842,AUM-601 hemi-oxalate
+SAL2843,FN-1501 Sesquihydrate
+SAL2844,Lipotecan hydrochloride
+SAL2845,3D-185
+SAL2846,Borocaptate sodium
+SAL2847,Vodudeutentan sodium
+SAL2848,Dalpiciclib isethionate
+SAL2849,BMX-001
+SAL2850,Exarafenib hydrochloride
+SAL2851,Anaritide acetate
+SAL2852,PXL-770
+SAL2853,Cyclocreatine phosphate
+SAL2854,Exaluren sulfate
+SAL2855,Nedosiran sodium
+SAL2856,Mavodelpar sodium
+SAL2857,Vamifeport hydrochloride
+SAL2858,Amotosalen hydrochloride
+SAL2859,"Sodium 2,2-Dimethylbutyrate"
+SAL2860,N-9-Methoxynonyldeoxynojirimycin hydrochloride
+SAL2861,CPP-115
+SAL2862,Lexanersen sodium
+SAL2863,PMX-205 acetate
+SAL2864,Tilorone Hydrochloride
+SAL2865,Ivospemin tetrahydrochloride
+SAL2866,Acoramidis hydrochloride
+SAL2867,APT-101 hydrochloride
+SAL2868,Udonitrectag L-lysine
+SAL2869,Bersiporocin hydrochloride
+SAL2870,LY3295668 Erbumine
+SAL2871,AVA-4746 sodium
+SAL2872,ICG-001 methane sulfonic acid
+SAL2873,3-(3-(6-Guanidino-1-oxoisoindolin-2yl)propanamido)-3-(pyridine-3yl)propanoic acid dihydrochloride
+SAL2874,Buloxibutid sodium
+SAL2875,LDN-193189 monohydrochloride
+SAL2876,Golidocitinib hemi-ethyl acetate solvate
+SAL2877,Fidrisertib sesquisuccinate
+SAL2878,NM-004 disodium
+SAL2879,Larsucosterol sodium
+SAL2880,Crozbaciclib fumarate
+SAL2881,SEL-24 hydrochloride
+SAL2882,INS-018_055 acetate
+SAL2883,Roginolisib hemifumarate
+SAL2884,Visomitin
+SAL2885,Fostroxacitabine bralpamide hydrochloride
+SAL2886,Encaleret sulfate
+SAL2887,Icapamespib dihydrochloride
+SAL2888,SEL-120
+SAL2889,TP-3654 hydrochloride
+SAL2890,Nesuparib monocitrate
+SAL2891,Golcadomide hydrochloride
+SAL2892,EP-0042 fumarate
+SAL2893,Vipoglanstat hydrogensulfate
+SAL2894,Mocravimod hydrochloride
+SAL2895,Zilurgisertib fumarate dihydrate
+SAL2896,ENA-001 hydrogen sulfate
+SAL2897,ESK981 tosylate
+SAL2898,KTX-1001 D-tartrate
+SAL2899,Cudetaxestat sodium
+SAL2900,Ibutamoren mesylate
+SAL2901,Cavrotolimod sodium
+SAL2902,(R)-9b mesylate
+SAL2903,Pralmorelin hydrochloride
+SAL2904,TAK-075
+SAL2905,KF-1601 dihydrochloride
+SAL2906,SPH-4336
+SAL2907,Lirafugratinib hydrochloride
+SAL2908,Recilisib sodium
+SAL2909,Valemetostat tosylate
+SAL2910,Vanzacaftor calcium
+SAL2911,DPM-1001 maleate
+SAL2912,BR-007 sodium
+SAL2913,Fobrepodacin sodium
+SAL2914,Esuberaprost Sodium
+SAL2915,Rucosopasem manganese
+SAL2916,Sodium arsenite
+SAL2917,KUS-121
+SAL2918,KUS-121 dihydrate
+SAL2919,AP-001 sodium
+SAL2920,Revumenib citrate
+SAL2921,Revumenib sesquifumarate
+SAL2922,Sodium luminolate
+SAL2923,Denatonium acetate monohydrate
+SAL2924,Taletrectinib adipate
+SAL2925,Berdazimer sodium
+SAL2926,Olezarsen sodium
+SAL2927,Safusidenib erbumine
+SAL2928,Ocifisertib fumarate
+SAL2929,Donidalorsen sodium
+SAL2930,Indotecan hydrochloride
+SAL2931,Yimitasvir phosphate
+SAL2932,Trazpiroben maleate
+SAL2933,Deuruxolitinib phosphate
+SAL2934,Plozasiran sodium
+SAL2935,"Chiglitazar sodium, (S)-"
+SAL2936,Imlunestrant tosylate
+SAL2937,Deudextromethorphan hydrobromide
+SAL2938,Isuzinaxib hydrochloride
+SAL2939,R906289 sodium
+SAL2940,Suplatast tosilate
+SAL2941,Emoxypine succinate
+SAL2942,PXS-4728A
+SAL2943,XK-469
+SAL2944,Sofpironium bromide
+SAL2945,Benzgalantamine gluconate
+SAL2946,Chlorisondamine chloride
+SAL2947,Chlorisondamine iodide
+SAL2948,Tiphenamil hydrochloride
+SAL2949,Methylhexanamine hydrochloride
+SAL2950,Parethoxycaine Hydrochloride
+SAL2951,AZACYCLONOL HYDROCHLORIDE
+SAL2952,Pentapiperium hydrogen sulfate
+SAL2953,Pentapiperium methylsulfate
+SAL2954,UM-171 dihydrobromide dihydrate
+SAL2955,Ganfeborole hydrochloride
+SAL2956,Vamagloxistat
+SAL2957,Pheniodol sodium
+SAL2958,TCS-OX2-29 hydrochloride
+SAL2959,"Tetrahydro-2H-pyran-4-yl 7-(2-(cyclopropanecarboxamido)-imidazo[1,2-a]pyridin-6-yl)-2,3-dihydro-1H-pyrido[2,3-b][1,4]oxazine-1-carboxylate hydrochloride"
+SAL2960,Z-Endoxifen Hydrochloride

@@ -1,6 +1,6 @@
 # Personalized-Supplement-Recommender
 
-## DrugBank Knowledge Graph Setup
+## Complete Knowledge Graph Setup (DrugBank + Mayo Clinic)
 
 ### Prerequisites
 1. **Neo4j Database** running (Desktop app or local installation)
@@ -45,49 +45,68 @@ pip3 install pandas python-dotenv neo4j tqdm
 - Ensure it's running on `bolt://localhost:7687`
 
 ---
-### 6. Delete Data from Neo4j(only if DB has old data and need to reingest new data)
+
+### 5. Load Complete Knowledge Graph
 ```bash
-python3 delete_drugbank_data.py
+python3 scripts/load_data.py
 ```
 
-**Expected time:** 1-2 minutes
+**What this does:**
+- Automatically clears existing data (if any)
+- Creates constraints and indexes
+- Loads DrugBank data (drugs, interactions, categories, etc.)
+- Loads Mayo Clinic data (supplements, medications, symptoms)
+- Creates critical bridge relationships (ingredient equivalence, category similarity)
 
-When prompted, type `yes` to confirm.
+**Expected time:** 5-10 minutes
 
----
+When prompted `"⚠️ This will DELETE ALL existing data and reload! Continue? (yes/no):"`, type `yes` to confirm.
 
-### 6. Load Data into Neo4j
-```bash
-python3 load_drugbank_data_OPTIMIZED.py
-```
-
-**Expected time:** 10-15 minutes
-
-When prompted, type `yes` to confirm.
-
----
-
-### 7. Validate Data (Optional)
-```bash
-python3 test_knowledge_graph.py
-```
-
-Should show: `✓ PASSED: 13/13 tests`
-
----
 
 ## What Gets Loaded
 
+### DrugBank Data:
 - **19,830** drugs
 - **2,910,010** drug-drug interactions
-- **448,529** drug products
+- **248,483** brand names
 - **52,027** drug synonyms
-- And more (categories, food interactions, salt forms, toxicity data)
+- **4,649** drug categories
+- **2,960** salt forms
+- **1,429** food interactions
+
+### Mayo Clinic Data:
+- **28** supplements
+- **71** active ingredients
+- **55** medications
+- **288** symptoms
+
+### Critical Bridge Relationships:
+- **39** active ingredient → drug equivalences (detects hidden pharmaceuticals)
+- **71** supplement → active ingredient links
+- Supplement → category similarity mappings (detects interaction risks)
+
+**Total:** ~330,000 nodes, ~3.4 million relationships
 
 ---
 
-## Files
+## Project Structure
 
-- `load_drugbank_data_OPTIMIZED.py` - Main loading script (optimized)
-- `test_knowledge_graph.py` - Validation test suite
-- `drugbank_data/` - CSV data files (pulled via Git LFS)
+```
+Personalized-Supplement-Recommender/
+├── data/
+│   ├── drugbank_data/          # DrugBank CSV files
+│   └── mayo_clinic_data/       # Mayo Clinic supplement data
+├── scripts/
+│   ├── load_data.py            # Main loading script
+│   ├── delete_all_nodes.py     # Clear nodes (if needed)
+│   └── delete_all_relationships.py  # Clear relationships (if needed)
+├── knowledge_graph_structure.md     # Complete KG documentation
+├── .env                        # Your Neo4j credentials
+└── README.md
+```
+
+
+## Documentation
+
+- `knowledge_graph_structure.md` - Complete schema and query examples
+- Project proposal - See uploaded PDF for full context

@@ -1,0 +1,56 @@
+medication_id,medication_name
+M01,Acetaminophen
+M02,Alcohol
+M04,Allopurinol
+M05,Alprazolam
+M06,Altretamine
+M07,Aluminum
+M08,Aminosalicylic acid
+M16,Atorvastatin
+M20,Bupropion
+M27,Caffeine
+M28,Calcipotriene
+M29,Carbamazepine
+M31,Cholestyramine
+M32,Chromium
+M33,Colchicine
+M35,Cyclosporine
+M36,Dextromethorphan
+M38,Digoxin
+M39,Diltiazem
+M40,Estrogen
+M41,Fexofenadine
+M42,Fluvoxamine
+M44,Gemfibrozil
+M45,Grapefruit
+M47,Ibuprofen
+M49,Iron
+M50,Isoproterenol
+M51,Ketamine
+M52,Levodopa
+M53,Lithium
+M54,Lopinavir-ritonavir
+M55,Metformin
+M56,Methotrexate
+M58,Niacin
+M61,Omeprazole
+M62,Orlistat
+M64,Penicillamine
+M66,Phenytoin
+M69,Pyrimethamine
+M70,Raloxifene
+M74,Sevoflurane
+M75,Sildenafil
+M76,Simeprevir
+M77,Sirolimus
+M78,St. John's wort
+M83,Testosterone
+M85,Triazolam
+M87,Valproic acid
+M88,Verapamil
+M89,Vitamin C supplements
+M90,Vitamin E
+M91,Vitamin K
+M92,Voriconazole
+M93,Warfarin
+M95,Zinc

@@ -1,0 +1,1430 @@
+food_interaction_id,food_interaction
+F001,"Avoid herbs and supplements with anticoagulant/antiplatelet activity. Examples include chamomile, garlic, ginger, ginkgo and ginseng."
+F002,Avoid echinacea.
+F003,"Avoid herbs and supplements with anticoagulant/antiplatelet activity. Examples include garlic, ginger, bilberry, danshen, piracetam, and ginkgo biloba."
+F004,Drink plenty of fluids.
+F005,Avoid alcohol.
+F006,"Administer iron supplement. When initiating an erythropoiesis-stimulating agent, evaluate iron stores and start iron supplementation if indicated. Most patients with chronic kidney disease require iron supplementation while taking an erythropoiesis-stimulating agent."
+F007,Administer calcium supplement. Individuals who are taking salmon calcitonin for the treatment of postmenopausal osteoporosis should ingest at least 1000mg of elemental calcium daily (by food or through supplementation).
+F008,Administer vitamin supplements. Individuals who are taking salmon calcitonin for the treatment of postmenopausal osteoporosis should take at least 400 international units of vitamin D daily.
+F009,Limit caffeine intake. Peginterferon alfa-2b can increase the serum levels of caffeine by inhibiting its metabolism through the CYP1A2 pathway.
+F010,Avoid alcohol. Alcohol may impair blood glucose control.
+F011,"Avoid excessive or chronic alcohol consumption. Interferon gamma-1b may cause fatigue, drowsiness, and confusion. These effects may be exacerbated by alcohol consumption."
+F012,"Avoid herbs and supplements with anticoagulant/antiplatelet activity. Additive antiplatelet activity may increase the risk of bleeding. Examples include ginseng, ginkgo, ginger, and garlic."
+F013,"Avoid excessive or chronic alcohol consumption. Alcohol and pegaspargase can both cause hepatoxicity, therefore if they are used together they may have additive hepatoxic effects."
+F014,"Avoid excessive or chronic alcohol consumption. Alcohol and interferon beta-1a can both cause hepatoxicity, therefore if they are used together they may have additive hepatoxic effects."
+F015,"Avoid herbs and supplements with anticoagulant/antiplatelet activity. The use of anticoagulant/antiplatelet herbs with eptifibatide may increase the risk of bleeding. Examples include garlic, ginger, bilberry, danshen, piracetam, and ginkgo biloba."
+F016,"Avoid excessive or chronic alcohol consumption. Alcohol and Interferon beta-1 can both cause hepatoxicity, therefore if they are used together they may have additive hepatoxic effects."
+F017,"Avoid excessive or chronic alcohol consumption. Drinking more than two standard drinks per day in women, or more than 3 standard drinks per day in men, can reduce a patient's insulin requirements, and therefore increase the risk of hypoglycemia if the insulin dosing is not adjusted."
+F018,"Avoid herbs and supplements with anticoagulant/antiplatelet activity. Individuals taking these herbs/supplements while taking ibritumomab tiuxetan should be monitored for thrombocytopenia more frequently. Examples include garlic, ginger, bilberry, danshen, piracetam, and ginkgo biloba."
+F019,Take with fluids.
+F020,"Take with food. If swallowing the oral capsule is not tolerated, sprinkle on acidic soft foods with a pH of 4 or less."
+F021,Avoid grapefruit products.
+F022,Avoid potassium-containing products. Taking products that increase serum potassium may increase the risk of hyperkalemia.
+F023,Avoid St. John's Wort.
+F024,Take at the same time every day. Take consistently with regard to food.
+F025,Take on an empty stomach. The oral capsules should be taken on an empty stomach. Food reduces oral octreotide absorption by 90%.
+F026,Take with or without food. Octreotide injections may be taken with or without food.
+F027,Take with or without food. Recommendations vary from product to product - consult individual product monographs for additional information.
+F028,"Avoid dietary avidin (a glycoprotein in uncooked egg-whites). Avidin binds with biotin in the gastrointestinal tract preventing biotin absorption. Avidin is denatured by cooking; therefore, cooked egg whites do not reduce biotin absorption."
+F029,"Avoid multivalent ions. Do not infuse with elemental compounds that can be reduced, such as copper."
+F030,"Take with food. Endari (L-glutamine) oral powder should be mixed with 8oz of water or 4-6 oz of food at room temperature or colder, then consumed."
+F031,Take with food.
+F032,Take with foods containing vitamin C. Taking lutein with vitamin C may increase the rate of absorption of lutein. Taking lutein with carotenoids or naringenin may reduce lutein absorption.
+F033,"Take with or without food. A high-fat, high-calorie meal may increase the AUC and Cmax of calcifediol by up to 3.5 and 5 fold, respectively."
+F034,Take with or without food. High-fat foods may increase absorption of Vitamin E.
+F035,Take with or without food. Lipid lowering effects are similar in the fasting and fed state.
+F036,Limit caffeine intake.
+F037,Take with or without food. The absorption is unaffected by food.
+F038,"Take with or without food. Co-administration with food slightly alters pharmacokinetics, but not to a clinically significant extent."
+F039,Avoid potassium-containing products. Potassium products increase the risk of hyperkalemia.
+F040,Take with food. Take with food or milk to reduce gastric irritation.
+F041,Take with or without food.
+F042,"Take separate from meals. For nicotine gum, lozenges, and oral sprays, avoid eating and drinking for 15 minutes before and during its use."
+F043,"Avoid St. John's Wort. This herb induces CYP3A4 metabolism, which may reduce the serum concentration of bortezomib."
+F044,"Exercise caution with grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum concentration of bortezomib."
+F045,"Limit foods and supplements high in flavonoids. Flavonoids may interfere with the therapeutic action of this drug. Foods high in flavonoids include green vegetables, fruits, and green tea."
+F046,Limit foods and supplements high in vitamin C. Vitamin C may interfere with the therapeutic action of this drug. Foods high in vitamin C include citrus fruits and beverages.
+F047,Take with food. Food reduces irritation.
+F048,Avoid alcohol. Co-administration of alcohol may potentiate the CNS effects of tramadol.
+F049,Take with or without food. Co-administration of food does not affect pharmacokinetics.
+F050,No food interactions are expected.
+F051,Take with or without food. Co-administration with food does not affect pharmacokinetics but may enhance tolerability.
+F052,"Take on an empty stomach. Allow approximately 30 minutes to 2 hours before meals, as this increases erythromycin absorption."
+F053,Take with a full glass of water.
+F054,Take with or without food. If taken with a high-fat meal the medicine may take a little longer to start working.
+F055,"Exercise caution with grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum concentration of dofetilide."
+F056,"Exercise caution with St. John's Wort. Dofetilide is partially metabolized by CYP3A4, and St. John's Wort is a CYP3A4 inducer, coadministration may reduce dofetilide serum levels."
+F057,Administer folic acid supplement. Folic acid need is increased.
+F058,Take on an empty stomach. Take at least 1 hour before or 2 hours after meals.
+F059,Take with a high fat meal. High fat meals will increase ticlopidine absorption.
+F060,Take with food. Food can help ticlopidine-induced stomach upset.
+F061,Take on an empty stomach. Take at least 1 hour before food as the Cmax and AUC of trospium are reduced by 70-80% when taken with a high fat meal.
+F062,Take with or without food. Food delays the Cmax by 30 minutes but does not impact efficacy.
+F063,Avoid St. John's Wort. Co-administration of St. John's Wort with citalopram can increase the risk of serotonin syndrome.
+F064,"Take with or without food. High-fat meals increase exposure, but not to a clinically relevant extent."
+F065,Take with food. Food increases exposure and decreases pharmacokinetic variability.
+F066,Avoid alcohol. Acute and chronic alcohol intake may unpredictably affect the glucose-lowering action of glimepiride.
+F067,Take with food. The manufacturer recommends administration with the first meal of the day.
+F068,Avoid excessive or chronic alcohol consumption.
+F069,Avoid grapefruit products. Grapefruit products may increase the risk for lovastatin related adverse effects such as myopathy and rhabdomyolysis.
+F070,Take with food. Food increases bioavailability.
+F071,Avoid alcohol. Alcohol may increase CNS effects.
+F072,"Take with or without food. Food alters drug absorption, but not to a clinically significant extent."
+F073,Avoid alcohol. Concomitant use of alcohol and barbiturates may lead to increased.
+F074,Avoid alcohol. Profound CNS depression can occur.
+F075,"Take with or without food. When taken with oral tablets of cladribine, food decreases Cmax and prolongs Tmax, but not to a clinically significant extent."
+F076,"Exercise caution with grapefruit products. Cabergoline is partially metabolized through the CYP3A4 pathway. Therefore coadministration with grapefruit, a CYP3A4 inhibitor, may increase its serum concentration."
+F077,"Exercise caution with St. John's Wort. Cabergoline is partially metabolized through the CYP3A4 pathway. Therefore coadministration with St. John's Wort, a CYP3A4 inducer, may reduce its serum concentration."
+F078,Take with or without food. Taking cabergoline with food may reduce gastric irritation.
+F079,Avoid alcohol. Alcohol may increase or decrease serum levels of phenytoin.
+F080,Take separate from antacids. Take at least 2 hours before or after antacids. Taking this medication with antacids can reduce absorption.
+F081,Take with food. Food reduces irritation and increases bioavailability.
+F082,"Avoid multivalent ions. The absorption of tetracyclines is reduced when taken with foods, especially those which contain calcium."
+F083,"Take with or without food. The absorption of tetracyclines is reduced when taken with foods, but not to a significant extent. If gastric irritation occurs, it is recommended that doxycycline be given with food or milk."
+F084,"Take with food. When taken with food, calcium acetate forms an insoluble complex with the phosphorus from food, reducing phosphorus serum concentrations."
+F085,"Do not take with or immediately after a high-fat meal. High-fat meals may reduce the rate of absorption; however, the impact on the extent of absorption is unknown."
+F086,Avoid natural licorice.
+F087,"Avoid herbs and supplements with anticoagulant/antiplatelet activity. Examples include ginseng, ginkgo, ginger, and garlic."
+F088,Take with or without food. May take with food to reduce nausea.
+F089,Avoid a ketogenic diet. This type of diet increases the risk of kidney stones.
+F090,Take with or without food. Food slightly alters absorption but not to any clinically significant extent.
+F091,Take with or without food. Food does not affect absorption.
+F092,"Avoid excessive or chronic alcohol consumption. Ingesting alcohol may reduce the clearance, and therefore increase the serum concentrations of theophylline."
+F093,Take with or without food. Take consistently with regard to food.
+F094,"Exercise caution with grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum concentration of argatroban; however, the evidence is conflicting."
+F095,Exercise caution with St. John's Wort.
+F096,Take with food. Each dose should be taken with the first bite of a main meal.
+F097,"Avoid alcohol. The safety of using venlafaxine with other CNS-active drugs, including alcohol, has not been evaluated."
+F098,Avoid St. John's Wort. Co-administration of St. John's Wort may lead to additive serotonergic activity and an increased risk of serotonin syndrome.
+F099,Take with food. Co-administration with food helps to alleviate or mitigate gastrointestinal upset.
+F100,Take with or without food. Consult individual product monograph for specific instructions.
+F101,"Avoid echinacea. Echinacea should be used with caution, if at all, in patients receiving therapeutic immunosuppressants. Monitor for reduced efficacy of the immunosuppressant during concomitant use."
+F102,Take on an empty stomach. Co-administration with food decreases bioavailability.
+F103,Administer vitamin supplements.
+F104,Take at the same time every day.
+F105,"Avoid alcohol. Concomitant use may lead to profound sedation, respiratory depression, coma, and death."
+F106,Take with or without food. There is no significant different in the AUC or Cmax of oral extended release tablets when taken with or without food.
+F107,Take on an empty stomach.
+F108,Take with or without food. The co-administration of food does not significantly affect tranexamic acid disposition.
+F109,"Exercise caution with grapefruit products. Vindesine is metabolized by CYP3A4, and grapefruit inhibits CYP3A4 metabolism, which may increase vindesine serum levels."
+F110,"Exercise caution with St. John's Wort. Vindesine is metabolized by CYP3A4 and this herb induces CYP3A4 metabolism, which may reduce vindesine serum levels."
+F111,Take with food. Food may increase bioavailability.
+F112,Avoid milk and dairy products.
+F113,Take with or without food. Food does not significantly impact the oral bioavalibility of zolmitriptan.
+F114,Avoid alcohol. Alcohol may increase the risk of hepatotoxicity.
+F115,"Exercise caution with grapefruit products. Grapefruit is an inhibitor of CYP3A4, the enzyme primarily responsible for metabolizing gefitinib. Coadministration with grapefruit products may decrease gefitinib metabolism and increase plasma concentrations."
+F116,"Avoid grapefruit products. Grapefruit inhibits the metabolism of dihydroergotamine through the CYP3A4 pathway and, therefore, may increase serum levels of dihydroergotamine. Use caution if co-administering."
+F117,Take with or without food. There is a 10-20% reduction in oral bioavailability when food is given 1 hour before and 2 hours after tolcapone.
+F118,Take with or without food. Food does not significantly affect absorption.
+F119,Avoid alcohol. Ingestion of alcohol can increase the risk of GI bleeding.
+F120,"Take with or without food. Food has no effect on drug absorption. However, food may decrease the extent of gastrointestinal irritation caused by indomethacin."
+F121,Take separate from antacids. Do not take aluminum hydroxide containing antacids for at least 4 hours after ethambutol administration.
+F122,Avoid alcohol. Alcohol may potentiate CNS adverse effects and orthostatic hypotension.
+F123,Take with or without food. The absorption of olanzapine is unaffected by food.
+F124,Take before a meal. Allow 30-60 minutes before a meal.
+F125,"Exercise caution with grapefruit products. Grapefruit is a CYP3A4 inhibitor, and terfenadine is metabolized by CYP3A4. Co-administration may increase terfenadine concentrations and the risk of QT prolongation."
+F126,Exercise caution with St. John's Wort. This herb induces CYP3A4 and terfenadine is a substrate of CYP3A4.
+F127,Avoid natural licorice. The risk of cardiovascular adverse effects may be increased.
+F128,Take after a meal. Take alfuzosin after the same meal everyday. Do not take on an empty stomach.
+F129,Avoid alcohol. The combination of alcohol with trimethadione may make you sleepy or dizzy.
+F130,Limit the intake of phenylalanine and tyrosine.
+F131,Take separate from meals. Nitisinone capsules should be separated by one hour before or two hours after meals.
+F132,Take with or without food. Nitisinone tablets can be taken with or without food but food may prolong the Tmax by six hours.
+F133,Avoid alcohol. Alcohol increases clobazam absorption by 50%.
+F134,"Take with or without food. However, food intake may lower tioguanine serum levels."
+F135,"Avoid grapefruit products. Grapefruit inhibits the metabolism of methylergometrine through the CYP3A4 pathway and, therefore, may increase serum levels of methylergometrine. Use caution if co-administering."
+F136,"Take with food. The presence of food significantly enhances the rate and extent of absorption, leading to about a 40% increase in bioavailability."
+F137,"Take with food. Taking sapropterin with food increases oral absorption. Sapropterin may be dissolved in water, juice, or dispersed in applesauce."
+F138,Exercise caution with grapefruit products. Grapefruit inhibits CYP3A4 metabolism and may increase the serum levels of vinorelbine.
+F139,Exercise caution with St. John's Wort. This herb induces CYP3A4 metabolism and may reduce the serum levels of vinorelbine.
+F140,Avoid alcohol. Alcohol is a predisposing risk factor for seizure in combination with clozapine.
+F141,Exercise caution with St. John's Wort. This herb induces both CYP3A4 and CYP1A2 metabolism and may reduce clozapine serum levels.
+F142,Limit caffeine intake. Caffeine may reduce clozapine metabolism.
+F143,Take separate from antacids. Take at least 30 minutes before or after antacids.
+F144,Avoid caffeine.
+F145,Avoid alcohol. Co-administration may increase drowsiness and fall risk.
+F146,Take with or without food. The effect of food on absorption has not been evaluated.
+F147,Avoid excessive or chronic alcohol consumption. Additive CNS depression may occur if alcohol is consumed with thiethylperazine.
+F148,Take with food. Taking treprostinil with food increases oral absorption.
+F149,Drink plenty of fluids. The tablet and granule formulations must be taken with plenty of water or other fluids.
+F150,Take with or without food. Taking with food may minimize stomach upset. May take before meals to mitigate dry mouth or may take after meals to reduce excess salivation.
+F151,Take on an empty stomach. Take tacrine at least one hour before meals for optimal absorption.
+F152,Avoid potassium-containing products. The risk of hyperkalemia can be increased with the intake of potassium supplementation or potassium-rich foods.
+F153,Take with or without food. Taking with food may reduce the adverse effects of procyclidine.
+F154,Avoid multivalent ions. Calcium and aluminum containing products (including kaolin-pectin) may interfere with absorption) and digoxin administration must be separated by several hours.
+F155,Avoid potassium-containing products. They may cause arrhythmias when given with digoxin.
+F156,Avoid St. John's Wort. This drug can decrease digoxin levels.
+F157,Do not take with bran and high fiber foods. Separate administration of bran and high fiber foods from medication by at least 2 hours.
+F158,Avoid alcohol. Alcohol enhances the sedative effects of sulpiride.
+F159,Take with or without food. Take consistently at the same time in regard to meals.
+F160,"Do not take with or immediately after a high-fat meal. Take sorafenib at least 1 hour before or 2 hours after a high-fat meal, as sorafenib absorption can be reduced by a high-fat meal."
+F161,"Exercise caution with grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum levels of sorafenib."
+F162,"Exercise caution with St. John's Wort. This herb induces CYP3A4 metabolism, which may reduce serum levels of sorafenib."
+F163,Take on an empty stomach. Take sorafenib at least one hour before or two hours after a meal.
+F164,Take with a high fat meal.
+F165,Do not take with or immediately after a high-fat meal. This decreases the absorption of eszopiclone.
+F166,Avoid alcohol. Alcohol may potentiate the CNS depressant effects of this drug.
+F167,"Take with or without food. Food increases the Cmax of extended release alprazolam by 25%, but the AUC and half life are not affected."
+F168,Avoid alcohol. Taking with alcohol may increase drowsiness.
+F169,Take with or without food. Food decreases the risk of GI side effects.
+F170,Take on an empty stomach. Absorption is increased 1 hour before or 2 hours after food.
+F171,Avoid alcohol. Taking with alcohol may cause additive CNS depression.
+F172,Take on an empty stomach. This may increase the rate of absorption.
+F173,Avoid alcohol. Additive CNS depression may occur if alcohol is consumed.
+F174,Avoid antacids. The absorption of promazine may be reduced by antacid use.
+F175,Take with or without food. Food increases the bioavailability of spironolactone by approximately 95.4%. It should be taken at a consistent time in regards to food.
+F176,"Avoid alcohol. Co-administration with alcohol may cause a ""dose-dumping"" effect with some extended-release formulations of methylphenidate. It may also potentiate the CNS effects of methylphenidate."
+F177,Take with or without food. Patients may take methylphenidate with food to alleviate GI upset.
+F178,Take before a meal. Take 30-60 minutes before a meal.
+F179,Take separate from antacids. Take oral hyoscyamine before meals and antacids after meals.
+F180,Take separate from meals. This drug should not be administered with or immediately after a meal.
+F181,Avoid alcohol. The drug may intensify or prolong the action of central nervous system depressants.
+F182,Avoid alcohol. Co-administration with alcohol may potentiate the sedative effects of cyproheptadine.
+F183,Take on an empty stomach. Take 2 hours before or 2 hours after a meal.
+F184,"Exercise caution with grapefruit products. Teniposide is a CYP3A4 substrate, and grapefruit inhibits CYP3A4 metabolism, coadministration may increase the serum concentrations of teniposide."
+F185,"Exercise caution with St. John's Wort. Teniposide is a CYP3A4 substrate, and St. John's Wort induces CYP3A4 metabolism, coadministration may reduce the serum concentrations of teniposide."
+F186,Drink plenty of fluids. Increased fluid intake increases urine output and the excretion of uric acid.
+F187,Take on an empty stomach. Food decreases absorption.
+F188,Take before a meal. Take 30-60 minutes before meals.
+F189,Avoid calcium supplements/calcium rich foods. Calcium may interfere with the absorption of this drug by forming an insoluble complex. Separate medication administration by at least 4 hours.
+F190,Avoid grapefruit products. Grapefruit may delay the absorption of this medication.
+F191,Avoid iron supplements. Iron may interfere with the absorption of this drug by forming an insoluble complex. Separate medication administration by at least 4 hours.
+F192,"Avoid multivalent ions. Examples include iron, magnesium, and calcium. These are often found in antacids, vitamins, and supplements - separate medication administration by at least 4 hours."
+F193,"Do not take with bran and high fiber foods. Dietary fiber, soybean flour, cottonseed meal, and walnuts may reduce the absorption of levothyroxine."
+F194,Take on an empty stomach. Levothyroxine should be taken on an empty stomach 30-60 minutes prior to the first meal of the day.
+F195,Do not take with bran and high fiber foods.
+F196,Avoid alcohol. Women of childbearing age should avoid ingesting any alcohol during treatment and two months after discontinuation of acitretin. Alcohol intake increases the duration of risk for birth defects to beyond three years post acitretin discontinuation.
+F197,Take with food. Taking acitretin with the main meal of the day improves oral absorption.
+F198,Avoid alcohol. Alcohol use may aggravate the gastrointestinal irritation caused by this drug.
+F199,Take with food. Food increases the rate of absorption.
+F200,Take before a meal. Take methscopolamine bromide 30 minutes before meals and at bedtime for optimal therapeutic effect.
+F201,Take with food. Food reduces GI irritation.
+F202,Take with food. Food may minimize stomach upset caused by tenoxicam.
+F203,"Avoid alcohol. Patients with a history of substance abuse or dependence, including marijuana or alcohol, may be more likely to abuse SYNDROS as well."
+F204,"Take before a meal. Because food delays the absorption of SYNDROS, administer the first dose on an empty stomach at least 30 minutes before eating."
+F205,Avoid alcohol. Alcohol intake may cause additive CNS depressant effects.
+F206,Avoid excessive or chronic alcohol consumption. Alcohol increases the risk of liver toxicity.
+F207,Take with or without food. Do not sprinkle the contents of the capsules on food/liquids.
+F208,Take at the same time every day. Skip the missed dose if it has been more than 12 hours since your regular time.
+F209,"Take with or without food. High-fat meals decrease absorption, but not to a clinically significant extent."
+F210,Avoid excessive or chronic alcohol consumption. Excessive and chronic alcohol consumption may be associated with vitamin D deficiency.
+F211,Avoid alcohol. Alcohol increases the risk of gastrointestinal irritation.
+F212,Avoid multivalent ions. Separate the administration of aluminum and magnesium containing drugs by several hours.
+F213,"Take with or without food. Doses up to 200 mg can be taken without regard to food, but doses of 400mg or higher should be taken with food."
+F214,Avoid alcohol. Alcohol intake may potentially lead to additive CNS depressant effects.
+F215,Take on an empty stomach. Food decreases bioavailability.
+F216,Take after a meal. Take altretamine after meals and at bedtime.
+F217,Take with or without food. Oral sotalol with a meal reduces absorption by 20%.
+F218,Avoid alcohol. Alcohol may cause additive CNS depressant effects.
+F219,Avoid grapefruit products. Grapefruit increases the plasma concentrations of the drug.
+F220,Take at the same time every day. Take consistently at the same time in regard to meals.
+F221,Take with or without food. Take drug always with or always without food in a consistent manner.
+F222,Take with food. Take at the beginning of a meal.
+F223,"Avoid hypertensive herbs (e.g. bayberry, blue cohosh, cayenne, ephedra, and licorice)."
+F224,Limit salt intake. Salt may attenuate the antihypertensive effect.
+F225,Take separate from antacids. Take at least 2 hours before or after antacids. Taking this medication with antacids can reduce absorption.Taking this medication with antacids can reduce absorption.
+F226,Take with or without food. The administration of zidovudine with food causes a 28% reduction in the Cmax but does not affect the AUC.
+F227,"Avoid alcohol. Ingesting alcohol may increase the risk of developing an ulcer, or gastrointestinal bleed."
+F228,"Take with or without food. Food (or milk) can decrease oral bioavailability by 16%. Tolmetin may be taken with food to reduce gastrointestinal upset, but it may reduce tolmetin serum levels by 50%."
+F229,"Take with food. Food increases bioavailability. For prophylaxis of gastric symptoms, take cimetidine 30-60 minutes prior to food administration."
+F230,Avoid alcohol. Alcohol may potential hypotension and CNS adverse effects.
+F231,Avoid St. John's Wort. Co-administration may reduce serum concentrations of ritonavir and interfere with virologic efficacy.
+F232,Take with food. Food improves oral bioavailability.
+F233,Take with a high fat meal. A high fat meal increases solubility and absorption. Take with food when treating systemic infections.
+F234,Take with food. Food increases the bioavailability of alitretinoin capsules.
+F235,"Avoid alcohol. Alcohol may increase the vasodilatory effects of lercanidipine, which may lead to hypotension."
+F236,"Avoid grapefruit products. Grapefruit inhibits the metabolism of lercanidipine through CYP3A4, which causes increased serum levels of lercanidipine, and may increase the risk of hypotension."
+F237,"Exercise caution with St. John's Wort. Lercanidipine is metabolized by CYP3A4, and St. John's Wort is a CYP3A4 inducer."
+F238,"Take on an empty stomach. Taking lercanidipine after meals increases its bioavailability, therefore lercanidipine should be taken least 15 minutes before meals."
+F239,"Exercise caution with grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum concentration of erlotinib."
+F240,"Exercise caution with St. John's Wort. This herb induces CYP3A4 metabolism, which may reduce the serum concentration of erlotinib."
+F241,"Take on an empty stomach. Food increases erlotinib bioavailability, therefore administer at least 1 hour before or 2 hours after meals."
+F242,Drink plenty of fluids. Drink 2 to 3 liters of fluids a day.
+F243,"Take separate from antacids. Taking rofecoxib with antacids can reduce the AUC and Cmax of rofecoxib, therefore consider separating their administration for optimal efficacy."
+F244,"Take with or without food. The AUC and Cmax of rofecoxib tablets are not impacted by administration with food, however, the Tmax may be delayed. The food effect on the absorption of rofecoxib suspension formulation has not been studied according to the official product labeling."
+F245,"Avoid multivalent ions. Do not take aluminum, magnesium, or iron containing products up to 2 hours before or after this medication."
+F246,Avoid milk and dairy products. Dairy products and calcium fortified juices decrease the absorption of ciprofloxacin.
+F247,Take with or without food. The absorption is not significantly affected by food.
+F248,"Avoid grapefruit products. Grapefruit inhibits CYP3A4 and therefore, may elevate toremifene serum levels."
+F249,Take with or without food. Food decreases gastrointestinal irritation.
+F250,"Exercise caution with grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum concentration of vincristine."
+F251,"Exercise caution with St. John's Wort. This herb induces CYP3A4 metabolism, which may reduce serum levels of vincristine."
+F252,Take with or without food. Food slows the rate of absorption but not the extent.
+F253,Take with food. Food decreases irritation.
+F254,"Avoid alcohol. Alcohol may cause flushing; therefore, it may worsen rosacea."
+F255,"Take with or without food. Food and drink, which have a high temperature or are spicy, may exacerbate flushing and rosacea, avoid if possible."
+F256,Avoid alcohol. Concomitant use of acetohydroxamic acid with alcohol may cause a rash.
+F257,"Avoid iron supplements. Acetohydroxamic acid chelates iron, therefore oral supplementation of iron will reduce levels of both iron and acetohydroxamic acid."
+F258,Take with food. Take this medication with food or milk.
+F259,Avoid alcohol. Co-administration with alcohol may potentiate the CNS adverse effects of hydroxyzine.
+F260,Avoid grapefruit products. Co-administration with grapefruit inhibits hydroxyzine metabolism and can result in elevated serum concentrations.
+F261,Avoid milk and dairy products. Milk and dairy products reduce absorption.
+F262,Limit caffeine intake. Caffeine may reduce the effectiveness of methotrexate.
+F263,Avoid alcohol. Ingesting alcohol may increase drowsiness and dizziness.
+F264,Exercise caution with St. John's Wort. This herb induces the CYP3A metabolism of carbamazepine and may reduce its serum concentration.
+F265,"Take with or without food. Capsules may be opened, and contents sprinkled on soft food for individuals with difficulty swallowing."
+F266,"Avoid grapefruit products. Grapefruit inhibits CYP3A metabolism, which may increase the serum concentration of vinblastine."
+F267,"Exercise caution with St. John's Wort. This herb induces CYP3A metabolism, which may reduce serum levels of vinblastine."
+F268,Avoid alcohol. Alcohol increases propranolol plasma concentrations.
+F269,"Avoid natural licorice. Natural licorice inhibits the metabolism of propranolol, increasing drug exposure."
+F270,Take separate from meals. Take Urobiotic at least 1 hour before or 2 hours after eating.
+F271,Take with or without food. Preferably take 1 hour before a meal. Taking with food may reduce GI disturbance.
+F272,Avoid alcohol. Ingesting alcohol may increase the risk of gastrointestinal bleeding.
+F273,Drink plenty of fluids. This drug may cause fluid loss.
+F274,Take separate from meals. Take voriconazole at least one hour before or after eating for optimal absorption.
+F275,"Take with food. Taking levocarnitine oral solution with meals may reduce gastrointestinal upset such as nausea, vomiting, and cramping."
+F276,"Avoid hypertensive herbs (e.g. bayberry, blue cohosh, cayenne, ephedra, and licorice). Additive hypertensive effects may occur."
+F277,"Avoid excessive or chronic alcohol consumption. Co-administration with alcohol may increase the risk of gastrointestinal side effects, such as ulceration."
+F278,Take with food. Food reduces gastric irritation.
+F279,Avoid drastic dietary changes.
+F280,Avoid potassium-containing products.
+F281,Avoid milk and dairy products. Take at least 1 hour before or two hours after consuming dairy products.
+F282,Take separate from meals. Take at least one hour before or two hours after a meal.
+F283,Avoid alcohol. Additive CNS depression may occur if alcohol is consumed with thiopental.
+F284,"Avoid tyramine-containing foods and supplements. Avoid food containing high amounts of tyramine (>100mg). Tyramine-containing foods include cheese, red wine, fava beans, pickled foods, cured foods, and alcoholic beverages."
+F285,Take with or without food. Co-administration with food does not significantly alter the pharmacokinetics of linezolid.
+F286,Take on an empty stomach. Oral ivermectin should be taken on an empty stomach with a glass of water.
+F287,Avoid St. John's Wort. St. John's Wort may decrease the effectiveness of medroxyprogesterone acetate.
+F288,Take with food. Food increases the bioavailability of medroxyprogesterone acetate.
+F289,Take before a meal. Take at least 15 minutes before meals.
+F290,Take on an empty stomach. Food may make the absorption of oral nafcillin unpredictable.
+F291,Take with or without food. Taking Ethionamide with food may reduce gastrointestinal upset.
+F292,"Take with or without food. For those patients with propensity to nausea, vomiting, or other gastrointestinal upset, taking with food may be useful."
+F293,Avoid multivalent ions.
+F294,"Avoid grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which can increase serum levels of imatinib."
+F295,"Exercise caution with St. John's Wort. This herb induces CYP3A4 metabolism, which may reduce the serum concentration of imatinib."
+F296,Take with a full glass of water. Taking imatinib with water may reduce gastric irritation.
+F297,Avoid excessive or chronic alcohol consumption. Alcohol may contribute to additive adverse effects when taken with efavirenz.
+F298,"Take on an empty stomach. Taking efavirenz with food increases efavirenz concentrations and may increase the frequency of adverse reactions. In patients who cannot swallow capsules, the capsule contents can be administered with a small amount of food or infant formula using the capsule sprinkle method of administration."
+F299,Avoid alcohol. Alcohol increases the chance of flushing and pruritus.
+F300,Take with food. Food reduces gastrointestinal upset and irritation.
+F301,Avoid alcohol. The concomitant use of clorazepate and alcohol may lead to an increased frequency of serious adverse outcomes.
+F302,Administer vitamin supplements. Patients may require supplemental vitamin D.
+F303,"Avoid multivalent ions. Calcium, antacids, and divalent ions may interfere with the absorption of this medication."
+F304,Take before a meal. Take 30-60 minutes before breakfast.
+F305,Take with food. Food decreases the risk of GI side effects.
+F306,Avoid caffeine. Caffeine may antagonise the activity of adenosine.
+F307,Avoid grapefruit products. Co-administration with grapefruit products may increase the risk for adverse effects such as myalgia.
+F308,Administer folic acid supplement. Folic acid supplement of 400 to 1000 mcg daily should be given 7 days before treatment with pemetrexed and continued until 21 days after discontinuation of pemetrexed to reduce the risk of hematologic and gastrointestinal toxicities.
+F309,Administer vitamin supplements. Administration of vitamin B12 intramuscular supplement one week before treatment with pemetrexed and every three cycles will reduce the risk of hematological and gastrointestinal toxicities.
+F310,"Take separate from meals. Using Dyclonine in the mouth or for relief of ulcers in the stomach may cause numbness of the mouth, which increases the risk of biting injury. Avoid ingesting food for 60 minutes after use, or until the numbness has subsided."
+F311,Take with food. The timing of mitotane administration relative to food intake should remain consistent. Co-administration with high-fat food enhances absorption.
+F312,Avoid alcohol. Ingesting alcohol while taking stavudine may increase the risk of liver damage and pancreatitis.
+F313,Avoid alcohol. Ingesting alcohol may increase serum concentrations of estradiol.
+F314,"Avoid grapefruit products. Grapefruit inhibits CYP3A4 and therefore, may increase estrone concentrations, potentially increasing its adverse effects."
+F315,Avoid St. John's Wort. The risk of serotonin syndrome may be increased.
+F316,Take after a meal. Should be taken shortly after a light meal or snack.
+F317,Avoid excessive or chronic alcohol consumption. The ingestion of alcohol may potentiate the actions of mecamylamine.
+F318,Take after a meal. This slows mecamylamine absorption allowing for a gradual reduction in blood pressure. Take consistently at the same time in regard to meals.
+F319,"Take with or without food. Food decreases drug absorption, but not to a clinically significant extent."
+F320,Avoid excessive or chronic alcohol consumption. Alcohol may increase the CNS depressant effects of metaxalone.
+F321,"Take with or without food. The absorption of metaxalone is increased when taken with food, which may increase CNS depression, especially in the elderly."
+F322,"Avoid alcohol. Verapamil significantly inhibits the elimination of alcohol, leading to elevated blood alcohol levels."
+F323,Avoid grapefruit products. Co-administration with grapefruit may significantly increase serum concentrations.
+F324,Avoid alcohol. Ingestion of alcohol may increase the CNS depressant effects of trimethobenzamide causing drowsiness.
+F325,Take separate from meals. Take before breakfast.
+F326,Avoid excessive or chronic alcohol consumption. Ingesting alcohol in excess may increase the risk of bone thinning associated with taking nafarelin.
+F327,"Avoid excessive or chronic alcohol consumption. Alcohol increased the risk of GI bleeding, ulcer, and perforation when taken with sumatriptan."
+F328,Take on an empty stomach. Take pirenzepine at least 30 minutes before meals.
+F329,"Take with or without food. The capsule and tablet may be administered without regard to food. However, the time to maximal absorption is increased approximately 0.8 hours when administered with food while taking with food reduces the absorption following administration of the capsule by approximately 15% based on AUC and 25% based on Cmax."
+F330,Take before a meal. Take 30 minutes before a meal.
+F331,Take on an empty stomach. Food decreases the rate of absorption.
+F332,Take with food. Food delays the rate of absorption but not the extent.
+F333,"Exercise caution with St. John's Wort. This herb induces CYP3A4 metabolism, which may reduce the serum concentration of tamoxifen."
+F334,"Take with or without food. Food delays absorption, but does not affect the extent of absorption."
+F335,Avoid alcohol. Ingesting alcohol may potentiate the CNS depressant actions of thioridazine.
+F336,Avoid foods rich in vitamin K. Vitamin K in foods such as leafy vegetables can reduce warfarin efficacy.
+F337,"Avoid grapefruit products. They may interfere with warfarin metabolism and increase INR, increasing the risk of bleeding."
+F338,Avoid St. John's Wort. This drug may reduce warfarin efficacy.
+F339,Avoid alcohol. Midazolam may make your sleepiness or dizziness worse.
+F340,Avoid grapefruit products. Bioavailability of midazolam can increase.
+F341,Take separate from antacids. Take at least 2 hours before or after antacids.
+F342,Take with or without food. Taking trovafloxacin with food may reduce the risk of dizziness.
+F343,"Avoid herbs and supplements with anticoagulant/antiplatelet activity. Taking pentosan polysulfate with anticoagulant herbs may increase bleeding risk, which is an adverse effect of pentosan polysulfate."
+F344,Limit salt intake. Excessive intake of salt can result in hypertension and edema.
+F345,"Avoid multivalent ions. Take multivalent ions such as calcium, iron, or magnesium at least 2 hours after taking this medication."
+F346,Take separate from meals. Take 1 hour before meals.
+F347,Avoid excessive or chronic alcohol consumption. Alcohol increases the risk of orthostatic hypotension.
+F348,"Avoid natural licorice. Avoid licorice in large amounts, as it may lead to hypokalemia."
+F349,Increase consumption of potassium-rich foods. This medication may cause potassium depletion. Foods containing potassium include bananas and orange juice.
+F350,"Take with or without food. Maintain the same schedule with regard to meals, as concentrations increase in the fasted state and decrease in the fed state."
+F351,Take with food. Food decreases irritation and increases bioavailability.
+F352,Avoid grapefruit products. Grapefruit juice may increase the serum levels of eplerenone by 25% by inhibiting CYP3A4.
+F353,Avoid alcohol. Drug impairs alcohol metabolism.
+F354,Avoid fatty foods.
+F355,Take after a meal. Take 30 minutes after the same meal each day to reduce plasma level variations.
+F356,Avoid alcohol. Ingesting alcohol may potentiate the CNS depressant effects of sufentanil.
+F357,"Avoid grapefruit products. Sufentanil is a CYP3A4 substrate; therefore, concomitant ingestion of CYP3A4 inhibitors like grapefruit products may increase serum levels of sufentanil and potentiate CNS depression."
+F358,"Take with or without food. Food delays drug absorption, but not to a clinically significant extent."
+F359,Take with a full glass of water. Do not take this medication with other liquids.
+F360,Take after a meal.
+F361,Avoid alcohol. Ingesting alcohol may potentiate hypotension caused by apomorphine.
+F362,Take on an empty stomach. Co-administration with food may decrease absorption.
+F363,Avoid alcohol. Ingesting alcohol may increase the risk of adverse effects of trimipramine such as sedation and orthostatic hypotension.
+F364,Avoid alcohol. Alcohol can increase the risk of hypotension.
+F365,Take with food. Take up to 30 minutes before meals.
+F366,Take with or without food. Food does not affect the rate or extent of absorption.
+F367,"Exercise caution with grapefruit products. Zileuton is partially metabolized through CYP3A4. Therefore grapefruit, a CYP3A4 inhibitor, may reduce the metabolism of zileuton."
+F368,Exercise caution with St. John's Wort. Zileuton is partially metabolized through CYP3A4. Therefore St. John's Wort may increase the metabolism of zileuton.
+F369,"Take with food. The AUC and Cmin of zileuton extended-release tablets are increased by food, and therefore should be taken with meals."
+F370,Take with or without food. ZYFLO (zileuton) regular release tablets can be taken with or without food.
+F371,Avoid grapefruit products. Coadministration of scopolamine with grapefruit juice has been shown to delay scopolamine absorption and increase its bioavailability without altering its elimination.
+F372,Avoid alcohol. Ingesting alcohol may increase drowsiness caused by carbinoxamine.
+F373,"Take separate from meals. This is only required when prilocaine is used in the mouth, as it may cause numbness, which can cause bite injury when eating."
+F374,Avoid alcohol. Ingesting alcohol may increase the CNS depressant effects of tranylcypromine.
+F375,Avoid St. John's Wort. Administering tranylcypromine with St. John's Wort may increase the risk of serotonin syndrome.
+F376,"Avoid tyramine-containing foods and supplements. Tyramine-containing foods and beverages can cause a sudden elevation in blood pressure or a hypertensive crisis. Foods that contain tyramine include aged cheese, ripe bananas, red wine, some alcoholic beverages (beer), cured food, pickled food, and fava beans."
+F377,Take after a meal. This may reduce gastrointestinal upset.
+F378,"Take with food. Effect of food on tretinoin absorption is unclear, but food increases the bioavailability of retinoids drug class."
+F379,Take with food. This reduces gastrointestinal irritation.
+F380,Avoid alcohol. Ingesting alcohol may increase the sedative and CNS depressant effects of metyrosine.
+F381,Take with food. Take at the beginning of a meal to reduce gastric irritation.
+F382,Avoid alcohol. Ingesting alcohol may increase the CNS depressant effects of the combination product Chlordiazepoxide HCl and Clidinium Bromide.
+F383,Take before a meal.
+F384,"Avoid grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum concentration of etoposide."
+F385,"Exercise caution with St. John's Wort. This herb induces CYP3A4 metabolism, which may reduce serum levels of etoposide."
+F386,Increase consumption of potassium-rich foods. This medication may cause a loss of potassium.
+F387,Avoid alcohol. Oxcarbazepine has CNS depressant properties that may be potentiated by co-administration with alcohol.
+F388,Take with or without food. Co-administration with food does not significantly affect absorption.
+F389,Avoid St. John's Wort. Administering phenelzine with St. John's Wort may increase the risk of serotonin syndrome.
+F390,Limit caffeine intake. Excess caffeine intake can also cause a hypertensive crisis.
+F391,Take before a meal. Take before a meal. Propantheline bromide should be taken 15 to 30 minutes before meals.
+F392,Drink plenty of fluids. Dehydration with acyclovir predisposes patients to nephrotoxicity.
+F393,Drink plenty of fluids. Inadequate fluid intake is associated with crystalluria and stone formation.
+F394,Take on an empty stomach. Orally administered fenoldopam should be taken in a fasted state for optimal absorption.
+F395,Avoid alcohol. Alcohol may increase drowsiness caused by dicyclomine.
+F396,"Drink plenty of fluids. Dicyclomine may reduce sweating, increasing the risk of overheating in warm weather or during exercise."
+F397,"Take with food. Administration with food may reduce irritation. Co-administration with food modestly increases the mean pentoxifylline AUC and maximum plasma concentrations (1.1- and 1.3-fold, respectively) achieved with an extended-release tablet."
+F398,Avoid alcohol. Alcohol may potentiate orthostatic hypotension.
+F399,Increase consumption of potassium-rich foods. Indapamide my cause potassium depletion leading to hypokalemia.
+F400,Avoid alcohol. Ribavirin is used to treat chronic hepatitis C infection; ingesting alcohol may worsen this infection.
+F401,Take with food. Taking ribavirin with a high-fat meal slows the absorption and increases the AUC and Cmax of ribavirin.
+F402,Avoid alcohol. The risk of gastrointestinal bleeding may be increased.
+F403,"Take after a meal. When Sodium lauryl sulfate is formulated in paste form for oral health, it should be used after meals."
+F404,Take with food. Take at least 6 hours before bedtime.
+F405,Avoid excessive or chronic alcohol consumption. Ingesting excess amounts of alcohol (more than four drinks in a short time) may potentiate the hypotension and dizziness caused by tadalafil.
+F406,"Avoid grapefruit products. Tadalafil is metabolized by CYP3A4, and grapefruit products are CYP3A4 inhibitors; therefore, coadministration may increase serum levels of tadalafil and result in increased hypotension."
+F407,Avoid alcohol. Avoid alcohol for up to 14 days after discontinuation.
+F408,Take on an empty stomach. Food may decrease absorption and time to therapeutic effect.
+F409,Avoid excessive or chronic alcohol consumption. Ingesting alcohol may potentiate the sedative and CNS depressant effects of trifluoperazine.
+F410,Avoid grapefruit products. Grapefruit inhibits the metabolism of mifepristone through the CYP3A4 pathway causing increased serum levels of mifepristone.
+F411,Take with food. Taking mifepristone with meals has been shown to increase serum levels of mifepristone.
+F412,Avoid excessive or chronic alcohol consumption. Ingesting alcohol may increase the risk of hypoglycemia.
+F413,Take with food. Taking tolazamide with breakfast may help reduce the risk of hypoglycemia.
+F414,Avoid alcohol. Co-administration with alcohol may potentiate the CNS effects of oxazepam.
+F415,Avoid alcohol. Ingesting alcohol may increase the sedative and CNS depressant effects of nalbuphine.
+F416,Take with food. Prescribing information for clofazimine recommends its administration with a meal.
+F417,Take on an empty stomach. The delayed-release capsules should be taken at least 30 minutes before or 2 hours after a high-fat meal to ensure adequate exposure.
+F418,Take with or without food. The immediate release preparation can be taken with or without food.
+F419,Avoid alcohol. Consuming alcohol may increase hypotension. Perphenazine may increase the effects of alcohol.
+F420,Take on an empty stomach. Fasting for four to six hours before treatment may be beneficial to reduce nausea and vomiting associated with Dacarbazine therapy.
+F421,Take on an empty stomach. Food reduces the absorption of temozolomide and taking it on an empty stomach may reduce temozolomide associated nausea and vomiting.
+F422,"Limit caffeine intake. Terbinafine may reduce the metabolism of caffeine by approximately 19%, monitor for increased effects of caffeine."
+F423,"Avoid grapefruit products. Vardenafil is metabolized by CYP3A4, and grapefruit products are CYP3A4 inhibitors; therefore, coadministration may increase serum levels of vardenafil and result in increased hypotension. ."
+F424,"Take with or without food. High-fat meals reduce the Cmax of vardenafil; however, there are no changes in AUC or Tmax."
+F425,Avoid alcohol. Consuming alcohol may increase the rate of tacrolimus release from extended-release formulations.
+F426,"Exercise caution with St. John's Wort. This herb induces the CYP3A4 metabolism of tacrolimus; therefore, monitoring tacrolimus whole blood trough concentrations may be warranted."
+F427,Take on an empty stomach. Take at least 1 hour before or 2 hours after a meal as coadministration with food decreases the rate and extent of absorption.
+F428,"Take separate from antacids. Coadministration of tacrolimus with aluminum or magnesium hydroxide antacids may increase the serum levels of tacrolimus, which poses a risk for toxicity."
+F429,Limit caffeine intake. Excess caffeine intake may increase the CNS stimulation caused by benzphetamine hydrochloride.
+F430,Avoid alcohol. Flupentixol can enhance the sedative effects of alcohol.
+F431,Take with or without food. Food has negligible effects on drug pharmacokinetics.
+F432,Avoid grapefruit products. Grapefruit inhibits the CYP3A4 metabolism of sirolimus and increases its serum concentration.
+F433,Exercise caution with St. John's Wort. This herb induces CYP3A4 and P-gp; thus it may reduce sirolimus serum concentrations.
+F434,Take separate from meals. May affect the taste of food and beverages. Avoid eating or drinking for 30 minutes following use.
+F435,Take with or without food. Food decreases drug absorption.
+F436,"Avoid alcohol. Ingesting alcohol may increase the risk of complex behaviors like sleep-driving, which the patient does not remember."
+F437,"Avoid grapefruit products. Grapefruit may reduce the CYP3A4 metabolism of triazolam, which increases the serum concentration of triazolam."
+F438,Avoid alcohol. Ingesting alcohol may increase the sedative and CNS depressant effects of remifentanil.
+F439,"Exercise caution with grapefruit products. Grapefruit may delay the absorption of quinidine, and inhibit its metabolism through CYP3A4."
+F440,Take separate from antacids. Antacids may reduce the absorption of quinidine.
+F441,Take with or without food. Taking quinidine with food may slow its absorption.
+F442,Avoid antacids. Avoid taking aluminum-containing antacids chronically with paricalcitol as there is an increased risk of aluminum toxicity.
+F443,"Exercise caution with grapefruit products. Grapefruit inhibits CYP3A4, and paricalcitol metabolism is mediated partially through CYP3A4; therefore, grapefruit may increase paricalcitol serum levels."
+F444,"Avoid alcohol. Avoid concomitant use of alcohol with tinidazole as it may cause flushing, nausea, vomiting, and headaches."
+F445,Take with food. Administering with food may reduce gastrointestinal upset and epigastric discomfort caused by tinidazole but does not affect bioavailability.
+F446,Take before a meal. Repaglinide should be taken before each meal of the day.
+F447,"Avoid alcohol. Unpleasant symptoms such as nausea, vomiting, and abdominal distress may occur with alcohol."
+F448,"Take with or without food. The extended release formulation should, however, be taken without food."
+F449,Take with or without food. The co-administration of food does not significantly affect ketotifen disposition.
+F450,Avoid alcohol. Ingesting alcohol may increase the sedative and CNS depressant effects of buprenorphine.
+F451,"Avoid grapefruit products. Grapefruit inhibits the metabolism of buprenorphine through CYP3A4, which increases the serum levels buprenorphine."
+F452,"Take separate from meals. When buprenorphine is formulated as a sublingual tablet or buccal film, avoid eating or drinking until the dosage form is completely dissolved."
+F453,Avoid alcohol. Cyclobenzaprine is a central nervous system depressant which may be potentiated by the co-administration of alcohol.
+F454,Avoid alcohol. Alcohol should be completely avoided for up to 2 months after discontinuation.
+F455,Take with food. Food increases absorption.
+F456,Avoid excessive or chronic alcohol consumption. Alcohol increases the risk of gastric irritation.
+F457,Limit caffeine intake. Caffeine and other acidic beverages increases the risk of gastric irritation.
+F458,"Take with or without food. Food slightly increases bioavailability, but not to a clinically significant extent."
+F459,Take with food. Food decreases incidence of diarrhea.
+F460,"Take with or without food. However, if taken with ritonavir tablets, tipranavir should be taken with food."
+F461,Avoid excessive or chronic alcohol consumption. Ingesting alcohol may increase the risk of developing a gastrointestinal bleed.
+F462,Take with or without food. Taking meclofenamic acid with food reduces the rate and extent of its absorption; however it also reduces gastrointestinal upset caused by meclofenamic acid.
+F463,Avoid multivalent ions. Magnesium and aluminum containing products can reduce the absorption of this medication.
+F464,Avoid alcohol. Alcohol increases the risk of gastrointestinal bleeding.
+F465,Take after a meal. This reduces irritating gastrointestinal effects.
+F466,Ensure consistent Vitamin K intake. Changes in vitamin K intake may impact coagulation.
+F467,Exercise caution with grapefruit products.
+F468,"Avoid fruit juice. Fruit juices like grapefruit, orange, and apple may reduce bioavailability and overall exposure to the medication."
+F469,Administer vitamin supplements. Vitamin B6 (pyridoxine) should be given with isoniazid to prevent deficiency.
+F470,"Avoid alcohol. Avoid drinking alcoholic beverages such as unpasteurized beer; unless approved by your physician, as they may contain tyramine. Consuming alcohol may also increase the risk of isoniazid induced hepatitis and neuropathy."
+F471,"Avoid chocolate. Chocolate contains caffeine, which should be limited during isoniazid therapy."
+F472,"Avoid histamine-containing foods and supplements. Histamine-containing foods (e.g., skipjack, tuna, other tropical fish) can cause headaches, sweating, palpitations, flushing, and hypotension."
+F473,"Avoid tyramine-containing foods and supplements. Tyramine-containing foods include cheese, red wine, fava beans, pickled food, cured food, and alcoholic beverages."
+F474,Take separate from antacids. Taking this medication with antacids can reduce absorption.
+F475,Take with or without food. Food has no significant effect on the bioavailability of rizatriptan but delays the time to reach peak concentration by an hour.
+F476,"Avoid alcohol. Profound CNS depression, including sedation, respiratory depression, coma, and death may occur."
+F477,Take with or without food. Cmax and AUC are not altered by food in a clinically significant way.
+F478,Avoid echinacea. Co-administration may decrease effectiveness of immunosuppressants.
+F479,Avoid alcohol. Alcohol may aggravate signs and symptoms of overdose.
+F480,Avoid alcohol. Ingesting alcohol may increase the CNS depressant effects of zaleplon.
+F481,Do not take with or immediately after a high-fat meal. The effects of zaleplon are reduced when taken with a high-fat meal.
+F482,Take with or without food. Bioavailability may be slightly reduced by taking telmisartan with food.
+F483,Take with or without food. Drug pharmacokinetics is unaffected.
+F484,Avoid alcohol. Ingesting alcohol may cause additive CNS depressant effects.
+F485,Take with or without food. Co-administration with food does not affect absorption.
+F486,"Avoid xanthines. Xanthines, found in coffee and tea, can reduce the effectiveness of this medication."
+F487,Take with or without food. Taking dipyridamole extrended release capusels with a high-fat meal minimally reduces it's AUC and Cmax.
+F488,Avoid St. John's Wort. St. John's Wort may decrease the effectiveness of ethinylestradiol.
+F489,"Avoid multivalent ions. Separate the administration polyvalent ions, including magnesium and aluminum-containing antacids, from lomefloxacin by at least 4 hours before and 2 hours after lomefloxacin dosing."
+F490,Take with or without food. The rate and extent of absorption may be reduced when lomefloxacin is taken with food.
+F491,Do not take with or immediately after a high-fat meal.
+F492,Avoid alcohol. Alcohol with isotretinoin can lead to inflammation of the liver.
+F493,Avoid vitamin A supplements.
+F494,Take with food. High-fat food increases drug absorption.
+F495,Take with food. Administering rivastigmine capsules with food delays absorption but increases the AUC.
+F496,Take with food. The manufacturer recommends administration following a meal.
+F497,Take with food. Take once daily after breakfast. Food decreases the rate but not the extent of absorption.
+F498,Avoid alcohol. Gabapentin possesses CNS depressant activity that may be potentiated by co-administration with alcohol.
+F499,"Avoid St. John's Wort. This herb induces CYP3A4 metabolism, which may reduce the serum concentration of doxorubicin."
+F500,"Exercise caution with grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum concentration of doxorubicin."
+F501,"Take with or without food. Food does not affect bioavailability, but delays maximum concentrations by one hour."
+F502,"Avoid multivalent ions. Take this medication 2 hours before or after the administration of antacids, calcium supplements, or iron supplements to avoid decreased absorption of hydrochlorothiazide."
+F503,Avoid natural licorice. Licorice potentiates the hypokalemic effect of hydrochlorothiazide.
+F504,"Limit salt intake. Avoid excessive salt, unless recommended by a physician."
+F505,Take before a meal. Take cromolyn sodium 30 minutes before meals.
+F506,Drink plenty of fluids. Drinking extra fluids will help pass more urine to prevent kidney problems and keep the kidneys working well.
+F507,Take with or without food. Food slows absorption without decreasing the quantity absorbed.
+F508,Take with food. Take metyrapone with milk or a snack according to the specific instructions for a single or multi-dose test.
+F509,Take with food. Food markedly increases product bioavailability.
+F510,Avoid alcohol. Alcohol increases the risk of hypoglycemia.
+F511,"Avoid multivalent ions. Separate administration of aluminium, calcium, iron and magnesium containing products from medication by at least 2 hours."
+F512,Do not take with or immediately after a high-fat meal. High fat meals increase drug exposure.
+F513,Take on an empty stomach. Nausea and vomiting may occur if taken after food.
+F514,Take on an empty stomach. Take mycophenolic acid at least 1 hour before or 2 hours after eating.
+F515,Avoid alcohol. Drinking alcohol while on ketoconazole treatment may cause liver injury.
+F516,Avoid multivalent ions. They may decrease ketoconazole concentrations.
+F517,Take with food. Food decreases gastrointestinal irritation caused by ketoconazole.
+F518,Avoid alcohol. Ingesting alcohol may increase the CNS depressant effects of methoxyflurane.
+F519,"Avoid tyramine-containing foods and supplements. Consuming foods containing tyramine such as yogurt, aged cheese, ripe bananas, wine, and sourdough bread may increase the risk of having an uncontrolled hypertensive reaction."
+F520,Take before a meal. Take selegiline oral disintegrating tablets before breakfast and at least 5 minutes before or after any food or drink. Taking selegiline with food reduces the AUC by approximately 60%.
+F521,Take with food. Take selegiline capsules or tablets with breakfast and lunch. Food can increase the exposure to selegiline by 3-4 fold.
+F522,Take with food. Bioavailability is increased 2- to 3-fold when taken with food.
+F523,Avoid alcohol. Ingesting alcohol may increase the drowsiness caused by thalidomide.
+F524,Take after a meal. Wait at least 1 hour after eating before taking thalidomide.
+F525,Avoid alcohol. Alcohol may lead to an increased risk of severe hepatocellular toxicity.
+F526,Take on an empty stomach. Absorption of rifampin is reduced by about 30% when the drug is ingested with food.
+F527,Take with a full glass of water. Oral capsules should be taken with a glass of water.
+F528,Take with food. Taking lubiprostone with food may reduce nausea.
+F529,Avoid alcohol. Alcohol increases the systemic exposure to the drug.
+F530,Take with or without food. Taking ergoloid mesylate with food may reduce gastrointestinal upset.
+F531,Avoid grapefruit products. Praziquantel is metabolized by CYP450 enzymes.
+F532,Take with food. Take tablets with water during meals.
+F533,Avoid alcohol. Ingesting alcohol may reduce the effects of melatonin.
+F534,Take after a meal. Administration of melatonin after eating slows the absorption and reduces the Cmax of melatonin.
+F535,"Avoid multivalent ions. Avoid antacids containing magnesium and aluminum hydroxides when possible, otherwise separate the administration of antacids and this drug by several hours."
+F536,Avoid excessive or chronic alcohol consumption. The risk of hypoglycemia is increased when alcohol is ingested.
+F537,Avoid alcohol. Alcohol may increase the sedation caused by promethazine.
+F538,Take with food. Food increases product absorption and reduces pharmacokinetic variability.
+F539,"Take with or without food. Administration with food delays absorption, but not to a clinically significant extent."
+F540,Take before a meal. Take 30 minutes before a meal or 30 minutes before departure for motion sickness.
+F541,Avoid grapefruit products. Grapefruit products may increase the risk for atorvastatin related adverse effects such as myopathy and rhabdomyolysis.
+F542,Take with or without food. Food decreases absorption but not to a clinically significant extent.
+F543,Avoid multivalent ions. Separate administration from multivalent ions by at least two hours.
+F544,"Take before a meal. To increase absorption, take 30 minutes before a meal."
+F545,Take with plain water. Only mix vigabatrin oral solution powder with plain water.
+F546,Take with food. Take with meals or up to 1 hour after a meal. Doses may be skipped for missed meals or fat-free meals.
+F547,"Take with or without food. A high fat meal decreases Cmax and the time to reach Cmax, but not to a clinically significant extent."
+F548,"Avoid herbs and supplements with anticoagulant/antiplatelet activity. Taking iloprost with anticoagulant/antiplatelet herbs may increase the risk of bleeding occurring as an adverse effect. Examples include garlic, ginger, bilberry, danshen, piracetam, and ginkgo biloba."
+F549,Take with or without food. Should be taken consistently in regards to meals.
+F550,"Avoid grapefruit products. Grapefruit inhibits CYP3A4 and, therefore, may increase pimozide serum levels."
+F551,"Take at the same time every day. Take XELODA 2 times a day at the same time each day, about 12 hours apart."
+F552,Take with food. Take XELODA within 30 minutes after finishing a meal.
+F553,"Take with plain water. Swallow XELODA tablets whole with water. Do not chew, cut, or crush XELODA tablets."
+F554,Administer calcium supplement. This drug decreases calcium levels.
+F555,"Avoid grapefruit products. Grapefruit down-regulates post-translational expression of CYP3A4, the major metabolizing enzyme of nifedipine. Grapefruit, in all forms (e.g. whole fruit, juice and rind), can significantly increase serum levels of nifedipine and may cause toxicity. Avoid grapefruit products while on this medication."
+F556,Take with food. Administration with a meal significantly enhances bioavailability.
+F557,"Avoid grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum concentration of amiodarone."
+F558,Avoid St. John's Wort. This herb induces the CYP3A4 metabolism of amiodarone. Therefore it may reduce the serum concentration and effectiveness of amiodarone.
+F559,Take with or without food. Consistent food intake reduces the risk of hypoglycemia.
+F560,Take with or without food. Co-administration with food may reduce gastrointestinal upset.
+F561,"Avoid alcohol. Ingesting alcohol may precipitate a disulfiram-like reaction (flushing, nausea), or hypoglycemia."
+F562,Take at least 2 hours before or after calcium supplements.
+F563,Take on an empty stomach. Take at least 2 hours before or after meals.
+F564,Take separate from antacids. Take at least 2 hours before or after antacids. The bioavailability of this medication is significantly reduced when administered with aluminum or magnesium containing antacids.
+F565,Take with food. Food slows the absorption and reduces the incidence of adverse effects.
+F566,Take with or without food. Food slightly alters kinetics but not to any clinically significant extent.
+F567,Take with or without food. Administration with food may be helpful in diminishing potential gastrointestinal complaints occasionally associated with oral cephalosporin therapy.
+F568,Avoid alcohol. Co-administration may enhance CNS adverse effects such as drowsiness and sedation.
+F569,Avoid St. John's Wort. Co-administration may lead to decreased serum concentrations of doxepin.
+F570,"Increase consumption of potassium-rich foods. Diclofenamide may cause hypokalemia, therefore consuming more potassium-rich foods may help prevent hypokalemia."
+F571,Take on an empty stomach. Orally administered cloxacillin should be taken 1-2 hours prior to meals as the presence of food in the stomach and intestine reduces drug absorption.
+F572,Avoid alcohol. Co-administration with alcohol may result in neuropsychiatric adverse effects and potentiation of CNS depressant effects.
+F573,Take with or without food. Co-administration with food does not significantly affect pharmacokinetics.
+F574,Take with or without food. A meal does not significantly affect the extent of absorption but delays Tmax by 40 minutes.
+F575,Take on an empty stomach. A high fat meal will increase absorption.
+F576,"Exercise caution with grapefruit products. While there is inconclusive evidence of the effect of grapefruit products on the systemic exposure to itraconazole, they may affect drug absorption."
+F577,Take with food. Food promotes maximal absorption of itraconazole.
+F578,"Avoid alcohol. Ingesting alcohol may potentiate the CNS depressant effects of procarbazine and may precipitate a disulfiram-like-reaction (nausea, flushing)."
+F579,"Avoid tyramine-containing foods and supplements. Foods that contain tyramine include yogurt, aged cheese, ripe bananas, wine, and sourdough bread."
+F580,"Avoid tyramine-containing foods and supplements. Avoid excess consumption (<100mg) of tyramine. Food that contains tyramine includes yogurt, aged cheese, ripe bananas, wine, and sourdough bread."
+F581,Take on an empty stomach. Taking this medication on an empty stomach increases the speed of absorption.
+F582,Avoid alcohol. The combined use of alcohol with psychotropic medications should be avoided.
+F583,Avoid alcohol. Ingesting alcohol may worsen nausea and vomiting caused by ifosfamide.
+F584,"Exercise caution with grapefruit products. Grapefruit inhibits the CYP3A4 metabolism of ifosfamide to its active metabolite, therefore reducing its efficacy."
+F585,"Exercise caution with St. John's Wort. Close monitoring is warranted as this herb induces the CYP3A4 metabolism of ifosfamide to its alkylating active metabolites, including, chloroacetaldehyde, a nephrotoxic and neurotoxic metabolite."
+F586,"Take separate from meals. When formulated as a buccal film or sublingual form, avoid eating or drinking until the film has completely dissolved."
+F587,Take before a meal. Take 15-30 minutes before meals.
+F588,Take with a full glass of water. Clindamycin may cause esophageal irritation if the dosage form becomes lodged.
+F589,Take with or without food. Food does not appreciably alter the absorption of clindamycin.
+F590,Avoid alcohol. Ingesting alcohol has unpredictable effects on the pharmacokinetics of oxymorphone. Alcohol may also potentiate the CNS depressant effects of oxymorphone.
+F591,Take on an empty stomach. Take oxymorphone at least one hour before or two hours after eating as food may increase the absorption of oxymorphone.
+F592,"Take with or without food. Food decreases absorption rate and maximum concentration, but not to a clinically significant extent."
+F593,Take separate from meals. The presence of food decreases absorption. Take one hour prior to meals.
+F594,Avoid alcohol. Ingesting alcohol may potentiate the CNS depressant actions of zopiclone.
+F595,"Avoid grapefruit products. Grapefruit may reduce the CYP3A4 metabolism of zopiclone, increasing its sedative effects."
+F596,Take with food. Taking rifapentine with food increases its bioavailability and reduces gastrointestinal upset. Rifapentine tablets can be crushed and mixed with semisolid food if necessary.
+F597,"Take separate from meals. Eating during an intravenous infusion of flumazenil increases the elimination of flumazenil, potentially through elevated hepatic blood flow."
+F598,"Avoid alcohol. Fomepizole reduces the metabolism of alcohol by alcohol dehydrogenase, and alcohol also reduces fomepizole metabolism and elimination."
+F599,"Take with or without food. Co-administration with food reduces the rate, but not the overall extent, of absorption."
+F600,"Take on an empty stomach. Food increases the bioavailability 6-fold, which may increase the risk of cardiotoxicity."
+F601,"Take with or without food. Fatty meals may increase the systemic AUC of rifaximin, but do not impact Cmax. Rifaximin is an antibacterial used for local action in the gastrointestinal tract; therefore, changes in systemic exposure may not significantly impact efficacy."
+F602,Administer vitamin supplements. Aminophylline may reduce Vitamin B6 levels as an adverse effect. Consider supplementation.
+F603,"Avoid excessive or chronic alcohol consumption. Ingesting a large amount of alcohol may reduce aminophylline clearance, therefore increasing its serum concentration."
+F604,"Exercise caution with grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum concentration of aminophylline."
+F605,Exercise caution with St. John's Wort. This herb induces the CYP3A4 metabolism of aminophylline. Therefore it may reduce the serum concentration and effectiveness of aminophylline.
+F606,"Limit caffeine intake. Excessive caffeine intake with aminophylline may exacerbate caffiene-like side effects such as nausea, nervousness, irritability, insomnia and tremors."
+F607,Take with food. This may reduce gastric irritation. Aminophylline absorption is slower when taken with food.
+F608,"Take with or without food. If taken with food, take with a light meal."
+F609,"Avoid echinacea. Co-administration may decrease the effectiveness of immunosuppressants, and echinacea may induce CYP3A4 increasing paclitaxel metabolism."
+F610,"Exercise caution with grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum concentration of paclitaxel."
+F611,Exercise caution with St. John's Wort. This herb induces the CYP3A4 metabolism of paclitaxel and may reduce its serum concentration.
+F612,Avoid grapefruit products. Co-administration with grapefruit-containing products inhibits the metabolism of saquinavir.
+F613,Take before a meal. Co-administration with food decreases bioavailability - take 30 minutes before meals.
+F614,Avoid multivalent ions. Iron salts may reduce levodopa absorption.
+F615,Take with or without food. A diet high in protein may delay absorption and AUC of levodopa.
+F616,Drink plenty of fluids. Drink water to avoid dehydration while taking aripiprazole.
+F617,Take before a meal. Take 30 minutes before meals.
+F618,Avoid alcohol. Alcohol can potentiate hypotension and dizziness when taken with this drug.
+F619,Take with food. Food reduces nausea.
+F620,Avoid alcohol. Ingesting alcohol may potentiate the CNS depressant effects of alimemazine/trimeprazine.
+F621,Take after a meal. Taking alimemazine/trimeprazine after eating may reduce drowsiness by allowing for more gradual absorption.
+F622,Avoid alcohol. The official product labeling suggests avoiding the use of CNS depressants.
+F623,"Avoid grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum levels of docetaxel."
+F624,"Exercise caution with St. John's Wort. This herb induces CYP3A4 metabolism, which may reduce the serum concentration of docetaxel."
+F625,"Take with food. Food does not affect drug absorption or exposure, but may mitigate the risk for drug-related adverse effects."
+F626,"Avoid grapefruit products. Grapefruit may reduce the CYP3A4 metabolism of dasatinib, increasing its serum levels."
+F627,Avoid St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of dasatinib.
+F628,"Take with or without food. High fat meals may increase the AUC of dasatinib by to 14%; however, the product label recommends taking dasatinib with or without food."
+F629,"Avoid antacids. Urinary excretion of lisdexamfetamine is elevated when the urine is more acidic. Antacids like sodium bicarbonate alkalinize the urine; therefore, they may reduce lisdexamfetamine elimination."
+F630,"Limit foods and supplements high in vitamin C. Urinary excretion of lisdexamfetamine is elevated when the urine is more acidic. Vitamin C acidifies the urine and, therefore, may increase lisdexamfetamine elimination."
+F631,"Take with or without food. Food prolongs Tmax by approximately one hour, but does not significantly affect drug exposure."
+F632,"Avoid grapefruit products. Grapefruit may reduce the CYP3A4 metabolism of lapatinib, increasing its serum levels."
+F633,"Take separate from meals. Take lapatinib at least 1 hour before or after eating, as lapatinib bioavailability is elevated by food."
+F634,Take with food. Posaconazole suspension can also be taken with a nutritional supplement drink or carbonated beverage if a full meal cannot be consumed.
+F635,Avoid grapefruit products. Grapefruit may reduce the CYP3A4 metabolism of sunitinib.
+F636,"Avoid St. John's Wort. This herb induces CYP3A4 metabolism, which may reduce the serum concentration of sunitinib."
+F637,"Avoid excessive or chronic alcohol consumption. Varenicline may increase the effects of alcohol; therefore, reduce consumption of alcohol when starting varenicline."
+F638,"Take with or without food. Food increases exposure to hydralazine, though this may not be clinically significant."
+F639,Take before a meal. Inject subcutaneously within 60 minutes before morning and evening meals.
+F640,Take with food. Mecasermin should be administered shortly before or after a meal due to its hypoglycemic effects.
+F641,Avoid alcohol. Ingesting alcohol may increase the risk of hypoglycemia.
+F642,"Take after a meal. Taking sulfadoxine with food, may reduce gastrointestinal irritation."
+F643,Avoid milk and dairy products. Dairy products contain cations such as calcium which may interfere with the absorption of rolitetracycline.
+F644,Take with food. Dose adjust as needed. Changes in meal composition may alter the response to insulin aspart.
+F645,Take with food. Once daily administration should be given with the evening meal or prior to bedtime.
+F646,"Avoid alcohol. Acute alcohol consumption may increase phenytoin serum concentration, but chronic alcohol use may reduce phenytoin serum concentration."
+F647,Avoid St. John's Wort. This herb may reduce the serum concentration of phenytoin.
+F648,Avoid alcohol. Ingesting alcohol with cefamandole may precipitate a disulfiram like reaction due to elevated levels of acetaldehyde in the blood.
+F649,"Avoid alcohol. Ingesting alcohol with cefoperazone may precipitate a disulfuram like reaction including symptoms such as flushing, tachycardia, sweating, and headache."
+F650,Avoid alcohol. Alcohol can cause a disulfiram effect.
+F651,"Take with or without food. Food decreases absorption, but not to a clinically significant extent."
+F652,Avoid alcohol. Ingesting alcohol may increase the CNS depressant effects of amobarbital.
+F653,Take on an empty stomach. Taking oral amobarbital sodium on an empty stomach increases the rate of absorption.
+F654,"Take with or without food. The onset of action of procaterol may be delayed when taken with food, however, there is no impact on the efficacy or duration of action of procaterol."
+F655,Avoid St. John's Wort. Co-administration of rasagiline with this herb is contraindicated.
+F656,"Avoid tyramine-containing foods and supplements. Avoid food containing high amounts of tyramine (>150mg) as these may increase the risk of hypertensive reaction. Tyramine-containing foods include cheese, red wine, fava beans, pickled food, cured food, and alcoholic beverages."
+F657,"Take with food. When using magnesium to treat calcium oxalate nephrolithiasis, magnesium oxide should be taken with food."
+F658,Take with or without food. Many different products contain magnesium oxide; refer to the product monograph for more specific instruction. Taking magnesium supplements with food may reduce the risk of diarrhea.
+F659,Take with food. Taking cortisone acetate with food may reduce gastrointestinal upset.
+F660,"Avoid herbs and supplements with anticoagulant/antiplatelet activity. Additive anticoagulant/antiplatelet activity may increase the risk of bleeding. Examples include garlic, ginger, bilberry, danshen, piracetam, and ginkgo biloba."
+F661,Take with or without food. Food insignificantly decreases the rate of absorption.
+F662,Take with or without food. Many different products contain sodium bicarbonate; refer to the product monograph for more specific instruction.
+F663,Take with food. Taking bezafibrate with food or after meals slows the absorption of bezafibrate.
+F664,"Avoid avocado. Persea americana (avocado) is a plant that affects the heart by interfering with the Na+, K+, ATPase, which may cause an additive effect with digitoxin."
+F665,Do not take with bran and high fiber foods. The absorption of digitoxin is more predictable than the absorption of digoxin in the presence of high-fiber food.
+F666,Take with or without food. Taking salsalate with food may slow the absorption of salsalate but does not significantly impact the Cmax or AUC.
+F667,Take with or without food. Food is not expected to interfere with absorption.
+F668,"Take separate from meals. Take ceftibuten oral suspension at least one hour after eating, or two hours before eating."
+F669,Take with or without food. Separating the administration of ceftibuten from food is not required for ceftibuten capsules because the impact of food on bioavailability is less significant.
+F670,"Ensure consistent Vitamin K intake. Changes in vitamin K intake may impact coagulation. Foods containing vitamin K include spinach, kale, and swiss chard."
+F671,Take with fluids. Do not take with carbonated fluids.
+F672,Take with food. Take with a meal unless this interferes with other medications.
+F673,"Take with or without food. When taken after meals, the Cmax and Tmax of oral antipyrine are reduced, but the overall bioavailability is not significantly impacted."
+F674,Take with or without food. Food does not affect the bioavailability.
+F675,Avoid alcohol. Alcohol can enhance the CNS depressant effects of this drug.
+F676,"Avoid alcohol. Alcohol can increase CNS depressant effects, such as fatal respiratory or cardiac depression."
+F677,Avoid alcohol. Ingesting alcohol may increase the sedative and CNS depressant effects of bromazepam.
+F678,Take with or without food. Taking bromazepam with food may reduce its Cmax and AUC.
+F679,"Avoid alcohol. Ingesting alcohol may cause a disulfiram-like-reaction (flushing, dizziness, tachycardia)."
+F680,"Take after a meal. If chloral hydrate is being used for sedation, it should be taken after meals. Otherwise, it can be taken with or without food."
+F681,"Avoid fruit juice. Fruit juice may acidify the gastrointestinal tract, decreasing absorption of amphetamines."
+F682,Take separate from meals. Take phendimetrazine one hour before eating.
+F683,Avoid grapefruit products. Grapefruit may delay the absorption of this medicaiton.
+F684,Avoid high-fiber foods. High-fiber foods may affect absorption. Separate medication administration by at least 1 hour.
+F685,Avoid multivalent ions. Avoid iron and calcium containing products as well as antacids.
+F686,Avoid alcohol. Ingesting alcohol may increase the drowsiness and CNS depression caused by quazepam.
+F687,"Avoid grapefruit products. Grapefruit inhibits the metabolism of everolimus through the CYP3A4 pathway and, therefore, may increase serum levels of everolimus."
+F688,Avoid St. John's Wort. Coadministration of St. John's Wort with everolimus may reduce serum levels of everolimus by inducing CYP3A4 and P-glycoprotein (PGP).
+F689,Take with or without food. Take consistently with regard to food as food may reduce the AUC and Cmax of everolimus.
+F690,Take with or without food. Many different products contain iron; refer to the product monograph for more specific instruction. Taking iron with food may reduce gastric irritation.
+F691,Avoid milk and dairy products. Separate the use of zinc from these products by at least 2 hours before administration. Separate for 2 hours after administration if these products also contain phosphorus.
+F692,"Do not take with bran and high fiber foods. For optimal absorption, take zinc at least 2 hours before or after eating high-fiber foods."
+F693,Take on an empty stomach. Take at least 1 hour before and 2 hours after eating for optimal absorption. Zinc can be taken with food to reduce gastrointestinal upset.
+F694,Avoid St. John's Wort. Induction of CYP3A by co-administration with St. John's Wort may result in reduced drug plasma concentrations and therapeutic failure.
+F695,"Take with food. The oral solution formulation must be taken with food, but the tablet formulation may be taken with or without food."
+F696,Take separate from antacids. Elevated gastric pH may reduce the bioavailability of bacampicillin.
+F697,Take with or without food. Food may reduce the bioavailability of bacampicillin.
+F698,Take on an empty stomach. Take at least 30 minutes before food.
+F699,"Take separate from meals. Administration with food causes inconsistent bioavailability. May administer granules with a light meal, if necessary."
+F700,Take with food. Take with a meal or glass of milk.
+F701,Avoid alcohol. The use of alcohol with amyl nitrite may worsen hypotension and has the potential to cause cardiovascular collapse.
+F702,"Avoid alcohol. Severe CNS depression, which can be caused by alcohol, is a contraindication for molindone hydrochloride therapy."
+F703,Avoid alcohol. Acute alcohol intoxication is a contraindication for zuclopenthixol therapy.
+F704,"Take with or without food. Administering roflumilast with a high-fat meal reduced and delayed the Cmax and Tmax, respectively, but did not impact the AUC of roflumilast or its active metabolite (roflumilast N‐oxide)."
+F705,Take with or without food. Many different products contain cocarboxylase; refer to the product monograph for more specific instruction. EnBrace HR and EnLyte products should be taken on an empty stomach.
+F706,Take with food. Food increases drug Cmax and AUC.
+F707,Take separate from antacids. Take at least 1 hour before or 4-6 hours after aluminum-containing antacids.
+F708,Avoid alcohol. Ingesting alcohol may reduce the absorption of FAD.
+F709,Take separate from meals. Oteracil should be separated from meals by at least one hour before and after eating.
+F710,Avoid alcohol. Ingesting alcohol may reduce the absorption of FMN.
+F711,Take at least 2 hours before or after calcium supplements. These drugs may interfere with the gastrointestinal absorption of tiratricol.
+F712,Take at least 2 hours before or after iron supplements. These drugs may interfere with the gastrointestinal absorption of tiratricol.
+F713,"Take separate from antacids. These drugs may interfere with the gastrointestinal absorption of tiratricol. Take before or after tiratricol, more than 2 hours before or after if possible."
+F714,"Avoid foods high in furanocoumarins. Eating these foods while you are taking trioxsalen may increase your skin's sensitivity to sunlight. Examples include limes, figs, parsley, parsnips, mustard, carrots, and celery."
+F715,"Exercise caution with grapefruit products. Grapefruit inhibits the CYP3A4 metabolism of thiotepa, which may increase its serum concentration."
+F716,Exercise caution with St. John's Wort. This herb induces CYP3A4 metabolism and may reduce serum levels of thiotepa.
+F717,Take with food. Food decreases nausea.
+F718,Ensure consistent Vitamin K intake.
+F719,Avoid St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of maraviroc.
+F720,Avoid alcohol. Ingesting alcohol may increase the drowsiness caused by tetrabenazine.
+F721,"Avoid grapefruit products. Grapefruit inhibits the CYP3A4 metabolism of ixabepilone, which may increase its serum concentration."
+F722,Avoid St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of ixabepilone.
+F723,Avoid fruit juice. Orange juice may reduce the absorption of celiprolol.
+F724,Avoid grapefruit products. Grapefruit juice may reduce the absorption of celiprolol.
+F725,"Take with or without food. The bioavailability of celiprolol may be reduced when taken with food, however, it is unlikely that this reduction is clinically relevant."
+F726,Take with or without food. Food can decrease Cmax but not to a clinically significant extent.
+F727,Take with or without food. A high fat meal decreases Cmax and AUC in a clinically insignificant way.
+F728,Avoid grapefruit products. Co-administration with grapefruit may increase drug concentrations by 3-fold.
+F729,Avoid St. John's Wort. This herb induces CYP3A4 and may increase the serum concentration of dronedarone.
+F730,"Take with food. Food, especially high-fat food, increases drug absorption."
+F731,"Avoid grapefruit products. Grapefruit inhibits the CYP3A4 metabolism of nilotinib, causing increased serum levels of nilotinib."
+F732,"Avoid St. John's Wort. This herb induces CYP3A4 metabolism, which may reduce the serum concentration of nilotinib."
+F733,Take on an empty stomach. Food increases the AUC of nilotinib. Separate nilotinib administration from meals by at least one hour before and two hours after eating.
+F734,"Take with or without food. Food reduces Cmax and delays Tmax, but not in a clinically significant way."
+F735,Take with or without food. Orally formulated bepotastine bioavailability is not significantly impacted by food.
+F736,"Avoid excessive or chronic alcohol consumption. Avoid excessive or chronic alcohol consumption. Milnacipran may worsen liver disease, which is potentially caused by excessive alcohol use."
+F737,Take with or without food. Taking milnacipran with food may improve its tolerability.
+F738,"Avoid alcohol. Avoid alcohol. Ingesting alcohol may increase the CNS depressant and hypotensive effects of flibanserin. If you have consumed two drinks, wait two hours before taking flibanserin. Do not take flibanserin if you have consumed more than three drinks."
+F739,"Take with or without food. Taking flibanserin with food (especially a high-fat meal) may increase its AUC, Cmax, and Tmax."
+F740,"Avoid excessive or chronic alcohol consumption. Alcohol may worsen the CNS effects of iloperidone, such as dizziness."
+F741,"Take with or without food. A high-fat meals may delay the Tmax of iloperidone and its metabolites, without significantly changing the Cmax or AUC."
+F742,Avoid excessive or chronic alcohol consumption. Lofexidine may potentiate the CNS depressant effects of alcohol.
+F743,Take with food. Food decreased the rate and extent of absorption. Food reduces the incidence of drug-related adverse reactions.
+F744,"Take with or without food. High-fat meals alter drug absorption, but not to a clinically significant extent."
+F745,Avoid caffeine. Co-administration of GALAFOLD with caffeine decreases migalastat AUC and Cmax which may reduce its efficacy.
+F746,Take on an empty stomach. Avoid eating for at least two hours before and after taking migalastat.
+F747,Take with or without food. Food has negligible effects on the pharmacokinetics of arimoclomol.
+F748,"Administer vitamin supplements. If dietary intake is inadequate, patients should receive supplemental calcium and vitamin D."
+F749,"Take with food. Co-administration with food increases ganaxalone Cmax and AUC by 3- and 2-fold, respectively. In clinical trials to establish efficacy, ganaxolone was administered with food."
+F750,Avoid alcohol. There may be an additive hepatotoxic effect if alcohol and trabectedin are coadministered.
+F751,"Avoid St. John's Wort. This herb induces CYP3A4 metabolism, which may reduce the serum concentration of trabectedin."
+F752,"Exercise caution with grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum concentration of trabectedin."
+F753,Avoid alcohol. Consuming alcohol may increase the risk of hepatotoxicity.
+F754,"Take with or without food. A high-fat and high-calorie meal delays Tmax and decreases Cmax and AUC, but not to a clinically significant extent."
+F755,"Avoid grapefruit products. Grapefruit inhibits the metabolism of cobimetinib through the CYP3A4 pathway and, therefore, may increase serum levels of cobimetinib."
+F756,"Avoid St. John's Wort. This herb induces CYP3A4 metabolism, which may reduce serum levels of cobimetinib."
+F757,Take with or without food. Cobimetinib bioavailability is unaffected by food.
+F758,"Avoid grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum levels of vandetanib."
+F759,"Avoid St. John's Wort. This herb induces CYP3A4 metabolism, which may reduce the serum levels of vandetanib."
+F760,Avoid grapefruit products. Dose adjustment may be necessary if taking grapefruit products or other CYP3A4 inhibitors.
+F761,"Avoid St. John's Wort. This may induce the CYP3A4 metabolism of pimavanserin, which may cause reduced efficacy."
+F762,"Avoid St. John's Wort. It may induce the CYP3A4 metabolism of dexlansoprazole, possibly leading to reduced efficacy."
+F763,Take with or without food. Dexlansoprazole's dual delayed release formulation allows it to be taken without regard to food in contrast to other PPIs.
+F764,"Avoid goitrogenic foods. These include soy, cassava, cabbage, broccoli, cauliflower, and other cruciferous vegetables."
+F765,Avoid grapefruit products. Grapefruit-containing products may inhibit the CYP3A4 activity responsible for palovarotene metabolism.
+F766,Avoid St. John's Wort. The significant induction of CYP3A4 metabolism caused by St. John's wort may decrease the effectiveness of palovarotene.
+F767,Take with food. Co-administration with food increases the oral absorption of palovarotene.
+F768,"Take on an empty stomach. Take drug after an overnight fast, 30 minutes before food. Food decreases drug exposure."
+F769,Take with or without food. Grapefruit may decrease mavorixafor metabolism and increase the risk of drug adverse reactions.
+F770,Avoid St. John's Wort. St. John's Wort will decrease levels of this medication.
+F771,Avoid excessive or chronic alcohol consumption. Alcohol may increase the risk of liver injury.
+F772,"Avoid alcohol. Taking Brivaracetam with alcohol may increase alcohol's effects on attention, memory, and psychomotor functioning."
+F773,"Avoid excessive or chronic alcohol consumption. Concomitant alcohol consumption may result in a disulfiram-like reaction characterized by rash, flushing, peripheral edema, nausea, and headache. These symptoms typically subside within hours."
+F774,"Take with or without food. In healthy subjects administered a single 600 mg oral dose of levoketoconazole, a high-fat meal increased the AUC by 30% with no change in the maximum plasma concentration but a delay to reach this value of between two and four hours. These changes are not considered clinically significant."
+F775,"Avoid St. John's Wort. Apremilast is a CYP3A substrate; therefore, co-administration with St. John's wort, a CYP3A inducer, may reduce the serum level of apremilast."
+F776,"Avoid grapefruit products. Trastuzumab emtansine undergoes metabolism through CYP3A4 therefore coadministration with grapefruit, a CYP3A4 inhibitor, may increase serum levels of trastuzumab emtansine."
+F777,Exercise caution with St. John's Wort. This herb induces CYP3A4 and may increase the serum levels of abiraterone.
+F778,"Take on an empty stomach. Food increases Cmax and AUC. Take ZYTIGA , a product of abiraterone, at least 1 hour before or 2 hours after eating as food may increase exposure to abiraterone by 4-fold."
+F779,"Take with or without food. Food increases Cmax and AUC. YONSA, a product of abiraterone, can be taken with or without food."
+F780,"Avoid excessive or chronic alcohol consumption. Given the primary central nervous system effects of cariprazine, cariprazine should be used with caution in combination with alcohol."
+F781,Avoid grapefruit products. Grapefruit is a known CYP3A4 inhibitor. It may increase drug levels and elevate the risk of drug adverse effects.
+F782,Avoid St. John's Wort. St John’s Wort is a known CYP3A4 inducer. It may significantly decrease drug exposure and alter drug efficacy.
+F783,"Take with or without food. A high-fat, high-calorie meal may delay Tmax, but food generally has no significant effect on drug exposure."
+F784,Take with or without food. Food decreases Cmax of trofinetide but has negligible effects on total drug exposure.
+F785,"Avoid grapefruit products. Grapefruit inhibits the CYP3A4 metabolism of lumateperone, which may increase its serum concentration."
+F786,"Avoid St. John's Wort. This herb induces the CYP3A4 metabolism of lumateperone, causing a reduction in its serum concentration."
+F787,Take with food. Administration with food reduces the Cmax by 33% and prolongs the Tmax by one hour.
+F788,Avoid alcohol. Alcohol may increase somnolence and sedation.
+F789,"Take with or without food. Food delays drug absorption, but not to a significant extent."
+F790,"Avoid grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum concentration of romidepsin."
+F791,"Avoid St. John's Wort. This herb induces CYP3A4 metabolism, which may reduce serum levels of romidepsin."
+F792,"Avoid St. John's Wort. St. John's wort is an inducer of CYP3A4 enzymes, which may result in reduced exposure and therapeutic efficacy when co-administered with atrasentan."
+F793,Take with or without food. No clinically significant differences in atrasentan pharmacokinetics are observed when it is administered with a meal.
+F794,Take with food. Food can increase the absorption of rufinamide.
+F795,"Avoid alcohol. Due to the additive pharmacological effect, the concomitant use with alcohol increases the risk for central nervous system depression, respiratory depression, profound sedation, coma, and death."
+F796,"Take with or without food. A high-fat, high-calorie meal increases absorption, but not to a clinically significant extent."
+F797,Take with food. A moderate fat or calorie meal decreases drug exposure as well as the risk of adverse effects.
+F798,"Avoid multivalent ions. Polyvalent cations in food or supplements will be chelated by eltrombopag; therefore, they should be separated by 4 hours before or 2 hours after taking eltrombopag."
+F799,Take on an empty stomach. Separate the administration of eltrombopag from food by at least 1 hour before and 2 hours after eating.
+F800,Avoid excessive or chronic alcohol consumption. This may increase the risk of developing osmotic demyelination syndrome.
+F801,"Avoid grapefruit products. Grapefruit inhibits the CYP3A metabolism of tolvaptan, which may increase its serum concentration."
+F802,Avoid St. John's Wort. This herb induces the CYP3A metabolism of tolvaptan and may reduce its serum concentration.
+F803,Avoid caffeine. Do not consume caffeine for at least 12 hours before the administration of regadenoson as caffeine can reduce the ability to detect ischemic changes.
+F804,Take separate from meals. Do not have food or water for 10 minutes after administration.
+F805,Take with or without food. Food does not affect the rate and extent of absorption.
+F806,Avoid St. John's Wort. Co-administration will decrease levels of this medication.
+F807,Take with food. Rivaroxaban 15-20mg dose should be taken with food as food significantly impacts the bioavailability at that dose.
+F808,Take with or without food. Rivaroxaban 10mg dose can be taken with or without food as it does not significantly impact the bioavailability at that dose.
+F809,"Take with or without food. High-fat food increases the AUC by 30% and Cmax by 50% and delays Tmax by 30 min, but this is unlikely of clinical relevance."
+F810,Avoid St. John's Wort. Co-administration with St. John's wort decreases serum levels of maribavir and may decrease its therapeutic efficacy.
+F811,Take with or without food. The co-administration of food with maribavir does not significantly affect its disposition.
+F812,Avoid excessive or chronic alcohol consumption. Substantial alcohol consumption (e.g. >3 units) in combination with avanafil may increase the risk of hypotension.
+F813,"Take with or without food. High-fat meals slow absorption, but not to a clinically significant extent."
+F814,"Take with or without food. High-fat meals may reduce the Cmax and AUC by 38% and 21%, respectively; however, the clinical significance of this is unknown."
+F815,Avoid excessive or chronic alcohol consumption. Ingesting alcohol may increase the CNS depressive effects of ziconotide.
+F816,"Avoid grapefruit products. Grapefruit inhibits the CYP3A4 metabolism of temsirolimus, which may increase its serum concentration."
+F817,Avoid St. John's Wort. This herb induces the CYP3A4 metabolism of temsirolimus and may reduce its serum concentration.
+F818,Avoid alcohol. Amisulpride may enhance the effects of alcohol.
+F819,"Take with or without food. A high fat meal does not significantly affect drug pharmacokinetics, although a carbohydrate rich meal decreases drug absorption and levels."
+F820,Avoid excessive or chronic alcohol consumption. Binge drinking or drinking alcohol often may predispose patients to ketoacidosis.
+F821,Take with food. Food increases total drug exposure.
+F822,Take with food. Take with food to reduce nausea and vomiting.
+F823,Administer calcium supplement. If calcium intake from food is inadequate administer calcium supplements to prevent hypocalcemia.
+F824,"Administer vitamin supplements. If dietary intake of vitamin D is inadequate, then administer vitamin D supplements to avoid deficiency of vitamin D and calcium."
+F825,Take with or without food. Taking bazedoxifene with food may increase its AUC by 25% but does not impact the Cmax.
+F826,"Avoid antacids. Specifically, avoid magnesium-containing antacids as co-administration with doxercalciferol increases the risk of hypermagnesemia."
+F827,"Exercise caution with grapefruit products. Armodafinil is partially metabolized by CYP3A4, and grapefruit is a CYP3A4 inhibitor."
+F828,"Exercise caution with St. John's Wort. Armodafinil is partially metabolized by CYP3A4, and St. John's Wort is a CYP3A4 inducer."
+F829,Take with or without food. Taking armodafinil with food can delay the Tmax by 2-4 hours.
+F830,"Avoid grapefruit products. Grapefruit inhibits the CYP3A metabolism of etravirine, which may increase its serum concentration."
+F831,Avoid St. John's Wort. This herb induces the CYP3A metabolism of etravirine and may reduce its serum concentration.
+F832,Take after a meal. Take after meals. This increases the bioavailability of etravirine.
+F833,Avoid grapefruit products. Co-administration with strong or moderate CYP3A inhibitors is contraindicated; avoid consuming grapefruit or Seville oranges.
+F834,"Take with food. Administration with food is recommended to reduce gastrointestinal adverse reactions. However, co-administration with food does affect lonafarnib absorption."
+F835,"Avoid grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum concentration of pazopanib."
+F836,"Avoid St. John's Wort. This herb induces CYP3A4 metabolism, which may reduce the serum concentration of pazopanib."
+F837,Take on an empty stomach. Separate pazopanib from meals by at least 1 hour before and 2 hours after eating as food increases pazopanib bioavailability.
+F838,Take separate from antacids. Separate the administration of pazopanib and antacids by several hours.
+F839,Avoid St. John's Wort. This herb induces the CYP3A4 metabolism of midostaurin and may reduce its serum concentration.
+F840,"Exercise caution with grapefruit products. Grapefruit inhibits the CYP3A4 metabolism of midostaurin, which may increase its serum concentration."
+F841,"Take with food. Taking midostaurin with food increases the AUC, but it also prolongs the Tmax and reduces Cmax."
+F842,"Avoid grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum concentration of panobinostat."
+F843,"Exercise caution with St. John's Wort. This herb induces CYP3A4 metabolism, which may reduce the serum concentration of panobinostat."
+F844,"Avoid grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum concentration of bosutinib."
+F845,"Avoid St. John's Wort. This herb induces CYP3A4 metabolism, which may reduce the serum concentration of bosutinib."
+F846,Take with food. Coadministration with a high-fat meal may increase the AUC of bosutinib.
+F847,"Avoid grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum concentration of axitinib."
+F848,"Avoid St. John's Wort. This herb induces CYP3A4 metabolism, which may reduce the serum concentration of axitinib."
+F849,Avoid grapefruit products. Grapefruit is a moderate to strong inhibitor of CYP3A4. Strong CYP3A4 inhibitors are contraindicated with isavuconazonium.
+F850,Avoid St. John's Wort. This herb induces the CYP3A4 metabolism of isavuconazonium and may reduce its serum concentration. Co-administration of isavuconazonium with St. John's Wort is contraindicated.
+F851,Take with or without food. The bioavailability of isavuconazonium is not significantly impacted by food.
+F852,"Take with or without food. High-fat meals increase drug absorption, but not to a clinically significant extent."
+F853,Administer calcium supplement. Calcium supplements should be used as necessary to prevent hypocalcemia.
+F854,Administer vitamin supplements. Vitamin D should be administered as necessary to complement calcium in preventing hypocalcemia.
+F855,Avoid excessive or chronic alcohol consumption. Ingesting alcohol may increase the sedative effects of safinamide.
+F856,"Avoid St. John's Wort. This herb may increase the risk of serotonin syndrome, and therefore, concomitant use is contraindicated."
+F857,"Avoid tyramine-containing foods and supplements. Avoid foods containing high amounts of tyramine (>150mg) as these foods may cause a significant elevation in blood pressure. Tyramine-containing foods include cheese, red wine, fava beans, pickled food, cured food, and alcoholic beverages."
+F858,Avoid St. John's Wort. This herb induces PGP which may reduce the serum levels of dabigatran.
+F859,Take with food. This may reduce or prevent gastrointestinal upset.
+F860,Avoid alcohol. Alcohol inhibits the metabolism of dexmethylphenidate.
+F861,"Exercise caution with grapefruit products. Grapefruit inhibits the CYP3A4 metabolism of fosaprepitant, which may increase its serum concentration."
+F862,Exercise caution with St. John's Wort. This herb induces the CYP3A4 metabolism of fosaprepitant and may reduce its serum concentration.
+F863,Avoid foods rich in citrate. Citrate may increase the absorption of aluminum and has the potential to cause toxicity.
+F864,"Take with or without food. Food increases the absorption of calcium carbonate, which may be advantageous in its use as a calcium supplement."
+F865,Avoid excessive or chronic alcohol consumption. Ingesting alcohol increases the risk of bleeding.
+F866,"Avoid herbs and supplements with anticoagulant/antiplatelet activity. These may increase the risk of bleeding. Examples include garlic, ginger, bilberry, danshen, piracetam, and ginkgo biloba."
+F867,Take with or without food. Oral betaine powder should be mixed with food or a beverage and then consumed.
+F868,"Avoid grapefruit products. Grapefruit inhibits the CYP3A4 metabolism of cabazitaxel, which may increase its serum concentration."
+F869,Avoid St. John's Wort. This herb induces the CYP3A4 metabolism of cabazitaxel and may reduce its serum concentration.
+F870,Take before a meal. Take carglumic acid right before eating.
+F871,Take with plain water. Carglumic acid tablets are dispersed in water to produce an oral suspension and should not be swallowed whole.
+F872,Take on an empty stomach. Take methylnaltrexone at least 30 minutes before breakfast.
+F873,Take with food. The effect of food on phenylbutyrate’s absorption is unknown.
+F874,Take at the same time every day. Take each dose at the same time every day.
+F875,Take on an empty stomach. Take tiopronin at least 1 hour before or 2 hours after eating food.
+F876,Avoid concomitant mineral supplements. Administer CUVRIOR at least 1 hour before or 2 hours after administration of other mineral supplements.
+F877,Take at least 2 hours before or after iron supplements. Iron and triethylenetetramine inhibit each others absorption.
+F878,"Take on an empty stomach. Take CUVRIOR one hour before or two hours after eating a meal or at least one hour of separation from other drugs, milk, or food."
+F879,Take with or without food. Food has no clinically significant effects on drug exposure.
+F880,"Take with food. Taking sulthiame with food, may reduce gastrointestinal upset."
+F881,"Exercise caution with grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum levels of R-warfarin."
+F882,"Exercise caution with St. John's Wort. This herb induces CYP3A4 metabolism, which may reduce the serum levels of R-warfarin."
+F883,Avoid alcohol. The effects of alcohol could be made worse while taking Lurasidone.
+F884,Avoid grapefruit products. Grapefruit and grapefruit juice may affect the amount of Lurasidone in your blood.
+F885,Take with food. The manufacturer recommends co-administration with at least 350 calories.
+F886,"Avoid grapefruit products. Grapefruit inhibits the CYP3A4 metabolism of ticagrelor, which may increase its serum concentration."
+F887,"Avoid herbs and supplements with anticoagulant/antiplatelet activity. Herbs with antiplatelet activity may increase the risk of bleeding. Examples include garlic, ginger, bilberry, danshen, piracetam, and ginkgo biloba."
+F888,Avoid St. John's Wort. This herb induces the CYP3A4 metabolism of ticagrelor and may reduce its serum concentration.
+F889,Take with a high fat meal. Co-administration with a high fat meal increases exposure to ivacaftor.
+F890,Take with or without food. Food does not affect absorption. The Cmax and AUC of vismodegib at steady state are not affected by food.
+F891,Take with or without food. Food does not affect oral absorption or bioavailability.
+F892,Avoid St. John's Wort. St.John's Wort will decrease levels of this medication.
+F893,Take with food. Absorption is increased by 40% if taken with food.
+F894,"Avoid grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum levels of crizotinib."
+F895,"Avoid St. John's Wort. This herb induces CYP3A4 metabolism, which may reduce serum levels of crizotinib."
+F896,"Take with or without food. High-fat food decreases drug absorption, but not to a clinically significant extent."
+F897,"Take with or without food. High-fat food increases drug absorption, but not to a clinically significant extent."
+F898,"Exercise caution with grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum concentration of monomethyl auristatin E (MMAE), the antitumor component of brentuximab vedotin."
+F899,"Exercise caution with St. John's Wort. This herb induces CYP3A4 metabolism, which may reduce the serum concentration of monomethyl auristatin E (MMAE), the antitumor component of brentuximab vedotin."
+F900,"Take with or without food. Food decreases drug exposure, but not to a clinically significant extent."
+F901,Take with or without food. High-fat meal decreases the Cmax of fidaxomicin and its metabolite in a clinically insignificant way.
+F902,"Avoid grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase levels of cabozantinib."
+F903,"Avoid St. John's Wort. This herb induces CYP3A4 metabolism, which may reduce serum levels of cabozantinib."
+F904,Take on an empty stomach. Separate the administration of cabozantinib from food by at least 1 hour before or 2 hours after eating.
+F905,"Avoid grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum concentration of ruxolitinib."
+F906,"Exercise caution with St. John's Wort. This herb induces CYP3A4 metabolism, which may reduce the serum levels of ruxolitinib."
+F907,"Take with or without food. A high-fat, high-calorie meal had negligible effects on the pharmacokinetics of ruxolitinib."
+F908,"Do not take with or immediately after a high-fat meal. Taking vemurafenib with a high-fat meal may increase the AUC and Cmax by approximately 5 fold and 2.5 fold, respectively."
+F909,"Exercise caution with grapefruit products. Grapefruit inhibits the CYP3A4 metabolism of vemurafenib, which may increase its serum concentration."
+F910,Exercise caution with St. John's Wort. This herb induces the CYP3A4 metabolism of vemurafenib and may reduce its serum concentration.
+F911,"Limit caffeine intake. Vemurafenib inhibits CYP1A2, which may increase the serum levels and adverse effects of caffeine."
+F912,Avoid excessive or chronic alcohol consumption. Chronic or binge drinking can increase the risk of serious side effects.
+F913,"Take with or without food. High fat meals reduce the maximum concentration and increase the AUC, but not to a clinically significant extent."
+F914,"Take on an empty stomach. Take linaclotide at least 30 minutes prior to a meal, at approximately the same time each day. A high fat meal may cause looser stools and a higher stool frequency."
+F915,"Take with food. While adults may take mirabegron with or without food, prescribing information recommends that children always co-administer mirabegron with food."
+F916,Avoid grapefruit products. Dose adjustments are required when administering CYP3A4 inhibitors (grapefruit) and CYP2C19 inhibitors with tofacitinib.
+F917,Avoid St. John's Wort. This herb induces the CYP3A4 metabolism of tofacitinib and may reduce its serum concentration.
+F918,"Avoid grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum levels of regorafenib."
+F919,"Avoid St. John's Wort. This herb induces CYP3A4 metabolism, which may reduce serum levels of regorafenib."
+F920,Take after a meal. Should be taken following a low-fat meal containing less than 600 calories and less than 30% fat.
+F921,Avoid St. John's Wort. This herb induces the CYP3A4 metabolism of enzalutamide and may reduce its serum concentration.
+F922,Avoid St. John's Wort. This herb induces the CYP3A4 metabolism of ponatinib and may reduce its serum concentration.
+F923,"Exercise caution with grapefruit products. If coadministration of ponatinib and grapefruit is necessary, reduce the dose of ponatinib."
+F924,Take with food. Food significantly increases the oral bioavailability.
+F925,Avoid alcohol. Excess alcohol intake may promote ketoacidosis.
+F926,Take before a meal. It is recommended to take this drug before the first meal of the day.
+F927,"Take with or without food. The incidence of flushing may be reduced by the administration of dimethyl fumarate with food; however, the product label states that it may be taken with or without food."
+F928,"Take with or without food. Administration of pomalidomide with food reduces the AUC and Cmax by 8% and 27%, respectively, and delays Tmax by two and a half hours."
+F929,"Take separate from meals. Take at least 1 hour before or at least 2 hours after a meal. A high-fat, high-calorie meal decreases trametinib AUC and Cmax, and delays Tmax."
+F930,"Avoid grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum levels of dabrafenib."
+F931,"Avoid St. John's Wort. This herb induces CYP3A4 metabolism, which may reduce serum levels of dabrafenib."
+F932,Do not take with or immediately after a high-fat meal. Dabrafenib's bioavailability is reduced when taken with a high-fat meal.
+F933,Take on an empty stomach. Take dabrafenib at least one hour before or two hours after a meal.
+F934,"Avoid alcohol. Ingesting alcohol may compromise the extended-release dosage form of levomilnacipran, causing an accelerated release of the drug and increasing its serum concentration."
+F935,Avoid herbs and supplements with anticoagulant/antiplatelet activity. Taking herbs with antiplatelet or anticoagulant activity may increase the risk of bleeding.
+F936,Exercise caution with grapefruit products. Grapefruit is a moderate to strong CYP3A4 inhibitor. Do not exceed a maximum levomilnacipran dose of 80mg daily when taking strong CYP3A4 inhibitors.
+F937,Exercise caution with St. John's Wort. Administering levomilnacipran with St. John's Wort may increase the risk of serotonin syndrome.
+F938,Take with or without food. Food does not affect drug absorption and exposure to a clinically significant extent.
+F939,Avoid multivalent ions. Cations should be separated from dolutegravir administration by 2 hours before and 6 hours after cation administration. Cations can be administered with dolutegravir if given with food.
+F940,"Take with or without food. Food, particularly high-fat meals, may increase the AUC, Cmax, and Tmax of dolutegravir."
+F941,Avoid St. John's Wort. This herb induces the CYP3A4 metabolism of riociguat and may reduce its serum concentration.
+F942,Take separate from antacids. Take at least 1 hour before or after antacids. Aluminum or magnesium hydroxide antacids may reduce riociguat absorption.
+F943,Avoid excessive or chronic alcohol consumption. Alcohol may increase the drowsiness caused by chlorcyclizine.
+F944,Avoid alcohol. Consuming alcohol increases the risk of gastrointestinal irritation.
+F945,"Avoid herbs and supplements with anticoagulant/antiplatelet activity. Herbs with anticoagulant effects may increase the risk of gastrointestinal bleeding. Examples include garlic, ginger, bilberry, danshen, piracetam, and ginkgo biloba."
+F946,Take after a meal. Food reduces gastric irritation.
+F947,Avoid milk and dairy products. Take at least 1 hour before or after antacids and milk.
+F948,Take separate from antacids. Take at least 1 hour before or after antacids and milk.
+F949,Do not take with or immediately after a high-fat meal. The absorption of aliskiren is substantially reduced by taking it with high-fat meals.
+F950,Avoid St. John's Wort. This herb induces PGP and may reduce the serum concentration of ledipasvir.
+F951,Take separate from antacids. Take at least 4 hours before or after antacids.
+F952,"Avoid herbs and supplements with anticoagulant/antiplatelet activity. Additive antiplatelet activity may increase the risk of bleeding. Examples include garlic, ginger, bilberry, danshen, piracetam, and ginkgo biloba."
+F953,Avoid St. John's Wort. This herb induces the CYP3A metabolism of vorapaxar and may reduce its serum concentration.
+F954,"Exercise caution with grapefruit products. Coadministration of vorapaxar with moderate CYP3A4 inhibitors does not require intervention, but coadministration with strong inhibitors should be avoided."
+F955,Drink plenty of fluids. Preventing dehydration is important to prevent kidney injury.
+F956,Avoid grapefruit products. Grapefruit products are strong CYP3A inhibitors and may increase the concentration of eliglustat.
+F957,Avoid St. John's Wort. This herb induces the CYP3A metabolism of eliglustat and may reduce its serum concentration.
+F958,Take with or without food. Administration of eliglustat with a high-fat meal resulted in a 15% decrease in C<sub>max</sub> (not clinically significant) and no change in AUC.
+F959,"Avoid grapefruit products. Grapefruit inhibits the CYP3A4 metabolism of netupitant, which may increase its serum concentration."
+F960,Avoid St. John's Wort. This herb induces the CYP3A metabolism of netupitant and may reduce its serum concentration.
+F961,Take on an empty stomach. High-fat food increases drug absorption. Take naloxegol at least 1 hour prior to the first meal of the day or 2 hours after the meal. 
+F962,"Avoid grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum concentration of ibrutinib."
+F963,Avoid St. John's Wort. This herb induces CYP3A4 and may reduce the serum concentration of ibrutinib.
+F964,"Avoid grapefruit products. Grapefruit inhibits the CYP3A metabolism of idelalisib, which may increase its serum concentration."
+F965,Avoid St. John's Wort. This herb induces the CYP3A metabolism of idelalisib and may reduce its serum concentration.
+F966,Take with or without food. Taking idelalisib with a high-fat meal may increase the AUC by 1.4 fold.
+F967,Avoid excessive or chronic alcohol consumption. Ingesting alcohol may increase the risk of sedation.
+F968,"Avoid grapefruit products. Grapefruit inhibits the CYP3A metabolism of cannabidiol, which may increase its serum concentration. Cannabidiol dose reduction may be necessary if used together."
+F969,Avoid St. John's Wort. This herb induces the CYP3A metabolism of cannabidiol and may reduce its serum concentration. The dose of cannabidiol may need to be increased if used together.
+F970,Take with food. Taking cannabidiol with food (particularly high-fat food) increases its bioavailability. The absorption of cannabidiol is more consistent when meal macronutrients remain the same.
+F971,"Avoid grapefruit products. Grapefruit inhibits the CYP3A metabolism of ceritinib, which may increase its serum concentration."
+F972,Avoid St. John's Wort. This herb induces the CYP3A metabolism of ceritinib and may reduce its serum concentration.
+F973,"Take with food. Food increases the bioavailability of ceritinib. Taking ceritinib in a fasted state increases the risk of adverse gastrointestinal effects like nausea, vomiting, and abdominal pain."
+F974,Avoid St. John's Wort. St. John's Wort is contraindicated as it induces the CYP3A metabolism of cobicistat and may reduce its serum concentration.
+F975,"Avoid St. John's Wort. When administered with vortioxetine, this herb may increase the risk of serotonin syndrome."
+F976,Take with food. Take during a meal.
+F977,Take with plain water. Take with a glass of water.
+F978,"Avoid St. John's Wort. St. John's Wort induces CYP3A4, increasing the metabolism of estrogens and progesterone and therefore reducing the efficacy of tibolone."
+F979,"Avoid grapefruit products. Grapefruit inhibits the CYP3A4 metabolism of tasimelteon, which may increase its serum concentration. Alternatively, the dose of tasimelteon may need to be modified."
+F980,"Avoid St. John's Wort. This herb induces the CYP3A4 metabolism of tasimelteon and may reduce its serum concentration. Alternatively, the dose of tasimelteon may need to be modified."
+F981,Take on an empty stomach. The Cmax of tasimelteon is reduced when taken with food.
+F982,"Avoid alcohol. Alcohol can potentiate central nervous system (CNS) depression (respiratory depression, hypotension, profound sedation, syncope, and death) caused by sodium oxybate."
+F983,Take separate from meals. Take the first nightly dose of sodium oxybate at least two hours after eating.
+F984,"Avoid grapefruit products. Grapefruit inhibits the CYP3A metabolism of palbociclib, which may increase its serum concentration."
+F985,Avoid St. John's Wort. This herb induces the CYP3A metabolism of palbociclib and may reduce its serum concentration.
+F986,Take at the same time every day. This applies to both palbociclib capsules and tablets.
+F987,"Take with food. Palbociclib capsules should be taken with food. Some subjects have reduced bioavailability of palbociclib when in a fasted state, therefore taking with food makes the bioavailability more consistent."
+F988,Take with or without food. Palbociclib tablets may be taken with or without food.
+F989,"Avoid grapefruit products. Grapefruit inhibits the CYP3A metabolism of olaparib, which may increase its serum concentration."
+F990,Avoid St. John's Wort. This herb induces the CYP3A metabolism of olaparib and may reduce its serum concentration.
+F991,Take with or without food. Food does not significantly alter the extent of olaparib absorption.
+F992,"Avoid herbs and supplements with anticoagulant/antiplatelet activity. Additive anticoagulant activity may increase the risk of bleeding. Examples include garlic, ginger, bilberry, danshen, piracetam, and ginkgo biloba."
+F993,"Avoid hypertensive herbs (e.g. bayberry, blue cohosh, cayenne, ephedra, and licorice). Lenvatinib may cause hypertension as an adverse effect; therefore, there may be additive blood pressure elevation when using hypertensive herbs."
+F994,Take with food. Co-administration with food improves absorption.
+F995,Take with food. This helps prevent pinaverium from irritating the esophagus.
+F996,"Avoid excessive or chronic alcohol consumption. Alcohol may increase the risk of dizziness, thereby reducing the tolerability of quinagolide."
+F997,Take with a light meal or snack. Food reduces gastric irritation.
+F998,"Avoid St. John's Wort. This herb induces the CYP3A metabolism of elvitegravir. Therefore, it may reduce the serum concentration of elvitegravir and its effectiveness."
+F999,"Avoid grapefruit products. Grapefruit inhibits the CYP3A metabolism of daclatasvir, which may increase its serum concentration. Dose changes may be necessary."
+F1000,Avoid St. John's Wort. This herb induces the CYP3A metabolism of daclatasvir and may reduce its serum concentration. Co-administration of daclatasvir with St. John's Wort is contraindicated.
+F1001,Take with or without food. Daclatasvir AUC and Cmax are slightly reduced when administered with food.
+F1002,Take after a meal. This may reduce gastrointestinal irritation.
+F1003,Avoid excessive or chronic alcohol consumption. Ingesting alcohol may increase the risk of sedation and somnolence that can be caused by stiripentol.
+F1004,Avoid milk and dairy products. These products may interfere with the absorption of stiripentol.
+F1005,Limit caffeine intake. Stiripentol may attenuate CYP1A2-mediated metabolism of caffeine.
+F1006,Take with a full glass of water. Oral capsules should be swallowed whole with a glass of water during a meal and oral suspension should be mixed in a glass of water and should be taken immediately after mixing during a meal.
+F1007,Take with food. Stiripentol degrades rapidly in an acidic environment.
+F1008,"Avoid grapefruit products. Grapefruit inhibits the CYP3A metabolism of dienogest, which may increase its serum concentration."
+F1009,Avoid St. John's Wort. This herb induces the CYP3A metabolism of dienogest and may reduce its serum concentration.
+F1010,Take with food. Take potassium citrate within 30 minutes of eating to limit gastrointestinal irritation.
+F1011,Avoid St. John's Wort. This herb induces the CYP3A metabolism of brexpiprazole and may reduce its serum concentration. The dose of Brexpiprazole should be doubled if administered with St. John's wort.
+F1012,Take with or without food. Food does not significantly affect brexpiprazole exposure.
+F1013,Administer vitamin supplements. Niacin (from food or supplements) may increase the absorption of chromium.
+F1014,Take with foods containing vitamin C. Vitamin C may increase the oral absorption of chromium/chromic chloride.
+F1015,Take on an empty stomach. Do not eat the meal that occurs before the administration of iothalamic acid for examination.
+F1016,Take on an empty stomach. Administer Technetium Tc-99m mebrofenin at least 4 hours after food to avoid false positives caused by food stimulating emptying of the gallbladder.
+F1017,Drink plenty of fluids. Void urine as frequently as possible after the examination to minimize excess radiation of the bladder.
+F1018,"Exercise caution with grapefruit products. Grapefruit inhibits the CYP3A metabolism of sonidegib, which may increase its serum concentration."
+F1019,"Exercise caution with St. John's Wort. This herb induces the CYP3A metabolism of sonidegib, which may reduce its serum concentration."
+F1020,Take on an empty stomach. Take sonidegib at least 1 hour before or 2 hours after eating.
+F1021,Take with a full glass of water. Take with at least 4 ounces of water.
+F1022,Take with or without food. Mix the uridine triacetate granules with soft food and consume within 30 minutes of mixing.
+F1023,Take with food. Take with meals to maximize phosphate binding capacity and reduce phosphate absorption.
+F1024,Take on an empty stomach. This diagnostic agent should be administered to fasted patients (ideally at least 4 hours post-intake).
+F1025,Avoid St. John's Wort. This herb induces the CYP3A metabolism of dasabuvir and may reduce its serum concentration. St. John's Wort is contraindicated for use with Viekira Pak.
+F1026,"Take with or without food. A high-fat meal decreases drug Cmax and AUC and delays Tmax, but not to a clinically significant extent."
+F1027,Exercise caution with grapefruit products. Loxoprofen is metabolized by CYP3A4 to an inactive metabolite and grapefruit is a CYP3A4 inhibitor.
+F1028,Exercise caution with St. John's Wort. Loxoprofen is metabolized by CYP3A4 to an inactive metabolite and St. Johns Wort is a CYP3A4 inducer.
+F1029,Take with food. Taking loxoprofen with food may reduce the risk of gastrointestinal upset.
+F1030,Take with or without food. Co-administration with food does not affect bioavailability.
+F1031,"Avoid herbs and supplements with anticoagulant/antiplatelet activity. Dextran has antithrombotic activity, which may increase the bleeding risk if combined with antiplatelet/anticoagulant herbs. Examples include garlic, ginger, bilberry, danshen, piracetam, and ginkgo biloba."
+F1032,Drink plenty of fluids. Drinking water is important to prevent dehydration when taking Teysuno.
+F1033,Take on an empty stomach. Food does not impact the bioavailability of tegafur. Food does affect other ingredients in the combination product Teysuno. Take Teysuno at least 1 hour before or after eating.
+F1034,Take on an empty stomach. Take Teysuno at least 1 hour before or after eating.
+F1035,Take with or without food. Mix into water or other soft foods or beverages prior to ingesting.
+F1036,Take before a meal. Take lixisenatide within one hour before the first meal of the day.
+F1037,Avoid calcium supplements/calcium rich foods. Take strontium ranelate separated from calcium-containing food and supplements.
+F1038,Take on an empty stomach. Take strontium ranelate between meals and at least 2 hours after eating at bedtime for optimal bioavailability.
+F1039,"Avoid solid foods. When using picosulfuric acid in preparation for a colonoscopy, only consume clear fluids the day before the procedure."
+F1040,Take with or without food. Many different products contain ubidecarenone; refer to the product monograph for more specific instructions.
+F1041,Avoid excessive or chronic alcohol consumption. The risk of pancreatitis is increased with excess/chronic alcohol consumption.
+F1042,"Avoid alcohol. Avoid ingesting alcohol during therapy with Pylera and for three days after discontinuation as it may cause flushing, nausea, and vomiting."
+F1043,Take after a meal. The overall exposure to bismuth subcitrate potassium was not significantly impacted by administration with food when tested in the combination product Pylera.
+F1044,Take with or without food. Give a higher dose of activated charcoal if it is administered after a large meal.
+F1045,Take with a high fat meal. A fat-containing meal or snack should be consumed just before or just after dosing for all formulations.
+F1046,"Avoid alcohol. Withdrawing from alcohol increases the risk of seizures, which is also caused by the drug."
+F1047,Avoid solid foods. Consume only clear liquids from the start of drug treatment until after the colonoscopy.
+F1048,"Exercise caution with grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum concentration of tianeptine."
+F1049,"Exercise caution with St. John's Wort. This herb induces CYP3A metabolism, which may reduce serum levels of tianeptine."
+F1050,Avoid St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of rolapitant.
+F1051,Limit iodine intake. Consume a low iodine diet for two weeks before the administration of sodium Iodide I-131.
+F1052,Take on an empty stomach. Avoid eating for 2 hours before and after administering iodide I-131.
+F1053,Avoid St. John's Wort. St. John's Wort can cause drug interaction and decrease the serum concentration of tenofovir alafenamide.
+F1054,Take separate from meals. Individuals may need to avoid eating before some procedures where ioxaglic acid is used.
+F1055,"Avoid grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum concentration of synthetic conjugated estrogens, A."
+F1056,"Avoid St. John's Wort. This herb induces CYP3A4 metabolism and may reduce serum levels of synthetic conjugated estrogens, A."
+F1057,"Avoid grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum concentration of synthetic conjugated estrogens, B."
+F1058,"Avoid St. John's Wort. This herb induces CYP3A4 metabolism and may reduce serum levels of synthetic conjugated estrogens, B."
+F1059,Avoid milk and dairy products. Do no take this drug within 1 hour of consuming dairy products.
+F1060,"Avoid St. John's Wort. This herb induces the CYP3A metabolism of osimertinib, and therefore, dose adjustments are necessary if they must be co-administered."
+F1061,"Avoid grapefruit products. Grapefruit inhibits CYP3A metabolism, which may increase the serum concentration of esterified estrogens."
+F1062,Avoid St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of esterified estrogens.
+F1063,"Avoid grapefruit products. Grapefruit inhibits CYP3A metabolism, which may increase the serum concentration of norgestrel."
+F1064,Avoid St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of norgestrel.
+F1065,"Take with food. For pediatric patients, orally administered Technetium Tc-99m sulfur colloid should be given with milk, or if administered by nasogastric tube, it should be given with milk or dextrose."
+F1066,Take with or without food. Taking magnesium supplements with food may reduce the risk of diarrhea.
+F1067,"Take separate from antacids. Magnesium, calcium, or aluminum antacids may reduce the absorption of phosphate in K-phos."
+F1068,Take with a full glass of water. Dissolve K-Phos tablets in water then ingest.
+F1069,Take with food. Take K-Phos tablets at bedtime and with meals.
+F1070,Limit iodine intake. Consume a low iodine diet for two weeks before the administration of Iodide I-123.
+F1071,Take on an empty stomach. Fasting before the use of I-123 for imaging of the thyroid may increase accuracy.
+F1072,Do not take with or immediately after a high-fat meal. Fatty food can disrupt the TSH assay by increasing lipid levels in the blood.
+F1073,Take with or without food. Take protirelin either after a low-fat meal or on an empty stomach.
+F1074,Drink plenty of fluids. Fluids will help remove excess radiation from the body when Indium In-111 chloride is used to radiolabel pentetreotide.
+F1075,"Take on an empty stomach. When using Fludeoxyglucose (18F) in oncology or neurology, avoid eating for 4-6 hours before Fludeoxyglucose (18F) administration."
+F1076,Take with food. Consuming food or beverages containing 50-75 grams of glucose just before the administration of Fludeoxyglucose (18F) may be beneficial in the setting of cardiology imaging.
+F1077,Take separate from meals. The urea breath test using Urea C-13 should be done at least 1 hour before and after food and drink.
+F1078,Take on an empty stomach. Avoid eating and drinking for 4-6 hours before doing a urea breath test with Urea C-14.
+F1079,Take with food. Take with food to reduce gastrointestinal disturbance.
+F1080,Avoid alcohol. Alcohol may have additive CNS depressant effects with dexchlorpheniramine maleate.
+F1081,Drink plenty of fluids. Consuming lots of fluid before the PET/CT will reduce excess exposure to radiation by increasing urinary voiding.
+F1082,Take on an empty stomach. Avoid eating for at leats 6 hours before the administration of Choline C-11.
+F1083,Take with or without food. Taking omega-3-carboxylic acids with a high-fat meal may increase the absorption of eicosapentaenoic acid (EPA).
+F1084,"Avoid St. John's Wort. This herb induces CYP3A4 metabolism, which may reduce the serum concentration of ixazomib."
+F1085,"Take on an empty stomach. Food increases the absorption of ixazomib, take ixazomib dose at least one hour before and at least two hours after food."
+F1086,Take separate from meals. Avoid eating or drinking for at least 30 minutes after applying hydrogen fluoride oral dental gel.
+F1087,Avoid potassium-containing products. Excess potassium intake may cause hyperkalemia. Avoid salt substitutes like potassium chloride (KCl).
+F1088,"Take with a full glass of water. Dissolve the 10 mEq tablet in at least 2-3 oz of fluid, and the 20 mEq tablet in at least 3-4 oz of liquid (juice or water)."
+F1089,Avoid alcohol. Concomitant use of opium with alcohol may cause additive CNS depressive effects.
+F1090,Take with foods containing vitamin C. Vitamin C may increase the absorption of chromium.
+F1091,"Do not take with bran and high fiber foods. For optimal absorption, take zinc citrate at least 2 hours before or after eating high-fiber foods."
+F1092,Take with food. Some studies have found that this improves imaging.
+F1093,Avoid alcohol. Concomitant use of pentoxyverine with alcohol may cause additive CNS depressant effects.
+F1094,Take after a meal. Alcloxa is an ingredient used in toothpaste and brushing teeth after each meal is recommended.
+F1095,Administer vitamin supplements. Foods or supplements containing niacin (Vitamin B3) may improve the absorption of chromium.
+F1096,Take with foods containing vitamin C. Foods rich in vitamin C increase the absorption of chromium.
+F1097,"Exercise caution with grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum concentration of alectinib."
+F1098,"Exercise caution with St. John's Wort. This herb induces CYP3A metabolism, which may reduce serum levels of alectinib."
+F1099,Avoid natural licorice. Licorice root can induce hypokalemia in patients taking sennosides.
+F1100,Avoid St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of elbasvir. Co-administration of Elbasvir with St. John's Wort is contraindicated.
+F1101,"Exercise caution with grapefruit products. Grapefruit inhibits CYP3A, which may increase the serum levels of elbasvir, a CYP3A substrate."
+F1102,"Avoid grapefruit products. Grapefruit inhibits CYP3A metabolism, which may increase the serum concentration of venetoclax."
+F1103,Avoid St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of venetoclax.
+F1104,Avoid St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of asunaprevir. Co-administration of asunaprevir with St. John's Wort is contraindicated.
+F1105,"Exercise caution with grapefruit products. Grapefruit inhibits CYP3A metabolism, which may increase the serum concentration of asunaprevir."
+F1106,Avoid grapefruit products. Avoid other fruit juice as well for optimal absorption.
+F1107,Take on an empty stomach. Take at least two hours before or one hour after eating.
+F1108,Avoid alcohol. Ingesting alcohol may cause additive CNS depressive effects.
+F1109,Take with or without food. Multiple different combination products contain velpatasvir. Take Epclusa with or without food. Take Vosevi with food.
+F1110,"Avoid grapefruit products. Grapefruit inhibits CYP3A metabolism, which may increase the serum concentration of rupatadine."
+F1111,"Take separate from meals. Take opicapone at least one hour before or after eating, as a moderate calorie meal decreases Cmax and overall plasma exposure to the drug, and delays Tmax."
+F1112,Avoid St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of delamanid.
+F1113,Take with food. Taking delamanid with food increases its bioavailability.
+F1114,"Avoid grapefruit products. Grapefruit inhibits CYP3A metabolism, which may increase the serum concentration of vinflunine."
+F1115,Avoid St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of vinflunine.
+F1116,Avoid St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of pitolisant. Dose adjustment may be necessary for co-administration.
+F1117,Take with or without food. A high-fat meal had no clinically significant effects on drug pharmacokinetics.
+F1118,Take with or without food. There is no meaningful clinical effect of food on this drug.
+F1119,Take with or without food. Food does not impact the bioavailability of rebamipide.
+F1120,"Take with food. Take triheptanoin with food, liquid, or formula."
+F1121,Take with or without food. Take fruquintinib about the same time each day with or without food and swallow the capsule whole.
+F1122,"Take with or without food. Food does not affect drug absorption or exposure. Daprodustat can be taken without regard to concomitant administration of iron or phosphate binders, and it can be administered without regard to the timing or type of dialysis."
+F1123,Take on an empty stomach. Avoid consuming food 2 hours before and 1 hour after each dose.
+F1124,Avoid St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of naldemedine.
+F1125,"Avoid grapefruit products. Avoid food or drink containing grapefruit when taking voclosporin, as it may decrease metabolism and increase exposure to this drug."
+F1126,"Take on an empty stomach. Take on an empty stomach, either 1 hour before or 2 hours after a meal and as close to 12 hours between doses as possible."
+F1127,"Avoid grapefruit products. Grapefruit products can inhibit CYP3A4, which is the enzyme primarily responsible for pacritinib metabolism."
+F1128,"Avoid St. John's Wort. Pacritinib is metabolized primarily by CYP3A4, an enzyme for which St. John's wort is a potent inducer."
+F1129,"Avoid grapefruit products. Grapefruit inhibits CYP3A metabolism, which may increase the serum concentration of acalabrutinib. Dose adjustment may be necessary if co-administered."
+F1130,Exercise caution with St. John's Wort. The official product labeling recommends avoiding strong CYP3A4 inducers. This herb induces CYP3A metabolism and may reduce serum levels of acalabrutinib.
+F1131,"Avoid grapefruit products. Grapefruit inhibits CYP3A metabolism, which may increase the serum concentration of tezacaftor."
+F1132,Avoid St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of tezacaftor.
+F1133,Take with food. Tezacaftor should be taken with fat-containing food to increase exposure.
+F1134,"Avoid grapefruit products. Grapefruit inhibits CYP3A metabolism, which may increase the serum concentration of encorafenib."
+F1135,"Exercise caution with St. John's Wort. This herb induces CYP3A metabolism, which may reduce serum levels of encorafenib."
+F1136,"Avoid grapefruit products. Grapefruit inhibits CYP3A metabolism, which may increase the serum concentration of ribociclib."
+F1137,"Avoid St. John's Wort. This herb induces CYP3A metabolism, which may reduce serum levels of ribociclib."
+F1138,Take at the same time every day. Official labeling suggests taking ribociclib in the morning.
+F1139,Avoid alcohol. Concomitant use is not recommended as alcohol may increase the sedative effects of rilmenidine.
+F1140,"Take with food. However, the bioavailability of rilmenidine is not affected by food."
+F1141,"Take with or without food. High-fat meals may decrease the absorption of vonoprazan; however, these changes are not considered clinically significant."
+F1142,Take with or without food. Taking ebastine with food may increase its bioavailability.
+F1143,Take at the same time every day. Take the oral tablets at the same time every day.
+F1144,Take with food. Take the oral tablets with a meal.
+F1145,Avoid St. John's Wort. St. John's Wort decreases istradefylline concentrations.
+F1146,"Take with or without food. A high-fat, high-calorie meal decreases Cmax and delays Tmax, but not to a clinically significant extent."
+F1147,Take before a meal. Tenapanor should be administered immediately prior to the first meal of the day and immediately prior to dinner.
+F1148,Take with or without food. Food has no clinically significant effect on drug exposure.
+F1149,"Take with or without food. Co-administration with high-fat meals slightly alters AUC, but not to a clinically significant extent."
+F1150,Take with or without food. Food does not affect the absorption of niraparib.
+F1151,"Avoid St. John's Wort. The use of strong inducers of CYP3A enzymes, including St. John's Wort, is contraindicated in patients receiving fostemsavir."
+F1152,Take separate from antacids. Take bictegravir at least 2 hours before or 6 hours after taking antacids containing aluminum or magnesium.
+F1153,"Take with food. When taking iron or calcium-containing products, bictegravir should be taken with food."
+F1154,"Take with or without food. A high-fat meal can decrease the mean AUC and Cmax of baricitinib and delay Tmax, but not to a clinically singificant extent."
+F1155,Avoid alcohol. Alcohol use during nifurtimox treatment may increase undesirable adverse effects.
+F1156,Avoid alcohol. Ingesting alcohol may increase the sedative effects of esketamine.
+F1157,"Take separate from meals. Avoid eating for at least 2 hours, and drinking for at least 30 minutes before taking esketamine."
+F1158,Avoid excessive or chronic alcohol consumption. Alcohol abuse may increase the risk of ketoacidosis.
+F1159,Take with or without food. Food does not significantly affect drug pharmacokinetics. Take the drug the morning.
+F1160,"Avoid grapefruit products. Grapefruit inhibits CYP3A metabolism, which may increase the serum concentration of neratinib."
+F1161,Exercise caution with St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of neratinib.
+F1162,Take separate from antacids. Take antacids at least 3 hours before or after neratinib.
+F1163,"Take with or without food. Administration with food slightly alters absorption, but not to a clinically significant extent."
+F1164,Take with or without food. Administration with food does not result in any clinically meaningful differences in pharmacokinetics.
+F1165,Avoid alcohol. Ingesting alcohol may increase the dizziness and drowsiness caused by brexanolone.
+F1166,Administer calcium supplement. Ensure adequate calcium supplementation.
+F1167,Administer vitamin supplements. Ensure adequate vitamin D supplementation.
+F1168,"Take on an empty stomach. Take drug at least 1 hour before or 2 hours after food, at approximately the same time each day. Food increases the systemic exposure to infigratinib."
+F1169,"Take with a full glass of water. Do not crush, chew or dissolve."
+F1170,Avoid St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of valbenazine.
+F1171,"Avoid grapefruit products. Grapefruit inhibits CYP3A metabolism, which may increase the serum concentration of deflazacort."
+F1172,Avoid St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of deflazacort.
+F1173,Take with or without food. The tablets may be crushed and mixed with applesauce and consumed immediately.
+F1174,"Drink plenty of fluids. To reduce the risk of hypotension, patients should drink 240-300 mL of fluid in the hour prior to administration."
+F1175,"Take with food. To reduce the risk of hypotension, patients should ensure adequate food intake prior to vosoritide injection."
+F1176,Avoid excessive or chronic alcohol consumption. Difelikefalin can cause dizziness and somnolence that may be exacerbated by the CNS depressant effects of alcohol.
+F1177,Take with or without food. Co-administration with food does not affect pharmacokinetics.
+F1178,Avoid multivalent ions. Separate the administration of multivalent cations from delafloxacin by at least 6 hours before or 2 hours after delafloxacin.
+F1179,Take separate from antacids. The administration of antacids should be separated from delafloxacin by at least 6 hours before or 2 hours after delafloxacin.
+F1180,Take on an empty stomach. Co-administration with food delays absorption and sleep onset.
+F1181,Avoid St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of duvelisib.
+F1182,"Avoid grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum concentration of dacomitinib."
+F1183,"Exercise caution with St. John's Wort. This herb induces CYP3A4 metabolism, which may reduce serum levels of dacomitinib."
+F1184,Take separate from antacids. Take dacomitinib at least 6 hours before or 10 hours after administering antacids.
+F1185,Avoid St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of glasdegib.
+F1186,Administer calcium supplement. This will minimize the risk of bone mineral density loss.
+F1187,Administer vitamin supplements. Administer Vitamin D supplements to minimize the risk of bone mineral density loss.
+F1188,"Avoid grapefruit products. Grapefruit inhibits CYP3A metabolism, which may increase the serum concentration of entrectinib."
+F1189,Avoid St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of entrectinib.
+F1190,"Avoid grapefruit products. Grapefruit inhibits CYP3A metabolism, which may increase the serum concentration of abemaciclib."
+F1191,Avoid St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of abemaciclib.
+F1192,Avoid grapefruit products. Nirogacestat is a CYP3A substrate and grapefruit is a known CYP3A inhibitors.
+F1193,Take separate from antacids. take nirogacestat 2 hours before or 2 hours after taking the antacid.
+F1194,Avoid St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of fostamatinib.
+F1195,Exercise caution with St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of alpelisib.
+F1196,Take with food. Food does not significantly affect the AUC of alpelisib.
+F1197,Take with or without food. The absorption of ponesimod is not significantly affected by food.
+F1198,Take with food. Take tecovirimat within 30 minutes of eating a fatty meal containing approximately 25 grams of fat.
+F1199,Avoid St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of voxilaprevir.
+F1200,"Take separate from antacids. Take Vosevi (sofosbuvir, velpatasvir, and voxilaprevir) at least 4 hours before or after antacids. Antacids have been shown to reduce the serum levels of velpatasvir and may not impact voxilaprevir."
+F1201,Take separate from antacids.
+F1202,Take with fluids. This may reduce irritation of the esophagus.
+F1203,Avoid St. John's Wort. Co-administration may lead to decreased serum concentrations of letermovir.
+F1204,Take with a high fat meal. High fat food increases the bioavailability of telotristat ethyl.
+F1205,Take with food. Food increases the bioavailability of telotristat ethyl.
+F1206,"Avoid grapefruit products. Grapefruit inhibits CYP3A metabolism, which may increase the serum concentration of lorlatinib."
+F1207,Avoid St. John's Wort. This herb induces the CYP3A metabolism of lorlatinib and may reduce its serum concentration. Co-administration of lorlatinib with St. John's Wort is contraindicated.
+F1208,Take with food. Gepotidacin should be administered after a meal to mitigate gastrointestinal intolerance.
+F1209,"Avoid grapefruit products. Grapefruit inhibits CYP3A metabolism, which may increase the serum concentration of gilteritinib."
+F1210,"Avoid St. John's Wort. This herb induces CYP3A4 and p-glycoprotein, which may reduce the serum concentration of gilteritinib."
+F1211,"Exercise caution with grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum concentration of erdafitinib."
+F1212,Exercise caution with St. John's Wort. This herb induces the CYP3A metabolism of erdafitinib and may reduce its serum concentration.
+F1213,"Take with or without food. No clinically meaningful differences with erdafitinib pharmacokinetics were observed following administration of a high-fat and high-calorie meal (800 calories to 1,000 calories with approximately 50% of total caloric content of the meal from fat) in healthy subjects."
+F1214,Take on an empty stomach. Brincidofovir is best absorbed on an empty stomach or alongside a low-fat meal.
+F1215,Avoid alcohol. Additive sedative effects may occur from co-administration of deutetrabenazine with alcohol.
+F1216,Take with food. Taking deutetrabenazine with food increases its Cmax.
+F1217,Take with food. Take gepirone 1 time each day with food at about the same time each day.
+F1218,Take with or without food. Take at the same time each day.
+F1219,"Take with or without food. Peak plasma concentrations of bexagliflozin can be delayed if taken after a meal; however, the effects of food on bexagliflozin pharmacokinetics are not considered clinically relevant."
+F1220,"Exercise caution with grapefruit products. The active ingredient of polatuzumab vedotin, monomethyl auristatin E (MMAE), is a CYP3A4 substrate and grapefruit may increase MMAE plasma concentrations."
+F1221,"Take on an empty stomach. RADICAVA ORS should be taken in the morning on an empty stomach after overnight fasting. Food should not be consumed for 1 hour after administration except water. The higher the fat content of the previous meal, the longer the fasting time before taking RADICAVA ORS will be."
+F1222,Take with food. Taking triclabendazole with food increases the bioavailability of triclabendazole and its sulfoxide metabolite.
+F1223,"Take with or without food. The administration of a standard high-fat meal decreases the AUC of vadadustat by 6%, relative to fasted conditions; however, it may be administered with or without food."
+F1224,Take with food. Food assists in fexinidazole absorption.
+F1225,"Avoid grapefruit products. Grapefruit inhibits CYP3A metabolism, which may increase the serum concentration of brigatinib."
+F1226,Avoid St. John's Wort. This herb induces the CYP3A metabolism of brigatinib and may reduce its serum concentration.
+F1227,Take separate from meals. PrMictoryl Pediatric (propiverine hydrochloride) tablets should be taken at least 1 hour before meals as high-fat meals reduce the bioavailability of PrMictoryl.
+F1228,Take with or without food. Mictoryl (propiverine hydrochloride) modified-release capsules can be taken with or without food as food does not affect its bioavailability.
+F1229,Avoid St. John's Wort. This herb induces the CYP3A metabolism of doravirine and may reduce its serum concentration. Co-administration of doravirine with St. John's Wort is contraindicated.
+F1230,Avoid St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of eravacycline. Dose adjustment may be necessary for co-administration.
+F1231,"Exercise caution with grapefruit products. Rucaparib is primarily metabolized through CYP2D6 but is also metabolized by CYP3A4 and CYP1A2. Grapefruit inhibits CYP3A4 metabolism, which may increase rucaparib serum levels."
+F1232,"Exercise caution with St. John's Wort. Rucaparib is primarily metabolized through CYP2D6 but is also metabolized by CYP3A4 and CYP1A2. St. John's Wort induces CYP3A4 metabolism, which may reduce rucaparib serum levels."
+F1233,Take with or without food. A high-fat meals increases drug exposure but not to a clinically significant extent.
+F1234,"Avoid herbs and supplements with anticoagulant/antiplatelet activity. These herbs may increase the risk of bleeding. Examples include garlic, ginger, bilberry, danshen, piracetam, and ginkgo biloba."
+F1235,Take with food. Betrixaban should be taken with food. The Cmax and AUC of betrixaban are decreased by approximately 60% and 55% when administered together with a 900 calorie meal.
+F1236,Avoid St. John's Wort. Avoid the use of St. John's wort in patients with CYP2C9 genotype *1/*3 and*2/*3.
+F1237,"Do not take with bile acid sequestrants. Administer drug at least 4 hours before or 4 hours after taking bile acid sequestrants, or at as great an interval as possible."
+F1238,Avoid alcohol. The sedative effects of benzodiazepines may be exacerbated by the co-administration of alcohol.
+F1239,"Avoid multivalent ions. Wait at least 4 hours after the omadacycline administration to take multivalent cations (eg. zinc, calcium, magnesium, and iron)."
+F1240,Take on an empty stomach. Do not eat for 4 hours before and 2 hours after administering omadacycline. Drinking water after administration is acceptable.
+F1241,Take separate from antacids. Wait at least 4 hours after omadacycline administration to take antacids.
+F1242,"Take with or without food. Pharmacokinetics may be altered when administered with high-fat meals, but the clinical relevance of these effects is unknown."
+F1243,"Take with or without food. A high fat meal increases the AUC by 38% and Cmax by 32%, which is not considered significant."
+F1244,"Avoid grapefruit products. Grapefruit strongly inhibits CYP3A metabolism, which may increase the serum concentration of copanlisib."
+F1245,Avoid St. John's Wort. This herb strongly induces the CYP3A metabolism of copanlisib and may reduce its serum concentration.
+F1246,"Avoid grapefruit products. Grapefruit inhibits CYP3A metabolism, which may increase the serum concentration of fedratinib. Dose reduction may be necessary."
+F1247,Avoid St. John's Wort. This herb induces the CYP3A metabolism of fedratinib and may reduce its serum concentration.
+F1248,Take with or without food. Food may help reduce adverse effects of fedratinib such as nausea and vomiting.
+F1249,"Take on an empty stomach. Take omaveloxolone capsules on an empty stomach at least 1 hour before eating. Compared to fasting conditions, a high-fat meal increased the Cmax and AUC by approximately 350% and 15%, respectively."
+F1250,Take with or without food. Food has only a minor effect on samidorphan pharmacokinetics.
+F1251,"Take before a meal. Sparsentan AUC and Cmax increase following the administration of a high fat, high calorie meal. Advise patients to take the full daily dose with water prior to the morning or evening meal. Maintain the same dosing pattern in relationship to meals."
+F1252,Take on an empty stomach. Avoid food consumption for at least 2 hours before and 1 hour after taking asciminib.
+F1253,Avoid tyramine-containing foods and supplements. Avoid food containing high amounts of tyramine (>150mg) as these may increase the risk of hypertension when taken with ozanimod.
+F1254,Take with food. Prescribing information for givinostat recommends it be administered with food twice daily.
+F1255,Take before a meal. Sotagliflozin should be taken once daily before the first meal of the day.
+F1256,Take with or without food. Benserazide is normally given in combination with levodopa as the combination product Prolopa. Levodopa should not be given with protein-rich foods as they may reduce its absorption.
+F1257,Take with or without food. Patients weighing between 35-50kg should take Nuzolvence on an empty stomach. Patients weighing >50kg should take Nuzolvence with food.
+F1258,"Exercise caution with grapefruit products. Grapefruit inhibits CYP3A, which may increase the serum concentration of lefamulin."
+F1259,Exercise caution with St. John's Wort. This herb induces the CYP3A metabolism of lefamulin and may reduce its serum concentration.
+F1260,Take on an empty stomach. This drug should be taken at least 1 hour before or 2 hours after a meal.
+F1261,Take with a full glass of water. The tablet should be swallowed whole with water.
+F1262,Avoid alcohol. Avoid consumption of alcoholic beverages and preparations containing ethanol or propylene glycol during treatment with secnidazole and for at least two days after completing therapy.
+F1263,"Take with or without food. Sprinkle onto applesauce, yogurt, or pudding and ingest without crushing the granules."
+F1264,"Take with or without food. A high fat meal may reduce Cmax and AUC delay Tmax, but not to a clinically significant extent."
+F1265,Avoid St. John's Wort. This herb induces CYP3A and P glycoprotein and may reduce the serum concentration of darolutamide.
+F1266,Take with food. This increases the bioavailability of darolutamide.
+F1267,Take with food. The manufacturer recommends administration with meals.
+F1268,"Avoid grapefruit products. Grapefruit inhibits CYP3A metabolism, which may increase the serum concentration of pexidartinib."
+F1269,Avoid St. John's Wort. This herb induces the CYP3A metabolism of pexidartinib and may reduce its serum concentration.
+F1270,"Do not take with or immediately after a high-fat meal. Taking pexidartinib with a high-fat meal may increase incidence and severity of adverse reactions, including hepatotoxicity."
+F1271,Take on an empty stomach. Take at least 1 hour before or 2 hours after eating a meal or snack.
+F1272,Take separate from antacids. Take antacids at least 2 hours before or after pexidartinib.
+F1273,"Take with food. Oteseconazole must be taken with food, and capsules must be swallowed whole and not chewed, crushed, dissolved, or opened. The intake of high-fat, high-calorie meals (800-1000 Calories; 50% fat) increases oteseconazole C<sub>max</sub> and AUC<sub>0-72h</sub> by 45% and 36%, respectively. No significant differences were detected when oteseconazole was administered with a low-fat, low-calorie meal."
+F1274,"Avoid St. John's Wort. This herb induces the CYP3A metabolism of macimorelin and may reduce its serum concentration, which may cause a false-positive test result."
+F1275,Take on an empty stomach. Fast for at least eight hours before taking macimorelin.
+F1276,"Avoid herbs and supplements with anticoagulant/antiplatelet activity. Herbs with anticoagulant activity may have additive effects with fluindione. Examples include garlic, ginger, bilberry, danshen, piracetam, and ginkgo biloba."
+F1277,Avoid milk and dairy products. Take ferrous sulfate at least 2 hours before or after milk.
+F1278,Limit caffeine intake. Food and beverages containing caffeine may reduce iron absorption.
+F1279,Take separate from antacids. Take ferrous sulfate at least 2 hours before or after antacids.
+F1280,Take with food. This may reduce gastric irritation.
+F1281,Take with foods containing vitamin C. Foods rich in vitamin C increase the absorption of iron.
+F1282,"Avoid herbs and supplements with anticoagulant/antiplatelet activity. These may increase anticoagulant/antiplatelet activity of clorindione. Examples include garlic, ginger, bilberry, danshen, piracetam, and ginkgo biloba."
+F1283,Take with food. Take after a meal.
+F1284,Take before a meal. Take tilactase before eating food containing lactose.
+F1285,"Take on an empty stomach. Before fluorodopa F18 administration do not eat or drink anything, except for water, for at least 4 hours."
+F1286,"Exercise caution with grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum concentration of enasidenib; however, CYP3A4 is one of many enzymes involved in enasidenib metabolism."
+F1287,"Exercise caution with St. John's Wort. This herb induces CYP3A4 metabolism, which may reduce the serum concentration of enasidenib; however, CYP3A4 is one of many enzymes involved in enasidenib metabolism."
+F1288,Avoid St. John's Wort. Co-administration may lead to decreased serum concentrations of pibrentasvir.
+F1289,Avoid St. John's Wort. Co-administration may lead to decreased serum concentrations of glecaprevir.
+F1290,"Take on an empty stomach. For oral use of semaglutide, take 30 minutes before the first meal of the day."
+F1291,"Take with plain water. For oral use of semaglutide, do not exceed 4 ounces of water (1/2 cup)."
+F1292,Take with food. Food enhances the systemic exposure of testosterone undecanoate administered as oral capsules.
+F1293,Take with food. Take ferric cation with or just after meals.
+F1294,"Exercise caution with grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum concentration of estradiol acetate."
+F1295,Exercise caution with St. John's Wort. This herb induces the CYP3A4 metabolism of estradiol acetate. Therefore it may reduce the serum concentration and effectiveness of estradiol acetate.
+F1296,"Exercise caution with grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum concentration of estradiol cypionate."
+F1297,Exercise caution with St. John's Wort. This herb induces the CYP3A4 metabolism of estradiol cypionate. Therefore it may reduce the serum concentration and effectiveness of estradiol cypionate.
+F1298,"Exercise caution with grapefruit products. Grapefruit inhibits CYP3A4 metabolism, which may increase the serum concentration of estradiol valerate."
+F1299,Exercise caution with St. John's Wort. This herb induces the CYP3A4 metabolism of estradiol valerate. Therefore it may reduce the serum concentration and effectiveness of estradiol valerate.
+F1300,"Avoid antacids. Baloxavir may form a chelate with polyvalent cations in antacids, which may decrease plasma concentrations of baloxavir."
+F1301,"Avoid milk and dairy products. Baloxavir may form a chelate with polyvalent cations such as calcium in dairy products, which may decrease plasma concentrations of baloxavir."
+F1302,"Avoid multivalent ions. Multivalent ions such as magnesium, calcium, and aluminum can form a chelate with baloxavir, which can reduce the absorption of baloxavir."
+F1303,"Take with or without food. Food reduces drug absorption, but not to a clinically significant extent."
+F1304,Drink plenty of fluids. Avoid dehydration by drinking 6-8 glasses of water daily.
+F1305,Avoid St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of fosnetupitant.
+F1306,"Take separate from meals. Take Inon Ace (dimethicone, magnesium hydroxide, silodrate) between meals,."
+F1307,Take separate from meals. Avoid food or drink for 60 minutes before and after administration as it may interfere with the protective effect of the vaccine buffer.
+F1308,"Do not take with bran and high fiber foods. For optimal efficacy, take zinc at least 2 hours before or after eating high-fiber foods."
+F1309,"Take on an empty stomach. Take at least 1 hour before or after eating and drinking, excluding drinking plain water."
+F1310,Avoid milk and dairy products. Take ferrous gluconate at least 2 hours before or after milk.
+F1311,Take separate from antacids. Take ferrous gluconate at least 2 hours before or after antacids.
+F1312,Take with food. This reduces gastric irritation.
+F1313,Take on an empty stomach. Taking ferrous ascorbate with food reduces the absorption of iron.
+F1314,Avoid milk and dairy products. Take ferrous fumarate at least 2 hours before or after milk.
+F1315,Take separate from antacids. Take ferrous fumarate at least 2 hours before or after antacids.
+F1316,Avoid iodine-containing foods and supplements.
+F1317,Drink plenty of fluids. Drink at least 2500 to 3000 mL of fluids daily.
+F1318,Take with food. Lithium can cause hyponatremia. Include adequate salt in the diet.
+F1319,Avoid alcohol. Alcohol increased peak serum concentrations of lithium.
+F1320,Avoid iodine-containing foods and supplements. Iodine and lithium may synergistically produce hypothyroidism.
+F1321,Limit caffeine intake. Caffeine may decrease lithium concentrations.
+F1322,Take with food. Food reduces gastrointestinal upset.
+F1323,"Do not take with or immediately after a high-fat meal. Administration of ivosidenib with a high-fat meal increases the Cmax and AUC of ivosidenib by 98 and 25%, respectively."
+F1324,"Exercise caution with grapefruit products. Grapefruit inhibits CYP3A metabolism, which may increase the serum concentration of ivosidenib. Dose adjustment may be necessary if co-administered."
+F1325,Exercise caution with St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of ivosidenib.
+F1326,"Avoid St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of segesterone acetate. If coadministration is necessary, back up contraception should be used."
+F1327,Administer vitamin A supplementation. Supplementation at the recommended daily allowance of vitamin A is advised for patients taking inotersen.
+F1328,"Avoid grapefruit products. Grapefruit inhibits CYP3A metabolism, which may increase the serum concentration of larotrectinib."
+F1329,Avoid St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of larotrectinib.
+F1330,"Take with or without food. If taken with food, the meal/snack should contain no more than 700 calories and no more than 30 g fat. Taking diroximel fumarate with food may reduce the adverse effect of flushing."
+F1331,Take on an empty stomach. Take dordaviprone at least 1 hour before or 3 hours after food intake. Food can decrease drug exposure.
+F1332,Take with or without food. A high-fat meal had no clinically significant effects on vibegron plasma concentrations.
+F1333,"Take with or without food. The coadministration of ritlecitinib and a high-fat meal reduced the Cmax and AUC; however, food does not have a clinically significant impact on the systemic exposures of ritlecitinib."
+F1334,"Take at the same time every day. Administer with or without food, as it has no clinically relevant effect on abrocitinib exposures."
+F1335,"Avoid grapefruit products. Grapefruit inhibits CYP3A metabolism, which may increase the serum concentration of voxelotor."
+F1336,Avoid St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of voxelotor.
+F1337,Take with food. Food increases the bioavailability and concentration of umbralisib.
+F1338,Avoid alcohol. Concomitant use of alcohol with daridorexant may lead to additive impairment of psychomotor performance and risk of CNS depression .
+F1339,"Avoid grapefruit products. Grapefruit inhibits CYP3A metabolism, which may increase the serum concentration of zanubrutinib. Dose adjustment may be necessary if coadministered."
+F1340,Avoid St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of zanubrutinib.
+F1341,Take with or without food. Food does not significantly affect drug concentrations.
+F1342,Take with or without food. Co-administration with food does not appear to alter the pharmacokinetics of aprocitentan to a clinically significant extent.
+F1343,"Avoid grapefruit products. Upadacitinib exposure is increased when a strong CYP3A4 inhibitor such as grapefruit is used, which may increase the risk for drug-related adverse events."
+F1344,Avoid St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of upadacitinib.
+F1345,Take with or without food. The administration of gefapixant with food does not result in clinically significant differences in its pharmacokinetics.
+F1346,Avoid grapefruit products. Grapefruit may increase drug levels and adverse effects.
+F1347,Take with or without food. A high-fat or high-calorie meal does not have clinically significant effects on drug concentrations.
+F1348,Take with food. Prescribing information for vamorolone states that it should preferably be administered with food.
+F1349,Take with food. Co-administration with a meal improves the absorption of tepotinib.
+F1350,Take with a high fat meal. Prescribing information for Alyftrek (vanzacaftor/tezacaftor/deutivacaftor) recommends it be taken alongside a fat-containing meal in order to improve absorption.
+F1351,"Take with or without food. A high-fat and high-calorie meal decreases drug exposure, but not to a clinically significant extent."
+F1352,"Avoid grapefruit products. Grapefruit inhibits CYP3A metabolism, which may increase the serum concentration of avapritinib."
+F1353,Avoid St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of avapritinib.
+F1354,Take on an empty stomach. Take more than 1 hour before or 2 hours after a meal.
+F1355,"Take with or without food. Food may delay Tmax, but has negligible effects on drug exposure."
+F1356,Take with or without food. No clinically significant differences in inavolisib pharmacokinetics were observed following administration of inavolisib with a high-fat meal.
+F1357,Avoid St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of ubrogepant.
+F1358,Take on an empty stomach. Cobenfy (xanomeline/trospium) should be taken at least 1 hour before or 2 hours after a meal.
+F1359,Avoid grapefruit products. Co-administration of grapefruit can inhibit elexacaftor metabolism and increase serum concentrations.
+F1360,Avoid St. John's Wort. This herb induces CYP3A metabolism and may reduce serum levels of elexacaftor.
+F1361,"Take with a high fat meal. Examples include food prepared with eggs, cheeses, nuts, oils, and butter."
+F1362,Take with food. Administration with food has been shown to reduce pharmacokinetic variability and significantly improve absorption.
+F1363,Take with or without food. The administration of food with belzutifan has no clinically meaningful effect on its disposition.
+F1364,"Avoid alcohol. Ingesting alcohol may increase the CNS depressive effects of benzhydrocodone. Apadaz also contains acetaminophen, which, when combined with alcohol, may increase the risk of hepatotoxicity."
+F1365,Take with a high fat meal. C<sub>max</sub> and AUC<sub>last</sub> increased by approximately 4.3 and 2 fold respectively with a high fat meal.
+F1366,"Avoid alcohol. It is recommended that patients abstain from consuming alcohol for at least one year after administration of this medicinal product and, thereafter limit alcohol use."
+F1367,Avoid excessive or chronic alcohol consumption. Alcohol may cause gastric irritation.
+F1368,Take with food. Food reduces gastrointestinal irritation.
+F1369,Take with or without food. High-fat and high-calorie meals do not have a clinically significant effect on adagrasib pharmacokinetics.
+F1370,"Avoid antacids. If coadministration cannot be avoided, take sotorasib 4 hours before or 10 hours after antacids."
+F1371,"Take with or without food. Taking sotorasib with a high fat, high calorie meal increases total exposure to sotorasib by 25%."
+F1372,Take with or without food. Co-administration with food does not significantly affect the pharmacokinetics of brensocatib.
+F1373,Take with or without food. A high fat meal reduces the maximum concentration of the active metabolite by 35% and does not significantly affect the area under the curve.
+F1374,"Take with or without food. Oral lenacapavir should be taken orally with or without food, as food has negligible effects on drug absorption."
+F1375,Take with or without food. Patients on proton pump inhibitors should take selpercatinib with food.
+F1376,Take on an empty stomach. Avoid consuming food for both two hours before and after each dose.
+F1377,Take on an empty stomach. Food affects the absorption of pralsetinib. Patients should take pralsetinib either at least one hour before or at least two hours after a meal.
+F1378,Take with fluids. Patients should remain well hydrated before and after imaging with copper Cu 64 dotatate to limit radiation exposure.
+F1379,"Take with food. This is instructed by the prescribing information of berotralstat. A high-fat meal had no significant effects on the Cmax and AUC of berotralstat, but the Tmax was delayed by 3 hours."
+F1380,Take with or without food. Co-administration with food does not affect the pharmacokinetics of atogepant to a clinically significant extent.
+F1381,"Avoid grapefruit products. Grapefruit products may increase exposure to finerenone, increasing the risk and severity of adverse effects."
+F1382,Take with or without food. Food does not have a clinically significant effect on area under the curve.
+F1383,"Administer vitamin supplements. Inform patients that eplontersen treatment leads to a decrease in vitamin A levels, and supplementation of vitamin A at the recommended daily allowance is recommended."
+F1384,Take with or without food. Food does not have a clinically significant effect on lazertinib pharmacokinetics.
+F1385,Take with or without food. Food has negligible effects on systemic exposure of leniolisib.
+F1386,"Take with or without food. Administration with a high-fat meal decreases the rate and extent of absorption, but not to a clinically significant degree."
+F1387,"Take with or without food. Food has a negligible effect on the exposure of mitapivat, but may reduce the rate of drug absorption, Cmax, and Tmax."
+F1388,Take with a high fat meal. The effect of food is not clinically significant.
+F1389,Take on an empty stomach. The administration of olutasidenib with a high-fat meal increases drug exposure. Take on an empty stomach at least 1 hour before or 2 hours after a meal.
+F1390,"Take on an empty stomach. Food can reduce drug exposure. Take at least 6 hours after a meal (e.g., after overnight fasting) and at least 1 hour before the next meal."
+F1391,Take with food. Administration of sepiapterin with food results in increased exposure to sepiapterin and BH4.
+F1392,Take with food. The absorption of sulopenem is improved when administered with a meal.
+F1393,Avoid St. John's Wort. St. John's Wort is a potent CYP3A inducer and may decrease the efficacy of mobocertinib.
+F1394,Take with or without food. Co-administration with food does not significantly affect the disposition of mobocertinib.
+F1395,"Take with or without food. Food does not exert a clinically meaningful effect on dexmethylphenidate exposure, though it does lengthen the time to reach maximum plasma concentration from two hours to approximately 4-4.5 hours."
+F1396,Take with or without food. Food has no clinically significant effect on drug absorption and exposure.
+F1397,Avoid St. John's Wort. Co-administration may reduce serum concentrations of niramtrelvir and interfere with virologic efficacy.
+F1398,Take with or without food. Co-administration of nirmatrelvir with food does not significantly alter its pharmacokinetics.
+F1399,Take with or without food. Insulin icodec is a long-acting insulin and therefore does not need to be administered with respect to food.
+F1400,Take at the same time every day. Belumosudil should be taken with a meal at approximately the same time each day.
+F1401,Take with food. The co-administration of food increases the absorption of belumosudil.
+F1402,Avoid excessive or chronic alcohol consumption. Alcohol may reduce drug efficacy and increase the risk of serious hepatic reactions following drug administration.
+F1403,Take with or without food. Take repotrectinib at about the same time each day with or without food.
+F1404,Take with or without food. Food has negligible effects on drug exposure.
+F1405,Take with or without food. The co-administration of linzagolix with food does not effect its pharmacokinetics to a clinically significant extent.
+F1406,"Take with or without food. A high-fat and high-calorie increases vorasidenib and Cmax, but not to a clinically significant extent."
+F1407,Take on an empty stomach. A high-fat meal was shown to increase AUC and Cmax. Take drug at least 1 hour before or 2 hours after a meal.
+F1408,Take at the same time every day. Pirtobrutinib should be taken at approximately the same time each day with or without food.
+F1409,"Take with or without food. High-fat, high-calorie meals do not have a clinically significant effect in the pharmacokinetics of pirtobrutinib."
+F1410,Take with or without food. Administration with food does not significantly affect the pharmacokinetics of vimseltinib.
+F1411,"Avoid grapefruit products. Grapefruit products may inhibit CYP3A4, which is an enzyme responsible for metabolizing rilzabrutinib."
+F1412,Take separate from antacids. Rilzabrutinib exhibits pH-dependent solubility. Acid reducing agents decrease rilzabrutinib exposure. Administer the drug at least 2 hours before administration of an antacid.
+F1413,"Take with or without food. Rilzabrutinib AUC and Cmax can be decreased by a high fat meal, but food does not significantly affect drug exposure."
+F1414,"Take on an empty stomach. For the oral administration of fecal microbiota spore capsules, each dose should be taken on an empty stomach prior to the first meal of the day."
+F1415,Take with or without food. The co-administration of acoramidis with food does not significantly affect its pharmacokinetic disposition.
+F1416,Avoid grapefruit products. Grapefruit inhibits CYP3A which may increase serum concentrations of vanzacaftor.
+F1417,"Take on an empty stomach. Prescribing information for revumenib recommends administration on an empty stomach or with a small, low-fat meal."
+F1418,Take with food. Overall exposure to crinecerfont is increased when it is adminstered with a meal.
+F1419,Avoid grapefruit products. Grapefruit is an inhibitor of CYP3A and may therefore increase taletrectinib exposure.
+F1420,Take on an empty stomach. Patients should avoid food intake for 2 hours before and 2 hours after administration.
+F1421,Take with or without food. Co-administration with food does not significantly alter the pharmacokinetics of zongertinib.
+F1422,Take with or without food. Food had negligible effects on deuruxolitinib phramacokinetics.
+F1423,Take with food. Food has negligible effects on drug exposure and may reduce gastrointestinal adverse reactions.
+F1424,"Avoid grapefruit products. Grapefruit inhibits CYP3A4, which is responsible for the metabolism of suzetrigine."
+F1425,Take on an empty stomach. Take the starting dose on an empty stomach at least one hour before or two hours after food to avoid delay in onset of action.
+F1426,"Take on an empty stomach. Take on an empty stomach at least 2 hours before food, or 1 hour after food, as food can increase drug exposure."
+F1427,"Avoid alcohol. The co-administration of benzgalantamine with alcohol may result in dose dumping, although this risk has not been fully characterized in humans."
+F1428,Take with or without food. Administration with food does not alter pharmacokinetics to a clinically relevant extent.
+F1429,"Take with food. Food decreases drug Cmax and AUC, but not to a clinically significant extent."

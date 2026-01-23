@@ -1,0 +1,18 @@
+supplement_id,category_id,confidence,notes
+S20,C00864,high,CYP3A4 inducer - reduces anticonvulsant effectiveness
+S20,C02755,high,CYP3A4 inducer - reduces antidepressant effectiveness (FDA warning)
+S20,C00067,high,"CYP3A4 inducer - reduces immunosuppressant levels (cyclosporine, tacrolimus)"
+S20,C00002,high,CYP3A4 inducer - reduces warfarin effectiveness
+S20,C00214,high,CYP3A4 inducer - reduces contraceptive effectiveness (FDA warning)
+S10,C00002,medium,Inhibits platelet aggregation - increased bleeding risk
+S10,C00864,low,May lower seizure threshold in susceptible individuals
+S07,C00002,high,Omega-3 fatty acids increase bleeding risk - additive with anticoagulants
+S07,C00056,medium,Anti-inflammatory effects via eicosanoid modulation
+S15,C00871,medium,Sedative effects - additive CNS depression with hypnotics
+S15,C00220,low,May affect blood pressure regulation
+S05,C00131,high,Direct hormonal effects - androgen precursor
+S22,C01945,high,Risk of vitamin A toxicity when combined with retinoid medications
+S26,C00156,medium,Calcium-regulating effects - risk of hypercalcemia with calcium supplements
+S27,C00002,medium,High doses may increase bleeding risk
+S09,C00864,low,May reduce effectiveness of some anticonvulsants
+S03,C00002,low,May reduce warfarin effectiveness (conflicting evidence)
