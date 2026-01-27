@@ -111,7 +111,9 @@ Question: {state['user_question']}
 Respond with ONLY the category name, nothing else."""
 
         try:
-            state['question_type'] = self._get_llm_response(prompt, max_tokens=20).lower()
+            classification = self._get_llm_response(prompt, max_tokens=20).lower().strip()
+            state['question_type'] = classification
+            logger.info(f"✓ Classified as: {classification}")
         except Exception as e:
             logger.error(f"Classification failed: {e}")
             state['question_type'] = 'general_knowledge'
@@ -139,22 +141,19 @@ Respond with ONLY the category name, nothing else."""
             if profile.get('diet'):
                 profile_info += f"\nUser diet: {', '.join(profile['diet'])}"
         
-        prompt = f"""Extract supplement names, medication names, conditions, and dietary restrictions from this question.
-
-Available node types in database:
-- Supplement: {', '.join(self.graph_db.get_property_values('Supplement', 'supplement_name', 10))}
-- Medication: {', '.join(self.graph_db.get_property_values('Medication', 'medication_name', 10))}
-- Drug: Large database of drugs
-{profile_info}
+        prompt = f"""Extract supplement names and medication names from this question.
 
 Question: {state['user_question']}
 
+Examples of supplements: Fish Oil, Vitamin D, St. John's Wort, Ginkgo, Red Yeast Rice
+Examples of medications: Warfarin, Metformin, Atorvastatin, Lisinopril, Sertraline
+
+{profile_info}
+
 Return a JSON object with these keys (empty lists if none found):
 {{
-  "supplements": ["supplement1", "supplement2"],
-  "medications": ["med1", "med2"],
-  "conditions": ["condition1"],
-  "diet": ["vegan", "vegetarian"]
+  "supplements": ["supplement1"],
+  "medications": ["medication1"]
 }}
 
 Return ONLY valid JSON, no other text."""
@@ -165,10 +164,15 @@ Return ONLY valid JSON, no other text."""
             response = response.strip()
             if response.startswith("```json"):
                 response = response.replace("```json", "").replace("```", "").strip()
+            if response.endswith("```"):
+                response = response[:-3].strip()
             
-            state['entities'] = json.loads(response)
+            entities = json.loads(response)
+            state['entities'] = entities
+            logger.info(f"✓ Extracted entities: {entities}")
         except (json.JSONDecodeError, Exception) as e:
             logger.warning(f"Entity extraction failed: {e}")
+            logger.warning(f"LLM response was: {response if 'response' in locals() else 'N/A'}")
             state['entities'] = {
                 'supplements': [],
                 'medications': [],
@@ -178,65 +182,117 @@ Return ONLY valid JSON, no other text."""
         
         return state
 
+    def get_template_query(self, question_type: str, entities: Dict) -> str:
+        """
+        Get pre-built query template matching the actual knowledge graph structure.
+        Based on the documented interaction detection pathways.
+        """
+        supplements = entities.get('supplements', [])
+        medications = entities.get('medications', [])
+        
+        # Safety check - uses all 3 pathways from documentation
+        if question_type == 'safety_check' and supplements and medications:
+            # Convert to lowercase for case-insensitive matching
+            supp_list = [s.lower() for s in supplements]
+            med_list = [m.lower() for m in medications]
+            
+            return f"""
+            MATCH (s:Supplement)-[i:SUPPLEMENT_INTERACTS_WITH]->(m:Medication)
+            WHERE toLower(s.supplement_name) IN {supp_list}
+            AND toLower(m.medication_name) IN {med_list}
+            RETURN 
+                'DIRECT_INTERACTION' as pathway,
+                s.supplement_name as supplement,
+                m.medication_name as medication,
+                coalesce(i.interaction_description, 'Interaction documented') as warning
+            LIMIT 10
+            
+            UNION ALL
+            
+            MATCH (s:Supplement)-[sim:HAS_SIMILAR_EFFECT_TO]->(c:Category)
+                <-[:BELONGS_TO]-(d:Drug)<-[:MEDICATION_CONTAINS_DRUG]-(m:Medication)
+            WHERE toLower(s.supplement_name) IN {supp_list}
+            AND toLower(m.medication_name) IN {med_list}
+            RETURN 
+                'SIMILAR_EFFECT' as pathway,
+                s.supplement_name as supplement,
+                m.medication_name as medication,
+                c.category as warning
+            LIMIT 10
+            
+            UNION ALL
+            
+            MATCH (s:Supplement)-[:CONTAINS]->(a:ActiveIngredient)
+                -[:EQUIVALENT_TO]->(d:Drug)<-[:MEDICATION_CONTAINS_DRUG]-(m:Medication)
+            WHERE toLower(s.supplement_name) IN {supp_list}
+            AND toLower(m.medication_name) IN {med_list}
+            RETURN 
+                'DRUG_EQUIVALENCE' as pathway,
+                s.supplement_name as supplement,
+                m.medication_name as medication,
+                'Contains equivalent drug' as warning
+            LIMIT 10
+            """
+        
+        # If only supplements mentioned (check what they are)
+        if supplements and not medications:
+            supp_list = [s.lower() for s in supplements]
+            return f"""
+            MATCH (s:Supplement)
+            WHERE toLower(s.supplement_name) IN {supp_list}
+            RETURN 
+                'INFO' as pathway,
+                s.supplement_name as supplement,
+                'N/A' as medication,
+                coalesce(s.safety_rating, 'Supplement found') as warning
+            LIMIT 10
+            """
+        
+        # If only medications mentioned
+        if medications and not supplements:
+            med_list = [m.lower() for m in medications]
+            return f"""
+            MATCH (m:Medication)
+            WHERE toLower(m.medication_name) IN {med_list}
+            RETURN 
+                'INFO' as pathway,
+                'N/A' as supplement,
+                m.medication_name as medication,
+                'Medication found' as warning
+            LIMIT 10
+            """
+        
+        # Default: show some supplements
+        return """
+        MATCH (s:Supplement)
+        RETURN 
+            'BROWSE' as pathway,
+            s.supplement_name as supplement,
+            'N/A' as medication,
+            coalesce(s.safety_rating, 'Available') as warning
+        ORDER BY s.supplement_name
+        LIMIT 20
+        """
+
     def generate_query(self, state: WorkflowState) -> WorkflowState:
         """
         Step 3: Generate Cypher query based on question type.
-        
-        Creates appropriate database query for the question.
+        Uses safe templates to avoid syntax errors.
         """
         question_type = state.get('question_type', 'general_knowledge')
         
-        # For general knowledge, skip query generation
+        # Skip query for pure knowledge questions
         if question_type == 'general_knowledge':
             state['cypher_query'] = None
             return state
         
         entities = state.get('entities', {})
         
-        # Build schema info
-        schema_info = f"""
-Database Schema:
-Nodes: {', '.join(self.schema['node_labels'])}
-Relationships: {', '.join(self.schema['relationship_types'])}
-
-Key patterns:
-- Safety checks: (Supplement)-[:SUPPLEMENT_INTERACTS_WITH]->(Medication)
-- Equivalence: (Supplement)-[:CONTAINS]->(ActiveIngredient)-[:EQUIVALENT_TO]->(Drug)
-- Similar effects: (Supplement)-[:HAS_SIMILAR_EFFECT_TO]->(Category)<-[:BELONGS_TO]-(Drug)
-"""
-
-        prompt = f"""Generate a Cypher query for this supplement safety question.
-
-{schema_info}
-
-Question Type: {question_type}
-Question: {state['user_question']}
-Extracted Entities: {json.dumps(entities, indent=2)}
-
-Guidelines:
-- Use MATCH patterns to traverse relationships
-- Use WHERE clauses for filtering
-- Always LIMIT results (typically 10-25)
-- For safety checks, look for interactions across multiple pathways
-- Return relevant node properties and relationship details
-
-Return ONLY the Cypher query, no explanation."""
-
-        try:
-            cypher = self._get_llm_response(prompt, max_tokens=300)
-            # Clean up response
-            cypher = cypher.strip()
-            if cypher.startswith("```"):
-                cypher = "\n".join(
-                    line for line in cypher.split("\n")
-                    if not line.startswith("```") and not line.lower().startswith("cypher")
-                ).strip()
-            
-            state['cypher_query'] = cypher
-        except Exception as e:
-            logger.error(f"Query generation failed: {e}")
-            state['error'] = f"Query generation error: {str(e)}"
-            state['cypher_query'] = None
+        # Always use safe template queries
+        query = self.get_template_query(question_type, entities)
+        state['cypher_query'] = query.strip()
+        
+        logger.info(f"✓ Generated query for {question_type}")
         
         return state
 
@@ -255,20 +311,27 @@ Return ONLY the Cypher query, no explanation."""
         try:
             results = self.graph_db.execute_query(cypher_query)
             state['results'] = results
+            logger.info(f"✓ Query returned {len(results)} results")
             
             # Extract safety warnings from results
             warnings = []
             for result in results:
-                # Look for interaction-related fields
-                if 'interaction_type' in result:
-                    if result['interaction_type'] == 'EQUIVALENCE':
-                        warnings.append(
-                            f"⚠️ {result.get('supplement', 'Supplement')} contains "
-                            f"the same drug as {result.get('medication', 'medication')} - "
-                            f"risk of double dosing!"
-                        )
-                    elif 'description' in result:
-                        warnings.append(f"⚠️ {result['description']}")
+                pathway = result.get('pathway', '')
+                if pathway == 'DRUG_EQUIVALENCE':
+                    warnings.append(
+                        f"🚨 CRITICAL: {result.get('supplement', 'Supplement')} contains "
+                        f"the same active drug as {result.get('medication', 'medication')}!"
+                    )
+                elif pathway == 'DIRECT_INTERACTION':
+                    warnings.append(
+                        f"⚠️ WARNING: {result.get('supplement', 'Supplement')} interacts with "
+                        f"{result.get('medication', 'medication')}"
+                    )
+                elif pathway == 'SIMILAR_EFFECT':
+                    warnings.append(
+                        f"⚠️ CAUTION: {result.get('supplement', 'Supplement')} has similar effects to "
+                        f"{result.get('medication', 'medication')}"
+                    )
             
             state['safety_warnings'] = warnings
             
@@ -288,58 +351,89 @@ Return ONLY the Cypher query, no explanation."""
         if state.get('error'):
             state['final_answer'] = (
                 f"I encountered an issue: {state['error']}\n\n"
-                "Please try rephrasing your question or contact support if this persists."
+                "Please try rephrasing your question."
             )
             return state
         
         question_type = state.get('question_type', 'general_knowledge')
         
-        # For general knowledge, use LLM knowledge
+        # For general knowledge, use LLM
         if question_type == 'general_knowledge':
-            prompt = f"""Answer this general supplement/health question clearly and accurately:
+            prompt = f"""Answer this supplement/health question clearly and accurately:
 
-Question: {state['user_question']}
+    Question: {state['user_question']}
 
-Provide a helpful, evidence-based answer. Mention when professional medical advice is needed."""
+    Provide a helpful, evidence-based answer. Mention when professional medical advice is needed."""
             
             state['final_answer'] = self._get_llm_response(prompt, max_tokens=400)
             return state
         
-        # For database queries, format results
+        # For database queries
         results = state.get('results', [])
         
         if not results:
             state['final_answer'] = (
-                "I didn't find specific information in the database for that question. "
+                "I didn't find any documented interactions for that combination in our database.\n\n"
                 "This could mean:\n"
-                "- The supplements/medications aren't in our database yet\n"
-                "- There are no documented interactions\n"
-                "- The question needs to be rephrased\n\n"
-                "Please consult with a healthcare provider for personalized advice."
+                "• No known interactions exist\n"
+                "• The supplement/medication isn't in our database yet\n"
+                "• Try using more common names (e.g., 'fish oil' instead of 'omega-3')\n\n"
+                "⚠️ Always consult your healthcare provider before combining supplements with medications."
             )
             return state
         
-        # Use LLM to format results naturally
-        prompt = f"""Convert these database query results into a clear, helpful answer.
-
-Original Question: {state['user_question']}
-Question Type: {question_type}
-
-Database Results:
-{json.dumps(results[:10], indent=2)}
-
-Total Results: {len(results)}
-
-Format the answer to:
-1. Directly answer the user's question
-2. Highlight any safety concerns prominently
-3. Be specific about interactions, dosages, or risks
-4. Recommend consulting healthcare providers for serious concerns
-5. Keep it concise but complete
-
-Answer:"""
-
-        state['final_answer'] = self._get_llm_response(prompt, max_tokens=500)
+        # Format results with proper safety warnings
+        answer_parts = []
+        
+        # Group by pathway type
+        direct_interactions = [r for r in results if r.get('pathway') == 'DIRECT_INTERACTION']
+        similar_effects = [r for r in results if r.get('pathway') == 'SIMILAR_EFFECT']
+        equivalences = [r for r in results if r.get('pathway') == 'DRUG_EQUIVALENCE']
+        info_results = [r for r in results if r.get('pathway') in ['INFO', 'BROWSE']]
+        
+        if equivalences:
+            answer_parts.append("🚨 **CRITICAL WARNING - DRUG EQUIVALENCE:**")
+            for r in equivalences:
+                answer_parts.append(
+                    f"• **{r['supplement']}** + **{r['medication']}**: "
+                    f"Contains the same active drug - RISK OF DOUBLE DOSING!"
+                )
+            answer_parts.append("")
+        
+        if direct_interactions:
+            answer_parts.append("⚠️ **DOCUMENTED INTERACTIONS:**")
+            for r in direct_interactions:
+                answer_parts.append(
+                    f"• **{r['supplement']}** + **{r['medication']}**: {r['warning']}"
+                )
+            answer_parts.append("")
+        
+        if similar_effects:
+            answer_parts.append("⚠️ **SIMILAR PHARMACOLOGICAL EFFECTS:**")
+            for r in similar_effects:
+                # Now we add the text here instead of in the query
+                answer_parts.append(
+                    f"• **{r['supplement']}** + **{r['medication']}**: "
+                    f"Has similar effects to {r['warning']} - risk of additive effects"
+                )
+            answer_parts.append("")
+        
+        if answer_parts:
+            answer_parts.append(
+                "**Recommendation:** Consult your healthcare provider before taking "
+                "these supplements with your medications."
+            )
+            state['final_answer'] = "\n".join(answer_parts)
+        elif info_results:
+            # Just browsing or looking up info
+            lines = []
+            for r in info_results[:10]:
+                name = r.get('supplement') if r.get('supplement') != 'N/A' else r.get('medication')
+                lines.append(f"• {name}: {r['warning']}")
+            state['final_answer'] = "\n".join(lines)
+        else:
+            state['final_answer'] = "No specific information found."
+        
         return state
 
     def answer_question(
