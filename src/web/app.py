@@ -1,5 +1,5 @@
 """
-Supplement Safety Advisor - Streamlit App
+Supplement Safety Advisor - Streamlit App (CLEAN VERSION)
 Personalized supplement recommendations using knowledge graphs
 """
 import os
@@ -47,43 +47,33 @@ def initialize_system():
         st.error(f"Failed to connect to database: {e}")
         st.stop()
 
-def format_profile_context(medications, supplements, conditions, diet):
-    """Format user profile into context string"""
-    context_parts = []
+def display_answer(result):
+    """Display the answer with appropriate formatting based on question type"""
+    question_type = result.get('question_type', '')
+    answer = result.get('answer', '')
     
-    if medications:
-        meds = [m.strip() for m in medications.split(',') if m.strip()]
-        if meds:
-            context_parts.append(f"Taking medications: {', '.join(meds)}")
+    # Check if answer contains safety warnings
+    has_warning = any(keyword in answer.lower() for keyword in 
+                     ['warning', 'caution', 'critical', 'risk', 'avoid', 'dangerous'])
     
-    if supplements:
-        supps = [s.strip() for s in supplements.split(',') if s.strip()]
-        if supps:
-            context_parts.append(f"Current supplements: {', '.join(supps)}")
-    
-    if conditions:
-        context_parts.append(f"Medical conditions: {', '.join(conditions)}")
-    
-    if diet:
-        context_parts.append(f"Diet: {', '.join(diet)}")
-    
-    return " | ".join(context_parts) if context_parts else ""
-
-def display_safety_warning(result):
-    """Display safety warnings prominently"""
-    # Check for dangerous interactions in the answer
-    answer = result.get('answer', '').lower()
-    
-    # Look for warning keywords
-    warning_keywords = ['warning', 'caution', 'avoid', 'dangerous', 'risk', 'interaction']
-    has_warning = any(keyword in answer for keyword in warning_keywords)
-    
+    # Display safety alert if needed
     if has_warning:
         st.error("⚠️ SAFETY ALERT")
         st.warning(
             "This response contains important safety information. "
             "Please consult with your healthcare provider before making any changes."
         )
+    
+    # Display the answer
+    st.markdown("### Answer:")
+    
+    # Use appropriate formatting based on question type
+    if question_type == 'comparison':
+        st.info(answer)
+    elif has_warning:
+        st.warning(answer)
+    else:
+        st.info(answer)
 
 def main():
     # Header
@@ -167,17 +157,17 @@ def main():
         st.markdown("- Can I take Red Yeast Rice with my statin medication?")
         st.markdown("- Are there interactions between ginkgo and my medications?")
         
-        st.markdown("**Deficiency Detection:**")
-        st.markdown("- What nutrients might I be deficient in?")
-        st.markdown("- I'm vegan and take metformin - what should I supplement?")
+        st.markdown("**Comparisons:**")
+        st.markdown("- Magnesium vs Melatonin for sleep")
+        st.markdown("- Fish oil vs flaxseed oil for heart health")
         
         st.markdown("**Recommendations:**")
-        st.markdown("- Which supplements support heart health?")
         st.markdown("- What supplements help with high blood pressure?")
+        st.markdown("- Which supplements support heart health?")
         
-        st.markdown("**Comparisons:**")
-        st.markdown("- What's better for heart health: fish oil or plant-based omega-3?")
-        st.markdown("- Should I take magnesium glycinate or melatonin for sleep?")
+        st.markdown("**General Questions:**")
+        st.markdown("- What is CoQ10 good for?")
+        st.markdown("- How does St. John's Wort work?")
     
     # Question input
     col1, col2 = st.columns([4, 1])
@@ -185,7 +175,7 @@ def main():
     with col1:
         question = st.text_input(
             "Your question:",
-            placeholder="e.g., Is it safe to take...",
+            placeholder="e.g., Can I take...",
             label_visibility="collapsed"
         )
     
@@ -194,29 +184,39 @@ def main():
     
     # Process question
     if ask_button and question:
-        # Build context
-        profile_context = format_profile_context(medications, supplements, conditions, diet)
+        # Build structured profile
+        profile = {}
         
-        # Enhance question with context
-        if profile_context:
-            full_question = f"{question}\n\nContext: {profile_context}"
-        else:
-            full_question = question
+        if medications:
+            meds = [m.strip() for m in medications.split(',') if m.strip()]
+            if meds:
+                profile['medications'] = meds
+        
+        if supplements:
+            supps = [s.strip() for s in supplements.split(',') if s.strip()]
+            if supps:
+                profile['supplements'] = supps
+        
+        if conditions:
+            profile['conditions'] = conditions
+        
+        if diet:
+            profile['diet'] = diet
         
         # Get answer from agent
         with st.spinner("🔍 Analyzing knowledge graph..."):
             try:
-                result = agent.answer_question(full_question)
+                result = agent.answer_question(
+                    question=question,
+                    user_profile=profile if profile else None
+                )
             except Exception as e:
                 st.error(f"Error: {str(e)}")
+                st.info("Please try rephrasing your question or check your database connection.")
                 return
         
-        # Display safety warnings first
-        display_safety_warning(result)
-        
-        # Display answer
-        st.markdown("### Answer:")
-        st.info(result['answer'])
+        # Display answer with appropriate formatting
+        display_answer(result)
         
         # Show technical details
         with st.expander("🔍 How this answer was generated"):
@@ -224,13 +224,21 @@ def main():
             
             with col1:
                 st.markdown("**Query Classification**")
-                st.write(result.get('question_type', 'Unknown'))
+                q_type = result.get('question_type', 'Unknown')
+                st.write(f"Type: `{q_type}`")
                 
                 st.markdown("**Entities Extracted**")
-                entities = result.get('entities', [])
+                entities = result.get('entities', {})
                 if entities:
-                    for entity in entities:
-                        st.write(f"• {entity}")
+                    supplements_found = entities.get('supplements', [])
+                    medications_found = entities.get('medications', [])
+                    
+                    if supplements_found:
+                        st.write(f"• Supplements: {', '.join(supplements_found)}")
+                    if medications_found:
+                        st.write(f"• Medications: {', '.join(medications_found)}")
+                    if not supplements_found and not medications_found:
+                        st.write("• None extracted from question")
                 else:
                     st.write("None extracted")
             
@@ -245,6 +253,9 @@ def main():
             if result.get('cypher_query'):
                 st.markdown("**Database Query (Cypher)**")
                 st.code(result['cypher_query'], language='cypher')
+            else:
+                st.markdown("**Database Query**")
+                st.write("Used LLM reasoning (no database query)")
             
             # Show sample results
             if result.get('raw_results'):
@@ -255,7 +266,8 @@ def main():
         st.session_state.chat_history.append({
             'question': question,
             'answer': result['answer'],
-            'has_warning': 'warning' in result['answer'].lower()
+            'question_type': result.get('question_type', 'unknown'),
+            'has_warning': 'warning' in result['answer'].lower() or 'risk' in result['answer'].lower()
         })
     
     # Show recent history
@@ -265,7 +277,16 @@ def main():
         
         # Show last 3 questions
         for i, item in enumerate(reversed(st.session_state.chat_history[-3:])):
-            icon = "⚠️" if item.get('has_warning') else "💬"
+            # Choose icon based on question type and warnings
+            if item.get('has_warning'):
+                icon = "⚠️"
+            elif item.get('question_type') == 'comparison':
+                icon = "⚖️"
+            elif item.get('question_type') == 'recommendation':
+                icon = "💡"
+            else:
+                icon = "💬"
+            
             with st.expander(f"{icon} {item['question'][:60]}..."):
                 st.write(item['answer'])
         
