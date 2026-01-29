@@ -9,6 +9,7 @@ __pycache__/
 *$py.class
 *.so
 .Python
+.pdm-python
 
 # Virtual environments
 venv/
