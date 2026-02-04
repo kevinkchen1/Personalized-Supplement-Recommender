@@ -471,7 +471,7 @@ if __name__ == "__main__":
     from pathlib import Path
 
     # Add the agents directory to Python path
-    sys.path.append(str(Path(__file__).parent.parent / 'agents'))
+    sys.path.append(str(Path(__file__).parent.parent / 'graph'))
     from graph_interface import GraphInterface
     import os
     
