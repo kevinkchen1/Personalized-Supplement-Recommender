@@ -1,0 +1,7 @@
+dietary_restriction_id,dietary_restriction_name,description
+DR01,Vegan,Excludes all animal products including meat fish poultry dairy eggs honey
+DR02,Vegetarian,Excludes meat fish poultry but includes dairy and eggs
+DR03,Pescatarian,Excludes meat and poultry but includes fish seafood dairy and eggs
+DR04,Keto,Very low carbohydrate high fat diet excludes grains sugar most fruits
+DR05,Gluten-Free,Excludes gluten-containing grains including wheat barley rye
+DR06,Dairy-Free,Excludes all dairy products including milk cheese yogurt butter

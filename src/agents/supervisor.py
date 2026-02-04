@@ -1,0 +1,345 @@
+"""
+Supervisor Agent - Main Coordinator
+
+The "brain" of the system. Makes high-level decisions about:
+- What needs to be investigated
+- Which specialist agents to call
+- When results are good enough
+- When to loop back for more information
+
+Role: Orchestrates the entire workflow dynamically
+"""
+
+import os
+from anthropic import Anthropic
+from typing import Dict, Any
+from dotenv import load_dotenv
+
+load_dotenv()
+
+
+class SupervisorAgent:
+    """
+    Main supervisor agent that coordinates all specialist agents.
+    """
+    
+    def __init__(self):
+        self.client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+        self.model = "claude-sonnet-4-20250514"
+    
+    def __call__(self, state: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Main entry point for supervisor agent.
+        
+        Responsibilities:
+        1. Extract entities from question (if not done)
+        2. Analyze what needs to be checked
+        3. Evaluate current results
+        4. Decide next action
+        
+        Args:
+            state: Current conversation state
+            
+        Returns:
+            Updated state with supervisor's decision
+        """
+        print("🧠 SUPERVISOR: Analyzing question and current state...")
+        
+        # Step 1: Extract entities if not done yet
+        if not state.get('entities_extracted', False):
+            print("🧠 SUPERVISOR: Extracting entities from question...")
+            state = self._extract_and_normalize_entities(state)
+        
+        # Step 2: Analyze what needs to be done
+        print("🧠 SUPERVISOR: Determining what to check...")
+        needs = self._analyze_requirements(state)
+        
+        # Step 3: Evaluate current progress
+        print("🧠 SUPERVISOR: Evaluating results so far...")
+        evaluation = self._evaluate_progress(state, needs)
+        
+        # Step 4: Decide next action
+        print("🧠 SUPERVISOR: Making decision...")
+        decision = self._make_decision(state, needs, evaluation)
+        
+        # Update state with decision
+        state['supervisor_decision'] = decision['action']
+        state['supervisor_reasoning'] = decision['reasoning']
+        state['iterations'] = state.get('iterations', 0) + 1
+        
+        print(f"🧠 SUPERVISOR: Decision → {decision['action']}")
+        print(f"   Reasoning: {decision['reasoning']}")
+        
+        return state
+    
+    def _extract_and_normalize_entities(self, state: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Extract entities from question and normalize them.
+        
+        Calls:
+        - entity_extractor tool (Phase 1)
+        - entity_normalizer tool (Phase 2)
+        """
+        from tools.entity_extractor import extract_entities_from_text
+        from tools.entity_normalizer import (
+            normalize_medication_to_database,
+            normalize_supplement_to_database
+        )
+        
+        question = state['user_question']
+        
+        # Extract entities
+        print("   📋 Extracting entities...")
+        extracted = extract_entities_from_text(question)
+        state['extracted_entities'] = extracted
+        
+        # Normalize medications
+        print("   🔄 Normalizing medications...")
+        normalized_meds = []
+        for med in extracted['medications']:
+            # Note: graph_interface should be passed in state or initialized
+            result = normalize_medication_to_database(med, state['graph_interface'])
+            normalized_meds.append(result)
+        
+        # Normalize supplements
+        print("   🔄 Normalizing supplements...")
+        normalized_supps = []
+        for supp in extracted['supplements']:
+            result = normalize_supplement_to_database(supp, state['graph_interface'])
+            normalized_supps.append(result)
+        
+        state['normalized_medications'] = normalized_meds
+        state['normalized_supplements'] = normalized_supps
+        state['entities_extracted'] = True
+        
+        return state
+    
+    def _analyze_requirements(self, state: Dict[str, Any]) -> Dict[str, bool]:
+        """
+        Analyze the question to determine what needs to be checked.
+        
+        Uses LLM to understand user intent.
+        
+        Returns:
+            {
+                'needs_safety_check': True/False,
+                'needs_deficiency_check': True/False,
+                'needs_recommendations': True/False
+            }
+        """
+        question = state['user_question'].lower()
+        
+        # Use LLM to analyze intent
+        prompt = f"""
+Analyze this user question and determine what they need:
+
+Question: "{state['user_question']}"
+
+User Profile:
+- Medications: {[m.get('drug_name', 'Unknown') for m in state.get('patient_profile', {}).get('medications', [])]}
+- Supplements: {[s.get('supplement_name', 'Unknown') for s in state.get('patient_profile', {}).get('supplements', [])]}
+- Dietary restrictions: {state.get('patient_profile', {}).get('dietary_restrictions', [])}
+
+Determine what needs to be checked:
+1. Safety check? (drug-supplement interactions)
+2. Deficiency analysis? (nutrient gaps from diet/medications)
+3. Supplement recommendations? (suggestions for conditions/symptoms)
+
+Return ONLY JSON:
+{{
+    "needs_safety_check": true/false,
+    "needs_deficiency_check": true/false,
+    "needs_recommendations": true/false,
+    "reasoning": "brief explanation"
+}}
+"""
+        
+        response = self.client.messages.create(
+            model=self.model,
+            max_tokens=500,
+            temperature=0,
+            messages=[{"role": "user", "content": prompt}]
+        )
+        
+        import json
+        needs = json.loads(response.content[0].text)
+        
+        print(f"   📊 Analysis: {needs['reasoning']}")
+        
+        return needs
+    
+    def _evaluate_progress(self, state: Dict[str, Any], needs: Dict[str, bool]) -> Dict[str, Any]:
+        """
+        Evaluate current progress and confidence.
+        
+        Checks:
+        - What's been done vs what's needed
+        - Confidence levels of results
+        - Any AMBIGUOUS entities that need clarification
+        
+        Returns:
+            {
+                'completed': ['safety_check', ...],
+                'pending': ['deficiency_check', ...],
+                'confidence': 0.85,
+                'needs_clarification': True/False
+            }
+        """
+        completed = []
+        pending = []
+        
+        # Check what's been done
+        if state.get('safety_checked', False):
+            completed.append('safety_check')
+        elif needs.get('needs_safety_check'):
+            pending.append('safety_check')
+        
+        if state.get('deficiencies_checked', False):
+            completed.append('deficiency_check')
+        elif needs.get('needs_deficiency_check'):
+            pending.append('deficiency_check')
+        
+        if state.get('recommendations_generated', False):
+            completed.append('recommendations')
+        elif needs.get('needs_recommendations'):
+            pending.append('recommendations')
+        
+        # Calculate overall confidence
+        confidence = self._calculate_confidence(state, completed)
+        
+        # Check for ambiguous entities
+        needs_clarification = self._check_for_ambiguities(state)
+        
+        return {
+            'completed': completed,
+            'pending': pending,
+            'confidence': confidence,
+            'needs_clarification': needs_clarification
+        }
+    
+    def _calculate_confidence(self, state: Dict[str, Any], completed: list) -> float:
+        """Calculate overall confidence based on completed checks."""
+        if not completed:
+            return 0.0
+        
+        confidences = []
+        
+        if 'safety_check' in completed:
+            confidences.append(state.get('safety_results', {}).get('confidence', 0.5))
+        
+        if 'deficiency_check' in completed:
+            confidences.append(state.get('deficiency_results', {}).get('confidence', 0.5))
+        
+        if 'recommendations' in completed:
+            confidences.append(state.get('recommendation_results', {}).get('confidence', 0.5))
+        
+        return sum(confidences) / len(confidences) if confidences else 0.0
+    
+    def _check_for_ambiguities(self, state: Dict[str, Any]) -> bool:
+        """Check if any normalized entities are ambiguous."""
+        # Check medications
+        for med in state.get('normalized_medications', []):
+            if med.get('confidence') == 'AMBIGUOUS':
+                return True
+        
+        # Check supplements
+        for supp in state.get('normalized_supplements', []):
+            if supp.get('confidence') == 'AMBIGUOUS':
+                return True
+        
+        return False
+    
+    def _make_decision(
+        self, 
+        state: Dict[str, Any], 
+        needs: Dict[str, bool], 
+        evaluation: Dict[str, Any]
+    ) -> Dict[str, str]:
+        """
+        Make final decision about next action.
+        
+        Decision logic:
+        1. If entities are ambiguous → clarify
+        2. If pending checks → do next check
+        3. If confidence low and iterations < 3 → loop back
+        4. If everything done and confidence good → synthesize
+        
+        Returns:
+            {
+                'action': 'check_safety' | 'check_deficiency' | 'get_recommendations' | 'synthesize' | 'clarify',
+                'reasoning': 'why this decision'
+            }
+        """
+        iterations = state.get('iterations', 0)
+        
+        # Check for ambiguities first
+        if evaluation['needs_clarification']:
+            return {
+                'action': 'clarify',
+                'reasoning': 'Entities are ambiguous and need user clarification'
+            }
+        
+        # Do pending checks
+        if 'safety_check' in evaluation['pending']:
+            return {
+                'action': 'check_safety',
+                'reasoning': 'Safety check needed based on question analysis'
+            }
+        
+        if 'deficiency_check' in evaluation['pending']:
+            return {
+                'action': 'check_deficiency',
+                'reasoning': 'Deficiency analysis needed based on question analysis'
+            }
+        
+        if 'recommendations' in evaluation['pending']:
+            return {
+                'action': 'get_recommendations',
+                'reasoning': 'Recommendations requested by user'
+            }
+        
+        # Check if we need more evidence
+        if evaluation['confidence'] < 0.7 and iterations < 3:
+            return {
+                'action': 'need_more_evidence',
+                'reasoning': f"Confidence too low ({evaluation['confidence']:.2f}), need more investigation"
+            }
+        
+        # Everything done - synthesize answer
+        return {
+            'action': 'synthesize',
+            'reasoning': 'All required checks complete with sufficient confidence'
+        }
+
+
+# Convenience function for LangGraph
+def supervisor_agent(state: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Entry point for LangGraph workflow.
+    """
+    agent = SupervisorAgent()
+    return agent(state)
+
+
+if __name__ == "__main__":
+    # Test the supervisor
+    test_state = {
+        'user_question': 'Is Fish Oil safe with my medications?',
+        'patient_profile': {
+            'medications': [
+                {'drug_name': 'Warfarin', 'drug_id': 'DB00682'}
+            ],
+            'supplements': [],
+            'dietary_restrictions': []
+        },
+        'entities_extracted': False,
+        'graph_interface': None  # Would be actual graph interface
+    }
+    
+    agent = SupervisorAgent()
+    result = agent(test_state)
+    
+    print("\n" + "="*50)
+    print("SUPERVISOR DECISION:")
+    print(f"Action: {result['supervisor_decision']}")
+    print(f"Reasoning: {result['supervisor_reasoning']}")

@@ -1,0 +1,16 @@
+nutrient_id,nutrient_name,category,description
+N001,Vitamin B12,Vitamin,Essential for red blood cell formation neurological function and DNA synthesis
+N002,CoQ10,Coenzyme,Essential for cellular energy production and antioxidant function
+N003,Iron,Mineral,Essential for oxygen transport in blood and energy production
+N004,Omega-3 (EPA/DHA),Fatty Acid,Essential for brain heart and eye health
+N005,Vitamin D,Vitamin,Essential for bone health calcium absorption and immune function
+N006,Calcium,Mineral,Essential for bone health muscle function and nerve transmission
+N007,Zinc,Mineral,Essential for immune function wound healing and protein synthesis
+N008,Vitamin K,Vitamin,Essential for blood clotting and bone health
+N009,Magnesium,Mineral,Essential for muscle and nerve function energy production bone health
+N010,Potassium,Mineral,Essential for fluid balance muscle contractions and heart function
+N011,Fiber,Carbohydrate,Essential for digestive health blood sugar control and heart health
+N012,Vitamin C,Vitamin,Essential for immune function collagen synthesis and iron absorption
+N013,Folate,Vitamin,Essential for DNA synthesis cell division and red blood cell formation
+N014,Protein,Macronutrient,Essential for muscle tissue repair enzyme and hormone production
+N015,Iodine,Mineral,Essential for thyroid hormone production and metabolism

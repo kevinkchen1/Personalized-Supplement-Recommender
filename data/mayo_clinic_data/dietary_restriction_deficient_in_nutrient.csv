@@ -1,0 +1,25 @@
+dietary_restriction_id,nutrient_id,risk_level
+DR01,N001,High
+DR01,N003,Moderate to High
+DR01,N004,High
+DR01,N005,Moderate
+DR01,N006,Moderate
+DR01,N007,Moderate
+DR01,N015,Moderate
+DR01,N014,Low to Moderate
+DR02,N001,Moderate
+DR02,N003,Moderate
+DR02,N004,Moderate
+DR02,N007,Low to Moderate
+DR03,N001,Low
+DR03,N003,Low
+DR04,N011,High
+DR04,N009,Moderate
+DR04,N012,Moderate
+DR04,N010,Moderate
+DR05,N003,Moderate
+DR05,N013,Moderate
+DR05,N011,Moderate
+DR06,N006,High
+DR06,N005,Moderate
+DR06,N001,Low to Moderate

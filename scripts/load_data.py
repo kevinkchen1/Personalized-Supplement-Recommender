@@ -106,7 +106,7 @@ class CompleteKnowledgeGraphLoader:
                 stats, total = deleter_rels.get_relationship_stats()
                 
                 if total > 0:
-                    deleter_rels.delete_all_relationships(batch_size=10000)
+                    deleter_rels.delete_all_relationships(batch_size=1000)  # Reduced from 10000
                 
                 deleter_rels.close()
                 
@@ -120,7 +120,7 @@ class CompleteKnowledgeGraphLoader:
                 total_nodes = sum(stats.values()) + unlabeled
                 
                 if total_nodes > 0:
-                    deleter_nodes.delete_all_nodes(batch_size=10000)
+                    deleter_nodes.delete_all_nodes(batch_size=1000)  # Reduced from 10000
                 
                 deleter_nodes.close()
                 
@@ -163,8 +163,8 @@ class CompleteKnowledgeGraphLoader:
             
             logger.info(f"  Deleting {node_count:,} nodes and {rel_count:,} relationships...")
             
-            # Delete in batches
-            batch_size = 10000
+            # Delete in batches (smaller batch size to avoid memory errors)
+            batch_size = 500  # Reduced from 10000 to 1000
             total_deleted = 0
             
             # Use tqdm for a single progress bar
@@ -224,6 +224,12 @@ class CompleteKnowledgeGraphLoader:
             
             "CREATE CONSTRAINT symptom_id_unique IF NOT EXISTS "
             "FOR (s:Symptom) REQUIRE s.symptom_id IS UNIQUE",
+            
+            "CREATE CONSTRAINT nutrient_id_unique IF NOT EXISTS "
+            "FOR (n:Nutrient) REQUIRE n.nutrient_id IS UNIQUE",
+            
+            "CREATE CONSTRAINT dietary_restriction_id_unique IF NOT EXISTS "
+            "FOR (dr:DietaryRestriction) REQUIRE dr.dietary_restriction_id IS UNIQUE",
             
             # ========== INDEXES FOR FAST LOOKUPS ==========
             "CREATE INDEX drug_name_idx IF NOT EXISTS "
@@ -649,6 +655,67 @@ class CompleteKnowledgeGraphLoader:
         logger.info(f"✓ Loaded {len(df):,} treats relationships")
 
     # ========================================================================
+    # NUTRIENT DEFICIENCY DATA (NEW!)
+    # ========================================================================
+    
+    def load_nutrients(self, df: pd.DataFrame):
+        """Load Nutrient nodes from nutrients.csv"""
+        logger.info(f"Loading {len(df):,} nutrients...")
+        
+        nutrient_data = df.fillna("").to_dict('records')
+        
+        query = """
+        UNWIND $batch AS row
+        CREATE (n:Nutrient {
+            nutrient_id: row.nutrient_id,
+            nutrient_name: row.nutrient_name,
+            category: row.category,
+            rda_adult: row.rda_adult,
+            description: row.description
+        })
+        """
+        
+        self.batch_execute(query, nutrient_data, batch_size=500, desc="Loading nutrients")
+        logger.info(f"✓ Loaded {len(df):,} nutrients")
+    
+    def load_dietary_restrictions(self, df: pd.DataFrame):
+        """Load DietaryRestriction nodes from dietary_restrictions.csv"""
+        logger.info(f"Loading {len(df):,} dietary restrictions...")
+        
+        diet_data = df.fillna("").to_dict('records')
+        
+        query = """
+        UNWIND $batch AS row
+        CREATE (dr:DietaryRestriction {
+            dietary_restriction_id: row.dietary_restriction_id,
+            dietary_restriction_name: row.dietary_restriction_name,
+            description: row.description
+        })
+        """
+        
+        self.batch_execute(query, diet_data, batch_size=500, desc="Loading dietary restrictions")
+        logger.info(f"✓ Loaded {len(df):,} dietary restrictions")
+    
+    def load_dietary_restriction_deficient_in_nutrient(self, df: pd.DataFrame):
+        """Load DietaryRestriction -[:DEFICIENT_IN]-> Nutrient relationships"""
+        logger.info(f"Loading {len(df):,} dietary restriction-nutrient deficiency relationships...")
+        
+        deficiency_data = df.fillna("").to_dict('records')
+        
+        query = """
+        UNWIND $batch AS row
+        MATCH (dr:DietaryRestriction {dietary_restriction_id: row.dietary_restriction_id})
+        MATCH (n:Nutrient {nutrient_id: row.nutrient_id})
+        CREATE (dr)-[:DEFICIENT_IN {
+            risk_level: row.risk_level
+        }]->(n)
+        """
+        
+        self.batch_execute(query, deficiency_data, batch_size=500,
+                          desc="DietaryRestriction → Nutrient (DEFICIENT_IN)")
+        logger.info(f"✓ Loaded {len(df):,} deficiency relationships")
+
+    # ========================================================================
     # PHASE 5: BRIDGE RELATIONSHIPS (CRITICAL FOR SAFETY CHECKS!)
     # ========================================================================
     
@@ -778,6 +845,18 @@ class CompleteKnowledgeGraphLoader:
             self.load_supplement_symptom_treats(pd.read_csv(mayo_path / "supplement_symptom_treats.csv"))
         except FileNotFoundError:
             logger.info("No symptom relationship files found, skipping...")
+
+        # ====================================================================
+        # PHASE 4.5: Nutrient Deficiency Data (NEW!)
+        # ====================================================================
+        logger.info("\n" + "="*70)
+        logger.info("PHASE 4.5: Loading Nutrient Deficiency Data")
+        logger.info("="*70)
+        
+        self.load_nutrients(pd.read_csv(mayo_path / "nutrients.csv"))
+        self.load_dietary_restrictions(pd.read_csv(mayo_path / "dietary_restrictions.csv"))
+        self.load_dietary_restriction_deficient_in_nutrient(
+            pd.read_csv(mayo_path / "dietary_restriction_deficient_in_nutrient.csv"))
 
         # ====================================================================
         # PHASE 5: Bridge Relationships (CRITICAL!)
