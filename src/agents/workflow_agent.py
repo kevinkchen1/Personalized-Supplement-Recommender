@@ -16,6 +16,7 @@ from typing import Any, Dict, List, Optional, TypedDict
 from anthropic import Anthropic
 
 from .graph_interface import GraphInterface
+from .utils import clean_code_block, safe_json_load
 
 logger = logging.getLogger(__name__)
 
@@ -85,8 +86,9 @@ class WorkflowAgent:
                 kwargs["system"] = system
             
             response = self.anthropic.messages.create(**kwargs)
-            content = response.content[0]
-            return content.text.strip() if hasattr(content, "text") else str(content)
+            # Response shape can vary; stringify and clean code fences
+            raw = str(response)
+            return clean_code_block(raw)
         except Exception as e:
             logger.error(f"LLM request failed: {e}")
             raise
@@ -161,12 +163,9 @@ Return ONLY valid JSON, no other text."""
 
         try:
             response = self._get_llm_response(prompt, max_tokens=200)
-            # Clean up response
-            response = response.strip()
-            if response.startswith("```json"):
-                response = response.replace("```json", "").replace("```", "").strip()
-            
-            state['entities'] = json.loads(response)
+            state['entities'] = safe_json_load(response, default={
+                'supplements': [], 'medications': [], 'conditions': [], 'diet': []
+            })
         except (json.JSONDecodeError, Exception) as e:
             logger.warning(f"Entity extraction failed: {e}")
             state['entities'] = {
@@ -224,15 +223,7 @@ Return ONLY the Cypher query, no explanation."""
 
         try:
             cypher = self._get_llm_response(prompt, max_tokens=300)
-            # Clean up response
-            cypher = cypher.strip()
-            if cypher.startswith("```"):
-                cypher = "\n".join(
-                    line for line in cypher.split("\n")
-                    if not line.startswith("```") and not line.lower().startswith("cypher")
-                ).strip()
-            
-            state['cypher_query'] = cypher
+            state['cypher_query'] = clean_code_block(cypher)
         except Exception as e:
             logger.error(f"Query generation failed: {e}")
             state['error'] = f"Query generation error: {str(e)}"

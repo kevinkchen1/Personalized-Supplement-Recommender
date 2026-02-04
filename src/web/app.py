@@ -5,16 +5,17 @@ Personalized supplement recommendations using knowledge graphs
 import os
 import sys
 from pathlib import Path
+from typing import List, Optional, Tuple
 
 import streamlit as st
 from dotenv import load_dotenv
 
-# Add src directory to path
+# Ensure package imports work when running the app directly
 src_dir = Path(__file__).parent.parent
-sys.path.append(str(src_dir))
+if str(src_dir) not in sys.path:
+    sys.path.append(str(src_dir))
 
-from agents.graph_interface import GraphInterface
-from agents.workflow_agent import WorkflowAgent
+from agents import GraphInterface, WorkflowAgent
 
 # Load environment
 load_dotenv()
@@ -27,58 +28,55 @@ st.set_page_config(
 )
 
 @st.cache_resource
-def initialize_system():
-    """Initialize the knowledge graph and agent"""
+def initialize_system() -> Tuple[WorkflowAgent, GraphInterface]:
+    """Initialize the knowledge graph and agent."""
     neo4j_uri = os.getenv("NEO4J_URI", "bolt://localhost:7687")
     neo4j_user = os.getenv("NEO4J_USER", "neo4j")
     neo4j_password = os.getenv("NEO4J_PASSWORD")
     anthropic_key = os.getenv("ANTHROPIC_API_KEY")
-    
+
     if not neo4j_password or not anthropic_key:
         st.error("⚠️ Missing credentials in .env file")
         st.info("Please set NEO4J_PASSWORD and ANTHROPIC_API_KEY")
         st.stop()
-    
+
     try:
         graph = GraphInterface(neo4j_uri, neo4j_user, neo4j_password)
         agent = WorkflowAgent(graph, anthropic_key)
         return agent, graph
     except Exception as e:
-        st.error(f"Failed to connect to database: {e}")
+        st.error(f"Failed to initialize system: {e}")
         st.stop()
 
-def format_profile_context(medications, supplements, conditions, diet):
-    """Format user profile into context string"""
-    context_parts = []
-    
+def format_profile_context(
+    medications: str, supplements: str, conditions: List[str], diet: List[str]
+) -> str:
+    """Format user profile into a compact context string."""
+    parts: List[str] = []
+
     if medications:
         meds = [m.strip() for m in medications.split(',') if m.strip()]
         if meds:
-            context_parts.append(f"Taking medications: {', '.join(meds)}")
-    
+            parts.append(f"Taking medications: {', '.join(meds)}")
+
     if supplements:
         supps = [s.strip() for s in supplements.split(',') if s.strip()]
         if supps:
-            context_parts.append(f"Current supplements: {', '.join(supps)}")
-    
-    if conditions:
-        context_parts.append(f"Medical conditions: {', '.join(conditions)}")
-    
-    if diet:
-        context_parts.append(f"Diet: {', '.join(diet)}")
-    
-    return " | ".join(context_parts) if context_parts else ""
+            parts.append(f"Current supplements: {', '.join(supps)}")
 
-def display_safety_warning(result):
-    """Display safety warnings prominently"""
-    # Check for dangerous interactions in the answer
-    answer = result.get('answer', '').lower()
-    
-    # Look for warning keywords
-    warning_keywords = ['warning', 'caution', 'avoid', 'dangerous', 'risk', 'interaction']
-    has_warning = any(keyword in answer for keyword in warning_keywords)
-    
-    if has_warning:
+    if conditions:
+        parts.append(f"Medical conditions: {', '.join(conditions)}")
+
+    if diet:
+        parts.append(f"Diet: {', '.join(diet)}")
+
+    return " | ".join(parts) if parts else ""
+
+def display_safety_warning(result: dict) -> None:
+    """Display safety alerts if the answer contains warning keywords."""
+    answer = (result.get('answer') or '').lower()
+    keywords = ['warning', 'caution', 'avoid', 'dangerous', 'risk', 'interaction']
+    if any(k in answer for k in keywords):
         st.error("⚠️ SAFETY ALERT")
         st.warning(
             "This response contains important safety information. "

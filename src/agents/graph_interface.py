@@ -35,14 +35,14 @@ class GraphInterface:
             # Test connection
             with self.driver.session() as session:
                 session.run("RETURN 1")
-            logger.info("✓ Connected to Neo4j database")
+            logger.info("Connected to Neo4j database")
         except Exception as e:
-            logger.error(f"Failed to connect to Neo4j: {e}")
+            logger.error("Failed to connect to Neo4j: %s", e)
             raise
 
     def close(self):
         """Close database connection."""
-        if self.driver:
+        if getattr(self, "driver", None):
             self.driver.close()
             logger.info("Neo4j connection closed")
 
@@ -64,13 +64,14 @@ class GraphInterface:
         Raises:
             Exception: If query execution fails
         """
+        parameters = parameters or {}
         try:
             with self.driver.session() as session:
-                result = session.run(cypher_query, parameters or {})
+                result = session.run(cypher_query, parameters)
                 return [record.data() for record in result]
         except Exception as e:
-            logger.error(f"Query execution failed: {e}")
-            logger.error(f"Query: {cypher_query}")
+            logger.error("Query execution failed: %s", e)
+            logger.debug("Cypher: %s", cypher_query)
             raise
 
     def get_schema_info(self) -> Dict[str, Any]:
@@ -80,49 +81,47 @@ class GraphInterface:
         Returns:
             Dictionary with node labels, relationship types, and properties
         """
+        node_labels = []
+        relationship_types = []
+        node_properties = {}
+        relationship_properties = {}
+
         with self.driver.session() as session:
-            # Get node labels
-            labels_result = session.run(
-                "CALL db.labels() YIELD label RETURN collect(label) as labels"
-            ).single()
-            
-            # Get relationship types
-            rel_types_result = session.run(
-                "CALL db.relationshipTypes() YIELD relationshipType "
-                "RETURN collect(relationshipType) as types"
-            ).single()
-            
-            labels = labels_result["labels"] if labels_result else []
-            rel_types = rel_types_result["types"] if rel_types_result else []
-            
-            # Get sample properties for each node type
-            node_properties = {}
-            for label in labels:
+            try:
+                labels_res = session.run("CALL db.labels() YIELD label RETURN collect(label) as labels").single()
+                types_res = session.run(
+                    "CALL db.relationshipTypes() YIELD relationshipType RETURN collect(relationshipType) as types"
+                ).single()
+
+                node_labels = labels_res["labels"] if labels_res else []
+                relationship_types = types_res["types"] if types_res else []
+            except Exception as e:
+                logger.debug("Failed to fetch labels or relationship types: %s", e)
+
+            for label in node_labels:
                 try:
-                    query = f"MATCH (n:{label}) RETURN keys(n) as props LIMIT 1"
-                    result = session.run(query).single()
-                    if result:
-                        node_properties[label] = result["props"]
-                except:
+                    q = f"MATCH (n:{label}) RETURN keys(n) as props LIMIT 1"
+                    r = session.run(q).single()
+                    if r:
+                        node_properties[label] = r["props"]
+                except Exception:
                     continue
-            
-            # Get sample properties for each relationship type
-            rel_properties = {}
-            for rel_type in rel_types:
+
+            for rel in relationship_types:
                 try:
-                    query = f"MATCH ()-[r:{rel_type}]->() RETURN keys(r) as props LIMIT 1"
-                    result = session.run(query).single()
-                    if result:
-                        rel_properties[rel_type] = result["props"]
-                except:
+                    q = f"MATCH ()-[r:{rel}]->() RETURN keys(r) as props LIMIT 1"
+                    r = session.run(q).single()
+                    if r:
+                        relationship_properties[rel] = r["props"]
+                except Exception:
                     continue
-            
-            return {
-                "node_labels": labels,
-                "relationship_types": rel_types,
-                "node_properties": node_properties,
-                "relationship_properties": rel_properties,
-            }
+
+        return {
+            "node_labels": node_labels,
+            "relationship_types": relationship_types,
+            "node_properties": node_properties,
+            "relationship_properties": relationship_properties,
+        }
 
     def get_property_values(
         self, 
@@ -143,17 +142,14 @@ class GraphInterface:
         """
         try:
             query = (
-                f"MATCH (n:{label}) "
-                f"WHERE n.{property_name} IS NOT NULL "
-                f"RETURN DISTINCT n.{property_name} as value "
-                f"LIMIT {limit}"
+                f"MATCH (n:{label}) WHERE n.{property_name} IS NOT NULL "
+                f"RETURN DISTINCT n.{property_name} as value LIMIT {limit}"
             )
-            
             with self.driver.session() as session:
                 result = session.run(query)
                 return [record["value"] for record in result]
         except Exception as e:
-            logger.warning(f"Could not get property values for {label}.{property_name}: {e}")
+            logger.warning("Could not get property values for %s.%s: %s", label, property_name, e)
             return []
 
     def check_supplement_drug_interaction(
