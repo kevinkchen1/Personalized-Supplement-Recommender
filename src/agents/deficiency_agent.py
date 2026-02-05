@@ -98,7 +98,7 @@ class DeficiencyAgent:
                     # Combined risk - upgrade severity
                     deficiencies[nutrient]['severity'] = 'HIGH'
                 deficiencies[nutrient]['sources'].append(
-                    f"Medication: {med.get('matched_drug', med.get('user_input'))}"
+                    f"Medication: {med.get('matched_drug', med.get('user_input')) if isinstance(med, dict) else str(med)}"
                 )
         
         return deficiencies

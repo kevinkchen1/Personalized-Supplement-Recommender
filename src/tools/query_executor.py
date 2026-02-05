@@ -2,12 +2,32 @@
 Query Executor Tool - Safe Query Execution
 
 Executes Cypher queries on Neo4j database:
-- Handles errors gracefully
-- Validates query results
-- Provides retry logic for transient failures
-- Logs query performance
+- Handles errors gracefully with retry logic for transient failures
+- Validates and logs query results for debugging
+- Provides convenience wrappers that pair with QueryGenerator
 
-Role: Database executor for agents
+Role: Database runner for agents
+
+Usage:
+    from tools.query_executor import QueryExecutor
+    from tools.query_generator import QueryGenerator
+
+    executor = QueryExecutor(graph_interface)
+    gen = QueryGenerator()
+
+    # Option A: generate + execute separately
+    q = gen.generate_query('comprehensive_safety', {
+        'supplement_name': 'Fish Oil',
+        'medication_names': ['Warfarin'],
+    })
+    result = executor.execute(q['query'], q['parameters'])
+
+    # Option B: pass generator output directly
+    result = executor.execute_query_dict(q)
+
+    # Option C: use the all-in-one convenience function
+    from tools.query_executor import run_safety_check
+    results = run_safety_check(graph_interface, 'Fish Oil', ['Warfarin'])
 """
 
 from typing import Dict, Any, List, Optional
@@ -16,467 +36,579 @@ import time
 
 class QueryExecutor:
     """
-    Safely executes Cypher queries on Neo4j
+    Safely executes Cypher queries on Neo4j.
+
+    Wraps GraphInterface.execute_query() with:
+    - Retry logic for transient connection errors
+    - Standardised result format {success, data, count, error, execution_time}
+    - Query history for debugging / Streamlit display
     """
-    
+
     def __init__(self, graph_interface):
         """
-        Initialize executor with database connection
-        
         Args:
-            graph_interface: Neo4j GraphInterface instance
+            graph_interface: A GraphInterface instance (from graph.graph_interface)
         """
         self.graph = graph_interface
-        self.query_history = []  # Track queries for debugging
-    
-    
+        self.query_history: List[Dict] = []
+
+    # ------------------------------------------------------------------
+    # Core execution
+    # ------------------------------------------------------------------
+
     def execute(
-        self, 
-        query: str, 
+        self,
+        query: str,
         parameters: Optional[Dict] = None,
-        retry_count: int = 3
+        retry_count: int = 3,
     ) -> Dict[str, Any]:
         """
-        Execute a Cypher query with error handling
-        
+        Execute a single Cypher query with error handling and retries.
+
         Args:
             query: Cypher query string
-            parameters: Query parameters
-            retry_count: Number of retries for transient failures
-            
+            parameters: Query parameters (safe against injection)
+            retry_count: Max retries for transient failures
+
         Returns:
-            Dict with:
-                - success: bool
-                - data: List of result records (if success)
-                - count: Number of results
-                - error: Error message (if failure)
-                - execution_time: Query duration in seconds
-                
-        Example:
-            >>> executor = QueryExecutor(graph_interface)
-            >>> result = executor.execute(
-            ...     "MATCH (s:Supplement {supplement_id: $id}) RETURN s",
-            ...     {"id": "S07"}
-            ... )
-            >>> if result['success']:
-            ...     print(f"Found {result['count']} results")
+            {
+                'success': bool,
+                'data': List[Dict],   # rows returned
+                'count': int,
+                'error': str | None,
+                'execution_time': float,  # seconds
+                'query': str,             # for debugging
+                'parameters': dict,       # for debugging
+            }
         """
         start_time = time.time()
-        
+
         if parameters is None:
             parameters = {}
-        
-        # Log the query
+
         self._log_query(query, parameters)
-        
-        # Execute with retry logic
+
         for attempt in range(retry_count):
             try:
-                # Execute query
+                # GraphInterface.execute_query already returns List[Dict]
                 raw_results = self.graph.execute_query(query, parameters)
-                
-                # Process results
-                processed_results = self._process_results(raw_results)
-                
-                execution_time = time.time() - start_time
-                
+
+                # Defensive: ensure we always have a list of dicts
+                processed = self._process_results(raw_results)
+
+                elapsed = time.time() - start_time
+
                 result = {
                     'success': True,
-                    'data': processed_results,
-                    'count': len(processed_results),
+                    'data': processed,
+                    'count': len(processed),
                     'error': None,
-                    'execution_time': execution_time
+                    'execution_time': elapsed,
+                    'query': query,
+                    'parameters': parameters,
                 }
-                
-                # Log success
-                self._log_success(result)
-                
+                self._update_history_success(result)
                 return result
-            
+
             except Exception as e:
                 error_type = type(e).__name__
                 error_msg = str(e)
-                
-                # Check if it's a transient error worth retrying
-                if self._is_transient_error(error_type) and attempt < retry_count - 1:
-                    print(f"⚠️  Transient error, retrying ({attempt + 1}/{retry_count})...")
-                    time.sleep(0.5 * (attempt + 1))  # Exponential backoff
+
+                if self._is_transient(error_type) and attempt < retry_count - 1:
+                    wait = 0.5 * (attempt + 1)
+                    print(f"⚠️  Transient error ({error_type}), retrying in {wait:.1f}s "
+                          f"({attempt + 1}/{retry_count})...")
+                    time.sleep(wait)
                     continue
-                
-                # Permanent error or out of retries
-                execution_time = time.time() - start_time
-                
+
+                elapsed = time.time() - start_time
                 result = {
                     'success': False,
                     'data': [],
                     'count': 0,
                     'error': f"{error_type}: {error_msg}",
-                    'execution_time': execution_time
+                    'execution_time': elapsed,
+                    'query': query,
+                    'parameters': parameters,
                 }
-                
-                # Log failure
-                self._log_failure(result, query)
-                
+                self._update_history_failure(result)
                 return result
-        
-        # Should never reach here, but just in case
+
+        # Should never reach here
         return {
             'success': False,
             'data': [],
             'count': 0,
             'error': 'Max retries exceeded',
-            'execution_time': time.time() - start_time
+            'execution_time': time.time() - start_time,
+            'query': query,
+            'parameters': parameters,
         }
-    
-    
+
+    # ------------------------------------------------------------------
+    # Convenience wrappers
+    # ------------------------------------------------------------------
+
+    def execute_query_dict(self, query_dict: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Execute a query dict produced by QueryGenerator.generate_query().
+
+        Args:
+            query_dict: {
+                'query': str,
+                'parameters': dict,
+                'explanation': str,
+                ...
+            }
+
+        Returns:
+            Standard result dict (same as execute()), plus 'explanation'.
+        """
+        query = query_dict.get('query')
+        parameters = query_dict.get('parameters', {})
+        explanation = query_dict.get('explanation', '')
+
+        if not query:
+            return {
+                'success': False,
+                'data': [],
+                'count': 0,
+                'error': query_dict.get('error', 'No query provided'),
+                'execution_time': 0,
+                'explanation': explanation,
+                'query': None,
+                'parameters': parameters,
+            }
+
+        result = self.execute(query, parameters)
+        result['explanation'] = explanation
+        result['query_type'] = query_dict.get('query_type', '')
+        return result
+
     def execute_multiple(
-        self, 
-        queries: List[Dict[str, Any]]
+        self,
+        queries: List[Dict[str, Any]],
+        stop_on_error: bool = False,
+        verbose: bool = True,
     ) -> List[Dict[str, Any]]:
         """
-        Execute multiple queries in sequence
-        
+        Execute a list of query dicts from QueryGenerator in sequence.
+
         Args:
-            queries: List of query dicts from QueryGenerator
-                    Each dict has 'query' and 'parameters'
-                    
+            queries: List of query dicts (each with 'query', 'parameters', 'explanation')
+            stop_on_error: If True, stop executing after first failure
+            verbose: Print progress
+
         Returns:
-            List of result dicts
-            
-        Example:
-            >>> queries = [
-            ...     {'query': query1, 'parameters': params1},
-            ...     {'query': query2, 'parameters': params2}
-            ... ]
-            >>> results = executor.execute_multiple(queries)
-            >>> all_data = [r['data'] for r in results if r['success']]
+            List of result dicts (same order as input queries)
         """
         results = []
-        
-        for query_dict in queries:
-            query = query_dict.get('query')
-            parameters = query_dict.get('parameters', {})
-            explanation = query_dict.get('explanation', '')
-            
-            if not query:
-                results.append({
-                    'success': False,
-                    'error': 'No query provided',
-                    'data': [],
-                    'count': 0
-                })
-                continue
-            
-            print(f"📊 Executing: {explanation}")
-            result = self.execute(query, parameters)
-            
-            if result['success']:
-                print(f"   ✓ Success: {result['count']} results in {result['execution_time']:.3f}s")
-            else:
-                print(f"   ✗ Failed: {result['error']}")
-            
+
+        for i, query_dict in enumerate(queries, 1):
+            explanation = query_dict.get('explanation', f'Query {i}')
+
+            if verbose:
+                print(f"📊 [{i}/{len(queries)}] {explanation}")
+
+            result = self.execute_query_dict(query_dict)
+
+            if verbose:
+                if result['success']:
+                    print(f"   ✅ {result['count']} results ({result['execution_time']:.3f}s)")
+                else:
+                    print(f"   ❌ {result['error']}")
+
             results.append(result)
-        
+
+            if stop_on_error and not result['success']:
+                print("   ⛔ Stopping due to error")
+                break
+
         return results
-    
-    
+
     def execute_with_fallback(
         self,
-        primary_query: Dict[str, Any],
-        fallback_query: Optional[Dict[str, Any]] = None
+        primary: Dict[str, Any],
+        fallback: Optional[Dict[str, Any]] = None,
     ) -> Dict[str, Any]:
         """
-        Execute a query with a fallback option if it fails
-        
+        Try primary query; if it fails or returns 0 results, try fallback.
+
         Args:
-            primary_query: Main query to try first
-            fallback_query: Alternative query if primary fails
-            
+            primary: Primary query dict
+            fallback: Fallback query dict (optional)
+
         Returns:
-            Result dict
+            Result dict, with 'from_fallback' key if fallback was used
         """
-        # Try primary query
-        result = self.execute(
-            primary_query['query'],
-            primary_query.get('parameters', {})
-        )
-        
-        # If successful or no fallback, return result
-        if result['success'] or not fallback_query:
+        result = self.execute_query_dict(primary)
+
+        # Success with data → return
+        if result['success'] and result['count'] > 0:
+            result['from_fallback'] = False
             return result
-        
+
+        # No fallback → return whatever we got
+        if not fallback or not fallback.get('query'):
+            result['from_fallback'] = False
+            return result
+
         # Try fallback
-        print("⚠️  Primary query failed, trying fallback...")
-        fallback_result = self.execute(
-            fallback_query['query'],
-            fallback_query.get('parameters', {})
-        )
-        
-        # Mark that this is from fallback
+        reason = "query failed" if not result['success'] else "0 results"
+        print(f"⚠️  Primary {reason}, trying fallback...")
+        fallback_result = self.execute_query_dict(fallback)
         fallback_result['from_fallback'] = True
-        
         return fallback_result
-    
-    
+
+    # ------------------------------------------------------------------
+    # Result aggregation helpers
+    # ------------------------------------------------------------------
+
+    @staticmethod
+    def merge_results(results: List[Dict[str, Any]]) -> Dict[str, Any]:
+        """
+        Merge multiple execution results into one combined result.
+
+        Useful after execute_multiple() to get a single flat list of rows.
+
+        Args:
+            results: List of result dicts from execute_multiple()
+
+        Returns:
+            {
+                'success': bool,          # True if ANY query succeeded
+                'data': List[Dict],       # combined rows from all queries
+                'count': int,
+                'errors': List[str],      # any errors encountered
+                'total_execution_time': float,
+                'queries_run': int,
+                'queries_succeeded': int,
+                'by_query_type': Dict     # data grouped by query_type
+            }
+        """
+        all_data = []
+        errors = []
+        total_time = 0
+        succeeded = 0
+        by_type: Dict[str, List] = {}
+
+        for r in results:
+            total_time += r.get('execution_time', 0)
+            if r['success']:
+                succeeded += 1
+                all_data.extend(r['data'])
+                qt = r.get('query_type', 'unknown')
+                by_type.setdefault(qt, []).extend(r['data'])
+            if r.get('error'):
+                errors.append(r['error'])
+
+        return {
+            'success': succeeded > 0,
+            'data': all_data,
+            'count': len(all_data),
+            'errors': errors,
+            'total_execution_time': total_time,
+            'queries_run': len(results),
+            'queries_succeeded': succeeded,
+            'by_query_type': by_type,
+        }
+
+    # ------------------------------------------------------------------
+    # Query history (for Streamlit debug panel)
+    # ------------------------------------------------------------------
+
+    def get_query_history(self, limit: int = 10) -> List[Dict]:
+        """Get the most recent queries (for UI display)."""
+        return self.query_history[-limit:]
+
+    def get_last_query(self) -> Optional[Dict]:
+        """Get the single most recent query."""
+        return self.query_history[-1] if self.query_history else None
+
+    def clear_history(self):
+        """Clear query history."""
+        self.query_history = []
+
+    # ------------------------------------------------------------------
+    # Internal helpers
+    # ------------------------------------------------------------------
+
     def _process_results(self, raw_results: Any) -> List[Dict]:
         """
-        Process raw Neo4j results into clean dicts
-        
-        Args:
-            raw_results: Raw results from Neo4j driver
-            
-        Returns:
-            List of dict records
+        Ensure results are a clean List[Dict].
+
+        GraphInterface.execute_query() already does record.data(),
+        so this is mostly a safety net.
         """
-        # TODO: Adjust based on your GraphInterface's return format
-        
-        # If already a list of dicts, return as-is
+        if raw_results is None:
+            return []
+
         if isinstance(raw_results, list):
+            # Already List[Dict] from GraphInterface — pass through
             return raw_results
-        
-        # If it's a Neo4j result object, convert to dicts
+
+        # Fallback: try to convert iterator of records
         processed = []
         try:
             for record in raw_results:
-                # Convert Neo4j Record to dict
                 if hasattr(record, 'data'):
                     processed.append(record.data())
-                elif hasattr(record, 'items'):
-                    processed.append(dict(record.items()))
+                elif isinstance(record, dict):
+                    processed.append(record)
                 else:
                     processed.append(dict(record))
         except Exception as e:
             print(f"⚠️  Error processing results: {e}")
-            # Try to return raw results if processing fails
-            return [raw_results] if raw_results else []
-        
+            return []
+
         return processed
-    
-    
-    def _is_transient_error(self, error_type: str) -> bool:
-        """
-        Check if error is transient and worth retrying
-        
-        Args:
-            error_type: Type of exception
-            
-        Returns:
-            True if transient, False otherwise
-        """
-        transient_errors = [
+
+    @staticmethod
+    def _is_transient(error_type: str) -> bool:
+        """Check if an error is transient and worth retrying."""
+        return error_type in {
             'TransientError',
             'ServiceUnavailable',
             'SessionExpired',
             'ConnectionError',
-            'TimeoutError'
-        ]
-        
-        return error_type in transient_errors
-    
-    
+            'TimeoutError',
+            'BrokenPipeError',
+        }
+
     def _log_query(self, query: str, parameters: Dict):
-        """
-        Log query for debugging
-        
-        Args:
-            query: Cypher query
-            parameters: Query parameters
-        """
+        """Record query in history."""
         self.query_history.append({
             'query': query,
             'parameters': parameters,
-            'timestamp': time.time()
+            'timestamp': time.time(),
+            'status': 'pending',
         })
-        
-        # Keep only last 100 queries
+        # Cap at 100 entries
         if len(self.query_history) > 100:
-            self.query_history.pop(0)
-    
-    
-    def _log_success(self, result: Dict):
-        """Log successful query execution"""
-        # TODO: Implement proper logging
-        pass
-    
-    
-    def _log_failure(self, result: Dict, query: str):
-        """Log failed query execution"""
-        # TODO: Implement proper logging
+            self.query_history = self.query_history[-100:]
+
+    def _update_history_success(self, result: Dict):
+        """Mark the last history entry as succeeded."""
+        if self.query_history:
+            self.query_history[-1]['status'] = 'success'
+            self.query_history[-1]['count'] = result['count']
+            self.query_history[-1]['execution_time'] = result['execution_time']
+
+    def _update_history_failure(self, result: Dict):
+        """Mark the last history entry as failed."""
+        if self.query_history:
+            self.query_history[-1]['status'] = 'failed'
+            self.query_history[-1]['error'] = result['error']
+            self.query_history[-1]['execution_time'] = result['execution_time']
         print(f"❌ Query failed: {result['error']}")
-        print(f"   Query: {query[:100]}...")
-    
-    
-    def get_query_history(self, limit: int = 10) -> List[Dict]:
-        """
-        Get recent query history for debugging
-        
-        Args:
-            limit: Number of recent queries to return
-            
-        Returns:
-            List of recent queries
-        """
-        return self.query_history[-limit:]
-    
-    
-    def clear_history(self):
-        """Clear query history"""
-        self.query_history = []
+        print(f"   Query: {result['query'][:120]}...")
 
 
-class BatchQueryExecutor(QueryExecutor):
-    """
-    Extended executor for batch operations
-    """
-    
-    def execute_batch(
-        self,
-        queries: List[Dict[str, Any]],
-        parallel: bool = False
-    ) -> List[Dict[str, Any]]:
-        """
-        Execute multiple queries, optionally in parallel
-        
-        Args:
-            queries: List of query dicts
-            parallel: If True, execute in parallel (requires async setup)
-            
-        Returns:
-            List of results
-        """
-        if parallel:
-            # TODO: Implement parallel execution with asyncio
-            print("⚠️  Parallel execution not yet implemented, using sequential")
-        
-        return self.execute_multiple(queries)
+# ======================================================================
+# Convenience functions for agents
+# ======================================================================
 
-
-# Helper functions for agents
-def execute_safety_checks(
+def run_safety_check(
     graph_interface,
-    supplement_id: str,
-    drug_ids: List[str]
-) -> Dict[str, List]:
-    """
-    Execute all safety check queries and aggregate results
-    
-    Args:
-        graph_interface: Neo4j connection
-        supplement_id: Supplement to check
-        drug_ids: Medications to check against
-        
-    Returns:
-        Dict with:
-            - direct_interactions: List of direct interactions
-            - similar_effects: List of effect overlaps
-            - metabolism_conflicts: List of metabolism issues
-            - all_issues: Combined list
-    """
-    from tools.query_generator import generate_safety_queries
-    
-    executor = QueryExecutor(graph_interface)
-    
-    # Generate queries
-    queries = generate_safety_queries(supplement_id, drug_ids)
-    
-    # Execute all queries
-    results = executor.execute_multiple(queries)
-    
-    # Aggregate results
-    aggregated = {
-        'direct_interactions': results[0]['data'] if results[0]['success'] else [],
-        'similar_effects': results[1]['data'] if results[1]['success'] else [],
-        'metabolism_conflicts': results[2]['data'] if results[2]['success'] else [],
-        'all_issues': []
-    }
-    
-    # Combine all issues
-    for result in results:
-        if result['success']:
-            aggregated['all_issues'].extend(result['data'])
-    
-    return aggregated
-
-
-def execute_deficiency_checks(
-    graph_interface,
-    dietary_restrictions: List[str],
-    drug_ids: List[str]
+    supplement_name: str,
+    medication_names: List[str],
+    verbose: bool = True,
 ) -> Dict[str, Any]:
     """
-    Execute all deficiency check queries and aggregate results
-    
-    Args:
-        graph_interface: Neo4j connection
-        dietary_restrictions: List of diet restrictions
-        drug_ids: List of medications
-        
-    Returns:
-        Dict with deficiency information
-    """
-    from tools.query_generator import generate_deficiency_queries
-    
-    executor = QueryExecutor(graph_interface)
-    
-    # Generate queries
-    queries = generate_deficiency_queries(dietary_restrictions, drug_ids)
-    
-    # Execute all queries
-    results = executor.execute_multiple(queries)
-    
-    # Aggregate by nutrient
-    nutrients_at_risk = {}
-    
-    for result in results:
-        if result['success']:
-            for record in result['data']:
-                nutrient = record.get('nutrient')
-                if nutrient not in nutrients_at_risk:
-                    nutrients_at_risk[nutrient] = {
-                        'sources': [],
-                        'rdi': record.get('rdi'),
-                        'symptoms': record.get('symptoms')
-                    }
-                
-                source = record.get('source')
-                if source == 'diet':
-                    nutrients_at_risk[nutrient]['sources'].append(
-                        f"Diet: {record.get('diet')}"
-                    )
-                else:
-                    nutrients_at_risk[nutrient]['sources'].append(
-                        f"Medication: {record.get('medication')}"
-                    )
-    
-    return nutrients_at_risk
+    One-call safety check: generate queries + execute + merge results.
 
+    This is the easiest way for an agent to run a full safety check.
+
+    Args:
+        graph_interface: Neo4j GraphInterface instance
+        supplement_name: e.g. "Fish Oil"
+        medication_names: e.g. ["Warfarin", "Aspirin"]
+        verbose: Print progress
+
+    Returns:
+        Merged result dict with all interaction data across all pathways.
+        Key fields:
+            'success': bool
+            'data': List[Dict]  — all interactions found
+            'count': int
+            'by_query_type': Dict  — interactions grouped by pathway
+    """
+    from tools.query_generator import generate_safety_queries
+
+    executor = QueryExecutor(graph_interface)
+    queries = generate_safety_queries(supplement_name, medication_names)
+
+    if verbose:
+        print(f"\n🔬 Safety check: {supplement_name} vs {medication_names}")
+        print(f"   Running {len(queries)} queries...\n")
+
+    results = executor.execute_multiple(queries, verbose=verbose)
+    merged = QueryExecutor.merge_results(results)
+
+    if verbose:
+        print(f"\n{'='*50}")
+        print(f"   Total interactions found: {merged['count']}")
+        print(f"   Queries: {merged['queries_succeeded']}/{merged['queries_run']} succeeded")
+        print(f"   Time: {merged['total_execution_time']:.3f}s")
+        if merged['errors']:
+            print(f"   Errors: {merged['errors']}")
+        print(f"{'='*50}\n")
+
+    return merged
+
+
+def run_comprehensive_safety(
+    graph_interface,
+    supplement_name: str,
+    medication_names: List[str],
+    verbose: bool = True,
+) -> Dict[str, Any]:
+    """
+    Run the single comprehensive UNION query (all 4 pathways at once).
+
+    More efficient than run_safety_check() (1 query vs 4), but less
+    granular in error reporting.
+
+    Args:
+        graph_interface: Neo4j GraphInterface instance
+        supplement_name: e.g. "Fish Oil"
+        medication_names: e.g. ["Warfarin", "Aspirin"]
+
+    Returns:
+        Standard result dict from execute().
+        Each row in 'data' has a 'pathway' column identifying
+        which safety pathway found it.
+    """
+    from tools.query_generator import generate_comprehensive_safety_query
+
+    executor = QueryExecutor(graph_interface)
+    query_dict = generate_comprehensive_safety_query(supplement_name, medication_names)
+
+    if verbose:
+        print(f"\n🔬 Comprehensive safety: {supplement_name} vs {medication_names}")
+
+    result = executor.execute_query_dict(query_dict)
+
+    if verbose:
+        if result['success']:
+            print(f"   ✅ Found {result['count']} interactions")
+            # Group by pathway for summary
+            pathways: Dict[str, int] = {}
+            for row in result['data']:
+                p = row.get('pathway', 'unknown')
+                pathways[p] = pathways.get(p, 0) + 1
+            for p, n in pathways.items():
+                print(f"      {p}: {n}")
+        else:
+            print(f"   ❌ {result['error']}")
+
+    return result
+
+
+def run_supplement_info(
+    graph_interface,
+    supplement_name: str,
+) -> Dict[str, Any]:
+    """
+    Get full info about a supplement (ingredients, treats, side effects, etc.)
+
+    Args:
+        graph_interface: Neo4j GraphInterface instance
+        supplement_name: e.g. "Fish Oil"
+
+    Returns:
+        Standard result dict. 'data' will have 0 or 1 rows with
+        collected lists of ingredients, symptoms, etc.
+    """
+    from tools.query_generator import generate_supplement_info_query
+
+    executor = QueryExecutor(graph_interface)
+    query_dict = generate_supplement_info_query(supplement_name)
+    return executor.execute_query_dict(query_dict)
+
+
+# ======================================================================
+# Quick self-test (requires live database)
+# ======================================================================
 
 if __name__ == "__main__":
-    # Quick test (requires actual database connection)
-    from graph.graph_interface import GraphInterface
     import os
-    
-    # Initialize
-    graph = GraphInterface(
-        uri=os.getenv("NEO4J_URI"),
-        user=os.getenv("NEO4J_USER"),
-        password=os.getenv("NEO4J_PASSWORD")
-    )
-    
+
+    print("=" * 60)
+    print("QUERY EXECUTOR - SELF TEST")
+    print("=" * 60)
+
+    # Try to connect
+    try:
+        from graph.graph_interface import GraphInterface
+
+        graph = GraphInterface(
+            uri=os.getenv("NEO4J_URI", "bolt://localhost:7687"),
+            user=os.getenv("NEO4J_USER", "neo4j"),
+            password=os.getenv("NEO4J_PASSWORD", ""),
+        )
+        print("✅ Connected to Neo4j\n")
+    except Exception as e:
+        print(f"❌ Cannot connect to Neo4j: {e}")
+        print("   Set NEO4J_URI, NEO4J_USER, NEO4J_PASSWORD env vars")
+        exit(1)
+
     executor = QueryExecutor(graph)
-    
-    # Test simple query
-    test_query = """
-    MATCH (s:Supplement)
-    RETURN s.supplement_name as name
-    LIMIT 5
-    """
-    
-    result = executor.execute(test_query)
-    
-    if result['success']:
-        print(f"✓ Found {result['count']} supplements")
-        for record in result['data']:
-            print(f"  - {record['name']}")
+
+    # Test 1: Simple query
+    print("--- Test 1: Simple supplement lookup ---")
+    r = executor.execute(
+        "MATCH (s:Supplement) RETURN s.supplement_name AS name LIMIT 5"
+    )
+    if r['success']:
+        print(f"   ✅ Found {r['count']} supplements:")
+        for row in r['data']:
+            print(f"      - {row['name']}")
     else:
-        print(f"✗ Query failed: {result['error']}")
+        print(f"   ❌ {r['error']}")
+
+    # Test 2: Parameterised query
+    print("\n--- Test 2: Parameterised medication lookup ---")
+    r = executor.execute(
+        "MATCH (m:Medication) WHERE toLower(m.medication_name) CONTAINS toLower($name) "
+        "RETURN m.medication_name AS name LIMIT 5",
+        {'name': 'war'},
+    )
+    if r['success']:
+        print(f"   ✅ Found {r['count']} medications matching 'war':")
+        for row in r['data']:
+            print(f"      - {row['name']}")
+    else:
+        print(f"   ❌ {r['error']}")
+
+    # Test 3: QueryGenerator integration
+    print("\n--- Test 3: QueryGenerator → Executor integration ---")
+    from tools.query_generator import QueryGenerator
+
+    gen = QueryGenerator()
+    q = gen.generate_query('find_supplement', {'name': 'Fish'})
+    r = executor.execute_query_dict(q)
+    print(f"   Explanation: {r.get('explanation')}")
+    print(f"   Success: {r['success']}, Count: {r['count']}")
+
+    # Test 4: Full safety check
+    print("\n--- Test 4: Full safety check ---")
+    safety = run_safety_check(graph, 'Fish Oil', ['Warfarin'])
+    print(f"   Interactions found: {safety['count']}")
+
+    # Test 5: Comprehensive safety (single UNION)
+    print("\n--- Test 5: Comprehensive safety (UNION) ---")
+    comp = run_comprehensive_safety(graph, 'Red Yeast Rice', ['Lipitor'])
+    print(f"   Interactions found: {comp['count']}")
+
+    # Test 6: Query history
+    print("\n--- Test 6: Query history ---")
+    history = executor.get_query_history(limit=3)
+    print(f"   Last {len(history)} queries:")
+    for h in history:
+        status = h.get('status', '?')
+        t = h.get('execution_time', 0)
+        print(f"      [{status}] {h['query'][:60]}... ({t:.3f}s)")
+
+    print("\n✅ All executor tests complete!")
+    graph.close()

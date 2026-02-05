@@ -276,6 +276,7 @@ def run_workflow(
     workflow,
     user_question: str,
     patient_profile: dict,
+    graph_interface=None,
     verbose: bool = True
 ) -> dict:
     """
@@ -285,6 +286,7 @@ def run_workflow(
         workflow: Compiled workflow
         user_question: User's question
         patient_profile: Patient health profile
+        graph_interface: Neo4j GraphInterface (passed to agents via state)
         verbose: Whether to print progress
         
     Returns:
@@ -295,7 +297,8 @@ def run_workflow(
         >>> result = run_workflow(
         ...     workflow,
         ...     "Is Fish Oil safe?",
-        ...     {"medications": [...]}
+        ...     {"medications": [...]},
+        ...     graph_interface=graph
         ... )
         >>> print(result['final_answer'])
     """
@@ -303,6 +306,10 @@ def run_workflow(
     
     # Create initial state
     initial_state = create_initial_state(user_question, patient_profile)
+    
+    # Inject graph_interface so agents (supervisor, safety, etc.) can use it
+    if graph_interface is not None:
+        initial_state['graph_interface'] = graph_interface
     
     if verbose:
         print("🚀 Starting workflow execution...")

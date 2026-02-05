@@ -52,12 +52,22 @@ def route_supervisor_decision(state: Dict[str, Any]) -> str:
     decision = state.get('supervisor_decision', '')
     
     # Map supervisor decisions to node names
+    # NOTE: Must match the exact strings supervisor._make_decision() returns
     route_map = {
+        # Safety
         'check_safety': NodeNames.SAFETY_CHECK,
+        # Deficiency
         'check_deficiency': NodeNames.DEFICIENCY_CHECK,
-        'check_recommendations': NodeNames.RECOMMENDATION,
-        'finish': NodeNames.SYNTHESIS,
-        'loop_back': NodeNames.SUPERVISOR,  # Loop back to supervisor
+        # Recommendations (supervisor uses 'get_recommendations')
+        'get_recommendations': NodeNames.RECOMMENDATION,
+        'check_recommendations': NodeNames.RECOMMENDATION,  # alias
+        # Synthesis (supervisor uses 'synthesize')
+        'synthesize': NodeNames.SYNTHESIS,
+        'finish': NodeNames.SYNTHESIS,  # alias
+        # Loop back (supervisor uses 'need_more_evidence' or 'clarify')
+        'need_more_evidence': NodeNames.SUPERVISOR,
+        'clarify': NodeNames.SUPERVISOR,
+        'loop_back': NodeNames.SUPERVISOR,  # alias
     }
     
     # Get the route, default to END if unknown

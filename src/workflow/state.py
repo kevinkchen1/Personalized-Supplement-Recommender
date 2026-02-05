@@ -185,6 +185,11 @@ class ConversationState(TypedDict):
     
     error_message: Optional[str]
     """Any error message if something goes wrong"""
+    
+    # ==================== RESOURCES ====================
+    
+    graph_interface: Optional[Any]
+    """Neo4j GraphInterface instance — injected at runtime for agents to use"""
 
 
 # ==================== DEFAULT STATE ====================
@@ -238,7 +243,10 @@ def create_initial_state(
         
         # Final output
         final_answer=None,
-        error_message=None
+        error_message=None,
+        
+        # Resources
+        graph_interface=None
     )
 
 

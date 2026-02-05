@@ -75,15 +75,25 @@ class SynthesisAgent:
         # Add profile info
         profile = state.get('patient_profile', {})
         if profile.get('medications'):
-            meds = [m.get('matched_drug', m.get('user_input')) 
-                   for m in profile['medications']]
+            meds = [
+                m.get('matched_drug', m.get('user_input', 'Unknown')) if isinstance(m, dict) else str(m)
+                for m in profile['medications']
+            ]
             context += f"Patient Medications: {', '.join(meds)}\n"
+        
+        if profile.get('supplements'):
+            supps = [
+                s.get('supplement_name', s.get('user_input', 'Unknown')) if isinstance(s, dict) else str(s)
+                for s in profile['supplements']
+            ]
+            context += f"Patient Supplements: {', '.join(supps)}\n"
         
         if profile.get('conditions'):
             context += f"Conditions: {', '.join(profile['conditions'])}\n"
         
-        if profile.get('dietary_restrictions'):
-            context += f"Diet: {', '.join(profile['dietary_restrictions'])}\n"
+        if profile.get('dietary_restrictions') or profile.get('diet'):
+            diet = profile.get('dietary_restrictions', profile.get('diet', []))
+            context += f"Diet: {', '.join(diet)}\n"
         
         context += "\n"
         
