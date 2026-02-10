@@ -240,12 +240,12 @@ Return ONLY JSON:
         elif needs.get('needs_safety_check'):
             pending.append('safety_check')
         
-        if state.get('deficiencies_checked', False):
+        if state.get('deficiency_checked', False):
             completed.append('deficiency_check')
         elif needs.get('needs_deficiency_check'):
             pending.append('deficiency_check')
         
-        if state.get('recommendations_generated', False):
+        if state.get('recommendations_checked', False):
             completed.append('recommendations')
         elif needs.get('needs_recommendations'):
             pending.append('recommendations')

@@ -1,14 +1,11 @@
 """
 Recommendation Agent - Supplement Advisor
-
 Finds safe supplement recommendations for conditions/symptoms:
 - Finds supplements that help the condition
 - Filters out ones that interact with user's medications
 - Ranks by evidence strength
-
 Role: Recommendation specialist
 """
-
 from typing import Dict, Any, List
 import os
 
@@ -132,7 +129,7 @@ class RecommendationAgent:
         Find supplements that help with condition/symptom
         
         Uses query: MATCH (s:Supplement)-[:TREATS]->(sym:Symptom)
-        WHERE sym.symptom_name CONTAINS condition
+        WHERE sym.description CONTAINS condition
         
         Args:
             condition: Health condition or symptom
@@ -141,9 +138,10 @@ class RecommendationAgent:
             List of supplement candidates with basic info
         """
         # Generate query using QueryGenerator
+        # FIX: param key is 'symptom' (what QueryGenerator expects), not 'symptom_name'
         query_dict = self.generator.generate_query(
             'supplements_for_symptom',
-            {'symptom_name': condition}
+            {'symptom': condition}
         )
         
         if query_dict.get('error'):
@@ -158,12 +156,19 @@ class RecommendationAgent:
             return []
         
         # Format results
+        # FIX: column names match the actual Cypher RETURN clause:
+        #   'supplement' (not 'supplement_name'), 'symptom' (not 'symptom_name')
+        seen = set()
         candidates = []
         for row in result['data']:
+            name = row.get('supplement', '')
+            if not name or name in seen:
+                continue
+            seen.add(name)
             candidates.append({
                 'supplement_id': row.get('supplement_id'),
-                'supplement_name': row.get('supplement_name'),
-                'symptom_treated': row.get('symptom_name'),
+                'supplement_name': name,
+                'symptom_treated': row.get('symptom'),
                 'safety_rating': row.get('safety_rating', 'UNKNOWN'),
                 'relationship_type': row.get('relationship_type', 'TREATS')
             })
@@ -312,10 +317,10 @@ class RecommendationAgent:
         Extract condition/symptom from state
         
         Tries multiple sources:
-        1. normalized_entities.symptoms
-        2. extracted_entities.symptoms
+        1. normalized_entities.conditions or .symptoms
+        2. extracted_entities.conditions or .symptoms
         3. patient_profile.conditions
-        4. user_query (parse for symptom keywords)
+        4. user_question (parse for symptom keywords)
         
         Args:
             state: Current conversation state
@@ -323,26 +328,32 @@ class RecommendationAgent:
         Returns:
             Condition/symptom string or None
         """
-        # Source 1: Normalized entities (symptoms)
-        normalized = state.get('normalized_entities', {})
-        symptoms = normalized.get('symptoms', [])
-        if symptoms:
-            return symptoms[0] if isinstance(symptoms[0], str) else symptoms[0].get('symptom_name')
+        # Source 1: Normalized entities
+        # FIX: use `or {}` to handle explicit None values in state
+        # FIX: check both 'conditions' AND 'symptoms' (entity extractor returns 'conditions')
+        normalized = state.get('normalized_entities') or {}
+        for key in ('conditions', 'symptoms'):
+            items = normalized.get(key, [])
+            if items:
+                return items[0] if isinstance(items[0], str) else items[0].get('symptom_name')
         
         # Source 2: Extracted entities
-        extracted = state.get('extracted_entities', {})
-        symptoms = extracted.get('symptoms', [])
-        if symptoms:
-            return symptoms[0]
+        # FIX: use `or {}` and check both 'conditions' and 'symptoms'
+        extracted = state.get('extracted_entities') or {}
+        for key in ('conditions', 'symptoms'):
+            items = extracted.get(key, [])
+            if items:
+                return items[0]
         
         # Source 3: Patient profile conditions
-        profile = state.get('patient_profile', {})
+        profile = state.get('patient_profile') or {}
         conditions = profile.get('conditions', [])
         if conditions:
             return conditions[0]
         
-        # Source 4: Parse user query for symptom keywords
-        user_query = state.get('user_query', '')
+        # Source 4: Parse user question for symptom keywords
+        # FIX: state key is 'user_question', not 'user_query'
+        user_query = state.get('user_question', '')
         symptom_keywords = self._extract_symptom_from_query(user_query)
         if symptom_keywords:
             return symptom_keywords
@@ -358,6 +369,8 @@ class RecommendationAgent:
         - "help with [symptom]"
         - "for [symptom]"
         - "treat [symptom]"
+        - "support [condition]"
+        - "supplements for [condition]"
         
         Args:
             query: User's natural language query
@@ -367,22 +380,26 @@ class RecommendationAgent:
         """
         import re
         
-        # Common patterns
+        # FIX: added patterns for 'support X', 'good for X', 'supplements for X'
         patterns = [
-            r'help\s+(?:with|for)\s+([a-zA-Z\s]+)',
-            r'treat\s+([a-zA-Z\s]+)',
-            r'for\s+(?:my\s+)?([a-zA-Z\s]+)',
-            r'recommend.*for\s+([a-zA-Z\s]+)',
+            r'supplements?\s+(?:for|that help(?: with)?)\s+([a-zA-Z\s]+?)(?:\?|$)',
+            r'support\s+([a-zA-Z\s]+?)(?:\?|$)',
+            r'help\s+(?:with|for)\s+([a-zA-Z\s]+?)(?:\?|$)',
+            r'good\s+for\s+([a-zA-Z\s]+?)(?:\?|$)',
+            r'treat\s+([a-zA-Z\s]+?)(?:\?|$)',
+            r'recommend.*for\s+([a-zA-Z\s]+?)(?:\?|$)',
+            r'for\s+(?:my\s+)?([a-zA-Z\s]+?)(?:\?|$)',
         ]
         
         query_lower = query.lower()
+        stop_words = {'me', 'my', 'the', 'a', 'an', 'that', 'this', 'it', 'i', 'you'}
         
         for pattern in patterns:
             match = re.search(pattern, query_lower)
             if match:
-                symptom = match.group(1).strip()
+                symptom = match.group(1).strip().rstrip('.')
                 # Filter out common words
-                if symptom not in ['me', 'my', 'the', 'a', 'an']:
+                if symptom and symptom not in stop_words:
                     return symptom
         
         return ''
@@ -406,19 +423,23 @@ class RecommendationAgent:
         names = []
         
         # Source 1: Normalized medications
+        # FIX: handle both dict and str formats
         for m in state.get('normalized_medications', []):
-            name = m.get('matched_drug') or m.get('user_input')
+            if isinstance(m, dict):
+                name = m.get('matched_drug') or m.get('user_input')
+            else:
+                name = str(m)
             if name:
                 names.append(name)
         
         # Source 2: Extracted entities
         if not names:
-            extracted = state.get('extracted_entities', {})
+            extracted = state.get('extracted_entities') or {}
             names = extracted.get('medications', [])
         
         # Source 3: Patient profile
         if not names:
-            profile_meds = state.get('patient_profile', {}).get('medications', [])
+            profile_meds = (state.get('patient_profile') or {}).get('medications', [])
             for m in profile_meds:
                 if isinstance(m, dict):
                     names.append(m.get('drug_name') or m.get('matched_drug') or m.get('user_input', ''))
