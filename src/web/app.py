@@ -72,38 +72,53 @@ def translate_result(state: dict) -> dict:
     answer = state.get('final_answer') or state.get('error_message') or 'No answer generated.'
 
     # --- question type ---
-    sup_decision = state.get('supervisor_decision', '')
-    if sup_decision in ('check_safety', 'synthesize') and state.get('safety_checked'):
+    if state.get('recommendations_checked'):
+        q_type = 'recommendations'
+    elif state.get('safety_checked'):
         q_type = 'safety'
-    elif sup_decision == 'check_deficiency':
+    elif state.get('deficiency_checked'):
         q_type = 'deficiency'
-    elif sup_decision in ('get_recommendations',):
-        q_type = 'recommendation'
     else:
-        q_type = sup_decision or 'general'
+        q_type = 'general'
 
     # --- entities ---
     entities = state.get('extracted_entities') or {}
 
     # --- cypher query (show the last query that was run) ---
-    query_history = state.get('query_history', [])
     cypher_query = None
     results_count = 0
+    raw_results = None
 
     # Pull cypher from safety_results if available (most detailed)
     safety = state.get('safety_results') or {}
     queries_run = safety.get('queries_run', [])
     if queries_run:
-        # Show the comprehensive query
         cypher_query = queries_run[0].get('cypher', '')
-        results_count = sum(q.get('result_count', 0) for q in queries_run)
-    elif query_history:
-        results_count = sum(q.get('result_count', 0) for q in query_history)
+        results_count += len(safety.get('interactions', []))
+        if safety.get('interactions'):
+            raw_results = safety['interactions'][:10]
 
-    # --- raw results for JSON viewer ---
-    raw_results = None
-    if safety.get('interactions'):
-        raw_results = safety['interactions'][:10]  # Cap at 10 for display
+    # Pull from recommendation_results
+    recommendations = state.get('recommendation_results') or {}
+    if recommendations.get('recommendations'):
+        results_count += len(recommendations['recommendations'])
+        if not cypher_query:
+            cypher_query = """MATCH (s:Supplement)-[:TREATS]->(sym:Symptom)
+WHERE toLower(sym.symptom_name) CONTAINS $condition
+RETURN s.supplement_name, sym.symptom_name"""
+        if not raw_results:
+            raw_results = recommendations['recommendations'][:10]
+
+    # Pull from deficiency_results
+    deficiency = state.get('deficiency_results') or {}
+    if deficiency.get('at_risk'):
+        results_count += len(deficiency['at_risk'])
+
+    # Fallback to query_history
+    if results_count == 0:
+        query_history = state.get('query_history', [])
+        if query_history:
+            results_count = sum(q.get('result_count', 0) for q in query_history)
 
     return {
         'answer': answer,

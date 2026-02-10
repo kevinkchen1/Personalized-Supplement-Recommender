@@ -1,10 +1,6 @@
 """
-Recommendation Agent - Supplement Advisor
-Finds safe supplement recommendations for conditions/symptoms:
-- Finds supplements that help the condition
-- Filters out ones that interact with user's medications
-- Ranks by evidence strength
-Role: Recommendation specialist
+Recommendation Agent - FIXED for Knowledge Graph
+Finds safe supplement recommendations for conditions/symptoms.
 """
 from typing import Dict, Any, List
 import os
@@ -17,7 +13,6 @@ class RecommendationAgent:
     
     def __init__(self, graph_interface):
         self.graph = graph_interface
-        # Import query tools
         from tools.query_generator import QueryGenerator
         from tools.query_executor import QueryExecutor
         
@@ -26,22 +21,12 @@ class RecommendationAgent:
     
     
     def run(self, state: Dict[str, Any]) -> Dict[str, Any]:
-        """
-        Generate supplement recommendations
-        
-        Args:
-            state: Current conversation state
-            
-        Returns:
-            Updated state with recommendations
-        """
+        """Generate supplement recommendations"""
         print("\n" + "="*60)
         print("💊 RECOMMENDATION AGENT: Finding safe options...")
         print("="*60)
         
-        # ----------------------------------------------------------
         # 1. Extract condition/symptom from state
-        # ----------------------------------------------------------
         condition = self._extract_condition(state)
         medications = self._get_medication_names(state)
         
@@ -58,14 +43,10 @@ class RecommendationAgent:
         print(f"   Condition/Symptom: {condition}")
         print(f"   Filtering against: {len(medications)} medications")
         
-        # ----------------------------------------------------------
         # 2. Find and filter recommendations
-        # ----------------------------------------------------------
         recommendations = self._generate_recommendations(condition, medications)
         
-        # ----------------------------------------------------------
         # 3. Compile results
-        # ----------------------------------------------------------
         results = {
             'condition': condition,
             'recommendations': recommendations,
@@ -95,16 +76,7 @@ class RecommendationAgent:
     
     
     def _generate_recommendations(self, condition: str, medications: List[str]) -> List[Dict]:
-        """
-        Generate filtered supplement recommendations
-        
-        Args:
-            condition: Health condition/symptom to address
-            medications: User's medications
-            
-        Returns:
-            List of supplement recommendations with safety info
-        """
+        """Generate filtered supplement recommendations"""
         # Step 1: Find supplements that help the condition
         print(f"\n   🔍 Finding supplements for: {condition}")
         candidates = self._find_supplements_for_condition(condition)
@@ -128,65 +100,156 @@ class RecommendationAgent:
         """
         Find supplements that help with condition/symptom
         
-        Uses query: MATCH (s:Supplement)-[:TREATS]->(sym:Symptom)
-        WHERE sym.description CONTAINS condition
-        
-        Args:
-            condition: Health condition or symptom
-            
-        Returns:
-            List of supplement candidates with basic info
+        FIXED: Uses direct Cypher query that matches your actual schema:
+        - Symptom node has: symptom_id, symptom_name
+        - Relationship: Supplement -[:TREATS]-> Symptom
         """
-        # Generate query using QueryGenerator
-        # FIX: param key is 'symptom' (what QueryGenerator expects), not 'symptom_name'
+        # OPTION 1: Try using QueryGenerator first
         query_dict = self.generator.generate_query(
             'supplements_for_symptom',
             {'symptom': condition}
         )
         
-        if query_dict.get('error'):
-            print(f"   ❌ Query generation error: {query_dict['error']}")
+        if not query_dict.get('error'):
+            result = self.executor.execute_query_dict(query_dict)
+            
+            if result['success'] and result['data']:
+                print(f"   ✓ QueryGenerator worked! Found {len(result['data'])} results")
+                return self._format_candidates(result['data'])
+        
+        # OPTION 2: Fallback to manual Cypher query
+        print(f"   ⚠️  QueryGenerator returned 0 results, trying manual query...")
+        candidates = self._manual_symptom_search(condition)
+        
+        if candidates:
+            print(f"   ✓ Manual query worked! Found {len(candidates)} results")
+        else:
+            print(f"   ❌ No supplements found for: {condition}")
+        
+        return candidates
+    
+    
+    def _manual_symptom_search(self, condition: str) -> List[Dict]:
+        """
+        Manual Cypher query that matches your actual schema
+        
+        Knowledge graph structure:
+        - Supplement nodes: supplement_id, supplement_name, safety_rating
+        - Symptom nodes: symptom_id, symptom_name
+        - Relationship: (Supplement)-[:TREATS]->(Symptom)
+        """
+        # Clean up the condition for matching
+        condition_clean = condition.lower().strip()
+        
+        # Build a flexible Cypher query
+        cypher = """
+        MATCH (s:Supplement)-[r:TREATS]->(sym:Symptom)
+        WHERE toLower(sym.symptom_name) CONTAINS $condition_lower
+        RETURN DISTINCT
+            s.supplement_id AS supplement_id,
+            s.supplement_name AS supplement,
+            s.safety_rating AS safety_rating,
+            sym.symptom_name AS symptom,
+            'TREATS' AS relationship_type
+        ORDER BY s.supplement_name
+        """
+        
+        params = {'condition_lower': condition_clean}
+        
+        try:
+            result = self.executor.execute(cypher, params)
+            
+            if result['success'] and result['data']:
+                return self._format_candidates(result['data'])
+            else:
+                # Try even broader search if nothing found
+                print(f"   Trying broader search...")
+                return self._broad_symptom_search(condition)
+        
+        except Exception as e:
+            print(f"   ❌ Query error: {e}")
+            return []
+    
+    
+    def _broad_symptom_search(self, condition: str) -> List[Dict]:
+        """
+        Very broad search - returns all supplements and lets user decide
+        Only used as last resort when specific search fails
+        """
+        # Split condition into words for matching
+        words = [w.strip().lower() for w in condition.split() if len(w) > 3]
+        
+        if not words:
             return []
         
-        # Execute query
-        result = self.executor.execute_query_dict(query_dict)
+        # Search for any word match
+        cypher = """
+        MATCH (s:Supplement)-[r:TREATS]->(sym:Symptom)
+        WHERE ANY(word IN $words WHERE toLower(sym.symptom_name) CONTAINS word)
+        RETURN DISTINCT
+            s.supplement_id AS supplement_id,
+            s.supplement_name AS supplement,
+            s.safety_rating AS safety_rating,
+            sym.symptom_name AS symptom,
+            'TREATS' AS relationship_type
+        ORDER BY s.supplement_name
+        LIMIT 10
+        """
         
-        if not result['success']:
-            print(f"   ❌ Query execution failed: {result.get('error')}")
-            return []
+        params = {'words': words}
         
-        # Format results
-        # FIX: column names match the actual Cypher RETURN clause:
-        #   'supplement' (not 'supplement_name'), 'symptom' (not 'symptom_name')
+        try:
+            result = self.executor.execute(cypher, params)
+            
+            if result['success']:
+                print(f"   Found {result['count']} supplements with broad search")
+                return self._format_candidates(result['data'])
+        except Exception as e:
+            print(f"   ❌ Broad search error: {e}")
+        
+        return []
+    
+    
+    def _format_candidates(self, raw_data: List[Dict]) -> List[Dict]:
+        """
+        Format raw Cypher results into standardized candidate format
+        
+        Handles different column names from different queries
+        """
         seen = set()
         candidates = []
-        for row in result['data']:
-            name = row.get('supplement', '')
+        
+        for row in raw_data:
+            # Handle different possible column names
+            name = (row.get('supplement') or 
+                   row.get('supplement_name') or 
+                   row.get('s.supplement_name'))
+            
             if not name or name in seen:
                 continue
+            
             seen.add(name)
+            
             candidates.append({
-                'supplement_id': row.get('supplement_id'),
+                'supplement_id': (row.get('supplement_id') or 
+                                 row.get('s.supplement_id')),
                 'supplement_name': name,
-                'symptom_treated': row.get('symptom'),
-                'safety_rating': row.get('safety_rating', 'UNKNOWN'),
-                'relationship_type': row.get('relationship_type', 'TREATS')
+                'symptom_treated': (row.get('symptom') or 
+                                   row.get('symptom_name') or 
+                                   row.get('sym.symptom_name')),
+                'safety_rating': (row.get('safety_rating') or 
+                                 row.get('s.safety_rating') or 
+                                 'UNKNOWN'),
+                'relationship_type': (row.get('relationship_type') or 
+                                     row.get('type(r)') or 
+                                     'TREATS')
             })
         
         return candidates
     
     
     def _evaluate_safety(self, candidates: List[Dict], medications: List[str]) -> List[Dict]:
-        """
-        Check safety of each candidate supplement against user's medications
-        
-        Args:
-            candidates: List of supplement candidates
-            medications: User's medications
-            
-        Returns:
-            List of candidates with safety evaluation added
-        """
+        """Check safety of each candidate supplement against user's medications"""
         if not medications:
             # No medications to check against - all are safe
             for candidate in candidates:
@@ -223,18 +286,15 @@ class RecommendationAgent:
                 interactions = result['data']
                 
                 if len(interactions) == 0:
-                    # No interactions found - SAFE
                     candidate['safe'] = True
                     candidate['interactions'] = []
                     candidate['safety_verdict'] = 'SAFE - No interactions found'
                 else:
-                    # Interactions found - UNSAFE
                     candidate['safe'] = False
                     candidate['interactions'] = interactions
                     candidate['safety_verdict'] = self._format_safety_verdict(interactions)
                     candidate['interaction_count'] = len(interactions)
             else:
-                # Query failed - mark as unknown
                 candidate['safe'] = False
                 candidate['interactions'] = []
                 candidate['safety_verdict'] = 'UNKNOWN - Query failed'
@@ -246,16 +306,7 @@ class RecommendationAgent:
     
     
     def _format_safety_verdict(self, interactions: List[Dict]) -> str:
-        """
-        Format a human-readable safety verdict from interactions
-        
-        Args:
-            interactions: List of interaction records
-            
-        Returns:
-            Safety verdict string
-        """
-        pathways = set(ix.get('pathway', 'UNKNOWN') for ix in interactions)
+        """Format a human-readable safety verdict from interactions"""
         severities = [ix.get('severity', 'UNKNOWN') for ix in interactions]
         
         high_risk = sum(1 for s in severities if s == 'HIGH')
@@ -272,40 +323,23 @@ class RecommendationAgent:
     
     
     def _rank_by_evidence(self, supplements: List[Dict]) -> List[Dict]:
-        """
-        Rank supplements by evidence strength and safety
-        
-        Ranking criteria (in order):
-        1. Safety (safe supplements first)
-        2. Safety rating from database (A > B > C)
-        3. Number of symptoms treated (more versatile = better)
-        4. Alphabetical (tiebreaker)
-        
-        Args:
-            supplements: List of evaluated supplements
-            
-        Returns:
-            Ranked list
-        """
-        # Define safety rating scores
+        """Rank supplements by evidence strength and safety"""
         safety_rating_scores = {
-            'A': 3,  # High quality evidence
-            'B': 2,  # Moderate quality evidence
-            'C': 1,  # Low quality evidence
+            'A': 3,
+            'B': 2,
+            'C': 1,
             'UNKNOWN': 0
         }
         
         def rank_key(supp):
             return (
-                1 if supp.get('safe') else 0,  # Safe first
+                1 if supp.get('safe') else 0,
                 safety_rating_scores.get(supp.get('safety_rating', 'UNKNOWN'), 0),
                 supp.get('supplement_name', '')
             )
         
-        # Sort in descending order (higher = better)
         ranked = sorted(supplements, key=rank_key, reverse=True)
         
-        # Add rank position
         for i, supp in enumerate(ranked):
             supp['rank'] = i + 1
         
@@ -313,32 +347,15 @@ class RecommendationAgent:
     
     
     def _extract_condition(self, state: Dict[str, Any]) -> str:
-        """
-        Extract condition/symptom from state
-        
-        Tries multiple sources:
-        1. normalized_entities.conditions or .symptoms
-        2. extracted_entities.conditions or .symptoms
-        3. patient_profile.conditions
-        4. user_question (parse for symptom keywords)
-        
-        Args:
-            state: Current conversation state
-            
-        Returns:
-            Condition/symptom string or None
-        """
+        """Extract condition/symptom from state"""
         # Source 1: Normalized entities
-        # FIX: use `or {}` to handle explicit None values in state
-        # FIX: check both 'conditions' AND 'symptoms' (entity extractor returns 'conditions')
         normalized = state.get('normalized_entities') or {}
         for key in ('conditions', 'symptoms'):
             items = normalized.get(key, [])
             if items:
-                return items[0] if isinstance(items[0], str) else items[0].get('symptom_name')
+                return items[0] if isinstance(items[0], str) else items[0].get('symptom_name', items[0].get('condition'))
         
         # Source 2: Extracted entities
-        # FIX: use `or {}` and check both 'conditions' and 'symptoms'
         extracted = state.get('extracted_entities') or {}
         for key in ('conditions', 'symptoms'):
             items = extracted.get(key, [])
@@ -351,8 +368,7 @@ class RecommendationAgent:
         if conditions:
             return conditions[0]
         
-        # Source 4: Parse user question for symptom keywords
-        # FIX: state key is 'user_question', not 'user_query'
+        # Source 4: Parse user question
         user_query = state.get('user_question', '')
         symptom_keywords = self._extract_symptom_from_query(user_query)
         if symptom_keywords:
@@ -362,25 +378,9 @@ class RecommendationAgent:
     
     
     def _extract_symptom_from_query(self, query: str) -> str:
-        """
-        Extract symptom from natural language query
-        
-        Looks for patterns like:
-        - "help with [symptom]"
-        - "for [symptom]"
-        - "treat [symptom]"
-        - "support [condition]"
-        - "supplements for [condition]"
-        
-        Args:
-            query: User's natural language query
-            
-        Returns:
-            Extracted symptom or empty string
-        """
+        """Extract symptom from natural language query"""
         import re
         
-        # FIX: added patterns for 'support X', 'good for X', 'supplements for X'
         patterns = [
             r'supplements?\s+(?:for|that help(?: with)?)\s+([a-zA-Z\s]+?)(?:\?|$)',
             r'support\s+([a-zA-Z\s]+?)(?:\?|$)',
@@ -398,7 +398,6 @@ class RecommendationAgent:
             match = re.search(pattern, query_lower)
             if match:
                 symptom = match.group(1).strip().rstrip('.')
-                # Filter out common words
                 if symptom and symptom not in stop_words:
                     return symptom
         
@@ -406,24 +405,10 @@ class RecommendationAgent:
     
     
     def _get_medication_names(self, state: Dict[str, Any]) -> List[str]:
-        """
-        Get medication names from state
-        
-        Tries multiple sources:
-        1. normalized_medications
-        2. extracted_entities.medications
-        3. patient_profile.medications
-        
-        Args:
-            state: Current conversation state
-            
-        Returns:
-            List of medication names
-        """
+        """Get medication names from state"""
         names = []
         
         # Source 1: Normalized medications
-        # FIX: handle both dict and str formats
         for m in state.get('normalized_medications', []):
             if isinstance(m, dict):
                 name = m.get('matched_drug') or m.get('user_input')
@@ -450,34 +435,18 @@ class RecommendationAgent:
     
     
     def _calculate_confidence(self, recommendations: List[Dict]) -> float:
-        """
-        Calculate confidence in recommendations
-        
-        Factors:
-        - Number of safe options found (more = higher confidence)
-        - Safety rating quality (A ratings = higher confidence)
-        - Query success (all queries successful = higher confidence)
-        
-        Args:
-            recommendations: List of recommendations
-            
-        Returns:
-            Confidence score (0.0 to 1.0)
-        """
+        """Calculate confidence in recommendations"""
         if not recommendations:
-            return 0.3  # Low confidence - nothing found
+            return 0.3
         
         safe_count = sum(1 for r in recommendations if r.get('safe'))
         total = len(recommendations)
         
-        # Base confidence on percentage of safe options
         base_confidence = 0.5 + (safe_count / total * 0.3)
         
-        # Bonus for high-quality evidence (A ratings)
         a_ratings = sum(1 for r in recommendations if r.get('safety_rating') == 'A')
         evidence_bonus = min(0.2, a_ratings * 0.05)
         
-        # Check if any queries failed
         errors = sum(1 for r in recommendations if 'error' in r)
         if errors > 0:
             base_confidence -= 0.1
@@ -487,15 +456,11 @@ class RecommendationAgent:
         return round(final_confidence, 2)
 
 
-# ======================================================================
 # Standalone function for LangGraph
-# ======================================================================
-
 def recommendation_agent(state: Dict[str, Any]) -> Dict[str, Any]:
     """Wrapper for LangGraph integration"""
     from graph.graph_interface import GraphInterface
     
-    # Use existing graph_interface from state, or create new one
     graph = state.get('graph_interface')
     if graph is None:
         graph = GraphInterface(
