@@ -167,13 +167,22 @@ def build_workflow_with_checkpoints(
         ... )
     """
     # Build base workflow
-    workflow = build_workflow(**kwargs)
-    
-    # TODO: Add checkpointing
-    # This requires additional LangGraph setup
-    # workflow = workflow.compile(checkpointer=checkpointer)
-    
-    return workflow
+    workflow = StateGraph(ConversationState)
+
+    # If the caller passed a compiled checkpointer, compile the graph with it
+    base = build_workflow(**kwargs)
+
+    # If a checkpointer is provided and the compiled graph supports it,
+    # re-compile the base workflow with the checkpointer to enable persistence.
+    if checkpointer is not None:
+        try:
+            compiled_with_cp = base.compile(checkpointer=checkpointer)
+            return compiled_with_cp
+        except Exception:
+            # Fall back to previously compiled graph if checkpointing fails
+            return base
+
+    return base
 
 
 def visualize_workflow(workflow, output_path: str = "workflow_graph.png"):
@@ -190,18 +199,29 @@ def visualize_workflow(workflow, output_path: str = "workflow_graph.png"):
     """
     try:
         from IPython.display import Image
-        
-        # Generate graph visualization
-        graph_image = workflow.get_graph().draw_png()
-        
-        # Save to file
-        with open(output_path, 'wb') as f:
-            f.write(graph_image)
-        
-        print(f"✅ Workflow diagram saved to {output_path}")
-        
-        return Image(graph_image)
-    
+
+        # Try to get a PNG bytes representation from the compiled workflow
+        graph_obj = workflow.get_graph()
+
+        # Some LangGraph versions expose draw_png(), others expose draw()
+        if hasattr(graph_obj, "draw_png"):
+            graph_image = graph_obj.draw_png()
+        elif hasattr(graph_obj, "draw"):
+            # draw() may return bytes or an object with _repr_png_
+            graph_image = graph_obj.draw()
+        else:
+            raise RuntimeError("Graph object has no draw_png/draw method")
+
+        # Save to file if bytes-like
+        if isinstance(graph_image, (bytes, bytearray)):
+            with open(output_path, 'wb') as f:
+                f.write(graph_image)
+            print(f"✅ Workflow diagram saved to {output_path}")
+            return Image(graph_image)
+        else:
+            # If not bytes, attempt to convert via IPython Image
+            return Image(graph_image)
+
     except ImportError:
         print("⚠️  IPython not available, cannot generate visualization")
         return None
@@ -221,21 +241,42 @@ def get_workflow_info(workflow) -> dict:
         Dict with workflow info
     """
     graph = workflow.get_graph()
-    
+
     info = {
         'nodes': list(graph.nodes.keys()),
         'edges': [],
         'entry_point': None,
         'end_nodes': []
     }
-    
-    # Get edges
+
+    # Get edges and detect end nodes
     for node, edges in graph.nodes.items():
+        # edges might be stored as a list of node names or objects
         for edge in edges:
             info['edges'].append(f"{node} → {edge}")
-    
-    # TODO: Get entry point and end nodes from graph
-    
+            # If the edge is the END sentinel, mark this node as leading to END
+            if edge == END or (isinstance(edge, str) and edge == str(END)):
+                info['end_nodes'].append(node)
+
+    # Attempt to get the configured entry point if available
+    entry = None
+    try:
+        entry = getattr(workflow, 'entry_point', None)
+        if not entry:
+            # Some compiled graphs store entry on the inner graph object
+            entry = getattr(graph, 'entry_point', None)
+    except Exception:
+        entry = None
+
+    # Fallback: default to supervisor if present
+    if not entry and NodeNames.SUPERVISOR in info['nodes']:
+        entry = NodeNames.SUPERVISOR
+
+    info['entry_point'] = entry
+
+    # Deduplicate end_nodes
+    info['end_nodes'] = list(dict.fromkeys(info['end_nodes']))
+
     return info
 
 
@@ -291,16 +332,6 @@ def run_workflow(
         
     Returns:
         Final state dict
-        
-    Example:
-        >>> workflow = build_workflow()
-        >>> result = run_workflow(
-        ...     workflow,
-        ...     "Is Fish Oil safe?",
-        ...     {"medications": [...]},
-        ...     graph_interface=graph
-        ... )
-        >>> print(result['final_answer'])
     """
     from workflow.state import create_initial_state
     

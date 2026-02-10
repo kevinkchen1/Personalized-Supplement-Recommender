@@ -54,9 +54,7 @@ def route_supervisor_decision(state: Dict[str, Any]) -> str:
     # Map supervisor decisions to node names
     # NOTE: Must match the exact strings supervisor._make_decision() returns
     route_map = {
-        # Safety
         'check_safety': NodeNames.SAFETY_CHECK,
-        # Deficiency
         'check_deficiency': NodeNames.DEFICIENCY_CHECK,
         # Recommendations (supervisor uses 'get_recommendations')
         'get_recommendations': NodeNames.RECOMMENDATION,
