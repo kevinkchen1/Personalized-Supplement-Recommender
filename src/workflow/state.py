@@ -78,6 +78,18 @@ class ConversationState(TypedDict):
     }
     """
     
+    normalized_medications: Optional[List[Dict[str, Any]]]
+    """
+    Normalized medications from supervisor entity extraction.
+    Each entry: {'user_input': ..., 'matched_drug': ..., 'drug_id': ..., 'confidence': ...}
+    """
+    
+    normalized_supplements: Optional[List[Dict[str, Any]]]
+    """
+    Normalized supplements from supervisor entity extraction.
+    Each entry: {'user_input': ..., 'matched_supplement': ..., 'supplement_id': ..., 'confidence': ...}
+    """
+    
     # ==================== AGENT CHECKS ====================
     
     safety_checked: bool
@@ -185,6 +197,11 @@ class ConversationState(TypedDict):
     
     error_message: Optional[str]
     """Any error message if something goes wrong"""
+    
+    # ==================== RESOURCES ====================
+    
+    graph_interface: Optional[Any]
+    """Neo4j GraphInterface instance — injected at runtime for agents to use"""
 
 
 # ==================== DEFAULT STATE ====================
@@ -213,6 +230,8 @@ def create_initial_state(
         extracted_entities=None,
         entities_normalized=False,
         normalized_entities=None,
+        normalized_medications=None,
+        normalized_supplements=None,
         
         # Agent checks
         safety_checked=False,
@@ -238,7 +257,10 @@ def create_initial_state(
         
         # Final output
         final_answer=None,
-        error_message=None
+        error_message=None,
+        
+        # Resources
+        graph_interface=None
     )
 
 

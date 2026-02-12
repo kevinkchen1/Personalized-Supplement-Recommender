@@ -1,593 +1,288 @@
 """
-Query Generator Tool - Cypher Query Builder
+Updated Query Generator with corrected Neo4j schema properties
 
-Translates high-level intents into Neo4j Cypher queries:
-- Safety checks (interactions, effects, metabolism)
-- Deficiency analysis (diet, medication depletions)
-- Supplement recommendations
-- Can try multiple query strategies if first fails
-
-Role: SQL/Cypher writer for the agents
+Schema corrections:
+- DietaryRestriction.dietary_restriction_name (not .name)  
+- Nutrient.nutrient_name (not .name)
+- DEFICIENT_IN.risk_level (not .severity or .reason)
 """
 
-from typing import Dict, Any, List, Optional
 from enum import Enum
-
+from typing import List, Dict, Any
 
 class QueryType(Enum):
-    """Types of queries the system can generate"""
-    DIRECT_INTERACTION = "direct_interaction"
-    SIMILAR_EFFECTS = "similar_effects"
-    SHARED_METABOLISM = "shared_metabolism"
+    SAFETY_CHECK = "safety_check"
+    DEFICIENCY_CHECK = "deficiency_check"
+    RECOMMENDATION = "recommendation"
     DIET_DEFICIENCY = "diet_deficiency"
     MEDICATION_DEPLETION = "medication_depletion"
-    CONDITION_SUPPLEMENTS = "condition_supplements"
-    SUPPLEMENT_EVIDENCE = "supplement_evidence"
-
+    COMBINED_DEFICIENCY = "combined_deficiency"
 
 class QueryGenerator:
-    """
-    Generates Cypher queries based on agent intents
-    """
+    """Generates Neo4j Cypher queries for the supplement safety system."""
     
-    def __init__(self):
-        """Initialize query generator"""
-        self.query_templates = self._load_query_templates()
-    
-    
-    def generate_query(
-        self, 
-        query_type: str, 
-        params: Dict[str, Any]
-    ) -> Dict[str, Any]:
-        """
-        Generate a Cypher query based on type and parameters
+    def generate_query(self, query_type: QueryType, **kwargs) -> str:
+        """Generate a Neo4j Cypher query based on the query type and parameters."""
         
-        Args:
-            query_type: Type of query to generate (from QueryType enum)
-            params: Parameters for the query (IDs, names, etc.)
-            
-        Returns:
-            Dict with:
-                - query: Cypher query string
-                - parameters: Dict of parameters for query
-                - explanation: Human-readable explanation
-                
-        Example:
-            >>> gen = QueryGenerator()
-            >>> result = gen.generate_query(
-            ...     "direct_interaction",
-            ...     {"supplement_id": "S07", "drug_id": "DB00682"}
-            ... )
-            >>> print(result['query'])
-            MATCH (s:Supplement)-[r:INTERACTS_WITH]-(d:Drug) ...
-        """
-        # Validate query type
-        try:
-            query_type_enum = QueryType(query_type)
-        except ValueError:
-            return {
-                'error': f"Invalid query type: {query_type}",
-                'query': None,
-                'parameters': None
-            }
-        
-        # Route to appropriate generator
-        if query_type_enum == QueryType.DIRECT_INTERACTION:
-            return self._generate_direct_interaction_query(params)
-        
-        elif query_type_enum == QueryType.SIMILAR_EFFECTS:
-            return self._generate_similar_effects_query(params)
-        
-        elif query_type_enum == QueryType.SHARED_METABOLISM:
-            return self._generate_metabolism_query(params)
-        
-        elif query_type_enum == QueryType.DIET_DEFICIENCY:
-            return self._generate_diet_deficiency_query(params)
-        
-        elif query_type_enum == QueryType.MEDICATION_DEPLETION:
-            return self._generate_medication_depletion_query(params)
-        
-        elif query_type_enum == QueryType.CONDITION_SUPPLEMENTS:
-            return self._generate_condition_supplements_query(params)
-        
-        elif query_type_enum == QueryType.SUPPLEMENT_EVIDENCE:
-            return self._generate_evidence_query(params)
-        
+        if query_type == QueryType.SAFETY_CHECK:
+            return self._safety_check_query(**kwargs)
+        elif query_type == QueryType.DEFICIENCY_CHECK:
+            return self._deficiency_check_query(**kwargs)
+        elif query_type == QueryType.RECOMMENDATION:
+            return self._recommendation_query(**kwargs)
+        elif query_type == QueryType.DIET_DEFICIENCY:
+            return self._diet_deficiency(**kwargs)
+        elif query_type == QueryType.MEDICATION_DEPLETION:
+            return self._medication_depletion(**kwargs)
+        elif query_type == QueryType.COMBINED_DEFICIENCY:
+            return self._combined_deficiency(**kwargs)
         else:
-            return {
-                'error': f"Query type not implemented: {query_type}",
-                'query': None,
-                'parameters': None
-            }
+            raise ValueError(f"Unknown query type: {query_type}")
     
+    def _diet_deficiency(self, dietary_restrictions: List[str]) -> str:
+        """Generate query for diet-based nutrient deficiencies."""
+        restrictions_str = ", ".join([f"'{r.lower()}'" for r in dietary_restrictions])
+        return f"""
+        MATCH (dr:DietaryRestriction)-[r:DEFICIENT_IN]->(n:Nutrient)
+        WHERE toLower(dr.dietary_restriction_name) IN [{restrictions_str}]
+        RETURN dr.dietary_restriction_name as diet,
+               n.nutrient_name as nutrient,
+               r.risk_level as risk_level
+        """
     
-    def _generate_direct_interaction_query(self, params: Dict) -> Dict:
-        """
-        Generate query for direct drug-supplement interactions
-        
-        Args:
-            params: {
-                'supplement_id': str,
-                'drug_ids': List[str] (can be single drug_id as string)
-            }
-            
-        Returns:
-            Query dict
-        """
-        supplement_id = params.get('supplement_id')
-        drug_ids = params.get('drug_ids', [])
-        
-        # Handle single drug_id
-        if isinstance(drug_ids, str):
-            drug_ids = [drug_ids]
-        elif params.get('drug_id'):
-            drug_ids = [params['drug_id']]
-        
-        if not supplement_id or not drug_ids:
-            return {
-                'error': 'Missing supplement_id or drug_ids',
-                'query': None,
-                'parameters': None
-            }
-        
-        query = """
-        MATCH (s:Supplement {supplement_id: $supplement_id})
-              -[r:INTERACTS_WITH]-
-              (d:Drug)
-        WHERE d.drug_id IN $drug_ids
-        RETURN s.supplement_name as supplement,
+    def _medication_depletion(self, medications: List[str]) -> str:
+        """Generate query for medication-induced nutrient depletion."""
+        medications_str = ", ".join([f"'{med.lower()}'" for med in medications])
+        return f"""
+        MATCH (m:Medication)-[:MEDICATION_CONTAINS_DRUG]->(d:Drug)-[r:DEPLETES]->(n:Nutrient)
+        WHERE toLower(m.medication_name) IN [{medications_str}]
+        RETURN m.medication_name as medication,
                d.drug_name as drug,
-               r.severity as severity,
-               r.description as description,
-               r.evidence_level as evidence,
+               n.nutrient_name as nutrient,
+               r.risk_level as risk_level,
                r.mechanism as mechanism
         """
-        
-        parameters = {
-            'supplement_id': supplement_id,
-            'drug_ids': drug_ids
-        }
-        
-        explanation = (
-            f"Checking direct interactions between supplement {supplement_id} "
-            f"and {len(drug_ids)} medication(s)"
-        )
-        
-        return {
-            'query': query.strip(),
-            'parameters': parameters,
-            'explanation': explanation
-        }
     
+    def _combined_deficiency(self, dietary_restrictions: List[str], medications: List[str]) -> str:
+        """Generate query for combined diet and medication deficiency risks."""
+        restrictions_str = ", ".join([f"'{r.lower()}'" for r in dietary_restrictions])
+        medications_str = ", ".join([f"'{med.lower()}'" for med in medications])
+        
+        return f"""
+        // Diet-based deficiencies
+        MATCH (dr:DietaryRestriction)-[r1:DEFICIENT_IN]->(n:Nutrient)
+        WHERE toLower(dr.dietary_restriction_name) IN [{restrictions_str}]
+        WITH n.nutrient_name as nutrient, 'diet' as source, dr.dietary_restriction_name as diet_name, r1.risk_level as risk_level
+        
+        UNION
+        
+        // Medication-based depletions
+        MATCH (m:Medication)-[:MEDICATION_CONTAINS_DRUG]->(d:Drug)-[r2:DEPLETES]->(n:Nutrient)
+        WHERE toLower(m.medication_name) IN [{medications_str}]
+        WITH n.nutrient_name as nutrient, 'medication' as source, m.medication_name as med_name, r2.risk_level as risk_level
+        
+        RETURN nutrient, source, 
+               CASE WHEN source = 'diet' THEN diet_name ELSE med_name END as source_name,
+               risk_level
+        ORDER BY nutrient, source
+        """
     
-    def _generate_similar_effects_query(self, params: Dict) -> Dict:
-        """
-        Generate query for similar pharmacological effects
+    def _safety_check_query(self, medications: List[str], supplements: List[str]) -> str:
+        """Generate safety check query for supplement-medication interactions."""
+        medications_str = ", ".join([f"'{med.lower()}'" for med in medications])
+        supplements_str = ", ".join([f"'{supp.lower()}'" for supp in supplements])
         
-        Args:
-            params: {
-                'supplement_id': str,
-                'drug_ids': List[str]
-            }
-            
-        Returns:
-            Query dict
-        """
-        supplement_id = params.get('supplement_id')
-        drug_ids = params.get('drug_ids', [])
-        
-        if isinstance(drug_ids, str):
-            drug_ids = [drug_ids]
-        
-        query = """
-        // Find effects of the supplement
-        MATCH (s:Supplement {supplement_id: $supplement_id})
-              -[:HAS_EFFECT]->(effect:PharmacologicalEffect)
-        
-        // Find drugs with same effects
-        MATCH (d:Drug)-[:HAS_EFFECT]->(effect)
-        WHERE d.drug_id IN $drug_ids
-        
-        RETURN DISTINCT
-               s.supplement_name as supplement,
-               d.drug_name as drug,
-               effect.effect_name as shared_effect,
-               effect.severity_potential as potential_severity,
-               'similar_effects' as interaction_type
-        """
-        
-        parameters = {
-            'supplement_id': supplement_id,
-            'drug_ids': drug_ids
-        }
-        
-        explanation = (
-            f"Checking for similar pharmacological effects between "
-            f"supplement {supplement_id} and medications"
-        )
-        
-        return {
-            'query': query.strip(),
-            'parameters': parameters,
-            'explanation': explanation
-        }
-    
-    
-    def _generate_metabolism_query(self, params: Dict) -> Dict:
-        """
-        Generate query for shared metabolism pathways
-        
-        Args:
-            params: {
-                'supplement_id': str,
-                'drug_ids': List[str]
-            }
-            
-        Returns:
-            Query dict
-        """
-        supplement_id = params.get('supplement_id')
-        drug_ids = params.get('drug_ids', [])
-        
-        if isinstance(drug_ids, str):
-            drug_ids = [drug_ids]
-        
-        query = """
-        // Find supplement's metabolism pathways
-        MATCH (s:Supplement {supplement_id: $supplement_id})
-              -[sr:METABOLIZED_BY]->(enzyme:Enzyme)
-        
-        // Find drugs using same enzymes
-        MATCH (d:Drug)-[dr:METABOLIZED_BY]->(enzyme)
-        WHERE d.drug_id IN $drug_ids
-        
-        // Check if they compete (both are substrates) or one inhibits
-        WITH s, d, enzyme, sr, dr
-        WHERE (sr.role = 'substrate' AND dr.role = 'substrate')
-           OR (sr.role = 'inhibitor' AND dr.role = 'substrate')
-           OR (sr.role = 'substrate' AND dr.role = 'inhibitor')
-        
+        return f"""
+        MATCH (s:Supplement)-[r:SUPPLEMENT_INTERACTS_WITH]->(m:Medication)
+        WHERE toLower(s.supplement_name) IN [{supplements_str}]
+        AND toLower(m.medication_name) IN [{medications_str}]
         RETURN s.supplement_name as supplement,
-               d.drug_name as drug,
-               enzyme.enzyme_name as enzyme,
-               sr.role as supplement_role,
-               dr.role as drug_role,
-               'metabolism_conflict' as interaction_type
+               m.medication_name as medication,
+               r.interaction_type as interaction,
+               r.severity as severity,
+               r.description as description
         """
-        
-        parameters = {
-            'supplement_id': supplement_id,
-            'drug_ids': drug_ids
-        }
-        
-        explanation = (
-            f"Checking for shared metabolism pathways (CYP450 enzymes) "
-            f"between supplement and medications"
-        )
-        
-        return {
-            'query': query.strip(),
-            'parameters': parameters,
-            'explanation': explanation
-        }
     
+    def _deficiency_check_query(self, dietary_restrictions: List[str]) -> str:
+        """Generate deficiency check query - wrapper for diet_deficiency."""
+        return self._diet_deficiency(dietary_restrictions)
     
-    def _generate_diet_deficiency_query(self, params: Dict) -> Dict:
-        """
-        Generate query for diet-related deficiencies
-        
-        Args:
-            params: {
-                'dietary_restrictions': List[str] or str
-            }
-            
-        Returns:
-            Query dict
-        """
-        restrictions = params.get('dietary_restrictions', [])
-        
-        if isinstance(restrictions, str):
-            restrictions = [restrictions]
-        
-        if not restrictions:
-            return {
-                'error': 'No dietary restrictions provided',
-                'query': None,
-                'parameters': None
-            }
-        
-        query = """
-        MATCH (dr:DietaryRestriction)-[:DEFICIENT_IN]->(n:Nutrient)
-        WHERE dr.restriction_name IN $restrictions
-        RETURN dr.restriction_name as diet,
-               n.nutrient_name as nutrient,
-               n.recommended_daily_intake as rdi,
-               n.deficiency_symptoms as symptoms,
-               'diet' as source
-        """
-        
-        parameters = {
-            'restrictions': restrictions
-        }
-        
-        explanation = (
-            f"Checking nutrient deficiencies associated with "
-            f"{', '.join(restrictions)} diet"
-        )
-        
-        return {
-            'query': query.strip(),
-            'parameters': parameters,
-            'explanation': explanation
-        }
-    
-    
-    def _generate_medication_depletion_query(self, params: Dict) -> Dict:
-        """
-        Generate query for medication-induced nutrient depletion
-        
-        Args:
-            params: {
-                'drug_ids': List[str]
-            }
-            
-        Returns:
-            Query dict
-        """
-        drug_ids = params.get('drug_ids', [])
-        
-        if isinstance(drug_ids, str):
-            drug_ids = [drug_ids]
-        
-        if not drug_ids:
-            return {
-                'error': 'No drug IDs provided',
-                'query': None,
-                'parameters': None
-            }
-        
-        query = """
-        MATCH (d:Drug)-[:DEPLETES]->(n:Nutrient)
-        WHERE d.drug_id IN $drug_ids
-        RETURN d.drug_name as medication,
-               n.nutrient_name as nutrient,
-               n.recommended_daily_intake as rdi,
-               n.deficiency_symptoms as symptoms,
-               'medication' as source
-        """
-        
-        parameters = {
-            'drug_ids': drug_ids
-        }
-        
-        explanation = (
-            f"Checking nutrient depletions caused by {len(drug_ids)} medication(s)"
-        )
-        
-        return {
-            'query': query.strip(),
-            'parameters': parameters,
-            'explanation': explanation
-        }
-    
-    
-    def _generate_condition_supplements_query(self, params: Dict) -> Dict:
-        """
-        Generate query for supplements that help a condition
-        
-        Args:
-            params: {
-                'condition': str
-            }
-            
-        Returns:
-            Query dict
-        """
-        condition = params.get('condition')
-        
-        if not condition:
-            return {
-                'error': 'No condition provided',
-                'query': None,
-                'parameters': None
-            }
-        
-        query = """
-        MATCH (s:Supplement)-[r:HELPS_WITH]->(c:Condition)
-        WHERE toLower(c.condition_name) CONTAINS toLower($condition)
-        RETURN s.supplement_id as supplement_id,
-               s.supplement_name as supplement_name,
-               c.condition_name as condition,
-               r.effectiveness as effectiveness,
-               r.evidence_level as evidence_level,
-               r.dosage as recommended_dosage
-        ORDER BY r.evidence_level DESC, r.effectiveness DESC
-        """
-        
-        parameters = {
-            'condition': condition
-        }
-        
-        explanation = f"Finding supplements that help with {condition}"
-        
-        return {
-            'query': query.strip(),
-            'parameters': parameters,
-            'explanation': explanation
-        }
-    
-    
-    def _generate_evidence_query(self, params: Dict) -> Dict:
-        """
-        Generate query for supplement evidence/research
-        
-        Args:
-            params: {
-                'supplement_id': str
-            }
-            
-        Returns:
-            Query dict
-        """
-        supplement_id = params.get('supplement_id')
-        
-        if not supplement_id:
-            return {
-                'error': 'No supplement_id provided',
-                'query': None,
-                'parameters': None
-            }
-        
-        query = """
-        MATCH (s:Supplement {supplement_id: $supplement_id})
-              -[:STUDIED_IN]->(study:ClinicalStudy)
+    def _recommendation_query(self, health_condition: str) -> str:
+        """Generate recommendation query for supplements that help with a health condition."""
+        return f"""
+        MATCH (condition:MedicalCondition)-[:ADDRESSES]-(benefit:BeneficialEffect)-[:PRODUCED_BY]-(s:Supplement)
+        WHERE toLower(condition.condition_name) = toLower('{health_condition}')
         RETURN s.supplement_name as supplement,
-               study.title as study_title,
-               study.study_type as study_type,
-               study.year as year,
-               study.conclusion as conclusion,
-               study.evidence_quality as quality
-        ORDER BY study.year DESC, study.evidence_quality DESC
+               benefit.benefit_name as benefit,
+               benefit.evidence_strength as evidence_level
+        ORDER BY benefit.evidence_strength DESC
         """
-        
-        parameters = {
-            'supplement_id': supplement_id
-        }
-        
-        explanation = f"Retrieving research evidence for supplement {supplement_id}"
-        
-        return {
-            'query': query.strip(),
-            'parameters': parameters,
-            'explanation': explanation
-        }
-    
-    
-    def _load_query_templates(self) -> Dict:
-        """
-        Load pre-defined query templates
-        
-        Returns:
-            Dict of query templates
-        """
-        # TODO: Load from config file if needed
-        return {}
-    
-    
-    def generate_fallback_query(
-        self, 
-        original_type: str, 
-        params: Dict
-    ) -> Dict:
-        """
-        Generate an alternative query if the first one fails
-        
-        Args:
-            original_type: The query type that failed
-            params: Original parameters
-            
-        Returns:
-            Alternative query dict
-        """
-        # TODO: Implement fallback strategies
-        # Example: If direct interaction fails, try text search
-        
-        return {
-            'query': None,
-            'parameters': None,
-            'explanation': 'No fallback available'
-        }
 
+# Convenience functions for common query patterns
+def generate_diet_deficiency_query(dietary_restrictions: List[str]) -> str:
+    """Convenience function to generate diet deficiency query."""
+    generator = QueryGenerator()
+    return generator.generate_query(QueryType.DIET_DEFICIENCY, dietary_restrictions=dietary_restrictions)
 
-# Helper functions for agents
-def generate_safety_queries(
-    supplement_id: str, 
-    drug_ids: List[str]
-) -> List[Dict]:
+def generate_medication_depletion_query(medications: List[str]) -> str:
+    """Convenience function to generate medication depletion query."""
+    generator = QueryGenerator()
+    return generator.generate_query(QueryType.MEDICATION_DEPLETION, medications=medications)
+
+def generate_combined_deficiency_query(dietary_restrictions: List[str], medications: List[str]) -> str:
+    """Convenience function to generate combined deficiency query."""
+    generator = QueryGenerator()
+    return generator.generate_query(QueryType.COMBINED_DEFICIENCY, 
+                                   dietary_restrictions=dietary_restrictions, 
+                                   medications=medications)
+
+def generate_safety_check_query(medications: List[str], supplements: List[str]) -> str:
+    """Convenience function to generate safety check query."""
+    generator = QueryGenerator()
+    return generator.generate_query(QueryType.SAFETY_CHECK, 
+                                   medications=medications, 
+                                   supplements=supplements)
+
+def generate_comprehensive_safety_query(supplement_name: str, medication_names: List[str]) -> Dict[str, Any]:
     """
-    Generate all safety-related queries
+    Generate a comprehensive safety query that checks ALL interaction pathways:
+    1. Direct Supplement → Medication interactions
+    2. Supplement → Drug ← Medication (via CONTAINS_DRUG)
+    3. Hidden pharma: Supplement → ActiveIngredient → Drug ← Medication
+    4. Similar effects: Supplement → Category ← Drug ← Medication
     
     Args:
-        supplement_id: Supplement to check
-        drug_ids: List of drug IDs to check against
+        supplement_name: Single supplement to check
+        medication_names: List of medications to check against
         
     Returns:
-        List of query dicts for all safety checks
+        Dict with 'query', 'parameters', and optionally 'error' keys
     """
-    generator = QueryGenerator()
+    if not supplement_name or not medication_names:
+        return {'error': 'Missing supplement_name or medication_names'}
     
-    queries = []
+    # Convert to lowercase for case-insensitive matching
+    supplement_lower = supplement_name.lower()
+    medications_lower = [med.lower() for med in medication_names]
     
-    # Direct interactions
-    queries.append(generator.generate_query(
-        'direct_interaction',
-        {'supplement_id': supplement_id, 'drug_ids': drug_ids}
-    ))
-    
-    # Similar effects
-    queries.append(generator.generate_query(
-        'similar_effects',
-        {'supplement_id': supplement_id, 'drug_ids': drug_ids}
-    ))
-    
-    # Shared metabolism
-    queries.append(generator.generate_query(
-        'shared_metabolism',
-        {'supplement_id': supplement_id, 'drug_ids': drug_ids}
-    ))
-    
-    return queries
+    query = """
+    // === PATH 1: Direct Supplement -> Medication interaction ===
+    // Relationship: SUPPLEMENT_INTERACTS_WITH (from load_data line 617)
+    MATCH (s:Supplement)-[r:SUPPLEMENT_INTERACTS_WITH]->(m:Medication)
+    WHERE toLower(s.supplement_name) = toLower($supplement_name)
+        AND toLower(m.medication_name) IN $medication_names_lower
+    RETURN s.supplement_name AS supplement,
+           m.medication_name AS target,
+           r.interaction_description AS description,
+           'MODERATE'         AS severity,
+           null               AS detail,
+           'DIRECT_SUPPLEMENT_MEDICATION' AS pathway
 
+    UNION
 
-def generate_deficiency_queries(
-    dietary_restrictions: List[str],
-    drug_ids: List[str]
-) -> List[Dict]:
+    // === PATH 2: Supplement -> Drug <- Medication (shared drug interaction) ===
+    // Supplement contains ActiveIngredient equivalent to Drug,
+    // and that Drug INTERACTS_WITH another Drug that the Medication contains
+    MATCH (s:Supplement)-[:CONTAINS]->(ai:ActiveIngredient)-[:EQUIVALENT_TO]->(d1:Drug)
+          -[r:INTERACTS_WITH]->(d2:Drug)<-[:MEDICATION_CONTAINS_DRUG]-(m:Medication)
+    WHERE toLower(s.supplement_name) = toLower($supplement_name)
+        AND toLower(m.medication_name) IN $medication_names_lower
+    RETURN s.supplement_name AS supplement,
+           m.medication_name AS target,
+           r.description     AS description,
+           'HIGH'             AS severity,
+           d1.drug_name + ' interacts with ' + d2.drug_name AS detail,
+           'SUPPLEMENT_DRUG_MEDICATION' AS pathway
+
+    UNION
+
+    // === PATH 3: Hidden pharma equivalence ===
+    // Supplement contains ActiveIngredient equivalent to same Drug that Medication contains
+    MATCH (s:Supplement)-[:CONTAINS]->(a:ActiveIngredient)
+        -[:EQUIVALENT_TO]->(d:Drug)<-[:MEDICATION_CONTAINS_DRUG]-(m:Medication)
+    WHERE toLower(s.supplement_name) = toLower($supplement_name)
+        AND toLower(m.medication_name) IN $medication_names_lower
+    RETURN s.supplement_name AS supplement,
+           m.medication_name AS target,
+           'Contains equivalent pharmaceutical ingredient - duplication risk' AS description,
+           'HIGH'             AS severity,
+           a.active_ingredient + ' = ' + d.drug_name AS detail,
+           'HIDDEN_PHARMA_EQUIVALENCE' AS pathway
+
+    UNION
+
+    // === PATH 4: Similar pharmacological effect ===
+    // Supplement has similar effect to a Category that a Drug belongs to,
+    // and that Drug is contained in the Medication
+    MATCH (s:Supplement)-[:HAS_SIMILAR_EFFECT_TO]->(c:Category)
+        <-[:BELONGS_TO]-(d:Drug)<-[:MEDICATION_CONTAINS_DRUG]-(m:Medication)
+    WHERE toLower(s.supplement_name) = toLower($supplement_name)
+        AND toLower(m.medication_name) IN $medication_names_lower
+    RETURN s.supplement_name AS supplement,
+           m.medication_name AS target,
+           'Similar pharmacological effect - additive or antagonistic risk' AS description,
+           'MODERATE'         AS severity,
+           c.category         AS detail,
+           'SIMILAR_EFFECT'   AS pathway
     """
-    Generate all deficiency-related queries
     
-    Args:
-        dietary_restrictions: List of diet restrictions
-        drug_ids: List of medications
-        
-    Returns:
-        List of query dicts for deficiency checks
-    """
-    generator = QueryGenerator()
-    
-    queries = []
-    
-    # Diet deficiencies
-    if dietary_restrictions:
-        queries.append(generator.generate_query(
-            'diet_deficiency',
-            {'dietary_restrictions': dietary_restrictions}
-        ))
-    
-    # Medication depletions
-    if drug_ids:
-        queries.append(generator.generate_query(
-            'medication_depletion',
-            {'drug_ids': drug_ids}
-        ))
-    
-    return queries
-
-
-if __name__ == "__main__":
-    # Quick test
-    gen = QueryGenerator()
-    
-    # Test direct interaction query
-    result = gen.generate_query(
-        'direct_interaction',
-        {
-            'supplement_id': 'S07',
-            'drug_ids': ['DB00682', 'DB00331']
+    return {
+        'query': query,
+        'parameters': {
+            'supplement_name': supplement_lower,
+            'medication_names_lower': medications_lower
         }
-    )
+    }
+
+def generate_safety_queries(supplement_name: str, medication_names: List[str]) -> List[Dict[str, Any]]:
+    """
+    Generate multiple safety check queries (backwards compatibility).
+    Returns a list of query dictionaries.
+    """
+    return [generate_comprehensive_safety_query(supplement_name, medication_names)]
+
+def generate_supplement_info_query(supplement_name: str) -> Dict[str, Any]:
+    """
+    Generate query to get detailed information about a supplement.
+    """
+    if not supplement_name:
+        return {'error': 'Missing supplement_name'}
     
-    print("Query:", result['query'])
-    print("\nParameters:", result['parameters'])
-    print("\nExplanation:", result['explanation'])
+    query = """
+    MATCH (s:Supplement)
+    WHERE toLower(s.supplement_name) = toLower($supplement)
+    OPTIONAL MATCH (s)-[:CONTAINS]->(ai:ActiveIngredient)
+    OPTIONAL MATCH (s)-[:BELONGS_TO]->(cat:Category)
+    RETURN s.supplement_name as supplement,
+           s.description as description,
+           cat.category_name as category,
+           collect(ai.active_ingredient) as active_ingredients
+    """
+    
+    return {
+        'query': query,
+        'parameters': {'supplement': supplement_name.lower()}
+    }
+
+def generate_symptom_recommendation_query(symptom: str) -> Dict[str, Any]:
+    """
+    Generate query to find supplements that may help with a symptom.
+    """
+    if not symptom:
+        return {'error': 'Missing symptom'}
+    
+    query = """
+    MATCH (sym:Symptom)-[:CAN_CAUSE]->(condition:MedicalCondition)
+    MATCH (condition)-[:ADDRESSES]-(benefit:BeneficialEffect)-[:PRODUCED_BY]-(s:Supplement)
+    WHERE toLower(sym.symptom_name) = toLower($symptom)
+    RETURN s.supplement_name as supplement,
+           condition.condition_name as condition,
+           benefit.benefit_name as benefit,
+           benefit.evidence_strength as evidence_level
+    ORDER BY benefit.evidence_strength DESC
+    """
+    
+    return {
+        'query': query,
+        'parameters': {'symptom': symptom.lower()}
+    }

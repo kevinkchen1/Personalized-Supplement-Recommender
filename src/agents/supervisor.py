@@ -129,6 +129,19 @@ class SupervisorAgent:
         """
         question = state['user_question'].lower()
         
+        # Build medication/supplement name lists (handle both str and dict formats)
+        raw_meds = state.get('patient_profile', {}).get('medications', [])
+        med_names = [
+            m.get('drug_name', 'Unknown') if isinstance(m, dict) else str(m)
+            for m in raw_meds
+        ]
+        
+        raw_supps = state.get('patient_profile', {}).get('supplements', [])
+        supp_names = [
+            s.get('supplement_name', 'Unknown') if isinstance(s, dict) else str(s)
+            for s in raw_supps
+        ]
+        
         # Use LLM to analyze intent
         prompt = f"""
 Analyze this user question and determine what they need:
@@ -136,9 +149,9 @@ Analyze this user question and determine what they need:
 Question: "{state['user_question']}"
 
 User Profile:
-- Medications: {[m.get('drug_name', 'Unknown') for m in state.get('patient_profile', {}).get('medications', [])]}
-- Supplements: {[s.get('supplement_name', 'Unknown') for s in state.get('patient_profile', {}).get('supplements', [])]}
-- Dietary restrictions: {state.get('patient_profile', {}).get('dietary_restrictions', [])}
+- Medications: {med_names}
+- Supplements: {supp_names}
+- Dietary restrictions: {state.get('patient_profile', {}).get('dietary_restrictions', state.get('patient_profile', {}).get('diet', []))}
 
 Determine what needs to be checked:
 1. Safety check? (drug-supplement interactions)
@@ -162,7 +175,40 @@ Return ONLY JSON:
         )
         
         import json
-        needs = json.loads(response.content[0].text)
+        import re
+        
+        raw_text = response.content[0].text.strip()
+        
+        # Strip markdown code fences if present (```json ... ``` or ``` ... ```)
+        raw_text = re.sub(r'^```(?:json)?\s*', '', raw_text)
+        raw_text = re.sub(r'\s*```$', '', raw_text)
+        raw_text = raw_text.strip()
+        
+        try:
+            needs = json.loads(raw_text)
+        except json.JSONDecodeError:
+            # Fallback: try to extract JSON object from the text
+            match = re.search(r'\{[^{}]*\}', raw_text, re.DOTALL)
+            if match:
+                try:
+                    needs = json.loads(match.group())
+                except json.JSONDecodeError:
+                    print(f"   ⚠️  Could not parse LLM response as JSON: {raw_text[:200]}")
+                    # Safe default: check everything
+                    needs = {
+                        "needs_safety_check": True,
+                        "needs_deficiency_check": False,
+                        "needs_recommendations": False,
+                        "reasoning": "Could not parse LLM intent — defaulting to safety check"
+                    }
+            else:
+                print(f"   ⚠️  No JSON found in LLM response: {raw_text[:200]}")
+                needs = {
+                    "needs_safety_check": True,
+                    "needs_deficiency_check": False,
+                    "needs_recommendations": False,
+                    "reasoning": "Could not parse LLM intent — defaulting to safety check"
+                }
         
         print(f"   📊 Analysis: {needs['reasoning']}")
         
@@ -194,12 +240,12 @@ Return ONLY JSON:
         elif needs.get('needs_safety_check'):
             pending.append('safety_check')
         
-        if state.get('deficiencies_checked', False):
+        if state.get('deficiency_checked', False):
             completed.append('deficiency_check')
         elif needs.get('needs_deficiency_check'):
             pending.append('deficiency_check')
         
-        if state.get('recommendations_generated', False):
+        if state.get('recommendations_checked', False):
             completed.append('recommendations')
         elif needs.get('needs_recommendations'):
             pending.append('recommendations')
