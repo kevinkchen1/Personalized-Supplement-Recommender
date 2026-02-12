@@ -13,10 +13,8 @@ class RecommendationAgent:
     
     def __init__(self, graph_interface):
         self.graph = graph_interface
-        from tools.query_generator import QueryGenerator
         from tools.query_executor import QueryExecutor
         
-        self.generator = QueryGenerator()
         self.executor = QueryExecutor(graph_interface)
     
     
@@ -98,31 +96,17 @@ class RecommendationAgent:
     
     def _find_supplements_for_condition(self, condition: str) -> List[Dict]:
         """
-        Find supplements that help with condition/symptom
+        Find supplements that help with condition/symptom.
         
-        FIXED: Uses direct Cypher query that matches your actual schema:
+        Uses direct Cypher that matches our actual DB schema:
         - Symptom node has: symptom_id, symptom_name
         - Relationship: Supplement -[:TREATS]-> Symptom
         """
-        # OPTION 1: Try using QueryGenerator first
-        query_dict = self.generator.generate_query(
-            'supplements_for_symptom',
-            {'symptom': condition}
-        )
-        
-        if not query_dict.get('error'):
-            result = self.executor.execute_query_dict(query_dict)
-            
-            if result['success'] and result['data']:
-                print(f"   ✓ QueryGenerator worked! Found {len(result['data'])} results")
-                return self._format_candidates(result['data'])
-        
-        # OPTION 2: Fallback to manual Cypher query
-        print(f"   ⚠️  QueryGenerator returned 0 results, trying manual query...")
+        # Direct Cypher query against actual schema
         candidates = self._manual_symptom_search(condition)
         
         if candidates:
-            print(f"   ✓ Manual query worked! Found {len(candidates)} results")
+            print(f"   ✓ Found {len(candidates)} candidate supplements")
         else:
             print(f"   ❌ No supplements found for: {condition}")
         
