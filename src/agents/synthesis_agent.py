@@ -110,15 +110,53 @@ class SynthesisAgent:
         if state.get('deficiency_checked'):
             deficiency = state['deficiency_results']
             context += f"=== DEFICIENCY ANALYSIS ===\n"
-            at_risk = deficiency.get('at_risk', [])
-            if at_risk:
-                context += f"Nutrients at Risk: {', '.join(at_risk)}\n"
-                risk_levels = deficiency.get('risk_levels', {})
-                for nutrient, level in risk_levels.items():
-                    context += f"  - {nutrient}: {level} risk\n"
+            context += f"Verdict: {deficiency.get('verdict', 'Unknown')}\n"
+            
+            # Get diet-based deficiencies
+            diet_def = deficiency.get('diet_based', [])
+            # Get supplement-based deficiencies
+            supplement_def = deficiency.get('supplement_based', [])
+            # Get critical overlaps
+            critical_overlaps = deficiency.get('critical_overlaps', [])
+            
+            if diet_def or supplement_def:
+                context += f"Nutrient Deficiencies Found: {len(diet_def) + len(supplement_def)}\n\n"
+                
+                # Show diet-based deficiencies
+                if diet_def:
+                    context += f"FROM DIET ({len(diet_def)}):\n"
+                    for d in diet_def:
+                        context += f"  - {d['nutrient']} (from {d['source_name']} diet)\n"
+                        context += f"    Risk Level: {d['risk_level']}\n"
+                        if d.get('evidence'):
+                            evidence_short = d['evidence'][:100] + '...' if len(d['evidence']) > 100 else d['evidence']
+                            context += f"    Details: {evidence_short}\n"
+                    context += "\n"
+                
+                # Show supplement-based deficiencies
+                if supplement_def:
+                    context += f"FROM SUPPLEMENTS ({len(supplement_def)}):\n"
+                    for d in supplement_def:
+                        context += f"  - {d['nutrient']} (from {d['source_name']})\n"
+                        context += f"    Risk Level: {d['risk_level']}\n"
+                        context += f"    Mechanism: {d['mechanism']}\n"
+                        if d.get('evidence'):
+                            evidence_short = d['evidence'][:100] + '...' if len(d['evidence']) > 100 else d['evidence']
+                            context += f"    Details: {evidence_short}\n"
+                    context += "\n"
+                
+                # Show critical overlaps
+                if critical_overlaps:
+                    context += f"⚠️ CRITICAL OVERLAPS ({len(critical_overlaps)}):\n"
+                    for overlap in critical_overlaps:
+                        context += f"  - {overlap['nutrient']} affected by {overlap['risk_multiplier']} sources!\n"
+                        context += f"    Sources: {', '.join(overlap['source_names'])}\n"
+                        context += f"    Combined Risk: {overlap['combined_risk']}\n"
+                    context += "\n"
             else:
-                context += "No significant deficiency risks identified\n"
-            context += "\n"
+                context += "No significant deficiency risks identified\n\n"
+            
+            context += f"Confidence: {deficiency.get('confidence', 0):.2f}\n\n"
         
         # Add recommendations - FIXED: Include actual supplement names!
         if state.get('recommendations_checked'):

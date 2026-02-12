@@ -283,7 +283,7 @@ class CompleteKnowledgeGraphLoader:
     # ========================================================================
     
     def load_drugs(self, df: pd.DataFrame):
-        """Load Drug nodes from drugs.csv"""
+        """Load Drug nodes from drugs.csv with all properties"""
         logger.info(f"Loading {len(df):,} drugs...")
         
         drugs_data = df.fillna("").to_dict('records')
@@ -295,7 +295,9 @@ class CompleteKnowledgeGraphLoader:
             drug_name: row.drug_name,
             description: row.description,
             indication: row.indication,
-            type: row.type
+            type: row.type,
+            toxicity: row.toxicity,
+            indication_text: row.indication_text
         })
         """
         
@@ -769,6 +771,37 @@ class CompleteKnowledgeGraphLoader:
                           desc="🔥 Supplement → Category (SIMILAR EFFECT)")
         logger.info(f"✓ Loaded {len(df):,} CRITICAL similarity relationships")
 
+    def load_supplement_nutrient_negative_interactions(self, df: pd.DataFrame):
+        """
+        Load Supplement -[:NEGATIVE_INTERACTION]-> Nutrient relationships
+        
+        CRITICAL SAFETY RELATIONSHIPS: Supplements that deplete, interfere with, 
+        antagonize, or mask deficiency of essential nutrients.
+        
+        Examples:
+        - Zinc depletes Copper
+        - Folate masks B12 deficiency
+        - Vitamin E antagonizes Vitamin K
+        """
+        logger.info(f"⚠️  Loading {len(df):,} supplement-nutrient negative interactions...")
+        
+        interaction_data = df.fillna("").to_dict('records')
+        
+        query = """
+        UNWIND $batch AS row
+        MATCH (s:Supplement {supplement_id: row.supplement_id})
+        MATCH (n:Nutrient {nutrient_id: row.nutrient_id})
+        CREATE (s)-[:NEGATIVE_INTERACTION {
+            mechanism: row.mechanism,
+            severity: row.severity,
+            notes: row.notes
+        }]->(n)
+        """
+        
+        self.batch_execute(query, interaction_data, batch_size=500,
+                          desc="⚠️  Supplement → Nutrient (NEGATIVE)")
+        logger.info(f"✓ Loaded {len(df):,} CRITICAL negative interactions")
+
     # ========================================================================
     # MAIN LOADING ORCHESTRATION
     # ========================================================================
@@ -857,6 +890,13 @@ class CompleteKnowledgeGraphLoader:
         self.load_dietary_restrictions(pd.read_csv(mayo_path / "dietary_restrictions.csv"))
         self.load_dietary_restriction_deficient_in_nutrient(
             pd.read_csv(mayo_path / "dietary_restriction_deficient_in_nutrient.csv"))
+        
+        # Load supplement-nutrient negative interactions (NEW!)
+        try:
+            self.load_supplement_nutrient_negative_interactions(
+                pd.read_csv(mayo_path / "supplement_interacts_with_nutrient.csv"))
+        except FileNotFoundError:
+            logger.info("No supplement_interacts_with_nutrient.csv found, skipping...")
 
         # ====================================================================
         # PHASE 5: Bridge Relationships (CRITICAL!)
@@ -951,3 +991,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

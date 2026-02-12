@@ -1,0 +1,11 @@
+supplement_id,supplement_name,nutrient_id,nutrient_name,mechanism,severity,notes
+S07,Fish oil,N020,Vitamin E,may_deplete,LOW,High doses of omega-3 (>3g/day) increase vitamin E requirement due to oxidation; most fish oil supplements are fortified with vitamin E
+S09,Folate (folic acid),N001,Vitamin B12,masks_deficiency,CRITICAL,High folate (>1000mcg/day) can mask B12 deficiency anemia while neurological damage continues; always monitor B12 status when taking high-dose folate
+S18,Red yeast rice,N002,CoQ10,depletes,HIGH,Contains monacolin K (natural lovastatin) which depletes CoQ10 similar to statin drugs; consider CoQ10 supplementation (100-200mg/day)
+S22,Vitamin A,N005,Vitamin D,interferes_with,MODERATE,High-dose vitamin A (>10000 IU/day) can interfere with vitamin D function as both compete for absorption and receptor binding
+S25,Vitamin C,N016,Copper,may_deplete,LOW,Very high doses (>2000mg/day) may reduce copper absorption; generally mild effect; less significant than zinc-copper interaction
+S26,Vitamin D,N009,Magnesium,requires,MODERATE,Vitamin D requires magnesium for activation; magnesium deficiency impairs vitamin D metabolism; ensure adequate magnesium intake
+S27,Vitamin E,N008,Vitamin K,antagonizes,HIGH,High doses (>400 IU/day) interfere with vitamin K function and increase bleeding risk; particularly dangerous with anticoagulants like warfarin
+S28,Zinc,N016,Copper,depletes,CRITICAL,Zinc >50mg/day competes with copper absorption; long-term high-dose zinc supplementation causes copper deficiency (anemia neutropenia neurological issues)
+S28,Zinc,N003,Iron,interferes_with,MODERATE,Zinc competes with iron for absorption via shared transporters; take separately (at least 2 hours apart) if supplementing both
+S28,Zinc,N006,Calcium,interferes_with,LOW,High-dose zinc and calcium compete for absorption; separate doses if taking >50mg zinc and >500mg calcium
