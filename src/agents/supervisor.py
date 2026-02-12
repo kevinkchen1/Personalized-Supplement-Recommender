@@ -75,10 +75,13 @@ class SupervisorAgent:
     def _extract_and_normalize_entities(self, state: Dict[str, Any]) -> Dict[str, Any]:
         """
         Extract entities from question and normalize them.
+        ALSO normalizes entities from patient profile!
         
         Calls:
         - entity_extractor tool (Phase 1)
         - entity_normalizer tool (Phase 2)
+        
+        UPDATED: Now handles dietary restrictions
         """
         from tools.entity_extractor import extract_entities_from_text
         from tools.entity_normalizer import (
@@ -88,28 +91,61 @@ class SupervisorAgent:
         
         question = state['user_question']
         
-        # Extract entities
-        print("   📋 Extracting entities...")
+        # Extract entities from question
+        print("   📋 Extracting entities from question...")
         extracted = extract_entities_from_text(question)
         state['extracted_entities'] = extracted
         
-        # Normalize medications
-        print("   🔄 Normalizing medications...")
+        # Normalize medications from question
+        print("   🔄 Normalizing medications from question...")
         normalized_meds = []
         for med in extracted['medications']:
-            # Note: graph_interface should be passed in state or initialized
             result = normalize_medication_to_database(med, state['graph_interface'])
             normalized_meds.append(result)
         
-        # Normalize supplements
-        print("   🔄 Normalizing supplements...")
+        # Normalize supplements from question
+        print("   🔄 Normalizing supplements from question...")
         normalized_supps = []
         for supp in extracted['supplements']:
             result = normalize_supplement_to_database(supp, state['graph_interface'])
             normalized_supps.append(result)
         
+        # ✨ NEW: Normalize patient profile supplements and medications
+        profile = state.get('patient_profile', {})
+        
+        # Normalize profile medications
+        profile_meds = profile.get('medications', [])
+        if isinstance(profile_meds, str):
+            profile_meds = [m.strip() for m in profile_meds.split(',') if m.strip()]
+        
+        if profile_meds:
+            print("   🔄 Normalizing medications from profile...")
+            for med in profile_meds:
+                # Skip if already normalized from question
+                if not any(m.get('user_input') == med for m in normalized_meds):
+                    result = normalize_medication_to_database(med, state['graph_interface'])
+                    normalized_meds.append(result)
+        
+        # Normalize profile supplements
+        profile_supps = profile.get('supplements', [])
+        if isinstance(profile_supps, str):
+            profile_supps = [s.strip() for s in profile_supps.split(',') if s.strip()]
+        
+        if profile_supps:
+            print("   🔄 Normalizing supplements from profile...")
+            for supp in profile_supps:
+                # Skip if already normalized from question
+                if not any(s.get('user_input') == supp for s in normalized_supps):
+                    result = normalize_supplement_to_database(supp, state['graph_interface'])
+                    normalized_supps.append(result)
+        
+        # Dietary restrictions (no normalization needed - simple strings)
+        print("   ✅ Processing dietary restrictions...")
+        dietary_restrictions = extracted.get('dietary_restrictions', [])
+        
         state['normalized_medications'] = normalized_meds
         state['normalized_supplements'] = normalized_supps
+        state['normalized_dietary_restrictions'] = dietary_restrictions
         state['entities_extracted'] = True
         
         return state

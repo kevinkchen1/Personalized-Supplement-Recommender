@@ -111,16 +111,17 @@ RETURN s.supplement_name, sym.symptom_name"""
 
     # Pull from deficiency_results
     deficiency = state.get('deficiency_results') or {}
-    if deficiency.get('at_risk'):
-        results_count += len(deficiency['at_risk'])
-        if not cypher_query:
-            cypher_query = """MATCH (dr:DietaryRestriction)-[r:DEFICIENT_IN]->(n:Nutrient)
-WHERE toLower(dr.dietary_restriction_name) IN $restrictions
-RETURN dr.dietary_restriction_name AS diet,
-       n.nutrient_name AS nutrient,
-       r.risk_level AS risk_level"""
+    deficiency_queries = deficiency.get('queries_run', [])
+    if deficiency_queries and not cypher_query:  # Only if safety didn't already set it
+        cypher_query = deficiency_queries[0].get('cypher', '')
+        results_count += deficiency.get('total_count', 0)
         if not raw_results:
-            raw_results = deficiency.get('deficiency_details', [])[:10]
+            # Combine diet_based and supplement_based for display
+            diet_def = deficiency.get('diet_based', [])
+            supp_def = deficiency.get('supplement_based', [])
+            combined_def = diet_def + supp_def
+            if combined_def:
+                raw_results = combined_def[:10]
 
     # Fallback to query_history
     if results_count == 0:
