@@ -405,33 +405,37 @@ class RecommendationAgent:
     
     
     def _get_medication_names(self, state: Dict[str, Any]) -> List[str]:
-        """Get medication names from state"""
-        names = []
+        """Get medication names from state — merges ALL sources."""
+        names = set()
         
         # Source 1: Normalized medications
-        for m in state.get('normalized_medications', []):
+        for m in (state.get('normalized_medications') or []):
             if isinstance(m, dict):
                 name = m.get('matched_drug') or m.get('user_input')
             else:
                 name = str(m)
             if name:
-                names.append(name)
+                names.add(name)
         
         # Source 2: Extracted entities
-        if not names:
-            extracted = state.get('extracted_entities') or {}
-            names = extracted.get('medications', [])
+        extracted = state.get('extracted_entities') or {}
+        for name in (extracted.get('medications') or []):
+            if name:
+                names.add(name)
         
-        # Source 3: Patient profile
-        if not names:
-            profile_meds = (state.get('patient_profile') or {}).get('medications', [])
-            for m in profile_meds:
-                if isinstance(m, dict):
-                    names.append(m.get('drug_name') or m.get('matched_drug') or m.get('user_input', ''))
-                elif isinstance(m, str):
-                    names.append(m)
+        # Source 3: Patient profile (always checked)
+        profile_meds = (state.get('patient_profile') or {}).get('medications', [])
+        for m in profile_meds:
+            if isinstance(m, dict):
+                name = m.get('drug_name') or m.get('matched_drug') or m.get('user_input', '')
+            elif isinstance(m, str):
+                name = m
+            else:
+                name = ''
+            if name:
+                names.add(name)
         
-        return [n for n in names if n]
+        return list(names)
     
     
     def _calculate_confidence(self, recommendations: List[Dict]) -> float:

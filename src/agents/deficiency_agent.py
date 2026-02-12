@@ -1,355 +1,281 @@
 """
-Deficiency Agent - Final corrected version with proper Neo4j schema
+Dietary Deficiency Agent
 
-Confirmed Schema:
-- DietaryRestriction nodes: 'dietary_restriction_name' property  
-- Nutrient nodes: 'nutrient_name' property
-- DEFICIENT_IN relationship: 'risk_level' property (not 'severity' or 'reason')
+Identifies nutrient deficiencies based on the user's dietary restrictions
+by querying the knowledge graph.
+
+DB Schema used:
+  (DietaryRestriction)-[:DEFICIENT_IN {risk_level}]->(Nutrient)
+
+State keys read:
+  - patient_profile.dietary_restrictions   (from sidebar, e.g. ['Vegan'])
+  - extracted_entities.dietary_restrictions (from question text)
+  - patient_profile.medications            (for context in synthesis)
+  - graph_interface                        (Neo4j connection)
+
+State keys written:
+  - deficiency_checked  : True
+  - deficiency_results  : {at_risk, risk_levels, deficiency_details, sources, ...}
+  - evidence_chain      : appended
+  - query_history       : appended
+  - confidence_level    : updated
 """
 
-import logging
+import os
 from typing import Dict, Any, List
 
-logger = logging.getLogger(__name__)
+from tools.query_executor import QueryExecutor
 
-class DeficiencyAgent:
-    """Agent responsible for identifying nutrient deficiencies from diet and medications."""
-    
-    def __init__(self, llm, query_executor):
-        """Initialize the deficiency agent.
-        
-        Args:
-            llm: Language model for processing
-            query_executor: Tool for executing Neo4j queries
+
+class DietaryDeficiencyAgent:
+    """
+    Specialist agent that checks which nutrients a user is likely
+    deficient in based on their dietary restrictions.
+    """
+
+    def __init__(self, graph_interface):
+        self.graph = graph_interface
+        self.executor = QueryExecutor(graph_interface)
+
+    # ------------------------------------------------------------------
+    # Main entry
+    # ------------------------------------------------------------------
+    def run(self, state: Dict[str, Any]) -> Dict[str, Any]:
         """
-        self.llm = llm
-        self.query_executor = query_executor
-        self.agent_name = "DeficiencyAgent"
-    
-    def analyze_deficiencies(self, patient_profile: Dict[str, Any]) -> Dict[str, Any]:
+        Analyse dietary deficiencies and write results into LangGraph state.
         """
-        Analyze potential nutrient deficiencies based on dietary restrictions and medications.
-        
-        Args:
-            patient_profile: User's health profile containing dietary restrictions and medications
-            
+        print("\n" + "=" * 60)
+        print("🥗 DIETARY DEFICIENCY AGENT: Checking nutrient gaps...")
+        print("=" * 60)
+
+        # 1. Gather dietary restrictions from ALL sources
+        restrictions = self._get_dietary_restrictions(state)
+        medications  = self._get_medication_names(state)
+
+        if not restrictions:
+            print("   ⚠️  No dietary restrictions provided")
+            state['deficiency_checked'] = True
+            state['deficiency_results'] = {
+                'at_risk': [],
+                'risk_levels': {},
+                'deficiency_details': [],
+                'sources': [],
+                'verdict': 'NO_RESTRICTIONS',
+                'reason': 'No dietary restrictions provided to analyse',
+            }
+            return state
+
+        print(f"   Dietary restrictions: {restrictions}")
+        if medications:
+            print(f"   Medications (context): {medications}")
+
+        # 2. Query knowledge graph for deficiencies
+        deficiency_rows, queries_run = self._query_deficiencies(restrictions)
+
+        # 3. Build structured results
+        results = self._build_results(deficiency_rows, restrictions, medications)
+
+        # 4. Write to state
+        state['deficiency_checked'] = True
+        state['deficiency_results'] = results
+        state['confidence_level'] = results['confidence']
+
+        # Evidence chain
+        evidence = state.get('evidence_chain', [])
+        if results['at_risk']:
+            nutrients_str = ', '.join(results['at_risk'])
+            evidence.append(
+                f"Deficiency check: {len(results['at_risk'])} nutrient(s) at risk "
+                f"({nutrients_str}) from dietary restrictions {restrictions}"
+            )
+        else:
+            evidence.append(
+                f"Deficiency check: No deficiencies found for restrictions {restrictions}"
+            )
+        state['evidence_chain'] = evidence
+
+        # Query history
+        qh = state.get('query_history', [])
+        for qr in queries_run:
+            qh.append(qr)
+        state['query_history'] = qh
+
+        print(f"\n   ✅ Deficiency Check Complete")
+        print(f"      At-risk nutrients: {len(results['at_risk'])}")
+        print(f"      High-risk: {results.get('high_risk_count', 0)}")
+        print("=" * 60 + "\n")
+
+        return state
+
+    # ------------------------------------------------------------------
+    # Data gathering helpers
+    # ------------------------------------------------------------------
+    def _get_dietary_restrictions(self, state: Dict) -> List[str]:
+        """
+        Merge dietary restrictions from all sources (sidebar + question).
+        """
+        restrictions = set()
+
+        # Source 1: Patient profile sidebar
+        profile = state.get('patient_profile', {})
+        for key in ('dietary_restrictions', 'diet'):
+            vals = profile.get(key, [])
+            if isinstance(vals, str):
+                vals = [vals]
+            for v in (vals or []):
+                if v:
+                    restrictions.add(v)
+
+        # Source 2: Extracted entities from question text
+        extracted = state.get('extracted_entities') or {}
+        for v in (extracted.get('dietary_restrictions') or []):
+            if v:
+                restrictions.add(v)
+
+        return list(restrictions)
+
+    def _get_medication_names(self, state: Dict) -> List[str]:
+        """Get medication names (used for context, not for querying)."""
+        names = set()
+
+        # Normalized medications
+        for m in (state.get('normalized_medications') or []):
+            name = m.get('matched_drug') or m.get('user_input')
+            if name:
+                names.add(name)
+
+        # Extracted entities
+        extracted = state.get('extracted_entities') or {}
+        for name in (extracted.get('medications') or []):
+            if name:
+                names.add(name)
+
+        # Patient profile sidebar
+        profile_meds = state.get('patient_profile', {}).get('medications', [])
+        for m in profile_meds:
+            if isinstance(m, dict):
+                name = m.get('drug_name') or m.get('matched_drug') or m.get('user_input', '')
+            elif isinstance(m, str):
+                name = m
+            else:
+                name = ''
+            if name:
+                names.add(name)
+
+        return list(names)
+
+    # ------------------------------------------------------------------
+    # Knowledge graph queries
+    # ------------------------------------------------------------------
+    def _query_deficiencies(self, restrictions: List[str]):
+        """
+        Query the Neo4j graph for nutrient deficiencies linked to
+        dietary restrictions.
+
         Returns:
-            Dictionary containing deficiency analysis results
+            (rows, queries_run) where rows is a list of dicts and
+            queries_run is metadata for the debug panel.
         """
-        try:
-            logger.info(f"{self.agent_name}: Starting deficiency analysis")
-            
-            # Extract dietary restrictions (handle both possible keys)
-            dietary_restrictions = (
-                patient_profile.get('dietary_restrictions', []) or 
-                patient_profile.get('diet', [])
-            )
-            
-            # Ensure it's a list
-            if isinstance(dietary_restrictions, str):
-                dietary_restrictions = [dietary_restrictions]
-            elif not isinstance(dietary_restrictions, list):
-                dietary_restrictions = []
-            
-            medications = patient_profile.get('medications', [])
-            
-            logger.info(f"Dietary restrictions: {dietary_restrictions}")
-            logger.info(f"Medications: {medications}")
-            
-            # Check deficiencies from different sources
-            diet_deficiencies = self._check_diet_deficiencies(dietary_restrictions)
-            medication_depletions = self._check_medication_depletions(medications)
-            
-            # Calculate combined risks and recommendations
-            analysis_results = self._analyze_combined_risks(
-                diet_deficiencies, 
-                medication_depletions,
-                medications
-            )
-            
-            return {
-                'agent': self.agent_name,
-                'status': 'success',
-                'analysis': analysis_results,
-                'diet_deficiencies': diet_deficiencies,
-                'medication_depletions': medication_depletions
-            }
-            
-        except Exception as e:
-            logger.error(f"{self.agent_name}: Error in analysis - {str(e)}")
-            return {
-                'agent': self.agent_name,
-                'status': 'error',
-                'error': str(e),
-                'analysis': None
-            }
-    
-    def _check_diet_deficiencies(self, dietary_restrictions: List[str]) -> List[Dict]:
-        """Check for nutrient deficiencies based on dietary restrictions."""
-        if not dietary_restrictions:
-            return []
-        
-        # Convert to lowercase for case-insensitive matching
-        restrictions_lower = [r.lower() for r in dietary_restrictions]
-        
+        restrictions_lower = [r.lower() for r in restrictions]
+
         query = """
         MATCH (dr:DietaryRestriction)-[r:DEFICIENT_IN]->(n:Nutrient)
         WHERE toLower(dr.dietary_restriction_name) IN $restrictions
-        RETURN dr.dietary_restriction_name as diet,
-               n.nutrient_name as nutrient,
-               r.risk_level as risk_level
+        RETURN dr.dietary_restriction_name AS diet,
+               n.nutrient_name             AS nutrient,
+               n.category                  AS nutrient_category,
+               n.rda_adult                 AS rda,
+               n.description               AS nutrient_description,
+               r.risk_level                AS risk_level
+        ORDER BY
+            CASE r.risk_level
+                WHEN 'HIGH'   THEN 0
+                WHEN 'MEDIUM' THEN 1
+                ELSE 2
+            END,
+            n.nutrient_name
         """
-        
-        try:
-            results = self.query_executor.execute_query(
-                query, 
-                {"restrictions": restrictions_lower}
-            )
-            
-            deficiencies = []
-            for record in results:
-                deficiencies.append({
-                    'diet': record.get('diet'),
-                    'nutrient': record.get('nutrient'),
-                    'risk_level': record.get('risk_level', 'MEDIUM'),
-                    'reason': f'Common deficiency in {record.get("diet")} diet',
-                    'source': 'dietary_restriction'
-                })
-            
-            logger.info(f"Found {len(deficiencies)} diet-based deficiencies")
-            return deficiencies
-            
-        except Exception as e:
-            logger.error(f"Error checking diet deficiencies: {str(e)}")
-            return []
-    
-    def _check_medication_depletions(self, medications: List[str]) -> List[Dict]:
-        """Check for nutrient depletions caused by medications."""
-        if not medications:
-            return []
-        
-        # Convert medications to lowercase for case-insensitive matching
-        medications_lower = [med.lower() for med in medications]
-        
-        # First, let's check what the actual medication schema looks like
-        # We'll need to discover the correct relationship path
-        query = """
-        MATCH (m:Medication)-[:MEDICATION_CONTAINS_DRUG]->(d:Drug)-[r:DEPLETES]->(n:Nutrient)
-        WHERE toLower(m.medication_name) IN $medications
-        RETURN m.medication_name as medication,
-               d.drug_name as drug,
-               n.nutrient_name as nutrient,
-               r.risk_level as risk_level,
-               r.mechanism as mechanism
+
+        result = self.executor.execute(query, {'restrictions': restrictions_lower})
+
+        queries_run = [{
+            'query_type': 'dietary_deficiency',
+            'restrictions': restrictions,
+            'success': result['success'],
+            'result_count': result['count'],
+        }]
+
+        rows = result['data'] if result['success'] else []
+        return rows, queries_run
+
+    # ------------------------------------------------------------------
+    # Result building
+    # ------------------------------------------------------------------
+    def _build_results(
+        self,
+        rows: List[Dict],
+        restrictions: List[str],
+        medications: List[str],
+    ) -> Dict[str, Any]:
         """
-        
-        try:
-            results = self.query_executor.execute_query(
-                query, 
-                {"medications": medications_lower}
-            )
-            
-            depletions = []
-            for record in results:
-                depletions.append({
-                    'medication': record.get('medication'),
-                    'drug': record.get('drug'),
-                    'nutrient': record.get('nutrient'),
-                    'risk_level': record.get('risk_level', 'MEDIUM'),
-                    'mechanism': record.get('mechanism', 'Nutrient depletion'),
-                    'source': 'medication'
-                })
-            
-            logger.info(f"Found {len(depletions)} medication-induced depletions")
-            return depletions
-            
-        except Exception as e:
-            logger.error(f"Error checking medication depletions: {str(e)}")
-            return []
-    
-    def _analyze_combined_risks(self, diet_deficiencies: List[Dict], 
-                               medication_depletions: List[Dict],
-                               medications: List[str]) -> Dict[str, Any]:
-        """Analyze combined risks and generate recommendations."""
-        
-        # Group deficiencies by nutrient
-        nutrient_risks = {}
-        
-        # Add diet-based deficiencies
-        for deficiency in diet_deficiencies:
-            nutrient = deficiency['nutrient']
-            if nutrient not in nutrient_risks:
-                nutrient_risks[nutrient] = {
-                    'nutrient': nutrient,
-                    'sources': [],
-                    'risk_level': 'LOW',
-                    'reasons': []
-                }
-            
-            nutrient_risks[nutrient]['sources'].append('diet')
-            nutrient_risks[nutrient]['reasons'].append(deficiency['reason'])
-            
-            # Update risk level based on database risk_level
-            db_risk = deficiency.get('risk_level', 'MEDIUM')
-            if db_risk in ['HIGH', 'SEVERE']:
-                nutrient_risks[nutrient]['risk_level'] = 'HIGH'
-            elif db_risk == 'MEDIUM' and nutrient_risks[nutrient]['risk_level'] == 'LOW':
-                nutrient_risks[nutrient]['risk_level'] = 'MEDIUM'
-        
-        # Add medication-based depletions
-        for depletion in medication_depletions:
-            nutrient = depletion['nutrient']
-            if nutrient not in nutrient_risks:
-                nutrient_risks[nutrient] = {
-                    'nutrient': nutrient,
-                    'sources': [],
-                    'risk_level': 'LOW',
-                    'reasons': []
-                }
-            
-            nutrient_risks[nutrient]['sources'].append('medication')
-            nutrient_risks[nutrient]['reasons'].append(
-                f"Medication ({depletion['medication']}): {depletion['mechanism']}"
-            )
-            
-            # Update risk level
-            db_risk = depletion.get('risk_level', 'MEDIUM')
-            if db_risk in ['HIGH', 'SEVERE']:
-                nutrient_risks[nutrient]['risk_level'] = 'HIGH'
-            elif db_risk == 'MEDIUM' and nutrient_risks[nutrient]['risk_level'] == 'LOW':
-                nutrient_risks[nutrient]['risk_level'] = 'MEDIUM'
-        
-        # Identify HIGH RISK nutrients (affected by both diet and medications)
-        for nutrient_data in nutrient_risks.values():
-            if 'diet' in nutrient_data['sources'] and 'medication' in nutrient_data['sources']:
-                nutrient_data['risk_level'] = 'HIGH'
-                nutrient_data['reasons'].append("🚨 COMBINED RISK: Both diet and medication affect this nutrient")
-        
-        # Generate supplement recommendations for deficient nutrients
-        recommendations = self._get_supplement_recommendations(
-            list(nutrient_risks.keys()),
-            medications
-        )
-        
+        Transform raw DB rows into the structured result dict that the
+        synthesis agent and UI expect.
+        """
+        at_risk: List[str] = []
+        risk_levels: Dict[str, str] = {}
+        deficiency_details: List[Dict] = []
+        sources: List[str] = []
+
+        seen_nutrients = set()
+
+        for row in rows:
+            nutrient = row.get('nutrient', 'Unknown')
+            risk     = row.get('risk_level', 'MEDIUM')
+            diet     = row.get('diet', 'Unknown')
+
+            if nutrient not in seen_nutrients:
+                at_risk.append(nutrient)
+                seen_nutrients.add(nutrient)
+
+            # Keep the highest risk level per nutrient
+            prev = risk_levels.get(nutrient)
+            if prev is None or self._risk_rank(risk) < self._risk_rank(prev):
+                risk_levels[nutrient] = risk
+
+            deficiency_details.append({
+                'nutrient': nutrient,
+                'nutrient_category': row.get('nutrient_category', ''),
+                'rda': row.get('rda', ''),
+                'description': row.get('nutrient_description', ''),
+                'risk_level': risk,
+                'source_diet': diet,
+                'reason': f"{diet} diet is commonly deficient in {nutrient}",
+            })
+
+            source_label = f"Diet: {diet}"
+            if source_label not in sources:
+                sources.append(source_label)
+
+        high_risk_count = sum(1 for v in risk_levels.values() if v == 'HIGH')
+        confidence = 0.85 if rows else 0.70
+
         return {
-            'nutrient_risks': list(nutrient_risks.values()),
-            'total_deficiencies': len(nutrient_risks),
-            'high_risk_count': sum(1 for nr in nutrient_risks.values() if nr['risk_level'] == 'HIGH'),
-            'recommendations': recommendations
+            'at_risk': at_risk,
+            'risk_levels': risk_levels,
+            'deficiency_details': deficiency_details,
+            'sources': sources,
+            'restrictions_checked': restrictions,
+            'medications_context': medications,
+            'total_deficiencies': len(at_risk),
+            'high_risk_count': high_risk_count,
+            'confidence': confidence,
+            'verdict': 'DEFICIENCIES_FOUND' if at_risk else 'NO_DEFICIENCIES',
         }
-    
-    def _get_supplement_recommendations(self, deficient_nutrients: List[str], 
-                                      medications: List[str]) -> List[Dict]:
-        """Get supplement recommendations for deficient nutrients, checking safety."""
-        if not deficient_nutrients:
-            return []
-        
-        recommendations = []
-        
-        for nutrient in deficient_nutrients:
-            # Find supplements that provide this nutrient
-            # We need to discover the correct relationship path for supplements
-            supplement_query = """
-            MATCH (s:Supplement)-[:CONTAINS]->(ai:ActiveIngredient)-[:PROVIDES]->(n:Nutrient)
-            WHERE toLower(n.nutrient_name) = toLower($nutrient)
-            RETURN s.supplement_name as supplement,
-                   s.category as category,
-                   ai.active_ingredient as active_ingredient
-            LIMIT 5
-            """
-            
-            try:
-                supplement_results = self.query_executor.execute_query(
-                    supplement_query, 
-                    {"nutrient": nutrient}
-                )
-                
-                if supplement_results:
-                    for record in supplement_results:
-                        supplement_name = record.get('supplement')
-                        
-                        # Check safety against user's medications
-                        safety_status = self._check_supplement_safety(supplement_name, medications)
-                        
-                        recommendations.append({
-                            'nutrient': nutrient,
-                            'supplement': supplement_name,
-                            'category': record.get('category'),
-                            'active_ingredient': record.get('active_ingredient'),
-                            'safety_status': safety_status['status'],
-                            'safety_warnings': safety_status.get('warnings', [])
-                        })
-                else:
-                    # If no specific supplements found, provide general recommendation
-                    recommendations.append({
-                        'nutrient': nutrient,
-                        'supplement': f'{nutrient} supplement',
-                        'category': 'General',
-                        'active_ingredient': nutrient,
-                        'safety_status': 'CHECK_REQUIRED',
-                        'safety_warnings': ['Please consult healthcare provider for specific product recommendations']
-                    })
-                    
-            except Exception as e:
-                logger.error(f"Error getting recommendations for {nutrient}: {str(e)}")
-                # Provide fallback recommendation
-                recommendations.append({
-                    'nutrient': nutrient,
-                    'supplement': f'{nutrient} supplement',
-                    'category': 'General',
-                    'active_ingredient': nutrient,
-                    'safety_status': 'CHECK_REQUIRED',
-                    'safety_warnings': ['Please consult healthcare provider']
-                })
-        
-        return recommendations
-    
-    def _check_supplement_safety(self, supplement_name: str, medications: List[str]) -> Dict:
-        """Check if a supplement is safe with user's medications."""
-        if not medications:
-            return {'status': 'SAFE', 'warnings': []}
-        
-        # Check for direct supplement-medication interactions
-        safety_query = """
-        MATCH (s:Supplement)-[r:SUPPLEMENT_INTERACTS_WITH]->(m:Medication)
-        WHERE toLower(s.supplement_name) = toLower($supplement)
-        AND toLower(m.medication_name) IN $medications
-        RETURN r.interaction_type as interaction,
-               r.severity as severity,
-               r.description as description
-        """
-        
-        try:
-            medications_lower = [med.lower() for med in medications]
-            results = self.query_executor.execute_query(
-                safety_query, 
-                {"supplement": supplement_name, "medications": medications_lower}
-            )
-            
-            if results:
-                warnings = []
-                max_severity = 'LOW'
-                
-                for record in results:
-                    interaction = record.get('interaction', 'Unknown interaction')
-                    severity = record.get('severity', 'MEDIUM')
-                    description = record.get('description', 'Potential interaction detected')
-                    
-                    warnings.append(f"{severity}: {description}")
-                    
-                    if severity in ['HIGH', 'SEVERE'] and max_severity != 'SEVERE':
-                        max_severity = 'SEVERE'
-                    elif severity == 'MEDIUM' and max_severity == 'LOW':
-                        max_severity = 'MEDIUM'
-                
-                status = 'UNSAFE' if max_severity in ['HIGH', 'SEVERE'] else 'CAUTION'
-                return {'status': status, 'warnings': warnings}
-            else:
-                return {'status': 'SAFE', 'warnings': []}
-                
-        except Exception as e:
-            logger.error(f"Error checking safety for {supplement_name}: {str(e)}")
-            return {'status': 'CHECK_REQUIRED', 'warnings': ['Unable to verify safety']}
+
+    @staticmethod
+    def _risk_rank(level: str) -> int:
+        """Lower number = higher risk."""
+        return {'HIGH': 0, 'MEDIUM': 1, 'LOW': 2}.get(level, 3)
 
 
 # ======================================================================
@@ -359,25 +285,14 @@ class DeficiencyAgent:
 def deficiency_agent(state: Dict[str, Any]) -> Dict[str, Any]:
     """Entry point for LangGraph workflow."""
     from graph.graph_interface import GraphInterface
-    from tools.query_executor import QueryExecutor
-    import anthropic
-    
-    # Use existing graph_interface from state, or create new one
+
     graph = state.get('graph_interface')
     if graph is None:
-        import os
         graph = GraphInterface(
             uri=os.getenv("NEO4J_URI", "bolt://localhost:7687"),
             user=os.getenv("NEO4J_USER", "neo4j"),
             password=os.getenv("NEO4J_PASSWORD", ""),
         )
-    
-    # Create query executor
-    query_executor = QueryExecutor(graph)
-    
-    # Create LLM client
-    llm = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
-    
-    # Create and run the agent
-    agent = DeficiencyAgent(llm, query_executor)
-    return agent.analyze_deficiencies(state.get('patient_profile', {}))
+
+    agent = DietaryDeficiencyAgent(graph)
+    return agent.run(state)

@@ -113,6 +113,14 @@ RETURN s.supplement_name, sym.symptom_name"""
     deficiency = state.get('deficiency_results') or {}
     if deficiency.get('at_risk'):
         results_count += len(deficiency['at_risk'])
+        if not cypher_query:
+            cypher_query = """MATCH (dr:DietaryRestriction)-[r:DEFICIENT_IN]->(n:Nutrient)
+WHERE toLower(dr.dietary_restriction_name) IN $restrictions
+RETURN dr.dietary_restriction_name AS diet,
+       n.nutrient_name AS nutrient,
+       r.risk_level AS risk_level"""
+        if not raw_results:
+            raw_results = deficiency.get('deficiency_details', [])[:10]
 
     # Fallback to query_history
     if results_count == 0:
@@ -179,11 +187,14 @@ def display_debug_panel(result: dict):
             entities = result.get('entities', {})
             supps = entities.get('supplements', [])
             meds = entities.get('medications', [])
+            diets = entities.get('dietary_restrictions', [])
             if supps:
                 st.write(f"• Supplements: {', '.join(supps)}")
             if meds:
                 st.write(f"• Medications: {', '.join(meds)}")
-            if not supps and not meds:
+            if diets:
+                st.write(f"• Dietary Restrictions: {', '.join(diets)}")
+            if not supps and not meds and not diets:
                 st.write("• None extracted from question")
 
         with col2:
