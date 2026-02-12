@@ -83,6 +83,12 @@ class SafetyCheckAgent:
 
         print(f"   Supplements: {supplement_names}")
         print(f"   Medications: {medication_names}")
+        print(f"   (Sources: normalized_supps={bool(state.get('normalized_supplements'))}, "
+              f"extracted={bool((state.get('extracted_entities') or {}).get('supplements'))}, "
+              f"profile={bool(state.get('patient_profile', {}).get('supplements'))})")
+        print(f"   (Sources: normalized_meds={bool(state.get('normalized_medications'))}, "
+              f"extracted={bool((state.get('extracted_entities') or {}).get('medications'))}, "
+              f"profile={bool(state.get('patient_profile', {}).get('medications'))})")
 
         # ----------------------------------------------------------
         # 2. Run comprehensive safety check for each supplement
@@ -201,65 +207,79 @@ class SafetyCheckAgent:
 
     def _get_supplement_names(self, state: Dict) -> List[str]:
         """
-        Get supplement names from state — tries multiple sources:
+        Get supplement names from state — merges ALL sources to ensure
+        we never miss a supplement from the question OR the sidebar.
+
+        Sources (all checked, deduplicated):
         1. normalized_supplements (from supervisor entity extraction)
-        2. extracted_entities.supplements (raw extraction)
+        2. extracted_entities.supplements (raw extraction from question)
         3. patient_profile.supplements (from sidebar)
         """
-        names = []
+        names = set()
 
         # Source 1: Normalized supplements from supervisor
-        for s in state.get('normalized_supplements', []):
+        for s in (state.get('normalized_supplements') or []):
             name = s.get('matched_supplement') or s.get('user_input')
             if name:
-                names.append(name)
+                names.add(name)
 
-        # Source 2: Extracted entities (raw names)
-        if not names:
-            extracted = state.get('extracted_entities', {})
-            names = extracted.get('supplements', [])
+        # Source 2: Extracted entities (raw names from question)
+        extracted = state.get('extracted_entities') or {}
+        for name in (extracted.get('supplements') or []):
+            if name:
+                names.add(name)
 
-        # Source 3: Patient profile sidebar
-        if not names:
-            profile_supps = state.get('patient_profile', {}).get('supplements', [])
-            for s in profile_supps:
-                if isinstance(s, dict):
-                    names.append(s.get('supplement_name') or s.get('matched_supplement') or s.get('user_input', ''))
-                elif isinstance(s, str):
-                    names.append(s)
+        # Source 3: Patient profile sidebar (always checked!)
+        profile_supps = state.get('patient_profile', {}).get('supplements', [])
+        for s in profile_supps:
+            if isinstance(s, dict):
+                name = s.get('supplement_name') or s.get('matched_supplement') or s.get('user_input', '')
+            elif isinstance(s, str):
+                name = s
+            else:
+                name = ''
+            if name:
+                names.add(name)
 
-        return [n for n in names if n]
+        return list(names)
 
     def _get_medication_names(self, state: Dict) -> List[str]:
         """
-        Get medication names from state — tries multiple sources:
+        Get medication names from state — merges ALL sources to ensure
+        we never miss a medication from the question OR the sidebar.
+
+        Sources (all checked, deduplicated):
         1. normalized_medications (from supervisor entity extraction)
-        2. extracted_entities.medications (raw extraction)
+        2. extracted_entities.medications (raw extraction from question)
         3. patient_profile.medications (from sidebar)
         """
-        names = []
+        names = set()
 
         # Source 1: Normalized medications from supervisor
-        for m in state.get('normalized_medications', []):
+        for m in (state.get('normalized_medications') or []):
             name = m.get('matched_drug') or m.get('user_input')
             if name:
-                names.append(name)
+                names.add(name)
 
-        # Source 2: Extracted entities
-        if not names:
-            extracted = state.get('extracted_entities', {})
-            names = extracted.get('medications', [])
+        # Source 2: Extracted entities (raw names from question)
+        extracted = state.get('extracted_entities') or {}
+        for name in (extracted.get('medications') or []):
+            if name:
+                names.add(name)
 
-        # Source 3: Patient profile sidebar
-        if not names:
-            profile_meds = state.get('patient_profile', {}).get('medications', [])
-            for m in profile_meds:
-                if isinstance(m, dict):
-                    names.append(m.get('drug_name') or m.get('matched_drug') or m.get('user_input', ''))
-                elif isinstance(m, str):
-                    names.append(m)
+        # Source 3: Patient profile sidebar (always checked!)
+        profile_meds = state.get('patient_profile', {}).get('medications', [])
+        for m in profile_meds:
+            if isinstance(m, dict):
+                name = m.get('drug_name') or m.get('matched_drug') or m.get('user_input', '')
+            elif isinstance(m, str):
+                name = m
+            else:
+                name = ''
+            if name:
+                names.add(name)
 
-        return [n for n in names if n]
+        return list(names)
 
     def _calculate_confidence(self, interactions: List[Dict]) -> float:
         """

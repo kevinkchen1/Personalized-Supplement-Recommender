@@ -187,7 +187,7 @@ class GraphInterface:
         
         UNION
         
-        // Check for drug equivalence (supplement contains same drug)
+        // Check for drug equivalence (supplement contains same drug as medication)
         MATCH (s:Supplement)-[:CONTAINS]->(a:ActiveIngredient)
               -[:EQUIVALENT_TO]->(d:Drug)<-[:MEDICATION_CONTAINS_DRUG]-(m:Medication)
         WHERE s.supplement_name IN $supplement_names

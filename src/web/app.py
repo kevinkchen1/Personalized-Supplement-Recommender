@@ -346,7 +346,7 @@ def main():
             profile['conditions'] = conditions
 
         if diet:
-            profile['diet'] = diet
+            profile['dietary_restrictions'] = diet
 
         with st.spinner("🔍 Analyzing knowledge graph..."):
             try:
