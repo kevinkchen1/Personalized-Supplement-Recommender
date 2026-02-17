@@ -2,11 +2,37 @@
 
 This folder contains the testing framework for evaluating the chatbot's performance against a golden dataset.
 
+## Folder Structure
+
+```
+tests/
+├── safety/              # Safety check test cases
+│   ├── golden_dataset_safety.csv
+│   └── safety_testing.md
+├── recommendation/      # Recommendation test cases
+│   ├── golden_dataset_recommendation.csv
+│   └── recommendation_testing.md
+├── deficiency/          # Deficiency analysis test cases
+│   ├── golden_dataset_deficiency.csv
+│   └── deficiency_testing.md
+├── multi_agent_tests/   # Tests requiring multiple agent types
+│   ├── golden_dataset_multi_agent_tests.csv
+│   └── multi_agent_tests_testing.md
+├── test_reports/        # Generated test reports (output)
+│   ├── safety/          # Safety test reports
+│   ├── recommendation/  # Recommendation test reports
+│   ├── deficiency/      # Deficiency test reports
+│   └── multi_agent_tests/ # Multi-agent test reports
+├── test_runner.py       # Main test runner script
+└── testing.md          # This file
+```
+
 ## Files
 
-- **`golden_dataset.csv`**: Contains test cases with user profiles, questions, and expected outputs
 - **`test_runner.py`**: Main test runner script that executes tests and calculates accuracy
 - **`testing.md`**: This file
+- **Test datasets**: CSV files organized by test type in their respective folders
+- **Test reports**: Generated reports saved in `test_reports/` folder
 
 ## Golden Dataset Format
 
@@ -25,29 +51,56 @@ The `golden_dataset.csv` file contains the following columns:
 
 ## Running Tests
 
-### Run All Tests
+### Run Tests by Dataset Name
+
+The test runner now supports running tests by dataset name. It will automatically look in the appropriate folder based on the test type.
 
 ```bash
-cd /path/to/Personalized-Supplement-Recommender
-python tests/test_runner.py
+# Run safety tests
+python tests/test_runner.py --dataset golden_dataset --test-type safety
+
+# Run recommendation tests
+python tests/test_runner.py --dataset golden_dataset --test-type recommendation
+
+# Run deficiency tests
+python tests/test_runner.py --dataset golden_dataset --test-type deficiency
+
+# Run multi-agent tests
+python tests/test_runner.py --dataset golden_dataset --test-type multi_agent_tests
 ```
 
-This will:
-1. Load all test cases from `golden_dataset.csv`
-2. Run each test case through the workflow
-3. Calculate accuracy metrics
-4. Generate a report saved to `tests/test_report.txt` and `tests/test_report.json`
+If you don't specify `--test-type`, the runner will try to infer it from the dataset name (e.g., "safety_dataset" → safety folder).
+
+### Run with Custom Dataset Path
+
+You can also specify a direct path to a CSV file:
+
+```bash
+python tests/test_runner.py --dataset-path tests/safety/my_custom_dataset.csv
+```
 
 ### Run a Specific Test
 
 ```bash
-python tests/test_runner.py --test-id 1
+python tests/test_runner.py --dataset golden_dataset --test-type safety --test-id 1
 ```
 
-### Custom Dataset or Output Path
+### Output Location
+
+Reports are automatically saved to `tests/test_reports/{test_type}/` with a timestamp and test type:
+- `test_report_{test_type}_{timestamp}.txt` - Human-readable report
+- `test_report_{test_type}_{timestamp}.json` - Machine-readable JSON results
+
+For example:
+- Safety tests → `test_reports/safety/test_report_safety_20240101_120000.txt`
+- Recommendation tests → `test_reports/recommendation/test_report_recommendation_20240101_120000.txt`
+- Deficiency tests → `test_reports/deficiency/test_report_deficiency_20240101_120000.txt`
+- Multi-agent tests → `test_reports/multi_agent_tests/test_report_multi_agent_tests_20240101_120000.txt`
+
+You can also specify a custom output path:
 
 ```bash
-python tests/test_runner.py --dataset path/to/custom_dataset.csv --output path/to/report.txt
+python tests/test_runner.py --dataset golden_dataset --test-type safety --output custom_report.txt
 ```
 
 ## Accuracy Calculation
@@ -85,20 +138,30 @@ The test report includes:
 
 To add new test cases:
 
-1. Open `golden_dataset.csv`
-2. Add a new row with:
+1. **Determine the test type** (safety, recommendation, deficiency, or multi_agent_tests)
+2. **Navigate to the appropriate folder** (e.g., `tests/safety/`)
+3. **Open or create a CSV file** in that folder (e.g., `golden_dataset.csv`)
+4. **Add a new row** with:
    - A unique `test_id`
    - The `user_question`
    - Relevant profile information (medications, supplements, conditions, dietary restrictions)
    - `expected_output_keywords` (pipe-separated)
    - `expected_supplements` (comma-separated, if applicable)
-   - `test_type` (safety, recommendation, deficiency, or general)
+   - `test_type` (safety, recommendation, deficiency, or multi_agent_tests)
    - A `description` of what the test validates
 
-Example:
+Example for safety tests (`tests/safety/golden_dataset.csv`):
 ```csv
 16,"Can I take Vitamin D with my medications?","Metformin","","","","safe|generally safe|no interaction","","safety","Vitamin D should be safe with Metformin"
 ```
+
+### Using Google Sheets
+
+You can edit test cases in Google Sheets and download as CSV:
+1. Create or edit a Google Sheet with the same column structure
+2. Download as CSV
+3. Place the CSV file in the appropriate test type folder
+4. Run tests using the dataset name (filename without .csv extension)
 
 ## Improving Accuracy Over Time
 

@@ -1,0 +1,5 @@
+test_id,user_question,medications,supplements,conditions,dietary_restrictions,expected_output_keywords,expected_supplements,test_type,description
+1,"What supplements help with joint pain?","","","Joint Pain","","Glucosamine|recommend|safe|option","Glucosamine","recommendation","Should recommend Glucosamine for joint pain"
+2,"What supplements help with heart health?","","","Heart Disease","","Coenzyme Q10|CoQ10|Fish oil|recommend","Coenzyme Q10,Fish oil","recommendation","Should recommend CoQ10 and Fish oil for heart health"
+3,"What supplements help with sleep?","","","","","Melatonin|recommend|sleep","Melatonin","recommendation","Should recommend Melatonin for sleep"
+4,"What helps with anxiety?","","","Anxiety","","Melatonin|recommend|anxiety","Melatonin","recommendation","Should recommend supplements for anxiety"

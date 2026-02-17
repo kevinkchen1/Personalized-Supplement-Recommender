@@ -25,21 +25,125 @@ load_dotenv()
 class TestRunner:
     """Runs tests against golden dataset and calculates accuracy"""
     
-    def __init__(self, golden_dataset_path: str = None):
+    def __init__(self, dataset_name: str = None, test_type: str = None, golden_dataset_path: str = None):
         """
         Initialize test runner
         
         Args:
-            golden_dataset_path: Path to CSV file with test cases
+            dataset_name: Name of the dataset (e.g., "golden_dataset") - will look in appropriate folder
+            test_type: Type of test (safety, recommendation, deficiency, multi_agent_tests)
+                      If None, will try to infer from dataset_name or folder structure
+            golden_dataset_path: Direct path to CSV file (overrides dataset_name/test_type)
         """
-        if golden_dataset_path is None:
-            golden_dataset_path = Path(__file__).parent / "golden_dataset.csv"
+        self.tests_dir = Path(__file__).parent
+        self.test_reports_dir = self.tests_dir / "test_reports"
+        self.test_reports_dir.mkdir(exist_ok=True)
         
-        self.golden_dataset_path = Path(golden_dataset_path)
+        # Store test type for report organization
+        self.test_type = test_type
+        
+        # Determine dataset path
+        if golden_dataset_path:
+            self.golden_dataset_path = Path(golden_dataset_path)
+            # Try to infer test type from path
+            if not self.test_type:
+                path_str = str(golden_dataset_path)
+                if 'safety' in path_str.lower():
+                    self.test_type = 'safety'
+                elif 'recommendation' in path_str.lower():
+                    self.test_type = 'recommendation'
+                elif 'deficiency' in path_str.lower():
+                    self.test_type = 'deficiency'
+                elif 'multi_agent' in path_str.lower():
+                    self.test_type = 'multi_agent_tests'
+        elif dataset_name:
+            # Determine test type if not provided
+            if not self.test_type:
+                self.test_type = self._infer_test_type(dataset_name)
+            
+            # Look in appropriate folder
+            if self.test_type in ['safety', 'recommendation', 'deficiency', 'multi_agent_tests']:
+                # Try the exact name first
+                dataset_path = self.tests_dir / self.test_type / f"{dataset_name}.csv"
+                
+                # If not found and name doesn't include test type, try with suffix
+                if not dataset_path.exists() and self.test_type not in dataset_name.lower():
+                    dataset_path = self.tests_dir / self.test_type / f"{dataset_name}_{self.test_type}.csv"
+                
+                # If still not found, try without the suffix (backward compatibility)
+                if not dataset_path.exists():
+                    # Remove any existing suffix and try again
+                    base_name = dataset_name.replace(f"_{self.test_type}", "").replace(f"-{self.test_type}", "")
+                    dataset_path = self.tests_dir / self.test_type / f"{base_name}_{self.test_type}.csv"
+            else:
+                # Fallback: try all folders
+                dataset_path = self._find_dataset(dataset_name)
+            
+            if not dataset_path.exists():
+                raise FileNotFoundError(
+                    f"Dataset '{dataset_name}' not found in {self.test_type if self.test_type else 'any'} folder. "
+                    f"Tried: {self.tests_dir / self.test_type / f'{dataset_name}.csv'} "
+                    f"and {self.tests_dir / self.test_type / f'{dataset_name}_{self.test_type}.csv' if self.test_type else ''}"
+                )
+            self.golden_dataset_path = dataset_path
+        else:
+            # Default: look for golden_dataset.csv in current directory (backward compatibility)
+            default_path = self.tests_dir / "golden_dataset.csv"
+            if default_path.exists():
+                self.golden_dataset_path = default_path
+            else:
+                # Try in safety folder as default
+                self.golden_dataset_path = self.tests_dir / "safety" / "golden_dataset_safety.csv"
+                if not self.test_type:
+                    self.test_type = 'safety'
+        
+        self.dataset_name = dataset_name or self.golden_dataset_path.stem
+        
+        # If test type still not determined, try to infer from results later
         self.test_cases = []
         self.results = []
         
-        # Initialize workflow and graph
+        # Initialize workflow and graph (lazy initialization)
+        self.graph = None
+        self.workflow = None
+    
+    def _infer_test_type(self, dataset_name: str) -> str:
+        """Try to infer test type from dataset name"""
+        name_lower = dataset_name.lower()
+        if 'safety' in name_lower:
+            return 'safety'
+        elif 'recommendation' in name_lower or 'recommend' in name_lower:
+            return 'recommendation'
+        elif 'deficiency' in name_lower:
+            return 'deficiency'
+        elif 'multi' in name_lower or 'agent' in name_lower:
+            return 'multi_agent_tests'
+        return None
+    
+    def _find_dataset(self, dataset_name: str) -> Path:
+        """Search all test type folders for the dataset"""
+        for test_type in ['safety', 'recommendation', 'deficiency', 'multi_agent_tests']:
+            # Try exact name
+            dataset_path = self.tests_dir / test_type / f"{dataset_name}.csv"
+            if dataset_path.exists():
+                return dataset_path
+            
+            # Try with test type suffix
+            dataset_path = self.tests_dir / test_type / f"{dataset_name}_{test_type}.csv"
+            if dataset_path.exists():
+                return dataset_path
+            
+            # Try removing any existing suffix and adding the correct one
+            base_name = dataset_name.replace(f"_{test_type}", "").replace(f"-{test_type}", "")
+            if base_name != dataset_name:
+                dataset_path = self.tests_dir / test_type / f"{base_name}_{test_type}.csv"
+                if dataset_path.exists():
+                    return dataset_path
+        
+        raise FileNotFoundError(f"Dataset '{dataset_name}' not found in any test type folder")
+    
+    def _initialize_workflow(self):
+        """Initialize workflow and graph connection"""
         print("🔧 Initializing workflow and database connection...")
         try:
             neo4j_uri = os.getenv("NEO4J_URI", "bolt://localhost:7687")
@@ -130,6 +234,10 @@ class TestRunner:
         Returns:
             Result dictionary with actual output and accuracy metrics
         """
+        # Initialize workflow if not already done
+        if self.workflow is None:
+            self._initialize_workflow()
+        
         test_id = test_case['test_id']
         question = test_case['user_question']
         profile = test_case['patient_profile']
@@ -304,7 +412,7 @@ class TestRunner:
         Generate a test report
         
         Args:
-            output_path: Optional path to save report JSON
+            output_path: Optional path to save report. If None, saves to test_reports/ with dataset name
             
         Returns:
             Report string
@@ -337,6 +445,7 @@ class TestRunner:
             "=" * 80,
             "TEST REPORT - Supplement Recommender Chatbot",
             "=" * 80,
+            f"Dataset: {self.dataset_name}",
             "",
             f"Total Tests: {total_tests}",
             f"Successful: {successful_tests} ({successful_tests/total_tests:.1%})",
@@ -380,28 +489,73 @@ class TestRunner:
         
         report = "\n".join(report_lines)
         
-        # Save to file if requested
-        if output_path:
-            with open(output_path, 'w', encoding='utf-8') as f:
-                f.write(report)
+        # Determine test type for folder organization
+        # Priority: self.test_type > most common in results > 'unknown'
+        report_test_type = self.test_type
+        if not report_test_type and self.results:
+            # Get most common test type from results
+            test_types = [r.get('test_type', 'unknown') for r in self.results]
+            if test_types:
+                from collections import Counter
+                report_test_type = Counter(test_types).most_common(1)[0][0]
+        
+        # Normalize test type for folder name
+        if report_test_type == 'multi_agent_tests':
+            folder_name = 'multi_agent_tests'
+        elif report_test_type in ['safety', 'recommendation', 'deficiency']:
+            folder_name = report_test_type
+        else:
+            folder_name = 'unknown'
+        
+        # Create subfolder for test type
+        type_reports_dir = self.test_reports_dir / folder_name
+        type_reports_dir.mkdir(exist_ok=True)
+        
+        # Determine output path
+        if output_path is None:
+            # Default: save to test_reports/{test_type}/ with dataset name and test type
+            from datetime import datetime
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            # Remove test type suffix from dataset name if present to avoid duplication
+            base_dataset_name = self.dataset_name
+            for test_type_suffix in ['_safety', '_recommendation', '_deficiency', '_multi_agent_tests']:
+                if base_dataset_name.endswith(test_type_suffix):
+                    base_dataset_name = base_dataset_name[:-len(test_type_suffix)]
+                    break
             
-            # Also save JSON for programmatic access
-            json_path = Path(output_path).with_suffix('.json')
-            with open(json_path, 'w', encoding='utf-8') as f:
-                json.dump({
-                    'summary': {
-                        'total_tests': total_tests,
-                        'successful': successful_tests,
-                        'failed': failed_tests,
-                        'avg_keyword_accuracy': avg_keyword_acc,
-                        'avg_supplement_accuracy': avg_supplement_acc,
-                        'avg_overall_accuracy': avg_overall_acc
-                    },
-                    'results': self.results
-                }, f, indent=2)
-            
-            print(f"\n📄 Report saved to {output_path}")
-            print(f"📄 JSON results saved to {json_path}")
+            output_path = type_reports_dir / f"test_report_{folder_name}_{timestamp}.txt"
+        else:
+            # If custom path provided, use it but still organize if it's in test_reports
+            output_path = Path(output_path)
+            if str(output_path).startswith(str(self.test_reports_dir)):
+                # If it's in test_reports, ensure it goes to the right subfolder
+                output_path = type_reports_dir / output_path.name
+        
+        output_path = Path(output_path)
+        
+        # Save report
+        with open(output_path, 'w', encoding='utf-8') as f:
+            f.write(report)
+        
+        # Also save JSON for programmatic access
+        json_path = output_path.with_suffix('.json')
+        with open(json_path, 'w', encoding='utf-8') as f:
+            json.dump({
+                'dataset_name': self.dataset_name,
+                'test_type': report_test_type,
+                'summary': {
+                    'total_tests': total_tests,
+                    'successful': successful_tests,
+                    'failed': failed_tests,
+                    'avg_keyword_accuracy': avg_keyword_acc,
+                    'avg_supplement_accuracy': avg_supplement_acc,
+                    'avg_overall_accuracy': avg_overall_acc
+                },
+                'results': self.results
+            }, f, indent=2)
+        
+        print(f"\n📄 Report saved to {output_path}")
+        print(f"📄 JSON results saved to {json_path}")
         
         return report
 
@@ -414,14 +568,27 @@ def main():
     parser.add_argument(
         '--dataset',
         type=str,
+        default='golden_dataset',
+        help='Name of the dataset (without .csv extension). Will look in appropriate test type folder. (default: golden_dataset)'
+    )
+    parser.add_argument(
+        '--test-type',
+        type=str,
+        choices=['safety', 'recommendation', 'deficiency', 'multi_agent_tests'],
         default=None,
-        help='Path to golden dataset CSV (default: tests/golden_dataset.csv)'
+        help='Type of test (safety, recommendation, deficiency, multi_agent_tests). If not provided, will try to infer from dataset name.'
+    )
+    parser.add_argument(
+        '--dataset-path',
+        type=str,
+        default=None,
+        help='Direct path to CSV file (overrides --dataset and --test-type)'
     )
     parser.add_argument(
         '--output',
         type=str,
-        default='tests/test_report.txt',
-        help='Path to save test report (default: tests/test_report.txt)'
+        default=None,
+        help='Path to save test report (default: tests/test_reports/{dataset_name}_{timestamp}.txt)'
     )
     parser.add_argument(
         '--test-id',
@@ -433,7 +600,11 @@ def main():
     args = parser.parse_args()
     
     # Initialize runner
-    runner = TestRunner(golden_dataset_path=args.dataset)
+    if args.dataset_path:
+        runner = TestRunner(golden_dataset_path=args.dataset_path)
+    else:
+        runner = TestRunner(dataset_name=args.dataset, test_type=args.test_type)
+    
     runner.load_test_cases()
     
     # Run tests
