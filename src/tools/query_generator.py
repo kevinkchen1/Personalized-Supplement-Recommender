@@ -17,6 +17,9 @@ class QueryType(Enum):
     DIET_DEFICIENCY = "diet_deficiency"
     MEDICATION_DEPLETION = "medication_depletion"
     COMBINED_DEFICIENCY = "combined_deficiency"
+    SUPPLEMENT_NUTRIENT_DEPLETION = "supplement_nutrient_depletion"
+    MEDICATION_PROPERTIES = "medication_properties"
+    MEDICATION_NUTRIENT_DEPLETION = "medication_nutrient_depletion"
 
 class QueryGenerator:
     """Generates Neo4j Cypher queries for the supplement safety system."""
@@ -36,19 +39,113 @@ class QueryGenerator:
             return self._medication_depletion(**kwargs)
         elif query_type == QueryType.COMBINED_DEFICIENCY:
             return self._combined_deficiency(**kwargs)
+        elif query_type == QueryType.SUPPLEMENT_NUTRIENT_DEPLETION: 
+            return self._supplement_nutrient_depletion(**kwargs)
+        elif query_type == QueryType.MEDICATION_NUTRIENT_DEPLETION: 
+            return self._medication_nutrient_depletion(**kwargs)
+        elif query_type == QueryType.MEDICATION_PROPERTIES: 
+            return self._medication_properties(**kwargs)
         else:
             raise ValueError(f"Unknown query type: {query_type}")
     
-    def _diet_deficiency(self, dietary_restrictions: List[str]) -> str:
-        """Generate query for diet-based nutrient deficiencies."""
-        restrictions_str = ", ".join([f"'{r.lower()}'" for r in dietary_restrictions])
-        return f"""
-        MATCH (dr:DietaryRestriction)-[r:DEFICIENT_IN]->(n:Nutrient)
-        WHERE toLower(dr.dietary_restriction_name) IN [{restrictions_str}]
-        RETURN dr.dietary_restriction_name as diet,
-               n.nutrient_name as nutrient,
-               r.risk_level as risk_level
+    def _diet_deficiency(self, dietary_restrictions: List[str]) -> Dict[str, Any]:
         """
+        Generate query for diet-based nutrient deficiencies.
+        Returns dict with query and parameters for case-insensitive matching.
+        """
+        restrictions_lower = [r.lower() for r in dietary_restrictions]
+        
+        query = """
+        MATCH (dr:DietaryRestriction)-[r:DEFICIENT_IN]->(n:Nutrient)
+        WHERE toLower(dr.dietary_restriction_name) IN $restrictions_lower
+        RETURN dr.dietary_restriction_name AS diet,
+               n.nutrient_name AS nutrient,
+               n.category AS nutrient_category,
+               n.rda_adult AS rda,
+               r.risk_level AS risk_level
+        ORDER BY
+            CASE r.risk_level
+                WHEN 'HIGH' THEN 0
+                WHEN 'MEDIUM' THEN 1
+                ELSE 2
+            END,
+            n.nutrient_name
+        """
+        
+        return {
+            'query': query,
+            'parameters': {'restrictions_lower': restrictions_lower}
+        }
+    
+    def _supplement_nutrient_depletion(self, supplements: List[str]) -> Dict[str, Any]:
+        """
+        Generate query for supplement-nutrient negative interactions (depletion).
+        Returns dict with query and parameters for case-insensitive matching.
+        
+        Uses NEGATIVE_INTERACTION relationship from supplement_interacts_with_nutrient.csv
+        """
+        supplements_lower = [s.lower() for s in supplements]
+        
+        query = """
+        MATCH (s:Supplement)-[r:NEGATIVE_INTERACTION]->(n:Nutrient)
+        WHERE toLower(s.supplement_name) IN $supplement_names_lower
+        RETURN s.supplement_name AS supplement,
+               n.nutrient_name AS nutrient,
+               r.mechanism AS mechanism,
+               r.severity AS severity,
+               r.notes AS notes
+        """
+        
+        return {
+            'query': query,
+            'parameters': {'supplement_names_lower': supplements_lower}
+        }
+    
+    def _medication_nutrient_depletion(self, medications: List[str]) -> Dict[str, Any]:
+        """
+        Generate query for medication-nutrient interactions (depletion).
+        Returns dict with query and parameters for case-insensitive matching.
+        
+        Uses INTERACTS_WITH_NUTRIENT relationship from drug_nutrient_depletion.csv
+        """
+        medications_lower = [m.lower() for m in medications]
+        
+        query = """
+        MATCH (d:Drug)-[r:INTERACTS_WITH_NUTRIENT]->(n:Nutrient)
+        WHERE toLower(d.drug_name) IN $medication_names_lower
+        RETURN d.drug_name AS medication,
+               n.nutrient_name AS nutrient,
+               r.interaction_type AS interaction_type
+        """
+        
+        return {
+            'query': query,
+            'parameters': {'medication_names_lower': medications_lower}
+        }
+    
+    def _medication_properties(self, medication_name: str) -> Dict[str, Any]:
+        """
+        Generate query to fetch drug properties for LLM analysis.
+        Returns dict with query and parameters for case-insensitive matching.
+        
+        Fetches: drug_name, description, indication_text, toxicity
+        These properties are analyzed by LLM to identify nutrient depletions.
+        """
+        query = """
+        MATCH (d:Drug)
+        WHERE toLower(d.drug_name) = toLower($medication_name)
+        RETURN d.drug_name AS drug_name,
+               d.description AS description,
+               d.indication AS indication,
+               d.indication_text AS indication_text,
+               d.toxicity AS toxicity
+        LIMIT 1
+        """
+        
+        return {
+            'query': query,
+            'parameters': {'medication_name': medication_name}
+        }
     
     def _medication_depletion(self, medications: List[str]) -> str:
         """Generate query for medication-induced nutrient depletion."""
@@ -286,3 +383,37 @@ def generate_symptom_recommendation_query(symptom: str) -> Dict[str, Any]:
         'query': query,
         'parameters': {'symptom': symptom.lower()}
     }
+
+def generate_diet_deficiency_query_dict(dietary_restrictions: List[str]) -> Dict[str, Any]:
+    """
+    Generate diet deficiency query dict for use with QueryExecutor.
+    Returns dict with 'query' and 'parameters' keys.
+    """
+    generator = QueryGenerator()
+    return generator._diet_deficiency(dietary_restrictions)
+
+def generate_supplement_depletion_query_dict(supplements: List[str]) -> Dict[str, Any]:
+    """
+    Generate supplement-nutrient depletion query dict for use with QueryExecutor.
+    Returns dict with 'query' and 'parameters' keys.
+    """
+    generator = QueryGenerator()
+    return generator._supplement_nutrient_depletion(supplements)
+
+def generate_medication_nutrient_depletion_query_dict(medications: List[str]) -> Dict[str, Any]:
+    """
+    Generate medication-nutrient depletion query dict for use with QueryExecutor.
+    Uses INTERACTS_WITH_NUTRIENT relationship from knowledge graph.
+    Returns dict with 'query' and 'parameters' keys.
+    """
+    generator = QueryGenerator()
+    return generator._medication_nutrient_depletion(medications)
+
+def generate_medication_properties_query_dict(medication_name: str) -> Dict[str, Any]:
+    """
+    Generate medication properties query dict for use with QueryExecutor.
+    Fetches drug properties for LLM analysis of nutrient depletions.
+    Returns dict with 'query' and 'parameters' keys.
+    """
+    generator = QueryGenerator()
+    return generator._medication_properties(medication_name)

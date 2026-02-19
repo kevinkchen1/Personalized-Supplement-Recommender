@@ -802,6 +802,34 @@ class CompleteKnowledgeGraphLoader:
                           desc="⚠️  Supplement → Nutrient (NEGATIVE)")
         logger.info(f"✓ Loaded {len(df):,} CRITICAL negative interactions")
 
+    def load_drug_nutrient_depletions(self, df: pd.DataFrame):
+        """
+        Load Drug -[:INTERACTS_WITH_NUTRIENT]-> Nutrient relationships
+        
+        CRITICAL: Medications that deplete, increase, or interfere with nutrients.
+        
+        Examples:
+        - Metformin depletes Vitamin B12
+        - Statins deplete CoQ10
+        - PPIs deplete Magnesium
+        """
+        logger.info(f"💊 Loading {len(df):,} drug-nutrient interactions...")
+        
+        interaction_data = df.fillna("").to_dict('records')
+        
+        query = """
+        UNWIND $batch AS row
+        MATCH (d:Drug {drug_id: row.drug_id})
+        MATCH (n:Nutrient {nutrient_id: row.nutrient_id})
+        CREATE (d)-[:INTERACTS_WITH_NUTRIENT {
+            interaction_type: row.interaction
+        }]->(n)
+        """
+        
+        self.batch_execute(query, interaction_data, batch_size=500,
+                          desc="💊 Drug → Nutrient")
+        logger.info(f"✓ Loaded {len(df):,} drug-nutrient interactions")
+
     # ========================================================================
     # MAIN LOADING ORCHESTRATION
     # ========================================================================
@@ -897,6 +925,13 @@ class CompleteKnowledgeGraphLoader:
                 pd.read_csv(mayo_path / "supplement_interacts_with_nutrient.csv"))
         except FileNotFoundError:
             logger.info("No supplement_interacts_with_nutrient.csv found, skipping...")
+        
+        # Load drug-nutrient depletions (NEW!)
+        try:
+            self.load_drug_nutrient_depletions(
+                pd.read_csv(drugbank_path / "drug_nutrient_interacts.csv"))
+        except FileNotFoundError:
+            logger.info("drug_nutrient_interacts.csv found, skipping...")
 
         # ====================================================================
         # PHASE 5: Bridge Relationships (CRITICAL!)

@@ -116,11 +116,14 @@ class SynthesisAgent:
             diet_def = deficiency.get('diet_based', [])
             # Get supplement-based deficiencies
             supplement_def = deficiency.get('supplement_based', [])
+            # ✨ NEW: Get medication-based deficiencies
+            medication_def = deficiency.get('medication_based', [])
             # Get critical overlaps
             critical_overlaps = deficiency.get('critical_overlaps', [])
             
-            if diet_def or supplement_def:
-                context += f"Nutrient Deficiencies Found: {len(diet_def) + len(supplement_def)}\n\n"
+            if diet_def or supplement_def or medication_def:
+                total_count = len(diet_def) + len(supplement_def) + len(medication_def)
+                context += f"Nutrient Deficiencies Found: {total_count}\n\n"
                 
                 # Show diet-based deficiencies
                 if diet_def:
@@ -145,12 +148,26 @@ class SynthesisAgent:
                             context += f"    Details: {evidence_short}\n"
                     context += "\n"
                 
+                # Show medication-based deficiencies
+                if medication_def:
+                    context += f"FROM MEDICATIONS ({len(medication_def)}):\n"
+                    for d in medication_def:
+                        context += f"  - {d['nutrient']} (from {d['source_name']})\n"
+                        context += f"    Risk Level: {d['risk_level']}\n"
+                        context += f"    Mechanism: {d['mechanism']}\n"
+                        if d.get('evidence'):
+                            evidence_short = d['evidence'][:100] + '...' if len(d['evidence']) > 100 else d['evidence']
+                            context += f"    Details: {evidence_short}\n"
+                        context += f"    Confidence: {d.get('confidence', 0):.2f}\n"
+                    context += "\n"
+                
                 # Show critical overlaps
                 if critical_overlaps:
                     context += f"⚠️ CRITICAL OVERLAPS ({len(critical_overlaps)}):\n"
                     for overlap in critical_overlaps:
                         context += f"  - {overlap['nutrient']} affected by {overlap['risk_multiplier']} sources!\n"
                         context += f"    Sources: {', '.join(overlap['source_names'])}\n"
+                        context += f"    Overlap Type: {overlap.get('overlap_type', 'UNKNOWN')}\n"
                         context += f"    Combined Risk: {overlap['combined_risk']}\n"
                     context += "\n"
             else:

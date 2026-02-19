@@ -11,6 +11,14 @@ N009,Magnesium,Mineral,Essential for muscle and nerve function energy production
 N010,Potassium,Mineral,Essential for fluid balance muscle contractions and heart function
 N011,Fiber,Carbohydrate,Essential for digestive health blood sugar control and heart health
 N012,Vitamin C,Vitamin,Essential for immune function collagen synthesis and iron absorption
-N013,Folate,Vitamin,Essential for DNA synthesis cell division and red blood cell formation
+N013,Folate (folic acid),Vitamin,Essential for DNA synthesis cell division and red blood cell formation
 N014,Protein,Macronutrient,Essential for muscle tissue repair enzyme and hormone production
 N015,Iodine,Mineral,Essential for thyroid hormone production and metabolism
+N016,Copper,Mineral,Essential for iron metabolism energy production and connective tissue formation
+N017,Thiamine (Vitamin B1),Vitamin,Essential for energy metabolism nerve function and carbohydrate breakdown
+N018,Vitamin B6 (Pyridoxine),Vitamin,Essential for protein metabolism neurotransmitter synthesis and red blood cell formation
+N019,Biotin (Vitamin B7),Vitamin,Essential for metabolism of fats carbohydrates and proteins
+N020,Carnitine (L-Carnitine),Amino Acid,Essential for fatty acid transport into mitochondria and energy production
+N021,Inositol,Vitamin-like,Essential for cell signaling neurotransmitter function and insulin sensitivity
+N022,Vitamin A,Vitamin,Essential for vision immune function skin health and cell growth
+N023,Vitamin E,Vitamin,Essential for antioxidant protection immune function and cardiovascular health
