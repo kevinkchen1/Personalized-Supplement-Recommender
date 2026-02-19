@@ -270,7 +270,7 @@ def generate_comprehensive_safety_query(supplement_name: str, medication_names: 
         AND toLower(m.medication_name) IN $medication_names_lower
     RETURN s.supplement_name AS supplement,
            m.medication_name AS target,
-           r.interaction_description AS description,
+           r.description AS description,
            'MODERATE'         AS severity,
            null               AS detail,
            'DIRECT_SUPPLEMENT_MEDICATION' AS pathway

@@ -131,7 +131,8 @@ class SafetyCheckAgent:
                         'pathway': row.get('pathway', 'UNKNOWN'),
                     }
                     all_interactions.append(interaction)
-                    print(f"   ⚠️  [{interaction['pathway']}] {supp} ↔ {interaction['target']}: {interaction['description'][:80]}")
+                    desc = interaction.get('description') or 'No description available'
+                    print(f"   ⚠️  [{interaction['pathway']}] {supp} ↔ {interaction['target']}: {desc}")
 
             elif result['success']:
                 print(f"   ✅ No interactions found for {supp}")

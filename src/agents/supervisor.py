@@ -240,15 +240,19 @@ class SupervisorAgent:
     
     def _analyze_requirements(self, state: Dict[str, Any]) -> Dict[str, bool]:
         """
-        Analyze the question to determine what needs to be checked.
+        Analyze the question to determine what needs to be checked AND in what order.
         
-        Uses LLM to understand user intent.
+        Uses LLM with example rules as guidance to decide:
+        1. What checks are needed
+        2. In what ORDER to perform them
         
         Returns:
             {
                 'needs_safety_check': True/False,
                 'needs_deficiency_check': True/False,
-                'needs_recommendations': True/False
+                'needs_recommendations': True/False,
+                'check_order': ['recommendations', 'safety', ...],  # ✨ NEW!
+                'reasoning': 'why this order'
             }
         """
         question = state['user_question'].lower()
@@ -266,29 +270,56 @@ class SupervisorAgent:
             for s in raw_supps
         ]
         
-        # Use LLM to analyze intent
+        # Use LLM to analyze intent AND determine order
         prompt = f"""
-Analyze this user question and determine what they need:
+You are analyzing a user's health question to determine:
+1. WHAT checks are needed
+2. In what ORDER to perform them
 
-Question: "{state['user_question']}"
+User Question: "{state['user_question']}"
 
 User Profile:
 - Medications: {med_names}
 - Supplements: {supp_names}
 - Dietary restrictions: {state.get('patient_profile', {}).get('dietary_restrictions', state.get('patient_profile', {}).get('diet', []))}
 
-Determine what needs to be checked:
-1. Safety check? (drug-supplement interactions)
-2. Deficiency analysis? (nutrient gaps from diet/medications)
-3. Supplement recommendations? (suggestions for conditions/symptoms)
+Available Checks:
+1. safety_check - Check supplement-drug interactions
+2. deficiency_check - Analyze nutrient deficiency risks
+3. recommendations - Find supplement recommendations for conditions
 
-Return ONLY JSON:
+ORDERING GUIDELINES (use these as examples):
+
+Rule 1 - Recommendation Questions:
+If asking for "recommend", "suggest", "what supplements", "which supplements", "best for", "good for", "help with", "support"
+→ Logic: Get recommendations FIRST, then check if they're safe
+
+Rule 2 - Safety Questions:
+If asking about "safe", "interaction", "combine", "together", "mix"
+→ Logic: Check safety FIRST with what they already have
+
+Rule 3 - Deficiency Questions:
+If asking about "deficiency", "deficient", "lacking", "missing", "need", "low in"
+→ Logic: Identify deficiencies FIRST, then check safety
+
+Rule 4 - Multi-Part Questions:
+If question has multiple parts (e.g., "recommend supplements AND check if safe")
+→ Order based on what makes sense logically
+→ Example: Get recommendations first, THEN check safety
+
+Use your judgment based on these patterns.
+
+Return ONLY valid JSON (no markdown, no preamble):
 {{
     "needs_safety_check": true/false,
     "needs_deficiency_check": true/false,
     "needs_recommendations": true/false,
-    "reasoning": "brief explanation"
+    "check_order": ["first_check", "second_check", "third_check"],
+    "reasoning": "brief explanation of why this order makes sense"
 }}
+
+Only include checks in check_order if they are needed (needs_X = true).
+Use check names: "safety", "deficiency", or "recommendations" (not "safety_check").
 """
         
         response = self.client.messages.create(
@@ -323,6 +354,7 @@ Return ONLY JSON:
                         "needs_safety_check": True,
                         "needs_deficiency_check": False,
                         "needs_recommendations": False,
+                        "check_order": ["safety"],
                         "reasoning": "Could not parse LLM intent — defaulting to safety check"
                     }
             else:
@@ -331,10 +363,12 @@ Return ONLY JSON:
                     "needs_safety_check": True,
                     "needs_deficiency_check": False,
                     "needs_recommendations": False,
+                    "check_order": ["safety"],
                     "reasoning": "Could not parse LLM intent — defaulting to safety check"
                 }
         
         print(f"   📊 Analysis: {needs['reasoning']}")
+        print(f"   🎯 Smart order: {' → '.join(needs.get('check_order', []))}")
         
         return needs
     
@@ -426,11 +460,11 @@ Return ONLY JSON:
         evaluation: Dict[str, Any]
     ) -> Dict[str, str]:
         """
-        Make final decision about next action.
+        Make final decision about next action using smart ordering.
         
         Decision logic:
         1. If entities are ambiguous → clarify
-        2. If pending checks → do next check
+        2. If pending checks → do next check IN SMART ORDER (from LLM)
         3. If confidence low and iterations < 3 → loop back
         4. If everything done and confidence good → synthesize
         
@@ -449,24 +483,42 @@ Return ONLY JSON:
                 'reasoning': 'Entities are ambiguous and need user clarification'
             }
         
-        # Do pending checks
-        if 'safety_check' in evaluation['pending']:
-            return {
-                'action': 'check_safety',
-                'reasoning': 'Safety check needed based on question analysis'
-            }
+        # ✨ NEW: Use smart order from LLM
+        check_order = needs.get('check_order', [])
         
-        if 'deficiency_check' in evaluation['pending']:
-            return {
-                'action': 'check_deficiency',
-                'reasoning': 'Deficiency analysis needed based on question analysis'
-            }
+        if not check_order:
+            # Fallback to old hardcoded order if LLM didn't provide order
+            check_order = []
+            if needs.get('needs_safety_check'):
+                check_order.append('safety')
+            if needs.get('needs_deficiency_check'):
+                check_order.append('deficiency')
+            if needs.get('needs_recommendations'):
+                check_order.append('recommendations')
         
-        if 'recommendations' in evaluation['pending']:
-            return {
-                'action': 'get_recommendations',
-                'reasoning': 'Recommendations requested by user'
+        # Do checks in smart order
+        for check in check_order:
+            # Map check name to state check name
+            check_name_map = {
+                'safety': 'safety_check',
+                'deficiency': 'deficiency_check',
+                'recommendations': 'recommendations'
             }
+            
+            check_state_name = check_name_map.get(check, check + '_check')
+            
+            # If this check is pending, do it next
+            if check_state_name in evaluation['pending']:
+                action_map = {
+                    'safety': 'check_safety',
+                    'deficiency': 'check_deficiency',
+                    'recommendations': 'get_recommendations'
+                }
+                
+                return {
+                    'action': action_map.get(check, f'check_{check}'),
+                    'reasoning': f'{check.title()} check needed (smart ordering based on question type)'
+                }
         
         # Check if we need more evidence
         if evaluation['confidence'] < 0.7 and iterations < 3:

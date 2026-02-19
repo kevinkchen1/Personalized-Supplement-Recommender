@@ -19,40 +19,49 @@ class RecommendationAgent:
     
     
     def run(self, state: Dict[str, Any]) -> Dict[str, Any]:
-        """Generate supplement recommendations"""
+        """
+        Generate supplement recommendations (NO safety filtering).
+        Safety agent will check interactions separately.
+        """
         print("\n" + "="*60)
-        print("💊 RECOMMENDATION AGENT: Finding safe options...")
+        print("💊 RECOMMENDATION AGENT: Finding candidates...")
         print("="*60)
         
         # 1. Extract condition/symptom from state
         condition = self._extract_condition(state)
-        medications = self._get_medication_names(state)
         
         if not condition:
             print("⚠️  No condition/symptom specified")
             state['recommendations_checked'] = True
             state['recommendation_results'] = {
-                'recommendations': [],
+                'candidates': [],
                 'verdict': 'NO_CONDITION',
                 'reason': 'No condition or symptom to address'
             }
             return state
         
         print(f"   Condition/Symptom: {condition}")
-        print(f"   Filtering against: {len(medications)} medications")
         
-        # 2. Find and filter recommendations
-        recommendations = self._generate_recommendations(condition, medications)
+        # 2. Find recommendations (NO safety filtering)
+        recommendations = self._generate_recommendations(condition)
         
-        # 3. Compile results
+        # ✨ NEW: Add ALL recommendations to supplements_list for safety agent
+        if recommendations:
+            supplement_names = [rec['supplement_name'] for rec in recommendations]
+            current_supplements = state.get('supplements_list', [])
+            # Combine and deduplicate
+            updated_supplements = list(set(current_supplements + supplement_names))
+            state['supplements_list'] = updated_supplements
+            
+            print(f"\n   ✨ Added {len(supplement_names)} supplements to state for safety verification")
+            print(f"      Candidates: {', '.join(supplement_names[:3])}{'...' if len(supplement_names) > 3 else ''}")
+        
+        # 3. Compile results (no safety info - that comes from safety agent)
         results = {
             'condition': condition,
-            'recommendations': recommendations,
-            'safe_count': len([r for r in recommendations if r['safe']]),
-            'unsafe_count': len([r for r in recommendations if not r['safe']]),
-            'total_candidates': len(recommendations),
-            'medications_checked': medications,
-            'confidence': self._calculate_confidence(recommendations)
+            'candidates': recommendations,  # ALL candidates (not pre-filtered)
+            'candidate_count': len(recommendations),
+            'confidence': self._calculate_confidence_simple(recommendations)
         }
         
         state['recommendations_checked'] = True
@@ -61,20 +70,21 @@ class RecommendationAgent:
         # Update evidence chain
         evidence = state.get('evidence_chain', [])
         evidence.append(
-            f"Recommendation check: Found {results['safe_count']} safe options "
-            f"for {condition} (filtered {results['unsafe_count']} unsafe)"
+            f"Recommendation check: Found {len(recommendations)} candidates for {condition}"
         )
         state['evidence_chain'] = evidence
         
-        print(f"   ✓ Found {results['safe_count']} safe options")
-        print(f"   ✗ Filtered {results['unsafe_count']} unsafe options")
+        print(f"   ✓ Found {len(recommendations)} candidate supplements")
         print("="*60 + "\n")
         
         return state
     
     
-    def _generate_recommendations(self, condition: str, medications: List[str]) -> List[Dict]:
-        """Generate filtered supplement recommendations"""
+    def _generate_recommendations(self, condition: str) -> List[Dict]:
+        """
+        Generate supplement recommendations (NO safety filtering).
+        Just finds supplements that help the condition.
+        """
         # Step 1: Find supplements that help the condition
         print(f"\n   🔍 Finding supplements for: {condition}")
         candidates = self._find_supplements_for_condition(condition)
@@ -83,15 +93,12 @@ class RecommendationAgent:
         if not candidates:
             return []
         
-        # Step 2: Check safety for each candidate
-        print(f"\n   🛡️  Checking safety against {len(medications)} medications...")
-        evaluated = self._evaluate_safety(candidates, medications)
-        
-        # Step 3: Rank by evidence strength
-        print(f"\n   📊 Ranking by evidence strength...")
-        ranked = self._rank_by_evidence(evaluated)
+        # Step 2: Rank by safety rating (no interaction checking)
+        print(f"\n   📊 Ranking by safety rating...")
+        ranked = self._rank_by_safety_rating(candidates)
         
         return ranked
+        
     
     
     def _find_supplements_for_condition(self, condition: str) -> List[Dict]:
@@ -232,94 +239,23 @@ class RecommendationAgent:
         return candidates
     
     
-    def _evaluate_safety(self, candidates: List[Dict], medications: List[str]) -> List[Dict]:
-        """Check safety of each candidate supplement against user's medications"""
-        if not medications:
-            # No medications to check against - all are safe
-            for candidate in candidates:
-                candidate['safe'] = True
-                candidate['interactions'] = []
-                candidate['safety_verdict'] = 'SAFE - No medications to check against'
-            return candidates
-        
-        evaluated = []
-        
-        for candidate in candidates:
-            supplement_name = candidate['supplement_name']
-            
-            # Run comprehensive safety check
-            from tools.query_generator import generate_comprehensive_safety_query
-            
-            query_dict = generate_comprehensive_safety_query(
-                supplement_name,
-                medications
-            )
-            
-            if query_dict.get('error'):
-                candidate['safe'] = False
-                candidate['interactions'] = []
-                candidate['safety_verdict'] = 'UNKNOWN - Could not check'
-                candidate['error'] = query_dict['error']
-                evaluated.append(candidate)
-                continue
-            
-            result = self.executor.execute_query_dict(query_dict)
-            
-            # Evaluate results
-            if result['success']:
-                interactions = result['data']
-                
-                if len(interactions) == 0:
-                    candidate['safe'] = True
-                    candidate['interactions'] = []
-                    candidate['safety_verdict'] = 'SAFE - No interactions found'
-                else:
-                    candidate['safe'] = False
-                    candidate['interactions'] = interactions
-                    candidate['safety_verdict'] = self._format_safety_verdict(interactions)
-                    candidate['interaction_count'] = len(interactions)
-            else:
-                candidate['safe'] = False
-                candidate['interactions'] = []
-                candidate['safety_verdict'] = 'UNKNOWN - Query failed'
-                candidate['error'] = result.get('error')
-            
-            evaluated.append(candidate)
-        
-        return evaluated
-    
-    
-    def _format_safety_verdict(self, interactions: List[Dict]) -> str:
-        """Format a human-readable safety verdict from interactions"""
-        severities = [ix.get('severity', 'UNKNOWN') for ix in interactions]
-        
-        high_risk = sum(1 for s in severities if s == 'HIGH')
-        medium_risk = sum(1 for s in severities if s == 'MEDIUM')
-        
-        verdict = f"CAUTION - {len(interactions)} interaction(s) found"
-        
-        if high_risk > 0:
-            verdict += f" ({high_risk} HIGH RISK)"
-        elif medium_risk > 0:
-            verdict += f" ({medium_risk} MEDIUM RISK)"
-        
-        return verdict
-    
-    
-    def _rank_by_evidence(self, supplements: List[Dict]) -> List[Dict]:
-        """Rank supplements by evidence strength and safety"""
+    def _rank_by_safety_rating(self, supplements: List[Dict]) -> List[Dict]:
+        """
+        Rank supplements by safety rating only (no interaction checking).
+        Safety agent will handle medication interactions.
+        """
+        # Use actual safety ratings from database
         safety_rating_scores = {
-            'A': 3,
-            'B': 2,
-            'C': 1,
-            'UNKNOWN': 0
+            'Generally safe': 3,      # Most supplements
+            'Use with caution': 2,    # Some supplements
+            'Not recommended': 1,     # Few supplements
+            'UNKNOWN': 0              # No rating in database
         }
         
         def rank_key(supp):
             return (
-                1 if supp.get('safe') else 0,
-                safety_rating_scores.get(supp.get('safety_rating', 'UNKNOWN'), 0),
-                supp.get('supplement_name', '')
+                safety_rating_scores.get(supp.get('safety_rating', 'UNKNOWN'), 0),  # By safety rating
+                supp.get('supplement_name', '')  # Then alphabetically
             )
         
         ranked = sorted(supplements, key=rank_key, reverse=True)
@@ -398,24 +334,31 @@ class RecommendationAgent:
         return state.get('medications_list', [])
     
     
-    def _calculate_confidence(self, recommendations: List[Dict]) -> float:
-        """Calculate confidence in recommendations"""
+    def _calculate_confidence_simple(self, recommendations: List[Dict]) -> float:
+        """
+        Calculate confidence based on safety ratings and variety (no interaction checking).
+        """
         if not recommendations:
             return 0.3
         
-        safe_count = sum(1 for r in recommendations if r.get('safe'))
-        total = len(recommendations)
+        # Count by safety rating
+        generally_safe = sum(1 for r in recommendations 
+                            if r.get('safety_rating') == 'Generally safe')
+        use_caution = sum(1 for r in recommendations 
+                         if r.get('safety_rating') == 'Use with caution')
         
-        base_confidence = 0.5 + (safe_count / total * 0.3)
+        base_confidence = 0.5
         
-        a_ratings = sum(1 for r in recommendations if r.get('safety_rating') == 'A')
-        evidence_bonus = min(0.2, a_ratings * 0.05)
+        # Bonus for "Generally safe" supplements
+        safety_bonus = min(0.3, generally_safe * 0.1)
         
-        errors = sum(1 for r in recommendations if 'error' in r)
-        if errors > 0:
-            base_confidence -= 0.1
+        # Small bonus for "Use with caution"
+        caution_bonus = min(0.1, use_caution * 0.03)
         
-        final_confidence = min(1.0, base_confidence + evidence_bonus)
+        # Bonus for variety (having multiple options)
+        variety_bonus = min(0.2, len(recommendations) * 0.02)
+        
+        final_confidence = min(1.0, base_confidence + safety_bonus + caution_bonus + variety_bonus)
         
         return round(final_confidence, 2)
 

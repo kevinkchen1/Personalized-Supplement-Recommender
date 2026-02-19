@@ -102,7 +102,7 @@ class SynthesisAgent:
             if safety.get('interactions'):
                 context += f"Interactions Found: {len(safety['interactions'])}\n"
                 for ix in safety['interactions'][:5]:  # Show first 5
-                    desc = ix.get('description', '')[:80]  # Truncate first
+                    desc = ix.get('description') or 'No description available'
                     context += f"  - {ix.get('supplement', '')} ↔ {ix.get('target', '')}: {desc}\n"
             context += f"Confidence: {safety.get('confidence', 0):.2f}\n\n"
         
@@ -175,39 +175,66 @@ class SynthesisAgent:
             
             context += f"Confidence: {deficiency.get('confidence', 0):.2f}\n\n"
         
-        # Add recommendations - FIXED: Include actual supplement names!
+        # Add recommendations - UPDATED: Filter by safety results
         if state.get('recommendations_checked'):
             recs = state['recommendation_results']
-            recommendations = recs.get('recommendations', [])
+            candidates = recs.get('candidates', [])  # All candidates (not pre-filtered)
             condition = recs.get('condition', 'the condition')
-            safe_count = recs.get('safe_count', 0)
-            unsafe_count = recs.get('unsafe_count', 0)
+            
+            # ✨ NEW: Get safety results to determine which are safe
+            safety_results = state.get('safety_results', {})
+            interactions_by_supplement = {}
+            
+            # Build lookup: supplement_name → list of interactions
+            for interaction in safety_results.get('interactions', []):
+                supp_name = interaction.get('supplement')
+                if supp_name not in interactions_by_supplement:
+                    interactions_by_supplement[supp_name] = []
+                interactions_by_supplement[supp_name].append(interaction)
             
             context += f"=== RECOMMENDATIONS ===\n"
             context += f"For: {condition}\n"
-            context += f"Total found: {len(recommendations)} ({safe_count} safe, {unsafe_count} unsafe)\n\n"
+            context += f"Total candidates found: {len(candidates)}\n"
             
-            if recommendations:
+            if candidates:
+                # ✨ Separate safe and unsafe based on safety agent results
+                safe_options = []
+                unsafe_options = []
+                
+                for rec in candidates:
+                    supp_name = rec['supplement_name']
+                    if supp_name in interactions_by_supplement:
+                        # Has interactions → unsafe
+                        rec['interactions'] = interactions_by_supplement[supp_name]
+                        rec['interaction_count'] = len(rec['interactions'])
+                        unsafe_options.append(rec)
+                    else:
+                        # No interactions found by safety agent → safe
+                        safe_options.append(rec)
+                
+                context += f"Safe: {len(safe_options)}, Unsafe: {len(unsafe_options)}\n\n"
+                
                 # Show safe options
-                safe_options = [r for r in recommendations if r.get('safe')]
                 if safe_options:
                     context += f"SAFE OPTIONS ({len(safe_options)}):\n"
                     for rec in safe_options[:10]:  # Limit to top 10
                         context += f"{rec['rank']}. {rec['supplement_name']}\n"
                         context += f"   - Safety Rating: {rec.get('safety_rating', 'UNKNOWN')}\n"
-                        context += f"   - Treats: {rec.get('symptom_treated', 'N/A')}\n"
-                        context += f"   - Verdict: {rec.get('safety_verdict', 'Safe')}\n"
+                        context += f"   - Treats: {rec.get('symptom_treated', condition)}\n"
+                        context += f"   - Verdict: SAFE (no interactions found by safety agent)\n"
                     context += "\n"
                 
                 # Show unsafe options with warnings
-                unsafe_options = [r for r in recommendations if not r.get('safe')]
                 if unsafe_options:
                     context += f"NOT RECOMMENDED ({len(unsafe_options)}):\n"
                     for rec in unsafe_options[:5]:  # Limit to top 5
                         context += f"{rec['rank']}. {rec['supplement_name']}\n"
-                        context += f"   - Verdict: {rec.get('safety_verdict', 'Unsafe')}\n"
-                        if rec.get('interactions'):
-                            context += f"   - Interactions: {len(rec['interactions'])} found\n"
+                        context += f"   - Interactions: {rec['interaction_count']} found\n"
+                        # Show details of first 2 interactions
+                        for ix in rec['interactions'][:2]:
+                            pathway = ix.get('pathway', 'UNKNOWN')
+                            desc = ix.get('description') or 'Unknown interaction'
+                            context += f"     • [{pathway}] {desc}...\n"
                     context += "\n"
             else:
                 context += "No supplements found in database for this condition.\n\n"
