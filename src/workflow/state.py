@@ -118,6 +118,29 @@ class ConversationState(TypedDict):
     Example: ['Vegan', 'Gluten-free']
     """
     
+    # ✨ NEW: Shared state from agents (for inter-agent communication)
+    
+    unsafe_supplements_list: List[str]
+    """
+    List of supplements found to have interactions (from safety agent).
+    Other agents can check this to avoid recommending unsafe options.
+    Example: ['Fish oil', 'Vitamin E', 'Ginkgo']
+    """
+    
+    safe_supplements_list: List[str]
+    """
+    List of supplements checked and found safe (from safety agent).
+    Helps other agents know which supplements are verified safe.
+    Example: ['Coenzyme Q10', 'Magnesium', 'Vitamin D']
+    """
+    
+    deficient_nutrients_list: List[str]
+    """
+    List of nutrients user is deficient in (from deficiency agent).
+    Recommendation agent can prioritize supplements addressing these.
+    Example: ['Vitamin B-12', 'Iron', 'Omega-3']
+    """
+    
     # ==================== AGENT CHECKS ====================
     
     safety_checked: bool
@@ -266,6 +289,11 @@ def create_initial_state(
         medications_list=[],
         supplements_list=[],
         dietary_restrictions_list=[],
+        
+        # ✨ NEW: Shared state from agents
+        unsafe_supplements_list=[],
+        safe_supplements_list=[],
+        deficient_nutrients_list=[],
         
         # Agent checks
         safety_checked=False,

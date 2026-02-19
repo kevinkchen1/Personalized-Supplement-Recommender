@@ -69,6 +69,33 @@ class SynthesisAgent:
         """
         context = f"Question: {state['user_question']}\n\n"
         
+        # ✨ NEW: Add shared state summary (cross-agent knowledge)
+        unsafe_supps = state.get('unsafe_supplements_list', [])
+        safe_supps = state.get('safe_supplements_list', [])
+        deficiencies = state.get('deficient_nutrients_list', [])
+        
+        if unsafe_supps or safe_supps or deficiencies:
+            context += "=== CROSS-AGENT INSIGHTS ===\n"
+            context += "Knowledge gathered from all agents:\n\n"
+            
+            if deficiencies:
+                context += f"🔍 Nutrient Deficiencies Identified: {', '.join(deficiencies)}\n"
+                context += f"   (User is at risk for these {len(deficiencies)} nutrients)\n\n"
+            
+            if safe_supps:
+                context += f"✅ Verified Safe Supplements: {', '.join(safe_supps[:10])}\n"
+                if len(safe_supps) > 10:
+                    context += f"   (+ {len(safe_supps) - 10} more)\n"
+                context += f"   (These {len(safe_supps)} supplements have been checked and found safe)\n\n"
+            
+            if unsafe_supps:
+                context += f"⚠️  Supplements with Interactions: {', '.join(unsafe_supps[:10])}\n"
+                if len(unsafe_supps) > 10:
+                    context += f"   (+ {len(unsafe_supps) - 10} more)\n"
+                context += f"   (These {len(unsafe_supps)} supplements have known interactions)\n\n"
+            
+            context += "="*60 + "\n\n"
+        
         # Add profile info
         profile = state.get('patient_profile', {})
         if profile.get('medications'):
@@ -261,20 +288,79 @@ You are a personalized supplement safety advisor. Create a clear, helpful answer
 Overall Confidence: {confidence:.2f}
 
 Guidelines:
-- START by showing the actual supplements found (list them by name!)
-- Be specific - use the exact supplement names from the analysis above
+- START by addressing the user's specific question directly
+- Use the CROSS-AGENT INSIGHTS at the top to make intelligent connections:
+  * If user is deficient in a nutrient AND a supplement providing it is unsafe, suggest safe alternatives
+  * If user asks about a supplement that's in the "verified safe" list, confidently recommend it
+  * If user asks about a supplement in the "unsafe" list, clearly warn against it with specifics
+- Show actual supplement names (be specific!)
 - For safe options: present them clearly with their safety ratings
-- For unsafe options: explain why they're not recommended
-- Include relevant safety or deficiency findings if present
+- For unsafe options: explain why they're not recommended with interaction details
+- Make connections across findings (e.g., "You're deficient in Omega-3. Fish oil would help, but it's unsafe with Warfarin. Try Flaxseed oil instead.")
+- Include relevant safety or deficiency findings
 - If confidence < 0.7, recommend consulting healthcare provider
 - Use accessible language (avoid jargon)
 - Be empathetic and supportive
 - Format with markdown for readability
 
-CRITICAL: Do NOT write generic disclaimers without showing the actual supplements!
-The user asked for specific recommendations - give them the specific names!
+🚨 CRITICAL SAFETY CONSTRAINTS - TWO-TIER RECOMMENDATION SYSTEM:
 
-Create a personalized answer:
+**TIER 1: System-Verified Recommendations (PRIORITIZE THESE)**
+- When suggesting supplements, FIRST check if they appear in the "✅ Verified Safe Supplements" list
+- If found, clearly label them: "✅ [Supplement Name] (verified safe with your medications)"
+- These are high-confidence recommendations that have been checked against the user's medications
+
+**TIER 2: General Knowledge Suggestions (USE WHEN NO TIER 1 OPTIONS)**
+- If no supplement in the verified safe list addresses the need, you MAY suggest based on general knowledge
+- BUT you MUST clearly distinguish these with special formatting:
+  "⚠️ Based on general knowledge (NOT yet verified with your specific medications): [Supplement Name]"
+- ALWAYS add: "Please consult your healthcare provider before taking this, as it hasn't been checked against your medications in our system."
+
+**Examples:**
+
+✅ TIER 1 (BEST):
+"You're deficient in Omega-3. While Fish oil is unsafe with Warfarin, 
+✅ **Flaxseed oil** (verified safe with your medications) is an excellent alternative 
+that also provides Omega-3."
+
+✅ TIER 2 (ACCEPTABLE WHEN NO TIER 1):
+"You're deficient in Vitamin D. Unfortunately, no Vitamin D supplements have been 
+verified as safe with your medications in our system.
+
+⚠️ **Based on general knowledge** (NOT yet verified with your specific medications):
+- Vitamin D3 (cholecalciferol) is commonly recommended for Vitamin D deficiency
+- Typical dosage is 1000-2000 IU daily
+
+**Important:** Please consult your healthcare provider before taking Vitamin D 
+supplements, as we haven't verified interactions with your specific medications."
+
+✅ MIXED (TIER 1 + TIER 2):
+"For heart health, I recommend:
+
+**✅ Verified Safe:**
+- Coenzyme Q10 (verified safe with your medications)
+- Magnesium (verified safe with your medications)
+
+You're also deficient in Vitamin B-12. Unfortunately, no B-12 supplements have 
+been verified in our system.
+
+⚠️ **Based on general knowledge** (NOT yet verified):
+- Vitamin B-12 (methylcobalamin or cyanocobalamin) 
+- Consult your provider before starting."
+
+**FORMAT REQUIREMENTS:**
+- Use ✅ emoji or bold "Verified Safe" for Tier 1 recommendations
+- Use ⚠️ emoji or bold "Based on general knowledge" for Tier 2 suggestions
+- Always include disclaimer for Tier 2: "NOT yet verified with your specific medications"
+- Always recommend consulting provider for Tier 2 suggestions
+
+CRITICAL: Use the cross-agent insights to provide ACTIONABLE advice that connects:
+- What they're deficient in
+- What's verified safe (Tier 1)
+- What's based on general knowledge when no Tier 1 exists (Tier 2)
+- Smart alternatives when primary options are unsafe
+
+Create a personalized, intelligent answer with clear two-tier recommendations:
 """
         
         response = self.client.messages.create(

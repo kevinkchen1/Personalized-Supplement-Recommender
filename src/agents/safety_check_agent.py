@@ -145,6 +145,17 @@ class SafetyCheckAgent:
         safe = len(all_interactions) == 0
         confidence = self._calculate_confidence(all_interactions)
 
+        unsafe_supplements = list(set([ix['supplement'] for ix in all_interactions]))
+        safe_supplements = [s for s in supplement_names if s not in unsafe_supplements]
+
+        state['unsafe_supplements_list'] = unsafe_supplements
+        state['safe_supplements_list'] = safe_supplements
+
+        if unsafe_supplements:
+            print(f"   ⚠️  Marked {len(unsafe_supplements)} supplements as unsafe: {', '.join(unsafe_supplements)}")
+        if safe_supplements:
+            print(f"   ✅ Marked {len(safe_supplements)} supplements as safe: {', '.join(safe_supplements)}")
+
         # Group interactions by pathway for the summary
         by_pathway: Dict[str, List] = {}
         for ix in all_interactions:
