@@ -1,0 +1,106 @@
+{
+  "dataset_name": "golden_dataset",
+  "test_type": "deficiency",
+  "summary": {
+    "total_tests": 3,
+    "successful": 3,
+    "failed": 0,
+    "avg_keyword_accuracy": 0.6333333333333333,
+    "avg_supplement_accuracy": 1.0,
+    "avg_overall_accuracy": 0.6333333333333333
+  },
+  "results": [
+    {
+      "test_id": "1",
+      "question": "I'm vegan, what nutrients am I at risk for?",
+      "description": "Vegan diet should flag B-12 and Iron deficiencies",
+      "test_type": "deficiency",
+      "actual_answer": "# Vegan Nutrition Analysis Results\n\n## What I Found in Our Database\nUnfortunately, **no specific supplements were found** in our database for vegan nutritional needs. This appears to be a gap in our current supplement database rather than a reflection of your actual nutritional risks.\n\n## Important Note About This Analysis\nThe confidence level for this analysis is **70%**, which means I'd recommend consulting with a healthcare provider or registered dietitian for a more comprehensive assessment of your vegan nutritional needs.\n\n## What This Actually Means for You\nWhile our database didn't identify specific supplements, research consistently shows that vegans should pay attention to certain nutrients that are harder to obtain from plant-based foods alone:\n\n### Key Nutrients to Monitor:\n- **Vitamin B12** - Essential and not naturally found in plant foods\n- **Iron** - Plant-based iron is less easily absorbed\n- **Vitamin D** - Limited food sources regardless of diet\n- **Omega-3 fatty acids** - Especially EPA and DHA\n- **Zinc** - Lower bioavailability from plant sources\n- **Calcium** - If not consuming fortified plant milks regularly\n\n## My Recommendation\nSince our database analysis was incomplete and the confidence level suggests seeking professional guidance, I'd encourage you to:\n\n1. **Consult a registered dietitian** familiar with vegan nutrition\n2. **Consider blood testing** to check your current levels of key nutrients\n3. **Look for vegan-specific multivitamins** that address the nutrients listed above\n\nYour commitment to a vegan lifestyle is admirable, and with proper planning, it can be nutritionally complete! \ud83c\udf31",
+      "expected_keywords": [
+        "b-12",
+        "b12",
+        "vitamin b12",
+        "iron",
+        "deficiency",
+        "at risk"
+      ],
+      "expected_supplements": [],
+      "keyword_accuracy": 0.5,
+      "supplement_accuracy": 1.0,
+      "overall_accuracy": 0.5,
+      "keywords_found": [
+        "b12",
+        "vitamin b12",
+        "iron"
+      ],
+      "keywords_missing": [
+        "b-12",
+        "deficiency",
+        "at risk"
+      ],
+      "supplements_found": [],
+      "supplements_missing": [],
+      "success": true
+    },
+    {
+      "test_id": "2",
+      "question": "I take Metformin, what nutrients should I watch?",
+      "description": "Metformin should flag B-12 deficiency risk",
+      "test_type": "deficiency",
+      "actual_answer": "# Supplement Safety Analysis for Metformin Users\n\n## Your Current Medications\n- **Metformin** for Type 2 Diabetes\n\n## Key Findings\n\nBased on my analysis of your medication profile, **no significant nutrient deficiency risks were identified** with your current Metformin use. This is good news!\n\n## Important Considerations\n\nSince my confidence level in this analysis is lower than ideal (0.00), I **strongly recommend consulting with your healthcare provider** before starting any new supplements. Here's why this is especially important for you:\n\n### Metformin & Nutrient Interactions\nWhile my current analysis didn't flag specific deficiencies, Metformin can sometimes affect:\n- **Vitamin B12 absorption** (long-term use)\n- **Folate levels** in some patients\n- **Magnesium status**\n\n### Next Steps\n1. **Talk to your doctor or pharmacist** about whether you should monitor specific nutrient levels\n2. **Ask about routine B12 testing** if you've been on Metformin for over a year\n3. **Discuss your current diet** to see if you're getting adequate nutrients from food sources\n\n## Why Professional Guidance Matters\nWith diabetes management, supplement timing and interactions with Metformin can affect your blood sugar control. Your healthcare team can provide personalized recommendations based on your complete health picture.\n\n---\n*This analysis is based on your reported medications. Always consult your healthcare provider before making changes to your supplement routine.*\n\n\u26a0\ufe0f **Note**: This analysis has moderate confidence. Please consult with your healthcare provider before making changes.",
+      "expected_keywords": [
+        "b-12",
+        "b12",
+        "vitamin b12",
+        "deficiency",
+        "at risk"
+      ],
+      "expected_supplements": [],
+      "keyword_accuracy": 0.6,
+      "supplement_accuracy": 1.0,
+      "overall_accuracy": 0.6,
+      "keywords_found": [
+        "b12",
+        "vitamin b12",
+        "deficiency"
+      ],
+      "keywords_missing": [
+        "b-12",
+        "at risk"
+      ],
+      "supplements_found": [],
+      "supplements_missing": [],
+      "success": true
+    },
+    {
+      "test_id": "3",
+      "question": "I'm vegetarian, what should I supplement?",
+      "description": "Vegetarian diet should flag B-12 and Iron",
+      "test_type": "deficiency",
+      "actual_answer": "# Vegetarian Supplement Recommendations\n\nBased on my analysis of your vegetarian diet, here's what I found:\n\n## \ud83d\udcca Analysis Results\n\n**Supplements found in database:** None specific to vegetarian diets were identified in my current database.\n\n**Deficiency risks detected:** No significant deficiency risks were flagged in the initial screening.\n\n## \ud83e\udd14 What This Means for You\n\nWhile my database didn't return specific supplement matches for vegetarian diets, this doesn't mean supplementation isn't beneficial for vegetarians. Common nutrients that vegetarians may need to pay attention to include:\n\n- **Vitamin B12** (not naturally found in plant foods)\n- **Iron** (plant-based iron is less easily absorbed)\n- **Vitamin D** (especially if limited sun exposure)\n- **Omega-3 fatty acids** (typically from fish sources)\n- **Zinc** (plant sources are less bioavailable)\n\n## \u26a0\ufe0f Important Note\n\nSince my confidence level for this analysis is 70%, **I strongly recommend consulting with a healthcare provider or registered dietitian** who can:\n\n- Review your specific dietary patterns\n- Order blood tests to check your nutrient levels\n- Provide personalized supplement recommendations\n- Monitor your progress over time\n\n## \ud83c\udf31 Next Steps\n\nConsider keeping a food diary for a week and discussing it with a healthcare professional who can give you targeted advice based on your individual needs and eating patterns.\n\n*Your health is unique, and professional guidance will ensure you get the most appropriate supplementation for your vegetarian lifestyle.*",
+      "expected_keywords": [
+        "b-12",
+        "b12",
+        "iron",
+        "deficiency",
+        "recommend"
+      ],
+      "expected_supplements": [],
+      "keyword_accuracy": 0.8,
+      "supplement_accuracy": 1.0,
+      "overall_accuracy": 0.8,
+      "keywords_found": [
+        "b12",
+        "iron",
+        "deficiency",
+        "recommend"
+      ],
+      "keywords_missing": [
+        "b-12"
+      ],
+      "supplements_found": [],
+      "supplements_missing": [],
+      "success": true
+    }
+  ]
+}
