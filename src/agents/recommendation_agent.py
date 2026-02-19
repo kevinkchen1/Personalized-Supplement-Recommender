@@ -389,37 +389,13 @@ class RecommendationAgent:
     
     
     def _get_medication_names(self, state: Dict[str, Any]) -> List[str]:
-        """Get medication names from state — merges ALL sources."""
-        names = set()
+        """
+        Get medication names from supervisor's clean list.
         
-        # Source 1: Normalized medications
-        for m in (state.get('normalized_medications') or []):
-            if isinstance(m, dict):
-                name = m.get('matched_drug') or m.get('user_input')
-            else:
-                name = str(m)
-            if name:
-                names.add(name)
-        
-        # Source 2: Extracted entities
-        extracted = state.get('extracted_entities') or {}
-        for name in (extracted.get('medications') or []):
-            if name:
-                names.add(name)
-        
-        # Source 3: Patient profile (always checked)
-        profile_meds = (state.get('patient_profile') or {}).get('medications', [])
-        for m in profile_meds:
-            if isinstance(m, dict):
-                name = m.get('drug_name') or m.get('matched_drug') or m.get('user_input', '')
-            elif isinstance(m, str):
-                name = m
-            else:
-                name = ''
-            if name:
-                names.add(name)
-        
-        return list(names)
+        Supervisor handles extraction, normalization, and deduplication.
+        Agents simply read from the pre-processed list.
+        """
+        return state.get('medications_list', [])
     
     
     def _calculate_confidence(self, recommendations: List[Dict]) -> float:

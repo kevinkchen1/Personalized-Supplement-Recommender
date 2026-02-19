@@ -116,10 +116,11 @@ RETURN s.supplement_name, sym.symptom_name"""
         cypher_query = deficiency_queries[0].get('cypher', '')
         results_count += deficiency.get('total_count', 0)
         if not raw_results:
-            # Combine diet_based and supplement_based for display
+            # Combine diet_based + supplement_based + medication_based for display
             diet_def = deficiency.get('diet_based', [])
             supp_def = deficiency.get('supplement_based', [])
-            combined_def = diet_def + supp_def
+            med_def = deficiency.get('medication_based', [])  # ✨ NEW
+            combined_def = diet_def + supp_def + med_def
             if combined_def:
                 raw_results = combined_def[:10]
 

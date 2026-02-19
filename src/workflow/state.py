@@ -90,6 +90,34 @@ class ConversationState(TypedDict):
     Each entry: {'user_input': ..., 'matched_supplement': ..., 'supplement_id': ..., 'confidence': ...}
     """
     
+    normalized_dietary_restrictions: Optional[List[str]]
+    """
+    Dietary restrictions from supervisor entity extraction.
+    Simple list of restriction names (e.g., ['Vegan', 'Gluten-free'])
+    """
+    
+    # ✨ NEW: Clean, deduplicated lists for agents
+    medications_list: List[str]
+    """
+    Clean list of medication names for agents to use.
+    Supervisor creates this by deduplicating normalized_medications.
+    Example: ['Warfarin', 'Metformin']
+    """
+    
+    supplements_list: List[str]
+    """
+    Clean list of supplement names for agents to use.
+    Supervisor creates this by deduplicating normalized_supplements.
+    Example: ['Fish Oil', 'Vitamin D']
+    """
+    
+    dietary_restrictions_list: List[str]
+    """
+    Clean list of dietary restriction names for agents to use.
+    Supervisor creates this from normalized_dietary_restrictions.
+    Example: ['Vegan', 'Gluten-free']
+    """
+    
     # ==================== AGENT CHECKS ====================
     
     safety_checked: bool
@@ -232,6 +260,12 @@ def create_initial_state(
         normalized_entities=None,
         normalized_medications=None,
         normalized_supplements=None,
+        normalized_dietary_restrictions=None,
+        
+        # ✨ NEW: Clean lists for agents
+        medications_list=[],
+        supplements_list=[],
+        dietary_restrictions_list=[],
         
         # Agent checks
         safety_checked=False,

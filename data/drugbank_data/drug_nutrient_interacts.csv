@@ -1,0 +1,207 @@
+drug_id,drug_name,drug_class,nutrient_name,nutrient_id,interaction
+DB00542,Benazepril,ACE_Inhibitors,Zinc,N007,depletes
+DB01197,Captopril,ACE_Inhibitors,Zinc,N007,depletes
+DB00584,Enalapril,ACE_Inhibitors,Zinc,N007,depletes
+DB00722,Lisinopril,ACE_Inhibitors,Zinc,N007,depletes
+DB00881,Quinapril,ACE_Inhibitors,Zinc,N007,depletes
+DB00178,Ramipril,ACE_Inhibitors,Zinc,N007,depletes
+DB01029,Irbesartan,ARBs,Potassium,N010,increases_level
+DB00678,Losartan,ARBs,Potassium,N010,increases_level
+DB00275,Olmesartan,ARBs,Potassium,N010,increases_level
+DB00966,Telmisartan,ARBs,Potassium,N010,increases_level
+DB00177,Valsartan,ARBs,Potassium,N010,increases_level
+DB01306,Insulin aspart,Diabetes,Potassium,N010,redistributes
+DB01307,Insulin detemir,Diabetes,Potassium,N010,redistributes
+DB00047,Insulin glargine,Diabetes,Potassium,N010,redistributes
+DB01309,Insulin glulisine,Diabetes,Potassium,N010,redistributes
+DB00030,Insulin human,Diabetes,Potassium,N010,redistributes
+DB00046,Insulin lispro,Diabetes,Potassium,N010,redistributes
+DB00331,Metformin,Diabetes,Vitamin B12,N001,depletes
+DB00887,Bumetanide,Diuretics,Potassium,N010,depletes
+DB00887,Bumetanide,Diuretics,Magnesium,N009,depletes
+DB00887,Bumetanide,Diuretics,Calcium,N006,depletes
+DB00310,Chlorthalidone,Diuretics,Potassium,N010,depletes
+DB00310,Chlorthalidone,Diuretics,Magnesium,N009,depletes
+DB00310,Chlorthalidone,Diuretics,Sodium,NEW,depletes
+DB00695,Furosemide,Diuretics,Potassium,N010,depletes
+DB00695,Furosemide,Diuretics,Magnesium,N009,depletes
+DB00695,Furosemide,Diuretics,Calcium,N006,depletes
+DB00695,Furosemide,Diuretics,Thiamine(Vitamin B1),N017,depletes
+DB00695,Furosemide,Diuretics,Sodium,NEW,depletes
+DB00999,Hydrochlorothiazide,Diuretics,Potassium,N010,depletes
+DB00999,Hydrochlorothiazide,Diuretics,Magnesium,N009,depletes
+DB00999,Hydrochlorothiazide,Diuretics,Zinc,N007,depletes
+DB00999,Hydrochlorothiazide,Diuretics,CoQ10,N002,depletes
+DB00537,Ciprofloxacin,Fluoroquinolones,Calcium,N006,interferes_with_absorption
+DB00537,Ciprofloxacin,Fluoroquinolones,Iron,N003,interferes_with_absorption
+DB00537,Ciprofloxacin,Fluoroquinolones,Zinc,N007,interferes_with_absorption
+DB00537,Ciprofloxacin,Fluoroquinolones,Magnesium,N009,interferes_with_absorption
+DB00537,Ciprofloxacin,Fluoroquinolones,Copper,N016,interferes_with_absorption
+DB00537,Ciprofloxacin,Fluoroquinolones,Thiamine (Vitamin B1),N017,depletes
+DB00537,Ciprofloxacin,Fluoroquinolones,Vitamin B6 (Pyridoxine),N018,depletes
+DB00537,Ciprofloxacin,Fluoroquinolones,Vitamin B12,N001,depletes
+DB00537,Ciprofloxacin,Fluoroquinolones,Folate (folic acid),N013,depletes
+DB00537,Ciprofloxacin,Fluoroquinolones,Vitamin K,N008,depletes
+DB01137,Levofloxacin,Fluoroquinolones,Calcium,N006,interferes_with_absorption
+DB01137,Levofloxacin,Fluoroquinolones,Iron,N003,interferes_with_absorption
+DB01137,Levofloxacin,Fluoroquinolones,Zinc,N007,interferes_with_absorption
+DB01137,Levofloxacin,Fluoroquinolones,Magnesium,N009,interferes_with_absorption
+DB01137,Levofloxacin,Fluoroquinolones,Thiamine (Vitamin B1),N017,depletes
+DB01137,Levofloxacin,Fluoroquinolones,Vitamin B6 (Pyridoxine),N018,depletes
+DB01137,Levofloxacin,Fluoroquinolones,Vitamin B12,N001,depletes
+DB01137,Levofloxacin,Fluoroquinolones,Folate (folic acid),N013,depletes
+DB01137,Levofloxacin,Fluoroquinolones,Vitamin K,N008,depletes
+DB00218,Moxifloxacin,Fluoroquinolones,Calcium,N006,interferes_with_absorption
+DB00218,Moxifloxacin,Fluoroquinolones,Iron,N003,interferes_with_absorption
+DB00218,Moxifloxacin,Fluoroquinolones,Zinc,N007,interferes_with_absorption
+DB00218,Moxifloxacin,Fluoroquinolones,Magnesium,N009,interferes_with_absorption
+DB01059,Norfloxacin,Fluoroquinolones,Calcium,N006,interferes_with_absorption
+DB01059,Norfloxacin,Fluoroquinolones,Iron,N003,interferes_with_absorption
+DB01059,Norfloxacin,Fluoroquinolones,Zinc,N007,interferes_with_absorption
+DB01165,Ofloxacin,Fluoroquinolones,Calcium,N006,interferes_with_absorption
+DB01165,Ofloxacin,Fluoroquinolones,Iron,N003,interferes_with_absorption
+DB01165,Ofloxacin,Fluoroquinolones,Zinc,N007,interferes_with_absorption
+DB01165,Ofloxacin,Fluoroquinolones,Magnesium,N009,interferes_with_absorption
+DB01165,Ofloxacin,Fluoroquinolones,Biotin (Vitamin B7),N019,depletes
+DB01165,Ofloxacin,Fluoroquinolones,Vitamin B6 (Pyridoxine),N018,depletes
+DB01165,Ofloxacin,Fluoroquinolones,Vitamin K,N008,depletes
+DB00501,Cimetidine,H2_Blockers,Vitamin B12,N001,depletes
+DB00501,Cimetidine,H2_Blockers,Vitamin D,N005,interferes_with_absorption
+DB00501,Cimetidine,H2_Blockers,Calcium,N006,interferes_with_absorption
+DB00927,Famotidine,H2_Blockers,Vitamin B12,N001,depletes
+DB00927,Famotidine,H2_Blockers,Iron,N003,interferes_with_absorption
+DB00585,Nizatidine,H2_Blockers,Vitamin B12,N001,depletes
+DB00863,Ranitidine,H2_Blockers,Vitamin B12,N001,depletes
+DB00863,Ranitidine,H2_Blockers,Iron,N003,interferes_with_absorption
+DB01395,Drospirenone,Hormones,Folate (folic acid),N013,depletes
+DB01395,Drospirenone,Hormones,Vitamin B6 (Pyridoxine),N018,depletes
+DB01395,Drospirenone,Hormones,Vitamin B12,N001,depletes
+DB00977,Ethinylestradiol,Hormones,Folate (folic acid),N013,depletes
+DB00977,Ethinylestradiol,Hormones,Vitamin B6 (Pyridoxine),N018,depletes
+DB00977,Ethinylestradiol,Hormones,Vitamin B12,N001,depletes
+DB00451,Levothyroxine,Hormones,Calcium,N006,interferes_with_absorption
+DB00451,Levothyroxine,Hormones,Iron,N003,interferes_with_absorption
+DB00736,Esomeprazole,PPIs,Magnesium,N009,depletes
+DB00736,Esomeprazole,PPIs,Vitamin B12,N001,depletes
+DB00736,Esomeprazole,PPIs,Calcium,N006,depletes
+DB00736,Esomeprazole,PPIs,Iron,N003,depletes
+DB00448,Lansoprazole,PPIs,Magnesium,N009,depletes
+DB00448,Lansoprazole,PPIs,Vitamin B12,N001,depletes
+DB00448,Lansoprazole,PPIs,Calcium,N006,depletes
+DB00448,Lansoprazole,PPIs,Iron,N003,depletes
+DB00448,Lansoprazole,PPIs,Vitamin D,N005,depletes
+DB00338,Omeprazole,PPIs,Magnesium,N009,depletes
+DB00338,Omeprazole,PPIs,Vitamin B12,N001,depletes
+DB00338,Omeprazole,PPIs,Calcium,N006,depletes
+DB00338,Omeprazole,PPIs,Iron,N003,depletes
+DB00213,Pantoprazole,PPIs,Magnesium,N009,depletes
+DB00213,Pantoprazole,PPIs,Vitamin B12,N001,depletes
+DB00213,Pantoprazole,PPIs,Calcium,N006,depletes
+DB00213,Pantoprazole,PPIs,Iron,N003,depletes
+DB00213,Pantoprazole,PPIs,Vitamin D,N005,depletes
+DB01129,Rabeprazole,PPIs,Magnesium,N009,depletes
+DB01129,Rabeprazole,PPIs,Vitamin B12,N001,depletes
+DB01129,Rabeprazole,PPIs,Calcium,N006,depletes
+DB01129,Rabeprazole,PPIs,Iron,N003,depletes
+DB01076,Atorvastatin,Statins,CoQ10,N002,depletes
+DB01095,Fluvastatin,Statins,CoQ10,N002,depletes
+DB00227,Lovastatin,Statins,CoQ10,N002,depletes
+DB08860,Pitavastatin,Statins,CoQ10,N002,depletes
+DB00175,Pravastatin,Statins,CoQ10,N002,depletes
+DB01098,Rosuvastatin,Statins,CoQ10,N002,depletes
+DB00641,Simvastatin,Statins,CoQ10,N002,depletes
+DB01015,Sulfamethoxazole,Sulfonamides,Folate (folic acid),N013,depletes
+DB00440,Trimethoprim,Sulfonamides,Folate (folic acid),N013,depletes
+DB00254,Doxycycline,Tetracyclines,Calcium,N006,interferes_with_absorption
+DB00254,Doxycycline,Tetracyclines,Iron,N003,interferes_with_absorption
+DB00254,Doxycycline,Tetracyclines,Magnesium,N009,interferes_with_absorption
+DB00254,Doxycycline,Tetracyclines,Vitamin B12,N001,depletes
+DB00254,Doxycycline,Tetracyclines,Vitamin B6 (Pyridoxine),N018,depletes
+DB00254,Doxycycline,Tetracyclines,Vitamin K,N008,depletes
+DB01017,Minocycline,Tetracyclines,Calcium,N006,interferes_with_absorption
+DB01017,Minocycline,Tetracyclines,Iron,N003,interferes_with_absorption
+DB01017,Minocycline,Tetracyclines,Magnesium,N009,interferes_with_absorption
+DB01017,Minocycline,Tetracyclines,Vitamin K,N008,depletes
+DB00759,Tetracycline,Tetracyclines,Calcium,N006,interferes_with_absorption
+DB00759,Tetracycline,Tetracyclines,Iron,N003,interferes_with_absorption
+DB00759,Tetracycline,Tetracyclines,Magnesium,N009,interferes_with_absorption
+DB00759,Tetracycline,Tetracyclines,Vitamin B12,N001,depletes
+DB00759,Tetracycline,Tetracyclines,Vitamin B6 (Pyridoxine),N018,depletes
+DB00759,Tetracycline,Tetracyclines,Vitamin K,N008,depletes
+DB00560,Tigecycline,Tetracyclines,Vitamin K,N008,depletes
+DB00560,Tigecycline,Tetracyclines,Vitamin B6 (Pyridoxine),N018,depletes
+DB00560,Tigecycline,Tetracyclines,Vitamin B12,N001,depletes
+DB00564,Carbamazepine,Anticonvulsants,Folate (folic acid),N013,depletes
+DB00564,Carbamazepine,Anticonvulsants,Vitamin D,N005,depletes
+DB00564,Carbamazepine,Anticonvulsants,Biotin (Vitamin B7),N019,depletes
+DB00564,Carbamazepine,Anticonvulsants,Vitamin B12,N001,depletes
+DB00564,Carbamazepine,Anticonvulsants,Vitamin B6 (Pyridoxine),N018,depletes
+DB00564,Carbamazepine,Anticonvulsants,Calcium,N006,interferes_with_absorption
+DB00252,Phenytoin,Anticonvulsants,Folate (folic acid),N013,depletes
+DB00252,Phenytoin,Anticonvulsants,Vitamin D,N005,depletes
+DB00252,Phenytoin,Anticonvulsants,Vitamin K,N008,depletes
+DB00252,Phenytoin,Anticonvulsants,Calcium,N006,interferes_with_absorption
+DB00252,Phenytoin,Anticonvulsants,Vitamin B12,N001,depletes
+DB00252,Phenytoin,Anticonvulsants,Vitamin B6 (Pyridoxine),N018,depletes
+DB00273,Topiramate,Anticonvulsants,Biotin (Vitamin B7),N019,depletes
+DB00313,Valproic acid,Anticonvulsants,Carnitine (L-Carnitine),N020,depletes
+DB00313,Valproic acid,Anticonvulsants,Folate (folic acid),N013,depletes
+DB00313,Valproic acid,Anticonvulsants,Vitamin D,N005,depletes
+DB01118,Amiodarone,Cardiovascular_Other,Vitamin D,N005,depletes
+DB00390,Digoxin,Cardiovascular_Other,Magnesium,N009,depletes
+DB00390,Digoxin,Cardiovascular_Other,Thiamine (Vitamin B1),N017,depletes
+DB00682,Warfarin,Cardiovascular_Other,Vitamin K,N008,antagonizes
+DB01432,Cholestyramine,Cholesterol_Other,Vitamin A,N022,depletes
+DB01432,Cholestyramine,Cholesterol_Other,Vitamin D,N005,depletes
+DB01432,Cholestyramine,Cholesterol_Other,Vitamin E,N023,depletes
+DB01432,Cholestyramine,Cholesterol_Other,Vitamin K,N008,depletes
+DB00930,Colesevelam,Cholesterol_Other,Vitamin D,N005,depletes
+DB00930,Colesevelam,Cholesterol_Other,Vitamin K,N008,depletes
+DB00930,Colesevelam,Cholesterol_Other,Vitamin A,N022,depletes
+DB00930,Colesevelam,Cholesterol_Other,Vitamin E,N023,depletes
+DB00375,Colestipol,Cholesterol_Other,Vitamin A,NEW,depletes
+DB00375,Colestipol,Cholesterol_Other,Vitamin D,N005,depletes
+DB00375,Colestipol,Cholesterol_Other,Vitamin K,N008,depletes
+DB00375,Colestipol,Cholesterol_Other,Vitamin E,N023,depletes
+DB00443,Betamethasone,Corticosteroids,Calcium,N006,depletes
+DB00443,Betamethasone,Corticosteroids,Vitamin D,N005,depletes
+DB00443,Betamethasone,Corticosteroids,Potassium,N010,depletes
+DB01234,Dexamethasone,Corticosteroids,Calcium,N006,depletes
+DB01234,Dexamethasone,Corticosteroids,Vitamin D,N005,depletes
+DB01234,Dexamethasone,Corticosteroids,Potassium,N010,depletes
+DB00741,Hydrocortisone,Corticosteroids,Calcium,N006,depletes
+DB00741,Hydrocortisone,Corticosteroids,Vitamin D,N005,depletes
+DB00741,Hydrocortisone,Corticosteroids,Potassium,N010,depletes
+DB00959,Methylprednisolone,Corticosteroids,Calcium,N006,depletes
+DB00959,Methylprednisolone,Corticosteroids,Vitamin D,N005,depletes
+DB00959,Methylprednisolone,Corticosteroids,Potassium,N010,depletes
+DB00860,Prednisolone,Corticosteroids,Calcium,N006,depletes
+DB00860,Prednisolone,Corticosteroids,Vitamin D,N005,depletes
+DB00860,Prednisolone,Corticosteroids,Potassium,N010,depletes
+DB00635,Prednisone,Corticosteroids,Calcium,N006,depletes
+DB00635,Prednisone,Corticosteroids,Vitamin D,N005,depletes
+DB00635,Prednisone,Corticosteroids,Potassium,N010,depletes
+DB01356,Lithium cation,Mood_Stabilizers,Folate (folic acid),N013,depletes
+DB01356,Lithium cation,Mood_Stabilizers,Inositol,N021,depletes
+DB01050,Ibuprofen,NSAIDs,Folate (folic acid),N013,depletes
+DB01050,Ibuprofen,NSAIDs,Iron,N003,may_cause_loss
+DB01050,Ibuprofen,NSAIDs,Vitamin C,N012,depletes
+DB00328,Indomethacin,NSAIDs,Folate (folic acid),N013,depletes
+DB00328,Indomethacin,NSAIDs,Iron,N003,may_cause_loss
+DB00328,Indomethacin,NSAIDs,Vitamin C,N012,depletes
+DB00465,Ketorolac,NSAIDs,Iron,N003,may_cause_loss
+DB00465,Ketorolac,NSAIDs,Folate (folic acid),N013,depletes
+DB00465,Ketorolac,NSAIDs,Vitamin C,N012,deletes
+DB00788,Naproxen,NSAIDs,Folate (folic acid),N013,depletes
+DB00788,Naproxen,NSAIDs,Iron,N003,may_cause_loss
+DB00788,Naproxen,NSAIDs,Vitamin C,N012,depletes
+DB00710,Ibandronate,Osteoporosis,Calcium,N006,interferes_with_absorption
+DB00399,Zoledronic acid,Osteoporosis,Calcium,N006,interferes_with_absorption
+DB01001,Albuterol,Respiratory,Potassium,N010,redistributes
+DB00277,Theophylline,Respiratory,Vitamin B6 (Pyridoxine),N018,depletes
+DB00215,Citalopram,SSRIs,Folate (folic acid),N013,depletes
+DB01175,Escitalopram,SSRIs,Folate (folic acid),N013,depletes
+DB00472,Fluoxetine,SSRIs,Folate (folic acid),N013,depletes
+DB00176,Fluvoxamine,SSRIs,Folate (folic acid),N013,depletes
+DB00715,Paroxetine,SSRIs,Folate (folic acid),N013,depletes
+DB01104,Sertraline,SSRIs,Folate (folic acid),N013,depletes

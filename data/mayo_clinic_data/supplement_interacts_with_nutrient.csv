@@ -1,5 +1,5 @@
 supplement_id,supplement_name,nutrient_id,nutrient_name,mechanism,severity,notes
-S07,Fish oil,N020,Vitamin E,may_deplete,LOW,High doses of omega-3 (>3g/day) increase vitamin E requirement due to oxidation; most fish oil supplements are fortified with vitamin E
+S07,Fish oil,N023,Vitamin E,may_deplete,LOW,High doses of omega-3 (>3g/day) increase vitamin E requirement due to oxidation; most fish oil supplements are fortified with vitamin E
 S09,Folate (folic acid),N001,Vitamin B12,masks_deficiency,CRITICAL,High folate (>1000mcg/day) can mask B12 deficiency anemia while neurological damage continues; always monitor B12 status when taking high-dose folate
 S18,Red yeast rice,N002,CoQ10,depletes,HIGH,Contains monacolin K (natural lovastatin) which depletes CoQ10 similar to statin drugs; consider CoQ10 supplementation (100-200mg/day)
 S22,Vitamin A,N005,Vitamin D,interferes_with,MODERATE,High-dose vitamin A (>10000 IU/day) can interfere with vitamin D function as both compete for absorption and receptor binding
