@@ -209,7 +209,7 @@ class SynthesisAgent:
             condition = recs.get('condition', 'the condition')
             
             # ✨ NEW: Get safety results to determine which are safe
-            safety_results = state.get('safety_results', {})
+            safety_results = state.get('safety_results') or {}
             interactions_by_supplement = {}
             
             # Build lookup: supplement_name → list of interactions
