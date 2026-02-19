@@ -75,10 +75,13 @@ class SupervisorAgent:
     def _extract_and_normalize_entities(self, state: Dict[str, Any]) -> Dict[str, Any]:
         """
         Extract entities from question and normalize them.
+        ALSO normalizes entities from patient profile!
         
         Calls:
         - entity_extractor tool (Phase 1)
         - entity_normalizer tool (Phase 2)
+        
+        UPDATED: Now creates clean, deduplicated lists for agents to consume
         """
         from tools.entity_extractor import extract_entities_from_text
         from tools.entity_normalizer import (
@@ -88,31 +91,152 @@ class SupervisorAgent:
         
         question = state['user_question']
         
-        # Extract entities
-        print("   📋 Extracting entities...")
+        # Extract entities from question
+        print("   📋 Extracting entities from question...")
         extracted = extract_entities_from_text(question)
-        state['extracted_entities'] = extracted
+        # Note: We don't store extracted_entities in state anymore to avoid duplication
         
-        # Normalize medications
-        print("   🔄 Normalizing medications...")
+        # Normalize medications from question
+        print("   🔄 Normalizing medications from question...")
         normalized_meds = []
         for med in extracted['medications']:
-            # Note: graph_interface should be passed in state or initialized
             result = normalize_medication_to_database(med, state['graph_interface'])
             normalized_meds.append(result)
         
-        # Normalize supplements
-        print("   🔄 Normalizing supplements...")
+        # Normalize supplements from question
+        print("   🔄 Normalizing supplements from question...")
         normalized_supps = []
         for supp in extracted['supplements']:
             result = normalize_supplement_to_database(supp, state['graph_interface'])
             normalized_supps.append(result)
         
+        # ✨ Normalize patient profile supplements and medications
+        profile = state.get('patient_profile', {})
+        
+        # Normalize profile medications
+        profile_meds = profile.get('medications', [])
+        if isinstance(profile_meds, str):
+            profile_meds = [m.strip() for m in profile_meds.split(',') if m.strip()]
+        
+        if profile_meds:
+            print("   🔄 Normalizing medications from profile...")
+            for med in profile_meds:
+                # Skip if already normalized from question
+                if not any(m.get('user_input') == med for m in normalized_meds):
+                    result = normalize_medication_to_database(med, state['graph_interface'])
+                    normalized_meds.append(result)
+        
+        # Normalize profile supplements
+        profile_supps = profile.get('supplements', [])
+        if isinstance(profile_supps, str):
+            profile_supps = [s.strip() for s in profile_supps.split(',') if s.strip()]
+        
+        if profile_supps:
+            print("   🔄 Normalizing supplements from profile...")
+            for supp in profile_supps:
+                # Skip if already normalized from question
+                if not any(s.get('user_input') == supp for s in normalized_supps):
+                    result = normalize_supplement_to_database(supp, state['graph_interface'])
+                    normalized_supps.append(result)
+        
+        # Dietary restrictions (no normalization needed - simple strings)
+        print("   ✅ Processing dietary restrictions...")
+        dietary_restrictions = extracted.get('dietary_restrictions', [])
+        
+        # ✨ Also get dietary restrictions from profile
+        profile_restrictions = profile.get('dietary_restrictions', [])
+        
+        # Handle different formats (string, list, or list of dicts)
+        if isinstance(profile_restrictions, str):
+            # Split comma-separated string
+            profile_restrictions = [r.strip() for r in profile_restrictions.split(',') if r.strip()]
+        
+        # Merge profile restrictions (avoid duplicates)
+        for restriction in profile_restrictions:
+            if isinstance(restriction, dict):
+                name = restriction.get('restriction_name') or restriction.get('user_input', '')
+            elif isinstance(restriction, str):
+                name = restriction
+            else:
+                name = ''
+            
+            # Add if not already in list (case-insensitive check)
+            if name and name not in dietary_restrictions:
+                # Check case-insensitive
+                if not any(name.lower() == r.lower() for r in dietary_restrictions):
+                    dietary_restrictions.append(name)
+        
+        # Store normalized results (for debugging/transparency)
         state['normalized_medications'] = normalized_meds
         state['normalized_supplements'] = normalized_supps
+        state['normalized_dietary_restrictions'] = dietary_restrictions
+        
+        # ✨ NEW: Create clean, deduplicated lists for agents to consume
+        print("   🧹 Creating deduplicated lists for agents...")
+        state['medications_list'] = self._extract_final_names(
+            normalized_meds, 
+            key='matched_drug'
+        )
+        state['supplements_list'] = self._extract_final_names(
+            normalized_supps, 
+            key='matched_supplement'
+        )
+        state['dietary_restrictions_list'] = dietary_restrictions
+        
+        print(f"   ✅ Final lists: {len(state['medications_list'])} medications, "
+              f"{len(state['supplements_list'])} supplements, "
+              f"{len(state['dietary_restrictions_list'])} dietary restrictions")
+        
         state['entities_extracted'] = True
         
         return state
+    
+    def _extract_final_names(self, normalized_list: list, key: str) -> list:
+        """
+        Extract unique names from normalized results with smart deduplication.
+        
+        Handles:
+        - Case-insensitive matching
+        - Base name matching (e.g., "Folate" matches "Folate (folic acid)")
+        - Prefers normalized/matched names over user input
+        - Handles NOT_FOUND entities gracefully
+        
+        Args:
+            normalized_list: List of normalized entity dicts
+            key: The key to extract ('matched_drug' or 'matched_supplement')
+            
+        Returns:
+            List of unique entity names (strings)
+        """
+        name_map = {}  # lowercase -> preferred_name
+        
+        for item in normalized_list:
+            # Get matched name (or fall back to user_input if not found)
+            name = item.get(key) or item.get('user_input')
+            
+            if not name:
+                continue
+            
+            # Skip NOT_FOUND entities
+            if item.get('confidence') == 'NOT_FOUND':
+                continue
+            
+            name_lower = name.lower()
+            
+            # Extract base name (before parentheses) for matching
+            # Example: "Folate (folic acid)" -> base: "folate"
+            base_name = name.split('(')[0].strip().lower() if '(' in name else name_lower
+            
+            # Add both full name and base name as keys
+            # This allows "Folate" to match "Folate (folic acid)"
+            if name_lower not in name_map:
+                name_map[name_lower] = name
+            
+            if base_name != name_lower and base_name not in name_map:
+                name_map[base_name] = name
+        
+        # Return unique values (in case multiple keys point to same name)
+        return list(set(name_map.values()))
     
     def _analyze_requirements(self, state: Dict[str, Any]) -> Dict[str, bool]:
         """
