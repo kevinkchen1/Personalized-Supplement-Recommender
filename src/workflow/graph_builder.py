@@ -17,20 +17,11 @@ import os
 # Import state definition
 from workflow.state import ConversationState
 
-# Import routing functions
-from workflow.routing import (
-    route_supervisor_decision,
-    route_after_specialist,
-    route_synthesis_complete,
-    NodeNames
-)
-
 # Import agent functions
-from agents.supervisor import supervisor_agent
-from agents.safety_check_agent import safety_check_agent
-from agents.deficiency_agent import deficiency_agent
-from agents.recommendation_agent import recommendation_agent
+from agents.entity_matcher import entity_matcher
+from agents.question_analyzer import question_analyzer
 from agents.synthesis_agent import synthesis_agent
+from workflow.parallel_executor import parallel_executor
 
 
 def build_workflow(
@@ -40,13 +31,16 @@ def build_workflow(
     max_iterations: int = 10
 ):
     """
-    Build the complete agentic workflow
+    Build the graph-first workflow with parallel execution.
+    
+    New architecture:
+    entity_matcher → question_analyzer → parallel_executor → synthesis → END
     
     Args:
         enable_safety: Whether to enable safety check agent
         enable_deficiency: Whether to enable deficiency agent
         enable_recommendations: Whether to enable recommendation agent
-        max_iterations: Maximum supervisor iterations
+        max_iterations: Not used in new architecture (kept for compatibility)
         
     Returns:
         Compiled LangGraph workflow (CompiledGraph)
@@ -60,77 +54,40 @@ def build_workflow(
     # Create the graph with our state definition
     workflow = StateGraph(ConversationState)
     
-    print("🏗️  Building workflow graph...")
+    print("🏗️  Building graph-first workflow...")
     
     # ==================== ADD NODES ====================
-    # Each node is an agent function that takes state and returns state
     
-    print("   Adding supervisor node...")
-    workflow.add_node(NodeNames.SUPERVISOR, supervisor_agent)
+    print("   Adding entity_matcher node...")
+    workflow.add_node("entity_matcher", entity_matcher)
     
-    if enable_safety:
-        print("   Adding safety_check node...")
-        workflow.add_node(NodeNames.SAFETY_CHECK, safety_check_agent)
+    print("   Adding question_analyzer node...")
+    workflow.add_node("question_analyzer", question_analyzer)
     
-    if enable_deficiency:
-        print("   Adding deficiency_check node...")
-        workflow.add_node(NodeNames.DEFICIENCY_CHECK, deficiency_agent)
-    
-    if enable_recommendations:
-        print("   Adding recommendation node...")
-        workflow.add_node(NodeNames.RECOMMENDATION, recommendation_agent)
+    print("   Adding parallel_executor node...")
+    workflow.add_node("parallel_executor", parallel_executor)
     
     print("   Adding synthesis node...")
-    workflow.add_node(NodeNames.SYNTHESIS, synthesis_agent)
+    workflow.add_node("synthesis", synthesis_agent)
     
     # ==================== ADD EDGES ====================
+    # Linear flow: entity_matcher → question_analyzer → parallel_executor → synthesis → END
     
-    # CONDITIONAL EDGE from supervisor
-    # The supervisor can route to different specialists or finish
-    print("   Setting up supervisor routing...")
-    workflow.add_conditional_edges(
-        NodeNames.SUPERVISOR,  # From supervisor
-        route_supervisor_decision,  # Use this function to decide
-        {
-            # Map routing function output to node names
-            NodeNames.SAFETY_CHECK: NodeNames.SAFETY_CHECK,
-            NodeNames.DEFICIENCY_CHECK: NodeNames.DEFICIENCY_CHECK,
-            NodeNames.RECOMMENDATION: NodeNames.RECOMMENDATION,
-            NodeNames.SYNTHESIS: NodeNames.SYNTHESIS,
-            NodeNames.SUPERVISOR: NodeNames.SUPERVISOR,  # Loop back!
-            NodeNames.END: END
-        }
-    )
-    
-    # SIMPLE EDGES back to supervisor after specialists
-    # After any specialist finishes, go back to supervisor
-    if enable_safety:
-        print("   Safety agent → Supervisor")
-        workflow.add_edge(NodeNames.SAFETY_CHECK, NodeNames.SUPERVISOR)
-    
-    if enable_deficiency:
-        print("   Deficiency agent → Supervisor")
-        workflow.add_edge(NodeNames.DEFICIENCY_CHECK, NodeNames.SUPERVISOR)
-    
-    if enable_recommendations:
-        print("   Recommendation agent → Supervisor")
-        workflow.add_edge(NodeNames.RECOMMENDATION, NodeNames.SUPERVISOR)
-    
-    # SIMPLE EDGE from synthesis to END
-    # Once synthesis is done, we're finished
-    print("   Synthesis → END")
-    workflow.add_edge(NodeNames.SYNTHESIS, END)
+    print("   Setting up linear flow...")
+    workflow.add_edge("entity_matcher", "question_analyzer")
+    workflow.add_edge("question_analyzer", "parallel_executor")
+    workflow.add_edge("parallel_executor", "synthesis")
+    workflow.add_edge("synthesis", END)
     
     # ==================== SET ENTRY POINT ====================
-    # Workflow always starts at supervisor
-    print("   Setting entry point: supervisor")
-    workflow.set_entry_point(NodeNames.SUPERVISOR)
+    print("   Setting entry point: entity_matcher")
+    workflow.set_entry_point("entity_matcher")
     
     # ==================== COMPILE ====================
     print("   Compiling workflow...")
     compiled_workflow = workflow.compile()
     
-    print("✅ Workflow built successfully!\n")
+    print("✅ Graph-first workflow built successfully!\n")
     
     return compiled_workflow
 
@@ -268,9 +225,9 @@ def get_workflow_info(workflow) -> dict:
     except Exception:
         entry = None
 
-    # Fallback: default to supervisor if present
-    if not entry and NodeNames.SUPERVISOR in info['nodes']:
-        entry = NodeNames.SUPERVISOR
+    # Fallback: default to entity_matcher if present (new architecture)
+    if not entry and 'entity_matcher' in info['nodes']:
+        entry = 'entity_matcher'
 
     info['entry_point'] = entry
 

@@ -184,13 +184,15 @@ def normalize_medication_to_database(medication_name: str, graph_interface) -> d
                 "match_type": "brand_name"
             }
         else:
-            # Multiple matches - return all for disambiguation
+            # Multiple matches - use best-effort: return first match with MEDIUM confidence
             return {
                 "user_input": medication_name,
-                "matches": results,
-                "confidence": "AMBIGUOUS",
-                "match_type": "multiple_brand_names",
-                "needs_clarification": True
+                "matched_drug": results[0]["drug_name"],
+                "drug_id": results[0]["drug_id"],
+                "brand_name": results[0]["brand_name"],
+                "confidence": "MEDIUM",
+                "match_type": "brand_name",
+                "alternative_matches": results[1:] if len(results) > 1 else []
             }
     
     # Step 3: Check synonyms
@@ -213,12 +215,15 @@ def normalize_medication_to_database(medication_name: str, graph_interface) -> d
                 "match_type": "synonym"
             }
         else:
+            # Multiple matches - use best-effort: return first match with MEDIUM confidence
             return {
                 "user_input": medication_name,
-                "matches": results,
-                "confidence": "AMBIGUOUS",
-                "match_type": "multiple_synonyms",
-                "needs_clarification": True
+                "matched_drug": results[0]["drug_name"],
+                "drug_id": results[0]["drug_id"],
+                "synonym": results[0]["synonym"],
+                "confidence": "MEDIUM",
+                "match_type": "synonym",
+                "alternative_matches": results[1:] if len(results) > 1 else []
             }
     
     # Step 4: NOT FOUND - Try typo correction + abbreviation expansion
@@ -305,12 +310,14 @@ def normalize_supplement_to_database(supplement_name: str, graph_interface) -> d
                 "match_type": "partial_match"
             }
         else:
+            # Multiple matches - use best-effort: return first match with MEDIUM confidence
             return {
                 "user_input": supplement_name,
-                "matches": results,
-                "confidence": "AMBIGUOUS",
-                "match_type": "multiple_supplements",
-                "needs_clarification": True
+                "matched_supplement": results[0]["supplement_name"],
+                "supplement_id": results[0]["supplement_id"],
+                "confidence": "MEDIUM",
+                "match_type": "partial_match",
+                "alternative_matches": results[1:] if len(results) > 1 else []
             }
     
     # Step 3: Try typo correction + abbreviation expansion
