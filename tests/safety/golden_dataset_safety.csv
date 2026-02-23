@@ -1,0 +1,8 @@
+test_id,user_question,medications,supplements,conditions,dietary_restrictions,expected_output_keywords,expected_supplements,test_type,description
+1,"Is Fish Oil safe with my medications?","Warfarin","","","","caution|warning|interaction|bleeding|risk","","safety","Fish oil and warfarin interaction - should show caution"
+2,"Can I take Red Yeast Rice with my statin?","Atorvastatin","","High Cholesterol","","caution|warning|interaction|muscle|rhabdomyolysis","","safety","Red yeast rice and statin interaction - should show caution"
+3,"Is Ginkgo safe with my blood thinner?","Warfarin","","","","caution|warning|interaction|bleeding","","safety","Ginkgo and warfarin interaction - should show caution"
+4,"Can I take Melatonin with my medications?","Alprazolam","","","","safe|generally safe|no interaction","","safety","Melatonin with Alprazolam - should be generally safe"
+5,"Is St. John's Wort safe with my antidepressant?","Bupropion","","","","caution|warning|interaction|serotonin","","safety","St. John's Wort and Bupropion interaction - should show caution"
+6,"Can I take Fish Oil with Warfarin and Digoxin?","Warfarin,Digoxin","","","","caution|warning|interaction|bleeding|heart","","safety","Multiple medication interactions - should show caution for both"
+7,"Is Creatine safe with my medications?","","","","","generally safe|safe|no interaction","","safety","Creatine should be generally safe with no medications"
