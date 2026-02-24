@@ -15,7 +15,6 @@ Built with **Neo4j** (knowledge graph), **LangGraph** (multi-agent orchestration
 - [Running the Application](#running-the-application)
 - [Testing](#testing)
 - [Project Structure](#project-structure)
-- [Documentation](#documentation)
 
 ---
 
