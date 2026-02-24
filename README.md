@@ -94,7 +94,7 @@ You need a running Neo4j instance:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/<your-org>/Personalized-Supplement-Recommender.git
+git clone https://github.com/kevinkchen1/Personalized-Supplement-Recommender.git
 cd Personalized-Supplement-Recommender
 ```
 
