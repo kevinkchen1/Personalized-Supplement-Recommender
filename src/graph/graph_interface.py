@@ -1,7 +1,8 @@
 """
-Neo4j Graph Database Interface for Supplement Safety Knowledge Graph
+Neo4j Graph Database Interface
 
-Provides simplified access to the supplement-drug interaction database.
+Low-level database infrastructure wrapper.
+Handles connection management, query execution, and schema introspection.
 """
 
 import logging
@@ -14,11 +15,13 @@ logger = logging.getLogger(__name__)
 
 class GraphInterface:
     """
-    Thread-safe Neo4j database wrapper for supplement safety queries.
-    
-    Handles connections to the knowledge graph containing:
-    - Supplements, ActiveIngredients, Medications, Drugs
-    - Drug interactions, equivalence relationships, category similarities
+    Thread-safe Neo4j database wrapper.
+
+    Responsibilities:
+    - Connection management
+    - Raw Cypher query execution
+    - Schema introspection for SchemaProvider
+
     """
 
     def __init__(self, uri: str, user: str, password: str):
@@ -155,67 +158,6 @@ class GraphInterface:
         except Exception as e:
             logger.warning(f"Could not get property values for {label}.{property_name}: {e}")
             return []
-
-    def check_supplement_drug_interaction(
-        self, 
-        supplement_names: List[str], 
-        medication_names: List[str]
-    ) -> List[Dict[str, Any]]:
-        """
-        Check for interactions between supplements and medications.
-        
-        This is a specialized query for the most common use case:
-        detecting dangerous interactions.
-        
-        Args:
-            supplement_names: List of supplement names
-            medication_names: List of medication names
-            
-        Returns:
-            List of interaction records with severity and details
-        """
-        query = """
-        // Check for direct supplement-medication interactions
-        MATCH (s:Supplement)-[i:SUPPLEMENT_INTERACTS_WITH]->(m:Medication)
-        WHERE s.supplement_name IN $supplement_names
-          AND m.medication_name IN $medication_names
-        RETURN 
-            s.supplement_name as supplement,
-            m.medication_name as medication,
-            i.interaction_description as description,
-            'DIRECT' as interaction_type
-        
-        UNION
-        
-        // Check for drug equivalence (supplement contains same drug as medication)
-        MATCH (s:Supplement)-[:CONTAINS]->(a:ActiveIngredient)
-              -[:EQUIVALENT_TO]->(d:Drug)<-[:MEDICATION_CONTAINS_DRUG]-(m:Medication)
-        WHERE s.supplement_name IN $supplement_names
-          AND m.medication_name IN $medication_names
-        RETURN 
-            s.supplement_name as supplement,
-            m.medication_name as medication,
-            'Contains equivalent drug - risk of double dosing' as description,
-            'EQUIVALENCE' as interaction_type
-        
-        UNION
-        
-        // Check for similar pharmacological effects
-        MATCH (s:Supplement)-[:HAS_SIMILAR_EFFECT_TO]->(c:Category)
-              <-[:BELONGS_TO]-(d:Drug)<-[:MEDICATION_CONTAINS_DRUG]-(m:Medication)
-        WHERE s.supplement_name IN $supplement_names
-          AND m.medication_name IN $medication_names
-        RETURN 
-            s.supplement_name as supplement,
-            m.medication_name as medication,
-            'Has similar effects - may cause additive or antagonistic effects' as description,
-            'SIMILAR_EFFECT' as interaction_type
-        """
-        
-        return self.execute_query(query, {
-            'supplement_names': supplement_names,
-            'medication_names': medication_names
-        })
 
     def validate_query(self, cypher_query: str) -> bool:
         """

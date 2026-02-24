@@ -64,6 +64,6 @@ def route_supervisor_decision(state: Dict[str, Any]) -> str:
         'loop_back':          NodeNames.SUPERVISOR,
     }
 
-    next_node = route_map.get(decision, NodeNames.END)
+    next_node = route_map.get(decision, NodeNames.SYNTHESIS)
     print(f"🚦 ROUTING: '{decision}' → {next_node}")
     return next_node
