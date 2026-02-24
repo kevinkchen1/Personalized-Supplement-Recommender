@@ -215,5 +215,15 @@ def entity_extractor(state: Dict[str, Any]) -> Dict[str, Any]:
 
     return {
         'extracted_entities': merged,
-        'evidence_chain': [extraction_evidence]
+        'evidence_chain': [extraction_evidence],
+        'iterations': 0,
+        'supervisor_decision': '',
+        'candidate_supplements_list': [],
+        'safety_checked': False,
+        'deficiency_checked': False,
+        'recommendations_checked': False,
+        'safety_results': None,
+        'deficiency_results': None,
+        'recommendation_results': None,
+        'final_answer': None,
     }

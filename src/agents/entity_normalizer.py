@@ -364,9 +364,13 @@ def entity_normalizer(state: Dict[str, Any]) -> Dict[str, Any]:
     print("=" * 60 + "\n")
 
     return {
-        'normalized_medications': normalized_meds,
-        'normalized_supplements': normalized_supps,
-        'normalized_dietary_restrictions': dietary_restrictions,
-        'conditions_list': conditions,
-        'evidence_chain': state.get('evidence_chain', []) + [normalization_evidence]
+    'normalized_medications': normalized_meds,
+    'normalized_supplements': normalized_supps,
+    'normalized_dietary_restrictions': dietary_restrictions,
+    'medications_list': medications_list,
+    'supplements_list': supplements_list,
+    'dietary_restrictions_list': dietary_restrictions,
+    'conditions_list': conditions,
+    'entities_normalized': True,
+    'evidence_chain': state.get('evidence_chain', []) + [normalization_evidence]
     }
