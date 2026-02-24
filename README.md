@@ -212,7 +212,7 @@ This loads DrugBank and Mayo Clinic data (22 CSV files) into the knowledge graph
 LangGraph Studio provides a visual interface for running queries and inspecting the agent workflow step-by-step.
 
 ```bash
-pdm run langgraph
+pdm run studio
 ```
 
 This starts the LangGraph development server using the config at `langgraph-studio/langgraph.json`. Open the URL printed in your terminal to access the Studio UI where you can:
