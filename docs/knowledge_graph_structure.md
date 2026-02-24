@@ -8,7 +8,11 @@ surface evidence-based supplement recommendations.
 **Total Nodes:** 329,849  
 **Total Relationships:** 3,447,235
 
-![Knowledge Graph Structure](KG.png)
+
+<div align="center">
+  <img src="KG.png" width="75%" alt="Knowledge Graph Structure"/>
+</div>
+
 
 ---
 
@@ -57,4 +61,5 @@ Nutrient deficiencies, dietary restrictions, medication-nutrient interactions, a
 | Drug | INTERACTS_WITH_NUTRIENT | Nutrient |
 
 **Nodes:** DietaryRestriction, Nutrient
+
 ---
