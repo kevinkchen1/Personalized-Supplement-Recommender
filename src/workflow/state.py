@@ -1,451 +1,574 @@
+# """
+# State Definition - Conversation State
+
+# Defines the shared state that flows between all agents in the workflow.
+# All agents read from and write to this state.
+
+# Current phase: Entity Extraction + Normalization only.
+# Supervisor, specialist, and synthesis fields are defined but
+# will be populated in later phases.
+# """
+
+# from typing import TypedDict, List, Dict, Any, Optional, Annotated
+# from langgraph.graph import add_messages
+
+
+# class InputState(TypedDict):
+#     """
+#     The only fields the user provides at the start.
+#     LangGraph Studio shows only these two fields as inputs.
+#     """
+#     user_question: str
+#     patient_profile: Dict[str, Any]
+
+
+# # Default patient profile template shown in LangGraph Studio input
+# DEFAULT_PATIENT_PROFILE = {
+#     "medications": "",
+#     "supplements": "",
+#     "conditions": [],
+#     "dietary_restrictions": []
+# }
+
+
+# class ConversationState(TypedDict):
+#     """
+#     Shared state passed between all nodes in the workflow.
+#     LangGraph automatically manages state updates and passing.
+#     """
+
+#     # ==================== USER INPUTS ====================
+
+#     user_question: str
+#     """The user's original question"""
+
+#     patient_profile: Dict[str, Any]
+#     """
+#     Raw patient profile from sidebar form:
+#     {
+#         'medications': 'Warfarin, Metformin',       # comma-separated string
+#         'supplements': 'Fish Oil, Vitamin D',        # comma-separated string
+#         'conditions': ['Diabetes'],                  # list
+#         'dietary_restrictions': ['Vegan']            # list
+#     }
+#     """
+
+#     # ==================== ENTITY EXTRACTION ====================
+
+#     entities_extracted: bool
+#     """Flag: entities have been extracted from question + profile"""
+
+#     extracted_entities: Optional[Dict[str, List[str]]]
+#     """
+#     Raw entities pulled from user question (natural language):
+#     {
+#         'medications': ['Warfarin'],
+#         'supplements': ['Fish Oil'],
+#         'conditions': ['heart health'],
+#         'dietary_restrictions': ['vegan']
+#     }
+#     """
+
+#     # ==================== ENTITY NORMALIZATION ====================
+
+#     entities_normalized: bool
+#     """Flag: extracted entities have been mapped to database IDs"""
+
+#     normalized_medications: Optional[List[Dict[str, Any]]]
+#     """
+#     Medications mapped to database entries:
+#     [
+#         {
+#             'user_input': 'Warfarin',
+#             'matched_drug': 'Warfarin',
+#             'drug_id': 'DB00682',
+#             'confidence': 'HIGH',
+#             'match_type': 'exact_drug_name'
+#         }
+#     ]
+#     """
+
+#     normalized_supplements: Optional[List[Dict[str, Any]]]
+#     """
+#     Supplements mapped to database entries:
+#     [
+#         {
+#             'user_input': 'Fish Oil',
+#             'matched_supplement': 'Fish oil',
+#             'supplement_id': 'S07',
+#             'confidence': 'HIGH',
+#             'match_type': 'exact_supplement_name'
+#         }
+#     ]
+#     """
+
+#     normalized_dietary_restrictions: Optional[List[str]]
+#     """
+#     Dietary restrictions — simple strings, no DB mapping needed.
+#     Example: ['Vegan', 'Gluten-free']
+#     """
+
+#     # Clean deduplicated lists for downstream agents to consume
+#     medications_list: List[str]
+#     """
+#     Final clean medication names after deduplication.
+#     Example: ['Warfarin', 'Metformin']
+#     """
+
+#     supplements_list: List[str]
+#     """
+#     Final clean supplement names after deduplication.
+#     Example: ['Fish Oil', 'Vitamin D']
+#     """
+
+#     dietary_restrictions_list: List[str]
+#     """
+#     Final clean dietary restriction names.
+#     Example: ['Vegan', 'Gluten-free']
+#     """
+
+#     conditions_list: List[str]
+#     """
+#     Final clean condition names extracted from question + profile.
+#     Example: ['heart health', 'diabetes']
+#     """
+
+#     # ==================== SUPERVISOR CONTROL ====================
+#     # Populated in supervisor phase
+
+#     supervisor_decision: str
+#     """
+#     Supervisor's routing decision:
+#     'check_safety' | 'check_deficiency' | 'get_recommendations' | 'synthesize'
+#     """
+
+#     iterations: int
+#     """Number of supervisor calls — prevents infinite loops"""
+
+#     confidence_level: float
+#     """Overall confidence score (0.0 to 1.0)"""
+
+#     # ==================== SPECIALIST RESULTS ====================
+#     # Populated by specialist tools
+
+#     safety_checked: bool
+#     safety_results: Optional[Dict[str, Any]]
+
+#     deficiency_checked: bool
+#     deficiency_results: Optional[Dict[str, Any]]
+
+#     recommendations_checked: bool
+#     recommendation_results: Optional[Dict[str, Any]]
+
+#     # ==================== EVIDENCE & LOGGING ====================
+
+#     evidence_chain: List[str]
+#     """
+#     Human-readable reasoning steps for transparency.
+#     Each agent appends its findings.
+#     Example: ['Extracted: Fish Oil, Warfarin', 'Safety: 2 interactions found']
+#     """
+
+#     query_history: List[Dict]
+#     """
+#     All database queries executed, for debugging.
+#     Example: [{'query_type': 'normalize_medication', 'success': True, 'result_count': 1}]
+#     """
+
+#     # ==================== FINAL OUTPUT ====================
+
+#     final_answer: Optional[str]
+#     """Synthesized personalized answer returned to user"""
+
+#     error_message: Optional[str]
+#     """Error message if something goes wrong"""
+
+#     # ==================== MESSAGES ====================
+
+#     messages: Annotated[List[Dict], add_messages]
+#     """
+#     Chat message history. LangGraph appends automatically via add_messages.
+#     Format: [{'role': 'user', 'content': '...'}, ...]
+#     """
+
+
+# # ==================== INITIAL STATE ====================
+
+# def create_initial_state(
+#     user_question: str,
+#     patient_profile: Dict[str, Any],
+# ) -> ConversationState:
+#     """
+#     Create a fresh state for a new conversation.
+
+#     Args:
+#         user_question: The user's question
+#         patient_profile: Raw profile from sidebar
+
+#     Returns:
+#         ConversationState with all defaults set
+#     """
+#     return ConversationState(
+#         # User inputs
+#         user_question=user_question,
+#         patient_profile=patient_profile,
+
+#         # Entity extraction
+#         entities_extracted=False,
+#         extracted_entities=None,
+
+#         # Entity normalization
+#         entities_normalized=False,
+#         normalized_medications=None,
+#         normalized_supplements=None,
+#         normalized_dietary_restrictions=None,
+
+#         # Clean lists for agents
+#         medications_list=[],
+#         supplements_list=[],
+#         dietary_restrictions_list=[],
+#         conditions_list=[],
+
+#         # Supervisor control
+#         supervisor_decision="",
+#         iterations=0,
+#         confidence_level=0.0,
+
+#         # Specialist results
+#         safety_checked=False,
+#         safety_results=None,
+#         deficiency_checked=False,
+#         deficiency_results=None,
+#         recommendations_checked=False,
+#         recommendation_results=None,
+
+#         # Evidence & logging
+#         evidence_chain=[],
+#         query_history=[],
+
+#         # Final output
+#         final_answer=None,
+#         error_message=None,
+
+#         # Messages
+#         messages=[{"role": "user", "content": user_question}],
+#     )
+
+
+# # ==================== HELPER FUNCTIONS ====================
+
+# def get_state_summary(state: ConversationState) -> str:
+#     """Human-readable summary of current state — useful for debugging."""
+#     return f"""
+# State Summary
+# -------------
+# Question   : {state['user_question']}
+# Iterations : {state.get('iterations', 0)}
+# Confidence : {state.get('confidence_level', 0):.2f}
+
+# Pipeline Progress:
+#   Entities Extracted  : {'✓' if state.get('entities_extracted') else '✗'}
+#   Entities Normalized : {'✓' if state.get('entities_normalized') else '✗'}
+#   Safety Checked      : {'✓' if state.get('safety_checked') else '✗'}
+#   Deficiency Checked  : {'✓' if state.get('deficiency_checked') else '✗'}
+#   Recommendations     : {'✓' if state.get('recommendations_checked') else '✗'}
+
+# Clean Lists:
+#   Medications          : {state.get('medications_list', [])}
+#   Supplements          : {state.get('supplements_list', [])}
+#   Dietary Restrictions : {state.get('dietary_restrictions_list', [])}
+#   Conditions           : {state.get('conditions_list', [])}
+
+# Supervisor Decision : {state.get('supervisor_decision', 'None')}
+# Evidence Steps      : {len(state.get('evidence_chain', []))}
+# Queries Made        : {len(state.get('query_history', []))}
+# Final Answer        : {'Generated' if state.get('final_answer') else 'Not yet'}
+# """
+
 """
 State Definition - Conversation State
 
 Defines the shared state that flows between all agents in the workflow.
-This is the "memory" that all agents can read from and write to.
+All agents read from and write to this state.
 
-The state contains:
-- User inputs (question, profile)
-- Progress tracking (what's been done)
-- Results from each agent
-- Control flow (supervisor decisions)
-- Metadata (confidence, iterations)
+Current phase: Entity Extraction + Normalization only.
+Supervisor, specialist, and synthesis fields are defined but
+will be populated in later phases.
 """
 
 from typing import TypedDict, List, Dict, Any, Optional, Annotated
 from langgraph.graph import add_messages
 
 
+class InputState(TypedDict):
+    """
+    The only fields the user provides at the start.
+    LangGraph Studio shows only these two fields as inputs.
+    """
+    user_question: str
+    patient_profile: Dict[str, Any]
+
+
+# Default patient profile template shown in LangGraph Studio input
+DEFAULT_PATIENT_PROFILE = {
+    "medications": "",
+    "supplements": "",
+    "conditions": [],
+    "dietary_restrictions": []
+}
+
+
 class ConversationState(TypedDict):
     """
-    The complete state of a conversation.
-    
-    This state is passed between all agents and updated as the workflow progresses.
+    Shared state passed between all nodes in the workflow.
     LangGraph automatically manages state updates and passing.
     """
-    
+
     # ==================== USER INPUTS ====================
-    
+
     user_question: str
     """The user's original question"""
-    
+
     patient_profile: Dict[str, Any]
     """
-    Patient's health profile (already normalized from sidebar):
+    Raw patient profile from sidebar form:
     {
-        'medications': [
-            {'drug_id': 'DB00682', 'drug_name': 'Warfarin', ...}
-        ],
-        'supplements': [
-            {'supplement_id': 'S07', 'supplement_name': 'Fish oil', ...}
-        ],
-        'conditions': ['Atrial Fibrillation'],
-        'dietary_restrictions': ['Vegan']
+        'medications': 'Warfarin, Metformin',       # comma-separated string
+        'supplements': 'Fish Oil, Vitamin D',        # comma-separated string
+        'conditions': ['Diabetes'],                  # list
+        'dietary_restrictions': ['Vegan']            # list
     }
     """
-    
+
     # ==================== ENTITY EXTRACTION ====================
-    
+
     entities_extracted: bool
-    """Flag: Have entities been extracted from the question?"""
-    
+    """Flag: entities have been extracted from question + profile"""
+
     extracted_entities: Optional[Dict[str, List[str]]]
     """
-    Entities extracted from user question:
+    Raw entities pulled from user question (natural language):
     {
-        'medications': ['Aspirin'],
+        'medications': ['Warfarin'],
         'supplements': ['Fish Oil'],
-        'conditions': [],
-        'dietary_restrictions': []
+        'conditions': ['heart health'],
+        'dietary_restrictions': ['vegan']
     }
     """
-    
+
+    # ==================== ENTITY NORMALIZATION ====================
+
     entities_normalized: bool
-    """Flag: Have extracted entities been normalized to database IDs?"""
-    
-    normalized_entities: Optional[Dict[str, List[Dict]]]
-    """
-    Normalized entities with database IDs:
-    {
-        'medications': [
-            {'user_input': 'Aspirin', 'drug_id': 'DB00945', ...}
-        ],
-        'supplements': [
-            {'user_input': 'Fish Oil', 'supplement_id': 'S07', ...}
-        ],
-        'conditions': [...],
-        'dietary_restrictions': [...]
-    }
-    """
-    
+    """Flag: extracted entities have been mapped to database IDs"""
+
     normalized_medications: Optional[List[Dict[str, Any]]]
     """
-    Normalized medications from supervisor entity extraction.
-    Each entry: {'user_input': ..., 'matched_drug': ..., 'drug_id': ..., 'confidence': ...}
+    Medications mapped to database entries:
+    [
+        {
+            'user_input': 'Warfarin',
+            'matched_drug': 'Warfarin',
+            'drug_id': 'DB00682',
+            'confidence': 'HIGH',
+            'match_type': 'exact_drug_name'
+        }
+    ]
     """
-    
+
     normalized_supplements: Optional[List[Dict[str, Any]]]
     """
-    Normalized supplements from supervisor entity extraction.
-    Each entry: {'user_input': ..., 'matched_supplement': ..., 'supplement_id': ..., 'confidence': ...}
+    Supplements mapped to database entries:
+    [
+        {
+            'user_input': 'Fish Oil',
+            'matched_supplement': 'Fish oil',
+            'supplement_id': 'S07',
+            'confidence': 'HIGH',
+            'match_type': 'exact_supplement_name'
+        }
+    ]
     """
-    
-    normalized_dietary_restrictions: Optional[List[str]]
+
+    normalized_dietary_restrictions: Optional[List[Dict[str, Any]]]
     """
-    Dietary restrictions from supervisor entity extraction.
-    Simple list of restriction names (e.g., ['Vegan', 'Gluten-free'])
+    Dietary restrictions mapped to database entries where possible:
+    [{'user_input': 'Vegan', 'matched_name': 'Vegan', 'db_id': 'DR01', 'confidence': 'HIGH'}]
+    Falls back to PASS_THROUGH with db_id: None if not found in DB.
     """
-    
-    # ✨ NEW: Clean, deduplicated lists for agents
+
+    # Clean deduplicated lists for downstream agents to consume
     medications_list: List[str]
     """
-    Clean list of medication names for agents to use.
-    Supervisor creates this by deduplicating normalized_medications.
+    Final clean medication names after deduplication.
     Example: ['Warfarin', 'Metformin']
     """
-    
+
     supplements_list: List[str]
     """
-    Clean list of supplement names for agents to use.
-    Supervisor creates this by deduplicating normalized_supplements.
+    Final clean supplement names after deduplication.
     Example: ['Fish Oil', 'Vitamin D']
     """
-    
+
     dietary_restrictions_list: List[str]
     """
-    Clean list of dietary restriction names for agents to use.
-    Supervisor creates this from normalized_dietary_restrictions.
+    Final clean dietary restriction names.
     Example: ['Vegan', 'Gluten-free']
     """
-    
-    # ==================== AGENT CHECKS ====================
-    
-    safety_checked: bool
-    """Flag: Has safety check been performed?"""
-    
-    safety_results: Optional[Dict[str, Any]]
+
+    conditions_list: List[str]
     """
-    Results from safety_check_agent:
-    {
-        'safe': True/False,
-        'interactions': [...],
-        'confidence': 0.85,
-        'supplement_checked': 'Fish oil',
-        'verdict': 'SAFE' or 'CAUTION ADVISED'
-    }
+    Final clean condition names extracted from question + profile.
+    Example: ['heart health', 'diabetes']
     """
-    
-    deficiency_checked: bool
-    """Flag: Has deficiency check been performed?"""
-    
-    deficiency_results: Optional[Dict[str, Any]]
-    """
-    Results from deficiency_agent:
-    {
-        'at_risk': ['Vitamin B-12', 'Iron'],
-        'risk_levels': {'Vitamin B-12': 'HIGH', 'Iron': 'MEDIUM'},
-        'deficiency_details': {...},
-        'sources': ['Diet: Vegan', 'Medication: Metformin']
-    }
-    """
-    
-    recommendations_checked: bool
-    """Flag: Have recommendations been generated?"""
-    
-    recommendation_results: Optional[Dict[str, Any]]
-    """
-    Results from recommendation_agent:
-    {
-        'condition': 'Joint Pain',
-        'recommendations': [
-            {'supplement': 'Glucosamine', 'evidence': 'HIGH', ...}
-        ],
-        'filtered_count': 3  # How many were filtered due to interactions
-    }
-    """
-    
+
     # ==================== SUPERVISOR CONTROL ====================
-    
+    # Populated in supervisor phase
+
     supervisor_decision: str
     """
-    Supervisor's decision for what to do next:
-    - 'check_safety': Call safety agent
-    - 'check_deficiency': Call deficiency agent
-    - 'check_recommendations': Call recommendation agent
-    - 'finish': Go to synthesis
-    - 'loop_back': Supervisor needs to reconsider
+    Supervisor's routing decision:
+    'check_safety' | 'check_deficiency' | 'get_recommendations' | 'synthesize'
     """
-    
+
     iterations: int
-    """Number of times supervisor has been called (prevent infinite loops)"""
-    
+    """Number of supervisor calls — prevents infinite loops"""
+
     confidence_level: float
-    """Overall confidence in the answer (0.0 to 1.0)"""
-    
-    # ==================== MESSAGES (for chat history) ====================
-    
-    messages: Annotated[List[Dict], add_messages]
-    """
-    Chat message history (LangGraph special field).
-    Use add_messages to automatically append to this list.
-    
-    Format:
-    [
-        {'role': 'user', 'content': 'Is Fish Oil safe?'},
-        {'role': 'assistant', 'content': 'Let me check...'},
-        ...
-    ]
-    """
-    
+    """Overall confidence score (0.0 to 1.0)"""
+
+    # ==================== SPECIALIST RESULTS ====================
+    # Populated by specialist tools
+
+    safety_checked: bool
+    safety_results: Optional[Dict[str, Any]]
+
+    deficiency_checked: bool
+    deficiency_results: Optional[Dict[str, Any]]
+
+    recommendations_checked: bool
+    recommendation_results: Optional[Dict[str, Any]]
+
     # ==================== EVIDENCE & LOGGING ====================
-    
+
     evidence_chain: List[str]
     """
-    Track reasoning steps for transparency:
-    [
-        'Extracted: Fish Oil, Warfarin',
-        'Checked: Direct interactions → None found',
-        'Checked: Similar effects → Both increase bleeding risk',
-        'Verdict: CAUTION (confidence: 0.75)'
-    ]
+    Human-readable reasoning steps for transparency.
+    Each agent appends its findings.
+    Example: ['Extracted: Fish Oil, Warfarin', 'Safety: 2 interactions found']
     """
-    
+
     query_history: List[Dict]
     """
-    Track all database queries made:
-    [
-        {'query_type': 'direct_interaction', 'result_count': 0, ...}
-    ]
+    All database queries executed, for debugging.
+    Example: [{'query_type': 'normalize_medication', 'success': True, 'result_count': 1}]
     """
-    
+
     # ==================== FINAL OUTPUT ====================
-    
+
     final_answer: Optional[str]
-    """The synthesized, personalized answer to return to user"""
-    
+    """Synthesized personalized answer returned to user"""
+
     error_message: Optional[str]
-    """Any error message if something goes wrong"""
-    
-    # ==================== RESOURCES ====================
-    
-    graph_interface: Optional[Any]
-    """Neo4j GraphInterface instance — injected at runtime for agents to use"""
+    """Error message if something goes wrong"""
+
+    # ==================== MESSAGES ====================
+
+    messages: Annotated[List[Dict], add_messages]
+    """
+    Chat message history. LangGraph appends automatically via add_messages.
+    Format: [{'role': 'user', 'content': '...'}, ...]
+    """
 
 
-# ==================== DEFAULT STATE ====================
+# ==================== INITIAL STATE ====================
 
 def create_initial_state(
     user_question: str,
-    patient_profile: Dict[str, Any]
+    patient_profile: Dict[str, Any],
 ) -> ConversationState:
     """
-    Create initial state for a new conversation
-    
+    Create a fresh state for a new conversation.
+
     Args:
         user_question: The user's question
-        patient_profile: The patient's health profile
-        
+        patient_profile: Raw profile from sidebar
+
     Returns:
-        ConversationState with default values
+        ConversationState with all defaults set
     """
     return ConversationState(
-        # Inputs
+        # User inputs
         user_question=user_question,
         patient_profile=patient_profile,
-        
+
         # Entity extraction
         entities_extracted=False,
         extracted_entities=None,
+
+        # Entity normalization
         entities_normalized=False,
-        normalized_entities=None,
         normalized_medications=None,
         normalized_supplements=None,
         normalized_dietary_restrictions=None,
-        
-        # ✨ NEW: Clean lists for agents
+
+        # Clean lists for agents
         medications_list=[],
         supplements_list=[],
         dietary_restrictions_list=[],
-        
-        # Agent checks
+        conditions_list=[],
+
+        # Supervisor control
+        supervisor_decision="",
+        iterations=0,
+        confidence_level=0.0,
+
+        # Specialist results
         safety_checked=False,
         safety_results=None,
         deficiency_checked=False,
         deficiency_results=None,
         recommendations_checked=False,
         recommendation_results=None,
-        
-        # Supervisor control
-        supervisor_decision="",
-        iterations=0,
-        confidence_level=0.0,
-        
-        # Messages
-        messages=[
-            {"role": "user", "content": user_question}
-        ],
-        
+
         # Evidence & logging
         evidence_chain=[],
         query_history=[],
-        
+
         # Final output
         final_answer=None,
         error_message=None,
-        
-        # Resources
-        graph_interface=None
+
+        # Messages
+        messages=[{"role": "user", "content": user_question}],
     )
 
 
-# ==================== STATE HELPER FUNCTIONS ====================
-
-def add_evidence(state: ConversationState, evidence: str) -> ConversationState:
-    """
-    Add an evidence step to the chain
-    
-    Args:
-        state: Current state
-        evidence: Evidence string to add
-        
-    Returns:
-        Updated state
-    """
-    if state.get('evidence_chain') is None:
-        state['evidence_chain'] = []
-    
-    state['evidence_chain'].append(evidence)
-    return state
-
-
-def update_confidence(
-    state: ConversationState,
-    new_confidence: float
-) -> ConversationState:
-    """
-    Update the confidence level
-    
-    Args:
-        state: Current state
-        new_confidence: New confidence value (0.0-1.0)
-        
-    Returns:
-        Updated state
-    """
-    # Take the minimum of current and new confidence
-    # (conservative approach - if any check has low confidence, overall is low)
-    current = state.get('confidence_level', 1.0)
-    state['confidence_level'] = min(current, new_confidence)
-    
-    return state
-
-
-def log_query(
-    state: ConversationState,
-    query_type: str,
-    result_count: int,
-    success: bool
-) -> ConversationState:
-    """
-    Log a database query
-    
-    Args:
-        state: Current state
-        query_type: Type of query
-        result_count: Number of results
-        success: Whether query succeeded
-        
-    Returns:
-        Updated state
-    """
-    if state.get('query_history') is None:
-        state['query_history'] = []
-    
-    state['query_history'].append({
-        'query_type': query_type,
-        'result_count': result_count,
-        'success': success
-    })
-    
-    return state
-
-
-def is_max_iterations_reached(state: ConversationState, max_iter: int = 10) -> bool:
-    """
-    Check if max iterations reached
-    
-    Args:
-        state: Current state
-        max_iter: Maximum allowed iterations
-        
-    Returns:
-        True if max reached
-    """
-    return state.get('iterations', 0) >= max_iter
-
+# ==================== HELPER FUNCTIONS ====================
 
 def get_state_summary(state: ConversationState) -> str:
-    """
-    Get a human-readable summary of the current state
-    
-    Args:
-        state: Current state
-        
-    Returns:
-        Summary string
-    """
-    summary = f"""
-State Summary:
---------------
-Question: {state['user_question']}
-Iterations: {state.get('iterations', 0)}
-Confidence: {state.get('confidence_level', 0):.2f}
+    """Human-readable summary of current state — useful for debugging."""
+    return f"""
+State Summary
+-------------
+Question   : {state['user_question']}
+Iterations : {state.get('iterations', 0)}
+Confidence : {state.get('confidence_level', 0):.2f}
 
-Progress:
-  Entities Extracted: {'✓' if state.get('entities_extracted') else '✗'}
-  Entities Normalized: {'✓' if state.get('entities_normalized') else '✗'}
-  Safety Checked: {'✓' if state.get('safety_checked') else '✗'}
-  Deficiency Checked: {'✓' if state.get('deficiency_checked') else '✗'}
-  Recommendations: {'✓' if state.get('recommendations_checked') else '✗'}
+Pipeline Progress:
+  Entities Extracted  : {'✓' if state.get('entities_extracted') else '✗'}
+  Entities Normalized : {'✓' if state.get('entities_normalized') else '✗'}
+  Safety Checked      : {'✓' if state.get('safety_checked') else '✗'}
+  Deficiency Checked  : {'✓' if state.get('deficiency_checked') else '✗'}
+  Recommendations     : {'✓' if state.get('recommendations_checked') else '✗'}
 
-Supervisor Decision: {state.get('supervisor_decision', 'None')}
-Evidence Steps: {len(state.get('evidence_chain', []))}
-Queries Made: {len(state.get('query_history', []))}
+Clean Lists:
+  Medications          : {state.get('medications_list', [])}
+  Supplements          : {state.get('supplements_list', [])}
+  Dietary Restrictions : {state.get('dietary_restrictions_list', [])}
+  Conditions           : {state.get('conditions_list', [])}
+
+Supervisor Decision : {state.get('supervisor_decision', 'None')}
+Evidence Steps      : {len(state.get('evidence_chain', []))}
+Queries Made        : {len(state.get('query_history', []))}
+Final Answer        : {'Generated' if state.get('final_answer') else 'Not yet'}
 """
-    
-    if state.get('final_answer'):
-        summary += f"\nFinal Answer: Generated ({len(state['final_answer'])} chars)"
-    
-    return summary
-
-
-# ==================== TESTING ====================
-
-if __name__ == "__main__":
-    # Test state creation
-    test_state = create_initial_state(
-        user_question="Is Fish Oil safe with my medications?",
-        patient_profile={
-            'medications': [
-                {'drug_id': 'DB00682', 'drug_name': 'Warfarin'}
-            ],
-            'supplements': [],
-            'conditions': ['Atrial Fibrillation'],
-            'dietary_restrictions': []
-        }
-    )
-    
-    print("Initial State Created:")
-    print(get_state_summary(test_state))
-    
-    # Simulate some updates
-    test_state['entities_extracted'] = True
-    test_state['safety_checked'] = True
-    test_state['confidence_level'] = 0.85
-    test_state['iterations'] = 2
-    
-    test_state = add_evidence(test_state, "Checked direct interactions: None found")
-    test_state = add_evidence(test_state, "Checked similar effects: Both affect bleeding")
-    
-    print("\n\nAfter Updates:")
-    print(get_state_summary(test_state))
