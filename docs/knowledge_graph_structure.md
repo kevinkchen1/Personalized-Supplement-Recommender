@@ -1,59 +1,62 @@
 # Supplement Safety Knowledge Graph Structure
 
+# Supplement Safety Knowledge Graph Structure
+
 ## Overview
-This knowledge graph integrates DrugBank and Mayo Clinic data to identify dangerous interactions between supplements and medications.
+A Neo4j knowledge graph integrating three biomedical data sources to identify dangerous
+interactions between supplements and medications, detect nutrient deficiencies, and
+surface evidence-based supplement recommendations.
+
+**Total Nodes:** 329,849  
+**Total Relationships:** 3,447,235
+
+![Knowledge Graph Structure](KG.png)
 
 ---
 
-## Node Types (Entities)
+## Data Sources
 
-| Node Type | Count | Properties | Source |
-|-----------|-------|------------|--------|
-| **Supplement** | 28 | supplement_id, supplement_name, safety_rating | Mayo Clinic |
-| **ActiveIngredient** | 71 | active_ingredient_id, active_ingredient | Mayo Clinic |
-| **Medication** | 55 | medication_id, medication_name | Mayo Clinic |
-| **Drug** | 19,830 | drug_id, drug_name, description, indication, type | DrugBank |
-| **Category** | 4,649 | category_id, category | DrugBank |
-| **Symptom** | 288 | symptom_id, symptom_name | Mayo Clinic |
-| **BrandName** | 248,483 | brand_name_id, brand_name | DrugBank |
-| **Salt** | 2,960 | salt_id, salt_name | DrugBank |
-| **Synonym** | 52,027 | synonym_id, synonym | DrugBank |
-| **FoodInteraction** | 1,429 | food_interaction_id, description | DrugBank |
+### DrugBank
+Comprehensive drug information including drug-drug interactions, active ingredients, and pharmacological effects.
 
-**Total Nodes:** 329,820
+| Node | Relationship | Node |
+|------|--------------|------|
+| Drug | INTERACTS_WITH | Drug |
+| Drug | BELONGS_TO | Category |
+| Drug | KNOWN_AS | Synonym |
+| Drug | HAS_SALT_FORM | Salt |
+| Drug | HAS_FOOD_INTERACTION | FoodInteraction |
+| BrandName | CONTAINS_DRUG | Drug |
+
+**Nodes:** Drug, Category, Synonym, Salt, BrandName, FoodInteraction
 
 ---
 
-## Relationship Types (Edges)
+### Mayo Clinic
+Supplement safety ratings, treatment applications, and supplement-medication interactions; web-scraped from Mayo Clinic.
 
-### Critical Safety Relationships (NEW - Curated)
+| Node | Relationship | Node |
+|------|--------------|------|
+| Supplement | SUPPLEMENT_INTERACTS_WITH | Medication |
+| Supplement | CONTAINS | ActiveIngredient |
+| Supplement | HAS_SIMILAR_EFFECT_TO | Category |
+| Supplement | TREATS | Symptom |
+| Supplement | CAN_CAUSE | Symptom |
+| ActiveIngredient | EQUIVALENT_TO | Drug |
+| Medication | MEDICATION_CONTAINS_DRUG | Drug |
 
-| From | Relationship | To | Count | Properties |
-|------|--------------|-----|-------|------------|
-| Supplement | **CONTAINS** | ActiveIngredient | 71 | is_primary (boolean) |
-| ActiveIngredient | **EQUIVALENT_TO** | Drug | 39 | equivalence_type, notes |
-| Supplement | **HAS_SIMILAR_EFFECT_TO** | Category | ~50+ | confidence, notes |
+**Nodes:** Supplement, ActiveIngredient, Medication, Symptom
 
-### Mayo Clinic Relationships
+---
 
-| From | Relationship | To | Count |
-|------|--------------|-----|-------|
-| Supplement | SUPPLEMENT_INTERACTS_WITH | Medication | ~50+ |
-| Supplement | CAN_CAUSE | Symptom | 224 |
-| Supplement | TREATS | Symptom | 128 |
-| Medication | MEDICATION_CONTAINS_DRUG | Drug | 55 |
+### Curated Nutritional Data
+Nutrient deficiencies, dietary restrictions, medication-nutrient interactions, and supplement depletion effects; aggregated from academic sources including NIH and MedlinePlus.
 
-### DrugBank Relationships
+| Node | Relationship | Node |
+|------|--------------|------|
+| DietaryRestriction | DEFICIENT_IN | Nutrient |
+| Supplement | NEGATIVE_INTERACTION | Nutrient |
+| Drug | INTERACTS_WITH_NUTRIENT | Nutrient |
 
-| From | Relationship | To | Count |
-|------|--------------|-----|-------|
-| Drug | BELONGS_TO | Category | 107,361 |
-| Drug | INTERACTS_WITH | Drug | 2,909,540 |
-| BrandName | CONTAINS_DRUG | Drug | 248,483 |
-| Drug | KNOWN_AS | Synonym | 52,027 |
-| Drug | HAS_SALT_FORM | Salt | 2,960 |
-| Drug | HAS_FOOD_INTERACTION | FoodInteraction | 2,549 |
-
-**Total Edges:** 3,446,998
-
+**Nodes:** DietaryRestriction, Nutrient
 ---
