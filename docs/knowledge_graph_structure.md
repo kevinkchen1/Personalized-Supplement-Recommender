@@ -1,7 +1,5 @@
 # Supplement Safety Knowledge Graph Structure
 
-# Supplement Safety Knowledge Graph Structure
-
 ## Overview
 A Neo4j knowledge graph integrating three biomedical data sources to identify dangerous
 interactions between supplements and medications, detect nutrient deficiencies, and
