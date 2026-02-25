@@ -353,8 +353,8 @@ Personalized-Supplement-Recommender/
 │   ├── knowledge_graph_structure.md # Node types, relationships, and counts
 │   └── prompts.md                  # All LLM prompts with inline comments
 ├── langgraph-studio/
-│   └── langgraph.json              # LangGraph Studio configuration
-    └── langgraph_studio.py         # LangGraph Studio entry point 
+│   ├── langgraph.json              # LangGraph Studio configuration
+│   └── langgraph_studio.py         # LangGraph Studio entry point 
 ├── scripts/
 │   └── load_data.py                # Knowledge graph data loader (22 CSVs → Neo4j)
 └── src/
