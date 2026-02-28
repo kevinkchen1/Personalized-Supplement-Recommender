@@ -71,7 +71,7 @@ See → [Agents & Tools Reference](agents_and_tools.md) for full detail on each.
 | `safety_check` | `src/tools/safety_check.py` | **Tool** | Hardcoded Cypher — checks 4 interaction pathways |
 | `deficiency_check` | `src/tools/deficiency_check.py` | **Tool** | Hardcoded Cypher — checks 3 deficiency pathways |
 | `recommendation` | `src/tools/recommendation.py` | **Tool** | Hardcoded Cypher — finds supplement candidates for conditions |
-| `synthesis` | `src/agents/synthesis_agent.py` | **Agent** | ← TODO: generates final answer from all specialist results |
+| `synthesis` | `src/agents/synthesis.py` | **Agent** | Generates final answer from all specialist results |
 
 **Type definitions:**
 - **Agent** — LLM-driven, makes decisions or generates queries dynamically

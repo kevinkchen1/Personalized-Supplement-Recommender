@@ -19,6 +19,7 @@ from src.workflow.routing import NodeNames, route_supervisor_decision
 from src.agents.entity_extractor import entity_extractor
 from src.agents.entity_normalizer import entity_normalizer
 from src.agents.supervisor import supervisor_agent
+from src.agents.synthesis import synthesis_agent
 from src.tools.safety_check import safety_check
 from src.tools.recommendation import recommendation
 from src.tools.deficiency_check import deficiency_check
@@ -61,10 +62,8 @@ def build_workflow():
     workflow.add_node(NodeNames.DEFICIENCY_CHECK, deficiency_check)
 
     # ==================== PHASE 3: SYNTHESIS NODE ====================
-    # Uncomment when synthesis agent is ready
-
-    # print(f"   Adding node: {NodeNames.SYNTHESIS}")
-    # workflow.add_node(NodeNames.SYNTHESIS, synthesis_agent)
+    print(f"   Adding node: {NodeNames.SYNTHESIS}")
+    workflow.add_node(NodeNames.SYNTHESIS, synthesis_agent)
 
     # ==================== EDGES ====================
 
@@ -82,7 +81,7 @@ def build_workflow():
             NodeNames.SAFETY_CHECK: NodeNames.SAFETY_CHECK,        # live
             NodeNames.RECOMMENDATION: NodeNames.RECOMMENDATION,    # live
             NodeNames.DEFICIENCY_CHECK: NodeNames.DEFICIENCY_CHECK, # live
-            NodeNames.SYNTHESIS: END,                              # replace when ready
+            NodeNames.SYNTHESIS: NodeNames.SYNTHESIS,
             NodeNames.END: END,
         }
     )
@@ -92,9 +91,7 @@ def build_workflow():
     workflow.add_edge(NodeNames.DEFICIENCY_CHECK, NodeNames.SUPERVISOR)
 
     # ==================== EDGES: PHASE 3 ====================
-    # Uncomment when synthesis is ready
-
-    # workflow.add_edge(NodeNames.SYNTHESIS, END)
+    workflow.add_edge(NodeNames.SYNTHESIS, END)
 
     # ==================== ENTRY POINT ====================
 

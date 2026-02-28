@@ -61,6 +61,22 @@
 
 ---
 
+### Synthesis Agent
+**File:** `src/agents/synthesis.py` | **Type:** Agent
+
+**What it does:**
+- Runs once at the end of the supervisor loop (`decision = "synthesize"`)
+- Produces the final patient-facing response grounded in:
+  - `safety_results`
+  - `deficiency_results`
+  - `recommendation_results`
+  - `evidence_chain`
+- Uses Claude when available; falls back to a deterministic summary if no API key (or if the LLM call fails)
+
+**Writes to state:** `final_answer`, `evidence_chain` (appends one synthesis step)
+
+---
+
 ## Tools (Specialists)
 
 ### Safety Check
