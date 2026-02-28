@@ -82,7 +82,7 @@ def build_workflow():
             NodeNames.RECOMMENDATION: NodeNames.RECOMMENDATION,    # live
             NodeNames.DEFICIENCY_CHECK: NodeNames.DEFICIENCY_CHECK, # live
             NodeNames.SYNTHESIS: NodeNames.SYNTHESIS,
-            NodeNames.END: END,
+            
         }
     )
 
