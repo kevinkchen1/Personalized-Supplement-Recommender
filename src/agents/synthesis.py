@@ -34,6 +34,192 @@ def _truncate(text: str, max_chars: int) -> str:
     return text if len(text) <= max_chars else text[: max_chars - 3] + "..."
 
 
+# =====================================================================
+# EVIDENCE NARRATION — turn raw interaction records into plain english
+# using the pathway/detail data the Cypher queries already return
+# =====================================================================
+
+def _narrate_interaction(ix: Dict[str, Any]) -> str:
+    """Turn a single safety interaction record into a plain-english sentence."""
+    supp = ix.get("supplement", "This supplement")
+    target = ix.get("target", "your medication")
+    desc = ix.get("description", "")
+    detail = ix.get("detail", "")
+    pathway = ix.get("pathway", "")
+
+    if pathway == "HIDDEN_PHARMA_EQUIVALENCE" and " = " in str(detail):
+        ingredient, drug = detail.split(" = ", 1)
+        return (f"{supp} contains {ingredient}, which is pharmaceutically equivalent "
+                f"to {drug} in your {target} — this creates a hidden double-dose risk.")
+
+    if pathway == "DRUG_DRUG_INTERACTION" and " interacts with " in str(detail):
+        d1, d2 = detail.split(" interacts with ", 1)
+        return (f"{supp} contains an ingredient that acts like {d1}, which has a known "
+                f"interaction with {d2} (found in your {target}). {desc}")
+
+    if pathway == "SIMILAR_EFFECT":
+        return (f"{supp} has a similar pharmacological effect to drugs in the "
+                f"{detail} category, which includes your {target}.")
+
+    return f"{supp} has a documented interaction with your {target}. {desc}".strip()
+
+
+# =====================================================================
+# PRE-PROCESSING — build structured findings summary for the prompt
+# Groups safety interactions by supplement↔medication pair so the
+# LLM doesn't repeat the same concern from multiple pathways.
+# =====================================================================
+
+def _build_findings_summary(state: Dict[str, Any]) -> str:
+    """Build a human-readable findings summary from all specialist results."""
+    lines = []
+
+    # ── Safety (grouped by pair, with evidence paths) ──
+    safety = state.get("safety_results") or {}
+    interactions = safety.get("interactions") or []
+    if interactions:
+        pairs: Dict[str, List[Dict]] = {}  # key -> list of raw interaction dicts
+        pair_severity: Dict[str, str] = {}
+        for ix in interactions:
+            key = f"{ix.get('supplement', '?')} and {ix.get('target', '?')}"
+            pairs.setdefault(key, []).append(ix)
+            sev = ix.get("severity", "MODERATE")
+            if sev == "HIGH" or ix.get("pathway") == "HIDDEN_PHARMA_EQUIVALENCE":
+                pair_severity[key] = "HIGH"
+            elif key not in pair_severity:
+                pair_severity[key] = sev
+
+        lines.append("SAFETY FINDINGS:")
+        for pair, ix_list in pairs.items():
+            sev = pair_severity.get(pair, "MODERATE")
+            narratives = [_narrate_interaction(ix) for ix in ix_list]
+            combined = " Additionally, ".join(narratives)
+
+            # Build evidence paths from graph traversal data
+            paths = []
+            for ix in ix_list:
+                pathway = ix.get("pathway", "")
+                supp = ix.get("supplement", "?")
+                target = ix.get("target", "?")
+                detail = ix.get("detail", "")
+
+                if pathway == "DRUG_DRUG_INTERACTION" and " interacts with " in str(detail):
+                    d1, d2 = detail.split(" interacts with ", 1)
+                    paths.append(f"{supp} → contains → {d1} → interacts with → {d2} → found in → {target}")
+                elif pathway == "HIDDEN_PHARMA_EQUIVALENCE" and " = " in str(detail):
+                    ingredient, drug = detail.split(" = ", 1)
+                    paths.append(f"{supp} → contains → {ingredient} → equivalent to → {drug} → in → {target}")
+                elif pathway == "SIMILAR_EFFECT" and detail:
+                    paths.append(f"{supp} → similar effect to → {detail} category → includes → {target}")
+                elif pathway == "DIRECT_SUPPLEMENT_MEDICATION":
+                    paths.append(f"{supp} → directly interacts with → {target}")
+
+            if paths:
+                combined += " | EVIDENCE PATHS: " + " ; ".join(paths)
+
+            lines.append(f"  [{sev}] {pair}: {combined}")
+    elif safety:
+        lines.append(f"SAFETY FINDINGS: {safety.get('summary', 'No interactions found.')}")
+
+    # ── Deficiency ──
+    deficiency = state.get("deficiency_results") or {}
+    all_at_risk = deficiency.get("all_at_risk_details") or {}
+    critical_nutrients = {o.get("nutrient") for o in (deficiency.get("critical_overlaps") or [])}
+    if all_at_risk:
+        lines.append("\nDEFICIENCY FINDINGS:")
+        for nutrient, sources in all_at_risk.items():
+            source_strs = []
+            for s in sources:
+                name, mech = s.get("source_name", ""), s.get("mechanism", "")
+                if s.get("source_type") == "diet":
+                    source_strs.append(f"your {name} diet")
+                elif mech:
+                    source_strs.append(f"{name} ({mech})")
+                else:
+                    source_strs.append(name)
+            overlap = " [COMPOUNDED RISK — multiple sources]" if nutrient in critical_nutrients else ""
+            lines.append(f"  {nutrient}: at risk due to {', '.join(source_strs)}{overlap}")
+    elif deficiency:
+        lines.append(f"\nDEFICIENCY FINDINGS: {deficiency.get('summary', 'No deficiencies found.')}")
+
+    # ── Recommendations ──
+    recs = state.get("recommendation_results") or {}
+    candidates = recs.get("recommendations") or []
+    if candidates:
+        flagged = {ix.get("supplement", "").lower() for ix in interactions}
+        lines.append("\nRECOMMENDATION FINDINGS:")
+        for c in candidates:
+            name = c.get("supplement_name", "Unknown")
+            rating = c.get("safety_rating", "unknown")
+            symptom = c.get("symptom_treated", "")
+            flag_note = " [WARNING: also has safety concern above]" if name.lower() in flagged else ""
+            symptom_note = f" for {symptom}" if symptom else ""
+            lines.append(f"  {name}: safety rating '{rating}'{symptom_note}{flag_note}")
+    elif recs:
+        lines.append(f"\nRECOMMENDATION FINDINGS: {recs.get('summary', 'No candidates found.')}")
+
+    return "\n".join(lines) if lines else "No specialist findings available."
+
+# =====================================================================
+# PROMPT BUILDER
+# =====================================================================
+
+def _build_prompt(state: Dict[str, Any]) -> str:
+    """Build a grounded prompt with pre-processed findings."""
+    meds = ", ".join(state.get("medications_list", [])) or "none"
+    supps = ", ".join(state.get("supplements_list", [])) or "none"
+    conditions = ", ".join(state.get("conditions_list", [])) or "none"
+    restrictions = ", ".join(state.get("dietary_restrictions_list", [])) or "none"
+
+    ran = [n for n, k in [("Safety", "safety_checked"), ("Deficiency", "deficiency_checked"),
+                           ("Recommendations", "recommendations_checked")] if state.get(k)]
+    skipped = [n for n, k in [("Safety", "safety_checked"), ("Deficiency", "deficiency_checked"),
+                               ("Recommendations", "recommendations_checked")] if not state.get(k)]
+
+    findings = _build_findings_summary(state)
+
+    return f"""You are a supplement safety advisor. A patient has asked you a question.
+Write your response the way a confident, knowledgeable doctor would explain something
+in plain language — direct, clear, no hedging.
+
+PATIENT: medications: {meds} | supplements: {supps} | conditions: {conditions} | diet: {restrictions}
+QUESTION: "{state.get('user_question', '')}"
+
+FINDINGS:
+{findings}
+
+SPECIALISTS RAN: {', '.join(ran) or 'none'} | SKIPPED: {', '.join(skipped) or 'none'}
+
+RULES:
+- Use ONLY the findings above. Do NOT add biomedical knowledge or invent interactions.
+- Use the patient's specific names — "your Warfarin", not "your blood thinner".
+- Explain WHY using the mechanism details, in plain language a non-medical person would understand.
+  Bad: "decrease the therapeutic efficacy of Warfarin"
+  Good: "make your Warfarin less effective at preventing blood clots"
+- If multiple pathways affect the same supplement-medication pair, combine them into ONE explanation.
+  Do NOT say "additionally" or "there is a second pathway". Just explain the full picture together.
+- Be direct. Do not hedge with "potentially", "could possibly", "may compromise". State what the findings say.
+
+FORMATTING:
+- Start with a direct 1-2 sentence answer to their question in bold. Get to the point immediately.
+- Then explain the details in short paragraphs (2-3 sentences each).
+- Use **bold** for supplement and medication names on first mention, and for key takeaways.
+- Use a horizontal rule (---) to visually separate the main findings from secondary info like
+  skipped specialists or the closing note.
+- If evidence paths are provided (arrow chains like A → B → C), display them in a callout block like:
+  > **How we found this:** Supplement → contains → Ingredient → interacts with → Drug
+  This shows the patient the knowledge graph relationships we traced. Keep the arrows, keep it on one line.
+- If a specialist was skipped, mention what wasn't assessed after the --- in one natural sentence.
+- Close with one sentence recommending they talk to their provider. Keep it natural.
+- No markdown headers (#), no numbered lists, no emojis. Bold and horizontal rules only.
+- Total response: 4-6 short paragraphs max including the callout.
+"""
+
+
+# =====================================================================
+# DETERMINISTIC FALLBACK (used when no API key or LLM fails)
+# =====================================================================
+
 def _deterministic_fallback_answer(state: Dict[str, Any]) -> str:
     question = state.get("user_question", "")
     meds = state.get("medications_list", []) or []
@@ -122,55 +308,16 @@ def _deterministic_fallback_answer(state: Dict[str, Any]) -> str:
     lines.append("")
     lines.append("## Notes")
     lines.append(
-        "- This answer is synthesized from the project’s specialist tool outputs. "
-        "If something isn’t present above, it wasn’t found by the tools (or the tool didn’t run)."
+        "- This answer is synthesized from the project's specialist tool outputs. "
+        "If something isn't present above, it wasn't found by the tools (or the tool didn't run)."
     )
 
     return "\n".join(lines).strip() + "\n"
 
 
-def _build_prompt(state: Dict[str, Any]) -> str:
-    """Build a grounded prompt with all tool outputs as JSON."""
-    payload = {
-        "user_question": state.get("user_question", ""),
-        "patient_profile": state.get("patient_profile", {}),
-        "clean_lists": {
-            "medications_list": state.get("medications_list", []),
-            "supplements_list": state.get("supplements_list", []),
-            "candidate_supplements_list": state.get("candidate_supplements_list", []),
-            "conditions_list": state.get("conditions_list", []),
-            "dietary_restrictions_list": state.get("dietary_restrictions_list", []),
-        },
-        "specialist_results": {
-            "safety_results": state.get("safety_results"),
-            "deficiency_results": state.get("deficiency_results"),
-            "recommendation_results": state.get("recommendation_results"),
-        },
-        "evidence_chain": state.get("evidence_chain", []),
-    }
-
-    return f"""You are a synthesis agent for a supplement safety system.
-Your job is to write the final user-facing response using ONLY the JSON payload below.
-
-Hard rules:
-- Do NOT use general biomedical knowledge.
-- Do NOT invent interactions, nutrients, or recommendations not present in the payload.
-- If a specialist tool did not run or has empty results, say that explicitly.
-- If you make a suggestion, tie it directly to a payload field (quote or paraphrase the tool summary).
-
-Output format:
-- Write in clear markdown with headings.
-- Include sections:
-  1) Summary of the user question and patient context
-  2) Safety (interactions + what the user should do next)
-  3) Deficiency risks (if any)
-  4) Candidate supplements (if any) and whether safety has been checked for them (based on safety_results)
-  5) What’s missing / limitations (short)
-
-JSON payload:
-{_safe_json(payload)}
-"""
-
+# =====================================================================
+# LANGGRAPH NODE
+# =====================================================================
 
 def synthesis_agent(state: Dict[str, Any]) -> Dict[str, Any]:
     """
@@ -208,7 +355,7 @@ def synthesis_agent(state: Dict[str, Any]) -> Dict[str, Any]:
     try:
         response = client.messages.create(
             model="claude-sonnet-4-20250514",
-            max_tokens=900,
+            max_tokens=1500,
             temperature=0,
             messages=[{"role": "user", "content": prompt}],
         )
@@ -233,4 +380,3 @@ def synthesis_agent(state: Dict[str, Any]) -> Dict[str, Any]:
             "evidence_chain": evidence_chain + [f"Synthesis: LLM failed, used fallback ({type(e).__name__})"],
             "error_message": None,
         }
-
