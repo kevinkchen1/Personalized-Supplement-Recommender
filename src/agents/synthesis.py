@@ -17,6 +17,8 @@ from typing import Any, Dict, List, Optional
 
 from anthropic import Anthropic
 
+from src.prompt_loader import load_prompt
+
 logger = logging.getLogger(__name__)
 
 
@@ -178,42 +180,13 @@ def _build_prompt(state: Dict[str, Any]) -> str:
 
     findings = _build_findings_summary(state)
 
-    return f"""You are a supplement safety advisor. A patient has asked you a question.
-Write your response the way a confident, knowledgeable doctor would explain something
-in plain language — direct, clear, no hedging.
-
-PATIENT: medications: {meds} | supplements: {supps} | conditions: {conditions} | diet: {restrictions}
-QUESTION: "{state.get('user_question', '')}"
-
-FINDINGS:
-{findings}
-
-SPECIALISTS RAN: {', '.join(ran) or 'none'} | SKIPPED: {', '.join(skipped) or 'none'}
-
-RULES:
-- Use ONLY the findings above. Do NOT add biomedical knowledge or invent interactions.
-- Use the patient's specific names — "your Warfarin", not "your blood thinner".
-- Explain WHY using the mechanism details, in plain language a non-medical person would understand.
-  Bad: "decrease the therapeutic efficacy of Warfarin"
-  Good: "make your Warfarin less effective at preventing blood clots"
-- If multiple pathways affect the same supplement-medication pair, combine them into ONE explanation.
-  Do NOT say "additionally" or "there is a second pathway". Just explain the full picture together.
-- Be direct. Do not hedge with "potentially", "could possibly", "may compromise". State what the findings say.
-
-FORMATTING:
-- Start with a direct 1-2 sentence answer to their question in bold. Get to the point immediately.
-- Then explain the details in short paragraphs (2-3 sentences each).
-- Use **bold** for supplement and medication names on first mention, and for key takeaways.
-- Use a horizontal rule (---) to visually separate the main findings from secondary info like
-  skipped specialists or the closing note.
-- If evidence paths are provided (arrow chains like A → B → C), display them in a callout block like:
-  > **How we found this:** Supplement → contains → Ingredient → interacts with → Drug
-  This shows the patient the knowledge graph relationships we traced. Keep the arrows, keep it on one line.
-- If a specialist was skipped, mention what wasn't assessed after the --- in one natural sentence.
-- Close with one sentence recommending they talk to their provider. Keep it natural.
-- No markdown headers (#), no numbered lists, no emojis. Bold and horizontal rules only.
-- Total response: 4-6 short paragraphs max including the callout.
-"""
+    return load_prompt("synthesis")["synthesis"].format(
+        meds=meds, supps=supps, conditions=conditions, restrictions=restrictions,
+        question=state.get('user_question', ''),
+        findings=findings,
+        ran=', '.join(ran) or 'none',
+        skipped=', '.join(skipped) or 'none',
+    )
 
 
 # =====================================================================

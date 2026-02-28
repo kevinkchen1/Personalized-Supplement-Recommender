@@ -21,6 +21,8 @@ from typing import Any, Dict, List
 
 from anthropic import Anthropic
 
+from src.prompt_loader import load_prompt
+
 logger = logging.getLogger(__name__)
 
 
@@ -48,28 +50,7 @@ def _extract_from_question(question: str, client: Anthropic) -> Dict[str, List[s
             'dietary_restrictions': ['vegan']
         }
     """
-    prompt = f"""You are a medical entity extraction system.
-Extract structured information from this user question.
-
-Question: "{question}"
-
-Extract ALL of the following:
-1. medications   — prescription/OTC drugs (brand or generic names)
-2. supplements   — vitamins, minerals, herbs, fish oil, etc.
-3. conditions    — health conditions, symptoms, or goals (e.g. "heart health", "joint pain")
-4. dietary_restrictions — diets or restrictions (e.g. vegan, keto, gluten-free)
-
-Rules:
-- Extract exactly what the user said, do not correct spelling yet
-- If a category has nothing, return an empty list []
-- Return ONLY valid JSON, no markdown, no explanation
-
-{{
-    "medications": [],
-    "supplements": [],
-    "conditions": [],
-    "dietary_restrictions": []
-}}"""
+    prompt = load_prompt("entity_extractor")["extraction"].format(question=question)
 
     try:
         response = client.messages.create(

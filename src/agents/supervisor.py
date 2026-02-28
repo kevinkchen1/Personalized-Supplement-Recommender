@@ -21,6 +21,8 @@ from typing import Any, Dict
 
 from anthropic import Anthropic
 
+from src.prompt_loader import load_prompt
+
 logger = logging.getLogger(__name__)
 
 MAX_ITERATIONS = 6  # Safety cap — prevents infinite supervisor loops
@@ -169,45 +171,15 @@ def supervisor_agent(state: Dict[str, Any]) -> Dict[str, Any]:
 
     specialist_context = _build_specialist_context(state)
 
-    prompt = f"""You are a supervisor agent coordinating a supplement safety analysis system.
-Your job is to decide which specialist agent to call next, or whether to synthesize a final answer.
-
-You have access to three specialist agents:
-- check_safety: checks for interactions between the patient's supplements and medications
-- check_deficiency: checks for nutrient deficiencies given the patient's dietary restrictions and conditions
-- get_recommendations: finds new supplement candidates that treat the patient's conditions/symptoms.
-
----
-
-Current patient clinical profile:
-  Medications currently taking : {medications if medications else 'none'}
-  Supplements currently taking : {supplements if supplements else 'none'}
-  Health conditions            : {conditions if conditions else 'none'}
-  Dietary restrictions         : {dietary_restrictions if dietary_restrictions else 'none'}
-
-User question: "{question}"
-
-Specialists already run: {already_run if already_run else 'none'}
-
-Results from specialists so far:
-{specialist_context}
-
----
-
-Guidelines:
-- First, summarize the patient's clinical and understand what the user is actually asking — questions may be ambiguous
-- Decide which specialist(s) are relevant to answer this question fully given the patient's profile
-- Do NOT use prior biomedical knowledge to assume outcomes — let the specialists check the data
-- Do NOT repeat a specialist that has already run
-- If all relevant specialists have run and you have enough information, choose synthesize
-- If no specialists are relevant to this question, choose synthesize directly
-
-Respond with ONLY a JSON object, no markdown:
-{{
-    "patient_context": "one sentence summarizing the patient's clinical picture and what the question is asking",
-    "decision": "check_safety" | "check_deficiency" | "get_recommendations" | "synthesize",
-    "reasoning": "one sentence explanation"
-}}"""
+    prompt = load_prompt("supervisor")["decision"].format(
+        medications=medications if medications else 'none',
+        supplements=supplements if supplements else 'none',
+        conditions=conditions if conditions else 'none',
+        dietary_restrictions=dietary_restrictions if dietary_restrictions else 'none',
+        question=question,
+        already_run=already_run if already_run else 'none',
+        specialist_context=specialist_context,
+    )
 
     client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
