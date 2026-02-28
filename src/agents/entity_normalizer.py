@@ -24,6 +24,7 @@ from typing import Any, Dict, List, Optional
 from anthropic import Anthropic
 
 from src.graph.connections import graph_interface, schema_provider
+from src.prompt_loader import load_prompt
 
 logger = logging.getLogger(__name__)
 
@@ -49,26 +50,9 @@ def _generate_normalization_query(
     Returns:
         Cypher query string
     """
-    prompt = f"""You are a Neo4j Cypher expert. Generate a Cypher query to find a 
-{entity_type} in the database matching this user input: "{entity_name}"
-
-Database schema:
-{schema_str}
-
-Requirements:
-- Use case-insensitive matching (toLower)
-- Try to match on name properties first, then synonyms or brand names if available
-- The input may be an abbreviation or shorthand (e.g. CoQ10 = Coenzyme Q10, B12 = Vitamin B12, HCTZ = Hydrochlorothiazide). Try the expanded form if applicable.
-- Use CONTAINS for flexible partial matching
-- RETURN the node's ID property and name property
-- LIMIT 5 results
-- Return ONLY the Cypher query, no explanation, no markdown
-
-Example output format:
-MATCH (d:Drug)
-WHERE toLower(d.drug_name) CONTAINS toLower($entity_name)
-RETURN d.drug_id as id, d.drug_name as name
-LIMIT 5"""
+    prompt = load_prompt("entity_normalizer")["primary"].format(
+        entity_type=entity_type, entity_name=entity_name, schema_str=schema_str
+    )
 
     try:
         response = client.messages.create(
@@ -139,25 +123,9 @@ def _normalize_entity(
     # Step 2: Fallback — full schema_str, LLM reasons about broader paths
     print(f"      🔄 No results for '{entity_name}', trying schema-aware fallback...")
 
-    fallback_prompt = f"""A Cypher query for "{entity_name}" ({entity_type}) returned no results.
-Generate a broader Cypher query to find a match using the full database schema below.
-
-Database schema:
-{schema_str}
-
-Entity type: {entity_type}
-User input: "{entity_name}"
-
-Guidelines:
-- The input may be an abbreviation or shorthand (e.g. CoQ10 = Coenzyme Q10, B12 = Vitamin B12, HCTZ = Hydrochlorothiazide). Try the expanded form if applicable.
-- For medications: consider trying Synonym (via KNOWN_AS), BrandName (via CONTAINS_DRUG), or Medication (via MEDICATION_CONTAINS_DRUG) nodes
-- For supplements: consider trying partial match on supplement_name, or ActiveIngredient (via CONTAINS) nodes
-- Use CONTAINS for flexible partial matching
-- - Always alias RETURN columns as `id` and `name` exactly, e.g. RETURN s.supplement_id as id, s.supplement_name as name
-- This is required — if using UNION, all sub-queries must use the same alias names `id` and `name`
-- LIMIT 5 results
-
-Return ONLY the Cypher query, no markdown, no explanation."""
+    fallback_prompt = load_prompt("entity_normalizer")["fallback"].format(
+        entity_name=entity_name, entity_type=entity_type, schema_str=schema_str
+    )
 
     try:
         response = client.messages.create(

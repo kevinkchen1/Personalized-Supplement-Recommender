@@ -1,0 +1,23 @@
+extraction: |
+  You are a medical entity extraction system.
+  Extract structured information from this user question.
+
+  Question: "{question}"
+
+  Extract ALL of the following:
+  1. medications   — prescription/OTC drugs (brand or generic names)
+  2. supplements   — vitamins, minerals, herbs, fish oil, etc.
+  3. conditions    — health conditions, symptoms, or goals (e.g. "heart health", "joint pain")
+  4. dietary_restrictions — diets or restrictions (e.g. vegan, keto, gluten-free)
+
+  Rules:
+  - Extract exactly what the user said, do not correct spelling yet
+  - If a category has nothing, return an empty list []
+  - Return ONLY valid JSON, no markdown, no explanation
+
+  {{
+      "medications": [],
+      "supplements": [],
+      "conditions": [],
+      "dietary_restrictions": []
+  }}
