@@ -1,91 +1,335 @@
-# Personalized-Supplement-Recommender
+# 💊 Personalized Supplement Safety Advisor
 
-## Complete Knowledge Graph Setup (DrugBank + Mayo Clinic)
+An AI-powered system that detects dangerous supplement-medication interactions, identifies nutrient deficiencies, and provides personalized supplement recommendations using a biomedical knowledge graph and multi-agent architecture.
 
-### Prerequisites
-1. **Neo4j Database** running (Desktop app or local installation)
-2. **Git LFS** installed for large data files
+Built with **Neo4j** (knowledge graph), **LangGraph** (multi-agent orchestration), **Claude API** (reasoning), and **Streamlit** (web interface).
 
 ---
 
-## Setup Steps
+## Table of Contents
 
-### 1. Clone Repository and Pull Data
+- [Overview](#overview)
+- [Architecture](#architecture)
+- [Prerequisites](#prerequisites)
+- [Setup](#setup)
+- [Running the Application](#running-the-application)
+- [Testing](#testing)
+- [Project Structure](#project-structure)
+
+---
+
+## Overview
+
+Millions of people take dietary supplements without knowing they can dangerously interact with prescription medications. This system solves that by:
+
+- **Safety Checks** — Detecting supplement-drug interactions across 4 pathways (direct, drug-drug, hidden pharma equivalence, similar effects)
+- **Deficiency Analysis** — Identifying nutrient gaps from diet, supplements, and medications with critical overlap detection
+- **Personalized Recommendations** — Suggesting safe supplements for conditions/symptoms, filtered against your medication profile
+
+The system uses multi-hop reasoning over a Neo4j knowledge graph (329,820 nodes, 3.4M+ relationships) built from **DrugBank** and **Mayo Clinic** data, with a supervisor agent dynamically routing queries to specialist tools.
+
+---
+
+## Architecture
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  INPUT: user_question + patient_profile                         │
+└────────────────────────┬────────────────────────────────────────┘
+                         │
+                         ▼
+              ┌──────────────────┐
+              │ entity_extractor │  LLM (question) + parsing (profile)
+              └────────┬─────────┘
+                       │  extracted_entities
+                       ▼
+              ┌──────────────────┐
+              │entity_normalizer │  LLM → Cypher → Neo4j
+              └────────┬─────────┘
+                       │  medications_list, supplements_list,
+                       │  dietary_restrictions_list, conditions_list
+                       ▼
+              ┌──────────────────┐  ◄──────────────────────────┐
+              │    supervisor    │  LLM routing decision        │
+              └────────┬─────────┘                             │
+                       │                                       │
+          ┌────────────┼─────────────┐                        │
+          │            │             │                         │
+          ▼            ▼             ▼                         │
+  ┌──────────────┐ ┌──────────┐ ┌────────────────┐            │
+  │ safety_check │ │deficiency│ │ recommendation │            │
+  │              │ │  _check  │ │                │            │
+  └──────┬───────┘ └────┬─────┘ └───────┬────────┘            │
+         │              │               │                      │
+         └──────────────┴───────────────┘                      │
+                        │ specialist results                    │
+                        └──────────────────────────────────────┘
+                                    │ synthesize
+                                    ▼
+                              final_answer
+```
+
+The system separates **agents** (LLM-driven, handle ambiguity) from **tools** (hardcoded Cypher, deterministic and fast):
+
+| Component | Type | What it does |
+|---|---|---|
+| Entity Extractor | **Hybrid** | LLM parses natural language; deterministic parsing for profile form |
+| Entity Normalizer | **Agent** | LLM generates Cypher to map names → database IDs using live schema |
+| Supervisor | **Agent** | LLM decides which specialist to call next based on patient data + results so far |
+| Safety Check | **Tool** | 4-pathway UNION query: direct, drug-drug, hidden pharma, similar effect |
+| Deficiency Check | **Tool** | 3-pathway query: diet, medication depletion, supplement depletion + overlap detection |
+| Recommendation | **Tool** | TREATS relationship lookup + keyword fallback, filtered by current supplements |
+
+For detailed architecture documentation, see below:
+
+| Document | Description |
+|---|---|
+| [Workflow Overview](docs/workflow_overview.md) | Full workflow diagram, agent/tool summary, and what's left to build |
+| [Agents & Tools Reference](docs/agents_and_tools.md) | Detailed reference for each component: what it does, key design decisions, state reads/writes |
+| [Knowledge Graph Structure](docs/knowledge_graph_structure.md) | All node types, relationship types, counts, and properties |
+| [Prompts Reference](docs/prompts.md) | Every LLM prompt used in the system with inline comments |
+
+
+---
+
+## Prerequisites
+
+| Dependency | Version | Purpose |
+|---|---|---|
+| **Python** | 3.12+ (< 3.14) | Runtime |
+| **PDM** | Latest | Package management |
+| **Neo4j** | 5.x+ | Knowledge graph database |
+| **Anthropic API Key** | — | Claude LLM (entity extraction, normalization, supervisor) |
+| **LangSmith API Key** | — | LangGraph Studio visual debugging |
+
+### Install PDM
+
+```bash
+# macOS
+brew install pdm
+
+# Or via pip
+pip install pdm
+```
+
+### Install and Start Neo4j
+
+You need a running Neo4j instance:
+
+**Neo4j Desktop** (recommended for local dev)
+1. Download from [neo4j.com/download](https://neo4j.com/download/)
+2. Create a new project and local DBMS
+3. Set a password (you'll need this for `.env`)
+4. Start the database
+
+
+
+### Get API Keys
+
+**Anthropic API Key** (required):
+1. Go to [console.anthropic.com](https://console.anthropic.com/)
+2. Sign up or log in
+3. Navigate to **API Keys**
+4. Create a new key (starts with `sk-ant-...`)
+
+**LangSmith API Key** (required for LangGraph Studio):
+1. Go to [smith.langchain.com](https://smith.langchain.com/)
+2. Sign up (free — Google or GitHub login)
+3. Click your **profile icon** → **Settings** → **API Keys**
+4. Click **Create API Key** (starts with `lsv2_...`)
+
+---
+
+## Setup
+
+### 1. Clone the Repository
+
+Make sure Git LFS is installed (required for large data files):
+
+```bash
+brew install git-lfs      # macOS (if not already installed)
+git lfs install
+```
+
+Then clone the repo
 ```bash
 git clone https://github.com/kevinkchen1/Personalized-Supplement-Recommender.git
 cd Personalized-Supplement-Recommender
-
-# Pull large CSV files with Git LFS
 git lfs pull
 ```
 
----
-
-### 2. Create `.env` File
-Create a `.env` file in the project root with your Neo4j credentials:
+### 2. Install Dependencies
 
 ```bash
+pdm install
+```
+
+This reads `pyproject.toml` and installs all dependencies into a virtual environment managed by PDM.
+
+> **Troubleshooting:** If you see `No compatible lock target found`, the lock file may be pinned to a different Python version. Fix with:
+> ```bash
+> rm pdm.lock
+> pdm install
+> ```
+
+### 3. Configure Environment Variables
+
+Create a `.env` file in the project root:
+
+```bash
+# .env
+
+# Required — Claude API for LLM reasoning
+ANTHROPIC_API_KEY=sk-ant-xxxxxxxxxxxxxxxxxxxxx
+
+# Required — Neo4j connection
 NEO4J_URI=bolt://localhost:7687
 NEO4J_USER=neo4j
-NEO4J_PASSWORD=your_password_here
+NEO4J_PASSWORD=your_neo4j_password
+
+# Required for LangGraph Studio
+LANGSMITH_API_KEY=lsv2_xxxxxxxxxxxxxxxxxxxxx
 ```
 
----
+> ⚠️ **Never commit `.env` to version control.** An `.env.example` template is included in the repo for reference.
 
-### 3. Install Dependencies
+### 4. Load the Knowledge Graph
+
+Before using the system, populate Neo4j with the biomedical data:
+
 ```bash
-pip3 install pandas python-dotenv neo4j tqdm
+pdm run load-data
 ```
 
----
-
-### 4. Start Neo4j Database
-- Open **Neo4j Desktop**
-- Start your database instance
-- Ensure it's running on `bolt://localhost:7687`
+This loads DrugBank and Mayo Clinic data (22 CSV files) into the knowledge graph, creating 329,820 nodes and 3.4M+ relationships.
 
 ---
 
-### 5. Load Complete Knowledge Graph
+## Running the Application
+
+### LangGraph Studio (Recommended for Development)
+
+LangGraph Studio provides a visual interface for running queries and inspecting the agent workflow step-by-step.
+
 ```bash
-python3 scripts/load_data.py
+pdm run studio
 ```
 
-**What this does:**
-- Automatically clears existing data (if any)
-- Creates constraints and indexes
-- Loads DrugBank data (drugs, interactions, categories, etc.)
-- Loads Mayo Clinic data (supplements, medications, symptoms)
-- Creates critical bridge relationships (ingredient equivalence, category similarity)
+This starts the LangGraph development server using the config at `langgraph-studio/langgraph.json`. Open the URL printed in your terminal to access the Studio UI where you can:
 
-**Expected time:** 5-10 minutes
+- Submit questions with patient profiles as `InputState` (just `user_question` and `patient_profile`)
+- Watch the workflow route through Entity Extractor → Normalizer → Supervisor → Specialists in real time
+- Inspect state at each node to see extracted entities, normalized IDs, and specialist results
+- Replay and debug individual executions
 
-When prompted `"⚠️ This will DELETE ALL existing data and reload! Continue? (yes/no):"`, type `yes` to confirm.
+### Streamlit Web App
 
+```bash
+pdm run app
+```
 
-## What Gets Loaded
+Opens at `http://localhost:8501`. Enter medications, supplements, conditions, and diet in the sidebar, then ask questions like *"Is Fish Oil safe with Warfarin?"*
 
-### DrugBank Data:
-- **19,830** drugs
-- **2,910,010** drug-drug interactions
-- **248,483** brand names
-- **52,027** drug synonyms
-- **4,649** drug categories
-- **2,960** salt forms
-- **1,429** food interactions
+---
 
-### Mayo Clinic Data:
-- **28** supplements
-- **71** active ingredients
-- **55** medications
-- **288** symptoms
+## Testing
 
-### Critical Bridge Relationships:
-- **39** active ingredient → drug equivalences (detects hidden pharmaceuticals)
-- **71** supplement → active ingredient links
-- Supplement → category similarity mappings (detects interaction risks)
+Run these steps in order to verify each component of the system.
 
-**Total:** ~330,000 nodes, ~3.4 million relationships
+### 1. Verify Neo4j Connection
+
+```bash
+pdm run python -c "
+from dotenv import load_dotenv; import os; load_dotenv()
+from src.graph.graph_interface import GraphInterface
+g = GraphInterface(os.getenv('NEO4J_URI','bolt://localhost:7687'), os.getenv('NEO4J_USER','neo4j'), os.getenv('NEO4J_PASSWORD'))
+print('✅ Neo4j connected')
+schema = g.get_schema_info()
+print(f'   Node labels: {schema[\"node_labels\"]}')
+print(f'   Relationship types: {len(schema[\"relationship_types\"])} types')
+g.close()
+"
+```
+
+### 2. Verify Knowledge Graph Data
+
+```bash
+pdm run python -c "
+from dotenv import load_dotenv; import os; load_dotenv()
+from src.graph.graph_interface import GraphInterface
+g = GraphInterface(os.getenv('NEO4J_URI','bolt://localhost:7687'), os.getenv('NEO4J_USER','neo4j'), os.getenv('NEO4J_PASSWORD'))
+stats = g.execute_query('''
+  MATCH (s:Supplement) WITH count(s) as supplements
+  MATCH (d:Drug) WITH supplements, count(d) as drugs
+  MATCH (m:Medication) WITH supplements, drugs, count(m) as medications
+  RETURN supplements, drugs, medications
+''')
+print(f'✅ Knowledge graph loaded: {stats[0]}')
+g.close()
+"
+```
+
+Expected: `{'supplements': 28, 'drugs': 19830, 'medications': 55}`
+
+### 3. Verify Claude API Key
+
+```bash
+pdm run python -c "
+from dotenv import load_dotenv; import os; load_dotenv()
+from anthropic import Anthropic
+client = Anthropic(api_key=os.getenv('ANTHROPIC_API_KEY'))
+r = client.messages.create(model='claude-sonnet-4-20250514', max_tokens=50, messages=[{'role':'user','content':'Say OK'}])
+print(f'✅ Claude API working: {r.content[0].text}')
+"
+```
+
+### 4. Verify Schema Provider and Singletons
+
+```bash
+pdm run python -c "
+from dotenv import load_dotenv; load_dotenv()
+from src.graph.connections import graph_interface, schema_provider
+print('✅ Singletons initialized (GraphInterface + SchemaProvider)')
+print(f'   Node labels: {schema_provider.get_node_labels()}')
+print(f'   Relationship types: {len(schema_provider.get_relationship_types())} types')
+print(f'   Sample Drug names: {schema_provider.get_sample_values(\"Drug\", \"drug_name\")}')
+"
+```
+
+### 5. Verify LangGraph Workflow Builds
+
+```bash
+pdm run python -c "
+from src.workflow.graph_builder import build_workflow
+w = build_workflow()
+print('✅ Workflow compiled successfully')
+"
+```
+
+### 6. Run Full Pipeline (End-to-End)
+
+```bash
+pdm run python -c "
+from dotenv import load_dotenv; load_dotenv()
+from src.workflow.graph_builder import build_workflow
+from src.workflow.state import create_initial_state
+
+w = build_workflow()
+state = create_initial_state(
+    user_question='Is Fish Oil safe with Warfarin?',
+    patient_profile={'medications': 'Warfarin', 'supplements': 'Fish Oil', 'conditions': [], 'dietary_restrictions': []}
+)
+result = w.invoke(state)
+print('✅ End-to-end pipeline complete')
+print(f'   Iterations: {result.get(\"iterations\", 0)}')
+print(f'   Safety checked: {result.get(\"safety_checked\", False)}')
+print(f'   Evidence chain:')
+for e in result.get('evidence_chain', []):
+    print(f'     → {e}')
+"
+```
+
+Expected: The supervisor should route to `safety_check`, find 3 interactions between Fish Oil and Warfarin (drug-drug interaction + similar effect pathways), then route to `synthesize`.
 
 ---
 
@@ -93,20 +337,57 @@ When prompted `"⚠️ This will DELETE ALL existing data and reload! Continue? 
 
 ```
 Personalized-Supplement-Recommender/
+├── .devcontainer/                  # Dev container configuration
+├── .env                            # API keys and database credentials (not committed)
+├── .env.example                    # Template for .env setup
+├── .gitattributes                  # Git LFS tracking for large data files
+├── .gitignore
+├── pyproject.toml                  # PDM project config, dependencies, and scripts
+├── pdm.lock                        # Locked dependency versions
 ├── data/
-│   ├── drugbank_data/          # DrugBank CSV files
-│   └── mayo_clinic_data/       # Mayo Clinic supplement data
+│   ├── drugbank_data/              # DrugBank CSVs (12 files, includes 374MB interactions file)
+│   └── mayo_clinic_data/           # Mayo Clinic CSVs (10 files)
+├── docs/                           # System documentation
+│   ├── workflow_overview.md        # Full workflow diagram and component summary
+│   ├── agents_and_tools.md        # Detailed reference for each agent and tool
+│   ├── knowledge_graph_structure.md # Node types, relationships, and counts
+│   └── prompts.md                  # All LLM prompts with inline comments
+├── langgraph-studio/
+│   ├── langgraph.json              # LangGraph Studio configuration
+│   └── langgraph_studio.py         # LangGraph Studio entry point 
 ├── scripts/
-│   ├── load_data.py            # Main loading script
-│   ├── delete_all_nodes.py     # Clear nodes (if needed)
-│   └── delete_all_relationships.py  # Clear relationships (if needed)
-├── knowledge_graph_structure.md     # Complete KG documentation
-├── .env                        # Your Neo4j credentials
-└── README.md
+│   └── load_data.py                # Knowledge graph data loader (22 CSVs → Neo4j)
+└── src/
+    ├── agents/                     # LLM-driven nodes (require Claude API)
+    │   ├── entity_extractor.py     # Hybrid: LLM extracts from question + deterministic profile parsing
+    │   ├── entity_normalizer.py    # Agent: LLM generates Cypher to map names → DB IDs via live schema
+    │   └── supervisor.py           # Agent: LLM plans which specialist to call next (max 6 iterations)
+    ├── graph/                      # Database infrastructure
+    │   ├── graph_interface.py      # Neo4j connection wrapper, query execution, schema introspection
+    │   ├── schema.py               # SchemaProvider — loads and caches DB schema for LLM prompts
+    │   └── connections.py          # Module-level singletons (GraphInterface + SchemaProvider)
+    ├── tools/                      # Deterministic specialist nodes (hardcoded Cypher, no LLM)
+    │   ├── safety_check.py         # 4-pathway interaction check (direct, drug-drug, hidden pharma, similar effect)
+    │   ├── deficiency_check.py     # 3-pathway nutrient depletion (diet, medication, supplement) + overlap detection
+    │   └── recommendation.py       # TREATS relationship lookup + keyword fallback for conditions
+    └── workflow/                   # LangGraph orchestration
+        ├── state.py                # ConversationState, InputState definitions, and create_initial_state()
+        ├── graph_builder.py        # Build and compile the LangGraph workflow graph
+        └── routing.py              # NodeNames constants + supervisor decision → node name mapping
 ```
 
+### PDM Scripts
 
-## Documentation
+These shortcuts are defined in `pyproject.toml`:
 
-- `knowledge_graph_structure.md` - Complete schema and query examples
-- Project proposal - See uploaded PDF for full context
+| Command | What it does |
+|---|---|
+| `pdm run app` | Launch Streamlit web app |
+| `pdm run load-data` | Load CSV data into Neo4j knowledge graph |
+| `pdm run langgraph` | Launch LangGraph Studio dev server |
+| `pdm run test` | Run pytest test suite |
+| `pdm run format` | Auto-format code with Black + isort |
+| `pdm run lint` | Run flake8 + mypy |
+
+---
+

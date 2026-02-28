@@ -31,3 +31,6 @@ Thumbs.db
 # Large data files - pushed by LFS
 drugbank_data/drug_interactions.csv
 
+#Langgraph
+.langgraph_api/
+
