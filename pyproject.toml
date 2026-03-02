@@ -15,6 +15,8 @@ dependencies = [
     "python-dotenv>=1.0.0",
     "langgraph-cli[inmem]>=0.4.12",
     "pyyaml>=6.0.3",
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.30.0",
 ]
 requires-python = ">=3.12,<3.14"
 readme = "README.md"
@@ -39,6 +41,7 @@ lint = [
 
 [tool.pdm.scripts]
 app = "streamlit run src/web/app.py"
+api = "python -m src.api.server"
 load-data = "python scripts/load_data.py"
 quickstart = "python scripts/quickstart.py"
 test = "pytest tests/ -v"
