@@ -1,122 +1,438 @@
+# """
+# Safety Check - Interaction Specialist (Agentic)
+
+# LLM reads the knowledge graph schema and generates a Cypher query to find
+# ALL dangerous interaction paths between a supplement and medications.
+# No hardcoded pathways — the LLM discovers paths from the schema itself.
+
+# Current mode: DRY RUN
+#   - Generates and stores Cypher queries for inspection
+#   - Does NOT execute queries against the database
+#   - Check `generated_safety_queries` in LangGraph Studio state to inspect output
+#   - Run generated queries manually in Neo4j Browser to verify correctness
+
+# To enable execution: set DRY_RUN = False
+
+# Reads from state : supplements_list, candidate_supplements_list, medications_list
+# Writes to state  : safety_checked, safety_results, generated_safety_queries, evidence_chain
+# """
+
+# import logging
+# import os
+# import re
+# from typing import Any, Dict, List
+
+# from anthropic import Anthropic
+
+# from src.graph.connections import schema_provider
+# from src.prompt_loader import load_prompt
+
+# logger = logging.getLogger(__name__)
+
+# # ── Set to False when ready to execute generated queries against the DB ──
+# DRY_RUN = True
+
+
+# # ==================== QUERY GENERATOR ====================
+
+# def _generate_query(
+#     supplement: str,
+#     medications: List[str],
+#     schema_str: str,
+#     client: Anthropic,
+# ) -> Dict[str, str]:
+#     """
+#     Ask LLM to generate a Cypher query covering all dangerous interaction
+#     paths it can find in the schema for the given supplement + medications.
+
+#     Returns dict with:
+#         cypher      — the raw Cypher query string
+#         explanation — one-sentence plain English description of what it checks
+#     """
+#     prompt = load_prompt("safety_check")["generate"].format(
+#         supplement=supplement,
+#         medications=medications,
+#         schema_str=schema_str,
+#     )
+
+#     try:
+#         response = client.messages.create(
+#             model="claude-sonnet-4-20250514",
+#             max_tokens=1000,
+#             temperature=0,
+#             messages=[{"role": "user", "content": prompt}]
+#         )
+#         raw = response.content[0].text.strip()
+#     except Exception as e:
+#         logger.error(f"LLM query generation failed for '{supplement}': {e}")
+#         return {"cypher": "", "explanation": f"Generation failed: {e}"}
+
+#     # ── Parse cypher and explanation ──
+#     # Expected format:
+#     #   <cypher query>
+#     #   EXPLANATION: <one sentence>
+#     cypher = ""
+#     explanation = ""
+
+#     if "EXPLANATION:" in raw:
+#         parts = raw.split("EXPLANATION:", 1)
+#         cypher = parts[0].strip()
+#         explanation = parts[1].strip()
+#     else:
+#         cypher = raw
+#         explanation = "No explanation provided"
+
+#     # Strip markdown fences if present
+#     cypher = re.sub(r'^```(?:cypher)?\s*', '', cypher)
+#     cypher = re.sub(r'\s*```$', '', cypher)
+#     cypher = cypher.strip()
+
+#     # Fix common LLM parameter syntax error — backticks instead of dollar sign
+#     cypher = cypher.replace("`supplement_lower", "$supplement_lower")
+#     cypher = cypher.replace("`medications_lower", "$medications_lower")
+
+#     return {"cypher": cypher, "explanation": explanation}
+
+
+# # ==================== RESULT BUILDER ====================
+
+# def _build_empty_results(
+#     supplements_checked: List[str],
+#     medications_checked: List[str],
+# ) -> Dict[str, Any]:
+#     """Build a safety_results dict with no interactions — used in dry run mode."""
+#     return {
+#         'specialist': 'safety',
+#         'status': 'dry_run',
+#         'entities_checked': supplements_checked + medications_checked,
+#         'summary': (
+#             f"Dry run — queries generated for {', '.join(supplements_checked)} "
+#             f"but not executed. Check generated_safety_queries in state."
+#         ),
+#         'interactions': [],
+#         'by_pathway': {},
+#         'supplements_checked': supplements_checked,
+#         'medications_checked': medications_checked,
+#     }
+
+
+# # ==================== LANGGRAPH NODE ====================
+
+# def safety_check(state: Dict[str, Any]) -> Dict[str, Any]:
+#     """
+#     LangGraph node: Generate (and optionally execute) safety queries.
+
+#     In DRY_RUN mode (current):
+#         - Generates Cypher queries via LLM for each supplement
+#         - Stores queries + explanations in generated_safety_queries
+#         - Does NOT execute — safety_results will show status: dry_run
+#         - Inspect generated_safety_queries in LangGraph Studio state panel
+
+#     When DRY_RUN = False:
+#         - Executes generated queries against Neo4j
+#         - Populates safety_results with actual interaction findings
+
+#     Reads from state:
+#         - supplements_list: patient's current supplements
+#         - candidate_supplements_list: candidates from recommendation
+#         - medications_list: patient's medications
+
+#     Writes to state:
+#         - safety_checked: True
+#         - safety_results: empty in dry run, populated when executing
+#         - generated_safety_queries: list of {supplement, cypher, explanation}
+#         - evidence_chain: appended with safety finding
+#     """
+#     print("\n" + "=" * 60)
+#     print("🔬 SAFETY CHECK: Generating interaction queries...")
+#     if DRY_RUN:
+#         print("   ⚠️  DRY RUN MODE — queries will not be executed")
+#     print("=" * 60)
+
+#     current_supplements = state.get('supplements_list', [])
+#     candidate_supplements = state.get('candidate_supplements_list', [])
+#     supplements = list(dict.fromkeys(current_supplements + candidate_supplements))
+#     medications = state.get('medications_list', [])
+
+#     # ── Early exits ──
+#     if not supplements:
+#         print("   ⚠️  No supplements to check")
+#         return {
+#             'safety_checked': True,
+#             'generated_safety_queries': [],
+#             'safety_results': {
+#                 'specialist': 'safety',
+#                 'status': 'no_supplements',
+#                 'entities_checked': [],
+#                 'summary': 'No supplements identified to check',
+#                 'interactions': [],
+#                 'by_pathway': {},
+#             },
+#             'evidence_chain': state.get('evidence_chain', []) + [
+#                 'Safety check: skipped — no supplements to check'
+#             ]
+#         }
+
+#     if not medications:
+#         print("   ⚠️  No medications to check against")
+#         return {
+#             'safety_checked': True,
+#             'generated_safety_queries': [],
+#             'safety_results': {
+#                 'specialist': 'safety',
+#                 'status': 'no_medications',
+#                 'entities_checked': supplements,
+#                 'summary': 'No medications to check against',
+#                 'interactions': [],
+#                 'by_pathway': {},
+#             },
+#             'evidence_chain': state.get('evidence_chain', []) + [
+#                 'Safety check: skipped — no medications to check against'
+#             ]
+#         }
+
+#     if candidate_supplements:
+#         print(f"   Current supplements  : {current_supplements or 'none'}")
+#         print(f"   Candidate supplements: {candidate_supplements}")
+#         print(f"   Checking combined    : {supplements}")
+#     else:
+#         print(f"   Supplements : {supplements}")
+#     print(f"   Medications : {medications}")
+
+#     # ── Set up LLM and schema ──
+#     client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+#     schema_str = schema_provider.to_prompt_string()
+
+#     # ── Generate query for each supplement ──
+#     generated_queries: List[Dict[str, Any]] = []
+
+#     for supplement in supplements:
+#         print(f"\n   Generating query for: {supplement}")
+
+#         result = _generate_query(supplement, medications, schema_str, client)
+#         cypher = result["cypher"]
+#         explanation = result["explanation"]
+
+#         entry = {
+#             'supplement': supplement,
+#             'medications': medications,
+#             'cypher': cypher,
+#             'explanation': explanation,
+#             'executed': False,
+#             'result_count': None,
+#             'error': None,
+#         }
+
+#         if cypher:
+#             print(f"   ✅ Query generated")
+#             print(f"   📋 Explanation: {explanation}")
+#             print(f"\n   Generated Cypher:\n")
+#             for line in cypher.split('\n'):
+#                 print(f"      {line}")
+#         else:
+#             print(f"   ❌ Query generation failed")
+#             entry['error'] = 'empty query returned'
+
+#         generated_queries.append(entry)
+
+#     print(f"\n   🔍 Dry run complete — inspect generated_safety_queries in state")
+#     print("=" * 60 + "\n")
+
+#     return {
+#         'safety_checked': True,
+#         'generated_safety_queries': generated_queries,
+#         'safety_results': _build_empty_results(supplements, medications),
+#         'evidence_chain': state.get('evidence_chain', []) + [
+#             f"Safety check: dry run — generated {len(generated_queries)} query(ies) "
+#             f"for {', '.join(supplements)} — not executed, inspect generated_safety_queries"
+#         ]
+#     }
+
 """
-Safety Check - Interaction Specialist
+Safety Check - Interaction Specialist (Agentic)
 
-Checks for dangerous interactions between supplements and medications
-across four pathways in the knowledge graph:
+LLM reads the knowledge graph schema and generates a Cypher query to find
+ALL dangerous interaction paths between a supplement and medications.
+No hardcoded pathways — the LLM discovers paths from the schema itself.
 
-1. DIRECT             — Supplement -[SUPPLEMENT_INTERACTS_WITH]-> Medication
-2. DRUG_DRUG          — Supplement -> ActiveIngredient -> Drug -[INTERACTS_WITH]-> Drug <- Medication
-3. HIDDEN_PHARMA      — Supplement -> ActiveIngredient -[EQUIVALENT_TO]-> Drug <- Medication
-4. SIMILAR_EFFECT     — Supplement -[HAS_SIMILAR_EFFECT_TO]-> Category <- Drug <- Medication
+Workflow per supplement:
+  1. Generate Cypher via LLM (schema-aware UNION query)
+  2. Validate syntax via EXPLAIN (pre-execution gate)
+  3. Execute against Neo4j
+  4. Group results by `pathway` field
+  5. Store execution metadata in generated_safety_queries
+  6. Accumulate interactions across all supplements
 
-Reads from state : supplements_list, medications_list
-Writes to state  : safety_checked, safety_results, evidence_chain
+Reads from state : supplements_list, candidate_supplements_list, medications_list
+Writes to state  : safety_checked, safety_results, generated_safety_queries, evidence_chain
 """
 
 import logging
+import os
+import re
 from typing import Any, Dict, List
 
-from src.graph.connections import graph_interface
+from anthropic import Anthropic
+
+from src.graph.connections import graph_interface, schema_provider
+from src.prompt_loader import load_prompt
 
 logger = logging.getLogger(__name__)
 
 
-# ==================== CYPHER QUERY ====================
+# ==================== QUERY GENERATOR ====================
 
-SAFETY_QUERY = """
-// === PATH 1: Direct Supplement → Medication interaction ===
-MATCH (s:Supplement)-[r:SUPPLEMENT_INTERACTS_WITH]->(m:Medication)
-WHERE toLower(s.supplement_name) = $supplement_name
-  AND toLower(m.medication_name) IN $medication_names_lower
-RETURN s.supplement_name AS supplement,
-       m.medication_name AS target,
-       r.interaction_description AS description,
-       'MODERATE' AS severity,
-       null AS detail,
-       'DIRECT_SUPPLEMENT_MEDICATION' AS pathway
-
-UNION
-
-// === PATH 2: Supplement → Drug ← Medication (shared drug interaction) ===
-MATCH (s:Supplement)-[:CONTAINS]->(ai:ActiveIngredient)-[:EQUIVALENT_TO]->(d1:Drug)
-      -[r:INTERACTS_WITH]->(d2:Drug)<-[:MEDICATION_CONTAINS_DRUG]-(m:Medication)
-WHERE toLower(s.supplement_name) = $supplement_name
-  AND toLower(m.medication_name) IN $medication_names_lower
-RETURN s.supplement_name AS supplement,
-       m.medication_name AS target,
-       r.description AS description,
-       'HIGH' AS severity,
-       d1.drug_name + ' interacts with ' + d2.drug_name AS detail,
-       'DRUG_DRUG_INTERACTION' AS pathway
-
-UNION
-
-// === PATH 3: Hidden pharma equivalence ===
-MATCH (s:Supplement)-[:CONTAINS]->(a:ActiveIngredient)
-      -[:EQUIVALENT_TO]->(d:Drug)<-[:MEDICATION_CONTAINS_DRUG]-(m:Medication)
-WHERE toLower(s.supplement_name) = $supplement_name
-  AND toLower(m.medication_name) IN $medication_names_lower
-RETURN s.supplement_name AS supplement,
-       m.medication_name AS target,
-       'Contains equivalent pharmaceutical ingredient - duplication risk' AS description,
-       'HIGH' AS severity,
-       a.active_ingredient + ' = ' + d.drug_name AS detail,
-       'HIDDEN_PHARMA_EQUIVALENCE' AS pathway
-
-UNION
-
-// === PATH 4: Similar pharmacological effect ===
-MATCH (s:Supplement)-[:HAS_SIMILAR_EFFECT_TO]->(c:Category)
-      <-[:BELONGS_TO]-(d:Drug)<-[:MEDICATION_CONTAINS_DRUG]-(m:Medication)
-WHERE toLower(s.supplement_name) = $supplement_name
-  AND toLower(m.medication_name) IN $medication_names_lower
-RETURN s.supplement_name AS supplement,
-       m.medication_name AS target,
-       'Similar pharmacological effect - additive or antagonistic risk' AS description,
-       'MODERATE' AS severity,
-       c.category AS detail,
-       'SIMILAR_EFFECT' AS pathway
-"""
-
-
-# ==================== QUERY RUNNER ====================
-
-def _check_supplement(supplement_name: str, medication_names: List[str]) -> List[Dict[str, Any]]:
+def _generate_query(
+    supplement: str,
+    medications: List[str],
+    schema_str: str,
+    client: Anthropic,
+) -> Dict[str, str]:
     """
-    Run SAFETY_QUERY for one supplement against all medications.
+    Ask LLM to generate a Cypher query covering all dangerous interaction
+    paths it can find in the schema for the given supplement + medications.
 
-    Args:
-        supplement_name: Matched supplement name from supplements_list
-        medication_names: Matched medication names from medications_list
-
-    Returns:
-        List of interaction records, empty if none found
+    Returns dict with:
+        cypher      — the raw Cypher query string
+        explanation — one-sentence plain English description of what it checks
     """
-    parameters = {
-        'supplement_name': supplement_name.lower(),
-        'medication_names_lower': [m.lower() for m in medication_names]
-    }
+    prompt = load_prompt("safety_check")["generate"].format(
+        supplement=supplement,
+        medications=medications,
+        schema_str=schema_str,
+    )
 
     try:
-        results = graph_interface.execute_query(SAFETY_QUERY, parameters)
-        return results or []
+        response = client.messages.create(
+            model="claude-sonnet-4-20250514",
+            max_tokens=1000,
+            temperature=0,
+            messages=[{"role": "user", "content": prompt}]
+        )
+        raw = response.content[0].text.strip()
     except Exception as e:
-        logger.error(f"Safety query failed for '{supplement_name}': {e}")
-        return []
+        logger.error(f"LLM query generation failed for '{supplement}': {e}")
+        return {"cypher": "", "explanation": f"Generation failed: {e}"}
+
+    # ── Parse cypher and explanation ──
+    cypher = ""
+    explanation = ""
+
+    if "EXPLANATION:" in raw:
+        parts = raw.split("EXPLANATION:", 1)
+        cypher = parts[0].strip()
+        explanation = parts[1].strip()
+    else:
+        cypher = raw
+        explanation = "No explanation provided"
+
+    # Strip markdown fences if present
+    cypher = re.sub(r'^```(?:cypher)?\s*', '', cypher)
+    cypher = re.sub(r'\s*```$', '', cypher)
+    cypher = cypher.strip()
+
+    # Fix common LLM parameter syntax error — backticks instead of dollar sign
+    cypher = cypher.replace("`supplement_lower", "$supplement_lower")
+    cypher = cypher.replace("`medications_lower", "$medications_lower")
+
+    return {"cypher": cypher, "explanation": explanation}
+
+
+# ==================== QUERY EXECUTOR ====================
+
+def _execute_query(
+    supplement: str,
+    medications: List[str],
+    cypher: str,
+) -> Dict[str, Any]:
+    """
+    Validate and execute a generated Cypher query for one supplement.
+
+    Steps:
+        1. validate_query() via EXPLAIN — catches syntax and planning errors
+        2. execute_query() with correct parameter names
+        3. Group results by pathway field
+
+    Args:
+        supplement: Supplement name (used to build parameters)
+        medications: Medication names (used to build parameters)
+        cypher: LLM-generated Cypher query string
+
+    Returns dict with:
+        results             — flat list of interaction rows (empty if none)
+        by_pathway          — rows grouped by pathway field
+        pathways_with_results — list of pathway names that returned rows
+        result_count        — total rows returned
+        error               — error string if failed, None if success
+    """
+    parameters = {
+        'supplement_lower': supplement.lower(),
+        'medications_lower': [m.lower() for m in medications],
+    }
+
+    # ── Step 1: Validate syntax before execution ──
+    is_valid = graph_interface.validate_query(cypher)
+    if not is_valid:
+        error_msg = "Query failed syntax/planning validation (EXPLAIN)"
+        logger.error(f"Safety query invalid for '{supplement}': {error_msg}")
+        return {
+            'results': [],
+            'by_pathway': {},
+            'pathways_with_results': [],
+            'result_count': 0,
+            'error': error_msg,
+        }
+
+    # ── Step 2: Execute ──
+    try:
+        rows = graph_interface.execute_query(cypher, parameters)
+        rows = rows or []
+    except Exception as e:
+        error_msg = f"Execution error: {e}"
+        logger.error(f"Safety query execution failed for '{supplement}': {e}")
+        return {
+            'results': [],
+            'by_pathway': {},
+            'pathways_with_results': [],
+            'result_count': 0,
+            'error': error_msg,
+        }
+
+    # ── Step 3: Group by pathway — only non-empty pathways ──
+    by_pathway: Dict[str, List] = {}
+    for row in rows:
+        pathway = row.get('pathway', 'UNKNOWN')
+        by_pathway.setdefault(pathway, []).append(row)
+
+    return {
+        'results': rows,
+        'by_pathway': by_pathway,
+        'pathways_with_results': list(by_pathway.keys()),
+        'result_count': len(rows),
+        'error': None,
+    }
 
 
 # ==================== RESULT BUILDER ====================
 
 def _build_results(
     all_interactions: List[Dict[str, Any]],
+    all_by_pathway: Dict[str, List],
     supplements_checked: List[str],
-    medications_checked: List[str]
+    medications_checked: List[str],
 ) -> Dict[str, Any]:
+    """
+    Build the safety_results dict from accumulated interactions.
 
-    by_pathway: Dict[str, List] = {}
-    for ix in all_interactions:
-        by_pathway.setdefault(ix.get('pathway', 'UNKNOWN'), []).append(ix)
+    Args:
+        all_interactions: Flat list of all interaction rows across supplements
+        all_by_pathway: Rows grouped by pathway name across supplements
+        supplements_checked: All supplement names that were checked
+        medications_checked: All medication names checked against
 
+    Returns:
+        Structured safety_results dict for synthesis consumption
+    """
     if not all_interactions:
         status = 'not_found'
         summary = (
@@ -128,10 +444,11 @@ def _build_results(
         status = 'found'
         pathway_summary = ', '.join(
             f"{pathway}: {len(records)}"
-            for pathway, records in by_pathway.items()
+            for pathway, records in all_by_pathway.items()
         )
         summary = (
-            f"Found {len(all_interactions)} interaction(s) "
+            f"Found {len(all_interactions)} interaction(s) across "
+            f"{len(all_by_pathway)} pathway(s) "
             f"between {', '.join(supplements_checked)} and "
             f"{', '.join(medications_checked)} "
             f"({pathway_summary})"
@@ -140,12 +457,12 @@ def _build_results(
     return {
         'specialist': 'safety',
         'status': status,
+        'supplements_checked': supplements_checked,
+        'medications_checked': medications_checked,
         'entities_checked': supplements_checked + medications_checked,
         'summary': summary,
         'interactions': all_interactions,
-        'by_pathway': by_pathway,
-        'supplements_checked': supplements_checked,
-        'medications_checked': medications_checked,
+        'by_pathway': all_by_pathway,
     }
 
 
@@ -153,94 +470,157 @@ def _build_results(
 
 def safety_check(state: Dict[str, Any]) -> Dict[str, Any]:
     """
-    LangGraph node: Check supplement-medication interactions.
+    LangGraph node: Generate and execute safety queries.
+
+    For each supplement:
+        1. Generate Cypher via LLM (schema-aware UNION query)
+        2. Validate syntax via EXPLAIN
+        3. Execute against Neo4j with correct parameters
+        4. Group results by pathway field
+        5. Store execution metadata in generated_safety_queries
 
     Reads from state:
-        - supplements_list: clean matched supplement names
-        - medications_list: clean matched medication names
+        - supplements_list: patient's current supplements
+        - candidate_supplements_list: candidates from recommendation
+        - medications_list: patient's medications
 
     Writes to state:
         - safety_checked: True
-        - safety_results: compact structured summary
+        - safety_results: structured interaction findings
+        - generated_safety_queries: one entry per supplement with execution metadata
         - evidence_chain: appended with safety finding
-
-    Args:
-        state: Current ConversationState
-
-    Returns:
-        Partial state update dict
     """
     print("\n" + "=" * 60)
-    print("🔬 SAFETY CHECK: Checking supplement-medication interactions...")
+    print("🔬 SAFETY CHECK: Generating and executing interaction queries...")
     print("=" * 60)
 
     current_supplements = state.get('supplements_list', [])
     candidate_supplements = state.get('candidate_supplements_list', [])
-    supplements = list(dict.fromkeys(current_supplements + candidate_supplements)) 
+    supplements = list(dict.fromkeys(current_supplements + candidate_supplements))
     medications = state.get('medications_list', [])
 
-    # ── Early exit: nothing to check ──
+    # ── Early exit: no supplements ──
     if not supplements:
         print("   ⚠️  No supplements to check")
-        results = {
-            'specialist': 'safety',
-            'status': 'no_supplements',
-            'entities_checked': [],
-            'summary': 'No supplements identified to check',
-            'interactions': [],
-            'by_pathway': {}
-        }
         return {
             'safety_checked': True,
-            'safety_results': results,
+            'generated_safety_queries': [],
+            'safety_results': {
+                'specialist': 'safety',
+                'status': 'no_supplements',
+                'entities_checked': [],
+                'summary': 'No supplements identified to check',
+                'interactions': [],
+                'by_pathway': {},
+                'supplements_checked': [],
+                'medications_checked': [],
+            },
             'evidence_chain': state.get('evidence_chain', []) + [
                 'Safety check: skipped — no supplements to check'
             ]
         }
 
+    # ── Early exit: no medications ──
     if not medications:
         print("   ⚠️  No medications to check against")
-        results = {
-            'specialist': 'safety',
-            'status': 'no_medications',
-            'entities_checked': supplements,
-            'summary': 'No medications to check against',
-            'interactions': [],
-            'by_pathway': {}
-        }
         return {
             'safety_checked': True,
-            'safety_results': results,
+            'generated_safety_queries': [],
+            'safety_results': {
+                'specialist': 'safety',
+                'status': 'no_medications',
+                'entities_checked': supplements,
+                'summary': 'No medications to check against',
+                'interactions': [],
+                'by_pathway': {},
+                'supplements_checked': supplements,
+                'medications_checked': [],
+            },
             'evidence_chain': state.get('evidence_chain', []) + [
                 'Safety check: skipped — no medications to check against'
             ]
         }
 
     if candidate_supplements:
-        print(f"   Current supplements  : {current_supplements if current_supplements else 'none'}")
+        print(f"   Current supplements  : {current_supplements or 'none'}")
         print(f"   Candidate supplements: {candidate_supplements}")
         print(f"   Checking combined    : {supplements}")
     else:
         print(f"   Supplements : {supplements}")
     print(f"   Medications : {medications}")
 
-    # ── Run check for each supplement ──
-    all_interactions = []
+    # ── Set up LLM and schema ──
+    client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+    schema_str = schema_provider.to_prompt_string()
+
+    # ── Accumulators across all supplements ──
+    all_interactions: List[Dict[str, Any]] = []
+    all_by_pathway: Dict[str, List] = {}
+    generated_queries: List[Dict[str, Any]] = []
+
+    # ── Process each supplement ──
     for supplement in supplements:
-        print(f"\n   Checking: {supplement}")
-        interactions = _check_supplement(supplement, medications)
+        print(f"\n   Processing: {supplement}")
 
-        if interactions:
-            for ix in interactions:
-                print(f"      ⚠️  [{ix.get('pathway')}] "
-                      f"{ix.get('supplement')} ↔ {ix.get('target')}: "
-                      f"{str(ix.get('description', ''))[:80]}")
-            all_interactions.extend(interactions)
+        # Step 1: Generate
+        print(f"   Generating query...")
+        gen = _generate_query(supplement, medications, schema_str, client)
+        cypher = gen["cypher"]
+        explanation = gen["explanation"]
+
+        entry: Dict[str, Any] = {
+            'supplement': supplement,
+            'medications': medications,
+            'cypher': cypher,
+            'explanation': explanation,
+            'executed': False,
+            'result_count': None,
+            'pathways_with_results': [],
+            'error': None,
+        }
+
+        if not cypher:
+            print(f"   ❌ Query generation failed")
+            entry['error'] = 'Empty query returned by LLM'
+            generated_queries.append(entry)
+            continue
+
+        print(f"   ✅ Query generated")
+        print(f"   📋 Explanation: {explanation}")
+
+        # Step 2 + 3: Validate and execute
+        print(f"   Executing query...")
+        execution = _execute_query(supplement, medications, cypher)
+
+        entry['executed'] = True
+        entry['result_count'] = execution['result_count']
+        entry['pathways_with_results'] = execution['pathways_with_results']
+        entry['error'] = execution['error']
+
+        if execution['error']:
+            print(f"   ❌ Execution failed: {execution['error']}")
+            generated_queries.append(entry)
+            continue
+
+        # Step 4: Accumulate results
+        rows = execution['results']
+        by_pathway = execution['by_pathway']
+
+        if rows:
+            for pathway, records in by_pathway.items():
+                print(f"      ⚠️  [{pathway}] — {len(records)} interaction(s)")
+                for ix in records:
+                    print(f"         {ix.get('supplement')} ↔ {ix.get('target')}: "
+                          f"{str(ix.get('description', ''))[:80]}")
+                all_by_pathway.setdefault(pathway, []).extend(records)
+            all_interactions.extend(rows)
         else:
-            print(f"      ✅ No interactions found")
+            print(f"   ✅ No interactions found")
 
-    # ── Build compact results ──
-    results = _build_results(all_interactions, supplements, medications)
+        generated_queries.append(entry)
+
+    # ── Build final results ──
+    results = _build_results(all_interactions, all_by_pathway, supplements, medications)
 
     print(f"\n   {'⚠️  Interactions found' if all_interactions else '✅ No interactions found'}: "
           f"{results['summary']}")
@@ -248,6 +628,7 @@ def safety_check(state: Dict[str, Any]) -> Dict[str, Any]:
 
     return {
         'safety_checked': True,
+        'generated_safety_queries': generated_queries,
         'safety_results': results,
         'evidence_chain': state.get('evidence_chain', []) + [
             f"Safety check: {results['summary']}"

@@ -35,42 +35,36 @@ def _truncate(text: str, max_chars: int) -> str:
     text = str(text)
     return text if len(text) <= max_chars else text[: max_chars - 3] + "..."
 
-
-# =====================================================================
-# EVIDENCE NARRATION — turn raw interaction records into plain english
-# using the pathway/detail data the Cypher queries already return
-# =====================================================================
-
-def _narrate_interaction(ix: Dict[str, Any]) -> str:
-    """Turn a single safety interaction record into a plain-english sentence."""
-    supp = ix.get("supplement", "This supplement")
-    target = ix.get("target", "your medication")
-    desc = ix.get("description", "")
-    detail = ix.get("detail", "")
-    pathway = ix.get("pathway", "")
-
-    if pathway == "HIDDEN_PHARMA_EQUIVALENCE" and " = " in str(detail):
-        ingredient, drug = detail.split(" = ", 1)
-        return (f"{supp} contains {ingredient}, which is pharmaceutically equivalent "
-                f"to {drug} in your {target} — this creates a hidden double-dose risk.")
-
-    if pathway == "DRUG_DRUG_INTERACTION" and " interacts with " in str(detail):
-        d1, d2 = detail.split(" interacts with ", 1)
-        return (f"{supp} contains an ingredient that acts like {d1}, which has a known "
-                f"interaction with {d2} (found in your {target}). {desc}")
-
-    if pathway == "SIMILAR_EFFECT":
-        return (f"{supp} has a similar pharmacological effect to drugs in the "
-                f"{detail} category, which includes your {target}.")
-
-    return f"{supp} has a documented interaction with your {target}. {desc}".strip()
-
-
 # =====================================================================
 # PRE-PROCESSING — build structured findings summary for the prompt
 # Groups safety interactions by supplement↔medication pair so the
 # LLM doesn't repeat the same concern from multiple pathways.
 # =====================================================================
+
+def _build_evidence_path(ix: Dict[str, Any]) -> str:
+    """
+    Build a readable arrow chain evidence path from a single interaction row.
+
+    Uses only the 6 fields returned by the safety check query:
+        supplement, target, pathway, detail (may be null)
+
+    Args:
+        ix: Single interaction row dict
+
+    Returns:
+        Arrow chain string e.g.
+        "Fish Oil → [Drug-Drug Interaction via Supplement] → EPA → Warfarin"
+        "Fish Oil → [Direct Interaction] → Warfarin"
+    """
+    supplement = ix.get('supplement', '?')
+    target = ix.get('target', '?')
+    pathway = ix.get('pathway', 'Unknown Pathway')
+    detail = ix.get('detail')
+
+    if detail:
+        return f"{supplement} → [{pathway}] → {detail} → {target}"
+    else:
+        return f"{supplement} → [{pathway}] → {target}"
 
 def _build_findings_summary(state: Dict[str, Any]) -> str:
     """Build a human-readable findings summary from all specialist results."""
@@ -79,14 +73,19 @@ def _build_findings_summary(state: Dict[str, Any]) -> str:
     # ── Safety (grouped by pair, with evidence paths) ──
     safety = state.get("safety_results") or {}
     interactions = safety.get("interactions") or []
+
     if interactions:
-        pairs: Dict[str, List[Dict]] = {}  # key -> list of raw interaction dicts
+        # Group by supplement↔medication pair
+        pairs: Dict[str, List[Dict]] = {}
         pair_severity: Dict[str, str] = {}
+
         for ix in interactions:
             key = f"{ix.get('supplement', '?')} and {ix.get('target', '?')}"
             pairs.setdefault(key, []).append(ix)
+
+            # Track highest severity per pair
             sev = ix.get("severity", "MODERATE")
-            if sev == "HIGH" or ix.get("pathway") == "HIDDEN_PHARMA_EQUIVALENCE":
+            if sev == "HIGH":
                 pair_severity[key] = "HIGH"
             elif key not in pair_severity:
                 pair_severity[key] = sev
@@ -94,32 +93,32 @@ def _build_findings_summary(state: Dict[str, Any]) -> str:
         lines.append("SAFETY FINDINGS:")
         for pair, ix_list in pairs.items():
             sev = pair_severity.get(pair, "MODERATE")
-            narratives = [_narrate_interaction(ix) for ix in ix_list]
-            combined = " Additionally, ".join(narratives)
 
-            # Build evidence paths from graph traversal data
-            paths = []
+            # Build description block from raw fields — LLM narrates from these
+            finding_parts = []
+            evidence_paths = []
+
             for ix in ix_list:
-                pathway = ix.get("pathway", "")
-                supp = ix.get("supplement", "?")
-                target = ix.get("target", "?")
-                detail = ix.get("detail", "")
+                description = ix.get('description', '')
+                detail = ix.get('detail', '')
+                pathway = ix.get('pathway', '')
 
-                if pathway == "DRUG_DRUG_INTERACTION" and " interacts with " in str(detail):
-                    d1, d2 = detail.split(" interacts with ", 1)
-                    paths.append(f"{supp} → contains → {d1} → interacts with → {d2} → found in → {target}")
-                elif pathway == "HIDDEN_PHARMA_EQUIVALENCE" and " = " in str(detail):
-                    ingredient, drug = detail.split(" = ", 1)
-                    paths.append(f"{supp} → contains → {ingredient} → equivalent to → {drug} → in → {target}")
-                elif pathway == "SIMILAR_EFFECT" and detail:
-                    paths.append(f"{supp} → similar effect to → {detail} category → includes → {target}")
-                elif pathway == "DIRECT_SUPPLEMENT_MEDICATION":
-                    paths.append(f"{supp} → directly interacts with → {target}")
+                # Structured finding line
+                finding_line = f"Pathway: {pathway}"
+                if description:
+                    finding_line += f" | Finding: {description}"
+                if detail:
+                    finding_line += f" | Detail: {detail}"
+                finding_parts.append(finding_line)
 
-            if paths:
-                combined += " | EVIDENCE PATHS: " + " ; ".join(paths)
+                # Arrow chain evidence path
+                evidence_paths.append(_build_evidence_path(ix))
 
-            lines.append(f"  [{sev}] {pair}: {combined}")
+            findings_block = " ; ".join(finding_parts)
+            paths_block = " | EVIDENCE PATHS: " + " ; ".join(evidence_paths) if evidence_paths else ""
+
+            lines.append(f"  [{sev}] {pair}: {findings_block}{paths_block}")
+
     elif safety:
         lines.append(f"SAFETY FINDINGS: {safety.get('summary', 'No interactions found.')}")
 
@@ -227,7 +226,12 @@ def _deterministic_fallback_answer(state: Dict[str, Any]) -> str:
                 desc = ix.get("description", "")
                 detail = ix.get("detail")
                 detail_str = f" ({detail})" if detail else ""
-                lines.append(f"  - [{sev}] {supp} ↔ {target} — {pathway}: {_truncate(desc, 220)}{detail_str}")
+                evidence = _build_evidence_path(ix)
+                lines.append(
+                    f"  - [{sev}] {supp} ↔ {target} — {pathway}: "
+                    f"{_truncate(desc, 220)}{detail_str}"
+                )
+                lines.append(f"    Evidence: {evidence}")
             if len(interactions) > 10:
                 lines.append(f"  - …and {len(interactions) - 10} more")
         else:
@@ -286,6 +290,7 @@ def _deterministic_fallback_answer(state: Dict[str, Any]) -> str:
     )
 
     return "\n".join(lines).strip() + "\n"
+
 
 
 # =====================================================================

@@ -207,4 +207,5 @@ def entity_extractor(state: Dict[str, Any]) -> Dict[str, Any]:
         'deficiency_results': None,
         'recommendation_results': None,
         'final_answer': None,
+        'generated_safety_queries': [],
     }

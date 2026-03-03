@@ -41,23 +41,24 @@ class SchemaProvider:
         self._load()
 
     def _load(self):
-        """Load schema and sample property values from Neo4j."""
+        """Load schema, sample property values, and relationship directions from Neo4j."""
         try:
             # Load node labels, relationship types, and properties
             self.schema = self.graph.get_schema_info()
 
+            # Load relationship directionality — which node types each rel connects
+            # Critical for LLMs to reason about valid paths without hallucinating
+            self.relationship_directions: List[Dict[str, str]] = (
+                self.graph.get_relationship_directions()
+            )
+
             # Load sample values for each node property
-            # These help the LLM understand what data looks like
-            # e.g. drug_name: ['Warfarin', 'Metformin', 'Atorvastatin']
             for label in self.schema.get("node_labels", []):
                 props = self.schema.get("node_properties", {}).get(label, [])
                 for prop in props:
                     key = f"{label}.{prop}"
                     if key not in self.property_values:
                         values = self.graph.get_property_values(label, prop, limit=5)
-                        # Filter out empty strings and None — many properties
-                        # in the KG have missing data; showing empty samples
-                        # to the LLM is misleading. The actual data is untouched.
                         values = [v for v in values if v and str(v).strip()]
                         if values:
                             self.property_values[key] = values
@@ -65,7 +66,8 @@ class SchemaProvider:
             logger.info(
                 f"✓ Schema loaded: "
                 f"{len(self.schema.get('node_labels', []))} node types, "
-                f"{len(self.schema.get('relationship_types', []))} relationship types"
+                f"{len(self.schema.get('relationship_types', []))} relationship types, "
+                f"{len(self.relationship_directions)} directed relationships"
             )
 
         except Exception as e:
@@ -111,17 +113,18 @@ class SchemaProvider:
 
         Returns a compact, readable representation of:
         - All node types and their properties with sample values
-        - All relationship types
+        - All relationship types with source → target node types
 
         Example output:
             Node Types:
               Drug: drug_id, drug_name (e.g. Warfarin, Metformin)
               Supplement: supplement_id, supplement_name (e.g. Fish oil, Vitamin D)
 
-            Relationship Types:
-              SUPPLEMENT_INTERACTS_WITH
-              CONTAINS_DRUG
-              ...
+            Relationships (source → target):
+              SUPPLEMENT_INTERACTS_WITH : Supplement → Medication
+              CONTAINS                  : Supplement → ActiveIngredient
+              EQUIVALENT_TO             : ActiveIngredient → Drug
+              INTERACTS_WITH            : Drug → Drug
         """
         lines = ["Node Types:"]
 
@@ -141,8 +144,18 @@ class SchemaProvider:
             lines.append(f"  {label}: {props_str}")
 
         lines.append("")
-        lines.append("Relationship Types:")
-        for rel in self.get_relationship_types():
-            lines.append(f"  {rel}")
+        lines.append("Relationships (source → target):")
+
+        # Find max rel_type length for alignment
+        directions = getattr(self, 'relationship_directions', [])
+        if directions:
+            max_len = max(len(d['rel_type']) for d in directions)
+            for d in directions:
+                rel = d['rel_type'].ljust(max_len)
+                lines.append(f"  {rel} : {d['from_label']} → {d['to_label']}")
+        else:
+            # Fallback — just list relationship names if directions failed to load
+            for rel in self.get_relationship_types():
+                lines.append(f"  {rel}")
 
         return "\n".join(lines)

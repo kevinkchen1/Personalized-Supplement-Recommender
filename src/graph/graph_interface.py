@@ -159,6 +159,43 @@ class GraphInterface:
             logger.warning(f"Could not get property values for {label}.{property_name}: {e}")
             return []
 
+    def get_relationship_directions(self) -> List[Dict[str, str]]:
+        """
+        Get source and target node types for each relationship type.
+
+        Queries one sample of each relationship to find what node labels
+        it connects — gives LLMs the directionality they need to reason
+        about valid graph paths without hallucinating connections.
+
+        Returns:
+            List of dicts: [{ rel_type, from_label, to_label }, ...]
+            e.g. [{ 'rel_type': 'SUPPLEMENT_INTERACTS_WITH',
+                    'from_label': 'Supplement',
+                    'to_label': 'Medication' }, ...]
+        """
+        query = """
+        MATCH (a)-[r]->(b)
+        WITH type(r) AS rel_type,
+             labels(a)[0] AS from_label,
+             labels(b)[0] AS to_label
+        RETURN DISTINCT rel_type, from_label, to_label
+        ORDER BY rel_type
+        """
+        try:
+            with self.driver.session() as session:
+                result = session.run(query)
+                return [
+                    {
+                        'rel_type': record['rel_type'],
+                        'from_label': record['from_label'],
+                        'to_label': record['to_label'],
+                    }
+                    for record in result
+                ]
+        except Exception as e:
+            logger.warning(f"Could not load relationship directions: {e}")
+            return []
+
     def validate_query(self, cypher_query: str) -> bool:
         """
         Validate Cypher query syntax without executing it.

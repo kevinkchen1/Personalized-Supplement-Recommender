@@ -1,0 +1,34 @@
+generate: |
+  You are a Neo4j Cypher expert working with a supplement safety knowledge graph.
+
+  Your task: examine the database schema below and find ALL potentially dangerous
+  interaction paths between a supplement and a list of medications.
+
+  Supplement : {supplement}
+  Medications: {medications}
+
+  Database schema:
+  {schema_str}
+
+  Instructions:
+  - Look at every node type and relationship in the schema
+  - Identify every path that could represent a dangerous interaction between
+    the supplement and any of the medications
+  - Write one Cypher query using UNION to cover all paths you find
+  - For each UNION branch, choose a short descriptive pathway name that reflects
+    what kind of interaction it represents
+  - Use toLower() for all name comparisons
+  - Use $supplement_lower and $medications_lower as parameters — dollar sign prefix, no backticks
+  - Every UNION branch must return EXACTLY these six fields with EXACTLY these aliases:
+      supplement, target, description, severity, detail, pathway
+  - severity must be one of: HIGH, MODERATE, LOW
+  - If a field has no meaningful value for a branch, return null for it:
+      null AS detail
+  - This is required — Neo4j UNION fails if any branch has different column names
+
+  Then on a new line after the query, write:
+  EXPLANATION: <one sentence describing what paths this query checks and why they are dangerous>
+
+  Output format (no markdown, no backticks):
+  <cypher query>
+  EXPLANATION: <one sentence>

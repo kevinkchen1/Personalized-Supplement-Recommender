@@ -84,6 +84,13 @@ class ConversationState(TypedDict):
     safety_checked: bool
     safety_results: Optional[Dict[str, Any]]
 
+    generated_safety_queries: List[Dict[str, Any]]
+    """
+    Stores LLM-generated Cypher queries for inspection — one entry per supplement.
+    Visible in LangGraph Studio state panel for debugging.
+    Each entry: { supplement, cypher, explanation, executed, result_count, error }
+    """
+
     deficiency_checked: bool
     deficiency_results: Optional[Dict[str, Any]]
 
@@ -157,6 +164,7 @@ def create_initial_state(
         # Specialist results
         safety_checked=False,
         safety_results=None,
+        generated_safety_queries=[],
         deficiency_checked=False,
         deficiency_results=None,
         recommendations_checked=False,
