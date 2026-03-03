@@ -1,0 +1,8 @@
+test_id,user_question,medications,supplements,conditions,dietary_restrictions,test_type,description
+1,Is it safe for me to take Warfarin with my current supplements?,Warfarin,,,,safety,no_supplements — no supplement provided
+3,Is it safe to take Ashwagandha with my Warfarin?,Warfarin,Ashwagandha,,,safety,no_supplements — supplement not in database
+5,Is it safe to take Fish Oil and Vitamin D together?,,Fish Oil,,,safety,no_medications — no medication provided
+7,Is Fish Oil safe to take with my Lisinopril?,Lisinopril,Fish Oil,,,safety,both in database no interaction exists
+12,Can I take Fish Oil with Warfarin?,Warfarin,Fish Oil,,,safety,found 1+1 — Fish Oil and Warfarin multiple pathways
+19,Can I take both Melatonin and Zinc with Carbamazepine?,Carbamazepine,"Melatonin,Zinc",,,safety,found 2+1 — Melatonin and Zinc both with Carbamazepine
+23,Can I take CoQ10 with Metformin?,Metformin,CoQ10,,,safety,1+1 interaction

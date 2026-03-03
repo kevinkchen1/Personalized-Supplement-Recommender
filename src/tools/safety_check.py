@@ -32,6 +32,30 @@ logger = logging.getLogger(__name__)
 
 # ==================== QUERY GENERATOR ====================
 
+def _parse_llm_response(raw: str) -> Dict[str, str]:
+    """Parse LLM response into cypher + explanation, clean up common issues."""
+    cypher = ""
+    explanation = ""
+
+    if "EXPLANATION:" in raw:
+        parts = raw.split("EXPLANATION:", 1)
+        cypher = parts[0].strip()
+        explanation = parts[1].strip()
+    else:
+        cypher = raw
+        explanation = "No explanation provided"
+
+    # Strip markdown fences if present
+    cypher = re.sub(r'^```(?:cypher)?\s*', '', cypher)
+    cypher = re.sub(r'\s*```$', '', cypher)
+    cypher = cypher.strip()
+
+    # Fix common LLM parameter syntax error — backticks instead of dollar sign
+    cypher = re.sub(r'`(supplement_lower|medications_lower)', r'$\1', cypher)
+
+    return {"cypher": cypher, "explanation": explanation}
+
+
 def _generate_query(
     supplement: str,
     medications: List[str],
@@ -64,27 +88,8 @@ def _generate_query(
         logger.error(f"LLM query generation failed for '{supplement}': {e}")
         return {"cypher": "", "explanation": f"Generation failed: {e}"}
 
-    # ── Parse cypher and explanation ──
-    cypher = ""
-    explanation = ""
-
-    if "EXPLANATION:" in raw:
-        parts = raw.split("EXPLANATION:", 1)
-        cypher = parts[0].strip()
-        explanation = parts[1].strip()
-    else:
-        cypher = raw
-        explanation = "No explanation provided"
-
-    # Strip markdown fences if present
-    cypher = re.sub(r'^```(?:cypher)?\s*', '', cypher)
-    cypher = re.sub(r'\s*```$', '', cypher)
-    cypher = cypher.strip()
-
-    # Fix common LLM parameter syntax error — backticks instead of dollar sign
-    cypher = re.sub(r'`(supplement_lower|medications_lower)', r'$\1', cypher)
-
-    return {"cypher": cypher, "explanation": explanation}
+    parsed = _parse_llm_response(raw)
+    return {"cypher": parsed["cypher"], "explanation": parsed["explanation"]}
 
 
 # ==================== QUERY EXECUTOR ====================

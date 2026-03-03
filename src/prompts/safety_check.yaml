@@ -28,6 +28,15 @@ generate: |
       null AS detail
   - This is required — Neo4j UNION fails if any branch has different column names
 
+  CRITICAL — no Cartesian products:
+  - NEVER use a comma to join disconnected patterns in a MATCH clause.
+    Every node must be connected to another node through an explicit relationship.
+    Bad:  MATCH (s:Supplement)-[:CAN_CAUSE]->(sym:Symptom), (d:Drug)<-[:MEDICATION_CONTAINS_DRUG]-(m:Medication)
+    Good: MATCH (s:Supplement)-[:CAN_CAUSE]->(sym:Symptom)<-[:SOME_REL]-(d:Drug)<-[:MEDICATION_CONTAINS_DRUG]-(m:Medication)
+  - If two nodes are NOT connected by a path of relationships in the schema, do NOT query them together.
+  - Do NOT invent conceptual links. Only use relationships that exist in the schema above.
+
+
   Detail field format (RETURN clause only — do not change MATCH structure):
   - detail captures the traversal path as a readable string
   - Single hop: 'relationship_label -> ' + node_value
