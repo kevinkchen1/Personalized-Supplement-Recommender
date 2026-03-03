@@ -206,6 +206,11 @@ class GraphInterface:
         Returns:
             True if valid, False otherwise
         """
+        # Suppress the Neo4j GqlStatusObject warning that EXPLAIN emits
+        # when query parameters are not provided — expected and harmless
+        neo4j_logger = logging.getLogger("neo4j.notifications")
+        neo4j_logger.setLevel(logging.ERROR)
+
         try:
             with self.driver.session() as session:
                 session.run(f"EXPLAIN {cypher_query}")
@@ -213,3 +218,6 @@ class GraphInterface:
         except Exception as e:
             logger.warning(f"Query validation failed: {e}")
             return False
+        finally:
+            # Restore neo4j notifications logger to default level
+            neo4j_logger.setLevel(logging.WARNING)

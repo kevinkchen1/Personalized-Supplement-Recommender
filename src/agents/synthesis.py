@@ -74,7 +74,14 @@ def _build_findings_summary(state: Dict[str, Any]) -> str:
     safety = state.get("safety_results") or {}
     interactions = safety.get("interactions") or []
 
-    if interactions:
+    if safety.get("status") == "error":
+        lines.append(
+            "SAFETY FINDINGS: Safety check failed — interaction queries could not be executed. "
+            "The absence of findings here does NOT mean this supplement is safe. "
+            "Do not draw any conclusions about safety from this result."
+        )
+
+    elif interactions:
         # Group by supplement↔medication pair
         pairs: Dict[str, List[Dict]] = {}
         pair_severity: Dict[str, str] = {}

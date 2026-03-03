@@ -15,6 +15,8 @@ generate: |
   - Identify every path that could represent a dangerous interaction between
     the supplement and any of the medications
   - Write one Cypher query using UNION to cover all paths you find
+  - For each UNION branch, write a single MATCH pattern covering the full path,
+    followed by a single WHERE clause — do NOT split into multiple MATCH clauses
   - For each UNION branch, choose a short descriptive pathway name that reflects
     what kind of interaction it represents
   - Use toLower() for all name comparisons
@@ -25,6 +27,15 @@ generate: |
   - If a field has no meaningful value for a branch, return null for it:
       null AS detail
   - This is required — Neo4j UNION fails if any branch has different column names
+
+  Detail field format (RETURN clause only — do not change MATCH structure):
+  - detail captures the traversal path as a readable string
+  - Single hop: 'relationship_label -> ' + node_value
+      e.g. 'contains -> ' + ai.active_ingredient
+  - Multi hop : 'rel_label -> ' + node1 + ' -> rel_label -> ' + node2
+      e.g. 'contains -> ' + ai.active_ingredient + ' -> equivalent to -> ' + d1.drug_name + ' -> interacts with -> ' + d2.drug_name
+  - Use readable English for relationship labels: contains, equivalent to, interacts with,
+    similar effect to, causes, both affect
 
   Then on a new line after the query, write:
   EXPLANATION: <one sentence describing what paths this query checks and why they are dangerous>
