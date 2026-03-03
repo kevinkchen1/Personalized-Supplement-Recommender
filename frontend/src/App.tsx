@@ -8,8 +8,8 @@ export function App() {
     <BrowserRouter>
       <PatientProfileProvider>
         <Routes>
-          <Route path="/" element={<ProfilePage />} />
-          <Route path="/chat" element={<ChatPage />} />
+          <Route path="/" element={<ChatPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
         </Routes>
       </PatientProfileProvider>
     </BrowserRouter>

@@ -1,8 +1,14 @@
 import { useState } from "react";
 import axios from "axios";
 import ReactMarkdown from "react-markdown";
-import { Link } from "react-router-dom";
 import { usePatientProfile } from "../profileContext";
+import { MultiSelect } from "../components/MultiSelect";
+import {
+  COMMON_CONDITIONS,
+  COMMON_DIETARY_RESTRICTIONS,
+  COMMON_MEDICATIONS,
+  COMMON_SUPPLEMENTS,
+} from "../profileOptions";
 
 type Message = {
   role: "user" | "assistant";
@@ -12,11 +18,16 @@ type Message = {
 const API_BASE_URL = "http://localhost:8000";
 
 export function ChatPage() {
-  const { profile } = usePatientProfile();
+  const { profile, setProfile } = usePatientProfile();
   const [question, setQuestion] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
+
+  const setProfileList = (field: keyof typeof profile, next: string[]) => {
+    setProfile((prev) => ({ ...prev, [field]: next }));
+  };
 
   const sendMessage = async () => {
     if (!question.trim()) return;
@@ -30,16 +41,10 @@ export function ChatPage() {
       const response = await axios.post(`${API_BASE_URL}/chat`, {
         user_question: question.trim(),
         patient_profile: {
-          medications: profile.medications,
-          supplements: profile.supplements,
-          conditions: profile.conditions
-            .split(",")
-            .map((c) => c.trim())
-            .filter(Boolean),
-          dietary_restrictions: profile.dietary_restrictions
-            .split(",")
-            .map((d) => d.trim())
-            .filter(Boolean),
+          medications: profile.medications.join(", "),
+          supplements: profile.supplements.join(", "),
+          conditions: profile.conditions,
+          dietary_restrictions: profile.dietary_restrictions,
         },
         session_id: "demo-session",
       });
@@ -65,9 +70,9 @@ export function ChatPage() {
     }
   };
 
-  const handleKeyDown: React.KeyboardEventHandler<HTMLInputElement> = (
-    event,
-  ) => {
+  const handleKeyDown: React.KeyboardEventHandler<
+    HTMLInputElement | HTMLTextAreaElement
+  > = (event) => {
     if (event.key === "Enter" && !event.shiftKey) {
       event.preventDefault();
       void sendMessage();
@@ -75,58 +80,58 @@ export function ChatPage() {
   };
 
   return (
-    <div className="shell">
-      <header className="nav">
+    <div className="shell shell--chat">
+      <header className="nav nav--chat">
         <div className="nav-left">
-          <span className="nav-logo-dot" />
           <span className="nav-brand">Supplement Recommender</span>
         </div>
-        <nav className="nav-links">
-          <Link to="/" className="nav-link-quiet">
-            Edit Profile
-          </Link>
-        </nav>
       </header>
 
-      <main className="chat-layout">
-        <section className="summary-card">
-          <h2 className="card-title">Current Patient Profile</h2>
-          <p className="card-subtitle">
-            This is the information the agent is using to evaluate safety,
-            deficiencies, and recommendations.
-          </p>
-          <div className="summary-section">
-            <h3>Medications</h3>
-            <p>{profile.medications || "Not provided"}</p>
-          </div>
-          <div className="summary-section">
-            <h3>Supplements</h3>
-            <p>{profile.supplements || "Not provided"}</p>
-          </div>
-          <div className="summary-inline">
-            <div>
-              <h3>Conditions</h3>
-              <p>{profile.conditions || "None listed"}</p>
-            </div>
-            <div>
-              <h3>Dietary</h3>
-              <p>{profile.dietary_restrictions || "None listed"}</p>
-            </div>
-          </div>
-        </section>
+      <div className="profile-hero-bar">
+        <button
+          type="button"
+          className="profile-hero-btn"
+          onClick={() => setIsProfileOpen(true)}
+          aria-label="Set patient profile"
+        >
+          <span className="profile-hero-icon" aria-hidden="true">
+            <svg
+              viewBox="0 0 24 24"
+              width="32"
+              height="32"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.7"
+            >
+              <rect
+                x="4"
+                y="4"
+                width="16"
+                height="16"
+                rx="2.5"
+                ry="2.5"
+              />
+              <path d="M8 9h5" />
+              <path d="M8 13h5" />
+              <path d="M8 17h3.2" />
+              <path d="m15 9 1.8 1.8 3.2-3.2" />
+            </svg>
+          </span>
+          <span className="profile-hero-label">Patient profile</span>
+        </button>
+      </div>
 
-        <section className="chat-panel light">
-          <h2 className="card-title">Safety & Recommendations Chat</h2>
-          <p className="card-subtitle">
-            Ask about supplement–medication safety, nutrient deficiencies, or
-            safe options for a symptom or condition.
-          </p>
-          <div className="chat-window light">
+      <main className="chat-layout">
+        <section className="chat-panel chat-panel--full">
+          <div className="chat-window chat-window--full light">
             {messages.length === 0 && (
-              <div className="chat-empty light">
-                <p>
-                  Try questions like:
+              <div className="chat-empty chat-empty--centered light">
+                <p className="chat-empty-title">Supplement Recommender</p>
+                <p className="chat-empty-subtitle">
+                  Ask about supplement–medication safety, nutrient deficiencies, or
+                  safe options for a symptom or condition.
                 </p>
+                <p className="chat-empty-hint">Try questions like:</p>
                 <ul>
                   <li>“Is Fish Oil safe with Warfarin?”</li>
                   <li>“Which supplements are safest for heart health?”</li>
@@ -161,21 +166,99 @@ export function ChatPage() {
 
           {error && <div className="error-banner">{error}</div>}
 
-          <div className="chat-input-row">
-            <input
-              type="text"
-              placeholder="Ask a safety, deficiency, or recommendation question…"
-              value={question}
-              onChange={(e) => setQuestion(e.target.value)}
-              onKeyDown={handleKeyDown}
-              disabled={isLoading}
-            />
-            <button onClick={sendMessage} disabled={isLoading}>
-              {isLoading ? "Sending..." : "Send"}
-            </button>
+          <div className="chat-input-area">
+            <div className="chat-input-wrapper">
+              <textarea
+                className="chat-input"
+                placeholder="Ask a safety, deficiency, or recommendation question…"
+                value={question}
+                onChange={(e) => setQuestion(e.target.value)}
+                onKeyDown={handleKeyDown}
+                disabled={isLoading}
+                rows={1}
+              />
+              <button
+                className="chat-send-btn"
+                onClick={sendMessage}
+                disabled={isLoading}
+              >
+                {isLoading ? "Sending..." : "Send"}
+              </button>
+            </div>
           </div>
         </section>
       </main>
+
+      {isProfileOpen && (
+        <>
+          <div
+            className="side-panel-backdrop"
+            onClick={() => setIsProfileOpen(false)}
+            aria-hidden="true"
+          />
+          <aside className="side-panel">
+            <div className="side-panel-header">
+              <h2 className="card-title">Patient Profile</h2>
+              <button
+                type="button"
+                className="side-panel-close"
+                onClick={() => setIsProfileOpen(false)}
+                aria-label="Close profile"
+              >
+                ×
+              </button>
+            </div>
+            <div className="side-panel-body">
+              <p className="card-subtitle">
+                Update the medications, supplements, and health context that the
+                agent will use when answering your questions.
+              </p>
+
+              <MultiSelect
+                label="Current Medications"
+                placeholder="Search meds or add custom…"
+                options={COMMON_MEDICATIONS}
+                selected={profile.medications}
+                onChange={(next) => setProfileList("medications", next)}
+              />
+
+              <MultiSelect
+                label="Current Supplements"
+                placeholder="Search supplements or add custom…"
+                options={COMMON_SUPPLEMENTS}
+                selected={profile.supplements}
+                onChange={(next) => setProfileList("supplements", next)}
+              />
+
+              <MultiSelect
+                label="Conditions"
+                placeholder="Search conditions or add custom…"
+                options={COMMON_CONDITIONS}
+                selected={profile.conditions}
+                onChange={(next) => setProfileList("conditions", next)}
+              />
+
+              <MultiSelect
+                label="Dietary Restrictions"
+                placeholder="Search diet tags or add custom…"
+                options={COMMON_DIETARY_RESTRICTIONS}
+                selected={profile.dietary_restrictions}
+                onChange={(next) =>
+                  setProfileList("dietary_restrictions", next)
+                }
+              />
+
+              <button
+                type="button"
+                className="primary-cta"
+                onClick={() => setIsProfileOpen(false)}
+              >
+                Save and close
+              </button>
+            </div>
+          </aside>
+        </>
+      )}
     </div>
   );
 }

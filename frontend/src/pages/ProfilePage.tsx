@@ -20,12 +20,6 @@ export function ProfilePage() {
           <span className="nav-logo-dot" />
           <span className="nav-brand">Supplement Recommender</span>
         </div>
-        <nav className="nav-links">
-          <span>Motivation</span>
-          <span>Data</span>
-          <span>System</span>
-          <span>Learn More</span>
-        </nav>
       </header>
 
       <main className="hero-layout">
