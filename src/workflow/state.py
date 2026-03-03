@@ -10,7 +10,8 @@ will be populated in later phases.
 """
 
 from typing import TypedDict, List, Dict, Any, Optional, Annotated
-from langgraph.graph import add_messages
+# from langgraph.graph import add_messages
+
 
 
 class InputState(TypedDict):
@@ -111,7 +112,8 @@ class ConversationState(TypedDict):
 
     # ==================== MESSAGES ====================
 
-    messages: Annotated[List[Dict], add_messages]
+    # messages: Annotated[List[Dict], add_messages]
+    messages: List[Dict]
     """
     Chat message history. LangGraph appends automatically via add_messages.
     Format: [{'role': 'user', 'content': '...'}, ...]

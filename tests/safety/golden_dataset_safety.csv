@@ -1,8 +1,24 @@
-test_id,user_question,medications,supplements,conditions,dietary_restrictions,expected_output_keywords,expected_supplements,test_type,description
-1,"Is Fish Oil safe with my medications?","Warfarin","","","","caution|warning|interaction|bleeding|risk","","safety","Fish oil and warfarin interaction - should show caution"
-2,"Can I take Red Yeast Rice with my statin?","Atorvastatin","","High Cholesterol","","caution|warning|interaction|muscle|rhabdomyolysis","","safety","Red yeast rice and statin interaction - should show caution"
-3,"Is Ginkgo safe with my blood thinner?","Warfarin","","","","caution|warning|interaction|bleeding","","safety","Ginkgo and warfarin interaction - should show caution"
-4,"Can I take Melatonin with my medications?","Alprazolam","","","","safe|generally safe|no interaction","","safety","Melatonin with Alprazolam - should be generally safe"
-5,"Is St. John's Wort safe with my antidepressant?","Bupropion","","","","caution|warning|interaction|serotonin","","safety","St. John's Wort and Bupropion interaction - should show caution"
-6,"Can I take Fish Oil with Warfarin and Digoxin?","Warfarin,Digoxin","","","","caution|warning|interaction|bleeding|heart","","safety","Multiple medication interactions - should show caution for both"
-7,"Is Creatine safe with my medications?","","","","","generally safe|safe|no interaction","","safety","Creatine should be generally safe with no medications"
+test_id,user_question,medications,supplements,conditions,dietary_restrictions,test_type,description
+1,Is it safe for me to take Warfarin with my current supplements?,Warfarin,,,,safety,no_supplements — no supplement provided
+2,I just started Metformin are there any risks I should know about?,Metformin,,,,safety,no_supplements — no supplement provided
+3,Is it safe to take Ashwagandha with my Warfarin?,Warfarin,Ashwagandha,,,safety,no_supplements — supplement not in database
+4,Can I take Magnesium with Metformin?,Metformin,Magnesium,,,safety,no_supplements — supplement not in database
+5,Is it safe to take Fish Oil and Vitamin D together?,,Fish Oil,,,safety,no_medications — no medication provided
+6,Can I take CoQ10 daily?,,CoQ10,,,safety,no_medications — no medication provided
+7,Is Fish Oil safe to take with my Lisinopril?,Lisinopril,Fish Oil,,,safety,both in database no interaction exists
+9,Is it safe to take Honey with Warfarin?,Warfarin,Honey,,,safety,not_found — both in database no interaction exists
+10,Can I use Tea tree oil while taking Metformin?,Metformin,Tea tree oil,,,safety,not_found — both in database no interaction exists
+11,Is Zinc safe to take with Warfarin?,Warfarin,Zinc,,,safety,not_found — supplement has other interactions but not with this medication
+12,Can I take Fish Oil with Warfarin?,Warfarin,Fish Oil,,,safety,found 1+1 — Fish Oil and Warfarin multiple pathways
+13,I've been having trouble sleeping and someone suggested Melatonin but I'm on an antidepressant,Fluvoxamine,Melatonin,,,safety,found 1+1 — ambiguous wording Melatonin and Fluvoxamine direct interaction
+14,Can I take Glucosamine with Warfarin?,Warfarin,Glucosamine,,,safety,found 1+1 — Glucosamine and Warfarin direct interaction
+15,I take both Warfarin and Metformin. Is Fish Oil safe for me?,"Warfarin,Metformin",Fish Oil,,,safety,found 1+2 — Fish Oil with Warfarin (found) and Metformin (not found)
+16,Can I take Melatonin while on Fluvoxamine and Warfarin?,"Fluvoxamine,Warfarin",Melatonin,,,safety,found 1+2 — Melatonin with Fluvoxamine (direct) and Warfarin (drug-drug pathway)
+17,Is Zinc safe to take with both Ibuprofen and Carbamazepine?,"Ibuprofen,Carbamazepine",Zinc,,,safety,found 1+2 — Zinc with Ibuprofen (nutrient pathway) and Carbamazepine (drug-drug and nutrient pathways)
+18,My doctor put me on a blood thinner and I wanted to start some supplements for my joints and heart,Warfarin,"Fish Oil,Glucosamine",,,safety,found 2+1 — ambiguous wording Fish Oil and Glucosamine both with Warfarin
+19,Can I take both Melatonin and Zinc with Carbamazepine?,Carbamazepine,"Melatonin,Zinc",,,safety,found 2+1 — Melatonin and Zinc both with Carbamazepine
+20,I take Fish Oil and Honey daily. Is that safe with Warfarin?,Warfarin,"Fish Oil,Honey",,,safety,found 2+1 — mixed Fish Oil (found) and Honey (not found) with Warfarin
+21,I take Fish Oil and Glucosamine. Is it safe with both Warfarin and Ibuprofen?,"Warfarin,Ibuprofen","Fish Oil,Glucosamine",,,safety,found 2+2 — full matrix Fish Oil and Glucosamine with Warfarin and Ibuprofen
+22,Can I take St. John's Wort with Aspirin?,Aspirin,St. John's Wort,,,safety,both in database no interaction exists
+23,Can I take CoQ10 with Metformin?,Metformin,CoQ10,,,safety,1+1 interaction
+

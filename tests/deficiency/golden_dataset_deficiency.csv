@@ -1,4 +1,0 @@
-test_id,user_question,medications,supplements,conditions,dietary_restrictions,expected_output_keywords,expected_supplements,test_type,description
-1,"I'm vegan, what nutrients am I at risk for?","","","","Vegan","B-12|B12|Vitamin B12|Iron|deficiency|at risk","","deficiency","Vegan diet should flag B-12 and Iron deficiencies"
-2,"I take Metformin, what nutrients should I watch?","Metformin","","Type 2 Diabetes","","B-12|B12|Vitamin B12|deficiency|at risk","","deficiency","Metformin should flag B-12 deficiency risk"
-3,"I'm vegetarian, what should I supplement?","","","","Vegetarian","B-12|B12|Iron|deficiency|recommend","","deficiency","Vegetarian diet should flag B-12 and Iron"

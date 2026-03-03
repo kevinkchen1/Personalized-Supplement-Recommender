@@ -70,6 +70,45 @@ def _build_findings_summary(state: Dict[str, Any]) -> str:
     """Build a human-readable findings summary from all specialist results."""
     lines = []
 
+    # ── Unrecognized entities — detected from normalizer output ──  
+    normalized_supps = state.get("normalized_supplements") or []
+    unrecognized_supps = [
+        s['user_input'] for s in normalized_supps
+        if s.get('confidence') in ('NOT_FOUND', 'LOW')
+    ]
+    if unrecognized_supps:
+        lines.append(
+            f"SAFETY FINDINGS: The following supplement(s) were not recognized "
+            f"in our database and could not be checked for interactions: "
+            f"{', '.join(unrecognized_supps)}. Safety cannot be confirmed."
+        )
+
+    normalized_meds = state.get("normalized_medications") or []
+    unrecognized_meds = [
+        m['user_input'] for m in normalized_meds
+        if m.get('confidence') in ('NOT_FOUND', 'LOW')
+    ]
+    if unrecognized_meds:
+        lines.append(
+            f"SAFETY FINDINGS: The following medication(s) were not recognized "
+            f"in our database and could not be checked for interactions: "
+            f"{', '.join(unrecognized_meds)}. Safety cannot be confirmed."
+        )
+    
+    # ── No supplements in profile ──
+    if not (state.get("supplements_list") or []) and not unrecognized_supps:
+        lines.append(
+            "SAFETY FINDINGS: No supplements were identified. "
+            "There are no supplements to check for interactions."
+        )
+    
+    # ── No medications in profile ──
+    if not (state.get("medications_list") or []):
+        lines.append(
+            "SAFETY FINDINGS: No medications were identified. "
+            "Supplement safety cannot be checked without knowing what medications are being taken."
+        )
+
     # ── Safety (grouped by pair, with evidence paths) ──
     safety = state.get("safety_results") or {}
     interactions = safety.get("interactions") or []

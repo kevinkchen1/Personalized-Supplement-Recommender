@@ -23,7 +23,6 @@ from src.agents.synthesis import synthesis_agent
 from src.tools.safety_check import safety_check
 from src.tools.recommendation import recommendation
 from src.tools.deficiency_check import deficiency_check
-# from specialists.recommendation import recommendation
 
 
 def build_workflow():
@@ -82,6 +81,7 @@ def build_workflow():
             NodeNames.RECOMMENDATION: NodeNames.RECOMMENDATION,    # live
             NodeNames.DEFICIENCY_CHECK: NodeNames.DEFICIENCY_CHECK, # live
             NodeNames.SYNTHESIS: NodeNames.SYNTHESIS,
+            END: END,
             
         }
     )
