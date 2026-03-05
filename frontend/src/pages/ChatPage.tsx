@@ -15,7 +15,17 @@ type Message = {
   content: string;
 };
 
-const API_BASE_URL = "http://localhost:8000";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:8000";
+
+// Helpful during deployment: see what URL got baked into the bundle.
+// In production this will log once in the browser console.
+// eslint-disable-next-line no-console
+console.log(
+  "[ChatPage] API_BASE_URL =",
+  API_BASE_URL,
+  "VITE_API_BASE_URL =",
+  import.meta.env.VITE_API_BASE_URL,
+);
 
 export function ChatPage() {
   const { profile, setProfile } = usePatientProfile();
