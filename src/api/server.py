@@ -1,13 +1,17 @@
 from typing import Any, Dict, List, Optional
+import asyncio
+import json
 
 import os
 import uvicorn
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field
 
 from src.graph.connections import graph_interface, schema_provider  # noqa: F401
+from src.graph.graph_interface import clear_query_log, drain_query_log
 from src.workflow.graph_builder import build_workflow
 from src.workflow.state import ConversationState, InputState, create_initial_state
 
@@ -16,6 +20,17 @@ load_dotenv()
 
 # Build LangGraph workflow once at startup
 workflow = build_workflow()
+
+# Human-readable step descriptions
+STEP_DESCRIPTIONS = {
+    "entity_extractor": "Extracting entities from your question...",
+    "entity_normalizer": "Normalizing entities to knowledge graph format...",
+    "supervisor": "Planning next analysis step...",
+    "safety_check": "Checking supplement-medication interactions...",
+    "deficiency_check": "Analyzing potential nutrient deficiencies...",
+    "recommendation": "Finding supplement recommendations...",
+    "synthesis": "Synthesizing final answer...",
+}
 
 
 class PatientProfile(BaseModel):
@@ -99,6 +114,93 @@ async def chat_endpoint(payload: ChatRequest) -> ChatResponse:
     except Exception as exc:  # noqa: BLE001
         # For now, surface a generic error to the client and log server-side
         raise HTTPException(status_code=500, detail=str(exc)) from exc
+
+
+@app.post("/chat/stream")
+async def chat_stream_endpoint(payload: ChatRequest):
+    """
+    Stream LangGraph workflow execution with step-by-step progress updates.
+    
+    Returns Server-Sent Events (SSE) with:
+    - step: Current step being executed
+    - result: Final result when complete
+    - error: Error message if something goes wrong
+    """
+    async def generate():
+        try:
+            yield f"data: {json.dumps({'type': 'step', 'node': 'starting', 'description': 'Starting workflow...', 'completed_steps': []})}\n\n"
+            await asyncio.sleep(0)
+
+            input_state: InputState = {
+                "user_question": payload.user_question,
+                "patient_profile": payload.patient_profile.model_dump(),
+            }
+
+            initial_state: ConversationState = create_initial_state(
+                user_question=input_state["user_question"],
+                patient_profile=input_state["patient_profile"],
+            )
+
+            completed_steps: List[str] = []
+            final_state: Dict[str, Any] = dict(initial_state)
+            all_queries: List[Dict[str, Any]] = []
+            
+            clear_query_log()
+            
+            for event in workflow.stream(initial_state, stream_mode="updates"):
+                for node_name, node_output in event.items():
+                    final_state.update(node_output)
+                    
+                    step_queries = drain_query_log()
+                    all_queries.extend(
+                        {**q, "node": node_name} for q in step_queries
+                    )
+                    
+                    step_info: Dict[str, Any] = {
+                        "type": "step",
+                        "node": node_name,
+                        "description": STEP_DESCRIPTIONS.get(node_name, f"Running {node_name}..."),
+                        "completed_steps": completed_steps.copy(),
+                    }
+                    
+                    if node_name == "supervisor":
+                        decision = node_output.get("supervisor_decision", "")
+                        step_info["decision"] = decision
+                    
+                    if step_queries:
+                        step_info["queries"] = step_queries
+                    
+                    yield f"data: {json.dumps(step_info)}\n\n"
+                    await asyncio.sleep(0)
+                    completed_steps.append(node_name)
+
+            result_data = {
+                "type": "result",
+                "final_answer": final_state.get("final_answer"),
+                "safety_results": final_state.get("safety_results"),
+                "deficiency_results": final_state.get("deficiency_results"),
+                "recommendation_results": final_state.get("recommendation_results"),
+                "evidence_chain": final_state.get("evidence_chain", []),
+                "iterations": final_state.get("iterations", 0),
+                "all_queries": all_queries,
+                "workflow_steps": completed_steps,
+            }
+            yield f"data: {json.dumps(result_data)}\n\n"
+            await asyncio.sleep(0)
+            
+        except Exception as exc:
+            error_data = {"type": "error", "message": str(exc)}
+            yield f"data: {json.dumps(error_data)}\n\n"
+
+    return StreamingResponse(
+        generate(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+            "X-Accel-Buffering": "no",
+        }
+    )
 
 
 def run():
