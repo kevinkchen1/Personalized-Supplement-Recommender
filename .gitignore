@@ -34,3 +34,6 @@ drugbank_data/drug_interactions.csv
 #Langgraph
 .langgraph_api/
 
+# Frontend
+frontend/node_modules/
+
