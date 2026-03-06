@@ -1,0 +1,11 @@
+test_id,user_question,medications,supplements,conditions,dietary_restrictions,test_type,description
+1,Do I have any nutrient deficiency risks?,,,,,deficiency,EDGE — nothing_to_check: all inputs empty. Verifies early exit returns status=nothing_to_check and total_count=0
+2,What nutrient deficiencies should I worry about with my vegan diet?,,,,Vegan,deficiency,DIET — vegan: DB has 8 DEFICIENT_IN edges for Vegan. Expect 8 nutrients (B12 Iron Calcium Vitamin D Zinc Iodine Omega-3 Protein)
+3,I'm vegetarian. Am I missing any nutrients?,,,,Vegetarian,deficiency,DIET — vegetarian: DB has 4 DEFICIENT_IN edges for Vegetarian. Verifies different restriction returns different count
+4,I follow a keto diet. Any deficiency risks?,,,,Keto,deficiency,DIET — keto: DB has 4 DEFICIENT_IN edges for Keto. Tests a non-plant-based restriction
+5,I'm dairy-free and gluten-free. What nutrients am I missing?,,,,"Dairy-Free,Gluten-Free",deficiency,DIET — two restrictions: DB has 3+3=6 edges but some nutrients may overlap. Tests _aggregate merges correctly and overlap detection if same nutrient appears from both diets
+6,I'm on Metformin. Could it be depleting any vitamins?,Metformin,,,,deficiency,DIAGNOSTIC — medication pathway: Drug→Nutrient edges do NOT exist in DB. Expect medication_based=[] confirming the data gap. Important for results section.
+7,Can Fish Oil deplete any nutrients?,,Fish Oil,,,deficiency,DIAGNOSTIC — supplement pathway: Supplement→Nutrient edges do NOT exist in DB. Expect supplement_based=[] confirming the data gap.
+8,I'm vegan and take Metformin. Am I at risk for any deficiencies?,Metformin,,,Vegan,deficiency,DIAGNOSTIC — overlap test: Should find 8 diet deficiencies but 0 medication depletions. Proves overlap detection cannot fire because Drug→Nutrient data is missing. Expected: 8 nutrients 0 critical overlaps
+9,I follow a pescatarian diet. What should I supplement?,,,,Pescatarian,deficiency,DIET — pescatarian: DB has 2 DEFICIENT_IN edges. Tests the smallest dataset. Verifies system handles low-count results correctly
+10,I'm vegan and dairy-free. What nutrients am I at risk for?,,,,"Vegan,Dairy-Free",deficiency,DIET — overlapping restrictions: Vegan(8) and Dairy-Free(3) likely share Calcium and Vitamin D. Tests that _aggregate deduplicates by nutrient and flags DOUBLE_OVERLAP for shared nutrients

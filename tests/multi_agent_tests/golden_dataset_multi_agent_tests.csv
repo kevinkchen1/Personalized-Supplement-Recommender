@@ -1,2 +1,0 @@
-test_id,user_question,medications,supplements,conditions,dietary_restrictions,expected_output_keywords,expected_supplements,test_type,description
-1,"I'm on a statin, what supplements support heart health safely?","Atorvastatin","","High Cholesterol","","Coenzyme Q10|CoQ10|safe|recommend","Coenzyme Q10","multi_agent","Should recommend CoQ10 (safe with statin) but avoid Red Yeast Rice - requires both safety check and recommendation"

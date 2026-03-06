@@ -1,0 +1,11 @@
+test_id,user_question,medications,supplements,conditions,dietary_restrictions,test_type,description
+1,What supplements are popular right now?,,,,Vegan,recommendation,EDGE — no_conditions: no conditions in profile. Entity extractor may or may not pull a condition from the question. Tests early exit path when conditions_list is empty
+2,What supplements can help with my diabetes?,,,Diabetes,,recommendation,EXACT_MATCH — diabetes: DB has 3 supplements for Diabetes. SYMPTOM_QUERY should match directly via CONTAINS
+3,What can help with my depression?,,,Depression,,recommendation,EXACT_MATCH — depression: DB has 4 supplements for Depression. Verifies a different condition returns a different count
+4,I have acne. Any supplement suggestions?,,,Acne,,recommendation,EXACT_MATCH — acne: DB has 3 supplements. Tests a non-chronic condition
+5,What supplements might help with general brain fog?,,,Brain Fog,,recommendation,KEYWORD_FALLBACK — brain fog: unlikely to match exactly. BROAD_QUERY should split into keywords and match on brain-related symptoms
+6,Any supplements for xylophoria?,,,Xylophoria,,recommendation,NOT_FOUND — fabricated condition: no DB match possible. Verifies status=not_found and empty candidates list
+7,I already take Fish Oil. What else could help with heart disease?,,Fish Oil,Heart Disease,,recommendation,EXCLUDE_CURRENT — heart disease: DB has 3 supplements. Fish Oil should be excluded via current_supplements_lower check. Expect 2 candidates
+8,I have diabetes and depression. What supplements might help?,,,"Diabetes,Depression",,recommendation,MULTI_CONDITION — two conditions: Diabetes(3) + Depression(4). Tests seen_supplements dedup across conditions and safety_rating sorting
+9,What can help with my constipation? I take Warfarin.,Warfarin,,Constipation,,recommendation,WITH_MEDICATION — constipation: DB has 2 supplements. Tests that candidates are found AND medication context is passed for downstream safety check
+10,I have osteoporosis and take Calcium already.,,Calcium,Osteoporosis,,recommendation,EXCLUDE_PLUS_CONDITION — osteoporosis: DB has 2 supplements. If Calcium is one of them it should be excluded. Tests exclude logic with a real overlap between current supplement and candidate
