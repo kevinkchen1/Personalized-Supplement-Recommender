@@ -1,0 +1,25 @@
+assess: |
+  You are a medical safety expert. Given an interaction record between a dietary supplement
+  and a medication, your job is to assess the clinical risk.
+
+  Here is the information available for a single interaction:
+  - supplement: {supplement}
+  - medication: {medication}
+  - description: {description}
+  - pathway: {pathway}
+  - current_severity: {current_severity}
+
+  Based on standard pharmacological knowledge and clinical reasoning, determine whether the
+  severity level is appropriate or should be adjusted. Severity must be one of the strings
+  "LOW", "MODERATE", or "HIGH". Provide a concise explanation for your judgment.
+
+  **Output requirement:**
+  Return a JSON object with two keys exactly:
+  ```json
+  {{
+    "severity": "<LOW|MODERATE|HIGH>",
+    "reasoning": "<brief explanation>"
+  }}
+  ```
+  Do **not** include any additional text, markdown, or commentary. If you cannot assess, simply
+  echo the `current_severity` and provide any reasoning you can.

@@ -6,11 +6,33 @@ Handles connection management, query execution, and schema introspection.
 """
 
 import logging
+import threading
 from typing import Any, Dict, List, Optional
 
 from neo4j import GraphDatabase
 
 logger = logging.getLogger(__name__)
+
+_query_log: threading.local = threading.local()
+
+
+def get_query_log() -> List[Dict[str, Any]]:
+    """Return the current thread's query log, creating it if needed."""
+    if not hasattr(_query_log, "entries"):
+        _query_log.entries = []
+    return _query_log.entries
+
+
+def clear_query_log() -> None:
+    """Clear the current thread's query log."""
+    _query_log.entries = []
+
+
+def drain_query_log() -> List[Dict[str, Any]]:
+    """Return and clear the current thread's query log."""
+    entries = get_query_log().copy()
+    clear_query_log()
+    return entries
 
 
 class GraphInterface:
@@ -70,7 +92,13 @@ class GraphInterface:
         try:
             with self.driver.session() as session:
                 result = session.run(cypher_query, parameters or {})
-                return [record.data() for record in result]
+                records = [record.data() for record in result]
+                get_query_log().append({
+                    "query": cypher_query.strip(),
+                    "parameters": {k: v for k, v in (parameters or {}).items()},
+                    "result_count": len(records),
+                })
+                return records
         except Exception as e:
             logger.error(f"Query execution failed: {e}")
             logger.error(f"Query: {cypher_query}")

@@ -1,31 +1,66 @@
 """
-Connections - Module-level Singletons
+Connections - Lazy Singletons for Neo4j access
 
-Initializes GraphInterface and SchemaProvider once at import time.
-All nodes that need database access import directly from here
-rather than reading from state.
+Provides lazily-initialized accessors for `GraphInterface` and
+`SchemaProvider` so that no network calls are made at import time.
 
-This avoids passing these objects through state entirely — they are
-effectively singletons (one instance for the lifetime of the app).
+Usage (unchanged for callers):
+    from src.graph.connections import graph_interface, schema_provider
 
-Usage:
-    from graph.connections import graph_interface, schema_provider
+Both names are lightweight proxies that create and cache the underlying
+objects on first use, which keeps serverless runtimes (e.g. Vercel)
+from performing DNS / network I/O during module import.
 """
 
 import os
+from typing import Optional
+
 from dotenv import load_dotenv
 
 from src.graph.graph_interface import GraphInterface
 from src.graph.schema import SchemaProvider
 
+
 load_dotenv()
 
-# ── Initialize once at import time ──
-graph_interface = GraphInterface(
-    uri=os.getenv("NEO4J_URI", "bolt://localhost:7687"),
-    user=os.getenv("NEO4J_USER", "neo4j"),
-    password=os.getenv("NEO4J_PASSWORD", ""),
-)
+_graph_interface: Optional[GraphInterface] = None
+_schema_provider: Optional[SchemaProvider] = None
 
-# SchemaProvider loads DB schema on init — runs once, cached for all nodes
-schema_provider = SchemaProvider(graph_interface)
+
+def get_graph_interface() -> GraphInterface:
+    """Return a process-wide GraphInterface instance, initializing on first use."""
+    global _graph_interface
+    if _graph_interface is None:
+        _graph_interface = GraphInterface(
+            uri=os.getenv("NEO4J_URI", "bolt://localhost:7687"),
+            user=os.getenv("NEO4J_USER", "neo4j"),
+            password=os.getenv("NEO4J_PASSWORD", ""),
+        )
+    return _graph_interface
+
+
+def get_schema_provider() -> SchemaProvider:
+    """Return a process-wide SchemaProvider instance, initializing on first use."""
+    global _schema_provider
+    if _schema_provider is None:
+        _schema_provider = SchemaProvider(get_graph_interface())
+    return _schema_provider
+
+
+class _GraphInterfaceProxy:
+    """Attribute proxy that forwards to the lazily-initialized GraphInterface."""
+
+    def __getattr__(self, name):
+        return getattr(get_graph_interface(), name)
+
+
+class _SchemaProviderProxy:
+    """Attribute proxy that forwards to the lazily-initialized SchemaProvider."""
+
+    def __getattr__(self, name):
+        return getattr(get_schema_provider(), name)
+
+
+# Backwards-compatible exports: these are cheap proxies
+graph_interface = _GraphInterfaceProxy()
+schema_provider = _SchemaProviderProxy()
