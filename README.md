@@ -9,11 +9,10 @@ Built with **Neo4j** (knowledge graph), **LangGraph** (multi-agent orchestration
 ## Table of Contents
 
 - [Overview](#overview)
-- [Architecture](#architecture)
 - [Prerequisites](#prerequisites)
 - [Setup](#setup)
 - [Running the Application](#running-the-application)
-- [Testing](#running-tests)
+- [Running the Tests](#running-tests)
 - [Project Structure](#project-structure)
 
 ---
@@ -26,65 +25,13 @@ Millions of people take dietary supplements without knowing they can dangerously
 - **Deficiency Analysis** — Identifying nutrient gaps from diet, supplements, and medications with critical overlap detection
 - **Personalized Recommendations** — Suggesting safe supplements for conditions/symptoms, filtered against your medication profile
 
-The system uses multi-hop reasoning over a Neo4j knowledge graph (329,820 nodes, 3.4M+ relationships) built from **DrugBank** and **Mayo Clinic** data, with a supervisor agent dynamically routing queries to specialist tools.
+The system uses multi-hop reasoning over a Neo4j knowledge graph (329,820 nodes, 3.4M+ relationships) built from **DrugBank**, **Mayo Clinic** and **Manually Curated Nutrition** data, with a supervisor agent dynamically routing queries to specialist tools.
 
----
-
-## Architecture
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│  INPUT: user_question + patient_profile                         │
-└────────────────────────┬────────────────────────────────────────┘
-                         │
-                         ▼
-              ┌──────────────────┐
-              │ entity_extractor │  LLM (question) + parsing (profile)
-              └────────┬─────────┘
-                       │  extracted_entities
-                       ▼
-              ┌──────────────────┐
-              │entity_normalizer │  LLM → Cypher → Neo4j
-              └────────┬─────────┘
-                       │  medications_list, supplements_list,
-                       │  dietary_restrictions_list, conditions_list
-                       ▼
-              ┌──────────────────┐  ◄──────────────────────────┐
-              │    supervisor    │  LLM routing decision        │
-              └────────┬─────────┘                             │
-                       │                                       │
-          ┌────────────┼─────────────┐                        │
-          │            │             │                         │
-          ▼            ▼             ▼                         │
-  ┌──────────────┐ ┌──────────┐ ┌────────────────┐            │
-  │ safety_check │ │deficiency│ │ recommendation │            │
-  │              │ │  _check  │ │                │            │
-  └──────┬───────┘ └────┬─────┘ └───────┬────────┘            │
-         │              │               │                      │
-         └──────────────┴───────────────┘                      │
-                        │ specialist results                    │
-                        └──────────────────────────────────────┘
-                                    │ synthesize
-                                    ▼
-                              final_answer
-```
-
-The system separates **agents** (LLM-driven, handle ambiguity) from **tools** (hardcoded Cypher, deterministic and fast):
-
-| Component | Type | What it does |
-|---|---|---|
-| Entity Extractor | **Hybrid** | LLM parses natural language; deterministic parsing for profile form |
-| Entity Normalizer | **Agent** | LLM generates Cypher to map names → database IDs using live schema |
-| Supervisor | **Agent** | LLM decides which specialist to call next based on patient data + results so far |
-| Safety Check | **Agent** | LLM generated Cypher UNION query to detect safety interactions |
-| Deficiency Check | **Tool** | 3-pathway query: diet, medication depletion, supplement depletion + overlap detection |
-| Recommendation | **Tool** | TREATS relationship lookup + keyword fallback, filtered by current supplements |
-
-For detailed architecture documentation, see below:
+For detailed documentation, see below:
 
 | Document | Description |
 |---|---|
-| [Workflow Overview](docs/workflow_overview.md) | Full workflow diagram, agent/tool summary, and what's left to build |
+| [Workflow Overview](docs/workflow_overview.md) | Full workflow architecture |
 | [Agents & Tools Reference](docs/agents_and_tools.md) | Detailed reference for each component: what it does, key design decisions, state reads/writes |
 | [Knowledge Graph Structure](docs/knowledge_graph_structure.md) | All node types, relationship types, counts, and properties |
 | [Prompts Reference](docs/prompts.md) | Every LLM prompt used in the system with inline comments |
@@ -395,3 +342,11 @@ Personalized-Supplement-Recommender/
         ├── graph_builder.py        # Build and compile the LangGraph workflow graph
         └── routing.py              # NodeNames constants + supervisor decision → node name mapping
 ```
+---
+## Contributors
+- Jovanna Fernando
+- Kevin Chen
+- Parna Praveen
+- Sia Patodia
+- Mentor: Abed El-Husseini
+- Mentor: Balaji Veeramani
