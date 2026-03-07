@@ -1,0 +1,575 @@
+================================================================================
+TEST REPORT — Deficiency Tests (Human Review)
+================================================================================
+Dataset: golden_dataset_deficiency
+Total Tests: 12
+
+================================================================================
+TEST RESULTS
+================================================================================
+
+Test 1
+------------------------------------------------------------
+  Question:  Do I have any nutrient deficiency risks?
+  Type:      deficiency
+  Desc:      EDGE — nothing_to_check: all inputs empty. Verifies early exit returns status=nothing_to_check
+
+  PATIENT PROFILE:
+    Medications:          None
+    Supplements:          None
+    Conditions:           None
+    Dietary Restrictions: None
+
+  DIET-BASED DEFICIENCIES: None
+
+  MEDICATION-BASED DEPLETIONS: None
+
+  SUPPLEMENT-BASED DEPLETIONS: None
+
+  CRITICAL OVERLAPS: None
+
+  SUMMARY:
+    Total nutrients at risk: 0
+    Critical overlaps:       0
+    Nutrients at risk:       None
+
+  FINAL ANSWER:
+    **Based on the information you provided, I cannot identify any specific nutrient deficiency risks for you.**
+    
+    You're not taking any medications that commonly interfere with nutrient absorption, and you don't have dietary restrictions that would limit your access to essential vitamins and minerals. You're also not taking any supplements that might mask underlying deficiencies or create imbalances.
+    
+    Without medications like proton pump inhibitors (which block B12 absorption) or dietary restrictions like veganism (which can limit B12 intake), your risk profile appears standard for the general population.
+    
+    ---
+    
+    I wasn't able to assess supplement safety interactions since you're not currently taking any supplements or medications.
+    
+    I'd recommend discussing your individual risk factors with your healthcare provider, who can evaluate your complete health picture and determine if any specific testing or monitoring would be beneficial for you.
+
+
+Test 2
+------------------------------------------------------------
+  Question:  What nutrient deficiencies should I worry about with my vegan diet?
+  Type:      deficiency
+  Desc:      DIET — vegan: DB has 8 DEFICIENT_IN edges. Expect 8 nutrients
+
+  PATIENT PROFILE:
+    Medications:          None
+    Supplements:          None
+    Conditions:           None
+    Dietary Restrictions: Vegan
+
+  DIET-BASED DEFICIENCIES:
+    Vegan → Calcium (risk: Moderate)
+    Vegan → Iodine (risk: Moderate)
+    Vegan → Iron (risk: Moderate to High)
+    Vegan → Omega-3 (EPA/DHA) (risk: High)
+    Vegan → Protein (risk: Low to Moderate)
+    Vegan → Vitamin B12 (risk: High)
+    Vegan → Vitamin D (risk: Moderate)
+    Vegan → Zinc (risk: Moderate)
+
+  MEDICATION-BASED DEPLETIONS: None
+
+  SUPPLEMENT-BASED DEPLETIONS: None
+
+  CRITICAL OVERLAPS: None
+
+  SUMMARY:
+    Total nutrients at risk: 8
+    Critical overlaps:       0
+    Nutrients at risk:       Calcium, Iodine, Iron, Omega-3 (EPA/DHA), Protein, Vitamin B12, Vitamin D, Zinc
+
+  FINAL ANSWER:
+    **Your vegan diet puts you at risk for eight key nutrient deficiencies that you need to address.**
+    
+    You're at risk for **Vitamin B12**, **Vitamin D**, **Iron**, **Calcium**, **Zinc**, **Iodine**, **Omega-3 (EPA/DHA)**, and **Protein** deficiencies due to your vegan diet. These nutrients are either absent from plant foods or poorly absorbed from plant sources compared to animal products.
+    
+    **Vitamin B12** is the most critical concern since it's virtually absent from plant foods and deficiency can cause permanent nerve damage. **Iron** from plants is harder for your body to absorb than iron from meat. **Calcium** and **Vitamin D** work together for bone health, and both can be challenging to get adequate amounts from vegan sources alone.
+    
+    **Omega-3 fatty acids** EPA and DHA are found primarily in fish, while plants mainly provide ALA, which your body converts inefficiently. **Zinc** absorption is reduced by the fiber and phytates in plant foods. **Iodine** levels vary widely in plant foods depending on soil content. **Protein** requires careful planning to ensure you get all essential amino acids from plant combinations.
+    
+    ---
+    
+    I wasn't able to provide supplement recommendations since no current supplements were listed to check for safety. Talk to your healthcare provider about testing your levels and developing a supplementation plan to address these deficiencies.
+
+
+Test 3
+------------------------------------------------------------
+  Question:  I'm vegetarian. Am I missing any nutrients?
+  Type:      deficiency
+  Desc:      DIET — vegetarian: DB has 4 DEFICIENT_IN edges. Expect 4 nutrients
+
+  PATIENT PROFILE:
+    Medications:          None
+    Supplements:          None
+    Conditions:           None
+    Dietary Restrictions: Vegetarian
+
+  DIET-BASED DEFICIENCIES:
+    Vegetarian → Iron (risk: Moderate)
+    Vegetarian → Omega-3 (EPA/DHA) (risk: Moderate)
+    Vegetarian → Vitamin B12 (risk: Moderate)
+    Vegetarian → Zinc (risk: Low to Moderate)
+
+  MEDICATION-BASED DEPLETIONS: None
+
+  SUPPLEMENT-BASED DEPLETIONS: None
+
+  CRITICAL OVERLAPS: None
+
+  SUMMARY:
+    Total nutrients at risk: 4
+    Critical overlaps:       0
+    Nutrients at risk:       Iron, Omega-3 (EPA/DHA), Vitamin B12, Zinc
+
+  FINAL ANSWER:
+    **Yes, your vegetarian diet puts you at risk for deficiencies in four key nutrients: iron, omega-3 fatty acids, vitamin B12, and zinc.**
+    
+    **Iron** deficiency is common in vegetarians because plant-based iron isn't absorbed as easily as iron from meat sources. Your body needs iron to carry oxygen in your blood and prevent anemia.
+    
+    **Omega-3 fatty acids** (specifically EPA and DHA) are primarily found in fish and seafood. These are crucial for heart health, brain function, and reducing inflammation throughout your body.
+    
+    **Vitamin B12** is almost exclusively found in animal products, so vegetarians are at high risk for deficiency. B12 is essential for nerve function and making red blood cells - a deficiency can cause serious neurological problems.
+    
+    **Zinc** is less available from plant foods compared to meat sources, and certain plant compounds can actually block its absorption. Zinc supports your immune system and helps with wound healing.
+    
+    ---
+    
+    I wasn't able to assess supplement safety recommendations since you're not currently taking any medications or supplements.
+    
+    You should discuss these potential deficiencies with your healthcare provider to determine if testing or supplementation is right for you.
+
+
+Test 4
+------------------------------------------------------------
+  Question:  I follow a keto diet. Any deficiency risks?
+  Type:      deficiency
+  Desc:      DIET — keto: DB has 4 DEFICIENT_IN edges (Fiber Magnesium Potassium Vitamin C)
+
+  PATIENT PROFILE:
+    Medications:          None
+    Supplements:          None
+    Conditions:           None
+    Dietary Restrictions: Keto
+
+  DIET-BASED DEFICIENCIES:
+    Keto → Fiber (risk: High)
+    Keto → Magnesium (risk: Moderate)
+    Keto → Potassium (risk: Moderate)
+    Keto → Vitamin C (risk: Moderate)
+
+  MEDICATION-BASED DEPLETIONS: None
+
+  SUPPLEMENT-BASED DEPLETIONS: None
+
+  CRITICAL OVERLAPS: None
+
+  SUMMARY:
+    Total nutrients at risk: 4
+    Critical overlaps:       0
+    Nutrients at risk:       Fiber, Magnesium, Potassium, Vitamin C
+
+  FINAL ANSWER:
+    **Yes, your keto diet puts you at risk for four key nutrient deficiencies: fiber, magnesium, potassium, and vitamin C.**
+    
+    **Fiber** deficiency is common on keto because you're cutting out most high-fiber foods like grains, legumes, and many fruits. This can lead to digestive issues and constipation.
+    
+    **Magnesium** and **potassium** deficiencies happen because keto eliminates many of the best sources of these minerals - fruits, starchy vegetables, and whole grains. Low magnesium can cause muscle cramps and fatigue, while insufficient potassium can lead to weakness and heart rhythm issues.
+    
+    **Vitamin C** deficiency occurs because you're avoiding most fruits and some vegetables that are your main sources of this vitamin. This can weaken your immune system and affect wound healing.
+    
+    ---
+    
+    I wasn't able to assess supplement safety since you're not currently taking any supplements or medications. Consider discussing targeted supplementation with your healthcare provider to address these deficiency risks while maintaining your keto approach.
+
+
+Test 5
+------------------------------------------------------------
+  Question:  I'm dairy-free and gluten-free. What nutrients am I missing?
+  Type:      deficiency
+  Desc:      DIET_MULTI — two restrictions: Dairy-Free(3) + Gluten-Free(3). Tests _aggregate merge and overlap detection
+
+  PATIENT PROFILE:
+    Medications:          None
+    Supplements:          None
+    Conditions:           None
+    Dietary Restrictions: Dairy-Free, Gluten-Free
+
+  DIET-BASED DEFICIENCIES:
+    Dairy-Free → Calcium (risk: High)
+    Gluten-Free → Fiber (risk: Moderate)
+    Gluten-Free → Folate (folic acid) (risk: Moderate)
+    Gluten-Free → Iron (risk: Moderate)
+    Dairy-Free → Vitamin B12 (risk: Low to Moderate)
+    Dairy-Free → Vitamin D (risk: Moderate)
+
+  MEDICATION-BASED DEPLETIONS: None
+
+  SUPPLEMENT-BASED DEPLETIONS: None
+
+  CRITICAL OVERLAPS: None
+
+  SUMMARY:
+    Total nutrients at risk: 6
+    Critical overlaps:       0
+    Nutrients at risk:       Calcium, Fiber, Folate (folic acid), Iron, Vitamin B12, Vitamin D
+
+  FINAL ANSWER:
+    **Your dairy-free and gluten-free diet puts you at risk for deficiencies in six key nutrients: calcium, vitamin D, vitamin B12, fiber, folate, and iron.**
+    
+    Your **dairy-free** diet creates risk for **calcium**, **vitamin D**, and **vitamin B12** deficiencies because dairy products are major sources of these nutrients. Calcium is essential for bone health, vitamin D helps your body absorb calcium and supports immune function, and vitamin B12 is crucial for nerve function and red blood cell formation.
+    
+    Your **gluten-free** diet puts you at risk for **fiber**, **folate**, and **iron** deficiencies. This happens because many gluten-free products aren't fortified the way regular wheat-based foods are, and you're missing out on the nutrients naturally found in whole grains. Fiber supports digestive health, folate is important for cell division and DNA synthesis, and iron carries oxygen in your blood.
+    
+    ---
+    
+    I wasn't able to assess supplement safety since you're not currently taking any supplements or medications. Talk to your healthcare provider about testing your levels of these nutrients and whether supplementation would be appropriate for you.
+
+
+Test 6
+------------------------------------------------------------
+  Question:  I take Carbamazepine. Is it depleting any nutrients?
+  Type:      deficiency
+  Desc:      MEDICATION — Carbamazepine depletes Vitamin B12 (confirmed in DB). Tests MEDICATION_DEPLETION_QUERY pathway
+
+  PATIENT PROFILE:
+    Medications:          Carbamazepine
+    Supplements:          None
+    Conditions:           None
+    Dietary Restrictions: None
+
+  DIET-BASED DEFICIENCIES: None
+
+  MEDICATION-BASED DEPLETIONS:
+    Carbamazepine → Vitamin B12 (mechanism: depletes, risk: HIGH)
+    Carbamazepine → Vitamin D (mechanism: depletes, risk: HIGH)
+    Carbamazepine → Calcium (mechanism: interferes_with_absorption, risk: MEDIUM)
+    Carbamazepine → Folate (folic acid) (mechanism: depletes, risk: HIGH)
+    Carbamazepine → Vitamin B6 (Pyridoxine) (mechanism: depletes, risk: HIGH)
+    Carbamazepine → Biotin (Vitamin B7) (mechanism: depletes, risk: HIGH)
+
+  SUPPLEMENT-BASED DEPLETIONS: None
+
+  CRITICAL OVERLAPS: None
+
+  SUMMARY:
+    Total nutrients at risk: 6
+    Critical overlaps:       0
+    Nutrients at risk:       Vitamin B12, Vitamin D, Calcium, Folate (folic acid), Vitamin B6 (Pyridoxine), Biotin (Vitamin B7)
+
+  FINAL ANSWER:
+    **Yes, your Carbamazepine depletes several important nutrients that you should be aware of.**
+    
+    Your **Carbamazepine** depletes **Vitamin B12**, **Vitamin D**, **Folate**, **Vitamin B6**, and **Biotin** from your body. It also interferes with your body's ability to absorb **Calcium** properly.
+    
+    The B vitamins (**B12**, **Folate**, **B6**, and **Biotin**) are essential for nerve function, energy production, and making healthy blood cells. When Carbamazepine depletes these vitamins over time, you could develop fatigue, nerve problems, or anemia.
+    
+    **Vitamin D** and **Calcium** work together for bone health. Since Carbamazepine both depletes Vitamin D and blocks calcium absorption, long-term use puts you at risk for weakened bones and fractures.
+    
+    ---
+    
+    I didn't assess specific supplement recommendations since that wasn't requested. Talk to your doctor about monitoring these nutrient levels and whether supplementation makes sense for your situation.
+
+
+Test 7
+------------------------------------------------------------
+  Question:  Can Zinc supplements deplete any nutrients?
+  Type:      deficiency
+  Desc:      SUPPLEMENT — Zinc→Iron (MODERATE) + Zinc→Calcium (LOW) + Zinc→Copper (CRITICAL). Tests SUPPLEMENT_DEPLETION_QUERY pathway
+
+  PATIENT PROFILE:
+    Medications:          None
+    Supplements:          Zinc
+    Conditions:           None
+    Dietary Restrictions: None
+
+  DIET-BASED DEFICIENCIES: None
+
+  MEDICATION-BASED DEPLETIONS: None
+
+  SUPPLEMENT-BASED DEPLETIONS:
+    Zinc → Iron (mechanism: interferes_with, risk: MODERATE)
+    Zinc → Calcium (mechanism: interferes_with, risk: LOW)
+    Zinc → Copper (mechanism: depletes, risk: CRITICAL)
+
+  CRITICAL OVERLAPS: None
+
+  SUMMARY:
+    Total nutrients at risk: 3
+    Critical overlaps:       0
+    Nutrients at risk:       Iron, Calcium, Copper
+
+  FINAL ANSWER:
+    **Yes, Zinc supplements can deplete nutrients in your body. Specifically, your Zinc puts you at risk for deficiencies in iron, calcium, and copper.**
+    
+    **Zinc** interferes with how your body absorbs iron and calcium from food and other supplements. When you take zinc, it competes with these minerals for the same absorption pathways in your intestines, meaning less iron and calcium gets into your bloodstream where your body needs it.
+    
+    The copper situation is more direct - **Zinc** actually depletes copper from your body. Zinc and copper work against each other, and when zinc levels get high, copper levels drop. This is particularly important because copper deficiency can cause serious problems with your blood and nervous system.
+    
+    If you're taking zinc regularly, you should monitor for signs of these deficiencies. Iron deficiency shows up as fatigue and weakness, calcium deficiency can affect your bones, and copper deficiency can cause anemia and neurological issues.
+    
+    ---
+    
+    I wasn't able to provide specific recommendations about dosing or timing since that analysis wasn't completed. You should discuss these nutrient interactions with your healthcare provider to make sure your zinc supplementation isn't putting you at risk for other deficiencies.
+
+
+Test 8
+------------------------------------------------------------
+  Question:  I take Fish Oil daily. Does it affect my nutrient levels?
+  Type:      deficiency
+  Desc:      SUPPLEMENT — Fish oil→Vitamin E (LOW). Tests supplement pathway with single result
+
+  PATIENT PROFILE:
+    Medications:          None
+    Supplements:          Fish Oil
+    Conditions:           None
+    Dietary Restrictions: None
+
+  DIET-BASED DEFICIENCIES: None
+
+  MEDICATION-BASED DEPLETIONS: None
+
+  SUPPLEMENT-BASED DEPLETIONS:
+    Fish oil → Vitamin E (mechanism: may_deplete, risk: LOW)
+
+  CRITICAL OVERLAPS: None
+
+  SUMMARY:
+    Total nutrients at risk: 1
+    Critical overlaps:       0
+    Nutrients at risk:       Vitamin E
+
+  FINAL ANSWER:
+    **Yes, your Fish Oil does affect your nutrient levels - specifically, it puts you at risk for Vitamin E deficiency.**
+    
+    **Fish oil** can deplete your body's Vitamin E stores. When you take fish oil regularly, your body uses up more Vitamin E to process and protect the omega-3 fatty acids from oxidation. Think of Vitamin E as a bodyguard that protects these delicate fats - the more fish oil you take, the more bodyguards you need.
+    
+    This depletion happens because omega-3 fatty acids are highly susceptible to damage from free radicals in your body. Your natural Vitamin E reserves get used up faster to prevent this damage, which can gradually lead to lower Vitamin E levels over time.
+    
+    ---
+    
+    I wasn't able to check for any medication interactions since you're not currently taking any prescription drugs.
+    
+    You should discuss this Vitamin E risk with your healthcare provider, especially if you've been taking fish oil long-term.
+
+
+Test 9
+------------------------------------------------------------
+  Question:  I'm vegan and take Carbamazepine. Am I at risk?
+  Type:      deficiency
+  Desc:      CROSS_PATHWAY_OVERLAP — Vegan flags B12 (diet) + Carbamazepine depletes B12 (medication). Should trigger DOUBLE_OVERLAP on B12 with CRITICAL combined risk
+
+  PATIENT PROFILE:
+    Medications:          Carbamazepine
+    Supplements:          None
+    Conditions:           None
+    Dietary Restrictions: Vegan
+
+  DIET-BASED DEFICIENCIES:
+    Vegan → Calcium (risk: Moderate)
+    Vegan → Iodine (risk: Moderate)
+    Vegan → Iron (risk: Moderate to High)
+    Vegan → Omega-3 (EPA/DHA) (risk: High)
+    Vegan → Protein (risk: Low to Moderate)
+    Vegan → Vitamin B12 (risk: High)
+    Vegan → Vitamin D (risk: Moderate)
+    Vegan → Zinc (risk: Moderate)
+
+  MEDICATION-BASED DEPLETIONS:
+    Carbamazepine → Vitamin B12 (mechanism: depletes, risk: HIGH)
+    Carbamazepine → Vitamin D (mechanism: depletes, risk: HIGH)
+    Carbamazepine → Calcium (mechanism: interferes_with_absorption, risk: MEDIUM)
+    Carbamazepine → Folate (folic acid) (mechanism: depletes, risk: HIGH)
+    Carbamazepine → Vitamin B6 (Pyridoxine) (mechanism: depletes, risk: HIGH)
+    Carbamazepine → Biotin (Vitamin B7) (mechanism: depletes, risk: HIGH)
+
+  SUPPLEMENT-BASED DEPLETIONS: None
+
+  CRITICAL OVERLAPS:
+    🚨 Calcium: Calcium is affected by 2 sources: Vegan, Carbamazepine
+       Overlap type: DOUBLE_OVERLAP | Combined risk: CRITICAL
+    🚨 Vitamin B12: Vitamin B12 is affected by 2 sources: Vegan, Carbamazepine
+       Overlap type: DOUBLE_OVERLAP | Combined risk: CRITICAL
+    🚨 Vitamin D: Vitamin D is affected by 2 sources: Vegan, Carbamazepine
+       Overlap type: DOUBLE_OVERLAP | Combined risk: CRITICAL
+
+  SUMMARY:
+    Total nutrients at risk: 11
+    Critical overlaps:       3
+    Nutrients at risk:       Calcium, Iodine, Iron, Omega-3 (EPA/DHA), Protein, Vitamin B12, Vitamin D, Zinc, Folate (folic acid), Vitamin B6 (Pyridoxine), Biotin (Vitamin B7)
+
+  FINAL ANSWER:
+    **Yes, you're at significant risk for multiple nutrient deficiencies. Your vegan diet combined with Carbamazepine creates a double hit for several critical vitamins and minerals.**
+    
+    Your **Carbamazepine** depletes your body's stores of **vitamin B12**, **vitamin D**, **folate**, **vitamin B6**, and **biotin**. At the same time, your vegan diet naturally puts you at risk for **vitamin B12** and **vitamin D** deficiency, making these two nutrients especially concerning since both your medication and diet work against you.
+    
+    Your **Carbamazepine** also interferes with how well your body absorbs **calcium**, and vegan diets typically provide less bioavailable calcium to begin with. This combination significantly increases your risk of calcium deficiency.
+    
+    Beyond these compounded risks, your vegan diet alone puts you at risk for deficiencies in **iodine**, **iron**, **omega-3 fatty acids** (specifically EPA and DHA), **protein**, and **zinc**. These nutrients are either absent from plant foods or poorly absorbed from plant sources.
+    
+    ---
+    
+    I didn't assess supplement recommendations since that wasn't requested. You should discuss targeted supplementation with your healthcare provider to address these multiple deficiency risks.
+
+
+Test 10
+------------------------------------------------------------
+  Question:  I'm vegan and dairy-free. What nutrients am I at risk for?
+  Type:      deficiency
+  Desc:      DIET_OVERLAP — Vegan(8) + Dairy-Free(3) share Calcium B12 Vitamin D. Expect 3 CRITICAL overlaps within diet pathway
+
+  PATIENT PROFILE:
+    Medications:          None
+    Supplements:          None
+    Conditions:           None
+    Dietary Restrictions: Vegan, Dairy-Free
+
+  DIET-BASED DEFICIENCIES:
+    Vegan → Calcium (risk: Moderate)
+    Dairy-Free → Calcium (risk: High)
+    Vegan → Iodine (risk: Moderate)
+    Vegan → Iron (risk: Moderate to High)
+    Vegan → Omega-3 (EPA/DHA) (risk: High)
+    Vegan → Protein (risk: Low to Moderate)
+    Vegan → Vitamin B12 (risk: High)
+    Dairy-Free → Vitamin B12 (risk: Low to Moderate)
+    Vegan → Vitamin D (risk: Moderate)
+    Dairy-Free → Vitamin D (risk: Moderate)
+    Vegan → Zinc (risk: Moderate)
+
+  MEDICATION-BASED DEPLETIONS: None
+
+  SUPPLEMENT-BASED DEPLETIONS: None
+
+  CRITICAL OVERLAPS:
+    🚨 Calcium: Calcium is affected by 2 sources: Vegan, Dairy-Free
+       Overlap type: SINGLE_SOURCE_MULTIPLE | Combined risk: CRITICAL
+    🚨 Vitamin B12: Vitamin B12 is affected by 2 sources: Vegan, Dairy-Free
+       Overlap type: SINGLE_SOURCE_MULTIPLE | Combined risk: CRITICAL
+    🚨 Vitamin D: Vitamin D is affected by 2 sources: Vegan, Dairy-Free
+       Overlap type: SINGLE_SOURCE_MULTIPLE | Combined risk: CRITICAL
+
+  SUMMARY:
+    Total nutrients at risk: 8
+    Critical overlaps:       3
+    Nutrients at risk:       Calcium, Iodine, Iron, Omega-3 (EPA/DHA), Protein, Vitamin B12, Vitamin D, Zinc
+
+  FINAL ANSWER:
+    **Your vegan, dairy-free diet puts you at risk for deficiencies in eight key nutrients: B12, vitamin D, calcium, iron, zinc, iodine, omega-3 fatty acids, and protein.**
+    
+    **Vitamin B12**, **vitamin D**, and **calcium** are your highest-risk nutrients because both your vegan and dairy-free restrictions compound the problem. B12 is almost exclusively found in animal products, so vegans rely heavily on fortified foods or supplements. Vitamin D comes mainly from fortified dairy products and fatty fish, both of which you avoid. Calcium is abundant in dairy products, and while plant sources exist, they're often less well-absorbed by your body.
+    
+    Your vegan diet also puts you at risk for **iron**, **zinc**, **iodine**, **omega-3 fatty acids**, and **protein** deficiencies. Plant-based iron isn't absorbed as easily as iron from meat sources. Zinc from plants is similarly less bioavailable. Iodine comes primarily from seafood and iodized salt. The omega-3s EPA and DHA are found mainly in fish, while plants provide only ALA, which your body converts inefficiently. Protein requires careful planning to ensure you get all essential amino acids from plant sources.
+    
+    ---
+    
+    I wasn't able to assess supplement safety recommendations since you're not currently taking any supplements or medications. Talk to your healthcare provider about testing your levels and developing a supplementation plan tailored to your dietary choices.
+
+
+Test 11
+------------------------------------------------------------
+  Question:  I take Zinc and Vitamin A supplements. Any nutrient concerns?
+  Type:      deficiency
+  Desc:      SUPPLEMENT_MULTI — Zinc depletes Iron+Calcium+Copper. Vitamin A depletes Vitamin D. Tests multiple supplements accumulating
+
+  PATIENT PROFILE:
+    Medications:          None
+    Supplements:          Zinc, Vitamin A
+    Conditions:           None
+    Dietary Restrictions: None
+
+  DIET-BASED DEFICIENCIES: None
+
+  MEDICATION-BASED DEPLETIONS: None
+
+  SUPPLEMENT-BASED DEPLETIONS:
+    Zinc → Iron (mechanism: interferes_with, risk: MODERATE)
+    Vitamin A → Vitamin D (mechanism: interferes_with, risk: MODERATE)
+    Zinc → Calcium (mechanism: interferes_with, risk: LOW)
+    Zinc → Copper (mechanism: depletes, risk: CRITICAL)
+
+  CRITICAL OVERLAPS: None
+
+  SUMMARY:
+    Total nutrients at risk: 4
+    Critical overlaps:       0
+    Nutrients at risk:       Iron, Vitamin D, Calcium, Copper
+
+  FINAL ANSWER:
+    **Yes, your supplement combination puts you at risk for several nutrient deficiencies that you should address.**
+    
+    Your **Zinc** supplement interferes with iron and calcium absorption in your digestive system, making it harder for your body to get enough of these essential minerals from food. Zinc also actively depletes your copper stores over time.
+    
+    Your **Vitamin A** supplement interferes with vitamin D, which can affect your bone health and immune function since these fat-soluble vitamins compete for absorption.
+    
+    The iron deficiency risk is particularly important to watch for - symptoms include fatigue, weakness, and pale skin. Copper deficiency can affect your immune system and connective tissues. Low calcium and vitamin D both impact bone strength.
+    
+    ---
+    
+    I wasn't able to assess supplement recommendations for optimizing your regimen since you didn't specify any health goals. Talk to your healthcare provider about monitoring these nutrient levels and potentially adjusting your supplement timing or doses.
+
+
+Test 12
+------------------------------------------------------------
+  Question:  I'm vegan taking Carbamazepine and Zinc supplements.
+  Type:      deficiency
+  Desc:      ALL_THREE — diet(8) + medication(B12) + supplement(Iron Calcium Copper). Tests full _aggregate with potential TRIPLE_OVERLAP on nutrients shared across pathways
+
+  PATIENT PROFILE:
+    Medications:          Carbamazepine
+    Supplements:          Zinc
+    Conditions:           None
+    Dietary Restrictions: Vegan
+
+  DIET-BASED DEFICIENCIES:
+    Vegan → Calcium (risk: Moderate)
+    Vegan → Iodine (risk: Moderate)
+    Vegan → Iron (risk: Moderate to High)
+    Vegan → Omega-3 (EPA/DHA) (risk: High)
+    Vegan → Protein (risk: Low to Moderate)
+    Vegan → Vitamin B12 (risk: High)
+    Vegan → Vitamin D (risk: Moderate)
+    Vegan → Zinc (risk: Moderate)
+
+  MEDICATION-BASED DEPLETIONS:
+    Carbamazepine → Vitamin B12 (mechanism: depletes, risk: HIGH)
+    Carbamazepine → Vitamin D (mechanism: depletes, risk: HIGH)
+    Carbamazepine → Calcium (mechanism: interferes_with_absorption, risk: MEDIUM)
+    Carbamazepine → Folate (folic acid) (mechanism: depletes, risk: HIGH)
+    Carbamazepine → Vitamin B6 (Pyridoxine) (mechanism: depletes, risk: HIGH)
+    Carbamazepine → Biotin (Vitamin B7) (mechanism: depletes, risk: HIGH)
+
+  SUPPLEMENT-BASED DEPLETIONS:
+    Zinc → Iron (mechanism: interferes_with, risk: MODERATE)
+    Zinc → Calcium (mechanism: interferes_with, risk: LOW)
+    Zinc → Copper (mechanism: depletes, risk: CRITICAL)
+
+  CRITICAL OVERLAPS:
+    🚨 Calcium: Calcium is affected by 3 sources: Vegan, Carbamazepine, Zinc
+       Overlap type: TRIPLE_OVERLAP | Combined risk: CRITICAL
+    🚨 Iron: Iron is affected by 2 sources: Vegan, Zinc
+       Overlap type: DOUBLE_OVERLAP | Combined risk: CRITICAL
+    🚨 Vitamin B12: Vitamin B12 is affected by 2 sources: Vegan, Carbamazepine
+       Overlap type: DOUBLE_OVERLAP | Combined risk: CRITICAL
+    🚨 Vitamin D: Vitamin D is affected by 2 sources: Vegan, Carbamazepine
+       Overlap type: DOUBLE_OVERLAP | Combined risk: CRITICAL
+
+  SUMMARY:
+    Total nutrients at risk: 12
+    Critical overlaps:       4
+    Nutrients at risk:       Calcium, Iodine, Iron, Omega-3 (EPA/DHA), Protein, Vitamin B12, Vitamin D, Zinc, Folate (folic acid), Vitamin B6 (Pyridoxine), Biotin (Vitamin B7), Copper
+
+  FINAL ANSWER:
+    **Your zinc supplement directly interacts with your Carbamazepine, and this combination is creating multiple nutrient deficiency risks that need attention.**
+    
+    **Zinc** interferes with **Carbamazepine** through direct drug interactions. The zinc in your supplement - whether it's zinc gluconate, citrate, or sulfate - all interact with your seizure medication. Additionally, both zinc and Carbamazepine affect calcium in your body, creating competing effects that can disrupt how well your medication works.
+    
+    Your vegan diet combined with these medications creates serious deficiency risks. **Carbamazepine** depletes several B vitamins (B12, B6, folate, and biotin) plus vitamin D, while your **zinc** supplement depletes copper and interferes with iron and calcium absorption. Since your vegan diet already puts you at risk for many of these same nutrients - calcium, iron, B12, vitamin D, plus iodine, omega-3s, protein, and ironically zinc itself - you're facing compounded deficiency risks from multiple sources.
+    
+    > **How we found this:** Zinc → contains → Zinc gluconate/citrate/sulfate → equivalent to → Zinc → interacts with → Carbamazepine
+    
+    ---
+    
+    I didn't assess specific supplement recommendations, only safety and deficiency risks. You should discuss this interaction pattern with your healthcare provider to adjust your supplement regimen safely.
+

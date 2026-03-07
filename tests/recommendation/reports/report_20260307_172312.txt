@@ -2,7 +2,7 @@
 TEST REPORT — Recommendation Tests (Human Review)
 ================================================================================
 Dataset: golden_dataset_recommendation
-Total Tests: 10
+Total Tests: 15
 
 ================================================================================
 TEST RESULTS
@@ -12,7 +12,7 @@ Test 1
 ------------------------------------------------------------
   Question:  What supplements are popular right now?
   Type:      recommendation
-  Desc:      EDGE — no_conditions: no conditions in profile. Entity extractor may or may not pull a condition from the question. Tests early exit path when conditions_list is empty
+  Desc:      EDGE — no_conditions: Tests early exit when conditions_list is empty
 
   PATIENT PROFILE:
     Medications:          None
@@ -35,14 +35,16 @@ Test 1
     
     ---
     
-    Our safety, deficiency, and recommendation specialists weren't able to run their full assessments due to the supplement identification issue. You should talk to your healthcare provider who can recommend popular, evidence-based supplements that are appropriate for your vegan lifestyle.
+    Our safety, deficiency, and recommendation specialists weren't able to run their full assessments due to the supplement identification issue.
+    
+    I'd recommend discussing supplement options with your healthcare provider who can properly evaluate specific products and ensure they're appropriate for your vegan lifestyle.
 
 
 Test 2
 ------------------------------------------------------------
   Question:  What supplements can help with my diabetes?
   Type:      recommendation
-  Desc:      EXACT_MATCH — diabetes: DB has 3 supplements for Diabetes. SYMPTOM_QUERY should match directly via CONTAINS
+  Desc:      EXACT_MATCH — DB has 3 supplements for Diabetes
 
   PATIENT PROFILE:
     Medications:          None
@@ -77,7 +79,7 @@ Test 3
 ------------------------------------------------------------
   Question:  What can help with my depression?
   Type:      recommendation
-  Desc:      EXACT_MATCH — depression: DB has 4 supplements for Depression. Verifies a different condition returns a different count
+  Desc:      EXACT_MATCH — DB has 4 supplements for Depression. Tests safety_rating sorting
 
   PATIENT PROFILE:
     Medications:          None
@@ -113,7 +115,7 @@ Test 4
 ------------------------------------------------------------
   Question:  I have acne. Any supplement suggestions?
   Type:      recommendation
-  Desc:      EXACT_MATCH — acne: DB has 3 supplements. Tests a non-chronic condition
+  Desc:      EXACT_MATCH — DB has 3 supplements for Acne
 
   PATIENT PROFILE:
     Medications:          None
@@ -148,7 +150,7 @@ Test 5
 ------------------------------------------------------------
   Question:  What supplements might help with general brain fog?
   Type:      recommendation
-  Desc:      KEYWORD_FALLBACK — brain fog: unlikely to match exactly. BROAD_QUERY should split into keywords and match on brain-related symptoms
+  Desc:      KEYWORD_FALLBACK — BROAD_QUERY splits keywords and matches on brain-related symptoms
 
   PATIENT PROFILE:
     Medications:          None
@@ -174,14 +176,14 @@ Test 5
     
     The analysis focused on supplement recommendations and safety interactions, but couldn't assess for potential nutrient deficiencies since no specific dietary restrictions, medications, or current supplements were provided to evaluate.
     
-    I'd recommend discussing creatine supplementation with your healthcare provider to determine if it's right for your specific situation.
+    I'd recommend discussing this option with your healthcare provider to determine if creatine is right for your specific situation.
 
 
 Test 6
 ------------------------------------------------------------
   Question:  Any supplements for xylophoria?
   Type:      recommendation
-  Desc:      NOT_FOUND — fabricated condition: no DB match possible. Verifies status=not_found and empty candidates list
+  Desc:      NOT_FOUND — fabricated condition with no DB match
 
   PATIENT PROFILE:
     Medications:          None
@@ -213,7 +215,7 @@ Test 7
 ------------------------------------------------------------
   Question:  I already take Fish Oil. What else could help with heart disease?
   Type:      recommendation
-  Desc:      EXCLUDE_CURRENT — heart disease: DB has 3 supplements. Fish Oil should be excluded via current_supplements_lower check. Expect 2 candidates
+  Desc:      EXCLUDE_CURRENT — Fish Oil excluded from heart disease results. Expect 2 candidates
 
   PATIENT PROFILE:
     Medications:          None
@@ -247,7 +249,7 @@ Test 8
 ------------------------------------------------------------
   Question:  I have diabetes and depression. What supplements might help?
   Type:      recommendation
-  Desc:      MULTI_CONDITION — two conditions: Diabetes(3) + Depression(4). Tests seen_supplements dedup across conditions and safety_rating sorting
+  Desc:      MULTI_CONDITION — Diabetes(3) + Depression(4). Tests dedup and sorting
 
   PATIENT PROFILE:
     Medications:          None
@@ -286,7 +288,7 @@ Test 9
 ------------------------------------------------------------
   Question:  What can help with my constipation? I take Warfarin.
   Type:      recommendation
-  Desc:      WITH_MEDICATION — constipation: DB has 2 supplements. Tests that candidates are found AND medication context is passed for downstream safety check
+  Desc:      REC_SAFETY — Aloe flagged dangerous with Warfarin. Flaxseed approved. Tests rec→safety pipeline
 
   PATIENT PROFILE:
     Medications:          Warfarin
@@ -302,30 +304,26 @@ Test 9
 
   SAFETY INTERACTIONS (post-recommendation):
     [HIGH] Aloe ↔ Warfarin | Pathway: Direct Interaction
-    [HIGH] Aloe ↔ Warfarin | Pathway: Blood Coagulation Conflict
-    [HIGH] Aloe ↔ Warfarin | Pathway: Blood Coagulation Conflict
-    [HIGH] Aloe ↔ Warfarin | Pathway: Blood Coagulation Conflict
-    [HIGH] Aloe ↔ Warfarin | Pathway: Blood Coagulation Conflict
 
   FINAL ANSWER:
-    **For your constipation while taking Warfarin, flaxseed and flaxseed oil are safe options, but avoid aloe supplements entirely.**
+    **For your constipation while taking Warfarin, flaxseed and flaxseed oil are safe options, but avoid aloe supplements.**
     
-    **Flaxseed and flaxseed oil** are generally safe for constipation and don't interfere with your **Warfarin**. These work by adding bulk and moisture to your stool, making it easier to pass.
+    **Flaxseed and flaxseed oil** are generally safe for constipation and won't interfere with your **Warfarin**. These work by adding bulk and moisture to your stool, making it easier to pass.
     
-    **Aloe** supplements are dangerous with your Warfarin. Aloe directly interacts with Warfarin and can cause serious bleeding problems by affecting your blood's ability to clot properly. This creates a conflict with how your Warfarin is supposed to work, potentially leading to dangerous bleeding or clotting issues.
+    **Aloe** supplements are also effective for constipation, but they directly interact with your **Warfarin**. This interaction can affect how well your Warfarin works to prevent blood clots, which could put you at risk.
     
-    > **How we found this:** Aloe → [Direct Interaction] → directly interacts with -> Warfarin → Warfarin ; Aloe → [Blood Coagulation Conflict] → causes -> Cancer -> both affect -> Anticoagulants → Warfarin ; Aloe → [Blood Coagulation Conflict] → causes -> Short-Term Kidney Failure -> both affect -> Anticoagulants → Warfarin
+    > **How we found this:** Aloe → Direct Interaction → supplement interacts with → Warfarin → Warfarin
     
     ---
     
-    I didn't assess whether you might have any nutrient deficiencies contributing to your constipation. Talk to your doctor about these supplement options and to rule out other causes of your constipation.
+    I didn't assess whether you might have any nutrient deficiencies that could be contributing to your constipation. Talk to your doctor about the best constipation treatment plan for someone taking Warfarin.
 
 
 Test 10
 ------------------------------------------------------------
   Question:  I have osteoporosis and take Calcium already.
   Type:      recommendation
-  Desc:      EXCLUDE_PLUS_CONDITION — osteoporosis: DB has 2 supplements. If Calcium is one of them it should be excluded. Tests exclude logic with a real overlap between current supplement and candidate
+  Desc:      EXCLUDE_PLUS — Osteoporosis(2 recs). Tests exclude logic
 
   PATIENT PROFILE:
     Medications:          None
@@ -353,4 +351,163 @@ Test 10
     ---
     
     Talk to your doctor about adding vitamin D to your regimen and confirming the right calcium dosage for your specific needs.
+
+
+Test 11
+------------------------------------------------------------
+  Question:  What supplements can help with my joint pain?
+  Type:      recommendation
+  Desc:      POOR_MATCH — joint pain not exact symptom. Keyword fallback on pain returns Marijuana and Evening primrose (breast pain) — not joint-specific. KG coverage gap
+
+  PATIENT PROFILE:
+    Medications:          None
+    Supplements:          None
+    Conditions:           Joint Pain
+    Dietary Restrictions: None
+
+  CONDITIONS CHECKED: Joint Pain
+
+  CANDIDATE SUPPLEMENTS:
+    Evening primrose — safety_rating: Use with caution | treats: Breast pain
+    Marijuana — safety_rating: Use with caution | treats: Pain
+
+  SAFETY INTERACTIONS (post-recommendation): None
+
+  FINAL ANSWER:
+    **Based on our database, I found limited supplement options for joint pain, with both **evening primrose** and **marijuana** requiring caution due to safety concerns.**
+    
+    **Evening primrose** shows a "use with caution" safety rating specifically for breast pain conditions. While this isn't directly related to joint pain, it indicates this supplement has documented safety considerations that warrant careful monitoring.
+    
+    **Marijuana** also carries a "use with caution" rating for pain management. Though it may address your joint pain, the safety profile requires careful consideration of potential risks and side effects.
+    
+    Since you're not taking any medications currently, we couldn't perform a full interaction safety check. This is actually important information - many joint pain supplements can interact with common medications like blood thinners or anti-inflammatory drugs that patients might start later.
+    
+    ---
+    
+    We didn't assess whether you might have any nutritional deficiencies that could be contributing to your joint pain. You should discuss these options with your healthcare provider to determine the best approach for your specific situation.
+
+
+Test 12
+------------------------------------------------------------
+  Question:  I have chronic inflammation. What should I take?
+  Type:      recommendation
+  Desc:      VAGUE_BROAD — inflammation is broad. Keyword fallback may return loosely matched or irrelevant supplements
+
+  PATIENT PROFILE:
+    Medications:          None
+    Supplements:          None
+    Conditions:           Inflammation
+    Dietary Restrictions: None
+
+  CONDITIONS CHECKED: Inflammation, chronic inflammation
+
+  CANDIDATE SUPPLEMENTS: None found
+
+  SAFETY INTERACTIONS (post-recommendation): None
+
+  FINAL ANSWER:
+    **I don't have specific supplement recommendations for your chronic inflammation based on the analysis I can perform.**
+    
+    My recommendation system didn't identify supplement candidates for chronic inflammation. This means I can't provide you with evidence-based suggestions for **anti-inflammatory supplements** that would be appropriate for your specific situation.
+    
+    Since you're not currently taking any medications or supplements, there are no interaction concerns to address. However, chronic inflammation can have many different underlying causes - from autoimmune conditions to lifestyle factors - and the most effective approach depends on identifying and addressing the root cause.
+    
+    ---
+    
+    I wasn't able to run a full safety analysis since no current medications were specified. You should discuss supplement options with your healthcare provider, who can evaluate your specific type of inflammation and recommend appropriate treatments.
+
+
+Test 13
+------------------------------------------------------------
+  Question:  What supplements help with general fatigue?
+  Type:      recommendation
+  Desc:      VAGUE_BROAD — fatigue is common but vague. Tests keyword fallback quality for non-specific symptoms
+
+  PATIENT PROFILE:
+    Medications:          None
+    Supplements:          None
+    Conditions:           Fatigue
+    Dietary Restrictions: None
+
+  CONDITIONS CHECKED: Fatigue, general fatigue
+
+  CANDIDATE SUPPLEMENTS: None found
+
+  SAFETY INTERACTIONS (post-recommendation): None
+
+  FINAL ANSWER:
+    **I wasn't able to find specific supplement recommendations for your general fatigue in our database.**
+    
+    Our system couldn't identify any supplement candidates that are specifically indicated for fatigue or general fatigue. This means I don't have evidence-based recommendations to offer you from our current database.
+    
+    Since you're not taking any medications or other supplements, there weren't any safety interactions to check. However, this also means I can't analyze whether you might have any nutritional deficiencies that could be contributing to your fatigue.
+    
+    ---
+    
+    I wasn't able to run a full safety analysis since no specific supplements were being considered. 
+    
+    I'd recommend discussing your fatigue with your healthcare provider, who can evaluate potential underlying causes and suggest appropriate treatments.
+
+
+Test 14
+------------------------------------------------------------
+  Question:  Can you recommend something for my headaches?
+  Type:      recommendation
+  Desc:      POOR_MATCH — headaches may lack direct TREATS edges. Tests common condition users ask about
+
+  PATIENT PROFILE:
+    Medications:          None
+    Supplements:          None
+    Conditions:           Headaches
+    Dietary Restrictions: None
+
+  CONDITIONS CHECKED: Headaches
+
+  CANDIDATE SUPPLEMENTS: None found
+
+  SAFETY INTERACTIONS (post-recommendation): None
+
+  FINAL ANSWER:
+    **I don't have any supplement recommendations for your headaches based on the analysis I can perform.**
+    
+    My system searched for supplement options that might help with headaches, but didn't find any candidates that meet the safety and evidence criteria I use for recommendations.
+    
+    Since you're not taking any medications or other supplements, there aren't any interaction concerns to worry about if you do decide to try something. However, I also couldn't identify any nutritional deficiencies from your current situation that might be contributing to your headaches.
+    
+    ---
+    
+    I wasn't able to run a full safety analysis since no specific supplements were identified to evaluate.
+    
+    I'd recommend talking with your healthcare provider about your headaches - they can help determine the underlying cause and discuss both supplement and non-supplement treatment options that might work for you.
+
+
+Test 15
+------------------------------------------------------------
+  Question:  What supplements help with sleep and anxiety?
+  Type:      recommendation
+  Desc:      MULTI_VAGUE — two vague conditions that may not have exact matches. Tests graceful handling of uncertain inputs
+
+  PATIENT PROFILE:
+    Medications:          None
+    Supplements:          None
+    Conditions:           Sleep Issues, Anxiety
+    Dietary Restrictions: None
+
+  CONDITIONS CHECKED: Sleep Issues, Anxiety, sleep
+
+  CANDIDATE SUPPLEMENTS:
+    Melatonin — safety_rating: Generally safe | treats: Circadian rhythm sleep disorders in the blind
+
+  SAFETY INTERACTIONS (post-recommendation): None
+
+  FINAL ANSWER:
+    **Based on the available evidence, melatonin is generally safe and can help with certain sleep disorders, particularly those related to circadian rhythm disruption.**
+    
+    **Melatonin** has a safety rating of "generally safe" for treating circadian rhythm sleep disorders in blind individuals. This suggests it can be effective for sleep issues related to your body's internal clock being out of sync. Melatonin is your body's natural sleep hormone, so supplementing with it can help signal to your brain that it's time to sleep.
+    
+    Since you're not taking any medications, there are no drug interactions to worry about with melatonin or other sleep supplements.
+    
+    ---
+    
+    I wasn't able to assess whether you might have any nutritional deficiencies that could be contributing to your sleep and anxiety issues. You should talk to your healthcare provider to discuss the best approach for your specific situation.
 
