@@ -13,7 +13,7 @@ Built with **Neo4j** (knowledge graph), **LangGraph** (multi-agent orchestration
 - [Prerequisites](#prerequisites)
 - [Setup](#setup)
 - [Running the Application](#running-the-application)
-- [Testing](#testing)
+- [Testing](#running-tests)
 - [Project Structure](#project-structure)
 
 ---
@@ -76,7 +76,7 @@ The system separates **agents** (LLM-driven, handle ambiguity) from **tools** (h
 | Entity Extractor | **Hybrid** | LLM parses natural language; deterministic parsing for profile form |
 | Entity Normalizer | **Agent** | LLM generates Cypher to map names → database IDs using live schema |
 | Supervisor | **Agent** | LLM decides which specialist to call next based on patient data + results so far |
-| Safety Check | **Tool** | 4-pathway UNION query: direct, drug-drug, hidden pharma, similar effect |
+| Safety Check | **Agent** | LLM generated Cypher UNION query to detect safety interactions |
 | Deficiency Check | **Tool** | 3-pathway query: diet, medication depletion, supplement depletion + overlap detection |
 | Recommendation | **Tool** | TREATS relationship lookup + keyword fallback, filtered by current supplements |
 
@@ -88,6 +88,7 @@ For detailed architecture documentation, see below:
 | [Agents & Tools Reference](docs/agents_and_tools.md) | Detailed reference for each component: what it does, key design decisions, state reads/writes |
 | [Knowledge Graph Structure](docs/knowledge_graph_structure.md) | All node types, relationship types, counts, and properties |
 | [Prompts Reference](docs/prompts.md) | Every LLM prompt used in the system with inline comments |
+| [Testing](docs/tests.md) | Human-in-the-loop testing |
 
 
 ---
@@ -222,18 +223,10 @@ This starts the LangGraph development server using the config at `langgraph-stud
 - Inspect state at each node to see extracted entities, normalized IDs, and specialist results
 - Replay and debug individual executions
 
-### Streamlit Web App
 
-```bash
-pdm run app
-```
-
-Opens at `http://localhost:8501`. Enter medications, supplements, conditions, and diet in the sidebar, then ask questions like *"Is Fish Oil safe with Warfarin?"*
+### React App
 
 ---
-
-## Testing
-
 Run these steps in order to verify each component of the system.
 
 ### 1. Verify Neo4j Connection
@@ -333,41 +326,68 @@ Expected: The supervisor should route to `safety_check`, find 3 interactions bet
 
 ---
 
+## Running Tests
+
+Run from the project root.
+
+**Run all tests in a suite:**
+```bash
+python tests/safety/test_runner_safety.py
+python tests/deficiency/test_runner_deficiency.py
+python tests/recommendation/test_runner_recommendation.py
+python tests/multi_agent/test_runner_multi_agent.py
+```
+
+**Run a single test by ID:**
+```bash
+python tests/safety/test_runner_safety.py --test-id 12
+```
+
+**Use a custom dataset:**
+```bash
+python tests/safety/test_runner_safety.py --dataset-path path/to/custom.csv
+```
+
+Reports are saved automatically to `tests/{type}/reports/report_{timestamp}.txt`.
+
+---
+
 ## Project Structure
 
 ```
 Personalized-Supplement-Recommender/
 ├── .devcontainer/                  # Dev container configuration
-├── .env                            # API keys and database credentials (not committed)
 ├── .env.example                    # Template for .env setup
 ├── .gitattributes                  # Git LFS tracking for large data files
 ├── .gitignore
 ├── pyproject.toml                  # PDM project config, dependencies, and scripts
 ├── pdm.lock                        # Locked dependency versions
-├── data/
-│   ├── drugbank_data/              # DrugBank CSVs (12 files, includes 374MB interactions file)
-│   └── mayo_clinic_data/           # Mayo Clinic CSVs (10 files)
-├── docs/                           # System documentation
+├── data/                           # Data files in CSV
+├── docs/                           
 │   ├── workflow_overview.md        # Full workflow diagram and component summary
 │   ├── agents_and_tools.md        # Detailed reference for each agent and tool
 │   ├── knowledge_graph_structure.md # Node types, relationships, and counts
 │   └── prompts.md                  # All LLM prompts with inline comments
-├── langgraph-studio/
-│   ├── langgraph.json              # LangGraph Studio configuration
-│   └── langgraph_studio.py         # LangGraph Studio entry point 
+├── frontend/                       # React/Vite single-page app; communicates with src/api/server.py
+├── langgraph-studio/               # LangGraph Studio configuration and entry point 
 ├── scripts/
-│   └── load_data.py                # Knowledge graph data loader (22 CSVs → Neo4j)
+│   └── load_data.py                # Knowledge graph data loader in Neo4j
+├── tests/                          # Per-agent test runners with CSV golden datasets and report outputs
 └── src/
-    ├── agents/                     # LLM-driven nodes (require Claude API)
+    ├── agents/                     
     │   ├── entity_extractor.py     # Hybrid: LLM extracts from question + deterministic profile parsing
     │   ├── entity_normalizer.py    # Agent: LLM generates Cypher to map names → DB IDs via live schema
+    │   ├── synthesis.py            # Agent: LLM generated final human-readable answer
     │   └── supervisor.py           # Agent: LLM plans which specialist to call next (max 6 iterations)
+    ├── api/
+    │   └── server.py               # FastAPI server exposing the LangGraph workflow to the frontend  
     ├── graph/                      # Database infrastructure
     │   ├── graph_interface.py      # Neo4j connection wrapper, query execution, schema introspection
     │   ├── schema.py               # SchemaProvider — loads and caches DB schema for LLM prompts
     │   └── connections.py          # Module-level singletons (GraphInterface + SchemaProvider)
+    ├── prompts/                    # YAML prompt files, one per agent
     ├── tools/                      # Deterministic specialist nodes (hardcoded Cypher, no LLM)
-    │   ├── safety_check.py         # 4-pathway interaction check (direct, drug-drug, hidden pharma, similar effect)
+    │   ├── safety_check.py         # LLM generated cyphers to detect dangerours interactions
     │   ├── deficiency_check.py     # 3-pathway nutrient depletion (diet, medication, supplement) + overlap detection
     │   └── recommendation.py       # TREATS relationship lookup + keyword fallback for conditions
     └── workflow/                   # LangGraph orchestration
@@ -375,19 +395,3 @@ Personalized-Supplement-Recommender/
         ├── graph_builder.py        # Build and compile the LangGraph workflow graph
         └── routing.py              # NodeNames constants + supervisor decision → node name mapping
 ```
-
-### PDM Scripts
-
-These shortcuts are defined in `pyproject.toml`:
-
-| Command | What it does |
-|---|---|
-| `pdm run app` | Launch Streamlit web app |
-| `pdm run load-data` | Load CSV data into Neo4j knowledge graph |
-| `pdm run langgraph` | Launch LangGraph Studio dev server |
-| `pdm run test` | Run pytest test suite |
-| `pdm run format` | Auto-format code with Black + isort |
-| `pdm run lint` | Run flake8 + mypy |
-
----
-
