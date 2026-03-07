@@ -2,7 +2,7 @@
 
 ---
 
-## Agents
+## Linear Pre-Processing
 
 ### Entity Extractor
 **File:** `src/agents/entity_extractor.py` | **Type:** Hybrid
@@ -42,7 +42,7 @@
 **Writes to state:** `normalized_medications`, `normalized_supplements`, `normalized_dietary_restrictions`, `medications_list`, `supplements_list`, `dietary_restrictions_list`, `conditions_list`, `entities_normalized`, `evidence_chain`
 
 ---
-
+## Core Dynamic Loop
 ### Supervisor
 **File:** `src/agents/supervisor.py` | **Type:** Agent
 
@@ -61,7 +61,7 @@
 
 ---
 
-### Synthesis Agent
+### Synthesis
 **File:** `src/agents/synthesis.py` | **Type:** Agent
 
 **What it does:**
@@ -77,23 +77,17 @@
 
 ---
 
-## Tools (Specialists)
+## Specialists
 
 ### Safety Check
-**File:** `src/tools/safety_check.py` | **Type:** Tool
+**File:** `src/tools/safety_check.py` | **Type:** Agent
 
 **What it does:**
 - Checks for dangerous interactions between supplements and medications
-- Runs one UNION query per supplement against all medications — checks all four pathways in a single DB round-trip
+- Runs one UNION query per supplement against all medications — checks all pathways in a single DB round-trip
 - Combines `supplements_list` (current) + `candidate_supplements_list` (from recommendation) before checking — deduped
 
-**Four interaction pathways:**
-1. `DIRECT_SUPPLEMENT_MEDICATION` — `Supplement -[SUPPLEMENT_INTERACTS_WITH]-> Medication`
-2. `DRUG_DRUG_INTERACTION` — `Supplement → ActiveIngredient → Drug -[INTERACTS_WITH]-> Drug ← Medication`
-3. `HIDDEN_PHARMA_EQUIVALENCE` — `Supplement → ActiveIngredient -[EQUIVALENT_TO]-> Drug ← Medication`
-4. `SIMILAR_EFFECT` — `Supplement -[HAS_SIMILAR_EFFECT_TO]-> Category ← Drug ← Medication`
-
-**Writes to state:** `safety_checked`, `safety_results`, `evidence_chain`
+**Writes to state:** `safety_checked`, `safety_results`, `generated_safety_queries`, `evidence_chain`
 
 ---
 
