@@ -10,7 +10,7 @@ surface evidence-based supplement recommendations.
 
 
 <div align="center">
-  <img src="KG.png" width="75%" alt="Knowledge Graph Structure"/>
+  <img src="visualisation.png" width="60%" alt="Knowledge Graph Structure"/>
 </div>
 
 
