@@ -1,8 +1,10 @@
 # 💊 Personalized Supplement Safety Advisor
 
+> **Live App:** [personalized-supplement-recommender.vercel.app](https://personalized-supplement-recommender.vercel.app/)
+
 An AI-powered system that detects dangerous supplement-medication interactions, identifies nutrient deficiencies, and provides personalized supplement recommendations using a biomedical knowledge graph and multi-agent architecture.
 
-Built with **Neo4j** (knowledge graph), **LangGraph** (multi-agent orchestration), **Claude API** (reasoning), and **Streamlit** (web interface).
+Built with **Neo4j** (knowledge graph), **LangGraph** (multi-agent orchestration), **Claude API** (reasoning), and **React** (web interface).
 
 ---
 
@@ -45,7 +47,8 @@ For detailed documentation, see below:
 | Dependency | Version | Purpose |
 |---|---|---|
 | **Python** | 3.12+ (< 3.14) | Runtime |
-| **PDM** | Latest | Package management |
+| **PDM** | Latest | Python package management |
+| **Node.js** | 18+ | React frontend |
 | **Neo4j** | 5.x+ | Knowledge graph database |
 | **Anthropic API Key** | — | Claude LLM (entity extraction, normalization, supervisor) |
 | **LangSmith API Key** | — | LangGraph Studio visual debugging |
@@ -155,6 +158,26 @@ This loads DrugBank and Mayo Clinic data (22 CSV files) into the knowledge graph
 
 ## Running the Application
 
+### React Web App (Full Application)
+
+The full application runs with two processes: a **FastAPI backend** and a **React frontend**. You will need two terminal windows.
+
+**Terminal 1 — Start the API server** (from the project root):
+```bash
+pdm run api
+```
+
+**Terminal 2 — Start the React frontend**:
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Once both are running, open [http://localhost:5173/](http://localhost:5173/) in your browser.
+
+The frontend is also deployed at [personalized-supplement-recommender.vercel.app](https://personalized-supplement-recommender.vercel.app/).
+
 ### LangGraph Studio (Recommended for Development)
 
 LangGraph Studio provides a visual interface for running queries and inspecting the agent workflow step-by-step.
@@ -170,10 +193,10 @@ This starts the LangGraph development server using the config at `langgraph-stud
 - Inspect state at each node to see extracted entities, normalized IDs, and specialist results
 - Replay and debug individual executions
 
-
-### React App
-
 ---
+
+### Verification Steps
+
 Run these steps in order to verify each component of the system.
 
 ### 1. Verify Neo4j Connection
