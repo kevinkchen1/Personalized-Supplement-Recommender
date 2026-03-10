@@ -1,6 +1,5 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { PatientProfileProvider } from "./profileContext";
-import { ProfilePage } from "./pages/ProfilePage";
 import { ChatPage } from "./pages/ChatPage";
 
 export function App() {
@@ -9,7 +8,7 @@ export function App() {
       <PatientProfileProvider>
         <Routes>
           <Route path="/" element={<ChatPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </PatientProfileProvider>
     </BrowserRouter>

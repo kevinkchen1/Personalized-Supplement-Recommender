@@ -8,8 +8,8 @@ import {
 } from "react";
 
 export type PatientProfile = {
-  medications: string[];
-  supplements: string[];
+  medications: string;
+  supplements: string;
   conditions: string[];
   dietary_restrictions: string[];
 };
@@ -25,8 +25,8 @@ const PatientProfileContext = createContext<PatientProfileContextValue | null>(
 
 export function PatientProfileProvider({ children }: { children: ReactNode }) {
   const [profile, setProfile] = useState<PatientProfile>({
-    medications: [],
-    supplements: [],
+    medications: "",
+    supplements: "",
     conditions: [],
     dietary_restrictions: [],
   });
