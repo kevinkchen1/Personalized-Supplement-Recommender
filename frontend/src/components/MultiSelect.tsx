@@ -89,9 +89,7 @@ export function MultiSelect({
           placeholder={placeholder}
           onChange={(e) => {
             setQuery(e.target.value);
-            setOpen(true);
           }}
-          onFocus={() => setOpen(true)}
           onKeyDown={(e) => {
             if (e.key === "Enter") {
               e.preventDefault();

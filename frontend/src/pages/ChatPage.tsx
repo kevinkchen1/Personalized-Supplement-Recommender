@@ -5,8 +5,6 @@ import { MultiSelect } from "../components/MultiSelect";
 import {
   COMMON_CONDITIONS,
   COMMON_DIETARY_RESTRICTIONS,
-  COMMON_MEDICATIONS,
-  COMMON_SUPPLEMENTS,
 } from "../profileOptions";
 
 type QAEntry = {
@@ -89,6 +87,10 @@ export function ChatPage() {
     setProfile((prev) => ({ ...prev, [field]: next }));
   };
 
+  const handleTextChange = (field: "medications" | "supplements", value: string) => {
+    setProfile((prev) => ({ ...prev, [field]: value }));
+  };
+
   const toggleQueryExpand = (idx: number) => {
     setExpandedQueries((prev) => {
       const next = new Set(prev);
@@ -107,13 +109,7 @@ export function ChatPage() {
     setSelectedHistoryItem(null);
     setIsLoading(true);
     setProvenance(null);
-    setThinkingSteps([
-      {
-        node: "starting",
-        description: "Starting workflow...",
-        status: "active",
-      },
-    ]);
+    setThinkingSteps([]);
 
     const submittedQuestion = question.trim();
     setQuestion("");
@@ -125,8 +121,8 @@ export function ChatPage() {
         body: JSON.stringify({
           user_question: submittedQuestion,
           patient_profile: {
-            medications: profile.medications.join(", "),
-            supplements: profile.supplements.join(", "),
+            medications: profile.medications,
+            supplements: profile.supplements,
             conditions: profile.conditions,
             dietary_restrictions: profile.dietary_restrictions,
           },
@@ -176,6 +172,14 @@ export function ChatPage() {
                   },
                 ];
               });
+              } else if (data.type === "step_update") {
+              setThinkingSteps((prev) =>
+                prev.map((s) =>
+                  s.node === data.node
+                    ? { ...s, decision: data.decision }
+                    : s
+                )
+              );
             } else if (data.type === "result") {
               setThinkingSteps((prev) =>
                 prev.map((s) => ({ ...s, status: "completed" as const }))
@@ -355,7 +359,7 @@ export function ChatPage() {
               <path d="m15 9 1.8 1.8 3.2-3.2" />
             </svg>
           </span>
-          <span className="profile-hero-label">Patient profile</span>
+          <span className="profile-hero-label">Patient Profile</span>
         </button>
       </div>
 
@@ -363,11 +367,46 @@ export function ChatPage() {
         {!showingResult && !isLoading ? (
           <div className="qa-input-section">
             <div className="qa-welcome">
-              <h1 className="qa-title">Supplement Recommender</h1>
+              <h1 className="qa-title">Personalized Supplement Recommender</h1>
+              <p className="qa-title-tag">Using Agents and Knowledge Graphs</p>
               <p className="qa-subtitle">
-                Ask about supplement-medication safety, nutrient deficiencies, or
-                safe options for a symptom or condition.
+                An AI-powered supplement safety advisor that analyzes your complete
+                health profile to deliver personalized, evidence-grounded recommendations.
               </p>
+            </div>
+
+            {/* How it works */}
+            <div className="qa-how-it-works">
+              <p className="qa-section-label">How It Works</p>
+              <div className="qa-steps">
+                <div className="qa-step">
+                  <div className="qa-step-header">
+                    <span className="qa-step-num">1</span>
+                    <strong>Fill your profile</strong>
+                  </div>
+                  <p>Add your medications, supplements, dietary restrictions and health conditions via Patient Profile.</p>
+                </div>
+                <div className="qa-step-arrow">→</div>
+                <div className="qa-step">
+                  <div className="qa-step-header">
+                    <span className="qa-step-num">2</span>
+                    <strong>Ask a question</strong>
+                  </div>
+                  <p> Ask about supplement-medication safety, nutrient deficiencies, or recommendations in the box below.</p>
+                </div>
+                <div className="qa-step-arrow">→</div>
+                <div className="qa-step">
+                  <div className="qa-step-header">
+                    <span className="qa-step-num">3</span>
+                    <strong>Get your analysis</strong>
+                  </div>
+                  <p>A supervisor agent routes to safety, deficiency, and recommendation specialists before synthesizing a response.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* What you can ask */}
+            <div className="qa-welcome-hints">
               <p className="qa-hint">Try questions like:</p>
               <ul className="qa-examples">
                 <li>&quot;Is Fish Oil safe with Warfarin?&quot;</li>
@@ -375,6 +414,7 @@ export function ChatPage() {
                 <li>&quot;Are any nutrients depleted by my medications?&quot;</li>
               </ul>
             </div>
+
 
             <div className="qa-input-area">
               <div className="qa-input-wrapper">
@@ -396,6 +436,11 @@ export function ChatPage() {
                 </button>
               </div>
             </div>
+
+            <p className="qa-clinical-note">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{display:'inline',verticalAlign:'middle',marginRight:'4px',marginBottom:'2px'}}><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <strong> Not a substitute for medical advice.</strong> Consult a qualified healthcare provider before making changes to your supplement or medication regimen.
+            </p>
           </div>
         ) : isLoading ? (
           <div className="qa-thinking-section">
@@ -656,20 +701,26 @@ export function ChatPage() {
                 Update the medications, supplements, and health context that the
                 agent will use when answering your questions.
               </p>
-              <MultiSelect
-                label="Current Medications"
-                placeholder="Search meds or add custom..."
-                options={COMMON_MEDICATIONS}
-                selected={profile.medications}
-                onChange={(next) => setProfileList("medications", next)}
-              />
-              <MultiSelect
-                label="Current Supplements"
-                placeholder="Search supplements or add custom..."
-                options={COMMON_SUPPLEMENTS}
-                selected={profile.supplements}
-                onChange={(next) => setProfileList("supplements", next)}
-              />
+              <div className="field-group">
+                <label className="ms-label">Current Medications</label>
+                <textarea
+                  className="ms-input"
+                  placeholder="e.g. Warfarin, Metformin, ..."
+                  value={profile.medications}
+                  onChange={(e) => handleTextChange("medications", e.target.value)}
+                  rows={2}
+                />
+              </div>
+              <div className="field-group">
+                <label className="ms-label">Current Supplements</label>
+                <textarea
+                  className="ms-input"
+                  placeholder="e.g. Fish Oil, Vitamin D, ..."
+                  value={profile.supplements}
+                  onChange={(e) => handleTextChange("supplements", e.target.value)}
+                  rows={2}
+                />
+              </div>
               <MultiSelect
                 label="Conditions"
                 placeholder="Search conditions or add custom..."

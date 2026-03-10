@@ -120,17 +120,15 @@ async def chat_endpoint(payload: ChatRequest) -> ChatResponse:
 async def chat_stream_endpoint(payload: ChatRequest):
     """
     Stream LangGraph workflow execution with step-by-step progress updates.
-    
+
     Returns Server-Sent Events (SSE) with:
-    - step: Current step being executed
+    - step: Fired when a node starts (from debug "task" event)
+    - step_update: Fired after supervisor finishes, carries the routing decision
     - result: Final result when complete
     - error: Error message if something goes wrong
     """
     async def generate():
         try:
-            yield f"data: {json.dumps({'type': 'step', 'node': 'starting', 'description': 'Starting workflow...', 'completed_steps': []})}\n\n"
-            await asyncio.sleep(0)
-
             input_state: InputState = {
                 "user_question": payload.user_question,
                 "patient_profile": payload.patient_profile.model_dump(),
@@ -144,35 +142,48 @@ async def chat_stream_endpoint(payload: ChatRequest):
             completed_steps: List[str] = []
             final_state: Dict[str, Any] = dict(initial_state)
             all_queries: List[Dict[str, Any]] = []
-            
+
             clear_query_log()
-            
-            for event in workflow.stream(initial_state, stream_mode="updates"):
-                for node_name, node_output in event.items():
-                    final_state.update(node_output)
-                    
-                    step_queries = drain_query_log()
-                    all_queries.extend(
-                        {**q, "node": node_name} for q in step_queries
-                    )
-                    
-                    step_info: Dict[str, Any] = {
-                        "type": "step",
-                        "node": node_name,
-                        "description": STEP_DESCRIPTIONS.get(node_name, f"Running {node_name}..."),
-                        "completed_steps": completed_steps.copy(),
-                    }
-                    
-                    if node_name == "supervisor":
-                        decision = node_output.get("supervisor_decision", "")
-                        step_info["decision"] = decision
-                    
-                    if step_queries:
-                        step_info["queries"] = step_queries
-                    
-                    yield f"data: {json.dumps(step_info)}\n\n"
-                    await asyncio.sleep(0)
-                    completed_steps.append(node_name)
+
+            for mode, event in workflow.stream(initial_state, stream_mode=["updates", "debug"]):
+
+                if mode == "debug":
+                    # Fire SSE as soon as a node starts
+                    if event.get("type") == "task":
+                        node_name = event.get("payload", {}).get("name", "")
+                        if node_name and node_name in STEP_DESCRIPTIONS:
+                            step_info: Dict[str, Any] = {
+                                "type": "step",
+                                "node": node_name,
+                                "description": STEP_DESCRIPTIONS[node_name],
+                                "completed_steps": completed_steps.copy(),
+                            }
+                            yield f"data: {json.dumps(step_info)}\n\n"
+                            await asyncio.sleep(0)
+
+                elif mode == "updates":
+                    # Node finished — collect output and queries
+                    for node_name, node_output in event.items():
+                        final_state.update(node_output)
+
+                        step_queries = drain_query_log()
+                        all_queries.extend(
+                            {**q, "node": node_name} for q in step_queries
+                        )
+
+                        # For supervisor, send a follow-up event with the routing decision
+                        if node_name == "supervisor":
+                            decision = node_output.get("supervisor_decision", "")
+                            if decision:
+                                decision_info: Dict[str, Any] = {
+                                    "type": "step_update",
+                                    "node": node_name,
+                                    "decision": decision,
+                                }
+                                yield f"data: {json.dumps(decision_info)}\n\n"
+                                await asyncio.sleep(0)
+
+                        completed_steps.append(node_name)
 
             result_data = {
                 "type": "result",
@@ -187,7 +198,7 @@ async def chat_stream_endpoint(payload: ChatRequest):
             }
             yield f"data: {json.dumps(result_data)}\n\n"
             await asyncio.sleep(0)
-            
+
         except Exception as exc:
             error_data = {"type": "error", "message": str(exc)}
             yield f"data: {json.dumps(error_data)}\n\n"
