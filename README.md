@@ -1,6 +1,8 @@
 # 💊 Personalized Supplement Safety Advisor
 
-> **Live App:** [personalized-supplement-recommender.vercel.app](https://personalized-supplement-recommender.vercel.app/)
+[Project Website](https://kevinkchen1.github.io/project_website/)
+
+[Live App](https://personalized-supplement-recommender.vercel.app/)
 
 An AI-powered system that detects dangerous supplement-medication interactions, identifies nutrient deficiencies, and provides personalized supplement recommendations using a biomedical knowledge graph and multi-agent architecture.
 
